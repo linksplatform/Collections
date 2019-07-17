@@ -20,8 +20,4 @@
         protected abstract long GetSegmentFrequency(TSegment segment);
         protected abstract void SetSegmentFrequency(TSegment segment, long frequency);
     }
-
-    public abstract class DuplicateSegmentsWalkerBase<T> : DuplicateSegmentsWalkerBase<T, Segment<T>>
-    {
-    }
 }

@@ -175,7 +175,6 @@ namespace Platform.Collections
                 _array[i] = ~_array[i];
                 RefreshBordersByWord(i);
             }
-
             return this;
         }
 
@@ -339,9 +338,9 @@ namespace Platform.Collections
                 if (n != 0)
                 {
                     result += BitSetsIn16Bits[(int)(n & 0xffffu)].Length +
-                              BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)].Length;
-                    result += BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)].Length +
-                              BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)].Length;
+                              BitSetsIn16Bits[(int)((n >> 16) & 0xffffu)].Length;
+                    result += BitSetsIn16Bits[(int)((n >> 32) & 0xffffu)].Length +
+                              BitSetsIn16Bits[(int)((n >> 48) & 0xffffu)].Length;
                 }
             }
             return result;
@@ -355,22 +354,19 @@ namespace Platform.Collections
                 var n = _array[i];
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    for (var j = 0; j < bits1.Length; j++)
-                        result.Add(bits1[j] + i * 64);
+                    for (var j = 0; j < bits0to15.Length; j++)
+                        result.Add(bits0to15[j] + (i * 64));
 
-                    for (var j = 0; j < bits2.Length; j++)
-                        result.Add(bits2[j] + 16 + i * 64);
+                    for (var j = 0; j < bits16to31.Length; j++)
+                        result.Add(bits16to31[j] + 16 + (i * 64));
 
-                    for (var j = 0; j < bits3.Length; j++)
-                        result.Add(bits3[j] + 32 + i * 64);
+                    for (var j = 0; j < bits32to47.Length; j++)
+                        result.Add(bits32to47[j] + 32 + (i * 64));
 
-                    for (var j = 0; j < bits4.Length; j++)
-                        result.Add(bits4[j] + 48 + i * 64);
+                    for (var j = 0; j < bits48to63.Length; j++)
+                        result.Add(bits48to63[j] + 48 + (i * 64));
                 }
             }
 
@@ -387,22 +383,19 @@ namespace Platform.Collections
 
                 if (n == 0) continue;
 
-                var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                for (var j = 0; j < bits1.Length; j++)
-                    result.Add(bits1[j] + (ulong)i * 64);
+                for (var j = 0; j < bits0to15.Length; j++)
+                    result.Add(bits0to15[j] + ((ulong)i * 64));
 
-                for (var j = 0; j < bits2.Length; j++)
-                    result.Add(bits2[j] + 16UL + (ulong)i * 64);
+                for (var j = 0; j < bits16to31.Length; j++)
+                    result.Add(bits16to31[j] + 16UL + ((ulong)i * 64));
 
-                for (var j = 0; j < bits3.Length; j++)
-                    result.Add(bits3[j] + 32UL + (ulong)i * 64);
+                for (var j = 0; j < bits32to47.Length; j++)
+                    result.Add(bits32to47[j] + 32UL + ((ulong)i * 64));
 
-                for (var j = 0; j < bits4.Length; j++)
-                    result.Add(bits4[j] + 48UL + (ulong)i * 64);
+                for (var j = 0; j < bits48to63.Length; j++)
+                    result.Add(bits48to63[j] + 48UL + ((ulong)i * 64));
             }
 
             return result;
@@ -415,18 +408,15 @@ namespace Platform.Collections
                 var n = _array[i];
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    if (bits1.Length > 0)
-                        return bits1[0] + i * 64;
-                    if (bits2.Length > 0)
-                        return bits2[0] + 16 + i * 64;
-                    if (bits3.Length > 0)
-                        return bits3[0] + 32 + i * 64;
-                    return bits4[0] + 48 + i * 64;
+                    if (bits0to15.Length > 0)
+                        return bits0to15[0] + (i * 64);
+                    if (bits16to31.Length > 0)
+                        return bits16to31[0] + 16 + (i * 64);
+                    if (bits32to47.Length > 0)
+                        return bits32to47[0] + 32 + (i * 64);
+                    return bits48to63[0] + 48 + (i * 64);
                 }
             }
 
@@ -440,18 +430,15 @@ namespace Platform.Collections
                 var n = _array[i];
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    if (bits4.Length > 0)
-                        return bits4[bits4.Length - 1] + 48 + i * 64;
-                    if (bits3.Length > 0)
-                        return bits3[bits3.Length - 1] + 32 + i * 64;
-                    if (bits2.Length > 0)
-                        return bits2[bits2.Length - 1] + 16 + i * 64;
-                    return bits1[bits1.Length - 1] + i * 64;
+                    if (bits48to63.Length > 0)
+                        return bits48to63[bits48to63.Length - 1] + 48 + (i * 64);
+                    if (bits32to47.Length > 0)
+                        return bits32to47[bits32to47.Length - 1] + 32 + (i * 64);
+                    if (bits16to31.Length > 0)
+                        return bits16to31[bits16to31.Length - 1] + 16 + (i * 64);
+                    return bits0to15[bits0to15.Length - 1] + (i * 64);
                 }
             }
 
@@ -466,12 +453,9 @@ namespace Platform.Collections
                 var n = _array[i];
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    result += bits1.Length + bits2.Length + bits3.Length + bits4.Length;
+                    result += bits0to15.Length + bits16to31.Length + bits32to47.Length + bits48to63.Length;
                 }
             }
             return result;
@@ -522,12 +506,9 @@ namespace Platform.Collections
                 var n = v1 & v2;
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    result += bits1.Length + bits2.Length + bits3.Length + bits4.Length;
+                    result += bits0to15.Length + bits16to31.Length + bits32to47.Length + bits48to63.Length;
                 }
             }
 
@@ -553,19 +534,16 @@ namespace Platform.Collections
                 var n = v1 & v2;
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    if (bits1.Length > 0)
-                        result.Add(bits1[0] + (int)i * 64);
-                    else if (bits2.Length > 0)
-                        result.Add(bits2[0] + 16 + (int)i * 64);
-                    else if (bits3.Length > 0)
-                        result.Add(bits3[0] + 32 + (int)i * 64);
+                    if (bits0to15.Length > 0)
+                        result.Add(bits0to15[0] + ((int)i * 64));
+                    else if (bits16to31.Length > 0)
+                        result.Add(bits16to31[0] + 16 + ((int)i * 64));
+                    else if (bits32to47.Length > 0)
+                        result.Add(bits32to47[0] + 32 + ((int)i * 64));
                     else
-                        result.Add(bits4[0] + 48 + (int)i * 64);
+                        result.Add(bits48to63[0] + 48 + ((int)i * 64));
                 }
             }
 
@@ -589,22 +567,27 @@ namespace Platform.Collections
                 var n = v1 & v2;
                 if (n != 0)
                 {
-                    var bits1 = BitSetsIn16Bits[(int)(n & 0xffffu)];
-                    var bits2 = BitSetsIn16Bits[(int)(n >> 16 & 0xffffu)];
-                    var bits3 = BitSetsIn16Bits[(int)(n >> 32 & 0xffffu)];
-                    var bits4 = BitSetsIn16Bits[(int)(n >> 48 & 0xffffu)];
+                    GetBits(n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
 
-                    if (bits4.Length > 0)
-                        return bits4[bits4.Length - 1] + 48 + (int)i * 64;
-                    if (bits3.Length > 0)
-                        return bits3[bits3.Length - 1] + 32 + (int)i * 64;
-                    if (bits2.Length > 0)
-                        return bits2[bits2.Length - 1] + 16 + (int)i * 64;
-                    return bits1[bits1.Length - 1] + (int)i * 64;
+                    if (bits48to63.Length > 0)
+                        return bits48to63[bits48to63.Length - 1] + 48 + ((int)i * 64);
+                    if (bits32to47.Length > 0)
+                        return bits32to47[bits32to47.Length - 1] + 32 + ((int)i * 64);
+                    if (bits16to31.Length > 0)
+                        return bits16to31[bits16to31.Length - 1] + 16 + ((int)i * 64);
+                    return bits0to15[bits0to15.Length - 1] + ((int)i * 64);
                 }
             }
 
             return -1;
+        }
+
+        private static void GetBits(long n, out byte[] bits0to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63)
+        {
+            bits0to15 = BitSetsIn16Bits[(int)(n & 0xffffu)];
+            bits16to31 = BitSetsIn16Bits[(int)((n >> 16) & 0xffffu)];
+            bits32to47 = BitSetsIn16Bits[(int)((n >> 32) & 0xffffu)];
+            bits48to63 = BitSetsIn16Bits[(int)((n >> 48) & 0xffffu)];
         }
     }
 }
