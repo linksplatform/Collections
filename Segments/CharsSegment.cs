@@ -29,7 +29,7 @@ namespace Platform.Collections.Segments
                 for (var i = 0; i < Length; i++)
                     hashAccumulator = (hashAccumulator << 5) + hashAccumulator ^ this[i];
 
-            return hashAccumulator + hashSeed * 1566083941;
+            return hashAccumulator + (hashSeed * 1566083941);
         }
 
         /// <remarks>

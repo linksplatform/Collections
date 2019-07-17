@@ -56,7 +56,7 @@ namespace Platform.Collections.Lists
         {
             var result = 17;
             for (var i = 0; i < list.Count; i++)
-                result = unchecked(result * 23 + list[i].GetHashCode());
+                result = unchecked((result * 23) + list[i].GetHashCode());
             return result;
         }
 
