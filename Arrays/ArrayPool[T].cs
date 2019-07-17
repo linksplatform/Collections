@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Platform.Disposables;
+using Platform.Ranges;
+using Platform.Exceptions;
+using Platform.Collections.Stacks;
 
 namespace Platform.Collections.Arrays
 {
