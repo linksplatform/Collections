@@ -1,30 +1,22 @@
-﻿namespace Platform.Collections.Arrays
-{
-    public class ArrayString<T>
-    {
-        public readonly T[] Array;
-        public long Length;
+﻿using Platform.Collections.Segments;
 
-        public ArrayString(long length)
-            : this(new T[length], length)
+namespace Platform.Collections.Arrays
+{
+    public class ArrayString<T> : Segment<T>
+    {
+        public ArrayString(int length)
+            : base(new T[length], 0, length)
         {
         }
 
         public ArrayString(T[] array)
-            : this(array, array.Length)
+            : base(array, 0, array.Length)
         {
         }
 
-        public ArrayString(T[] array, long length)
+        public ArrayString(T[] array, int length)
+            : base(array, 0, length)
         {
-            Array = array;
-            Length = length;
-        }
-
-        public bool Contains(T value)
-        {
-            var index = System.Array.IndexOf(Array, value);
-            return index >= 0 && index < Length;
         }
     }
 }
