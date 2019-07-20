@@ -4,14 +4,14 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.0.1</VersionPrefix>
+    <VersionPrefix>0.0.2</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Collections</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageId>Platform.Collections</PackageId>
-    <PackageTags>LinksPlatform;Collections;Extensions;Arrays;Lists;Concurrent;Segments;SegmentWalkers;Stacks;Strings</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/d65e8dd6e1b647405bc3d33687172e79b70e3435/doc/Avatar-rainbow.png</PackageIconUrl>
+    <PackageTags>LinksPlatform;Collections;Extensions;Arrays;Lists;Concurrent;Segments;SegmentWalkers;Stacks;Strings;Trees;Node</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/0a9177c11892ebb2fe467dc3ea9eaf5a5588f610/doc/Avatar-rainbow.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/linksplatform/Collections</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/linksplatform/Collections/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
