@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Platform.Collections.Lists;
 
 namespace Platform.Collections.Segments
 {
     public class Segment<T> : IEquatable<Segment<T>>, IList<T>
     {
-        private static readonly EqualityComparer<T> EqualityComparer = EqualityComparer<T>.Default;
-
         public readonly IList<T> Base;
         public readonly int Offset;
         public readonly int Length;
@@ -17,12 +16,6 @@ namespace Platform.Collections.Segments
             Base = @base;
             Offset = offset;
             Length = length;
-        }
-
-        public T this[int i]
-        {
-            get => Base[Offset + i];
-            set => Base[Offset + i] = value;
         }
 
         /// <remarks>
@@ -39,19 +32,17 @@ namespace Platform.Collections.Segments
             return hashAccumulator + (hashSeed * 1566083941);
         }
 
-        public virtual bool Equals(Segment<T> other)
-        {
-            if (Length != other.Length) return false;
-
-            for (var i = 0; i < Length; i++)
-                if (!EqualityComparer.Equals(this[i], other[i]))
-                    return false;
-            return true;
-        }
+        public virtual bool Equals(Segment<T> other) => other.EqualTo(this);
 
         public override bool Equals(object obj) => obj is Segment<T> other ? Equals(other) : false;
 
         #region IList
+
+        public T this[int i]
+        {
+            get => Base[Offset + i];
+            set => Base[Offset + i] = value;
+        }
 
         public int Count => Length;
 
