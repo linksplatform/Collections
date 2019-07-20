@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Platform.Collections.Lists
 {
-    public static class ListExtensions
+    public static class IListExtensions
     {
         public static bool AddAndReturnTrue<T>(this IList<T> list, T element)
         {
