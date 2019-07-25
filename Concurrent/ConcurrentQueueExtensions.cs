@@ -10,7 +10,9 @@ namespace Platform.Collections.Concurrent
         public static IEnumerable<T> DequeueAll<T>(this ConcurrentQueue<T> queue)
         {
             while (queue.TryDequeue(out T item))
+            {
                 yield return item;
+            }
         }
     }
 }

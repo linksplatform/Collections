@@ -4,16 +4,16 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.0.2</VersionPrefix>
+    <VersionPrefix>0.0.3</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Collections</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageId>Platform.Collections</PackageId>
     <PackageTags>LinksPlatform;Collections;Extensions;Arrays;Lists;Concurrent;Segments;SegmentWalkers;Stacks;Strings;Trees;Node</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/0a9177c11892ebb2fe467dc3ea9eaf5a5588f610/doc/Avatar-rainbow.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/linksplatform/Collections</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/linksplatform/Collections/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/linksplatform/Collections</RepositoryUrl>
@@ -28,7 +28,6 @@
     <PackageReference Include="Platform.Disposables" Version="0.0.2" />
     <PackageReference Include="Platform.Ranges" Version="0.0.3" />
     <PackageReference Include="Platform.Interfaces" Version="0.0.1" />
-    <PackageReference Include="Platform.Exceptions" Version="0.1.0" />
   </ItemGroup>
 
 </Project>

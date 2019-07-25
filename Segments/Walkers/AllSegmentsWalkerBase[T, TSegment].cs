@@ -13,12 +13,12 @@ namespace Platform.Collections.Segments.Walkers
 
         public virtual void WalkAll(IList<T> elements)
         {
-            var maxOffset = elements.Count - _minimumStringSegmentLength;
-            for (int offset = 0; offset <= maxOffset; offset++)
+            for (int offset = 0, maxOffset = elements.Count - _minimumStringSegmentLength; offset <= maxOffset; offset++)
             {
-                var maxLength = elements.Count - offset;
-                for (int length = _minimumStringSegmentLength; length <= maxLength; length++)
+                for (int length = _minimumStringSegmentLength, maxLength = elements.Count - offset; length <= maxLength; length++)
+                {
                     Iteration(CreateSegment(elements, offset, length));
+                }
             }
         }
 

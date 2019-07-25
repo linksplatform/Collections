@@ -18,7 +18,9 @@ namespace Platform.Collections.Trees
             {
                 var child = GetChild(key);
                 if (child == null)
+                {
                     child = AddChild(key);
+                }
                 return child;
             }
             set => SetChildValue(value, key);
@@ -40,9 +42,10 @@ namespace Platform.Collections.Trees
             {
                 node.ChildNodes.TryGetValue(keys[i], out node);
                 if (node == null)
+                {
                     return null;
+                }
             }
-
             return node;
         }
 
@@ -66,7 +69,9 @@ namespace Platform.Collections.Trees
         {
             var node = this;
             for (var i = 0; i < keys.Length; i++)
+            {
                 node = SetChildValue(value, keys[i]);
+            }
             node.Value = value;
             return node;
         }
@@ -74,7 +79,9 @@ namespace Platform.Collections.Trees
         public Node SetChildValue(object value, object key)
         {
             if (!ChildNodes.TryGetValue(key, out Node child))
+            {
                 child = AddChild(key, value);
+            }
             child.Value = value;
             return child;
         }

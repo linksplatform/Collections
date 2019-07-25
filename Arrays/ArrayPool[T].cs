@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Platform.Exceptions;
 using Platform.Disposables;
 using Platform.Ranges;
-using Platform.Exceptions;
 using Platform.Collections.Stacks;
 
 namespace Platform.Collections.Arrays
@@ -12,23 +12,18 @@ namespace Platform.Collections.Arrays
     /// </remarks>
     public class ArrayPool<T>
     {
-        public const int DefaultSizesAmount = 512;
-        public const int DefaultMaxArraysPerSize = 32;
-
-        private readonly int _maxArraysPerSize;
+        public static readonly int DefaultSizesAmount = 512;
+        public static readonly int DefaultMaxArraysPerSize = 32;
         public static readonly T[] Empty = new T[0];
 
         // May be use Default class for that later.
         [ThreadStatic]
         internal static ArrayPool<T> ThreadInstance;
-        internal static ArrayPool<T> GetOrCreateThreadInstance() => ThreadInstance ?? (ThreadInstance = new ArrayPool<T>());
 
+        private readonly int _maxArraysPerSize;
         private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(DefaultSizesAmount);
 
-        public ArrayPool(int maxArraysPerSize)
-        {
-            _maxArraysPerSize = maxArraysPerSize;
-        }
+        public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
 
         public ArrayPool()
            : this(DefaultMaxArraysPerSize)
@@ -40,8 +35,9 @@ namespace Platform.Collections.Arrays
         public Disposable<T[]> Resize(Disposable<T[]> source, long size)
         {
             var destination = AllocateDisposable(size);
-            var sourceArray = source.Object;
-            Array.Copy(sourceArray, destination.Object, size < sourceArray.Length ? (int)size : sourceArray.Length);
+            T[] sourceArray = source;
+            T[] destinationArray = destination;
+            Array.Copy(sourceArray, destinationArray, size < sourceArray.Length ? (int)size : sourceArray.Length);
             source.Dispose();
             return destination;
         }
@@ -50,21 +46,26 @@ namespace Platform.Collections.Arrays
 
         public virtual T[] Allocate(long size)
         {
-            Ensure.ArgumentInRange(size, new Range<long>(0, int.MaxValue));
-            if (size == 0)
-                return Empty;
-            return _pool.GetOrDefault((int)size)?.PopOrDefault() ?? new T[size];
+            Ensure.Always.ArgumentInRange(size, new Range<long>(0, int.MaxValue));
+            return size == 0 ? Empty : _pool.GetOrDefault((int)size)?.PopOrDefault() ?? new T[size];
         }
 
         public virtual void Free(T[] array)
         {
-            Ensure.ArgumentNotNull(array, nameof(array));
+            Ensure.Always.ArgumentNotNull(array, nameof(array));
             if (array.Length == 0)
+            {
                 return;
+            }
             var stack = _pool.GetOrAdd(array.Length, size => new Stack<T[]>(_maxArraysPerSize));
             if (stack.Count == _maxArraysPerSize)
+            {
                 return; // Do not put the array to stack
+            }
             stack.Push(array);
         }
+
+        // May be use Default class for that later.
+        internal static ArrayPool<T> GetOrCreateThreadInstance() => ThreadInstance ?? (ThreadInstance = new ArrayPool<T>());
     }
 }

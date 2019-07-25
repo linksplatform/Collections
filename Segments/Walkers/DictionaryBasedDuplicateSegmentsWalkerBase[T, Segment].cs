@@ -9,7 +9,6 @@ namespace Platform.Collections.Segments.Walkers
         public const bool DefaultResetDictionaryOnEachWalk = false;
 
         private readonly bool _resetDictionaryOnEachWalk;
-
         protected IDictionary<TSegment, long> Dictionary;
 
         public DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength = DefaultMinimumStringSegmentLength, bool resetDictionaryOnEachWalk = DefaultResetDictionaryOnEachWalk)
@@ -36,7 +35,6 @@ namespace Platform.Collections.Segments.Walkers
                 var capacity = Math.Ceiling(Math.Pow(elements.Count, 2) / 2);
                 Dictionary = new Dictionary<TSegment, long>((int)capacity);
             }
-
             base.WalkAll(elements);
         }
 

@@ -2,10 +2,6 @@
 
 namespace Platform.Collections.Arrays
 {
-    /// <remarks>
-    /// TODO: Check actual performance
-    /// TODO: Check for memory leaks
-    /// </remarks>
     public static class ArrayPool
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

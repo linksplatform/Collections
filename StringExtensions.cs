@@ -8,14 +8,17 @@ namespace Platform.Collections
         public static string CapitalizeFirstLetter(this string str)
         {
             if (string.IsNullOrWhiteSpace(str))
+            {
                 return str;
-
+            }
             var chars = str.ToCharArray();
-            for (int i = 0; i < chars.Length; i++)
+            for (var i = 0; i < chars.Length; i++)
             {
                 var category = char.GetUnicodeCategory(chars[i]);
                 if (category == UnicodeCategory.UppercaseLetter)
+                {
                     return str;
+                }
                 if (category == UnicodeCategory.LowercaseLetter)
                 {
                     chars[i] = char.ToUpper(chars[i]);
@@ -25,11 +28,6 @@ namespace Platform.Collections
             return str;
         }
 
-        public static string Truncate(this string str, int maxLength)
-        {
-            if (string.IsNullOrEmpty(str))
-                return str;
-            return str.Substring(0, Math.Min(str.Length, maxLength));
-        }
+        public static string Truncate(this string str, int maxLength) => string.IsNullOrEmpty(str) ? str : str.Substring(0, Math.Min(str.Length, maxLength));
     }
 }

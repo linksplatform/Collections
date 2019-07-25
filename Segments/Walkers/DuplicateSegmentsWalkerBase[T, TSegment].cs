@@ -12,7 +12,9 @@
         {
             var frequency = GetSegmentFrequency(segment);
             if (frequency == 1)
+            {
                 OnDublicateFound(segment);
+            }
             SetSegmentFrequency(segment, frequency + 1);
         }
 

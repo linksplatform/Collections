@@ -18,21 +18,9 @@ namespace Platform.Collections.Segments
             Length = length;
         }
 
-        /// <remarks>
-        /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L833
-        /// </remarks>
-        public override int GetHashCode()
-        {
-            var hashSeed = 5381;
-            var hashAccumulator = hashSeed;
+        public override int GetHashCode() => this.GenerateHashCode();
 
-            for (var i = 0; i < Length; i++)
-                hashAccumulator = (hashAccumulator << 5) + hashAccumulator ^ this[i].GetHashCode();
-
-            return hashAccumulator + (hashSeed * 1566083941);
-        }
-
-        public virtual bool Equals(Segment<T> other) => other.EqualTo(this);
+        public virtual bool Equals(Segment<T> other) => this.EqualTo(other);
 
         public override bool Equals(object obj) => obj is Segment<T> other ? Equals(other) : false;
 
@@ -55,7 +43,9 @@ namespace Platform.Collections.Segments
             {
                 var actualIndex = index - Offset;
                 if (actualIndex < Length)
+                {
                     return actualIndex;
+                }
             }
             return -1;
         }
@@ -73,7 +63,9 @@ namespace Platform.Collections.Segments
         public void CopyTo(T[] array, int arrayIndex)
         {
             for (var i = 0; i < Length;)
+            {
                 array[arrayIndex++] = this[i++];
+            }
         }
 
         public bool Remove(T item) => throw new NotSupportedException();
@@ -81,7 +73,9 @@ namespace Platform.Collections.Segments
         public IEnumerator<T> GetEnumerator()
         {
             for (var i = 0; i < Length; i++)
+            {
                 yield return this[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
