@@ -5,9 +5,9 @@ using Platform.Collections.Lists;
 
 namespace Platform.Collections.Segments
 {
-    public unsafe class CharsSegment : Segment<char>
+    public unsafe class CharSegment : Segment<char>
     {
-        public CharsSegment(IList<char> @base, int offset, int length)
+        public CharSegment(IList<char> @base, int offset, int length)
             : base(@base, offset, length)
         {
         }
@@ -42,7 +42,7 @@ namespace Platform.Collections.Segments
             return this.EqualTo(other, contentEqualityComparer);
         }
 
-        public static implicit operator string(CharsSegment segment)
+        public static implicit operator string(CharSegment segment)
         {
             if (!(segment.Base is char[] array))
             {
