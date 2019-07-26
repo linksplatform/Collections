@@ -9,9 +9,9 @@
         {
             var hashSeed = 5381;
             var hashAccumulator = hashSeed;
-            fixed (char* src = &array[offset])
+            fixed (char* pointer = &array[offset])
             {
-                for (char* s = src, last = s + length; s < last; s++)
+                for (char* s = pointer, last = s + length; s < last; s++)
                 {
                     hashAccumulator = (hashAccumulator << 5) + hashAccumulator ^ *s;
                 }
@@ -24,41 +24,41 @@
         /// </remarks>
         public static bool ContentEqualTo(this char[] left, int leftOffset, int length, char[] right, int rightOffset)
         {
-            fixed (char* ap = &left[leftOffset])
+            fixed (char* leftPointer = &left[leftOffset])
             {
-                fixed (char* bp = &right[rightOffset])
+                fixed (char* rightPointer = &right[rightOffset])
                 {
-                    char* a = ap, b = bp;
-                    if (!CheckArraysMainPartForEquality(ref a, ref b, ref length))
+                    char* leftPointerCopy = leftPointer, rightPointerCopy = rightPointer;
+                    if (!CheckArraysMainPartForEquality(ref leftPointerCopy, ref rightPointerCopy, ref length))
                     {
                         return false;
                     }
-                    CheckArraysRemainderForEquality(ref a, ref b, ref length);
+                    CheckArraysRemainderForEquality(ref leftPointerCopy, ref rightPointerCopy, ref length);
                     return length <= 0;
                 }
             }
         }
 
-        private static bool CheckArraysMainPartForEquality(ref char* a, ref char* b, ref int length)
+        private static bool CheckArraysMainPartForEquality(ref char* left, ref char* right, ref int length)
         {
             while (length >= 10)
             {
-                if ((*(int*)a != *(int*)b)
-                 || (*(int*)(a + 2) != *(int*)(b + 2))
-                 || (*(int*)(a + 4) != *(int*)(b + 4))
-                 || (*(int*)(a + 6) != *(int*)(b + 6))
-                 || (*(int*)(a + 8) != *(int*)(b + 8)))
+                if ((*(int*)left != *(int*)right)
+                 || (*(int*)(left + 2) != *(int*)(right + 2))
+                 || (*(int*)(left + 4) != *(int*)(right + 4))
+                 || (*(int*)(left + 6) != *(int*)(right + 6))
+                 || (*(int*)(left + 8) != *(int*)(right + 8)))
                 {
                     return false;
                 }
-                a += 10;
-                b += 10;
+                left += 10;
+                right += 10;
                 length -= 10;
             }
             return true;
         }
 
-        private static void CheckArraysRemainderForEquality(ref char* a, ref char* b, ref int length)
+        private static void CheckArraysRemainderForEquality(ref char* left, ref char* right, ref int length)
         {
             // This depends on the fact that the String objects are
             // always zero terminated and that the terminating zero is not included
@@ -66,12 +66,12 @@
             // the zero terminator.
             while (length > 0)
             {
-                if (*(int*)a != *(int*)b)
+                if (*(int*)left != *(int*)right)
                 {
                     break;
                 }
-                a += 2;
-                b += 2;
+                left += 2;
+                right += 2;
                 length -= 2;
             }
         }

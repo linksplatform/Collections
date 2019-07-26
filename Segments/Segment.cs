@@ -62,9 +62,9 @@ namespace Platform.Collections.Segments
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            for (var i = 0; i < Length;)
+            for (var i = 0; i < Length; i++)
             {
-                array[arrayIndex++] = this[i++];
+                array[arrayIndex++] = this[i];
             }
         }
 

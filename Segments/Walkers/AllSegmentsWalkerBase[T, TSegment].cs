@@ -2,11 +2,9 @@
 
 namespace Platform.Collections.Segments.Walkers
 {
-    public abstract class AllSegmentsWalkerBase<T, TSegment>
+    public abstract class AllSegmentsWalkerBase<T, TSegment> : AllSegmentsWalkerBase
         where TSegment : Segment<T>
     {
-        public const int DefaultMinimumStringSegmentLength = 2;
-
         private readonly int _minimumStringSegmentLength;
 
         protected AllSegmentsWalkerBase(int minimumStringSegmentLength = DefaultMinimumStringSegmentLength) => _minimumStringSegmentLength = minimumStringSegmentLength;

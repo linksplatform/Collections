@@ -5,7 +5,7 @@ using Platform.Collections.Lists;
 
 namespace Platform.Collections.Segments
 {
-    public unsafe class CharSegment : Segment<char>
+    public class CharSegment : Segment<char>
     {
         public CharSegment(IList<char> @base, int offset, int length)
             : base(@base, offset, length)

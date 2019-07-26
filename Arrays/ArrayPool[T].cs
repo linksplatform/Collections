@@ -12,8 +12,6 @@ namespace Platform.Collections.Arrays
     /// </remarks>
     public class ArrayPool<T>
     {
-        public static readonly int DefaultSizesAmount = 512;
-        public static readonly int DefaultMaxArraysPerSize = 32;
         public static readonly T[] Empty = new T[0];
 
         // May be use Default class for that later.
@@ -21,12 +19,12 @@ namespace Platform.Collections.Arrays
         internal static ArrayPool<T> ThreadInstance;
 
         private readonly int _maxArraysPerSize;
-        private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(DefaultSizesAmount);
+        private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
         public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
 
         public ArrayPool()
-           : this(DefaultMaxArraysPerSize)
+           : this(ArrayPool.DefaultMaxArraysPerSize)
         {
         }
 
