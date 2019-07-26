@@ -22,11 +22,11 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Added EnsureExtensions.
+    <PackageReleaseNotes>Refactoring, small fixes.
+Added EnsureExtensions.
 Added CharArrayExtensions.
 Added CharIListExtensions.
-CharsSegment renamed to CharSegment.
-Closed three issues.</PackageReleaseNotes>
+CharsSegment renamed to CharSegment.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
