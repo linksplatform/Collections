@@ -64,6 +64,13 @@ namespace Platform.Collections.Lists
             return result.ToArray();
         }
 
+        public static T[] ToArray<T>(this IList<T> list)
+        {
+            var array = new T[list.Count];
+            list.CopyTo(array, 0);
+            return array;
+        }
+
         public static void ForEach<T>(this IList<T> list, Action<T> action)
         {
             for (var i = 0; i < list.Count; i++)
