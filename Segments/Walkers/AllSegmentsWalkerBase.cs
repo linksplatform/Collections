@@ -2,6 +2,6 @@
 {
     public abstract class AllSegmentsWalkerBase
     {
-        public const int DefaultMinimumStringSegmentLength = 2;
+        public static readonly int DefaultMinimumStringSegmentLength = 2;
     }
 }

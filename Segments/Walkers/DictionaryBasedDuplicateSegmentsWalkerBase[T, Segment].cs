@@ -6,25 +6,40 @@ namespace Platform.Collections.Segments.Walkers
     public abstract class DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment> : DuplicateSegmentsWalkerBase<T, TSegment>
         where TSegment : Segment<T>
     {
-        public const bool DefaultResetDictionaryOnEachWalk = false;
+        public static readonly bool DefaultResetDictionaryOnEachWalk = false;
 
         private readonly bool _resetDictionaryOnEachWalk;
         protected IDictionary<TSegment, long> Dictionary;
 
-        public DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength = DefaultMinimumStringSegmentLength, bool resetDictionaryOnEachWalk = DefaultResetDictionaryOnEachWalk)
+        public DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength, bool resetDictionaryOnEachWalk)
             : base(minimumStringSegmentLength)
         {
             Dictionary = dictionary;
             _resetDictionaryOnEachWalk = resetDictionaryOnEachWalk;
         }
 
-        public DictionaryBasedDuplicateSegmentsWalkerBase(int minimumStringSegmentLength = DefaultMinimumStringSegmentLength, bool resetDictionaryOnEachWalk = DefaultResetDictionaryOnEachWalk)
+        public DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength)
+            : this(dictionary, minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk)
+        {
+        }
+
+        public DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary)
+            : this(dictionary, DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk)
+        {
+        }
+
+        public DictionaryBasedDuplicateSegmentsWalkerBase(int minimumStringSegmentLength, bool resetDictionaryOnEachWalk)
             : this(resetDictionaryOnEachWalk ? null : new Dictionary<TSegment, long>(), minimumStringSegmentLength, resetDictionaryOnEachWalk)
         {
         }
 
-        public DictionaryBasedDuplicateSegmentsWalkerBase(bool resetDictionaryOnEachWalk = DefaultResetDictionaryOnEachWalk)
-            : this(DefaultMinimumStringSegmentLength, resetDictionaryOnEachWalk)
+        public DictionaryBasedDuplicateSegmentsWalkerBase(int minimumStringSegmentLength)
+            : this(minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk)
+        {
+        }
+
+        public DictionaryBasedDuplicateSegmentsWalkerBase()
+            : this(DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk)
         {
         }
 

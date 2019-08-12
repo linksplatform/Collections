@@ -3,8 +3,13 @@
     public abstract class DuplicateSegmentsWalkerBase<T, TSegment> : AllSegmentsWalkerBase<T, TSegment>
         where TSegment : Segment<T>
     {
-        protected DuplicateSegmentsWalkerBase(int minimumStringSegmentLength = DefaultMinimumStringSegmentLength)
+        protected DuplicateSegmentsWalkerBase(int minimumStringSegmentLength)
             : base(minimumStringSegmentLength)
+        {
+        }
+
+        protected DuplicateSegmentsWalkerBase()
+            : base(DefaultMinimumStringSegmentLength)
         {
         }
 

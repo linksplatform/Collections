@@ -7,7 +7,9 @@ namespace Platform.Collections.Segments.Walkers
     {
         private readonly int _minimumStringSegmentLength;
 
-        protected AllSegmentsWalkerBase(int minimumStringSegmentLength = DefaultMinimumStringSegmentLength) => _minimumStringSegmentLength = minimumStringSegmentLength;
+        protected AllSegmentsWalkerBase(int minimumStringSegmentLength) => _minimumStringSegmentLength = minimumStringSegmentLength;
+
+        protected AllSegmentsWalkerBase() : this(DefaultMinimumStringSegmentLength) { }
 
         public virtual void WalkAll(IList<T> elements)
         {
