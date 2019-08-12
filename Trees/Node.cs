@@ -28,10 +28,7 @@ namespace Platform.Collections.Trees
 
         public Node(object value) => Value = value;
 
-        public Node()
-            : this(null)
-        {
-        }
+        public Node() : this(null) { }
 
         public bool ContainsChild(params object[] keys) => GetChild(keys) != null;
 

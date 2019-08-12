@@ -9,10 +9,7 @@ namespace Platform.Collections.Arrays
 
         public ArrayFiller(TElement[] array, long offset, TReturnConstant returnConstant) : base(array, offset) => _returnConstant = returnConstant;
 
-        public ArrayFiller(TElement[] array, TReturnConstant returnConstant)
-            : this(array, 0, returnConstant)
-        {
-        }
+        public ArrayFiller(TElement[] array, TReturnConstant returnConstant) : this(array, 0, returnConstant) { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddAndReturnConstant(TElement element)

@@ -3,15 +3,9 @@
     public abstract class DuplicateSegmentsWalkerBase<T, TSegment> : AllSegmentsWalkerBase<T, TSegment>
         where TSegment : Segment<T>
     {
-        protected DuplicateSegmentsWalkerBase(int minimumStringSegmentLength)
-            : base(minimumStringSegmentLength)
-        {
-        }
+        protected DuplicateSegmentsWalkerBase(int minimumStringSegmentLength) : base(minimumStringSegmentLength) { }
 
-        protected DuplicateSegmentsWalkerBase()
-            : base(DefaultMinimumStringSegmentLength)
-        {
-        }
+        protected DuplicateSegmentsWalkerBase() : base(DefaultMinimumStringSegmentLength) { }
 
         protected override void Iteration(TSegment segment)
         {

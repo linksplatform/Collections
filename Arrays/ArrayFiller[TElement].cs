@@ -14,10 +14,7 @@ namespace Platform.Collections.Arrays
             _position = offset;
         }
 
-        public ArrayFiller(TElement[] array)
-            : this(array, 0)
-        {
-        }
+        public ArrayFiller(TElement[] array) : this(array, 0) { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Add(TElement element) => _array[_position++] = element;

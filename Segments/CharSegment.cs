@@ -7,10 +7,7 @@ namespace Platform.Collections.Segments
 {
     public class CharSegment : Segment<char>
     {
-        public CharSegment(IList<char> @base, int offset, int length)
-            : base(@base, offset, length)
-        {
-        }
+        public CharSegment(IList<char> @base, int offset, int length) : base(@base, offset, length) { }
 
         public override int GetHashCode()
         {

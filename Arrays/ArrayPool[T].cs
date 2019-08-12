@@ -17,6 +17,7 @@ namespace Platform.Collections.Arrays
         // May be use Default class for that later.
         [ThreadStatic]
         internal static ArrayPool<T> _threadInstance;
+        internal static ArrayPool<T> ThreadInstance { get => _threadInstance ?? (_threadInstance = new ArrayPool<T>()); }
 
         private readonly int _maxArraysPerSize;
         private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
@@ -59,8 +60,5 @@ namespace Platform.Collections.Arrays
             }
             stack.Push(array);
         }
-
-        // May be use Default class for that later.
-        internal static ArrayPool<T> GetOrCreateThreadInstance() => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
     }
 }
