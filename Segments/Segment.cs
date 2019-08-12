@@ -7,9 +7,9 @@ namespace Platform.Collections.Segments
 {
     public class Segment<T> : IEquatable<Segment<T>>, IList<T>
     {
-        public readonly IList<T> Base;
-        public readonly int Offset;
-        public readonly int Length;
+        public IList<T> Base { get; }
+        public int Offset { get; }
+        public int Length { get; }
 
         public Segment(IList<T> @base, int offset, int length)
         {
