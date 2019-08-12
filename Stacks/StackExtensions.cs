@@ -7,5 +7,8 @@ namespace Platform.Collections.Stacks
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PopOrDefault<T>(this Stack<T> stack) => stack.Count > 0 ? stack.Pop() : default;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T PeekOrDefault<T>(this Stack<T> stack) => stack.Count > 0 ? stack.Peek() : default;
     }
 }

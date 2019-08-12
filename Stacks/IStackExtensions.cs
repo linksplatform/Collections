@@ -1,4 +1,6 @@
-﻿namespace Platform.Collections.Stacks
+﻿using System.Runtime.CompilerServices;
+
+namespace Platform.Collections.Stacks
 {
     public static class IStackExtensions
     {
@@ -9,5 +11,8 @@
                 _ = stack.Pop();
             }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T PeekOrDefault<T>(this IStack<T> stack) => !stack.IsEmpty ? stack.Peek() : default;
     }
 }
