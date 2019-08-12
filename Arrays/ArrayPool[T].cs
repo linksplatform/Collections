@@ -16,19 +16,16 @@ namespace Platform.Collections.Arrays
 
         // May be use Default class for that later.
         [ThreadStatic]
-        internal static ArrayPool<T> ThreadInstance;
+        internal static ArrayPool<T> _threadInstance;
 
         private readonly int _maxArraysPerSize;
         private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
         public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
 
-        public ArrayPool()
-           : this(ArrayPool.DefaultMaxArraysPerSize)
-        {
-        }
+        public ArrayPool() : this(ArrayPool.DefaultMaxArraysPerSize) { }
 
-        public Disposable<T[]> AllocateDisposable(long size) => Disposable<T[]>.Create(Allocate(size), Free);
+        public Disposable<T[]> AllocateDisposable(long size) => (Allocate(size), Free);
 
         public Disposable<T[]> Resize(Disposable<T[]> source, long size)
         {
@@ -56,14 +53,14 @@ namespace Platform.Collections.Arrays
                 return;
             }
             var stack = _pool.GetOrAdd(array.Length, size => new Stack<T[]>(_maxArraysPerSize));
-            if (stack.Count == _maxArraysPerSize)
+            if (stack.Count == _maxArraysPerSize) // Stack is full
             {
-                return; // Do not put the array to stack
+                return;
             }
             stack.Push(array);
         }
 
         // May be use Default class for that later.
-        internal static ArrayPool<T> GetOrCreateThreadInstance() => ThreadInstance ?? (ThreadInstance = new ArrayPool<T>());
+        internal static ArrayPool<T> GetOrCreateThreadInstance() => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
     }
 }
