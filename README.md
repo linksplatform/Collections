@@ -6,7 +6,7 @@
 
 LinksPlatform's Platform.Collections Class Library.
 
-Namespace: [Platform.Collections](https://linksplatform.github.io/Reflection.Sigil/api/Platform.Collections.html)
+Namespace: [Platform.Collections](https://linksplatform.github.io/Collections/api/Platform.Collections.html)
 
 Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Collections](https://github.com/Konard/LinksPlatform/tree/3f493392043220e6efef3df8650cd61f916122bd/Platform/Platform.Helpers/Collections)
 
