@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.0.3</VersionPrefix>
+    <VersionPrefix>0.0.4</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Collections</AssemblyName>
@@ -22,11 +22,19 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Refactoring, small fixes.
-Added EnsureExtensions.
-Added CharArrayExtensions.
-Added CharIListExtensions.
-CharsSegment renamed to CharSegment.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Interfaces dependency updated from 0.0.1 to 0.1.0.
+Platform.Disposables dependency updated from 0.0.2 to 0.1.0.
+Platform.Ranges dependency updated from 0.0.3 to 0.0.4.
+XML documentation file generation turned on.
+Segment fields are now properties.
+Added IsEmpty property to IStack&lt;TElement&gt; interface.
+Added PeekOrDefault, PopOrDefault, Clear extensions methods for all types of stacks.
+Added ArgumentNotEmptyAndNotWhiteSpace extension methods for Ensure.
+Added ToArray extension method for IList&lt;T&gt;.
+Public constants are now static readonly fields.
+All public constructors in abstract classes are now protected.
+Travis CI connected.
+Refactoring, issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
