@@ -1,7 +1,6 @@
 ﻿using Platform.Interfaces;
-using Platform.Collections.Stacks;
 
-namespace Platform.Helpers.Collections.Stacks
+namespace Platform.Collections.Stacks
 {
     public interface IStackFactory<TElement> : IFactory<IStack<TElement>>
     {
