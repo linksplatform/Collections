@@ -2570,6 +2570,15 @@ references:
   fullName.vb: Platform.Collections.Stacks.IStackExtensions.PopOrDefault(Of T)(Platform.Collections.Stacks.IStack(Of T))
   nameWithType: IStackExtensions.PopOrDefault<T>(IStack<T>)
   nameWithType.vb: IStackExtensions.PopOrDefault(Of T)(IStack(Of T))
+- uid: Platform.Collections.Stacks.IStackFactory`1
+  name: IStackFactory<TElement>
+  href: api/Platform.Collections.Stacks.IStackFactory-1.html
+  commentId: T:Platform.Collections.Stacks.IStackFactory`1
+  name.vb: IStackFactory(Of TElement)
+  fullName: Platform.Collections.Stacks.IStackFactory<TElement>
+  fullName.vb: Platform.Collections.Stacks.IStackFactory(Of TElement)
+  nameWithType: IStackFactory<TElement>
+  nameWithType.vb: IStackFactory(Of TElement)
 - uid: Platform.Collections.Stacks.StackExtensions
   name: StackExtensions
   href: api/Platform.Collections.Stacks.StackExtensions.html
@@ -2830,18 +2839,3 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Trees.Node.Value
   nameWithType: Node.Value
-- uid: Platform.Helpers.Collections.Stacks
-  name: Platform.Helpers.Collections.Stacks
-  href: api/Platform.Helpers.Collections.Stacks.html
-  commentId: N:Platform.Helpers.Collections.Stacks
-  fullName: Platform.Helpers.Collections.Stacks
-  nameWithType: Platform.Helpers.Collections.Stacks
-- uid: Platform.Helpers.Collections.Stacks.IStackFactory`1
-  name: IStackFactory<TElement>
-  href: api/Platform.Helpers.Collections.Stacks.IStackFactory-1.html
-  commentId: T:Platform.Helpers.Collections.Stacks.IStackFactory`1
-  name.vb: IStackFactory(Of TElement)
-  fullName: Platform.Helpers.Collections.Stacks.IStackFactory<TElement>
-  fullName.vb: Platform.Helpers.Collections.Stacks.IStackFactory(Of TElement)
-  nameWithType: IStackFactory<TElement>
-  nameWithType.vb: IStackFactory(Of TElement)
