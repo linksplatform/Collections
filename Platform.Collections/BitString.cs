@@ -18,7 +18,7 @@ namespace Platform.Collections
     /// </remarks>
     public class BitString
     {
-        private static readonly byte[][] BitsSetIn16Bits;
+        private static readonly byte[][] _bitsSetIn16Bits;
         private long[] _array;
         private long _length;
         private long _minPositiveWord;
@@ -76,7 +76,7 @@ namespace Platform.Collections
 
         static BitString()
         {
-            BitsSetIn16Bits = new byte[65536][];
+            _bitsSetIn16Bits = new byte[65536][];
             int i, c, k;
             byte bitIndex;
             for (i = 0; i < 65536; i++)
@@ -99,7 +99,7 @@ namespace Platform.Collections
                     }
                     bitIndex++;
                 }
-                BitsSetIn16Bits[i] = array;
+                _bitsSetIn16Bits[i] = array;
             }
         }
 
@@ -656,10 +656,10 @@ namespace Platform.Collections
 
         private static void GetBits(long word, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63)
         {
-            bits00to15 = BitsSetIn16Bits[word & 0xffffu];
-            bits16to31 = BitsSetIn16Bits[(word >> 16) & 0xffffu];
-            bits32to47 = BitsSetIn16Bits[(word >> 32) & 0xffffu];
-            bits48to63 = BitsSetIn16Bits[(word >> 48) & 0xffffu];
+            bits00to15 = _bitsSetIn16Bits[word & 0xffffu];
+            bits16to31 = _bitsSetIn16Bits[(word >> 16) & 0xffffu];
+            bits32to47 = _bitsSetIn16Bits[(word >> 32) & 0xffffu];
+            bits48to63 = _bitsSetIn16Bits[(word >> 48) & 0xffffu];
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
