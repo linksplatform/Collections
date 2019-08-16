@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Platform.Collections.Arrays;
 using Platform.Collections.Lists;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Platform.Collections.Segments
 {
     public class CharSegment : Segment<char>

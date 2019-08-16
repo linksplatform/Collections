@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Platform.Collections.Lists;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Platform.Collections.Segments
 {
     public class Segment<T> : IEquatable<Segment<T>>, IList<T>

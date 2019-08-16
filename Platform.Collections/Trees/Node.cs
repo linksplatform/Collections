@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 // ReSharper disable ForCanBeConvertedToForeach
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace Platform.Collections.Trees
 {

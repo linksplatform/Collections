@@ -5,6 +5,8 @@ using Platform.Disposables;
 using Platform.Ranges;
 using Platform.Collections.Stacks;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Platform.Collections.Arrays
 {
     /// <remarks>

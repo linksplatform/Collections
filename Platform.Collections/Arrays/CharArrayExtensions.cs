@@ -1,4 +1,6 @@
-﻿namespace Platform.Collections.Arrays
+﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+namespace Platform.Collections.Arrays
 {
     public static unsafe class CharArrayExtensions
     {
