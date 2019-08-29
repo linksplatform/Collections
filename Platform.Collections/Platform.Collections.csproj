@@ -39,7 +39,7 @@ Refactoring, issues fix.</PackageReleaseNotes>
 
   <ItemGroup>
     <PackageReference Include="Platform.Interfaces" Version="0.1.1" />
-    <PackageReference Include="Platform.Disposables" Version="0.1.0" />
+    <PackageReference Include="Platform.Disposables" Version="0.1.1" />
     <PackageReference Include="Platform.Ranges" Version="0.0.5" />
   </ItemGroup>
 
