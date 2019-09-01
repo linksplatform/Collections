@@ -457,6 +457,28 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.CharArrayExtensions.GenerateHashCode
   nameWithType: CharArrayExtensions.GenerateHashCode
+- uid: Platform.Collections.Arrays.GenericArrayExtensions
+  name: GenericArrayExtensions
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html
+  commentId: T:Platform.Collections.Arrays.GenericArrayExtensions
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions
+  nameWithType: GenericArrayExtensions
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.Clone*
+  name: Clone
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_Clone_
+  commentId: Overload:Platform.Collections.Arrays.GenericArrayExtensions.Clone
+  isSpec: "True"
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.Clone
+  nameWithType: GenericArrayExtensions.Clone
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.Clone``1(``0[])
+  name: Clone<T>(T[])
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_Clone__1___0___
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.Clone``1(``0[])
+  name.vb: Clone(Of T)(T())
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.Clone<T>(T[])
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.Clone(Of T)(T())
+  nameWithType: GenericArrayExtensions.Clone<T>(T[])
+  nameWithType.vb: GenericArrayExtensions.Clone(Of T)(T())
 - uid: Platform.Collections.BitString
   name: BitString
   href: api/Platform.Collections.BitString.html
