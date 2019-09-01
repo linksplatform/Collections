@@ -40,7 +40,7 @@ namespace Platform.Collections
                 {
                     return;
                 }
-                Ensure.Always.ArgumentInRange(value, new Range<long>(0, long.MaxValue), nameof(Length));
+                Ensure.Always.ArgumentInRange(value, GetValidLengthRange(), nameof(Length));
                 // Currently we never shrink the array
                 if (value > _length)
                 {
@@ -605,10 +605,10 @@ namespace Platform.Collections
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private Range<long> GetValidIndexRange() => new Range<long>(0, _length - 1);
+        private Range<long> GetValidIndexRange() => (0, _length - 1);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static Range<long> GetValidLengthRange() => new Range<long>(0, long.MaxValue);
+        private static Range<long> GetValidLengthRange() => (0, long.MaxValue);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetBitIndices(List<ulong> result, ulong wordIndex, long wordValue)

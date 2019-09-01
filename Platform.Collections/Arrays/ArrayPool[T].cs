@@ -44,7 +44,7 @@ namespace Platform.Collections.Arrays
 
         public virtual T[] Allocate(long size)
         {
-            Ensure.Always.ArgumentInRange(size, new Range<long>(0, int.MaxValue));
+            Ensure.Always.ArgumentInRange(size, (0, int.MaxValue));
             return size == 0 ? Empty : _pool.GetOrDefault((int)size)?.PopOrDefault() ?? new T[size];
         }
 

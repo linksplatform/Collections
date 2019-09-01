@@ -10,6 +10,7 @@ namespace Platform.Collections.Concurrent
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PopOrDefault<T>(this ConcurrentStack<T> stack) => stack.TryPop(out T value) ? value : default;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T PeekOrDefault<T>(this ConcurrentStack<T> stack) => stack.TryPeek(out T value) ? value : default;
     }
 }
