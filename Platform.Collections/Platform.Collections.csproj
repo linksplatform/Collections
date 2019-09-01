@@ -38,9 +38,11 @@ Refactoring, issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
     <PackageReference Include="Platform.Interfaces" Version="0.1.1" />
     <PackageReference Include="Platform.Disposables" Version="0.1.1" />
     <PackageReference Include="Platform.Ranges" Version="0.0.5" />
+    <PackageReference Include="Platform.Random" Version="0.0.4" />
   </ItemGroup>
 
 </Project>

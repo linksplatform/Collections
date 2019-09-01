@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Ranges;
@@ -16,7 +17,7 @@ namespace Platform.Collections
     /// проверять есть ли значения непосредственно далее (ниже по уровню).
     /// Или как таблица виртуальной памяти где номер блока означает его присутствие и адрес.
     /// </remarks>
-    public class BitString
+    public class BitString : IEquatable<BitString>
     {
         private static readonly byte[][] _bitsSetIn16Bits;
         private long[] _array;
@@ -134,12 +135,21 @@ namespace Platform.Collections
 
         public BitString Not()
         {
-            var words = GetWordsCountFromIndex(_length);
-            for (long i = 0; i < words; i++)
+            for (var i = 0; i < _array.Length; i++)
             {
                 _array[i] = ~_array[i];
                 RefreshBordersByWord(i);
             }
+            return this;
+        }
+
+        public BitString VectorNot()
+        {
+            var thisVector = new Vector<long>(_array);
+            var result = ~thisVector;
+            result.CopyTo(_array, 0);
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
             return this;
         }
 
@@ -156,6 +166,18 @@ namespace Platform.Collections
             return this;
         }
 
+        public BitString VectorAnd(BitString other)
+        {
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            var thisVector = new Vector<long>(_array);
+            var otherVector = new Vector<long>(other._array);
+            var result = thisVector & otherVector;
+            result.CopyTo(_array, 0);
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
         public BitString Or(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -165,6 +187,18 @@ namespace Platform.Collections
                 _array[i] |= other._array[i];
                 RefreshBordersByWord(i);
             }
+            return this;
+        }
+
+        public BitString VectorOr(BitString other)
+        {
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            var thisVector = new Vector<long>(_array);
+            var otherVector = new Vector<long>(other._array);
+            var result = thisVector | otherVector;
+            result.CopyTo(_array, 0);
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
             return this;
         }
 
@@ -502,6 +536,37 @@ namespace Platform.Collections
             return -1;
         }
 
+        public override bool Equals(object obj) => obj is BitString @string ? Equals(@string) : false;
+
+        public bool Equals(BitString other)
+        {
+            if (_length != other._length)
+            {
+                return false;
+            }
+            if (_array.Length != _array.Length)
+            {
+                return false;
+            }
+            if (_minPositiveWord != other._minPositiveWord)
+            {
+                return false;
+            }
+            if (_maxPositiveWord != other._maxPositiveWord)
+            {
+                return false;
+            }
+            GetCommonBorders(this, other, out ulong from, out ulong to);
+            for (var i = from; i <= to; i++)
+            {
+                if (_array[i] != other._array[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void EnsureBitStringHasTheSameSize(BitString other, string argumentName)
         {
@@ -691,5 +756,9 @@ namespace Platform.Collections
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long GetBitMaskFromIndex(long index) => 1L << (int)(index & 63);
+
+        public override int GetHashCode() => base.GetHashCode();
+
+        public override string ToString() => base.ToString();
     }
 }
