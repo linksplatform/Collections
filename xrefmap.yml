@@ -2739,6 +2739,19 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.StringExtensions.CapitalizeFirstLetter
   nameWithType: StringExtensions.CapitalizeFirstLetter
+- uid: Platform.Collections.StringExtensions.TrimSingle(System.String,System.Char)
+  name: TrimSingle(String, Char)
+  href: api/Platform.Collections.StringExtensions.html#Platform_Collections_StringExtensions_TrimSingle_System_String_System_Char_
+  commentId: M:Platform.Collections.StringExtensions.TrimSingle(System.String,System.Char)
+  fullName: Platform.Collections.StringExtensions.TrimSingle(System.String, System.Char)
+  nameWithType: StringExtensions.TrimSingle(String, Char)
+- uid: Platform.Collections.StringExtensions.TrimSingle*
+  name: TrimSingle
+  href: api/Platform.Collections.StringExtensions.html#Platform_Collections_StringExtensions_TrimSingle_
+  commentId: Overload:Platform.Collections.StringExtensions.TrimSingle
+  isSpec: "True"
+  fullName: Platform.Collections.StringExtensions.TrimSingle
+  nameWithType: StringExtensions.TrimSingle
 - uid: Platform.Collections.StringExtensions.Truncate(System.String,System.Int32)
   name: Truncate(String, Int32)
   href: api/Platform.Collections.StringExtensions.html#Platform_Collections_StringExtensions_Truncate_System_String_System_Int32_
@@ -2867,6 +2880,19 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest
   nameWithType: StringTests.CapitalizeFirstLetterTest
+- uid: Platform.Collections.Tests.StringTests.TrimSingleTest
+  name: TrimSingleTest()
+  href: api/Platform.Collections.Tests.StringTests.html#Platform_Collections_Tests_StringTests_TrimSingleTest
+  commentId: M:Platform.Collections.Tests.StringTests.TrimSingleTest
+  fullName: Platform.Collections.Tests.StringTests.TrimSingleTest()
+  nameWithType: StringTests.TrimSingleTest()
+- uid: Platform.Collections.Tests.StringTests.TrimSingleTest*
+  name: TrimSingleTest
+  href: api/Platform.Collections.Tests.StringTests.html#Platform_Collections_Tests_StringTests_TrimSingleTest_
+  commentId: Overload:Platform.Collections.Tests.StringTests.TrimSingleTest
+  isSpec: "True"
+  fullName: Platform.Collections.Tests.StringTests.TrimSingleTest
+  nameWithType: StringTests.TrimSingleTest
 - uid: Platform.Collections.Trees
   name: Platform.Collections.Trees
   href: api/Platform.Collections.Trees.html
