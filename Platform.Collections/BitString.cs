@@ -544,7 +544,8 @@ namespace Platform.Collections
             {
                 return false;
             }
-            if (_array.Length != other._array.Length)
+            var otherArray = other._array;
+            if (_array.Length != otherArray.Length)
             {
                 return false;
             }
@@ -559,7 +560,7 @@ namespace Platform.Collections
             GetCommonBorders(this, other, out ulong from, out ulong to);
             for (var i = from; i <= to; i++)
             {
-                if (_array[i] != other._array[i])
+                if (_array[i] != otherArray[i])
                 {
                     return false;
                 }
