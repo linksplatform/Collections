@@ -540,6 +540,25 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.BitString.CountSetBits
   nameWithType: BitString.CountSetBits
+- uid: Platform.Collections.BitString.Equals(Platform.Collections.BitString)
+  name: Equals(BitString)
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_Equals_Platform_Collections_BitString_
+  commentId: M:Platform.Collections.BitString.Equals(Platform.Collections.BitString)
+  fullName: Platform.Collections.BitString.Equals(Platform.Collections.BitString)
+  nameWithType: BitString.Equals(BitString)
+- uid: Platform.Collections.BitString.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_Equals_System_Object_
+  commentId: M:Platform.Collections.BitString.Equals(System.Object)
+  fullName: Platform.Collections.BitString.Equals(System.Object)
+  nameWithType: BitString.Equals(Object)
+- uid: Platform.Collections.BitString.Equals*
+  name: Equals
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_Equals_
+  commentId: Overload:Platform.Collections.BitString.Equals
+  isSpec: "True"
+  fullName: Platform.Collections.BitString.Equals
+  nameWithType: BitString.Equals
 - uid: Platform.Collections.BitString.Get(System.Int64)
   name: Get(Int64)
   href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_Get_System_Int64_
@@ -666,6 +685,19 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.BitString.GetFirstSetBitIndex
   nameWithType: BitString.GetFirstSetBitIndex
+- uid: Platform.Collections.BitString.GetHashCode
+  name: GetHashCode()
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_GetHashCode
+  commentId: M:Platform.Collections.BitString.GetHashCode
+  fullName: Platform.Collections.BitString.GetHashCode()
+  nameWithType: BitString.GetHashCode()
+- uid: Platform.Collections.BitString.GetHashCode*
+  name: GetHashCode
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_GetHashCode_
+  commentId: Overload:Platform.Collections.BitString.GetHashCode
+  isSpec: "True"
+  fullName: Platform.Collections.BitString.GetHashCode
+  nameWithType: BitString.GetHashCode
 - uid: Platform.Collections.BitString.GetLastCommonBitIndex(Platform.Collections.BitString)
   name: GetLastCommonBitIndex(BitString)
   href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_GetLastCommonBitIndex_Platform_Collections_BitString_
@@ -876,6 +908,19 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.BitString.SetAll
   nameWithType: BitString.SetAll
+- uid: Platform.Collections.BitString.ToString
+  name: ToString()
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_ToString
+  commentId: M:Platform.Collections.BitString.ToString
+  fullName: Platform.Collections.BitString.ToString()
+  nameWithType: BitString.ToString()
+- uid: Platform.Collections.BitString.ToString*
+  name: ToString
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_ToString_
+  commentId: Overload:Platform.Collections.BitString.ToString
+  isSpec: "True"
+  fullName: Platform.Collections.BitString.ToString
+  nameWithType: BitString.ToString
 - uid: Platform.Collections.BitString.TryShrinkBorders
   name: TryShrinkBorders()
   href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_TryShrinkBorders
@@ -889,6 +934,45 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.BitString.TryShrinkBorders
   nameWithType: BitString.TryShrinkBorders
+- uid: Platform.Collections.BitString.VectorAnd(Platform.Collections.BitString)
+  name: VectorAnd(BitString)
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_VectorAnd_Platform_Collections_BitString_
+  commentId: M:Platform.Collections.BitString.VectorAnd(Platform.Collections.BitString)
+  fullName: Platform.Collections.BitString.VectorAnd(Platform.Collections.BitString)
+  nameWithType: BitString.VectorAnd(BitString)
+- uid: Platform.Collections.BitString.VectorAnd*
+  name: VectorAnd
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_VectorAnd_
+  commentId: Overload:Platform.Collections.BitString.VectorAnd
+  isSpec: "True"
+  fullName: Platform.Collections.BitString.VectorAnd
+  nameWithType: BitString.VectorAnd
+- uid: Platform.Collections.BitString.VectorNot
+  name: VectorNot()
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_VectorNot
+  commentId: M:Platform.Collections.BitString.VectorNot
+  fullName: Platform.Collections.BitString.VectorNot()
+  nameWithType: BitString.VectorNot()
+- uid: Platform.Collections.BitString.VectorNot*
+  name: VectorNot
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_VectorNot_
+  commentId: Overload:Platform.Collections.BitString.VectorNot
+  isSpec: "True"
+  fullName: Platform.Collections.BitString.VectorNot
+  nameWithType: BitString.VectorNot
+- uid: Platform.Collections.BitString.VectorOr(Platform.Collections.BitString)
+  name: VectorOr(BitString)
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_VectorOr_Platform_Collections_BitString_
+  commentId: M:Platform.Collections.BitString.VectorOr(Platform.Collections.BitString)
+  fullName: Platform.Collections.BitString.VectorOr(Platform.Collections.BitString)
+  nameWithType: BitString.VectorOr(BitString)
+- uid: Platform.Collections.BitString.VectorOr*
+  name: VectorOr
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_VectorOr_
+  commentId: Overload:Platform.Collections.BitString.VectorOr
+  isSpec: "True"
+  fullName: Platform.Collections.BitString.VectorOr
+  nameWithType: BitString.VectorOr
 - uid: Platform.Collections.BitString.Xor(Platform.Collections.BitString)
   name: Xor(BitString)
   href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_Xor_Platform_Collections_BitString_
@@ -902,6 +986,25 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.BitString.Xor
   nameWithType: BitString.Xor
+- uid: Platform.Collections.BitStringExtensions
+  name: BitStringExtensions
+  href: api/Platform.Collections.BitStringExtensions.html
+  commentId: T:Platform.Collections.BitStringExtensions
+  fullName: Platform.Collections.BitStringExtensions
+  nameWithType: BitStringExtensions
+- uid: Platform.Collections.BitStringExtensions.SetRandomBits(Platform.Collections.BitString)
+  name: SetRandomBits(BitString)
+  href: api/Platform.Collections.BitStringExtensions.html#Platform_Collections_BitStringExtensions_SetRandomBits_Platform_Collections_BitString_
+  commentId: M:Platform.Collections.BitStringExtensions.SetRandomBits(Platform.Collections.BitString)
+  fullName: Platform.Collections.BitStringExtensions.SetRandomBits(Platform.Collections.BitString)
+  nameWithType: BitStringExtensions.SetRandomBits(BitString)
+- uid: Platform.Collections.BitStringExtensions.SetRandomBits*
+  name: SetRandomBits
+  href: api/Platform.Collections.BitStringExtensions.html#Platform_Collections_BitStringExtensions_SetRandomBits_
+  commentId: Overload:Platform.Collections.BitStringExtensions.SetRandomBits
+  isSpec: "True"
+  fullName: Platform.Collections.BitStringExtensions.SetRandomBits
+  nameWithType: BitStringExtensions.SetRandomBits
 - uid: Platform.Collections.Concurrent
   name: Platform.Collections.Concurrent
   href: api/Platform.Collections.Concurrent.html
@@ -2661,6 +2764,19 @@ references:
   commentId: T:Platform.Collections.Tests.BitStringTests
   fullName: Platform.Collections.Tests.BitStringTests
   nameWithType: BitStringTests
+- uid: Platform.Collections.Tests.BitStringTests.BitAndTest
+  name: BitAndTest()
+  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitAndTest
+  commentId: M:Platform.Collections.Tests.BitStringTests.BitAndTest
+  fullName: Platform.Collections.Tests.BitStringTests.BitAndTest()
+  nameWithType: BitStringTests.BitAndTest()
+- uid: Platform.Collections.Tests.BitStringTests.BitAndTest*
+  name: BitAndTest
+  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitAndTest_
+  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitAndTest
+  isSpec: "True"
+  fullName: Platform.Collections.Tests.BitStringTests.BitAndTest
+  nameWithType: BitStringTests.BitAndTest
 - uid: Platform.Collections.Tests.BitStringTests.BitGetSetTest
   name: BitGetSetTest()
   href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitGetSetTest
@@ -2674,6 +2790,32 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Tests.BitStringTests.BitGetSetTest
   nameWithType: BitStringTests.BitGetSetTest
+- uid: Platform.Collections.Tests.BitStringTests.BitNotTest
+  name: BitNotTest()
+  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitNotTest
+  commentId: M:Platform.Collections.Tests.BitStringTests.BitNotTest
+  fullName: Platform.Collections.Tests.BitStringTests.BitNotTest()
+  nameWithType: BitStringTests.BitNotTest()
+- uid: Platform.Collections.Tests.BitStringTests.BitNotTest*
+  name: BitNotTest
+  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitNotTest_
+  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitNotTest
+  isSpec: "True"
+  fullName: Platform.Collections.Tests.BitStringTests.BitNotTest
+  nameWithType: BitStringTests.BitNotTest
+- uid: Platform.Collections.Tests.BitStringTests.BitOrTest
+  name: BitOrTest()
+  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitOrTest
+  commentId: M:Platform.Collections.Tests.BitStringTests.BitOrTest
+  fullName: Platform.Collections.Tests.BitStringTests.BitOrTest()
+  nameWithType: BitStringTests.BitOrTest()
+- uid: Platform.Collections.Tests.BitStringTests.BitOrTest*
+  name: BitOrTest
+  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitOrTest_
+  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitOrTest
+  isSpec: "True"
+  fullName: Platform.Collections.Tests.BitStringTests.BitOrTest
+  nameWithType: BitStringTests.BitOrTest
 - uid: Platform.Collections.Tests.CharsSegmentTests
   name: CharsSegmentTests
   href: api/Platform.Collections.Tests.CharsSegmentTests.html
