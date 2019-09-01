@@ -544,7 +544,7 @@ namespace Platform.Collections
             {
                 return false;
             }
-            if (_array.Length != _array.Length)
+            if (_array.Length != other._array.Length)
             {
                 return false;
             }
