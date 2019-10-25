@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Collections", "Pla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Collections.Tests", "Platform.Collections.Tests\Platform.Collections.Tests.csproj", "{5F2EDA36-B425-431A-B058-A282AD0D96AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Collections.Benchmarks", "Platform.Collections.Benchmarks\Platform.Collections.Benchmarks.csproj", "{017DCEB9-673F-4C56-ABD7-3D2CD1AA0FEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5F2EDA36-B425-431A-B058-A282AD0D96AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F2EDA36-B425-431A-B058-A282AD0D96AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F2EDA36-B425-431A-B058-A282AD0D96AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{017DCEB9-673F-4C56-ABD7-3D2CD1AA0FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{017DCEB9-673F-4C56-ABD7-3D2CD1AA0FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{017DCEB9-673F-4C56-ABD7-3D2CD1AA0FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{017DCEB9-673F-4C56-ABD7-3D2CD1AA0FEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
