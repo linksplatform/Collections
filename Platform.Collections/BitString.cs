@@ -145,6 +145,8 @@ namespace Platform.Collections
 
         public BitString VectorNot()
         {
+            if (_array.Length != Vector<long>.Count)
+                return Not();
             var thisVector = new Vector<long>(_array);
             var result = ~thisVector;
             result.CopyTo(_array, 0);
@@ -156,7 +158,7 @@ namespace Platform.Collections
         public BitString And(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonInnerBorders(this, other, out long from, out long to);
+            GetCommonOuterBorders(this, other, out long from, out long to);
             var otherArray = other._array;
             for (var i = from; i <= to; i++)
             {
@@ -168,6 +170,8 @@ namespace Platform.Collections
 
         public BitString VectorAnd(BitString other)
         {
+            if (_array.Length != Vector<long>.Count)
+                return And(other);
             EnsureBitStringHasTheSameSize(other, nameof(other));
             var thisVector = new Vector<long>(_array);
             var otherVector = new Vector<long>(other._array);
@@ -192,6 +196,8 @@ namespace Platform.Collections
 
         public BitString VectorOr(BitString other)
         {
+            if (_array.Length != Vector<long>.Count)
+                return Or(other);
             EnsureBitStringHasTheSameSize(other, nameof(other));
             var thisVector = new Vector<long>(_array);
             var otherVector = new Vector<long>(other._array);

@@ -55,13 +55,21 @@ namespace Platform.Collections.Tests
 
         private static void TestToOperationsWithSameMeaning(Action<BitString, BitString, BitString, BitString> test)
         {
+            // const int n = 250; // does not work on .NET 4.7.1
             const int n = 250;
             var x = new BitString(n);
             var y = new BitString(n);
-            x.SetRandomBits();
-            y.SetRandomBits();
+            while (x.Equals(y))
+            {
+                x.SetRandomBits();
+                y.SetRandomBits();
+            }
             var w = new BitString(x);
             var v = new BitString(y);
+            Assert.False(x.Equals(y));
+            Assert.False(w.Equals(v));
+            Assert.True(x.Equals(w));
+            Assert.True(y.Equals(v));
             test(x, y, w, v);
             Assert.True(x.Equals(w));
         }
