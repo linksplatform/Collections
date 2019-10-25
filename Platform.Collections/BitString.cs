@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -489,9 +488,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            var x = partitioner.GetDynamicPartitions();
-            var array = x.ToArray();
-            Parallel.ForEach(array, range => VectorXorLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorXorLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
