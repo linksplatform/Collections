@@ -55,7 +55,6 @@ namespace Platform.Collections.Tests
 
         private static void TestToOperationsWithSameMeaning(Action<BitString, BitString, BitString, BitString> test)
         {
-            // const int n = 250; // does not work on .NET 4.7.1
             const int n = 250;
             var x = new BitString(n);
             var y = new BitString(n);
