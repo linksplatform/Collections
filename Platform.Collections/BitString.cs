@@ -29,13 +29,17 @@ namespace Platform.Collections
 
         public bool this[long index]
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => Get(index);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => Set(index, value);
         }
 
         public long Length
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => _length;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 if (_length == value)
@@ -77,6 +81,7 @@ namespace Platform.Collections
 
         #region Constructors
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static BitString()
         {
             _bitsSetIn16Bits = new byte[65536][];
@@ -106,6 +111,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString(BitString other)
         {
             Ensure.Always.ArgumentNotNull(other, nameof(other));
@@ -116,6 +122,7 @@ namespace Platform.Collections
             Array.Copy(other._array, _array, _array.LongLength);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString(long length)
         {
             Ensure.Always.ArgumentInRange(length, GetValidLengthRange(), nameof(length));
@@ -124,6 +131,7 @@ namespace Platform.Collections
             MarkBordersAsAllBitsReset();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString(long length, bool defaultValue)
             : this(length)
         {
@@ -135,6 +143,7 @@ namespace Platform.Collections
 
         #endregion
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString Not()
         {
             for (var i = 0; i < _array.Length; i++)
@@ -145,6 +154,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelNot()
         {
             var processorCount = Environment.ProcessorCount;
@@ -166,6 +176,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorNot()
         {
             if (!Vector.IsHardwareAccelerated)
@@ -183,6 +194,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorNot()
         {
             var processorCount = Environment.ProcessorCount;
@@ -206,6 +218,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private void VectorNotLoop(long[] array, int step, int start, int maximum)
         {
             var i = start;
@@ -222,6 +235,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString And(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -235,6 +249,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelAnd(BitString other)
         {
             var processorCount = Environment.ProcessorCount;
@@ -258,6 +273,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorAnd(BitString other)
         {
             if (!Vector.IsHardwareAccelerated)
@@ -277,6 +293,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorAnd(BitString other)
         {
             var processorCount = Environment.ProcessorCount;
@@ -302,6 +319,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private void VectorAndLoop(long[] array, long[] otherArray, int step, int start, int maximum)
         {
             var i = start;
@@ -319,6 +337,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString Or(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -331,6 +350,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelOr(BitString other)
         {
             var processorCount = Environment.ProcessorCount;
@@ -354,6 +374,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorOr(BitString other)
         {
             if (!Vector.IsHardwareAccelerated)
@@ -373,6 +394,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorOr(BitString other)
         {
             var processorCount = Environment.ProcessorCount;
@@ -398,6 +420,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private void VectorOrLoop(long[] array, long[] otherArray, int step, int start, int maximum)
         {
             var i = start;
@@ -415,6 +438,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString Xor(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -427,6 +451,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelXor(BitString other)
         {
             var processorCount = Environment.ProcessorCount;
@@ -450,6 +475,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorXor(BitString other)
         {
             if (!Vector.IsHardwareAccelerated)
@@ -469,6 +495,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorXor(BitString other)
         {
             var processorCount = Environment.ProcessorCount;
@@ -494,6 +521,7 @@ namespace Platform.Collections
             return this;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private void VectorXorLoop(long[] array, long[] otherArray, int step, int start, int maximum)
         {
             var i = start;
@@ -511,6 +539,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RefreshBordersByWord(long wordIndex)
         {
             if (_array[wordIndex] == 0)
@@ -537,6 +566,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool TryShrinkBorders()
         {
             GetBorders(out long from, out long to);
@@ -606,6 +636,7 @@ namespace Platform.Collections
             RefreshBordersByWord(wordIndex);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Add(long index)
         {
             var wordIndex = GetWordIndexFromIndex(index);
@@ -622,6 +653,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetAll(bool value)
         {
             if (value)
@@ -634,6 +666,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetAll()
         {
             const long fillValue = unchecked((long)0xffffffffffffffff);
@@ -645,6 +678,7 @@ namespace Platform.Collections
             MarkBordersAsAllBitsSet();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void ResetAll()
         {
             const long fillValue = 0;
@@ -656,6 +690,7 @@ namespace Platform.Collections
             MarkBordersAsAllBitsReset();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public List<long> GetSetIndices()
         {
             var result = new List<long>();
@@ -671,6 +706,7 @@ namespace Platform.Collections
             return result;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public List<ulong> GetSetUInt64Indices()
         {
             var result = new List<ulong>();
@@ -686,6 +722,7 @@ namespace Platform.Collections
             return result;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public long GetFirstSetBitIndex()
         {
             var i = _minPositiveWord;
@@ -697,6 +734,7 @@ namespace Platform.Collections
             return -1;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public long GetLastSetBitIndex()
         {
             var i = _maxPositiveWord;
@@ -708,6 +746,7 @@ namespace Platform.Collections
             return -1;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public long CountSetBits()
         {
             var total = 0L;
@@ -723,6 +762,7 @@ namespace Platform.Collections
             return total;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool HaveCommonBits(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -740,6 +780,7 @@ namespace Platform.Collections
             return false;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public long CountCommonBits(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -759,6 +800,7 @@ namespace Platform.Collections
             return total;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public List<long> GetCommonIndices(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -778,6 +820,7 @@ namespace Platform.Collections
             return result;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public List<ulong> GetCommonUInt64Indices(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -797,6 +840,7 @@ namespace Platform.Collections
             return result;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public long GetFirstCommonBitIndex(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -815,6 +859,7 @@ namespace Platform.Collections
             return -1;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public long GetLastCommonBitIndex(BitString other)
         {
             EnsureBitStringHasTheSameSize(other, nameof(other));
@@ -833,8 +878,10 @@ namespace Platform.Collections
             return -1;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(object obj) => obj is BitString @string ? Equals(@string) : false;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(BitString other)
         {
             if (_length != other._length)
@@ -943,6 +990,7 @@ namespace Platform.Collections
             return GetLastSetBit(wordIndex, bits00to15, bits16to31, bits32to47, bits48to63);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetBitIndices(List<long> result, long i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             for (var j = 0; j < bits00to15.Length; j++)
@@ -963,6 +1011,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetIndices(List<ulong> result, ulong i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             for (var j = 0; j < bits00to15.Length; j++)
@@ -983,6 +1032,7 @@ namespace Platform.Collections
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long GetFirstSetBit(long i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             if (bits00to15.Length > 0)
@@ -1000,6 +1050,7 @@ namespace Platform.Collections
             return bits48to63[0] + 48 + (i * 64);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long GetLastSetBit(long i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             if (bits48to63.Length > 0)
@@ -1017,6 +1068,7 @@ namespace Platform.Collections
             return bits00to15[bits00to15.Length - 1] + (i * 64);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void GetBits(long word, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63)
         {
             bits00to15 = _bitsSetIn16Bits[word & 0xffffu];
@@ -1055,8 +1107,10 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long GetBitMaskFromIndex(long index) => 1L << (int)(index & 63);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() => base.GetHashCode();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString() => base.ToString();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -9,6 +10,7 @@ namespace Platform.Collections.Lists
         /// <remarks>
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L833
         /// </remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe int GenerateHashCode(this IList<char> list)
         {
             var hashSeed = 5381;
@@ -20,8 +22,10 @@ namespace Platform.Collections.Lists
             return hashAccumulator + (hashSeed * 1566083941);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool EqualTo(this IList<char> left, IList<char> right) => left.EqualTo(right, ContentEqualTo);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContentEqualTo(this IList<char> left, IList<char> right)
         {
             for (var i = left.Count - 1; i >= 0; --i)

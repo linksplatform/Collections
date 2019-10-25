@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -7,6 +8,7 @@ namespace Platform.Collections
 {
     public static class StringExtensions
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string CapitalizeFirstLetter(this string @string)
         {
             if (string.IsNullOrWhiteSpace(@string))
@@ -30,8 +32,10 @@ namespace Platform.Collections
             return @string;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string Truncate(this string @string, int maxLength) => string.IsNullOrEmpty(@string) ? @string : @string.Substring(0, Math.Min(@string.Length, maxLength));
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string TrimSingle(this string @string, char charToTrim)
         {
             if (!string.IsNullOrEmpty(@string))

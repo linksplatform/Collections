@@ -9,8 +9,10 @@ namespace Platform.Collections.Arrays
     {
         protected readonly TReturnConstant _returnConstant;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array, long offset, TReturnConstant returnConstant) : base(array, offset) => _returnConstant = returnConstant;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array, TReturnConstant returnConstant) : this(array, 0, returnConstant) { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

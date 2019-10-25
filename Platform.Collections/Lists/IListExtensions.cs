@@ -8,16 +8,20 @@ namespace Platform.Collections.Lists
 {
     public static class IListExtensions
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AddAndReturnTrue<T>(this IList<T> list, T element)
         {
             list.Add(element);
             return true;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetCountOrZero<T>(this IList<T> list) => list?.Count ?? 0;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool EqualTo<T>(this IList<T> left, IList<T> right) => EqualTo(left, right, ContentEqualTo);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool EqualTo<T>(this IList<T> left, IList<T> right, Func<IList<T>, IList<T>, bool> contentEqualityComparer)
         {
             if (ReferenceEquals(left, right))
@@ -37,6 +41,7 @@ namespace Platform.Collections.Lists
             return contentEqualityComparer(left, right);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContentEqualTo<T>(this IList<T> left, IList<T> right)
         {
             var equalityComparer = EqualityComparer<T>.Default;
@@ -50,6 +55,7 @@ namespace Platform.Collections.Lists
             return true;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] ToArray<T>(this IList<T> list, Func<T, bool> predicate)
         {
             if (list == null)
@@ -67,6 +73,7 @@ namespace Platform.Collections.Lists
             return result.ToArray();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] ToArray<T>(this IList<T> list)
         {
             var array = new T[list.Count];
@@ -74,6 +81,7 @@ namespace Platform.Collections.Lists
             return array;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ForEach<T>(this IList<T> list, Action<T> action)
         {
             for (var i = 0; i < list.Count; i++)
@@ -85,6 +93,7 @@ namespace Platform.Collections.Lists
         /// <remarks>
         /// Based on http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
         /// </remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GenerateHashCode<T>(this IList<T> list)
         {
             var result = 17;
@@ -95,6 +104,7 @@ namespace Platform.Collections.Lists
             return result;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CompareTo<T>(this IList<T> left, IList<T> right)
         {
             var comparer = Comparer<T>.Default;
@@ -109,16 +119,16 @@ namespace Platform.Collections.Lists
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TLink[] SkipFirst<TLink>(this IList<TLink> list) => list.SkipFirst(1);
+        public static T[] SkipFirst<T>(this IList<T> list) => list.SkipFirst(1);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TLink[] SkipFirst<TLink>(this IList<TLink> list, int skip)
+        public static T[] SkipFirst<T>(this IList<T> list, int skip)
         {
             if (list.IsNullOrEmpty() || list.Count <= skip)
             {
-                return Array.Empty<TLink>();
+                return Array.Empty<T>();
             }
-            var result = new TLink[list.Count - skip];
+            var result = new T[list.Count - skip];
             for (int r = skip, w = 0; r < list.Count; r++, w++)
             {
                 result[w] = list[r];
@@ -127,12 +137,12 @@ namespace Platform.Collections.Lists
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IList<TLink> ShiftRight<TLink>(this IList<TLink> list) => list.ShiftRight(1);
+        public static IList<T> ShiftRight<T>(this IList<T> list) => list.ShiftRight(1);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IList<TLink> ShiftRight<TLink>(this IList<TLink> list, int shift)
+        public static IList<T> ShiftRight<T>(this IList<T> list, int shift)
         {
-            var result = new TLink[list.Count + shift];
+            var result = new T[list.Count + shift];
             for (int r = 0, w = shift; r < list.Count; r++, w++)
             {
                 result[w] = list[r];

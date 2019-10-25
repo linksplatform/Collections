@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Disposables;
 using Platform.Ranges;
@@ -14,7 +15,7 @@ namespace Platform.Collections.Arrays
     /// </remarks>
     public class ArrayPool<T>
     {
-        public static readonly T[] Empty = new T[0];
+        public static readonly T[] Empty = Array.Empty<T>();
 
         // May be use Default class for that later.
         [ThreadStatic]
@@ -24,12 +25,16 @@ namespace Platform.Collections.Arrays
         private readonly int _maxArraysPerSize;
         private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayPool() : this(ArrayPool.DefaultMaxArraysPerSize) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Disposable<T[]> AllocateDisposable(long size) => (Allocate(size), Free);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Disposable<T[]> Resize(Disposable<T[]> source, long size)
         {
             var destination = AllocateDisposable(size);
@@ -40,14 +45,17 @@ namespace Platform.Collections.Arrays
             return destination;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual void Clear() => _pool.Clear();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual T[] Allocate(long size)
         {
             Ensure.Always.ArgumentInRange(size, (0, int.MaxValue));
             return size == 0 ? Empty : _pool.GetOrDefault((int)size)?.PopOrDefault() ?? new T[size];
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual void Free(T[] array)
         {
             Ensure.Always.ArgumentNotNull(array, nameof(array));

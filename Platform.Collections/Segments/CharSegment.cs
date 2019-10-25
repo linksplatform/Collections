@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Platform.Collections.Arrays;
 using Platform.Collections.Lists;
 
@@ -9,8 +10,10 @@ namespace Platform.Collections.Segments
 {
     public class CharSegment : Segment<char>
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public CharSegment(IList<char> @base, int offset, int length) : base(@base, offset, length) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode()
         {
             // Base can be not an array, but still IList<char>
@@ -24,6 +27,7 @@ namespace Platform.Collections.Segments
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(Segment<char> other)
         {
             bool contentEqualityComparer(IList<char> left, IList<char> right)
@@ -41,6 +45,7 @@ namespace Platform.Collections.Segments
             return this.EqualTo(other, contentEqualityComparer);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator string(CharSegment segment)
         {
             if (!(segment.Base is char[] array))
@@ -50,6 +55,7 @@ namespace Platform.Collections.Segments
             return new string(array, segment.Offset, segment.Length);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString() => this;
     }
 }

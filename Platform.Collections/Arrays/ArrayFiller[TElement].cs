@@ -10,12 +10,14 @@ namespace Platform.Collections.Arrays
         protected readonly TElement[] _array;
         protected long _position;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array, long offset)
         {
             _array = array;
             _position = offset;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array) : this(array, 0) { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

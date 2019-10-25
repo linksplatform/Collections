@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -13,6 +14,7 @@ namespace Platform.Collections.Segments.Walkers
         private readonly bool _resetDictionaryOnEachWalk;
         protected IDictionary<TSegment, long> Dictionary;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength, bool resetDictionaryOnEachWalk)
             : base(minimumStringSegmentLength)
         {
@@ -20,16 +22,22 @@ namespace Platform.Collections.Segments.Walkers
             _resetDictionaryOnEachWalk = resetDictionaryOnEachWalk;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength) : this(dictionary, minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary) : this(dictionary, DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected DictionaryBasedDuplicateSegmentsWalkerBase(int minimumStringSegmentLength, bool resetDictionaryOnEachWalk) : this(resetDictionaryOnEachWalk ? null : new Dictionary<TSegment, long>(), minimumStringSegmentLength, resetDictionaryOnEachWalk) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected DictionaryBasedDuplicateSegmentsWalkerBase(int minimumStringSegmentLength) : this(minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected DictionaryBasedDuplicateSegmentsWalkerBase() : this(DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void WalkAll(IList<T> elements)
         {
             if (_resetDictionaryOnEachWalk)
@@ -40,8 +48,10 @@ namespace Platform.Collections.Segments.Walkers
             base.WalkAll(elements);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override long GetSegmentFrequency(TSegment segment) => Dictionary.GetOrDefault(segment);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void SetSegmentFrequency(TSegment segment, long frequency) => Dictionary[segment] = frequency;
     }
 }

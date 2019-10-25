@@ -6,6 +6,7 @@ namespace Platform.Collections.Stacks
 {
     public static class IStackExtensions
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Clear<T>(this IStack<T> stack)
         {
             while (!stack.IsEmpty)

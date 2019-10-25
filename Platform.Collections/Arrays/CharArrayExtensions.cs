@@ -1,4 +1,6 @@
-﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿using System.Runtime.CompilerServices;
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace Platform.Collections.Arrays
 {
@@ -7,6 +9,7 @@ namespace Platform.Collections.Arrays
         /// <remarks>
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L833
         /// </remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GenerateHashCode(this char[] array, int offset, int length)
         {
             var hashSeed = 5381;
@@ -24,6 +27,7 @@ namespace Platform.Collections.Arrays
         /// <remarks>
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L364
         /// </remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContentEqualTo(this char[] left, int leftOffset, int length, char[] right, int rightOffset)
         {
             fixed (char* leftPointer = &left[leftOffset])
@@ -41,6 +45,7 @@ namespace Platform.Collections.Arrays
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static bool CheckArraysMainPartForEquality(ref char* left, ref char* right, ref int length)
         {
             while (length >= 10)
@@ -60,6 +65,7 @@ namespace Platform.Collections.Arrays
             return true;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void CheckArraysRemainderForEquality(ref char* left, ref char* right, ref int length)
         {
             // This depends on the fact that the String objects are
