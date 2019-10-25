@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Platform.Exceptions;
 using Platform.Ranges;
 
@@ -143,16 +146,81 @@ namespace Platform.Collections
             return this;
         }
 
-        public BitString VectorNot()
+        public BitString ParallelNot()
         {
-            if (_array.Length != Vector<long>.Count)
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1)
+            {
                 return Not();
-            var thisVector = new Vector<long>(_array);
-            var result = ~thisVector;
-            result.CopyTo(_array, 0);
+            }
+            var partitioner = Partitioner.Create(0, _array.Length, _array.Length / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            {
+                var maximum = range.Item2;
+                for (var i = range.Item1; i < maximum; i++)
+                {
+                    _array[i] = ~_array[i];
+                }
+            });
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
+        }
+
+        public BitString VectorNot()
+        {
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return Not();
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < step)
+            {
+                return Not();
+            }
+            VectorNotLoop(_array, step, 0, _array.Length);
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        public BitString ParallelVectorNot()
+        {
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            {
+                return VectorNot();
+            }
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return Not();
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < (step * Environment.ProcessorCount))
+            {
+                return VectorNot();
+            }
+            var partitioner = Partitioner.Create(0, _array.Length, _array.Length / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorNotLoop(_array, step, range.Item1, range.Item2));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        static private void VectorNotLoop(long[] array, int step, int start, int maximum)
+        {
+            var i = start;
+            var range = maximum - start - 1;
+            var stop = range - (range % step);
+            for (; i < stop; i += step)
+            {
+                var vector = new Vector<long>(array, i);
+                (~vector).CopyTo(array, i);
+            }
+            for (; i < maximum; i++)
+            {
+                array[i] = ~array[i];
+            }
         }
 
         public BitString And(BitString other)
@@ -168,18 +236,88 @@ namespace Platform.Collections
             return this;
         }
 
-        public BitString VectorAnd(BitString other)
+        public BitString ParallelAnd(BitString other)
         {
-            if (_array.Length != Vector<long>.Count)
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1)
+            {
                 return And(other);
+            }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            var thisVector = new Vector<long>(_array);
-            var otherVector = new Vector<long>(other._array);
-            var result = thisVector & otherVector;
-            result.CopyTo(_array, 0);
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            {
+                var maximum = range.Item2;
+                for (var i = range.Item1; i < maximum; i++)
+                {
+                    _array[i] &= other._array[i];
+                }
+            });
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
+        }
+
+        public BitString VectorAnd(BitString other)
+        {
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return And(other);
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < step)
+            {
+                return And(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            VectorAndLoop(_array, other._array, step, (int)from, (int)(to + 1));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        public BitString ParallelVectorAnd(BitString other)
+        {
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            {
+                return VectorAnd(other);
+            }
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return And(other);
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < (step * Environment.ProcessorCount))
+            {
+                return VectorAnd(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorAndLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        static private void VectorAndLoop(long[] array, long[] otherArray, int step, int start, int maximum)
+        {
+            var i = start;
+            var range = maximum - start - 1;
+            var stop = range - (range % step);
+            for (; i < stop; i += step)
+            {
+                var thisVector = new Vector<long>(array, i);
+                var otherVector = new Vector<long>(otherArray, i);
+                (thisVector & otherVector).CopyTo(array, i);
+            }
+            for (; i < maximum; i++)
+            {
+                array[i] &= otherArray[i];
+            }
         }
 
         public BitString Or(BitString other)
@@ -194,18 +332,88 @@ namespace Platform.Collections
             return this;
         }
 
-        public BitString VectorOr(BitString other)
+        public BitString ParallelOr(BitString other)
         {
-            if (_array.Length != Vector<long>.Count)
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1)
+            {
                 return Or(other);
+            }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            var thisVector = new Vector<long>(_array);
-            var otherVector = new Vector<long>(other._array);
-            var result = thisVector | otherVector;
-            result.CopyTo(_array, 0);
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            {
+                var maximum = range.Item2;
+                for (var i = range.Item1; i < maximum; i++)
+                {
+                    _array[i] |= other._array[i];
+                }
+            });
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
+        }
+
+        public BitString VectorOr(BitString other)
+        {
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return Or(other);
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < step)
+            {
+                return Or(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            VectorOrLoop(_array, other._array, step, (int)from, (int)(to + 1));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        public BitString ParallelVectorOr(BitString other)
+        {
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            {
+                return VectorOr(other);
+            }
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return Or(other);
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < (step * Environment.ProcessorCount))
+            {
+                return VectorOr(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorOrLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        static private void VectorOrLoop(long[] array, long[] otherArray, int step, int start, int maximum)
+        {
+            var i = start;
+            var range = maximum - start - 1;
+            var stop = range - (range % step);
+            for (; i < stop; i += step)
+            {
+                var thisVector = new Vector<long>(array, i);
+                var otherVector = new Vector<long>(otherArray, i);
+                (thisVector | otherVector).CopyTo(array, i);
+            }
+            for (; i < maximum; i++)
+            {
+                array[i] |= otherArray[i];
+            }
         }
 
         public BitString Xor(BitString other)
@@ -218,6 +426,92 @@ namespace Platform.Collections
                 RefreshBordersByWord(i);
             }
             return this;
+        }
+
+        public BitString ParallelXor(BitString other)
+        {
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1)
+            {
+                return Xor(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            {
+                var maximum = range.Item2;
+                for (var i = range.Item1; i < maximum; i++)
+                {
+                    _array[i] ^= other._array[i];
+                }
+            });
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        public BitString VectorXor(BitString other)
+        {
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return Xor(other);
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < step)
+            {
+                return Xor(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            VectorXorLoop(_array, other._array, step, (int)from, (int)(to + 1));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        public BitString ParallelVectorXor(BitString other)
+        {
+            var processorCount = Environment.ProcessorCount;
+            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            {
+                return VectorXor(other);
+            }
+            if (!Vector.IsHardwareAccelerated)
+            {
+                return Xor(other);
+            }
+            var step = Vector<long>.Count;
+            if (_array.Length < (step * Environment.ProcessorCount))
+            {
+                return VectorXor(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out long from, out long to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
+            var x = partitioner.GetDynamicPartitions();
+            var array = x.ToArray();
+            Parallel.ForEach(array, range => VectorXorLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        static private void VectorXorLoop(long[] array, long[] otherArray, int step, int start, int maximum)
+        {
+            var i = start;
+            var range = maximum - start - 1;
+            var stop = range - (range % step);
+            for (; i < stop; i += step)
+            {
+                var thisVector = new Vector<long>(array, i);
+                var otherVector = new Vector<long>(otherArray, i);
+                (thisVector ^ otherVector).CopyTo(array, i);
+            }
+            for (; i < maximum; i++)
+            {
+                array[i] ^= otherArray[i];
+            }
         }
 
         private void RefreshBordersByWord(long wordIndex)
