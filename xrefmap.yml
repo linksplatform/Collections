@@ -13,37 +13,6 @@ references:
   commentId: N:Platform.Collections.Arrays
   fullName: Platform.Collections.Arrays
   nameWithType: Platform.Collections.Arrays
-- uid: Platform.Collections.Arrays.ArrayExtensions
-  name: ArrayExtensions
-  href: api/Platform.Collections.Arrays.ArrayExtensions.html
-  commentId: T:Platform.Collections.Arrays.ArrayExtensions
-  fullName: Platform.Collections.Arrays.ArrayExtensions
-  nameWithType: ArrayExtensions
-- uid: Platform.Collections.Arrays.ArrayExtensions.ShiftRight*
-  name: ShiftRight
-  href: api/Platform.Collections.Arrays.ArrayExtensions.html#Platform_Collections_Arrays_ArrayExtensions_ShiftRight_
-  commentId: Overload:Platform.Collections.Arrays.ArrayExtensions.ShiftRight
-  isSpec: "True"
-  fullName: Platform.Collections.Arrays.ArrayExtensions.ShiftRight
-  nameWithType: ArrayExtensions.ShiftRight
-- uid: Platform.Collections.Arrays.ArrayExtensions.ShiftRight``1(``0[])
-  name: ShiftRight<TLink>(TLink[])
-  href: api/Platform.Collections.Arrays.ArrayExtensions.html#Platform_Collections_Arrays_ArrayExtensions_ShiftRight__1___0___
-  commentId: M:Platform.Collections.Arrays.ArrayExtensions.ShiftRight``1(``0[])
-  name.vb: ShiftRight(Of TLink)(TLink())
-  fullName: Platform.Collections.Arrays.ArrayExtensions.ShiftRight<TLink>(TLink[])
-  fullName.vb: Platform.Collections.Arrays.ArrayExtensions.ShiftRight(Of TLink)(TLink())
-  nameWithType: ArrayExtensions.ShiftRight<TLink>(TLink[])
-  nameWithType.vb: ArrayExtensions.ShiftRight(Of TLink)(TLink())
-- uid: Platform.Collections.Arrays.ArrayExtensions.ShiftRight``1(``0[],System.Int32)
-  name: ShiftRight<TLink>(TLink[], Int32)
-  href: api/Platform.Collections.Arrays.ArrayExtensions.html#Platform_Collections_Arrays_ArrayExtensions_ShiftRight__1___0___System_Int32_
-  commentId: M:Platform.Collections.Arrays.ArrayExtensions.ShiftRight``1(``0[],System.Int32)
-  name.vb: ShiftRight(Of TLink)(TLink(), Int32)
-  fullName: Platform.Collections.Arrays.ArrayExtensions.ShiftRight<TLink>(TLink[], System.Int32)
-  fullName.vb: Platform.Collections.Arrays.ArrayExtensions.ShiftRight(Of TLink)(TLink(), System.Int32)
-  nameWithType: ArrayExtensions.ShiftRight<TLink>(TLink[], Int32)
-  nameWithType.vb: ArrayExtensions.ShiftRight(Of TLink)(TLink(), Int32)
 - uid: Platform.Collections.Arrays.ArrayFiller`1
   name: ArrayFiller<TElement>
   href: api/Platform.Collections.Arrays.ArrayFiller-1.html
@@ -510,6 +479,31 @@ references:
   fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.Clone(Of T)(T())
   nameWithType: GenericArrayExtensions.Clone<T>(T[])
   nameWithType.vb: GenericArrayExtensions.Clone(Of T)(T())
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight*
+  name: ShiftRight
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_ShiftRight_
+  commentId: Overload:Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight
+  isSpec: "True"
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight
+  nameWithType: GenericArrayExtensions.ShiftRight
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight``1(``0[])
+  name: ShiftRight<T>(T[])
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_ShiftRight__1___0___
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight``1(``0[])
+  name.vb: ShiftRight(Of T)(T())
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight<T>(T[])
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight(Of T)(T())
+  nameWithType: GenericArrayExtensions.ShiftRight<T>(T[])
+  nameWithType.vb: GenericArrayExtensions.ShiftRight(Of T)(T())
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight``1(``0[],System.Int32)
+  name: ShiftRight<T>(T[], Int32)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_ShiftRight__1___0___System_Int32_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight``1(``0[],System.Int32)
+  name.vb: ShiftRight(Of T)(T(), Int32)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight<T>(T[], System.Int32)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight(Of T)(T(), System.Int32)
+  nameWithType: GenericArrayExtensions.ShiftRight<T>(T[], Int32)
+  nameWithType.vb: GenericArrayExtensions.ShiftRight(Of T)(T(), Int32)
 - uid: Platform.Collections.BitString
   name: BitString
   href: api/Platform.Collections.BitString.html
@@ -1694,23 +1688,23 @@ references:
   fullName: Platform.Collections.Lists.IListExtensions.ShiftRight
   nameWithType: IListExtensions.ShiftRight
 - uid: Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0})
-  name: ShiftRight<TLink>(IList<TLink>)
+  name: ShiftRight<T>(IList<T>)
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight__1_System_Collections_Generic_IList___0__
   commentId: M:Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0})
-  name.vb: ShiftRight(Of TLink)(IList(Of TLink))
-  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<TLink>(System.Collections.Generic.IList<TLink>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of TLink)(System.Collections.Generic.IList(Of TLink))
-  nameWithType: IListExtensions.ShiftRight<TLink>(IList<TLink>)
-  nameWithType.vb: IListExtensions.ShiftRight(Of TLink)(IList(Of TLink))
+  name.vb: ShiftRight(Of T)(IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<T>(System.Collections.Generic.IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of T)(System.Collections.Generic.IList(Of T))
+  nameWithType: IListExtensions.ShiftRight<T>(IList<T>)
+  nameWithType.vb: IListExtensions.ShiftRight(Of T)(IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0},System.Int32)
-  name: ShiftRight<TLink>(IList<TLink>, Int32)
+  name: ShiftRight<T>(IList<T>, Int32)
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight__1_System_Collections_Generic_IList___0__System_Int32_
   commentId: M:Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0},System.Int32)
-  name.vb: ShiftRight(Of TLink)(IList(Of TLink), Int32)
-  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<TLink>(System.Collections.Generic.IList<TLink>, System.Int32)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of TLink)(System.Collections.Generic.IList(Of TLink), System.Int32)
-  nameWithType: IListExtensions.ShiftRight<TLink>(IList<TLink>, Int32)
-  nameWithType.vb: IListExtensions.ShiftRight(Of TLink)(IList(Of TLink), Int32)
+  name.vb: ShiftRight(Of T)(IList(Of T), Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<T>(System.Collections.Generic.IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
+  nameWithType: IListExtensions.ShiftRight<T>(IList<T>, Int32)
+  nameWithType.vb: IListExtensions.ShiftRight(Of T)(IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.SkipFirst*
   name: SkipFirst
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst_
@@ -1719,23 +1713,23 @@ references:
   fullName: Platform.Collections.Lists.IListExtensions.SkipFirst
   nameWithType: IListExtensions.SkipFirst
 - uid: Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0})
-  name: SkipFirst<TLink>(IList<TLink>)
+  name: SkipFirst<T>(IList<T>)
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst__1_System_Collections_Generic_IList___0__
   commentId: M:Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0})
-  name.vb: SkipFirst(Of TLink)(IList(Of TLink))
-  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<TLink>(System.Collections.Generic.IList<TLink>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of TLink)(System.Collections.Generic.IList(Of TLink))
-  nameWithType: IListExtensions.SkipFirst<TLink>(IList<TLink>)
-  nameWithType.vb: IListExtensions.SkipFirst(Of TLink)(IList(Of TLink))
+  name.vb: SkipFirst(Of T)(IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<T>(System.Collections.Generic.IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of T)(System.Collections.Generic.IList(Of T))
+  nameWithType: IListExtensions.SkipFirst<T>(IList<T>)
+  nameWithType.vb: IListExtensions.SkipFirst(Of T)(IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0},System.Int32)
-  name: SkipFirst<TLink>(IList<TLink>, Int32)
+  name: SkipFirst<T>(IList<T>, Int32)
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst__1_System_Collections_Generic_IList___0__System_Int32_
   commentId: M:Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0},System.Int32)
-  name.vb: SkipFirst(Of TLink)(IList(Of TLink), Int32)
-  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<TLink>(System.Collections.Generic.IList<TLink>, System.Int32)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of TLink)(System.Collections.Generic.IList(Of TLink), System.Int32)
-  nameWithType: IListExtensions.SkipFirst<TLink>(IList<TLink>, Int32)
-  nameWithType.vb: IListExtensions.SkipFirst(Of TLink)(IList(Of TLink), Int32)
+  name.vb: SkipFirst(Of T)(IList(Of T), Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<T>(System.Collections.Generic.IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
+  nameWithType: IListExtensions.SkipFirst<T>(IList<T>, Int32)
+  nameWithType.vb: IListExtensions.SkipFirst(Of T)(IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.ToArray*
   name: ToArray
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ToArray_
