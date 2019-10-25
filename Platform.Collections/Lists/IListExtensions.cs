@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -105,6 +106,38 @@ namespace Platform.Collections.Lists
                 intermediateResult = comparer.Compare(left[i], right[i]);
             }
             return intermediateResult;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static TLink[] SkipFirst<TLink>(this IList<TLink> list) => list.SkipFirst(1);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static TLink[] SkipFirst<TLink>(this IList<TLink> list, int skip)
+        {
+            if (list.IsNullOrEmpty() || list.Count <= skip)
+            {
+                return Array.Empty<TLink>();
+            }
+            var result = new TLink[list.Count - skip];
+            for (int r = skip, w = 0; r < list.Count; r++, w++)
+            {
+                result[w] = list[r];
+            }
+            return result;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static IList<TLink> ShiftRight<TLink>(this IList<TLink> list) => list.ShiftRight(1);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static IList<TLink> ShiftRight<TLink>(this IList<TLink> list, int shift)
+        {
+            var result = new TLink[list.Count + shift];
+            for (int r = 0, w = shift; r < list.Count; r++, w++)
+            {
+                result[w] = list[r];
+            }
+            return result;
         }
     }
 }

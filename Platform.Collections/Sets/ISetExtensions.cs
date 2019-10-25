@@ -2,7 +2,7 @@
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-namespace Platform.Collections
+namespace Platform.Collections.Sets
 {
     public static class ISetExtensions
     {
