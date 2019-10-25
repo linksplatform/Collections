@@ -44,7 +44,7 @@ Refactoring, issues fix.</PackageReleaseNotes>
     <PackageReference Include="Platform.Interfaces" Version="0.2.0" />
     <PackageReference Include="Platform.Disposables" Version="0.1.2" />
     <PackageReference Include="Platform.Ranges" Version="0.1.0" />
-    <PackageReference Include="Platform.Random" Version="0.0.4" />
+    <PackageReference Include="Platform.Random" Version="0.0.5" />
   </ItemGroup>
 
 </Project>
