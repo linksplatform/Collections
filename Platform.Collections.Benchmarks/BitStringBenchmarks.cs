@@ -4,11 +4,9 @@ namespace Platform.Collections.Benchmarks
 {
     [SimpleJob]
     [MemoryDiagnoser]
-    [WarmupCount(2)]
-    [IterationCount(1)]
     public class BitStringBenchmarks
     {
-        [Params(1000, 10000, 100000)]
+        [Params(1000, 10000, 100000, 1000000, 10000000, 100000000)]
         public int N;
         private BitString _left;
         private BitString _right;
