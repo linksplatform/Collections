@@ -357,13 +357,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayPool(Of T).Free
   nameWithType: ArrayPool<T>.Free
   nameWithType.vb: ArrayPool(Of T).Free
-- uid: Platform.Collections.Arrays.ArrayPool`1.Resize(Platform.Disposables.Disposable{`0[]},System.Int64)
+- uid: Platform.Collections.Arrays.ArrayPool`1.Resize(Disposable{`0[]},System.Int64)
   name: Resize(Disposable<T[]>, Int64)
-  href: api/Platform.Collections.Arrays.ArrayPool-1.html#Platform_Collections_Arrays_ArrayPool_1_Resize_Platform_Disposables_Disposable__0____System_Int64_
-  commentId: M:Platform.Collections.Arrays.ArrayPool`1.Resize(Platform.Disposables.Disposable{`0[]},System.Int64)
+  href: api/Platform.Collections.Arrays.ArrayPool-1.html#Platform_Collections_Arrays_ArrayPool_1_Resize_Disposable__0____System_Int64_
+  commentId: M:Platform.Collections.Arrays.ArrayPool`1.Resize(Disposable{`0[]},System.Int64)
   name.vb: Resize(Disposable(Of T()), Int64)
-  fullName: Platform.Collections.Arrays.ArrayPool<T>.Resize(Platform.Disposables.Disposable<T[]>, System.Int64)
-  fullName.vb: Platform.Collections.Arrays.ArrayPool(Of T).Resize(Platform.Disposables.Disposable(Of T()), System.Int64)
+  fullName: Platform.Collections.Arrays.ArrayPool<T>.Resize(Disposable<T[]>, System.Int64)
+  fullName.vb: Platform.Collections.Arrays.ArrayPool(Of T).Resize(Disposable(Of T()), System.Int64)
   nameWithType: ArrayPool<T>.Resize(Disposable<T[]>, Int64)
   nameWithType.vb: ArrayPool(Of T).Resize(Disposable(Of T()), Int64)
 - uid: Platform.Collections.Arrays.ArrayPool`1.Resize*
@@ -1106,95 +1106,95 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty
   nameWithType: EnsureExtensions.ArgumentNotEmpty
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0})
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0})
   name: ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_Platform_Exceptions_ExtensionRoots_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0})
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0})
   name.vb: ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T))
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T))
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T))
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T))
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
   name: ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_Platform_Exceptions_ExtensionRoots_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
   name: ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_Platform_Exceptions_ExtensionRoots_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String, String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>, System.String, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String, System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>, System.String, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0})
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0})
   name: ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_Platform_Exceptions_ExtensionRoots_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0})
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0})
   name.vb: ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T))
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T))
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T))
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T))
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
   name: ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_Platform_Exceptions_ExtensionRoots_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
   name: ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_Platform_Exceptions_ExtensionRoots_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String, String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>, System.String, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String, System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>, System.String, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String)
   name: ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_Platform_Exceptions_ExtensionRoots_EnsureAlwaysExtensionRoot_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_EnsureAlwaysExtensionRoot_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String,System.String)
   name: ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_Platform_Exceptions_ExtensionRoots_EnsureAlwaysExtensionRoot_System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.String,System.String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.String, System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_EnsureAlwaysExtensionRoot_System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String,System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, String, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.String,System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String,System.String,System.String)
   name: ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, String, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_Platform_Exceptions_ExtensionRoots_EnsureAlwaysExtensionRoot_System_String_System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot,System.String,System.String,System.String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureAlwaysExtensionRoot, System.String, System.String, System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_EnsureAlwaysExtensionRoot_System_String_System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String,System.String,System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, System.String, System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot, String, String, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot,System.String)
   name: ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_Platform_Exceptions_ExtensionRoots_EnsureOnDebugExtensionRoot_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_EnsureOnDebugExtensionRoot_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot,System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot,System.String,System.String)
   name: ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_Platform_Exceptions_ExtensionRoots_EnsureOnDebugExtensionRoot_System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.String,System.String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.String, System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_EnsureOnDebugExtensionRoot_System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot,System.String,System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, String, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.String,System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot,System.String,System.String,System.String)
   name: ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, String, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_Platform_Exceptions_ExtensionRoots_EnsureOnDebugExtensionRoot_System_String_System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot,System.String,System.String,System.String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(Platform.Exceptions.ExtensionRoots.EnsureOnDebugExtensionRoot, System.String, System.String, System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmptyAndNotWhiteSpace_EnsureOnDebugExtensionRoot_System_String_System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot,System.String,System.String,System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, System.String, System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureOnDebugExtensionRoot, String, String, String)
 - uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace*
   name: ArgumentNotEmptyAndNotWhiteSpace
@@ -2787,134 +2787,6 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.StringExtensions.Truncate
   nameWithType: StringExtensions.Truncate
-- uid: Platform.Collections.Tests
-  name: Platform.Collections.Tests
-  href: api/Platform.Collections.Tests.html
-  commentId: N:Platform.Collections.Tests
-  fullName: Platform.Collections.Tests
-  nameWithType: Platform.Collections.Tests
-- uid: Platform.Collections.Tests.BitStringTests
-  name: BitStringTests
-  href: api/Platform.Collections.Tests.BitStringTests.html
-  commentId: T:Platform.Collections.Tests.BitStringTests
-  fullName: Platform.Collections.Tests.BitStringTests
-  nameWithType: BitStringTests
-- uid: Platform.Collections.Tests.BitStringTests.BitAndTest
-  name: BitAndTest()
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitAndTest
-  commentId: M:Platform.Collections.Tests.BitStringTests.BitAndTest
-  fullName: Platform.Collections.Tests.BitStringTests.BitAndTest()
-  nameWithType: BitStringTests.BitAndTest()
-- uid: Platform.Collections.Tests.BitStringTests.BitAndTest*
-  name: BitAndTest
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitAndTest_
-  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitAndTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.BitStringTests.BitAndTest
-  nameWithType: BitStringTests.BitAndTest
-- uid: Platform.Collections.Tests.BitStringTests.BitGetSetTest
-  name: BitGetSetTest()
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitGetSetTest
-  commentId: M:Platform.Collections.Tests.BitStringTests.BitGetSetTest
-  fullName: Platform.Collections.Tests.BitStringTests.BitGetSetTest()
-  nameWithType: BitStringTests.BitGetSetTest()
-- uid: Platform.Collections.Tests.BitStringTests.BitGetSetTest*
-  name: BitGetSetTest
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitGetSetTest_
-  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitGetSetTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.BitStringTests.BitGetSetTest
-  nameWithType: BitStringTests.BitGetSetTest
-- uid: Platform.Collections.Tests.BitStringTests.BitNotTest
-  name: BitNotTest()
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitNotTest
-  commentId: M:Platform.Collections.Tests.BitStringTests.BitNotTest
-  fullName: Platform.Collections.Tests.BitStringTests.BitNotTest()
-  nameWithType: BitStringTests.BitNotTest()
-- uid: Platform.Collections.Tests.BitStringTests.BitNotTest*
-  name: BitNotTest
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitNotTest_
-  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitNotTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.BitStringTests.BitNotTest
-  nameWithType: BitStringTests.BitNotTest
-- uid: Platform.Collections.Tests.BitStringTests.BitOrTest
-  name: BitOrTest()
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitOrTest
-  commentId: M:Platform.Collections.Tests.BitStringTests.BitOrTest
-  fullName: Platform.Collections.Tests.BitStringTests.BitOrTest()
-  nameWithType: BitStringTests.BitOrTest()
-- uid: Platform.Collections.Tests.BitStringTests.BitOrTest*
-  name: BitOrTest
-  href: api/Platform.Collections.Tests.BitStringTests.html#Platform_Collections_Tests_BitStringTests_BitOrTest_
-  commentId: Overload:Platform.Collections.Tests.BitStringTests.BitOrTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.BitStringTests.BitOrTest
-  nameWithType: BitStringTests.BitOrTest
-- uid: Platform.Collections.Tests.CharsSegmentTests
-  name: CharsSegmentTests
-  href: api/Platform.Collections.Tests.CharsSegmentTests.html
-  commentId: T:Platform.Collections.Tests.CharsSegmentTests
-  fullName: Platform.Collections.Tests.CharsSegmentTests
-  nameWithType: CharsSegmentTests
-- uid: Platform.Collections.Tests.CharsSegmentTests.EqualsTest
-  name: EqualsTest()
-  href: api/Platform.Collections.Tests.CharsSegmentTests.html#Platform_Collections_Tests_CharsSegmentTests_EqualsTest
-  commentId: M:Platform.Collections.Tests.CharsSegmentTests.EqualsTest
-  fullName: Platform.Collections.Tests.CharsSegmentTests.EqualsTest()
-  nameWithType: CharsSegmentTests.EqualsTest()
-- uid: Platform.Collections.Tests.CharsSegmentTests.EqualsTest*
-  name: EqualsTest
-  href: api/Platform.Collections.Tests.CharsSegmentTests.html#Platform_Collections_Tests_CharsSegmentTests_EqualsTest_
-  commentId: Overload:Platform.Collections.Tests.CharsSegmentTests.EqualsTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.CharsSegmentTests.EqualsTest
-  nameWithType: CharsSegmentTests.EqualsTest
-- uid: Platform.Collections.Tests.CharsSegmentTests.GetHashCodeEqualsTest
-  name: GetHashCodeEqualsTest()
-  href: api/Platform.Collections.Tests.CharsSegmentTests.html#Platform_Collections_Tests_CharsSegmentTests_GetHashCodeEqualsTest
-  commentId: M:Platform.Collections.Tests.CharsSegmentTests.GetHashCodeEqualsTest
-  fullName: Platform.Collections.Tests.CharsSegmentTests.GetHashCodeEqualsTest()
-  nameWithType: CharsSegmentTests.GetHashCodeEqualsTest()
-- uid: Platform.Collections.Tests.CharsSegmentTests.GetHashCodeEqualsTest*
-  name: GetHashCodeEqualsTest
-  href: api/Platform.Collections.Tests.CharsSegmentTests.html#Platform_Collections_Tests_CharsSegmentTests_GetHashCodeEqualsTest_
-  commentId: Overload:Platform.Collections.Tests.CharsSegmentTests.GetHashCodeEqualsTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.CharsSegmentTests.GetHashCodeEqualsTest
-  nameWithType: CharsSegmentTests.GetHashCodeEqualsTest
-- uid: Platform.Collections.Tests.StringTests
-  name: StringTests
-  href: api/Platform.Collections.Tests.StringTests.html
-  commentId: T:Platform.Collections.Tests.StringTests
-  fullName: Platform.Collections.Tests.StringTests
-  nameWithType: StringTests
-- uid: Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest
-  name: CapitalizeFirstLetterTest()
-  href: api/Platform.Collections.Tests.StringTests.html#Platform_Collections_Tests_StringTests_CapitalizeFirstLetterTest
-  commentId: M:Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest
-  fullName: Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest()
-  nameWithType: StringTests.CapitalizeFirstLetterTest()
-- uid: Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest*
-  name: CapitalizeFirstLetterTest
-  href: api/Platform.Collections.Tests.StringTests.html#Platform_Collections_Tests_StringTests_CapitalizeFirstLetterTest_
-  commentId: Overload:Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.StringTests.CapitalizeFirstLetterTest
-  nameWithType: StringTests.CapitalizeFirstLetterTest
-- uid: Platform.Collections.Tests.StringTests.TrimSingleTest
-  name: TrimSingleTest()
-  href: api/Platform.Collections.Tests.StringTests.html#Platform_Collections_Tests_StringTests_TrimSingleTest
-  commentId: M:Platform.Collections.Tests.StringTests.TrimSingleTest
-  fullName: Platform.Collections.Tests.StringTests.TrimSingleTest()
-  nameWithType: StringTests.TrimSingleTest()
-- uid: Platform.Collections.Tests.StringTests.TrimSingleTest*
-  name: TrimSingleTest
-  href: api/Platform.Collections.Tests.StringTests.html#Platform_Collections_Tests_StringTests_TrimSingleTest_
-  commentId: Overload:Platform.Collections.Tests.StringTests.TrimSingleTest
-  isSpec: "True"
-  fullName: Platform.Collections.Tests.StringTests.TrimSingleTest
-  nameWithType: StringTests.TrimSingleTest
 - uid: Platform.Collections.Trees
   name: Platform.Collections.Trees
   href: api/Platform.Collections.Trees.html
