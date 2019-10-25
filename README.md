@@ -20,7 +20,7 @@ NuGet package: [Platform.Collections](https://www.nuget.org/packages/Platform.Co
 *   [Platform.Interfaces](https://github.com/linksplatform/Interfaces)
 *   [Platform.Disposables](https://github.com/linksplatform/Disposables)
 *   [Platform.Ranges](https://github.com/linksplatform/Ranges)
-*   [Platform.Random](https://github.com/linksplatform/Ranges)
+*   [Platform.Random](https://github.com/linksplatform/Random)
 
 ## Dependent libraries
 *   [Platform.Threading](https://github.com/linksplatform/Threading)
