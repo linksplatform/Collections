@@ -10,10 +10,8 @@ namespace Platform.Collections.Tests
         {
             const string testString = "test test";
             var testArray = testString.ToCharArray();
-            var first = new CharSegment(testArray, 0, 4);
-            var firstHashCode = first.GetHashCode();
-            var second = new CharSegment(testArray, 5, 4);
-            var secondHashCode = second.GetHashCode();
+            var firstHashCode = new CharSegment(testArray, 0, 4).GetHashCode();
+            var secondHashCode = new CharSegment(testArray, 5, 4).GetHashCode();
             Assert.Equal(firstHashCode, secondHashCode);
         }
 
