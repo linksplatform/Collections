@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Platform.Exceptions;
 using Platform.Disposables;
-using Platform.Ranges;
 using Platform.Collections.Stacks;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -20,7 +18,7 @@ namespace Platform.Collections.Arrays
         // May be use Default class for that later.
         [ThreadStatic]
         internal static ArrayPool<T> _threadInstance;
-        internal static ArrayPool<T> ThreadInstance { get => _threadInstance ?? (_threadInstance = new ArrayPool<T>()); }
+        internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
 
         private readonly int _maxArraysPerSize;
         private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
@@ -39,9 +37,12 @@ namespace Platform.Collections.Arrays
         {
             var destination = AllocateDisposable(size);
             T[] sourceArray = source;
-            T[] destinationArray = destination;
-            Array.Copy(sourceArray, destinationArray, size < sourceArray.LongLength ? size : sourceArray.LongLength);
-            source.Dispose();
+            if (!sourceArray.IsNullOrEmpty())
+            {
+                T[] destinationArray = destination;
+                Array.Copy(sourceArray, destinationArray, size < sourceArray.LongLength ? size : sourceArray.LongLength);
+                source.Dispose();
+            }
             return destination;
         }
 
@@ -49,17 +50,12 @@ namespace Platform.Collections.Arrays
         public virtual void Clear() => _pool.Clear();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public virtual T[] Allocate(long size)
-        {
-            Ensure.Always.ArgumentInRange(size, (0L, long.MaxValue));
-            return size == 0L ? Empty : _pool.GetOrDefault(size)?.PopOrDefault() ?? new T[size];
-        }
+        public virtual T[] Allocate(long size) => size <= 0L ? Empty : _pool.GetOrDefault(size)?.PopOrDefault() ?? new T[size];
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual void Free(T[] array)
         {
-            Ensure.Always.ArgumentNotNull(array, nameof(array));
-            if (array.LongLength == 0)
+            if (array.IsNullOrEmpty())
             {
                 return;
             }
