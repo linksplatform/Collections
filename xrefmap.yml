@@ -677,6 +677,15 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.BitString.GetCommonInnerBorders
   nameWithType: BitString.GetCommonInnerBorders
+- uid: Platform.Collections.BitString.GetCommonOuterBorders(Platform.Collections.BitString,Platform.Collections.BitString,System.Int32@,System.Int32@)
+  name: GetCommonOuterBorders(BitString, BitString, out Int32, out Int32)
+  href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_GetCommonOuterBorders_Platform_Collections_BitString_Platform_Collections_BitString_System_Int32__System_Int32__
+  commentId: M:Platform.Collections.BitString.GetCommonOuterBorders(Platform.Collections.BitString,Platform.Collections.BitString,System.Int32@,System.Int32@)
+  name.vb: GetCommonOuterBorders(BitString, BitString, ByRef Int32, ByRef Int32)
+  fullName: Platform.Collections.BitString.GetCommonOuterBorders(Platform.Collections.BitString, Platform.Collections.BitString, out System.Int32, out System.Int32)
+  fullName.vb: Platform.Collections.BitString.GetCommonOuterBorders(Platform.Collections.BitString, Platform.Collections.BitString, ByRef System.Int32, ByRef System.Int32)
+  nameWithType: BitString.GetCommonOuterBorders(BitString, BitString, out Int32, out Int32)
+  nameWithType.vb: BitString.GetCommonOuterBorders(BitString, BitString, ByRef Int32, ByRef Int32)
 - uid: Platform.Collections.BitString.GetCommonOuterBorders(Platform.Collections.BitString,Platform.Collections.BitString,System.Int64@,System.Int64@)
   name: GetCommonOuterBorders(BitString, BitString, out Int64, out Int64)
   href: api/Platform.Collections.BitString.html#Platform_Collections_BitString_GetCommonOuterBorders_Platform_Collections_BitString_Platform_Collections_BitString_System_Int64__System_Int64__
