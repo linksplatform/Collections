@@ -24,18 +24,16 @@ namespace Platform.Collections.Lists
         public void Add(TElement element) => _list.Add(element);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddAndReturnTrue(TElement element)
-        {
-            _list.Add(element);
-            return true;
-        }
+        public bool AddAndReturnTrue(TElement element) => _list.AddAndReturnTrue(element);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddFirstAndReturnTrue(IList<TElement> list)
-        {
-            _list.Add(list[0]);
-            return true;
-        }
+        public bool AddFirstAndReturnTrue(IList<TElement> elements) => _list.AddFirstAndReturnTrue(elements);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddAllAndReturnTrue(IList<TElement> elements) => _list.AddAllAndReturnTrue(elements);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _list.AddSkipFirstAndReturnTrue(elements);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddAndReturnConstant(TElement element)
@@ -45,19 +43,23 @@ namespace Platform.Collections.Lists
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TReturnConstant AddFirstAndReturnConstant(IList<TElement> list)
+        public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements)
         {
-            _list.Add(list[0]);
+            _list.AddFirst(elements);
             return _returnConstant;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TReturnConstant AddAllValuesAndReturnConstant(IList<TElement> list)
+        public TReturnConstant AddAllAndReturnConstant(IList<TElement> elements)
         {
-            for (int i = 1; i < list.Count; i++)
-            {
-                _list.Add(list[i]);
-            }
+            _list.AddAll(elements);
+            return _returnConstant;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> elements)
+        {
+            _list.AddSkipFirst(elements);
             return _returnConstant;
         }
     }

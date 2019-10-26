@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Platform.Collections.Arrays;
 using Platform.Collections.Lists;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -100,7 +101,7 @@ namespace Platform.Collections.Segments
         {
             for (var i = 0; i < Length; i++)
             {
-                array[arrayIndex++] = this[i];
+                array.Add(ref arrayIndex, this[i]);
             }
         }
 

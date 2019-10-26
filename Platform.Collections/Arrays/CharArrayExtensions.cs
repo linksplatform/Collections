@@ -14,11 +14,11 @@ namespace Platform.Collections.Arrays
         {
             var hashSeed = 5381;
             var hashAccumulator = hashSeed;
-            fixed (char* pointer = &array[offset])
+            fixed (char* arrayPointer = &array[offset])
             {
-                for (char* s = pointer, last = s + length; s < last; s++)
+                for (char* charPointer = arrayPointer, last = charPointer + length; charPointer < last; charPointer++)
                 {
-                    hashAccumulator = (hashAccumulator << 5) + hashAccumulator ^ *s;
+                    hashAccumulator = (hashAccumulator << 5) + hashAccumulator ^ *charPointer;
                 }
             }
             return hashAccumulator + (hashSeed * 1566083941);

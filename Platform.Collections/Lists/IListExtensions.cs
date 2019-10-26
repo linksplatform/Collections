@@ -16,6 +16,51 @@ namespace Platform.Collections.Lists
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddFirstAndReturnTrue<T>(this IList<T> list, IList<T> elements)
+        {
+            list.AddFirst(elements);
+            return true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void AddFirst<T>(this IList<T> list, IList<T> elements) => list.Add(elements[0]);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddAllAndReturnTrue<T>(this IList<T> list, IList<T> elements)
+        {
+            list.AddAll(elements);
+            return true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void AddAll<T>(this IList<T> list, IList<T> elements)
+        {
+            for (var i = 0; i < elements.Count; i++)
+            {
+                list.Add(elements[i]);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddSkipFirstAndReturnTrue<T>(this IList<T> list, IList<T> elements)
+        {
+            list.AddSkipFirst(elements);
+            return true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements) => list.AddSkipFirst(elements, 1);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements, int skip)
+        {
+            for (var i = skip; i < elements.Count; i++)
+            {
+                list.Add(elements[i]);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetCountOrZero<T>(this IList<T> list) => list?.Count ?? 0;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -96,12 +141,12 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GenerateHashCode<T>(this IList<T> list)
         {
-            var result = 17;
+            var hashAccumulator = 17;
             for (var i = 0; i < list.Count; i++)
             {
-                result = unchecked((result * 23) + list[i].GetHashCode());
+                hashAccumulator = unchecked((hashAccumulator * 23) + list[i].GetHashCode());
             }
-            return result;
+            return hashAccumulator;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -142,12 +187,23 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this IList<T> list, int shift)
         {
-            var result = new T[list.Count + shift];
-            for (int r = 0, w = shift; r < list.Count; r++, w++)
+            if (shift < 0)
             {
-                result[w] = list[r];
+                throw new NotImplementedException();
             }
-            return result;
+            if (shift == 0)
+            {
+                return list.ToArray();
+            }
+            else
+            {
+                var result = new T[list.Count + shift];
+                for (int r = 0, w = shift; r < list.Count; r++, w++)
+                {
+                    result[w] = list[r];
+                }
+                return result;
+            }
         }
     }
 }

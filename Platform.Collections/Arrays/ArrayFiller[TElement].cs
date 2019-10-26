@@ -24,17 +24,15 @@ namespace Platform.Collections.Arrays
         public void Add(TElement element) => _array[_position++] = element;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddAndReturnTrue(TElement element)
-        {
-            _array[_position++] = element;
-            return true;
-        }
+        public bool AddAndReturnTrue(TElement element) => _array.AddAndReturnConstant(ref _position, element, true);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddFirstAndReturnTrue(IList<TElement> collection)
-        {
-            _array[_position++] = collection[0];
-            return true;
-        }
+        public bool AddFirstAndReturnTrue(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, true);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddAllAndReturnTrue(IList<TElement> elements) => _array.AddAllAndReturnConstant(ref _position, elements, true);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _array.AddSkipFirstAndReturnConstant(ref _position, elements, true);
     }
 }

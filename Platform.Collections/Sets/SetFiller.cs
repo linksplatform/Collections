@@ -24,18 +24,16 @@ namespace Platform.Collections.Sets
         public void Add(TElement element) => _set.Add(element);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddAndReturnTrue(TElement element)
-        {
-            _set.Add(element);
-            return true;
-        }
+        public bool AddAndReturnTrue(TElement element) => _set.AddAndReturnTrue(element);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddFirstAndReturnTrue(IList<TElement> list)
-        {
-            _set.Add(list[0]);
-            return true;
-        }
+        public bool AddFirstAndReturnTrue(IList<TElement> elements) => _set.AddFirstAndReturnTrue(elements);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddAllAndReturnTrue(IList<TElement> elements) => _set.AddAllAndReturnTrue(elements);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _set.AddSkipFirstAndReturnTrue(elements);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddAndReturnConstant(TElement element)
@@ -45,9 +43,23 @@ namespace Platform.Collections.Sets
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TReturnConstant AddFirstAndReturnConstant(IList<TElement> list)
+        public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements)
         {
-            _set.Add(list[0]);
+            _set.AddFirst(elements);
+            return _returnConstant;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public TReturnConstant AddAllAndReturnConstant(IList<TElement> elements)
+        {
+            _set.AddAll(elements);
+            return _returnConstant;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> elements)
+        {
+            _set.AddSkipFirst(elements);
             return _returnConstant;
         }
     }

@@ -27,15 +27,7 @@ namespace Platform.Collections.Trees
         public Node this[object key]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                var child = GetChild(key);
-                if (child == null)
-                {
-                    child = AddChild(key);
-                }
-                return child;
-            }
+            get => GetChild(key) ?? AddChild(key);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => SetChildValue(value, key);
         }
