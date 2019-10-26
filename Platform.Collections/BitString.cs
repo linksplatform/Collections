@@ -146,7 +146,7 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString Not()
         {
-            for (var i = 0; i < _array.Length; i++)
+            for (var i = 0L; i < _array.LongLength; i++)
             {
                 _array[i] = ~_array[i];
                 RefreshBordersByWord(i);
@@ -157,13 +157,13 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelNot()
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return Not();
             }
-            var partitioner = Partitioner.Create(0, _array.Length, _array.Length / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            var partitioner = Partitioner.Create(0L, _array.LongLength, _array.LongLength / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -179,7 +179,7 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorNot()
         {
-            if (!Vector.IsHardwareAccelerated)
+            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
             {
                 return Not();
             }
@@ -197,22 +197,22 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorNot()
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return VectorNot();
             }
             if (!Vector.IsHardwareAccelerated)
             {
-                return Not();
+                return ParallelNot();
             }
             var step = Vector<long>.Count;
-            if (_array.Length < (step * Environment.ProcessorCount))
+            if (_array.Length < (step * threads))
             {
                 return VectorNot();
             }
-            var partitioner = Partitioner.Create(0, _array.Length, _array.Length / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorNotLoop(_array, step, range.Item1, range.Item2));
+            var partitioner = Partitioner.Create(0, _array.Length, _array.Length / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorNotLoop(_array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -226,8 +226,7 @@ namespace Platform.Collections
             var stop = range - (range % step);
             for (; i < stop; i += step)
             {
-                var vector = new Vector<long>(array, i);
-                (~vector).CopyTo(array, i);
+                (~new Vector<long>(array, i)).CopyTo(array, i);
             }
             for (; i < maximum; i++)
             {
@@ -252,15 +251,15 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelAnd(BitString other)
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return And(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
-            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -276,7 +275,7 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorAnd(BitString other)
         {
-            if (!Vector.IsHardwareAccelerated)
+            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
             {
                 return And(other);
             }
@@ -286,8 +285,8 @@ namespace Platform.Collections
                 return And(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonOuterBorders(this, other, out long from, out long to);
-            VectorAndLoop(_array, other._array, step, (int)from, (int)(to + 1));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            VectorAndLoop(_array, other._array, step, from, to + 1);
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -296,24 +295,24 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorAnd(BitString other)
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return VectorAnd(other);
             }
             if (!Vector.IsHardwareAccelerated)
             {
-                return And(other);
+                return ParallelAnd(other);
             }
             var step = Vector<long>.Count;
-            if (_array.Length < (step * Environment.ProcessorCount))
+            if (_array.Length < (step * threads))
             {
                 return VectorAnd(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonOuterBorders(this, other, out long from, out long to);
-            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorAndLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorAndLoop(_array, other._array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -327,9 +326,7 @@ namespace Platform.Collections
             var stop = range - (range % step);
             for (; i < stop; i += step)
             {
-                var thisVector = new Vector<long>(array, i);
-                var otherVector = new Vector<long>(otherArray, i);
-                (thisVector & otherVector).CopyTo(array, i);
+                (new Vector<long>(array, i) & new Vector<long>(otherArray, i)).CopyTo(array, i);
             }
             for (; i < maximum; i++)
             {
@@ -353,15 +350,15 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelOr(BitString other)
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return Or(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
-            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -377,7 +374,7 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorOr(BitString other)
         {
-            if (!Vector.IsHardwareAccelerated)
+            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
             {
                 return Or(other);
             }
@@ -387,8 +384,8 @@ namespace Platform.Collections
                 return Or(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonOuterBorders(this, other, out long from, out long to);
-            VectorOrLoop(_array, other._array, step, (int)from, (int)(to + 1));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            VectorOrLoop(_array, other._array, step, from, to + 1);
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -397,24 +394,24 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorOr(BitString other)
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return VectorOr(other);
             }
             if (!Vector.IsHardwareAccelerated)
             {
-                return Or(other);
+                return ParallelOr(other);
             }
             var step = Vector<long>.Count;
-            if (_array.Length < (step * Environment.ProcessorCount))
+            if (_array.Length < (step * threads))
             {
                 return VectorOr(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonOuterBorders(this, other, out long from, out long to);
-            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorOrLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorOrLoop(_array, other._array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -428,9 +425,7 @@ namespace Platform.Collections
             var stop = range - (range % step);
             for (; i < stop; i += step)
             {
-                var thisVector = new Vector<long>(array, i);
-                var otherVector = new Vector<long>(otherArray, i);
-                (thisVector | otherVector).CopyTo(array, i);
+                (new Vector<long>(array, i) | new Vector<long>(otherArray, i)).CopyTo(array, i);
             }
             for (; i < maximum; i++)
             {
@@ -454,15 +449,15 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelXor(BitString other)
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return Xor(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
-            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range =>
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -478,7 +473,7 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorXor(BitString other)
         {
-            if (!Vector.IsHardwareAccelerated)
+            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
             {
                 return Xor(other);
             }
@@ -488,8 +483,8 @@ namespace Platform.Collections
                 return Xor(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonOuterBorders(this, other, out long from, out long to);
-            VectorXorLoop(_array, other._array, step, (int)from, (int)(to + 1));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            VectorXorLoop(_array, other._array, step, from, to + 1);
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -498,24 +493,24 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString ParallelVectorXor(BitString other)
         {
-            var processorCount = Environment.ProcessorCount;
-            if (processorCount <= 1 && Vector.IsHardwareAccelerated)
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
             {
                 return VectorXor(other);
             }
             if (!Vector.IsHardwareAccelerated)
             {
-                return Xor(other);
+                return ParallelXor(other);
             }
             var step = Vector<long>.Count;
-            if (_array.Length < (step * Environment.ProcessorCount))
+            if (_array.Length < (step * threads))
             {
                 return VectorXor(other);
             }
             EnsureBitStringHasTheSameSize(other, nameof(other));
-            GetCommonOuterBorders(this, other, out long from, out long to);
-            var partitioner = Partitioner.Create(from, to + 1, (to - from) / processorCount);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), range => VectorXorLoop(_array, other._array, step, (int)range.Item1, (int)range.Item2));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorXorLoop(_array, other._array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -529,9 +524,7 @@ namespace Platform.Collections
             var stop = range - (range % step);
             for (; i < stop; i += step)
             {
-                var thisVector = new Vector<long>(array, i);
-                var otherVector = new Vector<long>(otherArray, i);
-                (thisVector ^ otherVector).CopyTo(array, i);
+                (new Vector<long>(array, i) ^ new Vector<long>(otherArray, i)).CopyTo(array, i);
             }
             for (; i < maximum; i++)
             {
@@ -1089,6 +1082,13 @@ namespace Platform.Collections
         {
             from = Math.Min(left._minPositiveWord, right._minPositiveWord);
             to = Math.Max(left._maxPositiveWord, right._maxPositiveWord);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void GetCommonOuterBorders(BitString left, BitString right, out int from, out int to)
+        {
+            from = (int)Math.Min(left._minPositiveWord, right._minPositiveWord);
+            to = (int)Math.Max(left._maxPositiveWord, right._maxPositiveWord);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
