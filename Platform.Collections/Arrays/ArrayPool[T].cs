@@ -23,7 +23,7 @@ namespace Platform.Collections.Arrays
         internal static ArrayPool<T> ThreadInstance { get => _threadInstance ?? (_threadInstance = new ArrayPool<T>()); }
 
         private readonly int _maxArraysPerSize;
-        private readonly Dictionary<int, Stack<T[]>> _pool = new Dictionary<int, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
+        private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
@@ -40,7 +40,7 @@ namespace Platform.Collections.Arrays
             var destination = AllocateDisposable(size);
             T[] sourceArray = source;
             T[] destinationArray = destination;
-            Array.Copy(sourceArray, destinationArray, size < sourceArray.Length ? (int)size : sourceArray.Length);
+            Array.Copy(sourceArray, destinationArray, size < sourceArray.LongLength ? size : sourceArray.LongLength);
             source.Dispose();
             return destination;
         }
@@ -51,19 +51,19 @@ namespace Platform.Collections.Arrays
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual T[] Allocate(long size)
         {
-            Ensure.Always.ArgumentInRange(size, (0, int.MaxValue));
-            return size == 0 ? Empty : _pool.GetOrDefault((int)size)?.PopOrDefault() ?? new T[size];
+            Ensure.Always.ArgumentInRange(size, (0L, long.MaxValue));
+            return size == 0L ? Empty : _pool.GetOrDefault(size)?.PopOrDefault() ?? new T[size];
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual void Free(T[] array)
         {
             Ensure.Always.ArgumentNotNull(array, nameof(array));
-            if (array.Length == 0)
+            if (array.LongLength == 0)
             {
                 return;
             }
-            var stack = _pool.GetOrAdd(array.Length, size => new Stack<T[]>(_maxArraysPerSize));
+            var stack = _pool.GetOrAdd(array.LongLength, size => new Stack<T[]>(_maxArraysPerSize));
             if (stack.Count == _maxArraysPerSize) // Stack is full
             {
                 return;
