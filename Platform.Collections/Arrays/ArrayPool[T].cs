@@ -15,7 +15,7 @@ namespace Platform.Collections.Arrays
     {
         // May be use Default class for that later.
         [ThreadStatic]
-        internal static ArrayPool<T> _threadInstance;
+        private static ArrayPool<T> _threadInstance;
         internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
 
         private readonly int _maxArraysPerSize;
