@@ -13,8 +13,6 @@ namespace Platform.Collections.Arrays
     /// </remarks>
     public class ArrayPool<T>
     {
-        public static readonly T[] Empty = Array.Empty<T>();
-
         // May be use Default class for that later.
         [ThreadStatic]
         internal static ArrayPool<T> _threadInstance;
@@ -50,7 +48,7 @@ namespace Platform.Collections.Arrays
         public virtual void Clear() => _pool.Clear();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public virtual T[] Allocate(long size) => size <= 0L ? Empty : _pool.GetOrDefault(size)?.PopOrDefault() ?? new T[size];
+        public virtual T[] Allocate(long size) => size <= 0L ? Array.Empty<T>() : _pool.GetOrDefault(size)?.PopOrDefault() ?? new T[size];
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual void Free(T[] array)

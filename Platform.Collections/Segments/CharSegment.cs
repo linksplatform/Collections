@@ -45,6 +45,8 @@ namespace Platform.Collections.Segments
             return this.EqualTo(other, contentEqualityComparer);
         }
 
+        public override bool Equals(object obj) => obj is Segment<char> charSegment ? Equals(charSegment) : false;
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator string(CharSegment segment)
         {

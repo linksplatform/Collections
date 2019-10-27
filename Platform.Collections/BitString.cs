@@ -163,7 +163,7 @@ namespace Platform.Collections
                 return Not();
             }
             var partitioner = Partitioner.Create(0L, _array.LongLength, _array.LongLength / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -212,7 +212,7 @@ namespace Platform.Collections
                 return VectorNot();
             }
             var partitioner = Partitioner.Create(0, _array.Length, _array.Length / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorNotLoop(_array, step, range.Item1, range.Item2));
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => VectorNotLoop(_array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -259,7 +259,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -312,7 +312,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out int from, out int to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorAndLoop(_array, other._array, step, range.Item1, range.Item2));
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => VectorAndLoop(_array, other._array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -358,7 +358,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -411,7 +411,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out int from, out int to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorOrLoop(_array, other._array, step, range.Item1, range.Item2));
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => VectorOrLoop(_array, other._array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;
@@ -457,7 +457,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out long from, out long to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range =>
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range =>
             {
                 var maximum = range.Item2;
                 for (var i = range.Item1; i < maximum; i++)
@@ -510,7 +510,7 @@ namespace Platform.Collections
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out int from, out int to);
             var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
-            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions() { MaxDegreeOfParallelism = threads }, range => VectorXorLoop(_array, other._array, step, range.Item1, range.Item2));
+            Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => VectorXorLoop(_array, other._array, step, range.Item1, range.Item2));
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
             return this;

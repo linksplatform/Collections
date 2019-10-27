@@ -2,7 +2,7 @@
 
 namespace Platform.Collections.Benchmarks
 {
-    class Program
+    static class Program
     {
         static void Main() => BenchmarkRunner.Run<BitStringBenchmarks>();
     }

@@ -11,7 +11,7 @@ namespace Platform.Collections.Lists
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L833
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static unsafe int GenerateHashCode(this IList<char> list)
+        public static int GenerateHashCode(this IList<char> list)
         {
             var hashSeed = 5381;
             var hashAccumulator = hashSeed;
