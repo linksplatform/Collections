@@ -403,14 +403,6 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayPool(Of T).Clear
   nameWithType: ArrayPool<T>.Clear
   nameWithType.vb: ArrayPool(Of T).Clear
-- uid: Platform.Collections.Arrays.ArrayPool`1.Empty
-  name: Empty
-  href: api/Platform.Collections.Arrays.ArrayPool-1.html#Platform_Collections_Arrays_ArrayPool_1_Empty
-  commentId: F:Platform.Collections.Arrays.ArrayPool`1.Empty
-  fullName: Platform.Collections.Arrays.ArrayPool<T>.Empty
-  fullName.vb: Platform.Collections.Arrays.ArrayPool(Of T).Empty
-  nameWithType: ArrayPool<T>.Empty
-  nameWithType.vb: ArrayPool(Of T).Empty
 - uid: Platform.Collections.Arrays.ArrayPool`1.Free(`0[])
   name: Free(T[])
   href: api/Platform.Collections.Arrays.ArrayPool-1.html#Platform_Collections_Arrays_ArrayPool_1_Free__0___
@@ -2335,6 +2327,12 @@ references:
   fullName.vb: Platform.Collections.Segments.CharSegment.Equals(Platform.Collections.Segments.Segment(Of System.Char))
   nameWithType: CharSegment.Equals(Segment<Char>)
   nameWithType.vb: CharSegment.Equals(Segment(Of Char))
+- uid: Platform.Collections.Segments.CharSegment.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Platform.Collections.Segments.CharSegment.html#Platform_Collections_Segments_CharSegment_Equals_System_Object_
+  commentId: M:Platform.Collections.Segments.CharSegment.Equals(System.Object)
+  fullName: Platform.Collections.Segments.CharSegment.Equals(System.Object)
+  nameWithType: CharSegment.Equals(Object)
 - uid: Platform.Collections.Segments.CharSegment.Equals*
   name: Equals
   href: api/Platform.Collections.Segments.CharSegment.html#Platform_Collections_Segments_CharSegment_Equals_
