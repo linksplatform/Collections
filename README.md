@@ -26,3 +26,4 @@ NuGet package: [Platform.Collections](https://www.nuget.org/packages/Platform.Co
 ## Dependent libraries
 *   [Platform.Threading](https://github.com/linksplatform/Threading)
 *   [Platform.Reflection](https://github.com/linksplatform/Reflection)
+*   [Platform.Communication.Protocol.Lino](https://github.com/linksplatform/Communication.Protocol.Lino)
