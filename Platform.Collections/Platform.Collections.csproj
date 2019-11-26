@@ -56,7 +56,7 @@ This release is not backward compatible with the previous 0.0.5 release.</Packag
 
   <ItemGroup>
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-    <PackageReference Include="Platform.Interfaces" Version="0.2.0" />
+    <PackageReference Include="Platform.Interfaces" Version="0.2.1" />
     <PackageReference Include="Platform.Disposables" Version="0.1.2" />
     <PackageReference Include="Platform.Ranges" Version="0.1.0" />
     <PackageReference Include="Platform.Random" Version="0.0.5" />
