@@ -59,7 +59,7 @@ This release is not backward compatible with the previous 0.0.5 release.</Packag
     <PackageReference Include="Platform.Interfaces" Version="0.3.0" />
     <PackageReference Include="Platform.Disposables" Version="0.2.0" />
     <PackageReference Include="Platform.Ranges" Version="0.2.0" />
-    <PackageReference Include="Platform.Random" Version="0.0.5" />
+    <PackageReference Include="Platform.Random" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
