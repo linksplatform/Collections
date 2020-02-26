@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.2.0</VersionPrefix>
+    <VersionPrefix>0.2.1</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Collections</AssemblyName>
@@ -25,11 +25,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Lowest supported version of .NET Framework is now 4.7.2.
-Platform.Interfaces dependency updated from 0.2.0 to 0.3.0.
-Platform.Disposables dependency updated from 0.1.2 to 0.2.0.
-Platform.Ranges dependency updated from 0.1.0 to 0.2.0.
-Platform.Random dependency updated from 0.0.5 to 0.1.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added GetElementOrDefault and TryGetElement extension methods for Arrays and Lists.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
