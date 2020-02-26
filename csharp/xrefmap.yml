@@ -689,6 +689,31 @@ references:
   fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.Clone(Of T)(T())
   nameWithType: GenericArrayExtensions.Clone<T>(T[])
   nameWithType.vb: GenericArrayExtensions.Clone(Of T)(T())
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault*
+  name: GetElementOrDefault
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_GetElementOrDefault_
+  commentId: Overload:Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault
+  isSpec: "True"
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault
+  nameWithType: GenericArrayExtensions.GetElementOrDefault
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault``1(``0[],System.Int32)
+  name: GetElementOrDefault<T>(T[], Int32)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_GetElementOrDefault__1___0___System_Int32_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault``1(``0[],System.Int32)
+  name.vb: GetElementOrDefault(Of T)(T(), Int32)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault<T>(T[], System.Int32)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault(Of T)(T(), System.Int32)
+  nameWithType: GenericArrayExtensions.GetElementOrDefault<T>(T[], Int32)
+  nameWithType.vb: GenericArrayExtensions.GetElementOrDefault(Of T)(T(), Int32)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault``1(``0[],System.Int64)
+  name: GetElementOrDefault<T>(T[], Int64)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_GetElementOrDefault__1___0___System_Int64_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault``1(``0[],System.Int64)
+  name.vb: GetElementOrDefault(Of T)(T(), Int64)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault<T>(T[], System.Int64)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.GetElementOrDefault(Of T)(T(), System.Int64)
+  nameWithType: GenericArrayExtensions.GetElementOrDefault<T>(T[], Int64)
+  nameWithType.vb: GenericArrayExtensions.GetElementOrDefault(Of T)(T(), Int64)
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight*
   name: ShiftRight
   href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_ShiftRight_
@@ -714,6 +739,31 @@ references:
   fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.ShiftRight(Of T)(T(), System.Int64)
   nameWithType: GenericArrayExtensions.ShiftRight<T>(T[], Int64)
   nameWithType.vb: GenericArrayExtensions.ShiftRight(Of T)(T(), Int64)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement*
+  name: TryGetElement
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_TryGetElement_
+  commentId: Overload:Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement
+  isSpec: "True"
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement
+  nameWithType: GenericArrayExtensions.TryGetElement
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement``1(``0[],System.Int32,``0@)
+  name: TryGetElement<T>(T[], Int32, out T)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_TryGetElement__1___0___System_Int32___0__
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement``1(``0[],System.Int32,``0@)
+  name.vb: TryGetElement(Of T)(T(), Int32, ByRef T)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement<T>(T[], System.Int32, out T)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement(Of T)(T(), System.Int32, ByRef T)
+  nameWithType: GenericArrayExtensions.TryGetElement<T>(T[], Int32, out T)
+  nameWithType.vb: GenericArrayExtensions.TryGetElement(Of T)(T(), Int32, ByRef T)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement``1(``0[],System.Int64,``0@)
+  name: TryGetElement<T>(T[], Int64, out T)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_TryGetElement__1___0___System_Int64___0__
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement``1(``0[],System.Int64,``0@)
+  name.vb: TryGetElement(Of T)(T(), Int64, ByRef T)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement<T>(T[], System.Int64, out T)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.TryGetElement(Of T)(T(), System.Int64, ByRef T)
+  nameWithType: GenericArrayExtensions.TryGetElement<T>(T[], Int64, out T)
+  nameWithType.vb: GenericArrayExtensions.TryGetElement(Of T)(T(), Int64, ByRef T)
 - uid: Platform.Collections.BitString
   name: BitString
   href: api/Platform.Collections.BitString.html
@@ -2004,6 +2054,22 @@ references:
   fullName.vb: Platform.Collections.Lists.IListExtensions.GetCountOrZero(Of T)(System.Collections.Generic.IList(Of T))
   nameWithType: IListExtensions.GetCountOrZero<T>(IList<T>)
   nameWithType.vb: IListExtensions.GetCountOrZero(Of T)(IList(Of T))
+- uid: Platform.Collections.Lists.IListExtensions.GetElementOrDefault*
+  name: GetElementOrDefault
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GetElementOrDefault_
+  commentId: Overload:Platform.Collections.Lists.IListExtensions.GetElementOrDefault
+  isSpec: "True"
+  fullName: Platform.Collections.Lists.IListExtensions.GetElementOrDefault
+  nameWithType: IListExtensions.GetElementOrDefault
+- uid: Platform.Collections.Lists.IListExtensions.GetElementOrDefault``1(System.Collections.Generic.IList{``0},System.Int32)
+  name: GetElementOrDefault<T>(IList<T>, Int32)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GetElementOrDefault__1_System_Collections_Generic_IList___0__System_Int32_
+  commentId: M:Platform.Collections.Lists.IListExtensions.GetElementOrDefault``1(System.Collections.Generic.IList{``0},System.Int32)
+  name.vb: GetElementOrDefault(Of T)(IList(Of T), Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.GetElementOrDefault<T>(System.Collections.Generic.IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.GetElementOrDefault(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
+  nameWithType: IListExtensions.GetElementOrDefault<T>(IList<T>, Int32)
+  nameWithType.vb: IListExtensions.GetElementOrDefault(Of T)(IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.ShiftRight*
   name: ShiftRight
   href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight_
@@ -2079,6 +2145,22 @@ references:
   fullName.vb: Platform.Collections.Lists.IListExtensions.ToArray(Of T)(System.Collections.Generic.IList(Of T), System.Func(Of T, System.Boolean))
   nameWithType: IListExtensions.ToArray<T>(IList<T>, Func<T, Boolean>)
   nameWithType.vb: IListExtensions.ToArray(Of T)(IList(Of T), Func(Of T, Boolean))
+- uid: Platform.Collections.Lists.IListExtensions.TryGetElement*
+  name: TryGetElement
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_TryGetElement_
+  commentId: Overload:Platform.Collections.Lists.IListExtensions.TryGetElement
+  isSpec: "True"
+  fullName: Platform.Collections.Lists.IListExtensions.TryGetElement
+  nameWithType: IListExtensions.TryGetElement
+- uid: Platform.Collections.Lists.IListExtensions.TryGetElement``1(System.Collections.Generic.IList{``0},System.Int32,``0@)
+  name: TryGetElement<T>(IList<T>, Int32, out T)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_TryGetElement__1_System_Collections_Generic_IList___0__System_Int32___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.TryGetElement``1(System.Collections.Generic.IList{``0},System.Int32,``0@)
+  name.vb: TryGetElement(Of T)(IList(Of T), Int32, ByRef T)
+  fullName: Platform.Collections.Lists.IListExtensions.TryGetElement<T>(System.Collections.Generic.IList<T>, System.Int32, out T)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.TryGetElement(Of T)(System.Collections.Generic.IList(Of T), System.Int32, ByRef T)
+  nameWithType: IListExtensions.TryGetElement<T>(IList<T>, Int32, out T)
+  nameWithType.vb: IListExtensions.TryGetElement(Of T)(IList(Of T), Int32, ByRef T)
 - uid: Platform.Collections.Lists.ListFiller`2
   name: ListFiller<TElement, TReturnConstant>
   href: api/Platform.Collections.Lists.ListFiller-2.html
