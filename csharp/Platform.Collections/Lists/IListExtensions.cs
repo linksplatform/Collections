@@ -9,6 +9,24 @@ namespace Platform.Collections.Lists
     public static class IListExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T GetElementOrDefault<T>(this IList<T> list, int index) => list != null && list.Count > index ? list[index] : default;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetElement<T>(this IList<T> list, int index, out T element)
+        {
+            if (list != null && list.Count > index)
+            {
+                element = list[index];
+                return true;
+            }
+            else
+            {
+                element = default;
+                return false;
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AddAndReturnTrue<T>(this IList<T> list, T element)
         {
             list.Add(element);

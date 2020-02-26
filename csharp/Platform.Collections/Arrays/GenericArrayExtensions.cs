@@ -9,6 +9,42 @@ namespace Platform.Collections.Arrays
     public static class GenericArrayExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T GetElementOrDefault<T>(this T[] array, int index) => array != null && array.Length > index ? array[index] : default;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T GetElementOrDefault<T>(this T[] array, long index) => array != null && array.LongLength > index ? array[index] : default;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetElement<T>(this T[] array, int index, out T element)
+        {
+            if (array != null && array.Length > index)
+            {
+                element = array[index];
+                return true;
+            }
+            else
+            {
+                element = default;
+                return false;
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool TryGetElement<T>(this T[] array, long index, out T element)
+        {
+            if(array != null && array.LongLength > index)
+            {
+                element = array[index];
+                return true;
+            }
+            else
+            {
+                element = default;
+                return false;
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] Clone<T>(this T[] array)
         {
             var copy = new T[array.LongLength];
