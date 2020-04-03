@@ -32,7 +32,7 @@ namespace Platform.Collections.Arrays
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, long index, out T element)
         {
-            if(array != null && array.LongLength > index)
+            if (array != null && array.LongLength > index)
             {
                 element = array[index];
                 return true;
