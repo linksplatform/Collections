@@ -7,14 +7,14 @@
 
 LinksPlatform's Platform.Collections Class Library.
 
-Namespace: [Platform.Collections](https://linksplatform.github.io/Collections/api/Platform.Collections.html)
+Namespace: [Platform.Collections](https://linksplatform.github.io/Collections/csharp/api/Platform.Collections.html)
 
 Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers/Collections](https://github.com/Konard/LinksPlatform/tree/3f493392043220e6efef3df8650cd61f916122bd/Platform/Platform.Helpers/Collections)
 
 NuGet package: [Platform.Collections](https://www.nuget.org/packages/Platform.Collections)
 
 ## [Documentation](https://linksplatform.github.io/Collections)
-[PDF file](https://linksplatform.github.io/Collections/Platform.Collections.pdf) with code for e-readers.
+[PDF file](https://linksplatform.github.io/Collections/csharp/Platform.Collections.pdf) with code for e-readers.
 
 ## Depend on
 *   [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors)
