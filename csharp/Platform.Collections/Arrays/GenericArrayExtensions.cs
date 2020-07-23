@@ -83,7 +83,7 @@ namespace Platform.Collections.Arrays
         /// <para>Копируется диапазон элементов из одного массива в другой массив.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array variable type.</para><para>Тип переменной массива.</para></typeparam>
-        /// <param name="array"><para>The array you want to copy.</para><para>Массив который необходимо скопировать.</para></param>
+        /// <param name="array"><para>The array  to copy.</para><para>Массив который необходимо скопировать.</para></param>
         /// <returns><para>Copy of the array.</para><para>Копию массива.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] Clone<T>(this T[] array)
