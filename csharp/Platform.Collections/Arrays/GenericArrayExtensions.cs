@@ -126,9 +126,25 @@ namespace Platform.Collections.Arrays
             }
         }
 
+        /// <summary>
+        /// <para>One of the array values with index on variable position++ type int is passed to the element variable.</para>
+        /// <para>Одно из значений массива с индексом переменной position++ типа int назначается в переменную element.</para>
+        /// </summary>
+        /// <param name="array"><para>An array whose specific value will be assigned to the element variable.</para><para>Массив, определенное значений которого присваивается переменной element</para></param>
+        /// <param name="position"><para>Reference to a position in an array of int type.</para><para>Ссылка на позицию в массиве типа int.</para></param>
+        /// <param name="element"><para>The variable which needs to be assigned a specific value from the array.</para><para>Переменная, которой нужно присвоить определенное значение из массива.</para></param>
+        /// <typeparam name="T"><para>Array variable type.</para>Тип переменной массива.<para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Add<T>(this T[] array, ref int position, T element) => array[position++] = element;
 
+        /// <summary>
+        /// <para>One of the array values with index on variable position++ type long is passed to the element variable.</para>
+        /// <para>Одно из значений массива с индексом переменной possition++ типа long назначается в переменную element.</para>
+        /// </summary>
+        /// <param name="array"><para>An array whose specific value will be assigned to the element variable.</para><para>Массив, определенное значений которого присваивается переменной element</para></param>
+        /// <param name="position"><para>Reference to a position in an array of long type.</para><para>Ссылка на позицию в массиве типа long.</para></param>
+        /// <param name="element"><para>The variable which needs to be assigned a specific value from the array.</para><para>Переменная, которой нужно присвоить определенное значение из массива.</para></param>
+        /// <typeparam name="T"><para>Array variable type.</para>Тип переменной массива.<para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Add<T>(this T[] array, ref long position, T element) => array[position++] = element;
 
