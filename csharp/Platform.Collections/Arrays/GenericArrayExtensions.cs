@@ -8,6 +8,15 @@ namespace Platform.Collections.Arrays
 {
     public static class GenericArrayExtensions
     {
+        /// <summary>
+        /// <param name="array"><para>Array that will participate in verification.</para><para>Массив который будет учавствовать в проверке.</para></param>
+        /// <param name="index"><para>Number type int to compare.</para><para>Число типа int для сравнения.</para></param>
+        /// <para>We check whether the array exists, if so, we check the array length using the  index variable type int, and if the array length is greater than the index, we return array[index], otherwise-default value.</para>
+        /// <para>Мы проверяем, существует ли массив, если да - мы проверяем длину массива с помощью переменной index, и если длина массива больше индекса - возвращаем array[index], иначе - default value.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>Array variable type.</para><para>Тип переменной массива.</para></typeparam>
+        /// <returns><para>Array element or default value.</para><para>Элемент массива или же значение по умолчанию.</para></returns>
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T GetElementOrDefault<T>(this T[] array, int index) => array != null && array.Length > index ? array[index] : default;
 
