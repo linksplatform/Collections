@@ -172,6 +172,14 @@ namespace Platform.Collections.Arrays
             return returnConstant;
         }
 
+         /// <summary>
+        /// <para>Adding a collection of elements starting from a specific position.</para>
+        /// <para>Добавление коллекции элементов начиная с определенной позиции.</para>
+        /// </summary>
+        /// <param name="array"><para>An array to which the collection of elements will be added.</para><para>Массив в который будет добавлена коллекция элементов.</para></param>
+        /// <param name="position"><para>The position from which to start adding elements.</para><para>Позиция с которой начнется добавление элементов.</para></param>
+        /// <param name="elements"><para>Added all collection of elements to array.</para>Добавляется вся коллекция элементов в массив. <para></param>
+        /// <typeparam name="T"><para>Array variables type.</para><para>Тип переменной массива.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddAll<T>(this T[] array, ref long position, IList<T> elements)
         {
