@@ -100,7 +100,19 @@ namespace Platform.Collections.Arrays
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this T[] array) => array.ShiftRight(1L);
-
+        
+        /// <summary>
+        /// <para>Extending the array boundaries to shift elements and then copying it, but with the condition that shift > 0. If shift = = 0, the extension will not occur, but cloning will still be applied. If shift < 0, a NotImplementedException is thrown.</para>
+        /// <para>Расширение границ массива на shift элементов и последующее его копирование, но с условием что shift > 0. Если же shift == 0 - расширение не произойдет , но клонирование все равно применится. Если shift < 0, выбросится исключение NotImplementedException.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>Array variable type.</para><para>Тип переменной массива.</para></typeparam>
+        /// <param name="array"><para>Array to expand  Elements.</para><para>Массив для расширения элементов.</para></param>
+        /// <param name="shift"><para>The number to expand the array</para><para>Число на которое необходимо рассширить массив.</para></param>
+        /// <returns>
+        /// <para>If the value of the shift variable is < 0, it returns a NotImplementedException exception. If shift = = 0, the array is cloned, but the extension will not be applied. Otherwise, if the value shift > 0, the length of the array is increased by the shift elements and the array is cloned.</para>
+        /// <para>Если значение переменной shift < 0,  возвращается исключение NotImplementedException. Если shift = = 0, то массив клонируется, но расширение не применяется. В противном случае, если значение shift > 0, длина массива увеличивается на shift элементов  и массив клонируется.</para>
+        /// </returns>
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this T[] array, long shift)
         {
