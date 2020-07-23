@@ -79,8 +79,8 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Copying a range of elements from one array to another array.</para>
-        /// <para>Копируется диапазон элементов из одного массива в другой массив.</para>
+        /// <para>Copying  of elements from one array to another array.</para>
+        /// <para>Копируется  элементы из одного массива в другой массив.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array variable type.</para><para>Тип переменной массива.</para></typeparam>
         /// <param name="array"><para>The array  to copy.</para><para>Массив который необходимо скопировать.</para></param>
