@@ -172,7 +172,7 @@ namespace Platform.Collections.Arrays
             return returnConstant;
         }
 
-         /// <summary>
+        /// <summary>
         /// <para>Adding a collection of elements starting from a specific position.</para>
         /// <para>Добавляет коллекции элементов начиная с определенной позиции.</para>
         /// </summary>
@@ -195,10 +195,27 @@ namespace Platform.Collections.Arrays
             array.AddSkipFirst(ref position, elements);
             return returnConstant;
         }
-
+        
+        /// <summary>
+        /// <para>Adds all elements except the first.</para>
+        /// <para>Добавляет все элементы, кроме первого.</para>
+        /// </summary>
+        /// <param name="array"><para>An array to which the collection of elements will be added.</para><para>Массив в который будет добавлена коллекция элементов.</para></param>
+        /// <param name="position"><para>The position from which to start adding elements.</para><para>Позиция, с которой начинается добавление элементов.</para></param>
+        /// <param name="elements"><para>List of added elements.</para><para>Список добавляемых элементов.</para></param>
+        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>  
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this T[] array, ref long position, IList<T> elements) => array.AddSkipFirst(ref position, elements, 1);
-
+        
+        /// <summary>
+        /// <para>Adds all but the first element, skipping a specified number of elements.</para>
+        /// <para>Добавляет все элементы, кроме первого, пропуская определенное количество элементов.</para>
+        /// </summary>
+        /// <param name="array"><para>An array to which the collection of elements will be added.</para><para>Массив в который будет добавлена коллекция элементов.</para></param>
+        /// <param name="position"><para>The position from which to start adding elements.</para><para>Позиция, с которой начинается добавление элементов.</para></param>
+        /// <param name="elements"><para>List of added elements.</para><para>Список добавляемых элементов.</para></param>
+        /// <param name="skip"></param>
+        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this T[] array, ref long position, IList<T> elements, int skip)
         {
