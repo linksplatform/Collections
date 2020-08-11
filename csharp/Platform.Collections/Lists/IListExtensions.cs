@@ -9,14 +9,14 @@ namespace Platform.Collections.Lists
     public static class IListExtensions
     {
         /// <summary>
-        /// <para>Checks if a list is passed and checks its length.</para>
-        /// <para>Проверяет, передан ли список и сверяет его длинy.</para>
+        /// <para>Gets the element from specified index if the list is not null and the index is within the list's boundaries, otherwise it returns default value of type T.</para>
+        /// <para>Получает элемент из указанного индекса, если список не является null и индекс находится в границах списка, в противном случае он возвращает значение по умолчанию типа T.</para>
         /// </summary>
-        /// <param name="list"><para>Checklist.</para><para>Проверяемый список.</para></param>
-        /// <param name="index"><para>Index to check.</para><para>Индекс для проверки.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</typeparam>
+        /// <param name="list"><para>The checked list.</para><para>Проверяемый список.</para></param>
+        /// <param name="index"><para>The index of element.</para><para>Индекс элемента.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</typeparam>
         /// <returns>
-        /// <para>If the condition is true - list[index], otherwise default.</para>
+        /// <para>If the list is not null and the index is within list's boundaries.</para>
         /// <para>Если значение верно - list[index], иначе же значение по умолчанию.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,10 +26,10 @@ namespace Platform.Collections.Lists
         /// <para>Checks if a list is passed, checks its length, and if successful, copies the value of list [index] into the variable element. Otherwise, the element variable has a default value.</para>
         /// <para>Проверяет, передан ли список, сверяет его длинy и в случае успеха копирует значение list[index] в переменную element. Иначе переменная element имеет значение по умолчанию.</para>
         /// </summary>
-        /// <param name="list"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <param name="index"><para>Index to check</para><para>Индекс для проверки.</para></param>
-        /// <param name="element"><para></para><para>Переменная для передачи значения индекса.</para></param>
-        /// <typeparam name="T"><para>List item types</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="list"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="index"><para>The index of element..</para><para>Индекс элемента.</para></param>
+        /// <param name="element"><para>Variable for passing the index value.</para><para>Переменная для передачи значения индекса.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>True on success, false otherwise.</para>
         /// <para>True в случае успеха, иначе false.</para>
@@ -55,7 +55,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
         /// <param name="element"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type..</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>Returns true anyway.</para>
         /// <para>В любом случае возвращает true.</para>
@@ -73,7 +73,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
         /// <param name="elements"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>Returns true anyway.</para>
         /// <para>В любом случае возвращает true.</para>
@@ -91,7 +91,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
         /// <param name="elements"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddFirst<T>(this IList<T> list, IList<T> elements) => list.Add(elements[0]);
 
@@ -101,7 +101,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>Returns true anyway.</para>
         /// <para>В любом случае возвращает true.</para>
@@ -119,7 +119,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddAll<T>(this IList<T> list, IList<T> elements)
         {
@@ -135,7 +135,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>Returns true anyway.</para>
         /// <para>В любом случае возвращает true.</para>
@@ -164,7 +164,7 @@ namespace Platform.Collections.Lists
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <param name="skip"><para>Number of indexes to skip.</para><para>Количество пропускаемых индексов.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements, int skip)
         {
@@ -178,8 +178,8 @@ namespace Platform.Collections.Lists
         /// <para>Reads the number of elements in the list.</para>
         /// <para>Считывает число элементов списка.</para>
         /// </summary>
-        /// <param name="list"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="list"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>The number of items contained in the list, or 0.</para>
         /// <para>Число элементов содержащихся в списке, или же 0.</para>
@@ -192,9 +192,9 @@ namespace Platform.Collections.Lists
         /// <para>Сравниваются два списка на идентичность.</para>
         /// <para></para>
         /// </summary>
-        /// <param name="left"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>If the passed lists are identical to each other, true is returned, Otherwise false.</para>
         /// <para>Если передаваемые списки идентичны друг другу, возвращается true, иначе же false.</para>
@@ -206,10 +206,10 @@ namespace Platform.Collections.Lists
         /// <para>Compares two lists for their identity.</para>
         /// <para>Сравниваются два списка на идентичность.</para>
         /// </summary>
-        /// <param name="left"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>Checklist.</para><para>Список для проверки.</para></param>
+        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
         /// <param name="contentEqualityComparer"></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>If the passed lists are identical to each other, true is returned, оtherwise false.</para>
         /// <para>Если передаваемые списки идентичны друг другу, возвращается true, иначе же false.</para>
@@ -238,9 +238,9 @@ namespace Platform.Collections.Lists
         /// <para>Compares each element in the list for identity.</para>
         /// <para>Сравнивает на идентичность каждый элемент списка.</para>
         /// </summary>
-        /// <param name="left"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>Checklist.</para><para>Список для проверки.</para></param>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>If every element of one list is not equal to every element of another list - return false, otherwise - true.</para>
         /// <para>Если каждый элемент одного списка не равен каждому элемента другого списка - return false, иначе - true. </para>
