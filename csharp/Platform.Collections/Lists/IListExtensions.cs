@@ -258,7 +258,18 @@ namespace Platform.Collections.Lists
             }
             return true;
         }
-
+        
+        /// <summary>
+        /// <para>If the list is not empty, creates an array with and copies all elements of the list into it.</para>
+        /// <para>Если список не пуст, создает массив и копирует в него все элементы списка.</para>
+        /// </summary>
+        /// <param name="list">Copy List.<para>Список для копирования.</para></param>
+        /// <param name="predicate"><para></para><para></para></param>
+        /// <typeparam name="T"><para></para><para></para></typeparam>
+        /// <returns>
+        /// <para></para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] ToArray<T>(this IList<T> list, Func<T, bool> predicate)
         {
@@ -277,6 +288,17 @@ namespace Platform.Collections.Lists
             return result.ToArray();
         }
 
+           
+        /// <summary>
+        /// <para>Copies all the elements of the list into an array and returns it.</para>
+        /// <para>Копирует все элементы списка в массив и возвращает его</para>
+        /// </summary>
+        /// <param name="list"><para>Copy List.</para><para>Список для копирования.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <returns>
+        /// <para>An array with all the elements of the passed list.</para>
+        /// <para>Массив со всеми элементами переданного списка.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] ToArray<T>(this IList<T> list)
         {
@@ -324,7 +346,8 @@ namespace Platform.Collections.Lists
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] SkipFirst<T>(this IList<T> list) => list.SkipFirst(1);
-
+    
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] SkipFirst<T>(this IList<T> list, int skip)
         {
