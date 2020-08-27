@@ -187,18 +187,6 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetCountOrZero<T>(this IList<T> list) => list?.Count ?? 0;
 
-        /// <summary>
-        /// <para>Compares two lists for their identity.</para>
-        /// <para>Сравниваются два списка на идентичность.</para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
-        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
-        /// <returns>
-        /// <para>If the passed lists are identical to each other, true is returned, Otherwise false.</para>
-        /// <para>Если передаваемые списки идентичны друг другу, возвращается true, иначе же false.</para>
-        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool EqualTo<T>(this IList<T> left, IList<T> right) => EqualTo(left, right, ContentEqualTo);
 
@@ -306,7 +294,14 @@ namespace Platform.Collections.Lists
             list.CopyTo(array, 0);
             return array;
         }
-
+        
+        /// <summary>
+        /// <para>Uses the passed method on each item in the list.</para>
+        /// <para>Использует переданный метод на каждый элемент списка.</para>
+        /// </summary>
+        /// <param name="list"><para>List of elements which will be used in action.</para><para>Список элементы которого будут использоваться в action.</para></param>
+        /// <param name="action"><para>A function that will be called on each element of the list.</para><para>Функция которая будет вызываться на каждый элемент списка.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ForEach<T>(this IList<T> list, Action<T> action)
         {
@@ -316,9 +311,16 @@ namespace Platform.Collections.Lists
             }
         }
 
-        /// <remarks>
-        /// Based on http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
-        /// </remarks>
+        /// <summary>
+        /// <para>Generates a hash code for each item in the list.</para>
+        /// <para>Генерирует хеш-код каждого элемента списка.</para>
+        /// </summary>
+        /// <param name="list"><para>Hash list.</para><para>Список для хеширования.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <returns>
+        /// <para>The hash code of each list item.</para>
+        /// <para>Хеш-код каждого элемента списка.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GenerateHashCode<T>(this IList<T> list)
         {
@@ -330,6 +332,7 @@ namespace Platform.Collections.Lists
             return hashAccumulator;
         }
 
+      
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CompareTo<T>(this IList<T> left, IList<T> right)
         {
@@ -347,7 +350,17 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] SkipFirst<T>(this IList<T> list) => list.SkipFirst(1);
     
-        
+        /// <summary>
+        /// <para>Skips the specified number of elements in the list and builds an array from the remaining elements.</para>
+        /// <para>Пропускает указанное количество элементов списка и составляет из оставшихся элементов массив.</para>
+        /// </summary>
+        /// <param name="list"><para>Copy List.</para><para>Список для копирования.</para></param>
+        /// <param name="skip"><para>Number of items to skip.</para><para>Количество пропускаемых элементов.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <returns>
+        /// <para>If the list is empty, or the number of skipped elements is greater than the list, it returns an empty array, otherwise - an array with the specified number of missing elements.</para>
+        /// <para>Если список пуст, или количество пропускаемых элементов больше списка - возвращает пустой массив, иначе - массив с указанным количеством пропущенных элементов.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] SkipFirst<T>(this IList<T> list, int skip)
         {
@@ -366,6 +379,17 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this IList<T> list) => list.ShiftRight(1);
 
+        /// <summary>
+        /// <para>Shifts all elements of the list to the right by the specified number of elements and returns an array.</para>
+        /// <para>Сдвигает вправо все элементы списка на указанное количество элементов и возвращает массив.</para>
+        /// </summary>
+        /// <param name="list"><para>Copy List.</para><para>Список для копирования.</para></param>
+        /// <param name="skip"><para>Number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <returns>
+        /// <para>If the variable shift is less than zero - an error is returned, but if the variable shift is 0 an empty array is returned. Otherwise, an array is returned with the shift of the elements.</para>
+        /// <para>Если переменная shift меньше нуля - возвращается ошибка, если же переменная shift равена 0 возвращается пустой массив. Иначе возвращается массив с сдвигом элементов.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this IList<T> list, int shift)
         {
