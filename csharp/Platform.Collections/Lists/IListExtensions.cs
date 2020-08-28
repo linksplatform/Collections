@@ -248,15 +248,15 @@ namespace Platform.Collections.Lists
         }
         
         /// <summary>
-        /// <para>If the list is not empty, creates an array with and copies all elements of the list into it.</para>
-        /// <para>Если список не пуст, создает массив и копирует в него все элементы списка.</para>
+        /// <para>If the transmitted list is not empty, creates an array with and copies all elements of the list into it.</para>
+        /// <para>Если передаваемый список не пуст, создает массив и копирует в него все элементы списка.</para>
         /// </summary>
         /// <param name="list">Copy List.<para>Список для копирования.</para></param>
-        /// <param name="predicate"><para></para><para></para></param>
-        /// <typeparam name="T"><para></para><para></para></typeparam>
+        /// <param name="predicate"><para>A function that determines whether an element should be copied.</para><para>Функция определяющая должен ли копироваться элемент.</para></param>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
-        /// <para></para>
-        /// <para></para>
+        /// <para>An array with copied elements from the list.</para>
+        /// <para>Массив с скопированными элементами из списка.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] ToArray<T>(this IList<T> list, Func<T, bool> predicate)
