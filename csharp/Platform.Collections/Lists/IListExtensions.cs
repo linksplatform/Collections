@@ -248,10 +248,10 @@ namespace Platform.Collections.Lists
         }
         
         /// <summary>
-        /// <para>If the transmitted list is not empty, creates an array with and copies all elements of the list into it.</para>
-        /// <para>Если передаваемый список не пуст, создает массив и копирует в него все элементы списка.</para>
+        /// <para>Creates an array by copying all elements from the list that satisfy the predicate. If no list is passed, null is returned.</para>
+        /// <para>Создаёт массив, копируя из списка все элементы которые удовлетворяют предикату. Если список не передан, возвращается null.</para>
         /// </summary>
-        /// <param name="list">Copy List.<para>Список для копирования.</para></param>
+        /// <param name="list">The list to copy from.<para>Список для копирования.</para></param>
         /// <param name="predicate"><para>A function that determines whether an element should be copied.</para><para>Функция определяющая должен ли копироваться элемент.</para></param>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
@@ -278,9 +278,9 @@ namespace Platform.Collections.Lists
 
         /// <summary>
         /// <para>Copies all the elements of the list into an array and returns it.</para>
-        /// <para>Копирует все элементы списка в массив и возвращает его</para>
+        /// <para>Копирует все элементы списка в массив и возвращает его.</para>
         /// </summary>
-        /// <param name="list"><para>Copy List.</para><para>Список для копирования.</para></param>
+        /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>An array with all the elements of the passed list.</para>
@@ -295,11 +295,11 @@ namespace Platform.Collections.Lists
         }
         
         /// <summary>
-        /// <para>Uses the passed method on each item in the list.</para>
-        /// <para>Использует переданный метод на каждый элемент списка.</para>
+        /// <para>Executes the passed action for each item in the list.</para>
+        /// <para>Выполняет переданное действие для каждого элемента в списке.</para>
         /// </summary>
-        /// <param name="list"><para>List of elements which will be used in action.</para><para>Список элементы которого будут использоваться в action.</para></param>
-        /// <param name="action"><para>A function that will be called on each element of the list.</para><para>Функция которая будет вызываться на каждый элемент списка.</para></param>
+        /// <param name="list"><para>The list of elements for which the action will be executed.</para><para>Список элементов для которых будет выполняться действие.</para></param>
+        /// <param name="action"><para>A function that will be called for each element of the list.</para><para>Функция которая будет вызываться для каждого элемента списка.</para></param>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ForEach<T>(this IList<T> list, Action<T> action)
@@ -311,14 +311,14 @@ namespace Platform.Collections.Lists
         }
 
         /// <summary>
-        /// <para>Generates a hash code for each item in the list.</para>
-        /// <para>Генерирует хеш-код каждого элемента списка.</para>
+        /// <para>Generates a hash code for the entire list based on the values of its elements.</para>
+        /// <para>Генерирует хэш-код всего списка, на основе значений его элементов.</para>
         /// </summary>
         /// <param name="list"><para>Hash list.</para><para>Список для хеширования.</para></param>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
-        /// <para>The hash code of each list item.</para>
-        /// <para>Хеш-код каждого элемента списка.</para>
+        /// <para>The hash code of the list.</para>
+        /// <para>Хэш-код списка.</para>
         /// </returns>
         /// <remarks>
         /// Based on http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
@@ -355,8 +355,8 @@ namespace Platform.Collections.Lists
         /// <para>Skips the specified number of elements in the list and builds an array from the remaining elements.</para>
         /// <para>Пропускает указанное количество элементов списка и составляет из оставшихся элементов массив.</para>
         /// </summary>
-        /// <param name="list"><para>Copy List.</para><para>Список для копирования.</para></param>
-        /// <param name="skip"><para>Number of items to skip.</para><para>Количество пропускаемых элементов.</para></param>
+        /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
+        /// <param name="skip"><para>The number of items to skip.</para><para>Количество пропускаемых элементов.</para></param>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
         /// <para>If the list is empty, or the number of skipped elements is greater than the list, it returns an empty array, otherwise - an array with the specified number of missing elements.</para>
@@ -384,12 +384,12 @@ namespace Platform.Collections.Lists
         /// <para>Shifts all elements of the list to the right by the specified number of elements and returns an array.</para>
         /// <para>Сдвигает вправо все элементы списка на указанное количество элементов и возвращает массив.</para>
         /// </summary>
-        /// <param name="list"><para>Copy List.</para><para>Список для копирования.</para></param>
-        /// <param name="skip"><para>Number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>
+        /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
+        /// <param name="skip"><para>The number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <returns>
-        /// <para>If the variable shift is less than zero - an error is returned, but if the variable shift is 0 an empty array is returned. Otherwise, an array is returned with the shift of the elements.</para>
-        /// <para>Если переменная shift меньше нуля - возвращается ошибка, если же переменная shift равена 0 возвращается пустой массив. Иначе возвращается массив с сдвигом элементов.</para>
+        /// <para>If the variable shift is less than zero - an <see cref="NotImplementedException"/> exception is thrown, but if the variable shift is 0 an exact copy of the array is returned. Otherwise, an array is returned with the shift of the elements.</para>
+        /// <para>Если переменная shift меньше нуля - выбрасывается исключение <see cref="NotImplementedException"/>, если же переменная shift равена 0 возвращается точная копия массива. Иначе возвращается массив со сдвигом элементов.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this IList<T> list, int shift)
