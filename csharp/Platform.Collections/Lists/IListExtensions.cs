@@ -276,7 +276,6 @@ namespace Platform.Collections.Lists
             return result.ToArray();
         }
 
-           
         /// <summary>
         /// <para>Copies all the elements of the list into an array and returns it.</para>
         /// <para>Копирует все элементы списка в массив и возвращает его</para>
@@ -321,6 +320,9 @@ namespace Platform.Collections.Lists
         /// <para>The hash code of each list item.</para>
         /// <para>Хеш-код каждого элемента списка.</para>
         /// </returns>
+        /// <remarks>
+        /// Based on http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
+        /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GenerateHashCode<T>(this IList<T> list)
         {
@@ -332,7 +334,6 @@ namespace Platform.Collections.Lists
             return hashAccumulator;
         }
 
-      
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CompareTo<T>(this IList<T> left, IList<T> right)
         {
