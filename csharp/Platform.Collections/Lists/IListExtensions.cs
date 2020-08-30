@@ -16,14 +16,14 @@ namespace Platform.Collections.Lists
         /// <param name="list"><para>The checked list.</para><para>Проверяемый список.</para></param>
         /// <param name="index"><para>The index of element.</para><para>Индекс элемента.</para></param>
         /// <returns>
-        /// <para>If the list is not null and the index is within list's boundaries.</para>
-        /// <para>Если значение верно - list[index], иначе же значение по умолчанию.</para>
+        /// <para>If the specified index is within list's boundaries, then - list[index], otherwise the default value.</para>
+        /// <para>Если указанный индекс находится в пределах границ списка, тогда - list[index], иначе же значение по умолчанию.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T GetElementOrDefault<T>(this IList<T> list, int index) => list != null && list.Count > index ? list[index] : default;
 
         /// <summary>
-        /// <para>Checks if a list is passed, checks its length, and if successful, copies the value of list [index] into the variable element. Otherwise, the element variable has a default value.</para>
+        /// <para>Checks if a list is passed, checks its length, and if successful, copies the value of list [index] into the element variable. Otherwise, the element variable has a default value.</para>
         /// <para>Проверяет, передан ли список, сверяет его длинy и в случае успеха копирует значение list[index] в переменную element. Иначе переменная element имеет значение по умолчанию.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
@@ -53,12 +53,12 @@ namespace Platform.Collections.Lists
         /// <para>Adds a value to the list.</para>
         /// <para>Добавляет значение в список.</para>
         /// </summary>
-        /// <typeparam name="T"><para>The list's item type..</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
-        /// <param name="element"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
+        /// <param name="element"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список.</para></param>
         /// <returns>
-        /// <para>Returns true anyway.</para>
-        /// <para>В любом случае возвращает true.</para>
+        /// <para>True value in any case.</para>
+        /// <para>Значение true в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AddAndReturnTrue<T>(this IList<T> list, T element)
@@ -68,15 +68,15 @@ namespace Platform.Collections.Lists
         }
 
         /// <summary>
-        /// <para>Adds a value to the list at the first index.</para>
-        /// <para>Добавляет значение в список по первому индексу.</para>
+        /// <para>Adds the value with first index from other list to this list.</para>
+        /// <para>Добавляет в этот список значение с первым индексом из другого списка.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
         /// <param name="elements"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
         /// <returns>
-        /// <para>Returns true anyway.</para>
-        /// <para>В любом случае возвращает true.</para>
+        /// <para>True value in any case.</para>
+        /// <para>Значение true в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AddFirstAndReturnTrue<T>(this IList<T> list, IList<T> elements)
@@ -96,15 +96,15 @@ namespace Platform.Collections.Lists
         public static void AddFirst<T>(this IList<T> list, IList<T> elements) => list.Add(elements[0]);
 
         /// <summary>
-        /// <para>Adds a list of values to the  variable list.</para>
-        /// <para>Добавляет cписок значений в переменную list.</para>
+        /// <para>Adds all elements from other list to this list and returns true.</para>
+        /// <para>Добавляет все элементы из другого списка в этот список и возвращает true.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>Returns true anyway.</para>
-        /// <para>В любом случае возвращает true.</para>
+        /// <para>True value in any case.</para>
+        /// <para>Значение true в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AddAllAndReturnTrue<T>(this IList<T> list, IList<T> elements)
@@ -114,12 +114,12 @@ namespace Platform.Collections.Lists
         }
 
         /// <summary>
-        /// <para>Adds a list of values to the  variable list.</para>
-        /// <para>Добавляет cписок значений в переменную list.</para>
+        /// <para>Adds all elements from other list to this list.</para>
+        /// <para>Добавляет все элементы из другого списка в этот список.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
-        /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>        
+        /// <param name="elements"><para>The list of values to add.</para><para>Список значений которые необходимо добавить.</para></param>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddAll<T>(this IList<T> list, IList<T> elements)
         {
@@ -130,15 +130,15 @@ namespace Platform.Collections.Lists
         }
     
         /// <summary>
-        /// <para>Adds a list of values, skipping the first index.</para>
-        /// <para>Добавляет список значений пропуская первый индекс.</para>
+        /// <para>Adds values to the list skipping the first element.</para>
+        /// <para>Добавляет значения в список пропуская первый элемент.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
-        /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
+        /// <param name="elements"><para>The list of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>Returns true anyway.</para>
-        /// <para>В любом случае возвращает true.</para>
+        /// <para>True value in any case.</para>
+        /// <para>Значение true в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AddSkipFirstAndReturnTrue<T>(this IList<T> list, IList<T> elements)
@@ -148,22 +148,22 @@ namespace Platform.Collections.Lists
         }
 
         /// <summary>
-        /// <para>Adds a list of values, skipping the first index.</para>
-        /// <para>Добавляет список значений пропуская первый индекс.</para>
+        /// <para>Adds values to the list skipping the first element.</para>
+        /// <para>Добавляет значения в список пропуская первый элемент.</para>
         /// </summary>
-        /// <typeparam name="T"><para>List item types.</para><para>Тип элементов списка.</para></typeparam>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements) => list.AddSkipFirst(elements, 1);
 
         /// <summary>
-        /// <para>Adds a list of values skipping a specific index.</para>
-        /// <para>Добавляет список значений пропуская определенный индекс</para>
+        /// <para>Adds values to the list skipping a specified number of first elements.</para>
+        /// <para>Добавляет в список значения пропуская определенное количество первых элементов.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
-        /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
+        /// <param name="elements"><para>The number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>
         /// <param name="skip"><para>Number of indexes to skip.</para><para>Количество пропускаемых индексов.</para></param>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements, int skip)
@@ -181,37 +181,37 @@ namespace Platform.Collections.Lists
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The checked list.</para><para>Список для проверки.</para></param>
         /// <returns>
-        /// <para>The number of items contained in the list, or 0.</para>
-        /// <para>Число элементов содержащихся в списке, или же 0.</para>
+        /// <para>The number of items contained in the list or 0.</para>
+        /// <para>Число элементов содержащихся в списке или же 0.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetCountOrZero<T>(this IList<T> list) => list?.Count ?? 0;
 
         /// <summary>
-        /// <para>Compares each element in the list for identity.</para>
-        /// <para>Сравнивает на идентичность каждый элемент списка.</para>
+        /// <para>Compares two lists for equality.</para>
+        /// <para>Сравнивает два списка на равенство.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
-        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="left"><para>The first compared list.</para><para>Первый список для сравнения.</para></param>
+        /// <param name="right"><para>The second compared list.</para><para>Второй список для сравнения.</para></param>
         /// <returns>
-        /// <para>If the passed lists are identical to each other, true is returned, оtherwise false.</para>
-        /// <para>Если передаваемые списки идентичны друг другу, возвращается true, иначе же false.</para>
+        /// <para>If the passed lists are equal to each other, true is returned, оtherwise false.</para>
+        /// <para>Если переданные списки равны друг другу, возвращается true, иначе же false.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool EqualTo<T>(this IList<T> left, IList<T> right) => EqualTo(left, right, ContentEqualTo);
 
         /// <summary>
-        /// <para>Compares two lists for their identity.</para>
-        /// <para>Сравниваются два списка на идентичность.</para>
+        /// <para>Compares two lists for equality.</para>
+        /// <para>Сравнивает два списка на равенство.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
-        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="left"><para>The first compared list.</para><para>Первый список для проверки.</para></param>
+        /// <param name="right"><para>The second compared list.</para><para>Второй список для сравнения.</para></param>
         /// <param name="contentEqualityComparer"></param>
         /// <returns>
-        /// <para>If the passed lists are identical to each other, true is returned, оtherwise false.</para>
-        /// <para>Если передаваемые списки идентичны друг другу, возвращается true, иначе же false.</para>
+        /// <para>If the passed lists are equal to each other, true is returned, оtherwise false.</para>
+        /// <para>Если переданные списки равны друг другу, возвращается true, иначе же false.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool EqualTo<T>(this IList<T> left, IList<T> right, Func<IList<T>, IList<T>, bool> contentEqualityComparer)
@@ -238,11 +238,11 @@ namespace Platform.Collections.Lists
         /// <para>Сравнивает на идентичность каждый элемент списка.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
-        /// <param name="left"><para>The checked list.</para><para>Список для проверки.</para></param>
-        /// <param name="right"><para>The checked list.</para><para>Список для проверки.</para></param>
+        /// <param name="left"><para>The first compared list.</para><para>Первый список для сравнения.</para></param>
+        /// <param name="right"><para>The second compared list.</para><para>Второй список для сравнения.</para></param>
         /// <returns>
-        /// <para>If every element of one list is not equal to every element of another list - return false, otherwise - true.</para>
-        /// <para>Если каждый элемент одного списка не равен каждому элемента другого списка - return false, иначе - true. </para>
+        /// <para>If at least one element of one list is not equal to the corresponding element from another list returns false, otherwise - true.</para>
+        /// <para>Если как минимум один элемент одного списка не равен соответствующему элементу из другого списка возвращает false, иначе - true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContentEqualTo<T>(this IList<T> left, IList<T> right)
