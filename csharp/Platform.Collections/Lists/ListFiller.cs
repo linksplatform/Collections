@@ -75,7 +75,6 @@ namespace Platform.Collections.Lists
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _list.AddSkipFirstAndReturnTrue(elements);
-
         
         /// <summary>
         /// <para>Adds an item to the end of the list and return constant.</para>
