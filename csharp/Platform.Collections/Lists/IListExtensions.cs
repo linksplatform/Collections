@@ -208,7 +208,7 @@ namespace Platform.Collections.Lists
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="left"><para>The first compared list.</para><para>Первый список для проверки.</para></param>
         /// <param name="right"><para>The second compared list.</para><para>Второй список для сравнения.</para></param>
-        /// <param name="contentEqualityComparer"></param>
+        /// <param name="contentEqualityComparer">Method to test for equality.</param>
         /// <returns>
         /// <para>If the passed lists are equal to each other, true is returned, оtherwise false.</para>
         /// <para>Если переданные списки равны друг другу, возвращается true, иначе же false.</para>
