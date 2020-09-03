@@ -20,7 +20,6 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(IList<T> left, IList<T> right) => left.EqualTo(right);
 
-        
         /// <summary>
         /// <para>Generates a hash code for the entire list based on the values of its elements.</para>
         /// <para>Генерирует хэш-код всего списка, на основе значений его элементов.</para>
