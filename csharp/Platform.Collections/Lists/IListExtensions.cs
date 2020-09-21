@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-#pragma warning disable CS1591 
-
 namespace Platform.Collections.Lists
 {
     public static class IListExtensions
