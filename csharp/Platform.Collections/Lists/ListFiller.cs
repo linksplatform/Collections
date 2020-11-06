@@ -8,6 +8,12 @@ namespace Platform.Collections.Lists
         protected readonly List<TElement> _list;
         protected readonly TReturnConstant _returnConstant;
 
+        /// <summary>
+        /// <para>Pass the value of variables to their counterparts, for further safe operation, using access modifier protected and a readonly type.</para>
+        /// <para>Передает значение переменных их аналогам для дальнейшей безопасной работы, используя модификатор доступа protected и readonly тип.</para>
+        /// </summary>
+        /// <param name="list"><para>List for further work.</para><para>Список для дальнейшей работы.</para></param>
+        /// <param name="returnConstant"><para>Returned constant for further work.</para><para>Возвращаемая константа для дальнейшей работы.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ListFiller(List<TElement> list, TReturnConstant returnConstant)
         {
