@@ -161,7 +161,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
-        /// <param name="elements"><para>The number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>
+        /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <param name="skip"><para>Number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements, int skip)
