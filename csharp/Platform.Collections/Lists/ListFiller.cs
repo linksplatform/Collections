@@ -8,6 +8,12 @@ namespace Platform.Collections.Lists
         protected readonly List<TElement> _list;
         protected readonly TReturnConstant _returnConstant;
 
+        /// <summary>
+        /// <para>Initializes a new instance of the ListFiller class.</para>
+        /// <para>Инициализирует новый экземпляр класса ListFiller.</para>
+        /// </summary>
+        /// <param name="list"><para>The list to be filled.</para><para>Список который будет заполняться.</para></param>
+        /// <param name="returnConstant"><para>The value for the constant returned by corresponding methods.</para><para>Значение для константы возвращаемой соответствующими методами.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ListFiller(List<TElement> list, TReturnConstant returnConstant)
         {

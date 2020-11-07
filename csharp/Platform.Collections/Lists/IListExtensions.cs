@@ -343,6 +343,57 @@ namespace Platform.Collections.Lists
             return hashAccumulator;
         }
 
+        /// <summary>
+        /// <para>Compares each list item to each other.</para>
+        /// <para>Сравнивает каждый элемент списка друг с другом.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="left"><para>The first checked list.</para><para>Первый список для сравнения.</para></param>
+        /// <param name="right"><para>The second checked list.</para><para>Второй список для сравнения.</para></param>
+        /// <returns>
+        /// <para>
+        ///     A signed integer that indicates the relative values of <paramref name="left" /> and <paramref name="right" /> lists' elements, as shown in the following table. 
+        ///     <list type="table">
+        ///         <listheader>
+        ///             <term>Value</term>
+        ///             <description>Meaning</description>
+        ///         </listheader>
+        ///         <item>
+        ///             <term>Is less than zero</term>
+        ///             <description>First non equal element of <paramref name="left" /> list is less than first not equal element of <paramref name="right" /> list.</description>
+        ///         </item>
+        ///         <item>
+        ///             <term>Zero</term>
+        ///             <description>All elements of <paramref name="left" /> list equals to all elements of <paramref name="right" /> list.</description>
+        ///         </item>
+        ///         <item>
+        ///             <term>Is greater than zero</term>
+        ///             <description>First non equal element of <paramref name="left" /> list is greater than first not equal element of <paramref name="right" /> list.</description>
+        ///         </item>
+        ///     </list>
+        /// <para>
+        /// <para>
+        ///     Целое число со знаком, которое указывает относительные значения элементов списков <paramref name="left" /> и <paramref name="right" /> как показано в следующей таблице.
+        ///     <list type="table">
+        ///         <listheader>
+        ///             <term>Значение</term>
+        ///             <description>Имеется в виду</description>
+        ///         </listheader>
+        ///         <item>
+        ///             <term>Меньше нуля</term>
+        ///             <description>Первый не равный элемент <paramref name="left" /> списка меньше первого неравного элемента <paramref name="right" /> списка.</description>
+        ///         </item>
+        ///         <item>
+        ///             <term>Ноль</term>
+        ///             <description>Все элементы <paramref name="left" /> списка равны всем элементам <paramref name="right" /> списка.</description>
+        ///         </item>
+        ///         <item>
+        ///             <term>Больше нуля</term>
+        ///             <description>Первый не равный элемент <paramref name="left" /> списка больше первого неравного элемента <paramref name="right" /> списка.</description>
+        ///         </item>
+        ///     </list>
+        /// </para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CompareTo<T>(this IList<T> left, IList<T> right)
         {
@@ -357,6 +408,16 @@ namespace Platform.Collections.Lists
             return intermediateResult;
         }
 
+        /// <summary>
+        /// <para>Skips one element in the list and builds an array from the remaining elements.</para>
+        /// <para>Пропускает один элемент списка и составляет из оставшихся элементов массив.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param> 
+        /// <returns>
+        /// <para>If the list is empty, returns an empty array, otherwise - an array with a missing first element.</para>
+        /// <para>Если список пуст, возвращает пустой массив, иначе - массив с пропущенным первым элементом.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] SkipFirst<T>(this IList<T> list) => list.SkipFirst(1);
     
@@ -368,7 +429,7 @@ namespace Platform.Collections.Lists
         /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
         /// <param name="skip"><para>The number of items to skip.</para><para>Количество пропускаемых элементов.</para></param>      
         /// <returns>
-        /// <para>If the list is empty, or the number of skipped elements is greater than the list, it returns an empty array, otherwise - an array with the specified number of missing elements.</para>
+        /// <para>If the list is empty, or the number of skipped elements is greater than the list, returns an empty array, otherwise - an array with the specified number of missing elements.</para>
         /// <para>Если список пуст, или количество пропускаемых элементов больше списка - возвращает пустой массив, иначе - массив с указанным количеством пропущенных элементов.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -386,19 +447,29 @@ namespace Platform.Collections.Lists
             return result;
         }
 
+        /// <summary>
+        /// <para>Shifts all the elements of the list by one position to the right.</para>
+        /// <para>Сдвигает вправо все элементы списка на одну позицию.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
+        /// <returns>
+        /// <para>Array with a shift of elements by one position.</para>
+        /// <para>Массив со сдвигом элементов на одну позицию.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this IList<T> list) => list.ShiftRight(1);
 
         /// <summary>
-        /// <para>Shifts all elements of the list to the right by the specified number of elements and returns an array.</para>
-        /// <para>Сдвигает вправо все элементы списка на указанное количество элементов и возвращает массив.</para>
+        /// <para>Shifts all elements of the list to the right by the specified number of elements.</para>
+        /// <para>Сдвигает вправо все элементы списка на указанное количество элементов.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
         /// <param name="skip"><para>The number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>        
         /// <returns>
-        /// <para>If the variable shift is less than zero - an <see cref="NotImplementedException"/> exception is thrown, but if the variable shift is 0 an exact copy of the array is returned. Otherwise, an array is returned with the shift of the elements.</para>
-        /// <para>Если переменная shift меньше нуля - выбрасывается исключение <see cref="NotImplementedException"/>, если же переменная shift равена 0 возвращается точная копия массива. Иначе возвращается массив со сдвигом элементов.</para>
+        /// <para>If the value of the shift variable is less than zero - an <see cref="NotImplementedException"/> exception is thrown, but if the value of the shift variable is 0 - an exact copy of the array is returned. Otherwise, an array is returned with the shift of the elements.</para>
+        /// <para>Если значение переменной shift меньше нуля - выбрасывается исключение <see cref="NotImplementedException"/>, если же значение переменной shift равно 0 - возвращается точная копия массива. Иначе возвращается массив со сдвигом элементов.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this IList<T> list, int shift)
