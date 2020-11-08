@@ -152,7 +152,7 @@ namespace Platform.Collections.Arrays
         /// <typeparam name="T"><para>Array elements type.</para>Тип элементов массива.<para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
         /// <param name="position"><para>A reference to the position of type long where the element will be added.</para><para>Ссылка на позицию типа long, в которую будет добавлен элемент.</para></param>
-        /// <param name="element"><para>The value of variable to add to the array.</para><para>Переменная, значение которой нужно добавить в массив</para></param>
+        /// <param name="element"><para>The element to add to the array</para><para>Элемент который необходимо добавить в массив.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Add<T>(this T[] array, ref long position, T element) => array[position++] = element;
 
@@ -165,10 +165,10 @@ namespace Platform.Collections.Arrays
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
         /// <param name="position"><para>Reference to the position to which the element will be added.</para><para>Ссылка на позицию, в которую будет добавлен элемент.</para></param>
         /// <param name="element"><para>The element to add to the array.</para><para>Элемент который необходимо добавить в массив.</para></param>
-        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Постоянное значение, которое будет возвращено.</para></param>
+        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Значение константы, которое будет возвращено.</para></param>
         /// <returns>
         /// <para>The constant value passed as an argument.</para>
-        /// <para>Постоянное значение, переданное в качестве аргумента.</para>
+        /// <para>Значение константы, переданное в качестве аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TReturnConstant AddAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, TElement element, TReturnConstant returnConstant)
@@ -184,7 +184,7 @@ namespace Platform.Collections.Arrays
         /// <typeparam name="T"><para>Array element type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
         /// <param name="position"><para>Reference to the position to which the element will be added.</para><para>Ссылка на позицию, в которую будет добавлен элемент.</para></param>
-        /// <param name="elements"><para>Collection, the first element of which will be added to the array.</para><para>Коллекция, первый элемент которой будет добавлен в массив.</para></param>
+        /// <param name="elements"><para>List, the first element of which will be added to the array.</para><para>Список, первый элемент которого будет добавлен в массив.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddFirst<T>(this T[] array, ref long position, IList<T> elements) => array[position++] = elements[0];
 
@@ -196,11 +196,11 @@ namespace Platform.Collections.Arrays
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
         /// <param name="position"><para>Reference to the position to which the element will be added.</para><para>Ссылка на позицию, в которую будет добавлен элемент.</para></param>
-        /// <param name="elements"><para>Collection, the first element of which will be added to the array.</para><para>Коллекция, первый элемент которой будет добавлен в массив.</para></param>
-        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Постоянное значение, которое будет возвращено.</para></param>
+        /// <param name="elements"><para>List, the first element of which will be added to the array.</para><para>Список, первый элемент которого будет добавлен в массив.</para></param>
+        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Значение константы, которое будет возвращено.</para></param>
         /// <returns>
         /// <para>The constant value passed as an argument.</para>
-        /// <para>Постоянное значение, переданное в качестве аргумента.</para>
+        /// <para>Значение константы, переданное в качестве аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TReturnConstant AddFirstAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
@@ -210,18 +210,18 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Adding in array all elements from the passed collection, at the specified position.</para>
-        /// <para>Добавляет в массив все элементы из переданной коллекции, на указанную позицию.</para>
+        /// <para>Adding in array all elements from the passed collection, at the specified position and increments position value by one.</para>
+        /// <para>Добавляет в массив все элементы из переданной коллекции, на указанную позицию и увеличивает значение position на единицу.</para>
         /// </summary>
         /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элементы.</para></param>
         /// <param name="position"><para>Reference to the position from which elements will be added to the array.</para><para>Ссылка на позицию, начиная с которой будут добавляться элементы в массив.</para></param>
-        /// <param name="elements"><para>Collection, whose elements will be added to the array.</para><para>Коллекция, элементы которой будут добавленны в массив.</para></param>
-        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Постоянное значение, которое будет возвращено.</para></param>
+        /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param>
+        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Значение константы, которое будет возвращено.</para></param>
         /// <returns>
         /// <para>The constant value passed as an argument.</para>
-        /// <para>Постоянное значение, переданное в качестве аргумента.</para>
+        /// <para>Значение константы, переданное в качестве аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TReturnConstant AddAllAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
@@ -231,13 +231,13 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Adding in array a collection of elements, starting from a specific position.</para>
-        /// <para>Добавляет в массив все элементы коллекции, начиная с определенной позиции.</para>
+        /// <para>Adding in array a collection of elements, starting from a specific position and increments position value by one.</para>
+        /// <para>Добавляет в массив все элементы коллекции, начиная с определенной позиции и увеличивает значение position на единицу.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элементы.</para></param>
         /// <param name="position"><para>Reference to the position from which elements will be added to the array.</para><para>Ссылка на позицию, начиная с которой будут добавляться элементы в массив.</para></param>
-        /// <param name="elements"><para>Collection, whose elements will be added to the array.</para><para>Коллекция, элементы которой будут добавленны в массив.</para></param>
+        /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddAll<T>(this T[] array, ref long position, IList<T> elements)
         {
@@ -248,18 +248,18 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Adding in array all elements of the collection, skipping the first position.</para>
-        /// <para>Добавляет в массив все элементы коллекции, пропуская первую позицию.</para>
+        /// <para>Adding in array all elements of the collection, skipping the first position and increments position value by one.</para>
+        /// <para>Добавляет в массив все элементы коллекции, пропуская первую позицию и увеличивает значение position на единицу.</para>
         /// </summary>
         /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
         /// <param name="array"><para>The array to add items to.</para><para>Массив в который необходимо добавить элементы.</para></param>
         /// <param name="position"><para>Reference to the position from which to start adding elements.</para><para>Ссылка на позицию, с которой начинается добавление элементов.</para></param>
-        /// <param name="elements"><para>Collection, whose elements will be added to the array.</para><para>Коллекция, элементы которой будут добавленны в массив.</para></param>
-        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Постоянное значение, которое будет возвращено.</para></param>
+        /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param>
+        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Значение константы, которое будет возвращено.</para></param>
         /// <returns>
         /// <para>The constant value passed as an argument.</para>
-        /// <para>Постоянное значение, переданное в качестве аргумента.</para>
+        /// <para>Значение константы, переданное в качестве аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TReturnConstant AddSkipFirstAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
@@ -269,24 +269,24 @@ namespace Platform.Collections.Arrays
         }
         
         /// <summary>
-        /// <para>Adding in array all elements of the collection, skipping the first position.</para>
-        /// <para>Добавляет в массив все элементы коллекции, пропуская первую позицию.</para>
+        /// <para>Adding in array all elements of the collection, skipping the first position and increments position value by one.</para>
+        /// <para>Добавляет в массив все элементы коллекции, пропуская первую позицию и увеличивает значение position на единицу.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam> 
         /// <param name="array"><para>The array to add items to.</para><para>Массив в который необходимо добавить элементы.</para></param>
         /// <param name="position"><para>Reference to the position from which to start adding elements.</para><para>Ссылка на позицию, с которой начинается добавление элементов.</para></param>
-        /// <param name="elements"><para>Collection, whose elements will be added to the array.</para><para>Коллекция, элементы которой будут добавленны в массив.</para></param> 
+        /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param> 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this T[] array, ref long position, IList<T> elements) => array.AddSkipFirst(ref position, elements, 1);
         
         /// <summary>
-        /// <para>Adding in array all but the first element, skipping a specified number of positions.</para>
-        /// <para>Добавляет в массив все элементы коллекции, кроме первого, пропуская определенное количество позиций.</para>
+        /// <para>Adding in array all but the first element, skipping a specified number of positions and increments position value by one.</para>
+        /// <para>Добавляет в массив все элементы коллекции, кроме первого, пропуская определенное количество позиций и увеличивает значение position на единицу.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to add items to.</para><para>Массив в который необходимо добавить элементы.</para></param>
         /// <param name="position"><para>Reference to the position from which to start adding elements.</para><para>Ссылка на позицию, с которой начинается добавление элементов.</para></param>
-        /// <param name="elements"><para>Collection, whose elements will be added to the array.</para><para>Коллекция, элементы которой будут добавленны в массив.</para></param>
+        /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param>
         /// <param name="skip"><para>Number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this T[] array, ref long position, IList<T> elements, int skip)
