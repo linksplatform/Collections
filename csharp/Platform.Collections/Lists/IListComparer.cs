@@ -6,12 +6,12 @@ namespace Platform.Collections.Lists
     public class IListComparer<T> : IComparer<IList<T>>
     {
         /// <summary>
-        /// <para>Compares each list item to each other.</para>
-        /// <para>Сравнивает каждый элемент списка друг с другом.</para>
+        /// <para>Compares two lists.</para>
+        /// <para>Сравнивает два списка.<para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
-        /// <param name="left"><para>The first checked list.</para><para>Первый список для сравнения.</para></param>
-        /// <param name="right"><para>The second checked list.</para><para>Второй список для сравнения.</para></param>
+        /// <param name="left"><para>The first compared list.</para><para>Первый список для сравнения.</para></param>
+        /// <param name="right"><para>The second compared list.</para><para>Второй список для сравнения.</para></param>
         /// <returns>
         /// <para>
         ///     A signed integer that indicates the relative values of <paramref name="left" /> and <paramref name="right" /> lists' elements, as shown in the following table. 
@@ -39,7 +39,7 @@ namespace Platform.Collections.Lists
         ///     <list type="table">
         ///         <listheader>
         ///             <term>Значение</term>
-        ///             <description>Имеется в виду</description>
+        ///             <description>Смысл</description>
         ///         </listheader>
         ///         <item>
         ///             <term>Меньше нуля</term>
