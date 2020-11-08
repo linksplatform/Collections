@@ -161,7 +161,7 @@ namespace Platform.Collections.Lists
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
-        /// <param name="elements"><para>The number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>
+        /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <param name="skip"><para>Number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements, int skip)
@@ -233,7 +233,7 @@ namespace Platform.Collections.Lists
 
         /// <summary>
         /// <para>Compares each element in the list for identity.</para>
-        /// <para>Сравнивает на идентичность каждый элемент списка.</para>
+        /// <para>Сравнивает на равенство каждый элемент списка.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="left"><para>The first compared list.</para><para>Первый список для сравнения.</para></param>
@@ -344,12 +344,12 @@ namespace Platform.Collections.Lists
         }
 
         /// <summary>
-        /// <para>Compares each list item to each other.</para>
-        /// <para>Сравнивает каждый элемент списка друг с другом.</para>
+        /// <para>Compares two lists.</para>
+        /// <para>Сравнивает два списка.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
-        /// <param name="left"><para>The first checked list.</para><para>Первый список для сравнения.</para></param>
-        /// <param name="right"><para>The second checked list.</para><para>Второй список для сравнения.</para></param>
+        /// <param name="left"><para>The first compared list.</para><para>Первый список для сравнения.</para></param>
+        /// <param name="right"><para>The second compared list.</para><para>Второй список для сравнения.</para></param>
         /// <returns>
         /// <para>
         ///     A signed integer that indicates the relative values of <paramref name="left" /> and <paramref name="right" /> lists' elements, as shown in the following table. 
@@ -371,13 +371,13 @@ namespace Platform.Collections.Lists
         ///             <description>First non equal element of <paramref name="left" /> list is greater than first not equal element of <paramref name="right" /> list.</description>
         ///         </item>
         ///     </list>
-        /// <para>
+        /// </para>
         /// <para>
         ///     Целое число со знаком, которое указывает относительные значения элементов списков <paramref name="left" /> и <paramref name="right" /> как показано в следующей таблице.
         ///     <list type="table">
         ///         <listheader>
         ///             <term>Значение</term>
-        ///             <description>Имеется в виду</description>
+        ///             <description>Смысл</description>
         ///         </listheader>
         ///         <item>
         ///             <term>Меньше нуля</term>
