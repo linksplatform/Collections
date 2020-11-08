@@ -52,9 +52,6 @@ namespace Platform.Collections.Arrays
             }
         }
         
-        ///recomment
-
-
         /// <summary>  
         /// <para>Checks whether the array exist, if so,  checks the array length using the index varible type long, and if the array length is greater than the index,  set the element variable to array[index] and return true.</para>
         /// <para>Проверяет, существует ли массив, если да, то идет проверка длины массива с помощью переменной index  типа long, и если длина массива больше значения index, устанавливает значение переменной element - array[index] и возвращает true.</para>
