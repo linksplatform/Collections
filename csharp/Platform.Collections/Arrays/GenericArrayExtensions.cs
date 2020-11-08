@@ -157,8 +157,8 @@ namespace Platform.Collections.Arrays
         public static void Add<T>(this T[] array, ref long position, T element) => array[position++] = element;
 
         /// <summary>
-        /// <para>Adding in array the passed element, at the specified position and increments position value by one.</para>
-        /// <para>Добавляет в массив переданный элемент на указанную позицию и увеличивает значение position на единицу.</para>
+        /// <para>Adding in array the passed element, at the specified position, increments position value by one and returns the value of the passed constant.</para>
+        /// <para>Добавляет в массив переданный элемент на указанную позицию, увеличивает значение position на единицу и возвращает значение переданной константы.</para>
         /// </summary>
         /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
@@ -189,8 +189,8 @@ namespace Platform.Collections.Arrays
         public static void AddFirst<T>(this T[] array, ref long position, IList<T> elements) => array[position++] = elements[0];
 
         /// <summary>
-        /// <para>Adds the first element from the passed collection to the array, at the specified position and increments position value by one.</para>
-        /// <para>Добавляет в массив первый элемент из переданной коллекции, на указанную позицию и увеличивает значение position на единицу.</para>
+        /// <para>Adds the first element from the passed collection to the array, at the specified position, increments position value by one and returns the value of the passed constant.</para>
+        /// <para>Добавляет в массив первый элемент из переданной коллекции, на указанную позицию, увеличивает значение position на единицу и возвращает значение переданной константы.</para>
         /// </summary>
         /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
@@ -210,8 +210,8 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Adding in array all elements from the passed collection, at the specified position and increments position value by one.</para>
-        /// <para>Добавляет в массив все элементы из переданной коллекции, на указанную позицию и увеличивает значение position на единицу.</para>
+        /// <para>Adding in array all elements from the passed collection, at the specified position, increases the position value by the number of elements added and returns the value of the passed constant.</para>
+        /// <para>Добавляет в массив все элементы из переданной коллекции, на указанную позицию, увеличивает значение position на количество добавленных элементов и возвращает значение переданной константы.</para>
         /// </summary>
         /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
@@ -231,8 +231,8 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Adding in array a collection of elements, starting from a specific position and increments position value by one.</para>
-        /// <para>Добавляет в массив все элементы коллекции, начиная с определенной позиции и увеличивает значение position на единицу.</para>
+        /// <para>Adding in array a collection of elements, starting from a specific position and increases the position value by the number of elements added.</para>
+        /// <para>Добавляет в массив все элементы коллекции, начиная с определенной позиции и увеличивает значение position на количество добавленных элементов.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элементы.</para></param>
@@ -248,8 +248,8 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Adding in array all elements of the collection, skipping the first position and increments position value by one.</para>
-        /// <para>Добавляет в массив все элементы коллекции, пропуская первую позицию и увеличивает значение position на единицу.</para>
+        /// <para>Adding in array all elements of the collection, skipping the first position, increments position value by one and returns the value of the passed constant.</para>
+        /// <para>Добавляет в массив все элементы коллекции, пропуская первую позицию, увеличивает значение position на единицу и возвращает значение переданной константы.</para>
         /// </summary>
         /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
         /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
