@@ -92,28 +92,28 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Expanding the boundaries of an array by one element and then copying it.</para>
-        /// <para>Расширение границ массива на один элемент и последующее его копирование.</para>
+        /// <para>Shifts all the elements of the array by one position to the right.</para>
+        /// <para>Сдвигает вправо все элементы массива на одну позицию.</para>
         /// </summary>
-        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
-        /// <param name="array"><para>Array to expand  Elements.</para><para>Массив для расширения элементов.</para></param>
+        /// <typeparam name="T"><para>The array item type.</para><para>Тип элементов массива.</para></typeparam>
+        /// <param name="array"><para>The array to copy from.</para><para>Массив для копирования.</para></param>
         /// <returns>
-        /// <para>Array with increased border by one element.</para>
-        /// <para>Массив с увеличенной границей на один элемент.</para>
+        /// <para>Array with a shift of elements by one position.</para>
+        /// <para>Массив со сдвигом элементов на одну позицию.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this T[] array) => array.ShiftRight(1L);
         
         /// <summary>
-        /// <para>Extending the array boundaries to shift elements and then copying it, with the condition that shift > 0. If shift = = 0, the extension will not occur, but cloning will still be applied. If shift < 0, a NotImplementedException is thrown.</para>
-        /// <para>Расширение границ массива на shift элементов и последующее его копирование, с условием что shift > 0. Если же shift == 0 - расширение не произойдет, но клонирование все равно применится. Если shift < 0, выбросится исключение NotImplementedException.</para>
+        /// <para>Shifts all elements of the array to the right by the specified number of elements.</para>
+        /// <para>Сдвигает вправо все элементы массива на указанное количество элементов.</para>
         /// </summary>
-        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
-        /// <param name="array"><para>Array to expand  Elements.</para><para>Массив для расширения элементов.</para></param>
-        /// <param name="shift"><para>The number to expand the array</para><para>Число на которое необходимо рассширить массив.</para></param>
+        /// <typeparam name="T"><para>The array item type.</para><para>Тип элементов массива.</para></typeparam>
+        /// <param name="array"><para>The array to copy from.</para><para>Массив для копирования.</para></param>
+        /// <param name="skip"><para>The number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>        
         /// <returns>
-        /// <para>If the value of the shift variable is < 0, it returns a NotImplementedException exception. If shift = = 0, the array is cloned, but the extension will not be applied. Otherwise, if the value shift > 0, the length of the array is increased by the shift elements and the array is cloned.</para>
-        /// <para>Если значение переменной shift < 0,  возвращается исключение NotImplementedException. Если shift = = 0, то массив клонируется, но расширение не применяется. В противном случае, если значение shift > 0, длина массива увеличивается на shift элементов  и массив клонируется.</para>
+        /// <para>If the value of the shift variable is less than zero - an <see cref="NotImplementedException"/> exception is thrown, but if the value of the shift variable is 0 - an exact copy of the array is returned. Otherwise, an array is returned with the shift of the elements.</para>
+        /// <para>Если значение переменной shift меньше нуля - выбрасывается исключение <see cref="NotImplementedException"/>, если же значение переменной shift равно 0 - возвращается точная копия массива. Иначе возвращается массив со сдвигом элементов.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IList<T> ShiftRight<T>(this T[] array, long shift)
