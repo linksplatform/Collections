@@ -5,15 +5,15 @@ namespace Platform.Collections.Arrays
     public static unsafe class CharArrayExtensions
     { 
         /// <summary>
-        /// <para>Generates an array hash code at the specified offset, based on the values ​​of the array elements.</para>
-        /// <para>Генерирует хэш-код массива с указанным смещением, на основе значений элементов массива.</para>
+        /// <para>Generates a hash code for an array segment with the specified offset and length. The hash code is generated based on the values ​​of the array elements included in the specified segment.</para>
+        /// <para>Генерирует хэш-код сегмента массива с указанным смещением и длиной. Хэш-код генерируется на основе значений элементов массива входящих в указанный сегмент.</para>
         /// </summary>
-        /// <param name="array"><para>Hash array.</para><para>Массив для хеширования.</para></param>
-        /// <param name="offset"><para>Number of displaced elements.</para><para>Количество смещаемых элементов.</para></param>
-        /// <param name="length"><para>Number of hashed values.</para><para>Количество хеширующихся значений.</para></param>
+        /// <param name="array"><para>Array to hash.</para><para>Массив для хеширования.</para></param>
+        /// <param name="offset"><para>The offset at which to start reading the specified number of elements in the array.</para><para>Смещение, с которого начинается чтение указанного количества элементов в массиве.</para></param>
+        /// <param name="length"><para>The number of array elements from which the hash will be calculated.</para><para>Количество элементов массива, на основе которых будет вычислен хэш.</para></param>
         /// <returns>
-        /// <para>The hash code of the list.</para>
-        /// <para>Хэш-код списка.</para>
+        /// <para>The hash code of the segment in the array.</para>
+        /// <para>Хэш-код сегмента в массиве.</para>
         /// </returns>
         /// <remarks>
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L833
@@ -38,13 +38,13 @@ namespace Platform.Collections.Arrays
         /// <para>Проверяет равны ли все элементы двух списков.</para>
         /// </summary>
         /// <param name="left"><para>The first compared array.</para><para>Первый массив для сравнения.</para></param>
-        /// <param name="leftOffset"><para>Number of displaced elements in first array.</para><para>Количество смещаемых элементов в первом массиве.</para></param>
+        /// <param name="leftOffset"><para>The offset at which to start reading the elements in the first array.</para><para>Смещение, с которого начинается чтение элементов в первом массиве.</para></param>
         /// <param name="length"><para>Number of checked elements.</para><para>Количество проверяемых элементов.</para></param>
         /// <param name="right"><para>The second compared array.</para><para>Второй массив для сравнения.</para></param>
-        /// <param name="rightOffset"><para>Number of displaced elements in second array.</para><para>Количество смещаемых элементов в втором массиве.</para></param>
+        /// <param name="rightOffset"><para>The offset at which to start reading the elements in the second array.</para><para>Смещение, с которого начинается чтение элементов в втором массиве.</para></param>
         /// <returns>
-        /// <para>If the passed arrays are equal to each other, true is returned, оtherwise false.</para>
-        /// <para>Если переданные массивы равны друг другу, возвращается true, иначе же false.</para>
+        /// <para>True if the segments of the passed arrays are equal to each other, otherwise false.</para>
+        /// <para>True, если сегменты переданных массивов равны друг другу, иначе же false.</para>
         /// </returns>
         /// <remarks>
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L364
