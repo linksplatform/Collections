@@ -8,7 +8,7 @@ namespace Platform.Collections.Arrays
         /// <para>Generates a hash code for an array segment with the specified offset and length. The hash code is generated based on the values ​​of the array elements included in the specified segment.</para>
         /// <para>Генерирует хэш-код сегмента массива с указанным смещением и длиной. Хэш-код генерируется на основе значений элементов массива входящих в указанный сегмент.</para>
         /// </summary>
-        /// <param name="array"><para>The Array to hash.</para><para>Массив для хеширования.</para></param>
+        /// <param name="array"><para>The array to hash.</para><para>Массив для хеширования.</para></param>
         /// <param name="offset"><para>The offset from which reading of the specified number of elements in the array starts.</para><para>Смещение, с которого начинается чтение указанного количества элементов в массиве.</para></param>
         /// <param name="length"><para>The number of array elements used to calculate the hash.</para><para>Количество элементов массива, на основе которых будет вычислен хэш.</para></param>
         /// <returns>
@@ -39,7 +39,7 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="left"><para>The first compared array.</para><para>Первый массив для сравнения.</para></param>
         /// <param name="leftOffset"><para>The offset from which reading of the specified number of elements in the first array starts.</para><para>Смещение, с которого начинается чтение элементов в первом массиве.</para></param>
-        /// <param name="length"><para>Number of checked elements.</para><para>Количество проверяемых элементов.</para></param>
+        /// <param name="length"><para>The number of checked elements.</para><para>Количество проверяемых элементов.</para></param>
         /// <param name="right"><para>The second compared array.</para><para>Второй массив для сравнения.</para></param>
         /// <param name="rightOffset"><para>The offset from which reading of the specified number of elements in the second array starts.</para><para>Смещение, с которого начинается чтение элементов в втором массиве.</para></param>
         /// <returns>
