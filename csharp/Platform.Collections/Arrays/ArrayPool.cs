@@ -8,11 +8,11 @@ namespace Platform.Collections.Arrays
         public static readonly int DefaultMaxArraysPerSize = 32;
 
         /// <summary>
-        /// <para>Allocation of an array of a certain size from the array pool.</para>
+        /// <para>Allocation of an array of a specified size from the array pool.</para>
         /// <para>Выделение массива указанного размера из пула массивов.</para>
         /// </summary>
         /// <typeparam name="T"><para>The array elements type.</para><para>Тип элементов массива.</para></typeparam>
-        /// <param name="size"><para>Allocated array size.</para><para>Размер выделяемого массива.</para></param>
+        /// <param name="size"><para>The allocated array size.</para><para>Размер выделяемого массива.</para></param>
         /// <returns>
         /// <para>The array from a pool of arrays.</para>
         /// <para>Массив из пулла массивов.</para>
