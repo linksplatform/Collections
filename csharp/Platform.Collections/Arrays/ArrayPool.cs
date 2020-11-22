@@ -8,11 +8,11 @@ namespace Platform.Collections.Arrays
         public static readonly int DefaultMaxArraysPerSize = 32;
 
         /// <summary>
-        /// <para>Allocating a block of a certain size from a memory area.</para>
-        /// <para>Выделение блока определенного размера из области памяти.</para>
+        /// <para>Allocation of an array of a certain size from the array pool.</para>
+        /// <para>Выделение массива определённого размера из пула массивов.</para>
         /// </summary>
-        /// <typeparam name="T"><para>Type to allocate array for.</para><para>Тип для аллокации массива.</para></typeparam>
-        /// <param name="size"><para>The memory block size.</para><para>Размер блока памяти.</para></param>
+        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
+        /// <param name="size"><para>Allocated array size.</para><para>Размер выделяемого массива.</para></param>
         /// <returns>
         /// <para>The memory allocated for the array.</para>
         /// <para>Память выделенная для массива.</para>
@@ -21,11 +21,11 @@ namespace Platform.Collections.Arrays
         public static T[] Allocate<T>(long size) => ArrayPool<T>.ThreadInstance.Allocate(size);
 
         /// <summary>
-        /// <para>Freeing a block of allocated heap.</para>
-        /// <para>Освобождение блока выделенной памяти.</para>
+        /// <para>Freeing an array from an array pool.</para>
+        /// <para>Освобождение массива из пула массивов.</para>
         /// </summary>
-        /// <typeparam name="T"><para>Type to allocate array for.</para><para>Тип для аллокации массива.</para></typeparam>
-        /// <param name="array"><para>The memory allocated for the array.</para><para>Память выделенная для массива.</para></param>
+        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
+        /// <param name="array"><para>The array to be freed from the pool.</para><para>Массив который нужно освобоить из пулла.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Free<T>(T[] array) => ArrayPool<T>.ThreadInstance.Free(array);
     }
