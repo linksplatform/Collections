@@ -19,7 +19,7 @@ namespace Platform.Collections.Arrays
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] Allocate<T>(long size) => ArrayPool<T>.ThreadInstance.Allocate(size);
-
+        
         /// <summary>
         /// <para>Freeing an array into an array pool.</para>
         /// <para>Освобождение массива в пул массивов.</para>
