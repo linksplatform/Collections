@@ -1,11 +1,11 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
 {
     public static unsafe class CharArrayExtensions
     { 
         /// <summary>
-        /// <para>Generates a hash code for an array segment with the specified offset and length. The hash code is generated based on the values ​​of the array elements included in the specified segment.</para>
+        /// <para>Generates a hash code for an array segment with the specified offset and length. The hash code is generated based on the values of the array elements included in the specified segment.</para>
         /// <para>Генерирует хэш-код сегмента массива с указанным смещением и длиной. Хэш-код генерируется на основе значений элементов массива входящих в указанный сегмент.</para>
         /// </summary>
         /// <param name="array"><para>The array to hash.</para><para>Массив для хеширования.</para></param>
