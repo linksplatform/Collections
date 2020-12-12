@@ -7,10 +7,10 @@ using Platform.Collections.Stacks;
 namespace Platform.Collections.Arrays
 {
     /// <summary>
-    /// <para>A set of arrays ready for reuse.</para>
-    /// <para>Набор массивов готовых к повторному использованию.</para>
+    /// <para>Represents a set of arrays ready for reuse.</para>
+    /// <para>Представляет собой набор массивов готовых к повторному использованию.</para>
     /// </summary>
-    /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
+    /// <typeparam name="T"><para>The array elements type.</para><para>Тип элементов массива.</para></typeparam>
     /// <remarks>
     /// Original idea from http://geekswithblogs.net/blackrob/archive/2014/12/18/array-pooling-in-csharp.aspx
     /// </remarks>
@@ -33,33 +33,33 @@ namespace Platform.Collections.Arrays
         public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
 
         /// <summary>
-        /// <para>Initializes a new instance of the ArrayPool class using the initial default value.</para>
-        /// <para>Инициализирует новый экземпляр класса ArrayPool, используя начальное значение по умолчанию.</para>
+        /// <para>Initializes a new instance of the ArrayPool class using the maximum number of arrays per default size.</para>
+        /// <para>Инициализирует новый экземпляр класса ArrayPool, используя максимальное количество массивов на каждый размер по умолчанию.</para>
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayPool() : this(ArrayPool.DefaultMaxArraysPerSize) { }
 
         /// <summary>
-        /// <para>Retrieves an array from the pool, which will be automatically freed after calling the class destructor.</para>
-        /// <para>Извлекает из пула массив, который автоматически освободится, после вызова деструктора класса.</para>
+        /// <para>Retrieves an array from the pool, which will automatically return to the pool when the container is released.</para>
+        /// <para>Извлекает из пула массив, который автоматически вернётся в пул при высвобождении контейнера.</para>
         /// </summary>
         /// <param name="size"><para>The allocated array size.</para><para>Размер выделяемого массива.</para></param>
         /// <returns>
-        /// <para>An array from the pool, if it not, a new one is created.</para>
-        /// <para>Массив из пула, если его нет, cоздаётся новый.</para>
+        /// <para>The container to be freed containing either a new array or an array from the pool.</para>
+        /// <para>Высвобождаемый контейнер содержащий либо новый массив, либо массив из пула.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Disposable<T[]> AllocateDisposable(long size) => (Allocate(size), Free);
 
         /// <summary>
-        /// <para>Resizes the array.</para>
-        /// <para>Изменяет размер массива.</para>
+        /// <para>Replaces the array with another array from the pool with the specified size.</para>
+        /// <para>Заменяет массив на другой массив из пула с указанным размером.</para>
         /// </summary>
-        /// <param name="source"><para>Source array.</para><para>Исходный массив.</para></param>
-        /// <param name="size"><para>New array size.</para><para>Новый размер массива.</para></param>
+        /// <param name="source"><para>The source array.</para><para>Исходный массив.</para></param>
+        /// <param name="size"><para>A new array size.</para><para>Новый размер массива.</para></param>
         /// <returns>
-        /// <para>Array with new number of elements.</para>
-        /// <para>Массив с новым количеством элементов.</para>
+        /// <para>Array with the new number of elements.</para>
+        /// <para>Массив с новым размером.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Disposable<T[]> Resize(Disposable<T[]> source, long size)
@@ -88,8 +88,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="size"><para>The allocated array size.</para><para>Размер выделяемого массива.</para></param>
         /// <returns>
-        /// <para>An array from the pool, if it not, a new one is created.</para>
-        /// <para>Массив из пула, если его нет, cоздаётся новый.</para>
+        /// <para>Pooled array or new array.</para>
+        /// <para>Массив из пула или новый массив.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual T[] Allocate(long size) => size <= 0L ? Array.Empty<T>() : _pool.GetOrDefault(size)?.PopOrDefault() ?? new T[size];
