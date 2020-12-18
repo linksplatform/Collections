@@ -25,8 +25,8 @@ namespace Platform.Collections.Arrays
         private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
         /// <summary>
-        /// <para>Initializes a new instance of the ArrayPool class.</para>
-        /// <para>Инициализирует новый экземпляр класса ArrayPool.</para>
+        /// <para>Initializes a new instance of the ArrayPool class using the specified maximum number of arrays per size.</para>
+        /// <para>Инициализирует новый экземпляр класса ArrayPool, используя указанное максимальное количество массивов на каждый размер.</para>
         /// </summary>
         /// <param name="maxArraysPerSize"><para>The maximum number of arrays in the pool per size.</para><para>Максимальное количество массивов в пуле на каждый размер.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
