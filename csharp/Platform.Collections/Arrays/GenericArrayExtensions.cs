@@ -4,6 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
 {
+    /// <summary>
+    /// <para>Provides a set of extension methods for a class <see cref="Array">.</para>
+    /// <para>Предоставляет набор методов расширения для класса <see cref="Array">.</para>
+    /// </summary>
     public static class GenericArrayExtensions
     {
         /// <summary>

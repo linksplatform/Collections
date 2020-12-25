@@ -2,6 +2,10 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
 {
+    /// <summary>
+    /// <para>Represents a collection of wrapper methods over class methods <see cref="ArrayPool{T}"> to facilitate access to them.</para>
+    /// <para>Представляет коллекцию методов обёрток над методами класса <see cref="ArrayPool{T}"> для упрощения доступа к ним.</para>
+    /// </summary>
     public static class ArrayPool
     {
         public static readonly int DefaultSizesAmount = 512;
