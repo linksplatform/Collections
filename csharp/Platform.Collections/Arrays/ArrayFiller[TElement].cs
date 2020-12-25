@@ -7,7 +7,7 @@ namespace Platform.Collections.Arrays
     /// <para>Provides a set of methods for populating the elements of the class <see cref="Array"/>.</para>
     /// <para>Предоставляет набор методов для заполнения элементов класса <see cref="Array"/>.</para>
     /// </summary>
-    /// <typeparam name="TElement"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
+    /// <typeparam name="TElement"><para>The array elements type.</para><para>Тип элементов массива.</para></typeparam>
     public class ArrayFiller<TElement>
     {
         protected readonly TElement[] _array;
@@ -30,7 +30,7 @@ namespace Platform.Collections.Arrays
         /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class, using the specified array as the array to fill and the default number of items to offset.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив в качестве заполняемого и число смещаемых в нем элементов по умолчанию.</para>
         /// </summary>
-        /// <param name="array"></param>
+        /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array) : this(array, 0) { }
 
@@ -48,8 +48,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
-        /// <para>True value in any case.</para>
-        /// <para>Значение true в любом случае.</para>
+        /// <para>True value.</para>
+        /// <para>Значение true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddAndReturnTrue(TElement element) => _array.AddAndReturnConstant(ref _position, element, true);
@@ -60,8 +60,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
-        /// <para>True value in any case.</para>
-        /// <para>Значение true в любом случае.</para>
+        /// <para>True value.</para>
+        /// <para>Значение true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddFirstAndReturnTrue(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, true);
@@ -70,7 +70,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adds all elements from the specified array to the array to fill and returns true.</para>
         /// <para>Добавляет все элементы из указанного в заполняемый массив и возвращает true.</para>
         /// </summary>
-        /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
+        /// <param name="elements"><para>The array of values to add.</para><para>Массив значений которые необходимо добавить.</para></param>
         /// <returns>
         /// <para>True value in any case.</para>
         /// <para>Значение true в любом случае.</para>
@@ -84,8 +84,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>The array of values to add.</para><para>Массив значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>True value in any case.</para>
-        /// <para>Значение true в любом случае.</para>
+        /// <para>True value.</para>
+        /// <para>Значение true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _array.AddSkipFirstAndReturnConstant(ref _position, elements, true);
