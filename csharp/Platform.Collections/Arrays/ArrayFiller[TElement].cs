@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Arrays
 {
     /// <summary>
-    /// <para>Provides a set of methods for populating the elements of the class <see cref="Array"/>.</para>
-    /// <para>Предоставляет набор методов для заполнения элементов класса <see cref="Array"/>.</para>
+    /// <para>Provides a set of methods for populating the elements of the array <see cref="T:TElement[]"/>.</para>
+    /// <para>Предоставляет набор методов для заполнения элементов массива <see cref="T:TElement[]"/>.</para>
     /// </summary>
-    /// <typeparam name="TElement"><para>The array elements type.</para><para>Тип элементов массива.</para></typeparam>
+    /// <typeparam name="TElement"><para>The elements' type.</para><para>Тип элементов массива.</para></typeparam>
     public class ArrayFiller<TElement>
     {
         protected readonly TElement[] _array;
@@ -18,7 +18,7 @@ namespace Platform.Collections.Arrays
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив в качестве заполняемого и число смещаемых в нем элементов.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
-        /// <param name="offset"><para>The number of elements to displace in the array.</para><para>Количество смещаемых элементов в массиве.</para></param>
+        /// <param name="offset"><para>The offset from which to start filling the array.</para><para>Смещение с которого начнётся заполнение массива.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array, long offset)
         {
@@ -38,7 +38,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adds an item to the end of the array.</para>
         /// <para>Добавляет элемент в конец массива.</para>
         /// </summary>
-        /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Add(TElement element) => _array[_position++] = element;
 
@@ -46,7 +46,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adds an item to the end of the array and return true.</para>
         /// <para>Добавляет элемент в конец массива и возвращает true.</para>
         /// </summary>
-        /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
         /// <para>True value.</para>
         /// <para>Значение true.</para>
@@ -58,7 +58,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adds a value to the array at the first index and return true.</para>
         /// <para>Добавляет значение в массив по первому индексу и возвращает true.</para>
         /// </summary>
-        /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
         /// <para>True value.</para>
         /// <para>Значение true.</para>
@@ -72,8 +72,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>The array of values to add.</para><para>Массив значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>True value in any case.</para>
-        /// <para>Значение true в любом случае.</para>
+        /// <para>True value.</para>
+        /// <para>Значение true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddAllAndReturnTrue(IList<TElement> elements) => _array.AddAllAndReturnConstant(ref _position, elements, true);
