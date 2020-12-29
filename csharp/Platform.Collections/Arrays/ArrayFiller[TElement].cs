@@ -4,8 +4,8 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Arrays
 {
     /// <summary>
-    /// <para>Provides a set of methods for populating the elements of the array <see cref="T:TElement[]"/>.</para>
-    /// <para>Предоставляет набор методов для заполнения элементов массива <see cref="T:TElement[]"/>.</para>
+    /// <para>Provides an array placeholder <see cref = "T: TElement []" />.</para>
+    /// <para>Предоставляет заполнитель массива <see cref="T:TElement[]"/>.</para>
     /// </summary>
     /// <typeparam name="TElement"><para>The elements' type.</para><para>Тип элементов массива.</para></typeparam>
     public class ArrayFiller<TElement>
