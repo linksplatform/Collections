@@ -10,18 +10,18 @@ namespace Platform.Collections.Arrays
         protected readonly TReturnConstant _returnConstant;
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class by calling the parent's constructor and setting the specified return value.</para>
-        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, вызывая конструктор родительского, с установкой указанного возвращаемого значения.</para>
+        /// <para>Initializes a new instance of the class <see cref="ArrayFiller"/> using the specified array, the offset from which filling will start and the constant returned when filling elements.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/> используя указанный массив, смещение с которого начнётся заполнение и возвращаемую константу при заполнении элементов.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
-        /// <param name="offset"><para>The number of elements to displace in the array.</para><para>Количество смещаемых элементов в массиве.</para></param>
-        /// <param name="returnConstant"><para>The value for the constant returned by corresponding methods.</para><para>Значение для константы возвращаемой соответствующими методами.</para></param>
+        /// <param name="offset"><para>The offset from which to start filling the array.</para><para>Смещение с которого начнётся заполнение массива.</para></param>
+        /// <param name="returnConstant"><para>The value for the constant returned when filling the array.</para><para>Значение для константы возвращаемой при заполнении массива.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array, long offset, TReturnConstant returnConstant) : base(array, offset) => _returnConstant = returnConstant;
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class by calling the parent's constructor, setting the specified return value and the default number of items to offset in it.</para>
-        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, вызывая конструктор родительского, с установкой указанного возвращаемого значения и число смещаемых в нем элементов по умолчанию.</para>
+        /// <para>Initializes a new instance of the class <see cref="ArrayFiller"/> using the specified array, the offset from which filling will start and the constant returned when filling elements.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/> используя указанный массив и возвращаемую константу при заполнении элементов.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
         /// <param name="returnConstant"><para>The value for the constant returned by corresponding methods.</para><para>Значение для константы возвращаемой соответствующими методами.</para></param>
@@ -32,9 +32,9 @@ namespace Platform.Collections.Arrays
         /// <para>Adds an item to the end of the array and return constant.</para>
         /// <para>Добавляет элемент в конец массива и возвращает константу.</para>
         /// </summary>
-        /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
-        /// <para>Constant value.</para>
+        /// <para>The constant value.</para>
         /// <para>Значение константы.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,9 +44,9 @@ namespace Platform.Collections.Arrays
         /// <para>Adds a value to the array at the first index and return constant.</para>
         /// <para>Добавляет значение в массив по первому индексу и возвращает константу.</para>
         /// </summary>
-        /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
-        /// <para>Constant value.</para>
+        /// <para>The constant value.</para>
         /// <para>Значение константы.</para>
         /// <returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -58,7 +58,7 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>Array of values to add.</para><para>Массив значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>Constant value.</para>
+        /// <para>The constant value.</para>
         /// <para>Значение константы.</para>
         /// <returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,7 +70,7 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>The array of values to add.</para><para>Массив значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>Constant value.</para>
+        /// <para>The constant value.</para>
         /// <para>Значение константы.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
