@@ -24,7 +24,7 @@ namespace Platform.Collections.Arrays
         public ArrayFiller(TElement[] array, long offset, TReturnConstant returnConstant) : base(array, offset) => _returnConstant = returnConstant;
 
         /// <summary>
-        /// <para>Initializes a new instance of the class <see cref="ArrayFiller"/> using the specified array, the offset from which filling will start and the constant returned when filling elements. Filling will start from the beginning of the array.</para>
+        /// <para>Initializes a new instance of the class <see cref="ArrayFiller"/> using the specified array and the constant returned when filling elements. Filling will start from the beginning of the array.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/> используя указанный массив и возвращаемую константу при заполнении элементов. Заполнение начнётся с начала массива.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
@@ -45,10 +45,10 @@ namespace Platform.Collections.Arrays
         public TReturnConstant AddAndReturnConstant(TElement element) => _array.AddAndReturnConstant(ref _position, element, _returnConstant);
 
         /// <summary>
-        /// <para>Adds the first element from the specified array to the filled array and returns the constant.</para>
-        /// <para>Добавляет первый элемент из указанного в заполняемый массив и возвращает константу.</para>
+        /// <para>Adds the first element from the specified list to the filled array and returns the constant.</para>
+        /// <para>Добавляет первый элемент из указанного списка в заполняемый массив и возвращает константу.</para>
         /// </summary>
-        /// <param name="element"><para>The list from which the first item will be added.</para><para>Список из которого будет добавлен первый элемент..</para></param>
+        /// <param name="element"><para>The list from which the first item will be added.</para><para>Список из которого будет добавлен первый элемент.</para></param>
         /// <returns>
         /// <para>The constant value.</para>
         /// <para>Значение константы.</para>
@@ -57,8 +57,8 @@ namespace Platform.Collections.Arrays
         public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, _returnConstant);
 
         /// <summary>
-        /// <para>Adds all elements from the specified array to the filled array and returns the constant.</para>
-        /// <para>Добавляет все элементы из указанного в заполняемый массив и возвращает константу.</para>
+        /// <para>Adds all elements from the specified list to the filled array and returns the constant.</para>
+        /// <para>Добавляет все элементы из указанного списка в заполняемый массив и возвращает константу.</para>
         /// </summary>
         /// <param name="elements"><para>The list of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <returns>
