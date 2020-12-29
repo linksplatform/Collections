@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Arrays
 {
     /// <summary>
-    /// <para>Provides an array placeholder <see cref = "T: TElement []" />.</para>
+    /// <para>Represents an <see cref="T:TElement[]"/> array filler.</para>
     /// <para>Предоставляет заполнитель массива <see cref="T:TElement[]"/>.</para>
     /// </summary>
     /// <typeparam name="TElement"><para>The elements' type.</para><para>Тип элементов массива.</para></typeparam>
