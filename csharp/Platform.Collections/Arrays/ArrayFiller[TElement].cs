@@ -15,7 +15,7 @@ namespace Platform.Collections.Arrays
 
         /// <summary>
         /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array as the array to fill and the offset from which to start filling.</para></para>
-        /// <para>Инициализирует новый экземпляр <see cref="ArrayFiller"/> класса, используя указанный массив в качестве заполняемого и смещение с которого начнётся заполнение.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив в качестве заполняемого и смещение с которого начнётся заполнение.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
         /// <param name="offset"><para>The offset from which to start filling the array.</para><para>Смещение с которого начнётся заполнение массива.</para></param>
@@ -28,14 +28,14 @@ namespace Platform.Collections.Arrays
 
         /// <summary>
         /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array. Filling will start from the beginning of the array.</para>
-        /// <para>Инициализирует новый экземпляр <see cref="ArrayFiller"/> класса, используя указанный массив. Заполнение начнётся с начала массива.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив. Заполнение начнётся с начала массива.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array) : this(array, 0) { }
 
         /// <summary>
-        /// <para>Adds an item to the array.</para>
+        /// <para>Adds an item into the array.</para>
         /// <para>Добавляет элемент в массив.</para>
         /// </summary>
         /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
@@ -43,7 +43,7 @@ namespace Platform.Collections.Arrays
         public void Add(TElement element) => _array[_position++] = element;
 
         /// <summary>
-        /// <para>Adds an item to the array and return true.</para>
+        /// <para>Adds an item into the array and return true.</para>
         /// <para>Добавляет элемент в массив и возвращает true.</para>
         /// </summary>
         /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
