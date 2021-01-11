@@ -43,13 +43,13 @@ namespace Platform.Collections.Arrays
         public void Add(TElement element) => _array[_position++] = element;
 
         /// <summary>
-        /// <para>Adds an item into the array and return true.</para>
+        /// <para>Adds an item into the array and returns true.</para>
         /// <para>Добавляет элемент в массив и возвращает true.</para>
         /// </summary>
         /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
-        /// <para>The true value.</para>
-        /// <para>Значение true.</para>
+        /// <para>The <see langword="true"> value.</para>
+        /// <para>Значение <see langword="true">.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddAndReturnTrue(TElement element) => _array.AddAndReturnConstant(ref _position, element, true);
@@ -60,8 +60,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="element"><para>The list from which the first item will be added.</para><para>Список из которого будет добавлен первый элемент.</para></param>
         /// <returns>
-        /// <para>The true value.</para>
-        /// <para>Значение true.</para>
+        /// <para>The <see langword="true"> value.</para>
+        /// <para>Значение <see langword="true">.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddFirstAndReturnTrue(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, true);
@@ -72,8 +72,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>The list of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>True value.</para>
-        /// <para>Значение true.</para>
+        /// <para>The <see langword="true"> value.</para>
+        /// <para>Значение <see langword="true">.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddAllAndReturnTrue(IList<TElement> elements) => _array.AddAllAndReturnConstant(ref _position, elements, true);
@@ -84,8 +84,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>A list from which elements will be added except the first.</para><para>Список из которого будут добавлены элементы кроме первого.</para></param>
         /// <returns>
-        /// <para>True value.</para>
-        /// <para>Значение true.</para>
+        /// <para>The <see langword="true"> value.</para>
+        /// <para>Значение <see langword="true">.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _array.AddSkipFirstAndReturnConstant(ref _position, elements, true);

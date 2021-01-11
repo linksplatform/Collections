@@ -5,8 +5,8 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Arrays
 {
     /// <summary>
-    /// <para>Provides a set of extension methods for a <see cref="T:T[]"/> array.</para>
-    /// <para>Предоставляет набор методов расширения для <see cref="T:T[]"/> массива.</para>
+    /// <para>Represents a set of extension methods for a <see cref="T:T[]"/> array.</para>
+    /// <para>Представляет набор методов расширения для <see cref="T:T[]"/> массива.</para>
     /// </summary>
     public static class GenericArrayExtensions
     {
