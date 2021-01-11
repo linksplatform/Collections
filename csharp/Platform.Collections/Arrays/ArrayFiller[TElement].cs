@@ -43,37 +43,37 @@ namespace Platform.Collections.Arrays
         public void Add(TElement element) => _array[_position++] = element;
 
         /// <summary>
-        /// <para>Adds an item into the array and returns true.</para>
-        /// <para>Добавляет элемент в массив и возвращает true.</para>
+        /// <para>Adds an item into the array and returns <see langword="true"/>.</para>
+        /// <para>Добавляет элемент в массив и возвращает <see langword="true"/>.</para>
         /// </summary>
         /// <param name="element"><para>The element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
-        /// <para>The <see langword="true"> value.</para>
-        /// <para>Значение <see langword="true">.</para>
+        /// <para>The <see langword="true"/> value.</para>
+        /// <para>Значение <see langword="true"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddAndReturnTrue(TElement element) => _array.AddAndReturnConstant(ref _position, element, true);
 
         /// <summary>
-        /// <para>Adds the first element from the specified list to the array to fill and returns true.</para>
-        /// <para>Добавляет первый элемент из указанного списка в заполняемый массив и возвращает true.</para>
+        /// <para>Adds the first element from the specified list to the array to fill and returns <see langword="true"/>.</para>
+        /// <para>Добавляет первый элемент из указанного списка в заполняемый массив и возвращает <see langword="true"/>.</para>
         /// </summary>
         /// <param name="element"><para>The list from which the first item will be added.</para><para>Список из которого будет добавлен первый элемент.</para></param>
         /// <returns>
-        /// <para>The <see langword="true"> value.</para>
-        /// <para>Значение <see langword="true">.</para>
+        /// <para>The <see langword="true"/> value.</para>
+        /// <para>Значение <see langword="true"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddFirstAndReturnTrue(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, true);
         
         /// <summary>
-        /// <para>Adds all elements from the specified list to the array to fill and returns true.</para>
-        /// <para>Добавляет все элементы из указанного списка в заполняемый массив и возвращает true.</para>
+        /// <para>Adds all elements from the specified list to the array to fill and returns <see langword="true"/>.</para>
+        /// <para>Добавляет все элементы из указанного списка в заполняемый массив и возвращает <see langword="true"/>.</para>
         /// </summary>
         /// <param name="elements"><para>The list of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <returns>
-        /// <para>The <see langword="true"> value.</para>
-        /// <para>Значение <see langword="true">.</para>
+        /// <para>The <see langword="true"/> value.</para>
+        /// <para>Значение <see langword="true"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddAllAndReturnTrue(IList<TElement> elements) => _array.AddAllAndReturnConstant(ref _position, elements, true);
@@ -84,8 +84,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="elements"><para>A list from which elements will be added except the first.</para><para>Список из которого будут добавлены элементы кроме первого.</para></param>
         /// <returns>
-        /// <para>The <see langword="true"> value.</para>
-        /// <para>Значение <see langword="true">.</para>
+        /// <para>The <see langword="true"/> value.</para>
+        /// <para>Значение <see langword="true"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _array.AddSkipFirstAndReturnConstant(ref _position, elements, true);
