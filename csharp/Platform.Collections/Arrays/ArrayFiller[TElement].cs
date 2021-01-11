@@ -79,8 +79,8 @@ namespace Platform.Collections.Arrays
         public bool AddAllAndReturnTrue(IList<TElement> elements) => _array.AddAllAndReturnConstant(ref _position, elements, true);
 
         /// <summary>
-        /// <para>Adds values to the array skipping the first element.</para>
-        /// <para>Добавляет значения в массив пропуская первый элемент.</para>
+        /// <para>Adds values to the array skipping the first element and returns <see langword="true"/>.</para>
+        /// <para>Добавляет значения в массив пропуская первый элемент и возвращает <see langword="true"/>.</para>
         /// </summary>
         /// <param name="elements"><para>A list from which elements will be added except the first.</para><para>Список из которого будут добавлены элементы кроме первого.</para></param>
         /// <returns>
