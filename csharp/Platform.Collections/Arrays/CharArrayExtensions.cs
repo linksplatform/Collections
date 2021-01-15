@@ -43,8 +43,8 @@ namespace Platform.Collections.Arrays
         /// <param name="right"><para>The second compared array.</para><para>Второй массив для сравнения.</para></param>
         /// <param name="rightOffset"><para>The offset from which reading of the specified number of elements in the second array starts.</para><para>Смещение, с которого начинается чтение элементов в втором массиве.</para></param>
         /// <returns>
-        /// <para><see langword="True"/> if the segments of the passed arrays are equal to each other otherwise <see langword="false"/>.</para>
-        /// <para><see langword="True"/>, если сегменты переданных массивов равны друг другу, иначе же <see langword="false"/>.</para>
+        /// <para><see langword="true"/> if the segments of the passed arrays are equal to each other otherwise <see langword="false"/>.</para>
+        /// <para><see langword="true"/>, если сегменты переданных массивов равны друг другу, иначе же <see langword="false"/>.</para>
         /// </returns>
         /// <remarks>
         /// Based on https://github.com/Microsoft/referencesource/blob/3b1eaf5203992df69de44c783a3eda37d3d4cd10/mscorlib/system/string.cs#L364

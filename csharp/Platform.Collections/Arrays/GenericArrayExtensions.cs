@@ -40,7 +40,7 @@ namespace Platform.Collections.Arrays
         /// <param name="array"><para>Array that will participate in verification.</para><para>Массив который будет учавствовать в проверке.</para></param>
         /// <param name="index"><para>Number type int to compare.</para><para>Число типа int для сравнения.</para></param>
         /// <param name="element"><para>Passing the argument by reference, if successful, it will take the value array[index] otherwise default value.</para><para>Передает аргумент по ссылке, в случае успеха он примет значение array[index] в противном случае значение по умолчанию.</para></param>
-        /// <returns><para><see langword="True"/> if successful otherwise <see langword="false"/>.</para><para><see langword="True"/> в случае успеха, в противном случае <see langword="false"/>.</para></returns>
+        /// <returns><para><see langword="true"/> if successful otherwise <see langword="false"/>.</para><para><see langword="true"/> в случае успеха, в противном случае <see langword="false"/>.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, int index, out T element)
         {
@@ -64,7 +64,7 @@ namespace Platform.Collections.Arrays
         /// <param name="array"><para>Array that will participate in verification.</para><para>Массив который будет учавствовать в проверке.</para></param>
         /// <param name="index"><para>Number type long to compare.</para><para>Число типа long для сравнения.</para></param>
         /// <param name="element"><para>Passing the argument by reference, if successful, it will take the value array[index] otherwise default value.</para><para>Передает аргумент по ссылке, в случае успеха он примет значение array[index] в противном случае значение по умолчанию.</para></param>
-        /// <returns><para><see langword="True"/> if successful otherwise <see langword="false"/>.</para><para><see langword="True"/> в случае успеха, в противном случае <see langword="false"/></para></returns>
+        /// <returns><para><see langword="true"/> if successful otherwise <see langword="false"/>.</para><para><see langword="true"/> в случае успеха, в противном случае <see langword="false"/></para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, long index, out T element)
         {
