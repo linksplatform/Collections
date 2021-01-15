@@ -5,7 +5,7 @@ namespace Platform.Collections.Arrays
 {
     /// <summary>
     /// <para>Represents <see cref="T:TElement[]"/> array filler with additional methods that return a given constant of type <typeparamref cref="TReturnConstant"/>.</para>
-    /// <para>Предоставляет заполнитель массива <see cref="T:TElement[]"/> c дополнительными методами, возвращающими заданную константу типа <typeparamref cref="TReturnConstant"/>.</para> 
+    /// <para>Представляет заполнитель массива <see cref="T:TElement[]"/> c дополнительными методами, возвращающими заданную константу типа <typeparamref cref="TReturnConstant"/>.</para> 
     /// </summary>
     /// <typeparam name="TElement"><para>The elements' type.</para><para>Тип элементов массива.</para></typeparam>
     /// <typeparam name="TReturnConstant"><para>The return constant's type.</para><para>Тип возвращаемой константы.</para></typeparam>
@@ -14,11 +14,11 @@ namespace Platform.Collections.Arrays
         protected readonly TReturnConstant _returnConstant;
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array, the offset from which filling will start and the constant returned when filling elements.</para>
-        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив, смещение с которого начнётся заполнение и константу возвращаемую при заполнении элементов.</para>
+        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array, the offset from which filling will start and the constant returned when elements filled.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив, смещение с которого начнётся заполнение и константу возвращаемую после заполнения элементов.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
-        /// <param name="offset"><para>The offset from which to start filling the array.</para><para>Смещение с которого начнётся заполнение массива.</para></param>
+        /// <param name="offset"><para>The offset from which to start the array filling.</para><para>Смещение с которого начнётся заполнение массива.</para></param>
         /// <param name="returnConstant"><para>The constant's value.</para><para>Значение константы.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayFiller(TElement[] array, long offset, TReturnConstant returnConstant) : base(array, offset) => _returnConstant = returnConstant;
