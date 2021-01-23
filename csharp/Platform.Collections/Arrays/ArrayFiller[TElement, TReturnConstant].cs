@@ -14,8 +14,8 @@ namespace Platform.Collections.Arrays
         protected readonly TReturnConstant _returnConstant;
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array, the offset from which filling will start and the constant returned when elements filled.</para>
-        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив, смещение с которого начнётся заполнение и константу возвращаемую после заполнения элементов.</para>
+        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array, the offset from which filling will start and the constant returned when elements are being filled.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив, смещение с которого начнётся заполнение и константу возвращаемую при заполнении элементов.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
         /// <param name="offset"><para>The offset from which to start the array filling.</para><para>Смещение с которого начнётся заполнение массива.</para></param>
@@ -24,7 +24,7 @@ namespace Platform.Collections.Arrays
         public ArrayFiller(TElement[] array, long offset, TReturnConstant returnConstant) : base(array, offset) => _returnConstant = returnConstant;
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array and the constant returned when filling elements. Filling will start from the beginning of the array.</para>
+        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array and the constant returned when elements are being filled. Filling will start from the beginning of the array.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив и константу возвращаемую при заполнении элементов. Заполнение начнётся с начала массива.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
