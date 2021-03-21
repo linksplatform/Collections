@@ -4,6 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
 {
+    /// <summary>
+    /// <para>Represents a set of extension methods for a <see cref="T:T[]"/> array.</para>
+    /// <para>Представляет набор методов расширения для массива <see cref="T:T[]"/>.</para>
+    /// </summary>
     public static class GenericArrayExtensions
     {
         /// <summary>
@@ -29,14 +33,14 @@ namespace Platform.Collections.Arrays
         public static T GetElementOrDefault<T>(this T[] array, long index) => array != null && array.LongLength > index ? array[index] : default;
 
         /// <summary>
-        /// <para>Checks whether the array exist, if so, checks the array length using the index varible type int, and if the array length is greater than the index, set the element variable to array[index] and return true.</para>
-        /// <para>Проверяет, существует ли массив, если да, то  идет проверка  длины массива с помощью переменной index  типа int, и если длина массива больше значения index, устанавливает значение переменной element - array[index] и возвращает true.</para>
+        /// <para>Checks whether the array exist, if so, checks the array length using the index varible type int, and if the array length is greater than the index, set the element variable to array[index] and return <see langword="true"/>.</para>
+        /// <para>Проверяет, существует ли массив, если да, то  идет проверка  длины массива с помощью переменной index  типа int, и если длина массива больше значения index, устанавливает значение переменной element - array[index] и возвращает <see langword="true"/>.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>Array that will participate in verification.</para><para>Массив который будет учавствовать в проверке.</para></param>
         /// <param name="index"><para>Number type int to compare.</para><para>Число типа int для сравнения.</para></param>
         /// <param name="element"><para>Passing the argument by reference, if successful, it will take the value array[index] otherwise default value.</para><para>Передает аргумент по ссылке, в случае успеха он примет значение array[index] в противном случае значение по умолчанию.</para></param>
-        /// <returns><para>True if successful otherwise false.</para><para>True в случае успеха, в противном случае false</para></returns>
+        /// <returns><para><see langword="true"/> if successful otherwise <see langword="false"/>.</para><para><see langword="true"/> в случае успеха, в противном случае <see langword="false"/>.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, int index, out T element)
         {
@@ -53,14 +57,14 @@ namespace Platform.Collections.Arrays
         }
         
         /// <summary>  
-        /// <para>Checks whether the array exist, if so,  checks the array length using the index varible type long, and if the array length is greater than the index,  set the element variable to array[index] and return true.</para>
-        /// <para>Проверяет, существует ли массив, если да, то идет проверка длины массива с помощью переменной index  типа long, и если длина массива больше значения index, устанавливает значение переменной element - array[index] и возвращает true.</para>
+        /// <para>Checks whether the array exist, if so,  checks the array length using the index varible type long, and if the array length is greater than the index,  set the element variable to array[index] and return <see langword="true"/>.</para>
+        /// <para>Проверяет, существует ли массив, если да, то идет проверка длины массива с помощью переменной index  типа long, и если длина массива больше значения index, устанавливает значение переменной element - array[index] и возвращает <see langword="true"/>.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>Array that will participate in verification.</para><para>Массив который будет учавствовать в проверке.</para></param>
         /// <param name="index"><para>Number type long to compare.</para><para>Число типа long для сравнения.</para></param>
         /// <param name="element"><para>Passing the argument by reference, if successful, it will take the value array[index] otherwise default value.</para><para>Передает аргумент по ссылке, в случае успеха он примет значение array[index] в противном случае значение по умолчанию.</para></param>
-        /// <returns><para>True if successful otherwise false.</para><para>True в случае успеха, в противном случае false</para></returns>
+        /// <returns><para><see langword="true"/> if successful otherwise <see langword="false"/>.</para><para><see langword="true"/> в случае успеха, в противном случае <see langword="false"/></para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, long index, out T element)
         {
@@ -77,8 +81,8 @@ namespace Platform.Collections.Arrays
         }
 
         /// <summary>
-        /// <para>Copying  of elements from one array to another array.</para>
-        /// <para>Копирует  элементы из одного массива в другой массив.</para>
+        /// <para>Copying of elements from one array to another array.</para>
+        /// <para>Копирует элементы из одного массива в другой массив.</para>
         /// </summary>
         /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array  to copy.</para><para>Массив который необходимо скопировать.</para></param>
