@@ -7,7 +7,7 @@ namespace Platform.Collections.Lists
     {
         /// <summary>
         /// <para>Compares two lists.</para>
-        /// <para>Сравнивает два списка.<para>
+        /// <para>Сравнивает два списка.</para>
         /// </summary>
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="left"><para>The first compared list.</para><para>Первый список для сравнения.</para></param>
@@ -33,7 +33,7 @@ namespace Platform.Collections.Lists
         ///             <description>First non equal element of <paramref name="left" /> list is greater than first not equal element of <paramref name="right" /> list.</description>
         ///         </item>
         ///     </list>
-        /// <para>
+        /// </para>
         /// <para>
         ///     Целое число со знаком, которое указывает относительные значения элементов списков <paramref name="left" /> и <paramref name="right" /> как показано в следующей таблице.
         ///     <list type="table">
