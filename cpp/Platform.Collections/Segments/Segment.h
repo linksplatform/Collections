@@ -1,25 +1,32 @@
 ﻿namespace Platform::Collections::Segments
 {
     template <typename ...> class Segment;
-    template <typename T> class Segment<T> : public IEquatable<Segment<T>>, IList<T>
+    template <typename T> class Segment<T>
     {
-        public: const IList<T> *Base;
+        public: T* Base;
         public: const std::int32_t Offset;
         public: const std::int32_t Length;
 
-        public: Segment(IList<T> base, std::int32_t offset, std::int32_t length)
+
+
+        public: Segment(Array<T> auto& base, std::int32_t offset, std::int32_t length) :
+            Base(base.data()),
+            Offset(offset),
+            Length(length) {}
+
+
+        public: virtual bool operator==(Segment<T> other)
         {
-            Base = base;
-            Offset = offset;
-            Length = length;
+            for(int i = 0; i < Length; i++) {
+                if(operator[](i) != other.operator[](i)) {
+                    return false;
+                }
+            }
+            return true;
         }
 
-        public: virtual bool operator ==(const Segment<T> &other) const { return this.EqualTo(other); }
-
-        public: T this[std::int32_t i]
-        {
-            get => Base[Offset + i];
-            set => Base[Offset + i] = value;
+        public: T& operator[](std::int32_t i) {
+            return Base[Offset + i];
         }
 
         public: std::int32_t Count()
@@ -34,13 +41,10 @@
 
         public: std::int32_t IndexOf(T item)
         {
-            auto index = Base.IndexOf(item);
-            if (index >= Offset)
-            {
-                auto actualIndex = index - Offset;
-                if (actualIndex < Length)
-                {
-                    return actualIndex;
+            int index = Offset;
+            for(; index < Length; index++) {
+                if(operator[](index) == item) {
+                    return index;
                 }
             }
             return -1;
@@ -56,36 +60,42 @@
 
         public: bool Contains(T item) { return this->IndexOf(item) >= 0; }
 
-        public: void CopyTo(T array[], std::int32_t arrayIndex)
+        public: void CopyTo(Array<T> auto& array, std::int32_t arrayIndex)
         {
-            for (auto i = 0; i < Length; i++)
-            {
-                array.Add(arrayIndex, this[i]);
-            }
+            std::copy(begin(), end(), array.data() + arrayIndex);
         }
 
         public: bool Remove(T item) { throw std::logic_error("Not supported exception."); }
 
-        public: IEnumerator<T> GetEnumerator()
-        {
-            for (auto i = 0; i < Length; i++)
-            {
-                yield return this[i];
-            }
+
+
+        auto begin() {
+            return Base + Offset;
         }
 
-        IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
+        auto end() {
+            return begin() + Length;
+        }
     };
 }
 
+
+// TODO I can't do something about it
 namespace std
 {
     template <typename T>
     struct hash<Platform::Collections::Segments::Segment<T>>
     {
-        std::size_t operator()(const Platform::Collections::Segments::Segment<T> &obj) const
+        std::size_t operator()(Platform::Collections::Segments::Segment<int> obj) const
         {
-            return this.GenerateHashCode();
+            // Paste from C#(.NET) Standart Library
+            int hashAccumulator = 17;
+            for (int i = 0; i < obj.Count(); i++)
+            {
+                hashAccumulator = (hashAccumulator * 23) + hash<T>{}(obj[i]);
+                // override hash for type T
+            }
+            return hashAccumulator;
         }
     };
 }
