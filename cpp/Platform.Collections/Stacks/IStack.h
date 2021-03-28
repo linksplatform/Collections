@@ -1,15 +1,13 @@
 ﻿namespace Platform::Collections::Stacks
 {
-    template <typename ...> class IStack;
-    template <typename TElement> class IStack<TElement>
-    {
-    public:
-        const bool IsEmpty;
+    template <typename T, typename TElement> concept Stack = requires(T t, TElement item) {
+        {t.empty()} -> same_as<bool>;
 
-        virtual void Push(TElement element) = 0;
+        {t.top()} -> same_as<TElement&>;
 
-        virtual TElement Pop() = 0;
+        {t.pop()} -> same_as<TElement>;
 
-        virtual TElement Peek() = 0;
+        t.push(item);
     };
+
 }

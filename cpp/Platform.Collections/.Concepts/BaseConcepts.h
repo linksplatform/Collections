@@ -20,28 +20,27 @@ concept Array = Enumerable<C> && requires(C t, T item, int number) {
 
 template<typename C, typename T>
 concept Collection = requires(C t, T item, T* array, int index) {
-    {t.Count()} -> integral;
+    {t.size()} -> integral;
 
-    {t.IsReadOnly()} -> same_as<bool>;
+    {t.isReadOnly()} -> same_as<bool>;
 
-    t.Add(item);
+    t.add(item);
 
-    t.Clear();
+    t.clear();
 
-    {t.Contains(item)} -> same_as<bool>;
+    {t.contains(item)} -> same_as<bool>;
 
-    //TODO Возникла проблемка. Нужны специалисты С++
-    //t.CopyTo(Array<C, T>, index);
+    t.copyTo(array, index);
 
-    {t.Remove(item)} -> same_as<bool>;
+    {t.remove(item)} -> same_as<bool>;
 };
 
 
 template<typename C, typename T>
 concept List = Array<C, T> && Collection<C, T> && requires(C t, T item, int index) {
-    {t.IndexOf(item)} -> integral;
+    {t.indexOf(item)} -> integral;
 
-    t.Insert(index, item);
+    t.insert(index, item);
 
-    t.RemoveAt(index);
+    t.removeAt(index);
 };

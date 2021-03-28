@@ -2,16 +2,16 @@
 {
     class IStackExtensions
     {
-        public: template <typename T> static void Clear(IStack<T> &stack)
+        public: template <typename T> static void Clear(Stack<T> auto& stack)
         {
-            while (!stack.IsEmpty)
+            while (!stack.empty())
             {
-                _ = stack.Pop();
+                stack.pop();
             }
         }
 
-        public: template <typename T> static T PopOrDefault(IStack<T> &stack) { return stack.IsEmpty ? 0 : stack.Pop(); }
+        public: template <default_initializable T> static T PopOrDefault(Stack<T> auto& stack) { return stack.empty() ? T{} : stack.pop(); }
 
-        public: template <typename T> static T PeekOrDefault(IStack<T> &stack) { return stack.IsEmpty ? 0 : stack.Peek(); }
+        public: template <default_initializable T> static T PeekOrDefault(Stack<T> auto& stack) { return stack.empty() ? T{} : stack.top(); }
     };
 }
