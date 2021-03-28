@@ -1,8 +1,2 @@
-﻿namespace Platform::Collections::Stacks
-{
-    template <typename ...> class IStackFactory;
-    template <typename TElement> class IStackFactory<TElement> : public IFactory<IStack<TElement>>
-    {
-    public:
-    };
-}
+﻿// Пока что было решено отложить перевод за ненадобностью
+// So far, it has been decided to postpone the translation as unnecessary
