@@ -245,7 +245,7 @@ namespace Platform.Collections.Lists
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContentEqualTo<T>(this IList<T> left, IList<T> right)
         {
-            EqualityComparer<T> equalityComparer = EqualityComparer<T>.Default;
+            var equalityComparer = EqualityComparer<T>.Default;
             for (var i = left.Count - 1; i >= 0; --i)
             {
                 if (!equalityComparer.Equals(left[i], right[i]))
