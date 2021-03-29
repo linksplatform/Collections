@@ -2,6 +2,7 @@
 
 // ReSharper disable ForCanBeConvertedToForeach
 
+// TODO тут слишком много this->'method'. Я не знаю, что это не стиль C#, но решил пока убрать их
 namespace Platform::Collections::Trees
 {
     class Node
@@ -15,17 +16,17 @@ namespace Platform::Collections::Trees
             return _childNodes;
         }
 
-        //public: Node this[void* key]
-        //{
-        //    get => GetChild(key) ?? AddChild(key);
-        //    set => SetChildValue(value, key);
-        //}
+        public: Node* operator [](void* key)
+        {
+            auto child = GetChild(std::vector<void*>{key});
+            return (child != nullptr) ? child : AddChild(key);
+        }
 
         public: Node(void* value) { Value = value; }
 
-        //public: bool ContainsChild(Array<void*> auto& keys) { return this->GetChild(keys) != {}; }
+        public: bool ContainsChild(Array<void*> auto& keys) { return GetChild(keys) != nullptr; }
 
-        public: Node* GetChild(Array<void*> auto& keys)
+        public: Node* GetChild(const Array<void*> auto& keys)
         {
             auto node = this;
             for (auto i = 0; i < keys.size(); i++)
@@ -43,9 +44,9 @@ namespace Platform::Collections::Trees
 
         public: void* GetChildValue(Array<void*> auto& keys) { GetChild(keys) == nullptr ? nullptr : GetChild(keys)->Value; }
 
-        public: Node* AddChild(void* key) { return this->AddChild(key, new Node({})); }
+        public: Node* AddChild(void* key) { return AddChild(key, new Node({})); }
 
-        public: Node* AddChild(void* key, void* value) { return this->AddChild(key, new Node(value)); }
+        public: Node* AddChild(void* key, void* value) { return AddChild(key, new Node(value)); }
 
         public: Node* AddChild(void* key, Node* child)
         {
@@ -55,11 +56,11 @@ namespace Platform::Collections::Trees
             return child;
         }
 
-        public: Node SetChild(Array<void*> auto& keys) { return this->SetChildValue({}, keys); }
+        public: Node* SetChild(Array<void*> auto& keys) { return SetChildValue({}, keys); }
 
-        public: Node SetChild(void* key) { return this->SetChildValue({}, key); }
+        public: Node* SetChild(void* key) { return SetChildValue({}, key); }
 
-        public: Node SetChildValue(void* value, Array<void*> auto& keys)
+        public: Node* SetChildValue(void* value, Array<void*> auto& keys)
         {
             auto node = this;
             for (auto i = 0; i < keys.Length; i++)
@@ -70,7 +71,7 @@ namespace Platform::Collections::Trees
             return node;
         }
 
-        public: Node SetChildValue(void* value, void* key)
+        public: Node* SetChildValue(void* value, void* key)
         {
             bool contains = ChildNodes().contains(key);
             auto child = ChildNodes()[key];

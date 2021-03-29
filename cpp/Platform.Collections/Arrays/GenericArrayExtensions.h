@@ -64,52 +64,51 @@
             }
         }
 
-        public: template <typename T> static void Add(Array<T> auto& array, std::int32_t &position, T element) { array[position++] = element; }
+        public: template<typename T> static void Add(BaseArray<T> auto& array, std::integral auto& position, T element) { array[position++] = element; }
 
-        public: template<typename T> static void Add(Array<T> auto& array, std::int64_t &position, T element) { array[position++] = element; }
-
-        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddAndReturnConstant(Array<TElement> auto& array, std::int64_t &position, TElement element, TReturnConstant returnConstant)
+        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddAndReturnConstant(BaseArray<TElement> auto& array, std::integral auto& position, TElement element, TReturnConstant returnConstant)
         {
-            Add(array, position, element);
+            Add<TElement>(array, position, element);
             return returnConstant;
         }
 
-        public: template <typename T> static void AddFirst(Array<T> auto& array, std::int64_t &position, const Array<T> auto& elements) { array[position++] = elements[0]; }
+        public: template <typename T> static void AddFirst(BaseArray<T> auto& array, std::integral auto& position, const BaseArray<T> auto& elements) { array[position++] = elements[0]; }
 
-        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddFirstAndReturnConstant(Array<TElement> auto& array, std::int64_t &position, const Array<TElement> auto& elements, TReturnConstant returnConstant)
+        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddFirstAndReturnConstant(BaseArray<TElement> auto& array, std::integral auto& position, const BaseArray<TElement> auto& elements, TReturnConstant returnConstant)
         {
-            AddFirst(array, position, elements);
+            AddFirst<TElement>(array, position, elements);
             return returnConstant;
         }
 
-        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddAllAndReturnConstant(Array<TElement> auto& array, std::int64_t &position, const Array<TElement> auto& elements, TReturnConstant returnConstant)
-        {
-            AddAll(array, position, elements);
-            return returnConstant;
-        }
-
-        public: template <typename T> static void AddAll(Array<T> auto& array, std::int64_t &position, const Array<T> auto& elements)
+        public: template <typename T> static void AddAll(BaseArray<T> auto& array, std::integral auto& position, const Array<T> auto& elements)
         {
             for (auto i = 0; i < elements.size(); i++)
             {
-                Add(array, position, elements[i]);
+                Add<T>(array, position, elements[i]);
             }
         }
 
-        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddSkipFirstAndReturnConstant(Array<TElement> auto& array, std::int64_t &position, const Array<TElement> auto& elements, TReturnConstant returnConstant)
+        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddAllAndReturnConstant(BaseArray<TElement> auto& array, std::integral auto& position, const Array<TElement> auto& elements, TReturnConstant returnConstant)
         {
-            AddSkipFirst(array, position, elements);
+            AddAll<TElement>(array, position, elements);
             return returnConstant;
         }
 
-        public: template <typename T> static void AddSkipFirst(Array<T> auto& array,std::int64_t position, const Array<T> auto& elements) { AddSkipFirst(array, position, elements, 1); }
-        
-        public: template <typename T> static void AddSkipFirst(Array<T> auto& array, std::int64_t &position, const Array<T> auto& elements, std::int32_t skip)
+
+        public: template <typename T> static void AddSkipFirst(BaseArray<T> auto& array, std::integral auto& position, const Array<T> auto& elements, std::int32_t skip)
         {
-            for (auto i = skip; i < elements.Count(); i++)
+            for (auto i = skip; i < elements.size(); i++)
             {
-                Add(array, position, elements[i]);
+                Add<T>(array, position, elements[i]);
             }
+        }
+
+        public: template <typename T> static void AddSkipFirst(BaseArray<T> auto& array, std::integral auto& position, const Array<T> auto& elements) { AddSkipFirst<T>(array, position, elements, 1); }
+
+        public: template<typename TElement, typename TReturnConstant> static TReturnConstant AddSkipFirstAndReturnConstant(BaseArray<TElement> auto& array, std::integral auto& position, const Array<TElement> auto& elements, TReturnConstant returnConstant)
+        {
+            AddSkipFirst<TElement>(array, position, elements);
+            return returnConstant;
         }
     };
 }

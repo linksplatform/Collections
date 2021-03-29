@@ -6,7 +6,8 @@
 
         t.push(item);
 
-        {t.pop()} -> std::same_as<TElement>;
+        //{t.pop()} -> std::same_as<TElement>;
+        t.pop();
 
         {t.top()} -> std::same_as<TElement&>;
     };

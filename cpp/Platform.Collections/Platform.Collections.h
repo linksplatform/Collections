@@ -21,6 +21,7 @@
 
 
 #include "Arrays/GenericArrayExtensions.h"
+#include "Arrays/ArrayFiller[TElement].h"
 
 #include "Trees/Node.h"
 

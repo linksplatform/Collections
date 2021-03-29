@@ -23,7 +23,7 @@ void ShiftRight_Benchmark() {
     timer global_t("ShiftRight");
     using namespace Platform::Collections::Arrays;
 
-    //TODO пока используйте 'vector' вместо 'array'
+    // TODO пока используйте 'vector' вместо 'array'
     vector<int> array{1, 7, 7, 0, 3, 3};
 
     {
@@ -42,7 +42,63 @@ void ShiftRight_Benchmark() {
     }
 }
 
+void GenericArrayExtensions_Test() {
+    using namespace Platform::Collections::Arrays;
+    vector<int> a{2, 2, 8, 0, 3, 3};
+    vector<int> b{1, 7, 7};
+    int64_t position = 0;
+
+    GenericArrayExtensions::AddAll<int>(a, position, b);
+
+    for(auto it : a) {
+        cout << it << " ";
+    }
+}
+
+void Node_Test() {
+
+}
+
+void ArrayFiller_Test() {
+    using namespace Platform::Collections::Arrays;
+
+    vector<int> a{1, 7, 7, 0, 1, 3, -100};
+
+    {
+        ArrayFiller<int> filler(a);
+        filler.Add(2);
+        filler.Add(2);
+        filler.Add(8);
+        filler.Add(1);
+        filler.Add(3);
+        filler.Add(3);
+        filler.Add(7);
+    }
+
+    {
+        ArrayFiller<int> filler(a);
+        filler.AddSkipFirstAndReturnTrue(vector<int>{7, 3, 1});
+        filler.AddAllAndReturnTrue(array<int, 5>{0, 7, 7, 1, -177013});
+    }
+
+
+
+    for(auto it : a) {
+        cout << it << " ";
+    }
+
+};
+
 
 int main() {
-    //ShiftRight_Benchmark();
+    ArrayFiller_Test();
+
 }
+
+
+
+
+
+
+
+
