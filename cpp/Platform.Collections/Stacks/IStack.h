@@ -2,12 +2,12 @@
 {
     template <typename T, typename TElement> concept IStack = requires(T t, TElement item)
     {
-        {t.empty()} -> same_as<bool>;
+        {t.empty()} -> std::same_as<bool>;
 
         t.push(item);
 
-        {t.pop()} -> same_as<TElement>;
+        {t.pop()} -> std::same_as<TElement>;
 
-        {t.top()} -> same_as<TElement&>;
+        {t.top()} -> std::same_as<TElement&>;
     };
 }

@@ -20,8 +20,14 @@
 #include "Stacks/IStackExtensions.h"
 
 
+#include "Arrays/GenericArrayExtensions.h"
+
+#include "Trees/Node.h"
+
+
 using namespace Platform::Collections::Segments;
 using namespace Platform::Collections::Stacks;
+using namespace Platform::Collections::Trees;
 
 
 #endif //COLLECTIONS_PLATFORM_COLLECTIONS_H
