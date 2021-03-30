@@ -58,12 +58,18 @@ concept ISet = IEnumerable<C> && requires(C t, T item) {
 
 
 template<typename C, typename T>
-concept IList = Array<C, T> && ICollection<C, T> && requires(C t, T item, int index) {
-    {t.indexOf(item)} -> std::integral;
+concept IList = Array<C, T> && requires(
+        C t,
+        const C const_t,
+        T item, int index,
+        decltype(const_t.begin()) const_iterator
+)
+{
+    t.push_back(item);
+    t.insert(const_iterator, item);
+    t.erase(const_iterator);
 
-    t.insert(index, item);
 
-    t.removeAt(index);
 };
 
 

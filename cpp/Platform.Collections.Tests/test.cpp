@@ -1,4 +1,24 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> // sorry i'm gcc-fan
+
+namespace std {
+    template <class To, class From>
+    typename std::enable_if_t<
+            sizeof(To) == sizeof(From) &&
+            std::is_trivially_copyable_v<From> &&
+            std::is_trivially_copyable_v<To>,
+            To>
+// constexpr support needs compiler magic
+    inline bit_cast(const From& src) noexcept
+    {
+        static_assert(std::is_trivially_constructible_v<To>,
+                      "This implementation additionally requires destination type to be trivially constructible");
+
+        To dst;
+        std::memcpy(&dst, &src, sizeof(To));
+        return dst;
+    }
+}
+
 #include "../Platform.Collections/Platform.Collections.h"
 
 using namespace std;
@@ -129,7 +149,6 @@ void Template_Test() {
     vector<int> a{1, 2, 3};
     vector<string> b{"1", "2", "3"};
 
-
     a = GenericArrayExtensions::ShiftRight<int>(a);
     b = GenericArrayExtensions::ShiftRight<string>(b);
 
@@ -139,12 +158,50 @@ void Template_Test() {
 }
 
 
+void ListCompare_Benchmark() {
+    timer t("ListCompare_Benchmark");
 
-int main() {
-    //Template_Test();
+    srand(time(nullptr));
 
+    int size = 10000;
+    int count = 10000;
 
+    vector<int> a(size);
+    vector<int> b(size);
 
+    for(int i = 0; i < size; i++) {
+        a[i] = rand();
+        b[i] = a[i];
+    }
+
+    for(int i = 0; i < count; i++) {
+        auto order1 = IListExtensions::CompareTo<int>(a, b);
+        order1 = order1;
+    }
+}
+
+void ListSort_Test() {
+    vector<vector<int>> a{{1, 3, 3, 7, 2, 2, 8, 6 ,9},
+                          {2, 2, 2, 2, 2, 2, 2, 2, 2},
+                          {1, 2, 3, 4, 5, 6, 7, 8, 9},
+                          {9, 0, 0, 0, 0, 0, 0, 0, 9},
+                          {4, 8, 3, 2, 2, 2, 2, 4, 9},
+                          {6, 2, 3, 4, 4, 6, 7, 8, 9},
+                          {4, 2, 3, 3, 5, 6, 1, 3, 9}};
+
+    std::ranges::sort(a);
+
+    for(const auto& i : a) {
+        for(auto j : i) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    ListSort_Test();
 }
 
 
