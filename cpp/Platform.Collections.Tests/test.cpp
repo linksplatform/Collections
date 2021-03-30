@@ -90,15 +90,61 @@ void ArrayFiller_Test() {
 };
 
 
-int main() {
-    ArrayFiller_Test();
+template <typename TElement>
+void BadTemplate_Test_Support(Array<TElement> auto& array) {
+    cout << "size: " << array.size() << endl;
+    cout << "elements: ";
+    for(auto it : array) {
+        if constexpr(same_as<TElement, string>) {
+            cout << '"';
+            cout << it << '"' << " ";
+        }
+        else {
+            cout << it << " ";
+        }
+    }
+    cout << endl;
+}
 
+template <typename TArray, typename TElement> requires Array<TArray, TElement>
+void VeryBadTemplate_Test_Support(TArray& array) {
+    cout << "size: " << array.size() << endl;
+    cout << "elements: ";
+    for(auto it : array) {
+        if constexpr(same_as<TElement, string>) {
+            cout << '"';
+            cout << it << '"' << " ";
+        }
+        else {
+            cout << it << " ";
+        }
+
+    }
+    cout << endl;
+}
+
+
+void Template_Test() {
+    using namespace Platform::Collections::Arrays;
+    vector<int> a{1, 2, 3};
+    vector<string> b{"1", "2", "3"};
+
+
+    a = GenericArrayExtensions::ShiftRight<int>(a);
+    b = GenericArrayExtensions::ShiftRight<string>(b);
+
+    BadTemplate_Test_Support<int>(a);
+    BadTemplate_Test_Support<string>(b);
+    //VeryBadTemplate_Test_Support<array<int, 3>, int>(a);
 }
 
 
 
+int main() {
+    //Template_Test();
 
 
 
+}
 
 

@@ -3,12 +3,13 @@
     template <typename ...> class ArrayFiller;
     template <typename TElement> class ArrayFiller<TElement>
     {
-        protected: TElement* _array;
+        // Можно также использовать TElement*
+        protected: std::span<TElement> _array;
         protected: std::int64_t _position = 0;
 
         public: ArrayFiller(Array<TElement> auto& array, std::int64_t offset)
         {
-            _array = array.data();
+            _array = std::span<TElement>(array.data(), array.size());
             _position = offset;
         }
 

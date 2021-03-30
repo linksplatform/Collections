@@ -11,8 +11,8 @@ concept IEnumerable = requires(T t) {
 
 
 template<typename C, typename T>
-concept Array = IEnumerable<C> && requires(C t, T item, int index) {
-    {t.operator[](index)} -> std::same_as<T&>;
+concept Array = IEnumerable<C> && requires(C t, int index) {
+    {t[index]} -> std::same_as<T&>;
     {t.size()} -> std::integral;
     {t.data()} -> std::same_as<T*>;
 };
@@ -65,3 +65,11 @@ concept IList = Array<C, T> && ICollection<C, T> && requires(C t, T item, int in
 
     t.removeAt(index);
 };
+
+
+template<typename C, typename T>
+concept IComparer = requires(C t, T a, T b) {
+    {t.compare(a, b)} -> std::integral;
+};
+
+

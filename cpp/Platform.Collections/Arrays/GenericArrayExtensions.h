@@ -44,7 +44,10 @@
 
 
         // TODO Тут я слегка сменил обычный стиль 'Array auto& array' на этот, чтобы был доступен конструктор 'TArray'
-        public: template <typename T, Array<T> TArray> static auto ShiftRight(TArray &array, std::int64_t shift)
+        public: template <typename T, Array<T> TArray>
+        requires requires(int size) { TArray(size); } && // проверка на наличие конструктора
+                 requires(T item) {T{};} // есть default конструктор
+        static auto ShiftRight(TArray &array, std::int64_t shift)
         {
             if (shift < 0)
             {
@@ -56,11 +59,9 @@
             }
             else
             {
-                // TODO данная реализация не гарантирует default заполнение новых элементов массива
-                // то есть [1, 2, 3] >> 3 не будет равен [0, 0, 0, 1, 2, 3]
-                auto restrictions = new T[array.size() + shift];
-                std::copy(array.data(), array.data() + array.size(), restrictions + shift);
-                return TArray(restrictions, restrictions + array.size() + shift);
+                auto restrictions = TArray(array.size() + shift);
+                std::ranges::copy(array, restrictions.begin() + shift);
+                return restrictions;
             }
         }
 
