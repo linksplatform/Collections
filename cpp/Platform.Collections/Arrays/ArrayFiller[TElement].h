@@ -9,7 +9,7 @@
 
         public: ArrayFiller(Array<TElement> auto& array, std::int64_t offset)
         {
-            _array = std::span<TElement>(array.data(), array.size());
+            _array = std::span<TElement>(array.begin(), array.size());
             _position = offset;
         }
 

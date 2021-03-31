@@ -10,34 +10,19 @@ concept IEnumerable = requires(T t) {
 };
 
 
-template<typename C, typename T>
-concept Array = IEnumerable<C> && requires(C t, int index) {
+template<typename C, typename T, typename Key = int>
+concept Array = IEnumerable<C> && requires(C t, Key index) {
     {t[index]} -> std::same_as<T&>;
     {t.size()} -> std::integral;
-    {t.data()} -> std::same_as<T*>;
+    //{t.data()} -> std::same_as<T*>; // TODO Убран из-за небезопастности
+
+    {t.begin()} -> std::random_access_iterator;
+    {t.end()} -> std::random_access_iterator;
 };
 
 template<typename C, typename T>
 concept BaseArray = requires(C t, int index) {
     {t[index]} -> std::same_as<T&>;
-};
-
-
-template<typename C, typename T>
-concept ICollection = requires(C t, T item, T* array, int index) {
-    {t.size()} -> std::integral;
-
-    {t.isReadOnly()} -> std::same_as<bool>;
-
-    t.add(item);
-
-    t.clear();
-
-    {t.contains(item)} -> std::same_as<bool>;
-
-    t.copyTo(array, index);
-
-    {t.remove(item)} -> std::same_as<bool>;
 };
 
 
@@ -49,11 +34,32 @@ concept ISet = IEnumerable<C> && requires(C t, T item) {
 
     {t.find(item)} -> std::bidirectional_iterator;
 
-    {t.contains()} -> std::same_as<bool>;
+    {t.contains(item)} -> std::same_as<bool>;
 
     t.insert(item);
 
     {t.empty()} -> std::same_as<bool>;
+
+    {t.begin()} -> std::bidirectional_iterator;
+    {t.end()} -> std::bidirectional_iterator;
+};
+
+template<typename C, typename Key, typename Type>
+concept IDictionary = IEnumerable<C> && Array<Type, Key> && requires(C t, Key key, Type item) {
+    {t.size()} -> std::integral;
+
+    t.clear();
+
+    {t.find(key)} -> std::bidirectional_iterator;
+
+    {t.contains(key)} -> std::same_as<bool>;
+
+    t.insert({key, item});
+
+    {t.empty()} -> std::same_as<bool>;
+
+    {t.begin()} -> std::bidirectional_iterator;
+    {t.end()} -> std::bidirectional_iterator;
 };
 
 
@@ -68,8 +74,6 @@ concept IList = Array<C, T> && requires(
     t.push_back(item);
     t.insert(const_iterator, item);
     t.erase(const_iterator);
-
-
 };
 
 

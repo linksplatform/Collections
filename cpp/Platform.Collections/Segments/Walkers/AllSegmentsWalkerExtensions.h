@@ -2,8 +2,10 @@
 {
     class AllSegmentsWalkerExtensions
     {
-        public: static void WalkAll(AllSegmentsWalkerBase<char> walker, std::string std::string) { walker.WalkAll(std::string.ToCharArray()); }
-
-        public: template <typename TSegment> static void WalkAll(AllSegmentsWalkerBase<char, TSegment> walker, std::string std::string) where TSegment : Segment<char> => walker.WalkAll(std::string.ToCharArray());
+        public: template <Array<char> TArray, typename TSegment = std::span<char>> requires std::derived_from<TSegment, std::span<char>>
+        static void WalkAll(AllSegmentsWalkerBase<char, TArray, TSegment>& walker, std::string string)
+        {
+            walker.WalkAll(TArray(string.begin(), string.end()));
+        }
     };
 }

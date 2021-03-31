@@ -141,23 +141,7 @@
         }
 
 
-        public: template <typename T, IList<T> TList> requires requires(TList list, int a, int b) {list[a] <=> list[b];}
-        static std::int32_t CompareTo(const TList& left, const TList& right)
-        {
-            if constexpr(requires(TList a, TList b) {a <=> b;})
-            {
-                return std::bit_cast<std::int8_t>(left <=> right);
-            }
-
-            auto leftCount = left.size();
-            auto rightCount = right.size();
-            auto intermediateResult = (leftCount <=> rightCount);
-            for (auto i = 0; intermediateResult == std::weak_ordering::equivalent && i < leftCount; i++)
-            {
-                intermediateResult = (left[i] <=> right[i]);
-            }
-            return std::bit_cast<std::int8_t>(intermediateResult);
-        }
+        // TODO метод 'CompareTo' удалён за ненадобностью
 
         /*
         public: static T SkipFirst[]<T>(IList<T> &list) { return list.SkipFirst(1); }
@@ -186,6 +170,5 @@
         {
             return GenericArrayExtensions::ShiftRight<T>(list, shift);
         }
-
     };
 }

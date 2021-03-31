@@ -1,18 +1,22 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class DictionaryBasedDuplicateSegmentsWalkerBase;
-    template <typename T> class DictionaryBasedDuplicateSegmentsWalkerBase<T> : public DictionaryBasedDuplicateSegmentsWalkerBase<T, Segment<T>>
+    template <typename T, Array<T> TArray, typename TDictionary>
+    requires IDictionary<TDictionary, std::span<int>*, int>
+    class DictionaryBasedDuplicateSegmentsWalkerBase<T, TArray, TDictionary> : public DuplicateSegmentsWalkerBase<T, TArray, std::span<T>>
     {
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, std::int64_t> dictionary, std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk) : base(dictionary, minimumStringSegmentLength, resetDictionaryOnEachWalk) { }
+        using base = DuplicateSegmentsWalkerBase<T, TArray, std::span<T>>;
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, std::int64_t> dictionary, std::int32_t minimumStringSegmentLength) : base(dictionary, minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary& dictionary, std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk) : base(dictionary, minimumStringSegmentLength, resetDictionaryOnEachWalk) { }
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, std::int64_t> dictionary) : base(dictionary, DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary& dictionary, std::int32_t minimumStringSegmentLength) : base(dictionary, minimumStringSegmentLength, base::DefaultResetDictionaryOnEachWalk) { }
+
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary& dictionary) : base(dictionary, base::DefaultMinimumStringSegmentLength, base::DefaultResetDictionaryOnEachWalk) { }
 
         protected: DictionaryBasedDuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk) : base(minimumStringSegmentLength, resetDictionaryOnEachWalk) { }
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength, base::DefaultResetDictionaryOnEachWalk) { }
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase() : base(DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase() : base(base::DefaultMinimumStringSegmentLength, base::DefaultResetDictionaryOnEachWalk) { }
     };
 }

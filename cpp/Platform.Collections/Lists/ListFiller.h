@@ -1,50 +1,51 @@
 ﻿namespace Platform::Collections::Lists
 {
     template <typename ...> class ListFiller;
-    template <typename TElement, typename TReturnConstant> class ListFiller<TElement, TReturnConstant>
+    template <typename TElement, typename TReturnConstant, IList<TElement> TList> requires std::default_initializable<TReturnConstant>
+    class ListFiller<TElement, TReturnConstant, TList>
     {
-        protected: List<TElement> _list;
-        protected: TReturnConstant _returnConstant = 0;
+        // TODO ничего, кроме ссылки на сам список, не позволят адекватно делать 'push_back' (возможно ради сходства придётся стиль 'ArrayFiller' заменить)
+        protected: TList& _list;
+        protected: TReturnConstant _returnConstant;
 
-        public: ListFiller(List<TElement> list, TReturnConstant returnConstant)
+        public: ListFiller(TList& list, TReturnConstant returnConstant) : _list(list) // такой вот конструктор может инициализировать константы и ссылки
         {
-            _list = list;
             _returnConstant = returnConstant;
         }
 
-        public: ListFiller(List<TElement> list) : this(list, 0) { }
+        public: ListFiller(TList& list) : ListFiller(list, TElement{}) {}
 
-        public: void Add(TElement element) { _list.Add(element); }
+        public: void Add(TElement element) { _list.push_back(element); }
 
-        public: bool AddAndReturnTrue(TElement element) { return _list.AddAndReturnTrue(element); }
+        public: bool AddAndReturnTrue(TElement element) { return IListExtensions::AddAndReturnTrue<TElement>(_list, element); }
 
-        public: bool AddFirstAndReturnTrue(IList<TElement> &elements) { return _list.AddFirstAndReturnTrue(elements); }
+        public: bool AddFirstAndReturnTrue(const IList<TElement> auto& elements) { return IListExtensions::AddFirstAndReturnTrue<TElement>(_list, elements); }
 
-        public: bool AddAllAndReturnTrue(IList<TElement> &elements) { return _list.AddAllAndReturnTrue(elements); }
+        public: bool AddAllAndReturnTrue(const IList<TElement> auto& elements) { return IListExtensions::AddAllAndReturnTrue<TElement>(_list, elements); }
 
-        public: bool AddSkipFirstAndReturnTrue(IList<TElement> &elements) { return _list.AddSkipFirstAndReturnTrue(elements); }
+        public: bool AddSkipFirstAndReturnTrue(const IList<TElement> auto& elements) { return IListExtensions::AddSkipFirstAndReturnTrue<TElement>(_list, elements); }
         
         public: TReturnConstant AddAndReturnConstant(TElement element)
         {
-            _list.Add(element);
+            _list.push_back(element);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(IList<TElement> &elements)
+        public: TReturnConstant AddFirstAndReturnConstant(const IList<TElement> auto& elements)
         {
-            _list.AddFirst(elements);
+           IListExtensions::AddFirst<TElement>(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddAllAndReturnConstant(IList<TElement> &elements)
+        public: TReturnConstant AddAllAndReturnConstant(const IList<TElement> auto& elements)
         {
-            _list.AddAll(elements);
+            IListExtensions::AddAll<TElement>(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> &elements)
+        public: TReturnConstant AddSkipFirstAndReturnConstant(const IList<TElement> auto& elements)
         {
-            _list.AddSkipFirst(elements);
+            IListExtensions::AddSkipFirst<TElement>(_list, elements);
             return _returnConstant;
         }
     };

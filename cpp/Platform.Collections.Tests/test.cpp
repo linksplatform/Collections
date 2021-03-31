@@ -1,25 +1,8 @@
-#include <bits/stdc++.h> // sorry i'm gcc-fan
-
-namespace std {
-    template <class To, class From>
-    typename std::enable_if_t<
-            sizeof(To) == sizeof(From) &&
-            std::is_trivially_copyable_v<From> &&
-            std::is_trivially_copyable_v<To>,
-            To>
-// constexpr support needs compiler magic
-    inline bit_cast(const From& src) noexcept
-    {
-        static_assert(std::is_trivially_constructible_v<To>,
-                      "This implementation additionally requires destination type to be trivially constructible");
-
-        To dst;
-        std::memcpy(&dst, &src, sizeof(To));
-        return dst;
-    }
-}
-
+//#include <bits/stdc++.h> // sorry i'm gcc-fan
 #include "../Platform.Collections/Platform.Collections.h"
+
+
+#include <chrono>
 
 using namespace std;
 
@@ -154,7 +137,7 @@ void Template_Test() {
 
     BadTemplate_Test_Support<int>(a);
     BadTemplate_Test_Support<string>(b);
-    //VeryBadTemplate_Test_Support<array<int, 3>, int>(a);
+    //VeryBadTemplate_Test_Support<vector<int>, int>(a);
 }
 
 
@@ -175,7 +158,8 @@ void ListCompare_Benchmark() {
     }
 
     for(int i = 0; i < count; i++) {
-        auto order1 = IListExtensions::CompareTo<int>(a, b);
+        //auto order1 = IListExtensions::CompareTo<int>(a, b);
+        auto order1 = a == b;
         order1 = order1;
     }
 }
@@ -199,9 +183,35 @@ void ListSort_Test() {
     }
 }
 
+void Span_Test() {
+    cout << "Is enumerable: " << IEnumerable<std::span<int>> << endl;
+    cout << "Is array: " << Array<std::span<int>, int> << endl;
+    cout << "Is list: " << IList<std::span<int>, int> << endl;
+}
+
+
+void ListFiller_Test() {
+    vector<int> a;
+    auto filler = ListFiller<int, string, vector<int>>(a, "socks");
+
+    filler.Add(1);
+    filler.Add(3);
+    filler.Add(3);
+    filler.Add(7);
+
+    cout << filler.AddAndReturnConstant(2) << endl;
+    cout << filler.AddAllAndReturnConstant(vector{2, 8}) << endl;
+
+    for(auto it : a) {
+        cout << it << ' ';
+    }
+}
+
+
+
 int main()
 {
-    ListSort_Test();
+    Span_Test();
 }
 
 

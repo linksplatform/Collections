@@ -42,7 +42,7 @@ namespace Platform::Collections::Trees
             return node;
         }
 
-        public: void* GetChildValue(Array<void*> auto& keys) { GetChild(keys) == nullptr ? nullptr : GetChild(keys)->Value; }
+        public: void* GetChildValue(Array<void*> auto& keys) { return GetChild(keys) == nullptr ? nullptr : GetChild(keys)->Value; }
 
         public: Node* AddChild(void* key) { return AddChild(key, new Node({})); }
 
