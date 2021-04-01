@@ -1,7 +1,8 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class AllSegmentsWalkerBase;
-    template <typename T, Array<T> TArray, typename TSegment> requires std::derived_from<TSegment, std::span<T>>
+    template <typename T, Platform::Collections::System::Array<T> TArray, typename TSegment>
+    requires std::derived_from<TSegment, std::span<T>>
     class AllSegmentsWalkerBase<T, TArray, TSegment> : public AllSegmentsWalkerBase<>
     {
         private: std::int32_t _minimumStringSegmentLength = 0;
@@ -24,5 +25,7 @@
         protected: virtual TSegment CreateSegment(TArray& elements, std::int32_t offset, std::int32_t length) = 0;
 
         protected: virtual void Iteration(TSegment segment) = 0;
+
+        public: virtual ~AllSegmentsWalkerBase() {}
     };
 }

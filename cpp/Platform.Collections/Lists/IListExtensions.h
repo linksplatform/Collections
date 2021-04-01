@@ -82,7 +82,7 @@
             }
         }
 
-        // TODO разве 'int' может быть 'null'
+        // TODO разве в C# 'int' может быть 'null'
         public: template <typename T>
         static auto GetCountOrZero(const Platform::Collections::System::IList<T> auto& list)
         {
@@ -156,15 +156,10 @@
         }
         */
         
-        public: template <typename T> static void ForEach(const Platform::Collections::System::IList<T> auto& list, std::function<void(T)> action)
-        {
-            for (auto i = 0; i < list.size(); i++)
-            {
-                action(list[i]);
-            }
-        }
 
 
+
+        // TODO метод 'ForEach' удалён за ненадобностью
         // TODO метод 'CompareTo' удалён за ненадобностью
 
         /*

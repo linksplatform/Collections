@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class AllSegmentsWalkerBase;
-    template <typename T, Array<T> TArray>
+    template <typename T, Platform::Collections::System::Array<T> TArray>
     class AllSegmentsWalkerBase<T, TArray> : public AllSegmentsWalkerBase<T, TArray, std::span<T>>
     {
         using base = AllSegmentsWalkerBase<T, TArray, std::span<T>>;

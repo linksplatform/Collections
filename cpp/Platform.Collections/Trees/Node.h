@@ -24,9 +24,12 @@ namespace Platform::Collections::Trees
 
         public: Node(void* value) { Value = value; }
 
-        public: bool ContainsChild(Array<void*> auto& keys) { return GetChild(keys) != nullptr; }
+        public: bool ContainsChild(Platform::Collections::System::Array<void*> auto& keys)
+        {
+            return GetChild(keys) != nullptr;
+        }
 
-        public: Node* GetChild(const Array<void*> auto& keys)
+        public: Node* GetChild(const Platform::Collections::System::Array<void*> auto& keys)
         {
             auto node = this;
             for (auto i = 0; i < keys.size(); i++)
@@ -42,11 +45,20 @@ namespace Platform::Collections::Trees
             return node;
         }
 
-        public: void* GetChildValue(Array<void*> auto& keys) { return GetChild(keys) == nullptr ? nullptr : GetChild(keys)->Value; }
+        public: void* GetChildValue(Platform::Collections::System::Array<void*> auto& keys)
+        {
+            return GetChild(keys) == nullptr ? nullptr : GetChild(keys)->Value;
+        }
 
-        public: Node* AddChild(void* key) { return AddChild(key, new Node({})); }
+        public: Node* AddChild(void* key)
+        {
+            return AddChild(key, new Node({}));
+        }
 
-        public: Node* AddChild(void* key, void* value) { return AddChild(key, new Node(value)); }
+        public: Node* AddChild(void* key, void* value)
+        {
+            return AddChild(key, new Node(value));
+        }
 
         public: Node* AddChild(void* key, Node* child)
         {
@@ -56,11 +68,11 @@ namespace Platform::Collections::Trees
             return child;
         }
 
-        public: Node* SetChild(Array<void*> auto& keys) { return SetChildValue({}, keys); }
+        public: Node* SetChild(Platform::Collections::System::Array<void*> auto& keys) { return SetChildValue({}, keys); }
 
         public: Node* SetChild(void* key) { return SetChildValue({}, key); }
 
-        public: Node* SetChildValue(void* value, Array<void*> auto& keys)
+        public: Node* SetChildValue(void* value, Platform::Collections::System::Array<void*> auto& keys)
         {
             auto node = this;
             for (auto i = 0; i < keys.Length; i++)

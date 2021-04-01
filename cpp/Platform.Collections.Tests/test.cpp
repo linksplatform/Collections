@@ -1,6 +1,13 @@
 //#include <bits/stdc++.h> // sorry i'm gcc-fan
 #include "../Platform.Collections/Platform.Collections.h"
 
+using namespace Platform::Collections::System;
+using namespace Platform::Collections::Arrays;
+using namespace Platform::Collections::Lists;
+using namespace Platform::Collections::Segments;
+using namespace Platform::Collections::Segments::Walkers;
+using namespace Platform::Collections::Stacks;
+using namespace Platform::Collections::Trees;
 
 #include <chrono>
 
@@ -63,7 +70,7 @@ void Node_Test() {
 }
 
 void ArrayFiller_Test() {
-    using namespace Platform::Collections::Arrays;
+    //using namespace Platform::Collections::Arrays;
 
     vector<int> a{1, 7, 7, 0, 1, 3, -100};
 
@@ -209,9 +216,11 @@ void ListFiller_Test() {
 
 
 
+
 int main()
 {
-    Span_Test();
+
+
 }
 
 

@@ -36,12 +36,13 @@
 #include "Arrays/CharArrayExtensions.h"
 
 
+
 #include "Lists/CharIListExtensions.h"
 #include "Lists/IListComparer.h"
 #include "Lists/IListEqualityComparer.h"
 #include "Lists/IListExtensions.h"
 #include "Lists/ListFiller.h"
-using namespace Platform::Collections::Lists;
+
 
 #include "Segments/Segment.h"
 #include "Segments/CharSegment.h"
@@ -53,20 +54,20 @@ using namespace Platform::Collections::Lists;
 #include "Segments/Walkers/DuplicateSegmentsWalkerBase[T].h"
 #include "Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].h"
 #include "Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].h"
-using namespace Platform::Collections::Segments;
-using namespace Platform::Collections::Segments::Walkers;
+
+
 
 #include "Stacks/DefaultStack.h"
 #include "Stacks/IStack.h"
 #include "Stacks/IStackExtensions.h"
 #include "Stacks/IStackFactory.h"
 #include "Stacks/StackExtensions.h"
-using namespace Platform::Collections::Stacks;
+
 
 
 
 #include "Trees/Node.h"
-using namespace Platform::Collections::Trees;
+
 
 
 //#include "StringExtensions.h"

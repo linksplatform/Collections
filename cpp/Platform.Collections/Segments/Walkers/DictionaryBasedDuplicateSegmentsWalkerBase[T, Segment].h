@@ -1,8 +1,8 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class DictionaryBasedDuplicateSegmentsWalkerBase;
-    template <typename T, Array<T> TArray, typename TDictionary, typename TSegment>
-    requires std::derived_from<TSegment, std::span<T>> && IDictionary<TDictionary, TSegment*, int>
+    template <typename T, Platform::Collections::System::Array<T> TArray, typename TDictionary, typename TSegment>
+    requires std::derived_from<TSegment, std::span<T>> && Platform::Collections::System::IDictionary<TDictionary, TSegment*, int>
     class DictionaryBasedDuplicateSegmentsWalkerBase<T, TArray, TDictionary, TSegment> : public DuplicateSegmentsWalkerBase<T, TArray, TSegment>
     {
         using base = DuplicateSegmentsWalkerBase<T, TArray, TSegment>;
@@ -35,7 +35,7 @@
 
         public: void WalkAll(TArray& elements) override
         {
-            if constexpr(/*_resetDictionaryOnEachWalk && */requires(TDictionary dict, int capacity) {dict(capacity);})
+            if constexpr(decltype(*this)::_resetDictionaryOnEachWalk && requires(TDictionary dict, int capacity) {dict(capacity);})
             {
                 auto capacity = std::ceil(std::pow(elements->size(), 2) / 2);
                 Dictionary = new TDictionary((std::int32_t)capacity);

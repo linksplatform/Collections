@@ -1,8 +1,7 @@
 ﻿namespace Platform::Collections::Arrays
 {
-    using namespace Platform::Collections::System;
     template <typename ...> class ArrayFiller;
-    template <typename TElement, typename TReturnConstant> class ArrayFiller<TElement, TReturnConstant> : public
+    template <typename TElement, typename TReturnConstant> class ArrayFiller<TElement, TReturnConstant> : public ArrayFiller<TElement>
     {
         using base = ArrayFiller<TElement>;
 
