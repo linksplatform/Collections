@@ -3,12 +3,14 @@
     // TODO странно, что перегрузки методов объявлены выше их "оригиналов"
     class IListExtensions
     {
-        public: template <std::default_initializable T> static T GetElementOrDefault(IList<T> auto& list, std::integral auto index)
+        public: template <std::default_initializable T>
+        static T GetElementOrDefault(Platform::Collections::System::IList<T> auto& list, std::integral auto index)
         {
             return list.size() > index ? list[index] : 0;
         }
 
-        public: template <typename T> static bool TryGetElement(IList<T> auto& list, std::int32_t index, T& element)
+        public: template <typename T>
+        static bool TryGetElement(Platform::Collections::System::IList<T> auto& list, std::int32_t index, T& element)
         {
             if (list.size() > index)
             {
@@ -22,27 +24,35 @@
             }
         }
 
-        public: template <typename T> static bool AddAndReturnTrue(IList<T> auto& list, T element)
+        public: template <typename T>
+        static bool AddAndReturnTrue(Platform::Collections::System::IList<T> auto& list, T element)
         {
             list.push_back(element);
             return true;
         }
 
-        public: template <typename T> static bool AddFirstAndReturnTrue(IList<T> auto& list, const IList<T> auto& elements)
+        public: template <typename T>
+        static bool AddFirstAndReturnTrue(Platform::Collections::System::IList<T> auto& list, const Platform::Collections::System::IList<T> auto& elements)
         {
             AddFirst<T>(list, elements);
             return true;
         }
 
-        public: template <typename T> static void AddFirst(IList<T> auto& list, const BaseArray<T> auto& elements) { list.push_back(elements[0]); }
+        public: template <typename T>
+        static void AddFirst(Platform::Collections::System::IList<T> auto& list, const Platform::Collections::System::BaseArray<T> auto& elements)
+        {
+            list.push_back(elements[0]);
+        }
 
-        public: template <typename T> static bool AddAllAndReturnTrue(IList<T> auto& list, Array<T> auto& elements)
+        public: template <typename T>
+        static bool AddAllAndReturnTrue(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::Array<T> auto& elements)
         {
             AddAll<T>(list, elements);
             return true;
         }
 
-        public: template <typename T> static void AddAll(IList<T> auto& list, const Array<T> auto& elements)
+        public: template <typename T>
+        static void AddAll(Platform::Collections::System::IList<T> auto& list, const Platform::Collections::System::Array<T> auto& elements)
         {
             for (auto i = 0; i < elements.size(); i++)
             {
@@ -50,15 +60,21 @@
             }
         }
     
-        public: template <typename T> static bool AddSkipFirstAndReturnTrue(IList<T> auto& list, const Array<T> auto& elements)
+        public: template <typename T>
+        static bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<T> auto& list, const Platform::Collections::System::Array<T> auto& elements)
         {
             AddSkipFirst<T>(elements);
             return true;
         }
 
-        public: template <typename T> static void AddSkipFirst(IList<T> auto& list, const Array<T> auto& elements) { AddSkipFirst<T>(list, elements, 1); }
+        public: template <typename T>
+        static void AddSkipFirst(Platform::Collections::System::IList<T> auto& list, const Platform::Collections::System::Array<T> auto& elements)
+        {
+            AddSkipFirst<T>(list, elements, 1);
+        }
 
-        public: template <typename T> static void AddSkipFirst(IList<T> auto& list, const Array<T> auto& elements, std::int32_t skip)
+        public: template <typename T>
+        static void AddSkipFirst(Platform::Collections::System::IList<T> auto& list, const Platform::Collections::System::Array<T> auto& elements, std::int32_t skip)
         {
             for (auto i = skip; i < elements.size(); i++)
             {
@@ -67,11 +83,23 @@
         }
 
         // TODO разве 'int' может быть 'null'
-        public: template <typename T> static auto GetCountOrZero(const IList<T> auto& list) { return list.size(); }
+        public: template <typename T>
+        static auto GetCountOrZero(const Platform::Collections::System::IList<T> auto& list)
+        {
+            return list.size();
+        }
 
-        public: template <typename T> static bool EqualTo(const IList<T> auto& left, const IList<T> auto& right) { return EqualTo<T>(left, right, ContentEqualTo); }
+        public: template <typename T, Platform::Collections::System::IList<T> TList>
+        static bool EqualTo(const TList& left, const TList& right)
+        {
+            if constexpr(requires(TList a, TList b) {a == b;})
+            {
+                return left == right;
+            }
+            return EqualTo<T>(left, right, ContentEqualTo);
+        }
 
-        public: template <typename T, IList<T> TList>
+        public: template <typename T, Platform::Collections::System::IList<T> TList>
         static bool EqualTo(const TList& left, const TList& right, std::function<bool(TList, TList)> contentEqualityComparer)
         {
             auto leftCount = left.size();
@@ -87,15 +115,11 @@
             return contentEqualityComparer(left, right);
         }
 
-        public: template <typename T, IList<T> TList> requires requires(TList list, int a, int b) {list[a] == list[b];}
+        public: template <typename T, Platform::Collections::System::IList<T> TList>
+        requires requires(TList list, int a, int b) {list[a] == list[b];}
         static bool ContentEqualTo(const TList& left, const TList& right)
         {
-            if constexpr(requires(TList a, TList b) {a == b;})
-            {
-                return left == right;
-            }
-
-            for (auto i = left.Count() - 1; i >= 0; --i)
+            for (auto i = left.size() - 1; i >= 0; --i)
             {
                 if (!(left[i] == right[i]))
                 {
@@ -132,7 +156,7 @@
         }
         */
         
-        public: template <typename T> static void ForEach(const IList<T> auto& list, std::function<void(T)> action)
+        public: template <typename T> static void ForEach(const Platform::Collections::System::IList<T> auto& list, std::function<void(T)> action)
         {
             for (auto i = 0; i < list.size(); i++)
             {
@@ -161,14 +185,16 @@
         }
         */
 
-        public: template<typename T> static auto ShiftRight(const IList<T> auto& list)
+        public: template<typename T>
+        static auto ShiftRight(const Platform::Collections::System::IList<T> auto& list)
         {
-            return GenericArrayExtensions::ShiftRight<T>(list);
+            return Platform::Collections::Arrays::GenericArrayExtensions::ShiftRight<T>(list);
         }
 
-        public: template<typename T> static auto ShiftRight(const IList<T> auto& list, std::int32_t shift)
+        public: template<typename T>
+        static auto ShiftRight(const Platform::Collections::System::IList<T> auto& list, std::int32_t shift)
         {
-            return GenericArrayExtensions::ShiftRight<T>(list, shift);
+            return Platform::Collections::Arrays::GenericArrayExtensions::ShiftRight<T>(list, shift);
         }
     };
 }

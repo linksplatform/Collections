@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <array>
+#include <bitset>
 #include <map>
 #include <set>
 #include <memory>
@@ -15,23 +16,25 @@
 #include <span>
 #include <iostream>
 #include <functional>
+#include <coroutine>
+#include <thread>
 
 
 
 
 
 #include ".Concepts/BaseConcepts.h"
+//using namespace Platform::Collections::System;
 
 
-
+#include "Arrays/GenericArrayExtensions.h"
 #include "Arrays/ArrayFiller[TElement].h"
 #include "Arrays/ArrayFiller[TElement, TReturnConstant].h"
 #include "Arrays/ArrayPool.h"
 #include "Arrays/ArrayPool[T].h"
 #include "Arrays/ArrayString.h"
 #include "Arrays/CharArrayExtensions.h"
-#include "Arrays/GenericArrayExtensions.h"
-using namespace Platform::Collections::Arrays;
+
 
 #include "Lists/CharIListExtensions.h"
 #include "Lists/IListComparer.h"
@@ -64,6 +67,10 @@ using namespace Platform::Collections::Stacks;
 
 #include "Trees/Node.h"
 using namespace Platform::Collections::Trees;
+
+
+//#include "StringExtensions.h"
+
 
 
 #endif //COLLECTIONS_PLATFORM_COLLECTIONS_H
