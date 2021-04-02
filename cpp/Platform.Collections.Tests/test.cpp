@@ -1,13 +1,14 @@
 //#include <bits/stdc++.h> // sorry i'm gcc-fan
 #include "../Platform.Collections/Platform.Collections.h"
 
-using namespace Platform::Collections::System;
-using namespace Platform::Collections::Arrays;
-using namespace Platform::Collections::Lists;
-using namespace Platform::Collections::Segments;
-using namespace Platform::Collections::Segments::Walkers;
-using namespace Platform::Collections::Stacks;
-using namespace Platform::Collections::Trees;
+using namespace Platform::Collections;
+using namespace System;
+using namespace Arrays;
+using namespace Lists;
+using namespace Segments;
+using namespace Segments::Walkers;
+using namespace Stacks;
+using namespace Trees;
 
 #include <chrono>
 
@@ -215,9 +216,21 @@ void ListFiller_Test() {
 }
 
 
+void StringExtensions_Test() {
+    string s = "five cocks and one hen";
+
+    s = StringExtensions::CapitalizeFirstLetter(s);
+    s = StringExtensions::Truncate(s, 12);
+    s = StringExtensions::TrimSingle(s, 'a');
+    s = StringExtensions::TrimSingle(s, ' ');
+
+    cout << s;
+}
+
+
 int main()
 {
-
+    StringExtensions_Test();
 }
 
 

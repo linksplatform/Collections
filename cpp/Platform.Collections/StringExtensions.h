@@ -7,51 +7,39 @@
         public: static std::string CapitalizeFirstLetter(std::string string)
         {
             // TODO бонусная альтернативная реализация от Voider'а
-            for(auto& it : string) {
+            for(auto & it : string) {
                 if(std::islower(it)) {
                     it = std::toupper(it);
                     return string;
                 }
             }
-
             return string;
         }
 
-        public: static std::string Truncate(std::string std::string, std::int32_t maxLength) { return std::string.IsNullOrEmpty(std::string) ? std::string : std::string.Substring(0, Math.Min(std::string.Length, maxLength)); }
-
-        public: static std::string TrimSingle(std::string std::string, char charToTrim)
+        public: static std::string Truncate(std::string string, std::int32_t maxLength)
         {
-            if (!std::string.IsNullOrEmpty(std::string))
+            return string.empty() ? std::string{} : string.substr(0, std::min(string.size(), (size_t)maxLength));
+        }
+
+        public: static std::string TrimSingle(std::string string, char charToTrim)
+        {
+            if (string.size() >= 1)
             {
-                if (std::string.Length == 1)
+                auto left = 0;
+                auto right = string.size() - 1;
+                if (string[left] == charToTrim)
                 {
-                    if (std::string[0] == charToTrim)
-                    {
-                        return "";
-                    }
-                    else
-                    {
-                        return std::string;
-                    }
+                    left++;
                 }
-                else
+                if (string[right] == charToTrim)
                 {
-                    auto left = 0;
-                    auto right = std::string.Length - 1;
-                    if (std::string[left] == charToTrim)
-                    {
-                        left++;
-                    }
-                    if (std::string[right] == charToTrim)
-                    {
-                        right--;
-                    }
-                    return std::string.Substring(left, right - left + 1);
+                    right--;
                 }
+                return string.substr(left, right - left + 1);
             }
             else
             {
-                return std::string;
+                return string;
             }
         }
     };
