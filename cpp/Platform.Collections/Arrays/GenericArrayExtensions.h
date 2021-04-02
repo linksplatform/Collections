@@ -94,20 +94,20 @@
         }
 
         public: template <typename T>
-        static void AddFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, const Platform::Collections::System::BaseArray<T> auto& elements)
+        static void AddFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::BaseArray<T> auto elements)
         {
             array[position++] = elements[0];
         }
 
         public: template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, const Platform::Collections::System::BaseArray<TElement> auto& elements, TReturnConstant returnConstant)
+        static TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, Platform::Collections::System::BaseArray<TElement> auto elements, TReturnConstant returnConstant)
         {
             AddFirst<TElement>(array, position, elements);
             return returnConstant;
         }
 
         public: template <typename T>
-        static void AddAll(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, const Platform::Collections::System::Array<T> auto& elements)
+        static void AddAll(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements)
         {
             for (auto i = 0; i < elements.size(); i++)
             {
@@ -116,7 +116,7 @@
         }
 
         public: template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, const Platform::Collections::System::Array<TElement> auto& elements, TReturnConstant returnConstant)
+        static TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, Platform::Collections::System::Array<TElement> auto elements, TReturnConstant returnConstant)
         {
             AddAll<TElement>(array, position, elements);
             return returnConstant;
@@ -124,7 +124,7 @@
 
 
         public: template <typename T>
-        static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, const Platform::Collections::System::Array<T> auto& elements, std::int32_t skip)
+        static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements, std::int32_t skip)
         {
             for (auto i = skip; i < elements.size(); i++)
             {
@@ -133,13 +133,13 @@
         }
 
         public: template <typename T>
-        static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, const Platform::Collections::System::Array<T> auto& elements)
+        static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements)
         {
             AddSkipFirst<T>(array, position, elements, 1);
         }
 
         public: template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, const Platform::Collections::System::Array<TElement> auto& elements, TReturnConstant returnConstant)
+        static TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, Platform::Collections::System::Array<TElement> auto elements, TReturnConstant returnConstant)
         {
             AddSkipFirst<TElement>(array, position, elements);
             return returnConstant;

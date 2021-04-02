@@ -2,27 +2,19 @@
 {
     class StringExtensions
     {
-        public: static std::string CapitalizeFirstLetter(std::string std::string)
+        // TODO заметил, что часто встречается проверка на не null в функциях
+        //  Ох уж эти шарперы. Всё-таки код чисто с value-types(не я придумал) и ссылками выглядит безопаснее
+        public: static std::string CapitalizeFirstLetter(std::string string)
         {
-            if (std::string.IsNullOrWhiteSpace(std::string))
-            {
-                return std::string;
-            }
-            auto chars = std::string.ToCharArray();
-            for (auto i = 0; i < chars.Length; i++)
-            {
-                auto category = char.GetUnicodeCategory(chars[i]);
-                if (category == UnicodeCategory.UppercaseLetter)
-                {
-                    return std::string;
+            // TODO бонусная альтернативная реализация от Voider'а
+            for(auto& it : string) {
+                if(std::islower(it)) {
+                    it = std::toupper(it);
                 }
-                if (category == UnicodeCategory.LowercaseLetter)
-                {
-                    chars[i] = char.ToUpper(chars[i]);
-                    return std::string(chars);
-                }
+                return string;
             }
-            return std::string;
+
+            return string;
         }
 
         public: static std::string Truncate(std::string std::string, std::int32_t maxLength) { return std::string.IsNullOrEmpty(std::string) ? std::string : std::string.Substring(0, Math.Min(std::string.Length, maxLength)); }

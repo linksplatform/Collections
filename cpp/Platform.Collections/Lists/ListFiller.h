@@ -25,17 +25,17 @@
             return IListExtensions::AddAndReturnTrue<TElement>(_list, element);
         }
 
-        public: bool AddFirstAndReturnTrue(const Platform::Collections::System::IList<TElement> auto& elements)
+        public: bool AddFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
         {
             return IListExtensions::AddFirstAndReturnTrue<TElement>(_list, elements);
         }
 
-        public: bool AddAllAndReturnTrue(const Platform::Collections::System::IList<TElement> auto& elements)
+        public: bool AddAllAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
         {
             return IListExtensions::AddAllAndReturnTrue<TElement>(_list, elements);
         }
 
-        public: bool AddSkipFirstAndReturnTrue(const Platform::Collections::System::IList<TElement> auto& elements)
+        public: bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
         {
             return IListExtensions::AddSkipFirstAndReturnTrue<TElement>(_list, elements);
         }
@@ -46,19 +46,19 @@
             return _returnConstant;
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(const Platform::Collections::System::IList<TElement> auto& elements)
+        public: TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
         {
            IListExtensions::AddFirst<TElement>(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddAllAndReturnConstant(const Platform::Collections::System::IList<TElement> auto& elements)
+        public: TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
         {
             IListExtensions::AddAll<TElement>(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(const Platform::Collections::System::IList<TElement> auto& elements)
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
         {
             IListExtensions::AddSkipFirst<TElement>(_list, elements);
             return _returnConstant;

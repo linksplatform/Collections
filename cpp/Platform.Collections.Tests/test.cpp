@@ -215,12 +215,64 @@ void ListFiller_Test() {
 }
 
 
+#include <coroutine>
 
+class PromiseType;
+
+struct MyFirstTaskILoveThisNamingStyle
+{
+    using promise_type = PromiseType;
+};
+
+class PromiseType {
+    public:
+
+    void return_void() const { }
+
+    auto initial_suspend() const {
+        return std::suspend_never{};
+    }
+
+    auto final_suspend() const {
+        return std::suspend_never{};
+    }
+
+    void unhandled_exception() const {
+        std::terminate();
+    }
+
+    auto get_return_object() const {
+        return MyFirstTaskILoveThisNamingStyle{};
+    }
+
+    auto yield_value(queue<function<void()>>& wq) const {
+        struct schedule_for_execution {
+            queue<function<void()>>& wq;
+
+            constexpr bool await_ready() const noexcept { return false; }
+
+            void await_suspend(coroutine_handle<> this_coro) const {
+                wq.push(this_coro);
+            }
+            constexpr void await_resume() const noexcept {}
+        };
+
+        return schedule_for_execution{wq};
+    }
+};
+
+
+
+
+void foo(int x) {
+    cout << &x << endl;
+}
 
 int main()
 {
-
-
+    int x = 2;
+    cout << &x << endl;
+    foo(x);
 }
 
 
