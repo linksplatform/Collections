@@ -23,19 +23,33 @@
 
         public: static std::string TrimSingle(std::string string, char charToTrim)
         {
-            if (string.size() >= 1)
+            if (!string.empty())
             {
-                auto left = 0;
-                auto right = string.size() - 1;
-                if (string[left] == charToTrim)
+                if (string.size() == 1)
                 {
-                    left++;
+                    if (string[0] == charToTrim)
+                    {
+                        return "";
+                    }
+                    else
+                    {
+                        return string;
+                    }
                 }
-                if (string[right] == charToTrim)
+                else
                 {
-                    right--;
+                    auto left = 0;
+                    auto right = string.size() - 1;
+                    if (string[left] == charToTrim)
+                    {
+                        left++;
+                    }
+                    if (string[right] == charToTrim)
+                    {
+                        right--;
+                    }
+                    return string.substr(left, right - left + 1);
                 }
-                return string.substr(left, right - left + 1);
             }
             else
             {
