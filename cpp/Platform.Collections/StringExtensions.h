@@ -10,8 +10,8 @@
             for(auto& it : string) {
                 if(std::islower(it)) {
                     it = std::toupper(it);
+                    return string;
                 }
-                return string;
             }
 
             return string;
