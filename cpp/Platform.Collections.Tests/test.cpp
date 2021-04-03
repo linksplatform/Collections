@@ -10,11 +10,13 @@ using namespace Segments::Walkers;
 using namespace Stacks;
 using namespace Trees;
 
+
+
 #include <chrono>
 
 using namespace std;
 
-struct timer {
+struct timer{
     chrono::system_clock::time_point time{};
     string message;
 
@@ -27,7 +29,6 @@ struct timer {
         cout << "timeline '" + message + "' :  " << duration.count() << "ms" << endl;
     }
 };
-
 
 
 void ShiftRight_Benchmark() {
@@ -93,7 +94,6 @@ void ArrayFiller_Test() {
     }
 
 
-
     for(auto it : a) {
         cout << it << " ";
     }
@@ -101,12 +101,12 @@ void ArrayFiller_Test() {
 };
 
 
-template <typename TElement>
-void BadTemplate_Test_Support(Array<TElement> auto& array) {
+template<typename TElement>
+void BadTemplate_Test_Support(Array <TElement> auto& array) {
     cout << "size: " << array.size() << endl;
     cout << "elements: ";
     for(auto it : array) {
-        if constexpr(same_as<TElement, string>) {
+        if constexpr(same_as < TElement, string >) {
             cout << '"';
             cout << it << '"' << " ";
         }
@@ -117,12 +117,13 @@ void BadTemplate_Test_Support(Array<TElement> auto& array) {
     cout << endl;
 }
 
-template <typename TArray, typename TElement> requires Array<TArray, TElement>
+template<typename TArray, typename TElement>
+requires Array<TArray, TElement>
 void VeryBadTemplate_Test_Support(TArray& array) {
     cout << "size: " << array.size() << endl;
     cout << "elements: ";
     for(auto it : array) {
-        if constexpr(same_as<TElement, string>) {
+        if constexpr(same_as < TElement, string >) {
             cout << '"';
             cout << it << '"' << " ";
         }
@@ -173,7 +174,7 @@ void ListCompare_Benchmark() {
 }
 
 void ListSort_Test() {
-    vector<vector<int>> a{{1, 3, 3, 7, 2, 2, 8, 6 ,9},
+    vector<vector<int>> a{{1, 3, 3, 7, 2, 2, 8, 6, 9},
                           {2, 2, 2, 2, 2, 2, 2, 2, 2},
                           {1, 2, 3, 4, 5, 6, 7, 8, 9},
                           {9, 0, 0, 0, 0, 0, 0, 0, 9},
@@ -232,5 +233,3 @@ int main()
 {
     StringExtensions_Test();
 }
-
-

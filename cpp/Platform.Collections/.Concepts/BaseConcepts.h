@@ -1,75 +1,75 @@
 namespace Platform::Collections::System  // TODO пока что так
 {
-    template<typename T>
-    concept IEquatable = requires(T a, T b) {
-        { a == b } -> std::same_as<bool>;
+    template<typename _Type>
+    concept IEquatable = requires(_Type a, _Type b) {
+        {a == b} -> std::same_as<bool>;
     };
 
-    template<typename T>
-    concept IEnumerable = requires(T t) {
-        { t.begin() } -> std::forward_iterator;
-        { t.end() } -> std::forward_iterator;
-    };
-
-
-    template<typename C, typename T, typename Key = int>
-    concept Array = IEnumerable<C> && requires(C t, Key index) {
-        { t[index] } -> std::same_as<T &>;
-        { t.size() } -> std::integral;
-        //{t.data()} -> std::same_as<T*>; // TODO Убран из-за небезопасности (как я тут мог букву 'т' написать)
-
-        { t.begin() } -> std::random_access_iterator;
-        { t.end() } -> std::random_access_iterator;
-    };
-
-    template<typename C, typename T>
-    concept BaseArray = requires(C t, int index) {
-        { t[index] } -> std::same_as<T &>;
+    template<typename _Type>
+    concept IEnumerable = requires(_Type t) {
+        {t.begin()} -> std::forward_iterator;
+        {t.end()} -> std::forward_iterator;
     };
 
 
-    template<typename C, typename T>
-    concept ISet = IEnumerable<C> && requires(C t, T item) {
-        { t.size() } -> std::integral;
+    template<typename _Type, typename _Item, typename _Key = int>
+    concept Array = IEnumerable<_Type> && requires(_Type t, _Key index) {
+        {t[index]} -> std::same_as<_Item&>;
+        {t.size()} -> std::integral;
+        //{t.data()} -> std::same_as<T*>; // TODO Убран из-за небезопасности
+
+        {t.begin()} -> std::random_access_iterator;
+        {t.end()} -> std::random_access_iterator;
+    };
+
+    template<typename _Type, typename _Item>
+    concept BaseArray = requires(_Type t, int index) {
+        {t[index]} -> std::same_as<_Item&>;
+    };
+
+
+    template<typename _Type, typename _Item>
+    concept ISet = IEnumerable<_Type> && requires(_Type t, _Item item) {
+        {t.size()} -> std::integral;
 
         t.clear();
 
-        { t.find(item) } -> std::bidirectional_iterator;
+        {t.find(item)} -> std::bidirectional_iterator;
 
-        { t.contains(item) } -> std::same_as<bool>;
+        {t.contains(item)} -> std::same_as<bool>;
 
         t.insert(item);
 
-        { t.empty() } -> std::same_as<bool>;
+        {t.empty()} -> std::same_as<bool>;
 
-        { t.begin() } -> std::bidirectional_iterator;
-        { t.end() } -> std::bidirectional_iterator;
+        {t.begin()} -> std::bidirectional_iterator;
+        {t.end()} -> std::bidirectional_iterator;
     };
 
-    template<typename C, typename Key, typename Type>
-    concept IDictionary = IEnumerable<C> && Array<Type, Key> && requires(C t, Key key, Type item) {
-        { t.size() } -> std::integral;
+    template<typename _Type, typename _Key, typename _Item>
+    concept IDictionary = IEnumerable<_Type> && Array<_Item, _Key> && requires(_Type t, _Key key, _Item item) {
+        {t.size()} -> std::integral;
 
         t.clear();
 
-        { t.find(key) } -> std::bidirectional_iterator;
+        {t.find(key)} -> std::bidirectional_iterator;
 
-        { t.contains(key) } -> std::same_as<bool>;
+        {t.contains(key)} -> std::same_as<bool>;
 
         t.insert({key, item});
 
-        { t.empty() } -> std::same_as<bool>;
+        {t.empty()} -> std::same_as<bool>;
 
-        { t.begin() } -> std::bidirectional_iterator;
-        { t.end() } -> std::bidirectional_iterator;
+        {t.begin()} -> std::bidirectional_iterator;
+        {t.end()} -> std::bidirectional_iterator;
     };
 
 
-    template<typename C, typename T>
-    concept IList = Array<C, T> && requires(
-            C t,
-            const C const_t,
-            T item, int index,
+    template<typename _Type, typename _Item>
+    concept IList = Array<_Type, _Item> && requires(
+            _Type t,
+            const _Type const_t,
+            _Item item, int index,
             decltype(const_t.begin()) const_iterator
     )
     {
@@ -77,12 +77,4 @@ namespace Platform::Collections::System  // TODO пока что так
         t.insert(const_iterator, item);
         t.erase(const_iterator);
     };
-
-
-    template<typename C, typename T>
-    concept IComparer = requires(C t, T a, T b) {
-        { t.compare(a, b) } -> std::integral;
-    };
-
-
 }
