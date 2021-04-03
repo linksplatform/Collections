@@ -2,13 +2,13 @@
 #include "../Platform.Collections/Platform.Collections.h"
 
 using namespace Platform::Collections;
-using namespace System;
-using namespace Arrays;
-using namespace Lists;
-using namespace Segments;
-using namespace Segments::Walkers;
-using namespace Stacks;
-using namespace Trees;
+using namespace Platform::Collections::System;
+using namespace Platform::Collections::Arrays;
+using namespace Platform::Collections::Lists;
+using namespace Platform::Collections::Segments;
+using namespace Platform::Collections::Segments::Walkers;
+using namespace Platform::Collections::Stacks;
+//using namespace Platform::Collections::Trees;
 
 
 

@@ -1,8 +1,5 @@
-﻿
+﻿// ReSharper disable ForCanBeConvertedToForeach (а ведь и правда можно)
 
-// ReSharper disable ForCanBeConvertedToForeach
-
-// TODO тут слишком много this->'method'. Я не знаю, что это не стиль C#, но решил пока убрать их
 namespace Platform::Collections::Trees
 {
     class Node
@@ -18,11 +15,11 @@ namespace Platform::Collections::Trees
 
         public: Node* operator [](void* key)
         {
-            auto child = GetChild(std::vector<void*>{key});
+            auto child = GetChild(std::vector<void*>{key}); // черезчур временное решение
             return (child != nullptr) ? child : AddChild(key);
         }
 
-        public: Node(void* value) { Value = value; }
+        public: Node(void* value) : Value(value) {}
 
         public: bool ContainsChild(Platform::Collections::System::Array<void*> auto& keys)
         {

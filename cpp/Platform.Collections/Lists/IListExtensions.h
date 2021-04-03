@@ -92,7 +92,7 @@
         public: template <typename T, Platform::Collections::System::IList<T> TList>
         static bool EqualTo(TList left, TList right)
         {
-            if constexpr(requires(TList a, TList b) {a == b;})
+            if constexpr(Platform::Collections::System::IEquatable<TList>)
             {
                 return left == right;
             }
@@ -116,7 +116,7 @@
         }
 
         public: template <typename T, Platform::Collections::System::IList<T> TList>
-        requires requires(TList list, int a, int b) {list[a] == list[b];}
+        requires Platform::Collections::System::IEquatable<T>
         static bool ContentEqualTo(TList left, TList right)
         {
             for (auto i = left.size() - 1; i >= 0; --i)
