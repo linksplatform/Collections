@@ -1,28 +1,38 @@
 ﻿namespace Platform::Collections::Sets
 {
     template <typename ...> class SetFiller;
-    template <typename TElement, typename TReturnConstant> class SetFiller<TElement, TReturnConstant>
+    template <typename TElement, typename TReturnConstant, Platform::Collections::System::ISet<TElement> TSet>
+    class SetFiller<TElement, TReturnConstant, TSet>
     {
-        protected: ISet<TElement> *_set;
+        protected: TSet& _set;
         protected: TReturnConstant _returnConstant = 0;
 
-        public: SetFiller(ISet<TElement> &set, TReturnConstant returnConstant)
+        public: SetFiller(TSet& set, TReturnConstant returnConstant) : _set(set)
         {
-            _set = set;
             _returnConstant = returnConstant;
         }
 
-        public: SetFiller(ISet<TElement> &set) : this(set, 0) { }
 
-        public: void Add(TElement element) { _set.Add(element); }
+        public: SetFiller(TSet& set) requires std::default_initializable<TReturnConstant> : SetFiller(set, TReturnConstant{}) { }
 
-        public: bool AddAndReturnTrue(TElement element) { return _set.AddAndReturnTrue(element); }
+        public: void Add(TElement element) { _set.insert(element); }
 
-        public: bool AddFirstAndReturnTrue(IList<TElement> &elements) { return _set.AddFirstAndReturnTrue(elements); }
+        public: bool AddAndReturnTrue(TElement element) { return ISetExtensions::AddAndReturnTrue(_set, element); }
 
-        public: bool AddAllAndReturnTrue(IList<TElement> &elements) { return _set.AddAllAndReturnTrue(elements); }
+        public: bool AddFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto& elements)
+        {
+            return ISetExtensions::AddFirstAndReturnTrue(_set, elements);
+        }
 
-        public: bool AddSkipFirstAndReturnTrue(IList<TElement> &elements) { return _set.AddSkipFirstAndReturnTrue(elements); }
+        public: bool AddAllAndReturnTrue(Platform::Collections::System::IList<TElement> auto& elements)
+        {
+            return ISetExtensions::AddAllAndReturnTrue(_set, elements);
+        }
+
+        public: bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto& elements)
+        {
+            return ISetExtensions::AddSkipFirstAndReturnTrue(_set, elements);
+        }
 
         public: TReturnConstant AddAndReturnConstant(TElement element)
         {
@@ -30,19 +40,19 @@
             return _returnConstant;
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(IList<TElement> &elements)
+        public: TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto& elements)
         {
             _set.AddFirst(elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddAllAndReturnConstant(IList<TElement> &elements)
+        public: TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::IList<TElement> auto& elements)
         {
             _set.AddAll(elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> &elements)
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto& elements)
         {
             _set.AddSkipFirst(elements);
             return _returnConstant;

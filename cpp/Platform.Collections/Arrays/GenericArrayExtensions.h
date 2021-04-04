@@ -51,13 +51,6 @@
             return array;
         }
 
-        template <typename T>
-        static auto ShiftRight(Platform::Collections::System::Array<T> auto& array)
-        {
-            return ShiftRight<T>(array, 1LL);
-        }
-
-
         // TODO Тут я слегка сменил обычный стиль 'Array auto& array' на этот, чтобы был доступен конструктор 'TArray'
         template <typename T, Platform::Collections::System::Array<T> TArray>
         requires requires(int size) { TArray(size); } && // проверка на наличие конструктора
@@ -78,6 +71,12 @@
                 std::ranges::copy(array, restrictions.begin() + shift);
                 return restrictions;
             }
+        }
+
+        template <typename T>
+        static auto ShiftRight(Platform::Collections::System::Array<T> auto& array)
+        {
+            return ShiftRight<T>(array, 1LL);
         }
 
         template<typename T>

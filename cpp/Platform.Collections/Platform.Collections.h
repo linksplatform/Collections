@@ -21,9 +21,9 @@
 #include <thread>
 #include <any>
 
-
+#ifdef RELEASE
 #include "F:/LinksPlatform/Exceptions/cpp/Platform.Exceptions/Platform.Exceptions.h"
-
+#endif
 
 #include ".Concepts/BaseConcepts.h"
 
@@ -55,6 +55,9 @@
 #include "Segments/Segment.h"
 #include "Segments/CharSegment.h"
 
+#include "Sets/ISetExtensions.h"
+#include "Sets/SetFiller.h"
+
 #include "Stacks/DefaultStack.h"
 #include "Stacks/IStack.h"
 #include "Stacks/IStackExtensions.h"
@@ -66,7 +69,9 @@
 #include "BitString.h"
 #include "BitStringExtensions.h"
 #include "StringExtensions.h"
+#ifdef RELEASE
 #include "EnsureExtensions.h"
+#endif
 #include "ICollectionExtensions.h"
 #include "IDictionaryExtensions.h"
 

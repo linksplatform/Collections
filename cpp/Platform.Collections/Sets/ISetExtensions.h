@@ -1,55 +1,70 @@
 ﻿namespace Platform::Collections::Sets
 {
-    class ISetExtensions
+    namespace ISetExtensions
     {
-        public: template <typename T> static void AddAndReturnVoid(ISet<T> &set, T element) { set.Add(element); }
-
-        public: template <typename T> static void RemoveAndReturnVoid(ISet<T> &set, T element) { set.Remove(element); }
-
-        public: template <typename T> static bool AddAndReturnTrue(ISet<T> &set, T element)
+        template <typename T> static void AddAndReturnVoid(Platform::Collections::System::ISet<T> auto& set, T element)
         {
-            set.Add(element);
+            set.insert(element);
+        }
+
+        template <typename T> static void RemoveAndReturnVoid(Platform::Collections::System::ISet<T> auto& set, T element)
+        {
+            set.erase(element);
+        }
+
+        template <typename T> static bool AddAndReturnTrue(Platform::Collections::System::ISet<T> auto& set, T element)
+        {
+            set.insert(element);
             return true;
         }
 
-        public: template <typename T> static bool AddFirstAndReturnTrue(ISet<T> &set, IList<T> &elements)
+        template <typename T> static bool AddFirstAndReturnTrue(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements)
         {
             AddFirst(set, elements);
             return true;
         }
 
-        public: template <typename T> static void AddFirst(ISet<T> &set, IList<T> &elements) { set.Add(elements[0]); }
-
-        public: template <typename T> static bool AddAllAndReturnTrue(ISet<T> &set, IList<T> &elements)
+        template <typename T> static void AddFirst(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements)
         {
-            set.AddAll(elements);
+            set.insert(elements[0]);
+        }
+
+        template <typename T> static bool AddAllAndReturnTrue(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements)
+        {
+            AddAll<T>(set, elements);
             return true;
         }
 
-        public: template <typename T> static void AddAll(ISet<T> &set, IList<T> &elements)
+        template <typename T> static void AddAll(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements)
         {
             for (auto i = 0; i < elements.Count(); i++)
             {
-                set.Add(elements[i]);
+                set.insert(elements[i]);
             }
         }
 
-        public: template <typename T> static bool AddSkipFirstAndReturnTrue(ISet<T> &set, IList<T> &elements)
+        template <typename T> static bool AddSkipFirstAndReturnTrue(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements)
         {
-            set.AddSkipFirst(elements);
+            AddSkipFirst<T>(set, elements);
             return true;
         }
 
-        public: template <typename T> static void AddSkipFirst(ISet<T> &set, IList<T> &elements) { set.AddSkipFirst(elements, 1); }
-
-        public: template <typename T> static void AddSkipFirst(ISet<T> &set, IList<T> &elements, std::int32_t skip)
+        template <typename T> static void AddSkipFirst(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements)
         {
-            for (auto i = skip; i < elements.Count(); i++)
+            AddSkipFirst<T>(set, elements, 1);
+        }
+
+        template <typename T> static void AddSkipFirst(Platform::Collections::System::ISet<T> auto& set, Platform::Collections::System::IList<T> auto& elements, std::int32_t skip)
+        {
+            for (auto i = skip; i < elements.size(); i++)
             {
-                set.Add(elements[i]);
+                set.insert(elements[i]);
             }
         }
 
-        public: template <typename T> static bool DoNotContains(ISet<T> &set, T element) { return !set.Contains(element); }
+        template <typename T> static bool DoNotContains(Platform::Collections::System::ISet<T> auto& set, T element)
+        {
+            return !set.contains(element);
+        }
     };
 }

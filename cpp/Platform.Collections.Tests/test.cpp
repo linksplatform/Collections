@@ -123,7 +123,7 @@ void VeryBadTemplate_Test_Support(TArray& array) {
     cout << "size: " << array.size() << endl;
     cout << "elements: ";
     for(auto it : array) {
-        if constexpr(same_as < TElement, string >) {
+        if constexpr(same_as<TElement, string>) {
             cout << '"';
             cout << it << '"' << " ";
         }
@@ -228,8 +228,7 @@ void StringExtensions_Test() {
     cout << s;
 }
 
-
 int main()
 {
-    StringExtensions_Test();
+
 }

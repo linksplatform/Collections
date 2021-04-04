@@ -43,6 +43,7 @@ namespace Platform::Collections::System  // TODO пока что так
         {object.find(item)} -> std::bidirectional_iterator;
         {object.contains(item)} -> std::same_as<bool>;
         {object.insert(item)};
+        {object.erase(item)};
         {object.empty()} -> std::same_as<bool>;
 
         {object.begin()} -> std::bidirectional_iterator;
