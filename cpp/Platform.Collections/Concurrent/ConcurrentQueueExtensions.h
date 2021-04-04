@@ -1,13 +1,2 @@
-﻿namespace Platform::Collections::Concurrent
-{
-    class ConcurrentQueueExtensions
-    {
-        public: static IEnumerable<T> DequeueAll<T>(ConcurrentQueue<T> queue)
-        {
-            while (queue.TryDequeue(out T item))
-            {
-                yield return item;
-            }
-        }
-    };
-}
+﻿// Пока что было решено отложить перевод за ненадобностью
+// So far, it has been decided to postpone the translation as unnecessary

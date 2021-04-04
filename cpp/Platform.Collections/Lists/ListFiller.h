@@ -4,7 +4,7 @@
     template <typename TElement, typename TReturnConstant, Platform::Collections::System::IList<TElement> TList> requires std::default_initializable<TReturnConstant>
     class ListFiller<TElement, TReturnConstant, TList>
     {
-        // TODO ничего, кроме ссылки на сам список, не позволят адекватно делать 'push_back' (возможно ради сходства придётся стиль 'ArrayFiller' заменить)
+        // TODO ничего, кроме ссылки на сам список, не позволит адекватно делать 'push_back' (возможно ради сходства придётся стиль 'ArrayFiller' слегка изменить)
         protected: TList& _list;
         protected: TReturnConstant _returnConstant;
 

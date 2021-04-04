@@ -1,21 +1,28 @@
 namespace Platform::Collections::System  // TODO пока что так
 {
     template<typename _Type>
-    concept IEquatable = requires(_Type left, _Type right) {
+    concept IEquatable = requires(_Type left, _Type right)
+    {
         {left == right} -> std::same_as<bool>;
     };
 
     template<typename _Type>
-    concept IEnumerable = requires(_Type object) {
+    concept IEnumerable = requires(_Type object)
+    {
         {object.begin()} -> std::forward_iterator;
         {object.end()} -> std::forward_iterator;
     };
 
+    template<typename _Type>
+    concept ICollection = IEnumerable<_Type> && requires(_Type object)
+    {
+        {object.size()} -> std::integral;
+    };
 
     template<typename _Type, typename _Item, typename _Key = int>
-    concept Array = IEnumerable<_Type> && requires(_Type object, _Key index) {
+    concept Array = ICollection<_Type> && requires(_Type object, _Key index)
+    {
         {object[index]} -> std::same_as<_Item&>;
-        {object.size()} -> std::integral;
         //{object.data()} -> std::same_as<object*>; // TODO Убран из-за небезопасности
 
         {object.begin()} -> std::random_access_iterator;
@@ -23,15 +30,15 @@ namespace Platform::Collections::System  // TODO пока что так
     };
 
     template<typename _Type, typename _Item>
-    concept BaseArray = requires(_Type object, int index) {
+    concept BaseArray = requires(_Type object, int index)
+    {
         {object[index]} -> std::same_as<_Item&>;
     };
 
 
     template<typename _Type, typename _Item>
-    concept ISet = IEnumerable<_Type> && requires(_Type object, _Item item) {
-        {object.size()} -> std::integral;
-
+    concept ISet = ICollection<_Type> && requires(_Type object, _Item item)
+    {
         {object.clear()};
         {object.find(item)} -> std::bidirectional_iterator;
         {object.contains(item)} -> std::same_as<bool>;
@@ -43,9 +50,8 @@ namespace Platform::Collections::System  // TODO пока что так
     };
 
     template<typename _Type, typename _Key, typename _Item>
-    concept IDictionary = IEnumerable<_Type> && Array<_Item, _Key> && requires(_Type object, _Key key, _Item item) {
-        {object.size()} -> std::integral;
-
+    concept IDictionary = ICollection<_Type> && Array<_Item, _Key> && requires(_Type object, _Key key, _Item item)
+    {
         {object.clear()};
         {object.find(key)} -> std::bidirectional_iterator;
         {object.contains(key)} -> std::same_as<bool>;
