@@ -22,8 +22,10 @@
 #include <any>
 
 #ifdef RELEASE
-#include "F:/LinksPlatform/Exceptions/cpp/Platform.Exceptions/Platform.Exceptions.h"
+#include <Platform.Exceptions.h>
 #endif
+
+#include <Platform.Hashing.h>
 
 #include ".Concepts/BaseConcepts.h"
 

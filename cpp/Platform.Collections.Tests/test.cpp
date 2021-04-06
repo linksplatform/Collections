@@ -230,5 +230,5 @@ void StringExtensions_Test() {
 
 int main()
 {
-
+    cout << Platform::Hashing::Hash(1);
 }
