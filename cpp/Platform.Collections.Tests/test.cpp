@@ -228,7 +228,24 @@ void StringExtensions_Test() {
     cout << s;
 }
 
+
+
+
+
+
+
+
+
 int main()
 {
-    cout << Platform::Hashing::Hash(1);
+    using namespace Platform::Collections::Trees;
+
+    auto node = Node();
+    node["SU"][1010]["Airbus A320"].Value = std::string("Посадка");
+    node["EO"][225]["Boeing 737-900"].Value = std::string("Посадка окончена");
+
+    std::cout << std::any_cast<std::string>(node["SU"][1010]["Airbus A320"].Value) << std::endl;
+    node["SU"][1010].Value = std::string("На ремонте");
+
+
 }
