@@ -29,7 +29,7 @@ namespace Platform::Collections::System  // TODO пока что так
         {object.end()} -> std::random_access_iterator;
     };
 
-    template<typename _Type, typename _Item>
+    template<typename _Type, typename _Item, typename _Key = int>
     concept BaseArray = requires(_Type object, int index)
     {
         {object[index]} -> std::same_as<_Item&>;
@@ -51,16 +51,13 @@ namespace Platform::Collections::System  // TODO пока что так
     };
 
     template<typename _Type, typename _Key, typename _Item>
-    concept IDictionary = ICollection<_Type> && Array<_Item, _Key> && requires(_Type object, _Key key, _Item item)
+    concept IDictionary = ICollection<_Type> && BaseArray<_Type, _Item, _Key> && requires(_Type object, _Key key, _Item item)
     {
         {object.clear()};
-        {object.find(key)} -> std::bidirectional_iterator;
+        {object.find(key)} -> std::forward_iterator;
         {object.contains(key)} -> std::same_as<bool>;
         {object.insert(/*std::pair*/{key, item})};
         {object.empty()} -> std::same_as<bool>;
-
-        {object.begin()} -> std::bidirectional_iterator;
-        {object.end()} -> std::bidirectional_iterator;
     };
 
 

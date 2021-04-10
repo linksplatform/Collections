@@ -4,6 +4,7 @@
 #include <type_traits>
 #include <concepts>
 #include <vector>
+#include <variant>
 #include <string>
 #include <array>
 #include <bitset>
@@ -66,8 +67,6 @@
 #include "Stacks/IStackFactory.h"
 #include "Stacks/StackExtensions.h"
 
-#include "Trees/Node.h"
-
 #include "BitString.h"
 #include "BitStringExtensions.h"
 #include "StringExtensions.h"
@@ -77,7 +76,7 @@
 #include "ICollectionExtensions.h"
 #include "IDictionaryExtensions.h"
 
-
+#include "Trees/Node.h"
 
 
 

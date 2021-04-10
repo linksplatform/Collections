@@ -13,6 +13,7 @@ using namespace Platform::Collections::Stacks;
 
 
 #include <chrono>
+#include <variant>
 
 using namespace std;
 
@@ -217,35 +218,42 @@ void ListFiller_Test() {
 }
 
 
-void StringExtensions_Test() {
+void StringExtensions_Test()
+{
     string s = "five cocks and one hen";
 
     s = StringExtensions::CapitalizeFirstLetter(s);
     s = StringExtensions::Truncate(s, 12);
     s = StringExtensions::TrimSingle(s, 'a');
     s = StringExtensions::TrimSingle(s, ' ');
-
-    cout << s;
 }
 
+struct MusicGroup
+{
+    explicit MusicGroup(const std::string&) {}
+    int x = 23423;
+};
 
 
-
-
-
+template <typename... T> void func() {}
+template <typename T> void func() {}
 
 
 
 int main()
 {
     using namespace Platform::Collections::Trees;
+    Node<std::string, int> root;
 
-    auto node = Node();
-    node["SU"][1010]["Airbus A320"].Value = std::string("Посадка");
-    node["EO"][225]["Boeing 737-900"].Value = std::string("Посадка окончена");
+    std::vector groupList = {MusicGroup("BTS"), MusicGroup("BLACKPINK")};
 
-    std::cout << std::any_cast<std::string>(node["SU"][1010]["Airbus A320"].Value) << std::endl;
-    node["SU"][1010].Value = std::string("На ремонте");
+    root["Earth"]["South Korea"]["Seul"].Value = groupList;
+    root["Earth"]["North Korea"]["Pyongyang"][0].Value = MusicGroup("Moranbong Band");
+    root["Earth"]["North Korea"]["Pyongyang"][1].Value = MusicGroup("Chongbong Band");
 
-
+    auto x = root.GetChild(std::vector<std::string>{"Earth", "South Korea", "Seul"});
+    std::cout << std::any_cast<std::vector<MusicGroup>>(x->Value).size();
 }
+
+
+
