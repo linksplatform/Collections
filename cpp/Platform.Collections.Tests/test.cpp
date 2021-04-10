@@ -226,17 +226,20 @@ void StringExtensions_Test()
     s = StringExtensions::Truncate(s, 12);
     s = StringExtensions::TrimSingle(s, 'a');
     s = StringExtensions::TrimSingle(s, ' ');
+
+    std::cout << "result: " << s;
 }
 
-struct MusicGroup
-{
-    std::string name;
-    explicit MusicGroup(const std::string& name) : name(name) {}
-};
 
 
 int main()
 {
+    struct MusicGroup
+    {
+        std::string name;
+        explicit MusicGroup(const std::string& name) : name(name) {}
+    };
+
     using namespace Platform::Collections::Trees;
     Node<std::string, int> root;
 
