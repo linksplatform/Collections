@@ -23,7 +23,6 @@ namespace Platform::Collections::System  // TODO пока что так
     concept Array = ICollection<_Type> && requires(_Type object, _Key index)
     {
         {object[index]} -> std::same_as<_Item&>;
-        //{object.data()} -> std::same_as<object*>; // TODO Убран из-за небезопасности
 
         {object.begin()} -> std::random_access_iterator;
         {object.end()} -> std::random_access_iterator;

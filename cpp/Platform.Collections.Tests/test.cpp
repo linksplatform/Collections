@@ -230,14 +230,9 @@ void StringExtensions_Test()
 
 struct MusicGroup
 {
-    explicit MusicGroup(const std::string&) {}
-    int x = 23423;
+    std::string name;
+    explicit MusicGroup(const std::string& name) : name(name) {}
 };
-
-
-template <typename... T> void func() {}
-template <typename T> void func() {}
-
 
 
 int main()
@@ -251,8 +246,20 @@ int main()
     root["Earth"]["North Korea"]["Pyongyang"][0].Value = MusicGroup("Moranbong Band");
     root["Earth"]["North Korea"]["Pyongyang"][1].Value = MusicGroup("Chongbong Band");
 
-    auto x = root.GetChild(std::vector<std::string>{"Earth", "South Korea", "Seul"});
-    std::cout << std::any_cast<std::vector<MusicGroup>>(x->Value).size();
+    auto node = root.GetChild(std::vector<std::string>{"Earth", "South Korea", "Seul"});
+    auto southList = std::any_cast<std::vector<MusicGroup>>(node->Value);
+
+    std::cout << "South Korea: \n";
+    for(auto it : southList) {
+        std::cout << it.name << std::endl;
+    }
+    std::cout << endl;
+
+    std::cout << "North Korea: \n";
+    for(auto it : root["Earth"]["North Korea"]["Pyongyang"].ChildNodes()) {
+        auto group = std::any_cast<MusicGroup>(it.second->Value);
+        std::cout << group.name << std::endl;
+    }
 }
 
 
