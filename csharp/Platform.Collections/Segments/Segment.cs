@@ -48,8 +48,8 @@ namespace Platform.Collections.Segments
         /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the <paramref name="base"/> list, <paramref name="offset"/> of the segment and its <paramref name="length" />.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя список <paramref name="base"/>, <paramref name="offset"/> сегмента и его <paramref name="length"/>.</para>
         /// </summary>
-        /// <param name="base"><para>Reference to the original list containing the elements of this segment.</para><para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>
-        /// <param name="offset"><para>The offset relative to the <paramref name="base"/> list from which the segment starts.</para><para>Смещение относительно исходного списка <paramref name="base"/>, с которого начинается сегмент.</para></param>
+        /// <param name="base"><para>The reference to the original list containing the elements of this segment.</para><para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>
+        /// <param name="offset"><para>The offset relative to the <paramref name="base"/> list from which the segment starts.</para><para>Смещение относительно списка <paramref name="base"/>, с которого начинается сегмент.</para></param>
         /// <param name="length"><para>The segment's length.</para><para>Длина сегмента.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Segment(IList<T> @base, int offset, int length)
@@ -60,7 +60,7 @@ namespace Platform.Collections.Segments
         }
         
         /// <summary>
-        /// <para>Gets the hash code of the current instance <see cref="Segment"/>.</para>
+        /// <para>Gets the hash code of the current <see cref="Segment"/> instance.</para>
         /// <para>Возвращает хэш-код текущего экземпляра <see cref="Segment"/>.</para>
         /// </summary>
         /// <returns></returns>
@@ -68,13 +68,13 @@ namespace Platform.Collections.Segments
         public override int GetHashCode() => this.GenerateHashCode();
 
         /// <summary>
-        /// <para>Returns a value indicating whether the current <see cref="Segment" /> is equal to another <see cref="Segment" />.</para>
+        /// <para>Returns a value indicating whether the current <see cref="Segment"/> is equal to another <see cref="Segment" />.</para>
         /// <para>Возвращает значение определяющее, равен ли текущий <see cref="Segment"/> другому <see cref="Segment"/>.</para>
         /// </summary>
         /// <param name="other"><para>An <see cref="Segment"/> object to compare with the current <see cref="Segment"/>.</para><para>Объект <see cref="Segment"/> для сравнения с текущим <see cref="Segment"/>.<para></para></param>
         /// <returns>
         /// <para><see langword="true"/> if the current <see cref="Segment"/> is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</para>
-        /// <para><see langword="true"/>, если текущий <see cref="Segment"/> эквивалентен параметру <paramref name="other"/>, в противном случае — <see langword="false"/>.</para>
+        /// <para><see langword="true"/>, если текущий <see cref="Segment"/> равен параметру <paramref name="other"/>, в противном случае — <see langword="false"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual bool Equals(Segment<T> other) => this.EqualTo(other);
@@ -126,12 +126,12 @@ namespace Platform.Collections.Segments
          
         /// <summary>
         /// <para>Determines the index of a specific item in the <see cref="Segment"/>.</para>
-        /// <para>Определяет индекс заданного элемента в <see cref="Segment"/>.</para>
+        /// <para>Определяет индекс конкретного элемента в <see cref="Segment"/>.</para>
         /// </summary>
         /// <param name="item"><para>The object to locate in the <see cref="Segment"/>.</para><para>Элемент для поиска в <see cref="Segment"/>.</para></param>
         /// <returns>
-        /// <para>The index of <paramref name="item"/> if found in the list; otherwise, -1.</para>
-        /// <para>Индекс <paramref name="item"/>, если он найден в списке; в противном случае — значение -1.</para>
+        /// <para>The index of <paramref name="item"/> if found in the segment; otherwise, -1.</para>
+        /// <para>Индекс <paramref name="item"/>, если он найден в сегменте; в противном случае — значение -1.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int IndexOf(T item)
@@ -175,7 +175,7 @@ namespace Platform.Collections.Segments
 
         /// <summary>
         /// <para>Adds an item to the <see cref="Segment"/>.</para>
-        /// <para>Добавляет элемент в сегмент <see cref="Segment"/>.</para>
+        /// <para>Добавляет элемент в <see cref="Segment"/>.</para>
         /// </summary>
         /// <param name="item"><para>The element to add to the <see cref="Segment"/>.</para><para>Элемент, добавляемый в <see cref="Segment"/>.</para></param>
         /// <exception cref="NotSupportedException">
@@ -200,7 +200,7 @@ namespace Platform.Collections.Segments
         /// <para>Determines whether the <see cref="Segment"/> contains a specific value.</para>
         /// <para>Определяет, содержит ли <see cref="Segment"/> определенное значение.</para>
         /// </summary>
-        /// <param name="item"><para>The value to locate in the <see cref="Segment"/>.</para><para>Значение, которое нужно разместить в списке <see cref="Segment"/>.</para></param>
+        /// <param name="item"><para>The value to locate in the <see cref="Segment"/>.</para><para>Значение, которое нужно найти в <see cref="Segment"/>.</para></param>
         /// <returns>
         /// <para><see langword="true"/> if the value is found in the <see cref="Segment"/>; otherwise, <see langword="false"/>.</para>
         /// <para>Значение <see langword="true"/>, если значение находится в <see cref="Segment"/>; в противном случае - <see langword="false"/>.</para>
