@@ -10,14 +10,14 @@ using Platform.Collections.Lists;
 namespace Platform.Collections.Segments
 {
     /// <summary>
-    /// <para>Represents the segment <see cref="IList"/>.</para>
+    /// <para>Represents the segment of an <see cref="IList"/>.</para>
     /// <para>Представляет сегмент <see cref="IList"/>.</para>
     /// </summary>
     /// <typeparam name="T"><para>The segment elements type.</para><para>Тип элементов сегмента.</para></typeparam>
     public class Segment<T> : IEquatable<Segment<T>>, IList<T>
     {
         /// <summary>
-        /// <para>Returns the original list (of which this segment is a part).</para>
+        /// <para>Gets the original list (this segment is a part of it).</para>
         /// <para>Возвращает исходный список (частью которого является этот сегмент).</para>
         /// </summary>
         public IList<T> Base
@@ -26,7 +26,7 @@ namespace Platform.Collections.Segments
             get;
         }
         /// <summary>
-        /// <para>Returns the offset of the relative source list (the index at which this segment starts).</para>
+        /// <para>Gets the offset relative to the source list (the index at which this segment starts).</para>
         /// <para>Возвращает смещение относительного исходного списка (индекс с которого начинается этот сегмент).</para>
         /// </summary>
         public int Offset
@@ -35,7 +35,7 @@ namespace Platform.Collections.Segments
             get;
         }
         /// <summary>
-        /// <para>Returns the length of a segment.</para>
+        /// <para>Gets the length of a segment.</para>
         /// <para>Возвращает длину сегмента.</para>
         /// </summary>
         public int Length
@@ -45,12 +45,12 @@ namespace Platform.Collections.Segments
         }
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the passed list as the original, <paramref name="offset"/> segment and its <paramref name="length" />.</para>
-        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя переданный список как исходный, <paramref name="offset"/> сегмента и его <paramref name="length"/>.</para>
+        /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the <paramref name="base"/> list as the original, <paramref name="offset"/> of the segment and its <paramref name="length" />.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя список <paramref name="base"/> как исходный, <paramref name="offset"/> сегмента и его <paramref name="length"/>.</para>
         /// </summary>
         /// <param name="base"><para>Reference to the original list containing the elements of this segment.</para><para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>
-        /// <param name="offset"><para>The offset relative to the source list <paramref name="base"/> from which the segment starts.</para><para>Смещение относительно исходного списка <paramref name="base"/>, с которого начинается сегмент.</para></param>
-        /// <param name="length"><para>Segment length.</para><para>Длина сегмента.</para></param>
+        /// <param name="offset"><para>The offset relative to the <paramref name="base"/> list from which the segment starts.</para><para>Смещение относительно исходного списка <paramref name="base"/>, с которого начинается сегмент.</para></param>
+        /// <param name="length"><para>The segment's length.</para><para>Длина сегмента.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Segment(IList<T> @base, int offset, int length)
         {
@@ -94,7 +94,7 @@ namespace Platform.Collections.Segments
 
         /// <summary>
         /// <para>Gets the number of elements contained in the <see cref="Segment"/>.</para>
-        /// <para>Получает число элементов, содержащихся в <see cref="Segment"/>.</para>
+        /// <para>Возвращает число элементов, содержащихся в <see cref="Segment"/>.</para>
         /// </summary>
         /// <value>
         /// <para>The number of elements contained in the <see cref="Segment"/>.</para>
@@ -108,7 +108,7 @@ namespace Platform.Collections.Segments
 
         /// <summary>
         /// <para>Gets a value indicating whether the <see cref="Segment"/> is read-only.</para>
-        /// <para>Получает значение, указывающее, является ли <see cref="Segment"/> доступным только для чтения.</para>
+        /// <para>Возвращает значение, указывающее, является ли <see cref="Segment"/> доступным только для чтения.</para>
         /// </summary>
         /// <value>
         /// <para><see langword="true"/> if the <see cref="Segment"/> is read-only; otherwise, <see langword="false"/>.</para>
@@ -237,7 +237,7 @@ namespace Platform.Collections.Segments
         public bool Remove(T item) => throw new NotSupportedException();
 
         /// <summary>
-        /// <para>Returns an enumerator that iterates through a <see cref="Segment"/>.</para>
+        /// <para>Gets an enumerator that iterates through a <see cref="Segment"/>.</para>
         /// <para>Возвращает перечислитель, который осуществляет итерацию по <see cref="Segment"/>.</para>
         /// </summary>
         /// <returns>
