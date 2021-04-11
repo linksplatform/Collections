@@ -10,15 +10,15 @@ using Platform.Collections.Lists;
 namespace Platform.Collections.Segments
 {
     /// <summary>
-    /// <para>Represents the implementation of <see cref = "IList" />.</para>
-    /// <para>Представляет собой реализацию <see cref="IList"/>.</para>
+    /// <para>Represents the segment <see cref="IList"/>.</para>
+    /// <para>Представляет сегмент <see cref="IList"/>.</para>
     /// </summary>
     /// <typeparam name="T"><para>The segment elements type.</para><para>Тип элементов сегмента.</para></typeparam>
     public class Segment<T> : IEquatable<Segment<T>>, IList<T>
     {
         /// <summary>
-        /// <para>The list to work.</para>
-        /// <para>Список для работы.</para>
+        /// <para>Returns the original list (of which this segment is a part).</para>
+        /// <para>Возвращает исходный список (частью которого является этот сегмент).</para>
         /// </summary>
         public IList<T> Base
         {
@@ -26,8 +26,8 @@ namespace Platform.Collections.Segments
             get;
         }
         /// <summary>
-        /// <para>Number of offset elements per list.</para>
-        /// <para>Колличество смещенных элементов в списке.</para>
+        /// <para>Returns the offset of the relative source list (the index at which this segment starts).</para>
+        /// <para>Возвращает смещение относительного исходного списка (индекс с которого начинается этот сегмент).</para>
         /// </summary>
         public int Offset
         {
@@ -35,10 +35,9 @@ namespace Platform.Collections.Segments
             get;
         }
         /// <summary>
-        /// <para>The length of relative offset list.</para>
-        /// <para>Длина списка относительного смещения.</para>
+        /// <para>Returns the length of a segment.</para>
+        /// <para>Возвращает длину сегмента.</para>
         /// </summary>
-        /// <value></value>
         public int Length
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,12 +45,12 @@ namespace Platform.Collections.Segments
         }
 
         /// <summary>
-        /// <para>Initializes a new instance of the class <see cref="Segment"/> using the passed list as a segment, its offset and its length relative to offset <paramref name="offset"/>.</para>
-        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя переданный список как сегмент, смещение в нем и его длину относительно смещения <paramref name="offset"/>.</para>
+        /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the passed list as the original, <paramref name="offset"/> segment and its <paramref name="length" />.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя переданный список как исходный, <paramref name="offset"/> сегмента и его <paramref name="length"/>.</para>
         /// </summary>
-        /// <param name="base"><para>Reference to the original list defining segment.</para><para>Ссылка на исходный список определяющий сегмент.</para></param>
-        /// <param name="offset"><para>Number of offset elements per segment.</para><para>Колличество смещенных элементов в сегменте.</para></param>
-        /// <param name="length"><para>The length of the relative offset segment <paramref name="offset"/>.</para><para>Длина сегмента относительного смещения <paramref name="offset"/>.</para></param>
+        /// <param name="base"><para>Reference to the original list containing the elements of this segment.</para><para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>
+        /// <param name="offset"><para>The offset relative to the source list <paramref name="base"/> from which the segment starts.</para><para>Смещение относительно исходного списка <paramref name="base"/>, с которого начинается сегмент.</para></param>
+        /// <param name="length"><para>Segment length.</para><para>Длина сегмента.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Segment(IList<T> @base, int offset, int length)
         {
@@ -61,7 +60,7 @@ namespace Platform.Collections.Segments
         }
         
         /// <summary>
-        /// <para>Returns the hash code of the current instance <see cref="Segment"/>. </para>
+        /// <para>Gets the hash code of the current instance <see cref="Segment"/>.</para>
         /// <para>Возвращает хэш-код текущего экземпляра <see cref="Segment"/>.</para>
         /// </summary>
         /// <returns></returns>
@@ -69,13 +68,13 @@ namespace Platform.Collections.Segments
         public override int GetHashCode() => this.GenerateHashCode();
 
         /// <summary>
-        /// <para>Indicates whether the current <see cref="Segment"/> is equal to another object of the same type.</para>
-        /// <para>Указывает, равен ли текущий <see cref="Segment"/> другому объекту того же типа.</para>
+        /// <para>Returns a value indicating whether the current <see cref="Segment" /> is equal to another <see cref="Segment" />.</para>
+        /// <para>Возвращает значение определяющее, равен ли текущий <see cref="Segment"/> другому <see cref="Segment"/>.</para>
         /// </summary>
-        /// <param name="other"><para>An object <see cref="Segment"/> to compare with the current <see cref="Segment"/>.</para><para>Объект <see cref="Segment"/> для сравнения с текущим <see cref="Segment"/>.<para></para></param>
+        /// <param name="other"><para>An <see cref="Segment"/> object to compare with the current <see cref="Segment"/>.</para><para>Объект <see cref="Segment"/> для сравнения с текущим <see cref="Segment"/>.<para></para></param>
         /// <returns>
         /// <para><see langword="true"/> if the current <see cref="Segment"/> is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</para>
-        /// <para><see langword="true"/>, если текущий <see cref="Segment"/> эквивалентен параметру <paramref name="other"/>, в противном случае — false.</para>
+        /// <para><see langword="true"/>, если текущий <see cref="Segment"/> эквивалентен параметру <paramref name="other"/>, в противном случае — <see langword="false"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual bool Equals(Segment<T> other) => this.EqualTo(other);
@@ -112,9 +111,13 @@ namespace Platform.Collections.Segments
         /// <para>Получает значение, указывающее, является ли <see cref="Segment"/> доступным только для чтения.</para>
         /// </summary>
         /// <value>
-        /// <para><see langword="true"/> if the  <see cref="Segment"/> is read-only; otherwise, <see langword="false"/>.</para>
-        /// <para>Значение <see langword="true"/>, если  <see cref="Segment"/> доступен только для чтения, в противном случае — значение <see langword="false"/>.</para>
+        /// <para><see langword="true"/> if the <see cref="Segment"/> is read-only; otherwise, <see langword="false"/>.</para>
+        /// <para>Значение <see langword="true"/>, если <see cref="Segment"/> доступен только для чтения, в противном случае — значение <see langword="false"/>.</para>
         /// </value>
+        /// <remarks>
+        /// <para>Any <see cref="Segment"/> is read-only.</para>
+        /// <para>Любой <see cref="Segment"/> доступен только для чтения.</para>
+        /// </remarks>
         public bool IsReadOnly
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -123,7 +126,7 @@ namespace Platform.Collections.Segments
          
         /// <summary>
         /// <para>Determines the index of a specific item in the <see cref="Segment"/>.</para>
-        /// <para>Определяет индекс заданного элемента <see cref="Segment"/>.</para>
+        /// <para>Определяет индекс заданного элемента в <see cref="Segment"/>.</para>
         /// </summary>
         /// <param name="item"><para>The object to locate in the <see cref="Segment"/>.</para><para>Элемент для поиска в <see cref="Segment"/>.</para></param>
         /// <returns>
@@ -150,7 +153,7 @@ namespace Platform.Collections.Segments
         /// <para>Вставляет элемент в <see cref="Segment"/> по указанному индексу.</para>
         /// </summary>
         /// <param name="index"><para>The zero-based index at which <paramref name="item"/> should be inserted.</para><para>Отсчитываемый от нуля индекс, по которому следует вставить элемент <paramref name="item"/>.</para></param>
-        /// <param name="item"><para>The elemet to insert into the <see cref="Segment"/>.</para><para>Элемент, вставляемый в <see cref="Segment"/>.</para></param>
+        /// <param name="item"><para>The element to insert into the <see cref="Segment"/>.</para><para>Элемент, вставляемый в <see cref="Segment"/>.</para></param>
         /// <exception cref="NotSupportedException">
         /// <para>The <see cref="Segment"/> is read-only.</para>
         /// <para><see cref="Segment"/> доступен только для чтения.</para>
@@ -206,8 +209,8 @@ namespace Platform.Collections.Segments
         public bool Contains(T item) => IndexOf(item) >= 0;
 
         /// <summary>
-        /// <para>Copies the elements of the <see cref = "Segment" /> into an array, starting at a specific array index.</para>
-        /// <para>Копирует элементы  <see cref="Segment"/> в массив, начиная с определенного индекса массива.</para>
+        /// <para>Copies the elements of the <see cref="Segment"/> into an array, starting at a specific array index.</para>
+        /// <para>Копирует элементы <see cref="Segment"/> в массив, начиная с определенного индекса массива.</para>
         /// </summary>
         /// <param name="array"><para>A one-dimensional array that is the destination of the elements copied from <see cref="Segment"/></para><para>Одномерный массив, который является местом назначения элементов, скопированных из <see cref="Segment"/>.</para></param>
         /// <param name="arrayIndex"><para>The zero-based index in <paramref name="array"/> at which copying begins.</para><para>Отсчитываемый от нуля индекс в массиве <paramref name="array"/>, с которого начинается копирование.</para></param>
@@ -238,8 +241,8 @@ namespace Platform.Collections.Segments
         /// <para>Возвращает перечислитель, который осуществляет итерацию по <see cref="Segment"/>.</para>
         /// </summary>
         /// <returns>
-        /// <para>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</para>
-        /// <para>Объект <see cref="T:System.Collections.IEnumerator" />, который можно использовать для перебора <see cref="Segment"/>.</para>
+        /// <para>An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the the <see cref="Segment"/>.</para>
+        /// <para>Объект <see cref="T:System.Collections.IEnumerator"/>, который можно использовать для перебора <see cref="Segment"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public IEnumerator<T> GetEnumerator()
@@ -251,12 +254,12 @@ namespace Platform.Collections.Segments
         }
 
         /// <summary>
-        /// <para>Implementation for the <see cref="Segment.GetEnumerator"> method.</para>
-        /// <para>Реализация метода <see cref="Segment.GetEnumerator">.</para>
+        /// <para>Gets an enumerator that iterates through a <see cref="Segment"/>.</para>
+        /// <para>Возвращает перечислитель, который осуществляет итерацию по <see cref="Segment"/>.</para>
         /// </summary>
         /// <returns>
-        /// <para>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</para>
-        /// <para>Объект <see cref="T:System.Collections.IEnumerator" />, который можно использовать для перебора <see cref="Segment"/>.</para>
+        /// <para>An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.</para>
+        /// <para>Объект <see cref="T:System.Collections.IEnumerator"/>, который можно использовать для перебора <see cref="Segment"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
