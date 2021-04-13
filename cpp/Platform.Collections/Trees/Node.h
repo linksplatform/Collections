@@ -54,7 +54,7 @@
     {
         public:
         TValue Value;
-        std::unordered_map<TKey, Node<TValue, Repeat<TKey>>*> _childNodes;
+        std::unordered_map<TKey, std::shared_ptr<Node<TValue, Repeat<TKey>>>> _childNodes;
 
         Node(TValue value = TValue{})
         {
@@ -76,7 +76,7 @@
 
         auto& AddChild(TKey key, Node<TValue, Repeat<TKey>> node)
         {
-            IDictionaryExtensions::Add(_childNodes, key, new Node<TValue, Repeat<TKey>>(node));
+            IDictionaryExtensions::Add(_childNodes, key, std::make_shared<Node<TValue, Repeat<TKey>>>(node));
             return *_childNodes[key];
         }
     };

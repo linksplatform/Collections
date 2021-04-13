@@ -4,11 +4,13 @@
     {
         // TODO заметил, что часто встречается проверка на не null в функциях
         //  Ох уж эти шарперы. Всё-таки код чисто с value-types(не я придумал) и ссылками выглядит безопаснее
-        static std::string CapitalizeFirstLetter(std::string string)
+        static std::u16string CapitalizeFirstLetter(std::u16string string)
         {
             // TODO бонусная альтернативная реализация от Voider'а
-            for(auto & it : string) {
-                if(std::islower(it)) {
+            for(auto & it : string)
+            {
+                if(std::islower(it))
+                {
                     it = std::toupper(it);
                     return string;
                 }
@@ -16,12 +18,12 @@
             return string;
         }
 
-        static std::string Truncate(std::string string, std::int32_t maxLength)
+        static std::u16string Truncate(std::u16string string, std::int32_t maxLength)
         {
-            return string.empty() ? std::string{} : string.substr(0, std::min(string.size(), (size_t)maxLength));
+            return string.empty() ? std::u16string{} : string.substr(0, std::min(string.size(), (size_t)maxLength));
         }
 
-        static std::string TrimSingle(std::string string, char charToTrim)
+        static std::u16string TrimSingle(std::u16string string, char charToTrim)
         {
             if (!string.empty())
             {
@@ -29,7 +31,7 @@
                 {
                     if (string[0] == charToTrim)
                     {
-                        return "";
+                        return u"";
                     }
                     else
                     {
@@ -55,16 +57,6 @@
             {
                 return string;
             }
-        }
-
-        // TODO аналог IsNullOrWhiteSpace
-        static bool IsWhiteSpace(std::string string)
-        {
-            for(auto it : string) {
-                if(it != ' ')
-                    return false;
-            }
-            return true;
         }
     };
 }
