@@ -29,7 +29,7 @@ namespace Platform::Collections::System  // TODO пока что так
     };
 
     template<typename _Type, typename _Item, typename _Key = int>
-    concept BaseArray = requires(_Type object, int index)
+    concept BaseArray = requires(_Type object, _Key index)
     {
         {object[index]} -> std::same_as<_Item&>;
     };

@@ -10,10 +10,7 @@ using namespace Platform::Collections::Segments::Walkers;
 using namespace Platform::Collections::Stacks;
 //using namespace Platform::Collections::Trees;
 
-
-
 #include <chrono>
-#include <variant>
 
 using namespace std;
 
@@ -230,39 +227,30 @@ void StringExtensions_Test()
     std::cout << "result: " << s;
 }
 
+void unordered_map_Any_Test()
+{
+    std::unordered_map<std::any, std::string> dictionary;
+    dictionary[0] = "i";
+    dictionary[1] = "l";
+    dictionary[2] = "o";
+    dictionary[3] = "v";
+    dictionary[4] = "e";
+    dictionary["5"] = "c";
+    dictionary["6"] = "o";
+    dictionary["7"] = "c";
+    dictionary["8"] = "k";
 
+    for(const auto& it : dictionary)
+    {
+        std::cout << it.first.type().name() << " " << it.second << std::endl;
+    }
+}
 
 int main()
 {
-    struct MusicGroup
-    {
-        std::string name;
-        explicit MusicGroup(const std::string& name) : name(name) {}
-    };
-
-    using namespace Platform::Collections::Trees;
-    Node<std::string, int> root;
-
-    std::vector groupList = {MusicGroup("BTS"), MusicGroup("BLACKPINK")};
-
-    root["Earth"]["South Korea"]["Seul"].Value = groupList;
-    root["Earth"]["North Korea"]["Pyongyang"][0].Value = MusicGroup("Moranbong Band");
-    root["Earth"]["North Korea"]["Pyongyang"][1].Value = MusicGroup("Chongbong Band");
-
-    auto node = root.GetChild(std::vector<std::string>{"Earth", "South Korea", "Seul"});
-    auto southList = std::any_cast<std::vector<MusicGroup>>(node->Value);
-
-    std::cout << "South Korea: \n";
-    for(auto it : southList) {
-        std::cout << it.name << std::endl;
-    }
-    std::cout << endl;
-
-    std::cout << "North Korea: \n";
-    for(auto it : root["Earth"]["North Korea"]["Pyongyang"].ChildNodes()) {
-        auto group = std::any_cast<MusicGroup>(it.second->Value);
-        std::cout << group.name << std::endl;
-    }
+    Platform::Collections::Trees::Node<int, Platform::Collections::Trees::Repeat<std::any>> root;
+    root["1"]["2"]["3"]["4"]["5"]["6"].Value = 1337;
+    std::cout << root["1"]["2"]["3"]["4"]["5"]["6"].Value;
 }
 
 

@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 20) # use only C++20
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -O3)
 
 set(LINKS_PLATFORM_DIR ../../../LinksPlatform)
-include_directories(${LINKS_PLATFORM_DIR}/Hashing/cpp/Platform.Hashing/)
+include_directories(${LINKS_PLATFORM_DIR}/Hashing/cpp/Platform.Hashing)
+include_directories(${LINKS_PLATFORM_DIR}/Equality/cpp/Platform.Equality)
 
 #temporary solution
 add_executable(Platform.Collections Platform.Collections.Tests/test.cpp)

@@ -1,5 +1,5 @@
-#ifndef COLLECTIONS_PLATFORM_COLLECTIONS_H
-#define COLLECTIONS_PLATFORM_COLLECTIONS_H
+#ifndef PLATFORM_COLLECTIONS_H
+#define PLATFORM_COLLECTIONS_H
 
 #include <type_traits>
 #include <concepts>
@@ -22,11 +22,10 @@
 #include <thread>
 #include <any>
 
-#ifdef RELEASE
-#include <Platform.Exceptions.h>
-#endif
+//#include <Platform.Exceptions.h>
 
 #include <Platform.Hashing.h>
+#include <Platform.Equality.h>
 
 #include ".Concepts/BaseConcepts.h"
 
@@ -70,9 +69,9 @@
 #include "BitString.h"
 #include "BitStringExtensions.h"
 #include "StringExtensions.h"
-#ifdef RELEASE
-#include "EnsureExtensions.h"
-#endif
+
+//#include "EnsureExtensions.h"
+
 #include "ICollectionExtensions.h"
 #include "IDictionaryExtensions.h"
 
@@ -82,4 +81,4 @@
 
 
 
-#endif //COLLECTIONS_PLATFORM_COLLECTIONS_H
+#endif //PLATFORM_COLLECTIONS_H
