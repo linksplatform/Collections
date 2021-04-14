@@ -16,25 +16,21 @@
     template<typename TValue, typename...>
     class Node
     {
-        public:
-        TValue Value;
+        public: TValue Value;
 
-        Node(TValue value = TValue{})
+        public: Node(TValue value = TValue{})
         {
             Value = value;
         }
     };
 
-
     template<typename TValue, NotHelperType TKey, typename ... Tail>
     class Node<TValue, TKey, Tail...>
     {
-        public:
+        public: Node() = default;
+        private: std::unordered_map<TKey, Node<TValue, Tail...>> _childNodes;
 
-        Node() = default;
-        std::unordered_map<TKey, Node<TValue, Tail...>> _childNodes;
-
-        auto& operator[](TKey key)
+        public: auto& operator[](TKey key)
         {
             if(!_childNodes.contains(key))
                 return AddChild(key);
@@ -42,7 +38,7 @@
             return _childNodes[key];
         }
 
-        auto& AddChild(TKey key, const Node<TValue, Tail...>& node = Node<TValue, Tail...>())
+        public: auto& AddChild(TKey key, const Node<TValue, Tail...>& node = Node<TValue, Tail...>())
         {
             IDictionaryExtensions::Add(_childNodes, key, node);
             return _childNodes[key];
@@ -52,16 +48,15 @@
     template<typename TValue, typename TKey>
     class Node<TValue, Repeat<TKey>>
     {
-        public:
-        TValue Value;
-        std::unordered_map<TKey, std::shared_ptr<Node<TValue, Repeat<TKey>>>> _childNodes;
+        public: TValue Value;
+        private: std::unordered_map<TKey, Node<TValue, Repeat<TKey>>*> _childNodes;
 
-        Node(TValue value = TValue{})
+        public: Node(TValue value = TValue{})
         {
             Value = value;
         }
 
-        auto& operator[](TKey key)
+        public: auto& operator[](TKey key)
         {
             if(!_childNodes.contains(key))
                 return AddChild(key);
@@ -69,15 +64,23 @@
             return *_childNodes[key];
         }
 
-        auto& AddChild(TKey key, TValue value = TValue{})
+        public: auto& AddChild(TKey key, TValue value = TValue{})
         {
             return AddChild(key, Node<TValue, Repeat<TKey>>(value));
         }
 
-        auto& AddChild(TKey key, Node<TValue, Repeat<TKey>> node)
+        public: auto& AddChild(TKey key, Node<TValue, Repeat<TKey>> node)
         {
-            IDictionaryExtensions::Add(_childNodes, key, std::make_shared<Node<TValue, Repeat<TKey>>>(node));
+            IDictionaryExtensions::Add(_childNodes, key, new Node<TValue, Repeat<TKey>>(node));
             return *_childNodes[key];
+        }
+
+        public: ~Node()
+        {
+            for(auto node : _childNodes)
+            {
+                delete node.second;
+            }
         }
     };
 
