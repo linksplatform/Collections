@@ -4,7 +4,7 @@ namespace Platform.Collections.Arrays
 {
     /// <summary>
     /// <para>Represents a set of wrapper methods over <see cref="ArrayPool{T}"/> class methods to simplify access to them.</para>
-    /// <para>Представляет набор методов обёрток над методами класса <see cref="ArrayPool{T}"> для упрощения доступа к ним.</para>
+    /// <para>Представляет набор методов обёрток над методами класса <see cref="ArrayPool{T}"/> для упрощения доступа к ним.</para>
     /// </summary>
     public static class ArrayPool
     {

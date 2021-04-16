@@ -48,7 +48,7 @@ namespace Platform.Collections.Lists
         /// <para>Adds a value to the list at the first index and return true.</para>
         /// <para>Добавляет значение в список по первому индексу и возвращает true.</para>
         /// </summary>
-        /// <param name="element"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <param name="elements"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
         /// <returns>
         /// <para>True value in any case.</para>
         /// <para>Значение true в любом случае.</para>
@@ -104,7 +104,7 @@ namespace Platform.Collections.Lists
         /// <returns>
         /// <para>Constant value in any case.</para>
         /// <para>Значение константы в любом случае.</para>
-        /// <returns></returns>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements)
         {
@@ -120,7 +120,7 @@ namespace Platform.Collections.Lists
         /// <returns>
         /// <para>Constant value in any case.</para>
         /// <para>Значение константы в любом случае.</para>
-        /// <returns>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddAllAndReturnConstant(IList<TElement> elements)
         {

@@ -14,7 +14,7 @@ namespace Platform.Collections.Arrays
         protected long _position;
 
         /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array as the array to fill and the offset from which to start filling.</para></para>
+        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array as the array to fill and the offset from which to start filling.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив в качестве заполняемого и смещение с которого начнётся заполнение.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
@@ -58,7 +58,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adds the first element from the specified list to the array to fill and returns <see langword="true"/>.</para>
         /// <para>Добавляет первый элемент из указанного списка в заполняемый массив и возвращает <see langword="true"/>.</para>
         /// </summary>
-        /// <param name="element"><para>The list from which the first item will be added.</para><para>Список из которого будет добавлен первый элемент.</para></param>
+        /// <param name="elements"><para>The list from which the first item will be added.</para><para>Список из которого будет добавлен первый элемент.</para></param>
         /// <returns>
         /// <para>The <see langword="true"/> value.</para>
         /// <para>Значение <see langword="true"/>.</para>

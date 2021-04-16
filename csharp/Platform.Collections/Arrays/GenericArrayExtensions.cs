@@ -114,7 +114,7 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <typeparam name="T"><para>The array item type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to copy from.</para><para>Массив для копирования.</para></param>
-        /// <param name="skip"><para>The number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>        
+        /// <param name="shift"><para>The number of items to shift.</para><para>Количество сдвигаемых элементов.</para></param>        
         /// <returns>
         /// <para>If the value of the shift variable is less than zero - an <see cref="NotImplementedException"/> exception is thrown, but if the value of the shift variable is 0 - an exact copy of the array is returned. Otherwise, an array is returned with the shift of the elements.</para>
         /// <para>Если значение переменной shift меньше нуля - выбрасывается исключение <see cref="NotImplementedException"/>, если же значение переменной shift равно 0 - возвращается точная копия массива. Иначе возвращается массив со сдвигом элементов.</para>
@@ -142,7 +142,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adding in array the passed element at the specified position and increments position value by one.</para>
         /// <para>Добавляет в массив переданный элемент на указанную позицию и увеличивает значение position на единицу.</para>
         /// </summary>
-        /// <typeparam name="T"><para>Array elements type.</para>Тип элементов массива.<para></typeparam>
+        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
         /// <param name="position"><para>A reference to the position of type int where the element will be added.</para><para>Ссылка на позицию типа int, в которую будет добавлен элемент.</para></param>
         /// <param name="element"><para>The element to add to the array.</para><para>Элемент, который нужно добавить в массив.</para></param>
@@ -153,7 +153,7 @@ namespace Platform.Collections.Arrays
         /// <para>Adding in array the passed element at the specified position and increments position value by one.</para>
         /// <para>Добавляет в массив переданный элемент на указанную позицию и увеличивает значение position на единицу.</para>
         /// </summary>
-        /// <typeparam name="T"><para>Array elements type.</para>Тип элементов массива.<para></typeparam>
+        /// <typeparam name="T"><para>Array elements type.</para><para>Тип элементов массива.</para></typeparam>
         /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
         /// <param name="position"><para>A reference to the position of type long where the element will be added.</para><para>Ссылка на позицию типа long, в которую будет добавлен элемент.</para></param>
         /// <param name="element"><para>The element to add to the array</para><para>Элемент который необходимо добавить в массив.</para></param>

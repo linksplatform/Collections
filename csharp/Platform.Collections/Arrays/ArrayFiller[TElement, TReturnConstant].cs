@@ -52,7 +52,7 @@ namespace Platform.Collections.Arrays
         /// <returns>
         /// <para>The constant's value.</para>
         /// <para>Значение константы.</para>
-        /// <returns>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, _returnConstant);
 
@@ -64,7 +64,7 @@ namespace Platform.Collections.Arrays
         /// <returns>
         /// <para>The constant's value.</para>
         /// <para>Значение константы.</para>
-        /// <returns>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TReturnConstant AddAllAndReturnConstant(IList<TElement> elements) => _array.AddAllAndReturnConstant(ref _position, elements, _returnConstant);
 
