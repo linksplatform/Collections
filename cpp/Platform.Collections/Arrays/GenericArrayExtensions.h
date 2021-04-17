@@ -25,7 +25,7 @@
             }
             else
             {
-                element = T{};
+                element = 0;
                 return false;
             }
         }
@@ -40,7 +40,7 @@
             }
             else
             {
-                element = 0;
+                element = T{};
                 return false;
             }
         }

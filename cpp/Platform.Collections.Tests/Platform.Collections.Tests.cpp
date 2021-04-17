@@ -5,7 +5,7 @@ namespace Platform::Collections::Tests
 {
     class ArrayTests : public ::testing::Test
     {
-        protected:
+    protected:
         void SetUp() override
         {
         }
@@ -36,7 +36,7 @@ namespace Platform::Collections::Tests
 
     class BitStringTests : public ::testing::Test
     {
-        protected:
+    protected:
         void SetUp() override
         {
         }
@@ -45,7 +45,7 @@ namespace Platform::Collections::Tests
 
     class ChangeSegmentTests : public ::testing::Test
     {
-        protected: void SetUp() override
+    protected: void SetUp() override
         {
         }
     };
