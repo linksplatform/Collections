@@ -45,7 +45,8 @@ namespace Platform::Collections::Tests
 
     class ChangeSegmentTests : public ::testing::Test
     {
-    protected: void SetUp() override
+    protected:
+        void SetUp() override
         {
         }
     };
