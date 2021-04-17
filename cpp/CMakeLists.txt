@@ -1,12 +1,26 @@
-cmake_minimum_required(VERSION 3.16)
-project(Platform.Collections)
+cmake_minimum_required(VERSION 3.17)
 
-set(CMAKE_CXX_STANDARD 20) # use only C++20
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -O3)
+set(CMAKE_LOCAL_PROJECT_NAME Platform.Collections)
+project(${CMAKE_LOCAL_PROJECT_NAME})
 
-set(LINKS_PLATFORM_DIR ../../../LinksPlatform)
-include_directories(${LINKS_PLATFORM_DIR}/Hashing/cpp/Platform.Hashing)
-include_directories(${LINKS_PLATFORM_DIR}/Equality/cpp/Platform.Equality)
+add_subdirectory(${CMAKE_LOCAL_PROJECT_NAME})
 
-#temporary solution
-add_executable(Platform.Collections Platform.Collections.Tests/test.cpp)
+get_directory_property(IS_SUBPROJECT PARENT_DIRECTORY)
+
+macro(INCLUDE_TESTS TESTS_NAME)
+    add_subdirectory(${TESTS_NAME}.Tests)
+    target_link_libraries(${TESTS_NAME}.Tests PUBLIC ${TESTS_NAME}.Library)
+endmacro()
+
+if(DEFINED LINKS_PLATFORM_TESTS)
+    if(${LINKS_PLATFORM_TESTS})
+        INCLUDE_TESTS(${CMAKE_LOCAL_PROJECT_NAME})
+    endif()
+elseif(NOT IS_SUBPROJECT)
+    INCLUDE_TESTS(${CMAKE_LOCAL_PROJECT_NAME})
+endif()
+
+
+
+
+

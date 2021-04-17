@@ -1,5 +1,7 @@
-#ifndef PLATFORM_COLLECTIONS_H
-#define PLATFORM_COLLECTIONS_H
+#pragma once
+
+#ifndef PLATFORM_COLLECTIONS
+#define PLATFORM_COLLECTIONS
 
 #include <type_traits>
 #include <concepts>
@@ -81,4 +83,4 @@
 
 
 
-#endif //PLATFORM_COLLECTIONS_H
+#endif //PLATFORM_COLLECTIONS

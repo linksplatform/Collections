@@ -2,6 +2,12 @@
 {
     namespace StringExtensions
     {
+        template <typename _Type>
+        concept basic_string = requires(_Type object, int index)
+        {
+            requires std::same_as<_Type, std::basic_string<std::decay_t<decltype(object[index])>>>;
+        };
+
         // TODO заметил, что часто встречается проверка на не null в функциях
         //  Ох уж эти шарперы. Всё-таки код чисто с value-types(не я придумал) и ссылками выглядит безопаснее
         static std::u16string CapitalizeFirstLetter(std::u16string string)

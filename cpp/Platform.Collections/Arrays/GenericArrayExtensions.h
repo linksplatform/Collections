@@ -25,7 +25,7 @@
             }
             else
             {
-                element = 0;
+                element = T{};
                 return false;
             }
         }
