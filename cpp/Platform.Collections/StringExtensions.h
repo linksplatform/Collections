@@ -2,20 +2,35 @@
 {
     namespace StringExtensions
     {
-        template <typename _Type>
+        template<typename _Type>
+        concept char_string = requires(_Type object, int index)
+        {
+            requires std::is_fundamental_v<std::remove_pointer_t<std::decay_t<_Type>>>;
+            requires std::same_as<_Type, const std::remove_pointer_t<std::decay_t<_Type>>*>;
+            std::basic_string<std::decay_t<decltype(object[index])>>(object);
+        };
+
+        template<typename _Type>
         concept basic_string = requires(_Type object, int index)
         {
+            requires !(char_string<_Type>);
             requires std::same_as<_Type, std::basic_string<std::decay_t<decltype(object[index])>>>;
         };
 
-        // TODO заметил, что часто встречается проверка на не null в функциях
-        //  Ох уж эти шарперы. Всё-таки код чисто с value-types(не я придумал) и ссылками выглядит безопаснее
-        static std::u16string CapitalizeFirstLetter(std::u16string string)
+        #define REDEFINITION_FOR_CSTRING(FName) \
+        template<typename... TArgs>  \
+        static auto FName(char_string auto string, TArgs... args) \
+        { \
+            using TString = std::basic_string<std::remove_pointer_t<std::decay_t<decltype(string[0])>>>; \
+            return FName(TString(string), args...); \
+        }
+
+        static auto CapitalizeFirstLetter(basic_string auto string)
         {
             // TODO бонусная альтернативная реализация от Voider'а
-            for(auto & it : string)
+            for (auto& it : string)
             {
-                if(std::islower(it))
+                if (std::isalpha(it))
                 {
                     it = std::toupper(it);
                     return string;
@@ -24,20 +39,24 @@
             return string;
         }
 
-        static std::u16string Truncate(std::u16string string, std::int32_t maxLength)
+        template<basic_string TString>
+        static auto Truncate(const TString& string, std::int32_t maxLength)
         {
-            return string.empty() ? std::u16string{} : string.substr(0, std::min(string.size(), (size_t)maxLength));
+            return string.empty() ? TString{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
         }
 
-        static std::u16string TrimSingle(std::u16string string, char charToTrim)
+        template<basic_string TString>
+        static auto TrimSingle(const TString& string, char charToTrim)
         {
+            using TChar = std::decay_t<decltype(string[0])>;
+
             if (!string.empty())
             {
                 if (string.size() == 1)
                 {
                     if (string[0] == charToTrim)
                     {
-                        return u"";
+                        return (TString)(const TChar*)"";
                     }
                     else
                     {
@@ -64,5 +83,11 @@
                 return string;
             }
         }
-    };
-}
+
+        REDEFINITION_FOR_CSTRING(CapitalizeFirstLetter)
+        REDEFINITION_FOR_CSTRING(Truncate)
+        REDEFINITION_FOR_CSTRING(TrimSingle)
+
+        #undef REDEFINITION_FOR_CSTRING
+    };// namespace StringExtensions
+}// namespace Platform::Collections

@@ -19,7 +19,7 @@
             }
             else
             {
-                //element = 0; TODO точно есть смысл от этого?
+                element = T{};
                 return false;
             }
         }

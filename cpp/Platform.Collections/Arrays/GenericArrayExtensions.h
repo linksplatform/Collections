@@ -2,21 +2,21 @@
 {
     namespace GenericArrayExtensions
     {
-        template <std::default_initializable T>
+        template<std::default_initializable T>
         static T GetElementOrDefault(Platform::Collections::System::Array<T> auto& array, std::int32_t index)
         {
             return array.size() > index ? array[index] : T{};
         }
 
-        template <std::default_initializable T>
+        template<std::default_initializable T>
         static T GetElementOrDefault(Platform::Collections::System::Array<T> auto& array, std::int64_t index)
         {
             return array.size() > index ? array[index] : T{};
         }
 
 
-        template <typename T>
-        static bool TryGetElement(Platform::Collections::System::Array<T> auto& array, std::int32_t index, T &element)
+        template<typename T>
+        static bool TryGetElement(Platform::Collections::System::Array<T> auto& array, std::int32_t index, T& element)
         {
             if (array.size() > index)
             {
@@ -30,8 +30,8 @@
             }
         }
 
-        template <typename T>
-        static bool TryGetElement(Platform::Collections::System::Array<T> auto& array, std::int64_t index, T &element)
+        template<typename T>
+        static bool TryGetElement(Platform::Collections::System::Array<T> auto& array, std::int64_t index, T& element)
         {
             if (array.size() > index)
             {
@@ -45,17 +45,23 @@
             }
         }
 
-        template <typename T>
+        template<typename T>
         static auto Clone(Platform::Collections::System::Array<T> auto& array)
         {
             return array;
         }
 
         // TODO Тут я слегка сменил обычный стиль 'Array auto& array' на этот, чтобы был доступен конструктор 'TArray'
-        template <typename T, Platform::Collections::System::Array<T> TArray>
-        requires requires(int size) { TArray(size); } && // проверка на наличие конструктора
-                 requires(T item) {T{};} // есть default конструктор
-        static auto ShiftRight(TArray &array, std::int64_t shift)
+        template<typename T, Platform::Collections::System::Array<T> TArray>
+        requires requires(int size)
+        {
+            TArray(size);
+        } &&// проверка на наличие конструктора
+                requires(T item)
+        {
+            T{};
+        }// есть default конструктор
+        static auto ShiftRight(TArray& array, std::int64_t shift)
         {
             if (shift < 0)
             {
@@ -73,7 +79,7 @@
             }
         }
 
-        template <typename T>
+        template<typename T>
         static auto ShiftRight(Platform::Collections::System::Array<T> auto& array)
         {
             return ShiftRight<T>(array, 1LL);
@@ -92,7 +98,7 @@
             return returnConstant;
         }
 
-        template <typename T>
+        template<typename T>
         static void AddFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::BaseArray<T> auto elements)
         {
             array[position++] = elements[0];
@@ -105,7 +111,7 @@
             return returnConstant;
         }
 
-        template <typename T>
+        template<typename T>
         static void AddAll(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements)
         {
             for (auto i = 0; i < elements.size(); i++)
@@ -122,7 +128,7 @@
         }
 
 
-        template <typename T>
+        template<typename T>
         static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements, std::int32_t skip)
         {
             for (auto i = skip; i < elements.size(); i++)
@@ -131,7 +137,7 @@
             }
         }
 
-        template <typename T>
+        template<typename T>
         static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements)
         {
             AddSkipFirst<T>(array, position, elements, 1);
@@ -143,5 +149,5 @@
             AddSkipFirst<TElement>(array, position, elements);
             return returnConstant;
         }
-    };
-}
+    };// namespace GenericArrayExtensions
+}// namespace Platform::Collections::Arrays
