@@ -46,9 +46,11 @@
         }
 
         template<basic_string TString>
-        static auto TrimSingle(const TString& string, char charToTrim)
+        static auto TrimSingle(const TString& string, auto charToTrim)
         {
-            using TChar = std::decay_t<decltype(string[0])>;
+            using TChar = std::decay_t<decltype(string[0])>; // TODO or TString::value_type
+
+            static_assert(std::same_as<decltype(charToTrim), TChar>);
 
             if (!string.empty())
             {
