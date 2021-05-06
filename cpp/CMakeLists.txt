@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.17)
-
 set(CMAKE_LOCAL_PROJECT_NAME Platform.Collections)
 project(${CMAKE_LOCAL_PROJECT_NAME})
 
@@ -19,3 +18,7 @@ if(DEFINED LINKS_PLATFORM_TESTS)
 elseif(NOT IS_SUBPROJECT)
     INCLUDE_TESTS(${CMAKE_LOCAL_PROJECT_NAME})
 endif()
+
+
+
+

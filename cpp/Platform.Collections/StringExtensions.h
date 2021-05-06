@@ -6,7 +6,8 @@
         concept char_string = requires(_Type object, int index)
         {
             requires std::is_fundamental_v<std::remove_pointer_t<std::decay_t<_Type>>>;
-            requires std::same_as<_Type, const std::remove_pointer_t<std::decay_t<_Type>>*>;
+            requires std::same_as < _Type, const std::remove_pointer_t<std::decay_t<_Type>>
+            * > ;
             std::basic_string<std::decay_t<decltype(object[index])>>(object);
         };
 
@@ -17,13 +18,13 @@
             requires std::same_as<_Type, std::basic_string<std::decay_t<decltype(object[index])>>>;
         };
 
-        #define REDEFINITION_FOR_CSTRING(FName) \
-        template<typename... TArgs>  \
-        static auto FName(char_string auto string, TArgs... args) \
-        { \
-            using TString = std::basic_string<std::remove_pointer_t<std::decay_t<decltype(string[0])>>>; \
-            return FName(TString(string), args...); \
-        }
+    #define REDEFINITION_FOR_CSTRING(FName)                                                          \
+    template<typename... TArgs>                                                                      \
+    static auto inline FName(char_string auto string, TArgs... args)                                 \
+    {                                                                                                \
+        using TString = std::basic_string<std::remove_pointer_t<std::decay_t<decltype(string[0])>>>; \
+        return FName(TString(string), args...);                                                      \
+    }
 
         static auto CapitalizeFirstLetter(basic_string auto string)
         {
@@ -38,17 +39,19 @@
             }
             return string;
         }
+        REDEFINITION_FOR_CSTRING(CapitalizeFirstLetter)
 
         template<basic_string TString>
         static auto Truncate(const TString& string, std::int32_t maxLength)
         {
             return string.empty() ? TString{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
         }
+        REDEFINITION_FOR_CSTRING(Truncate)
 
         template<basic_string TString>
         static auto TrimSingle(const TString& string, auto charToTrim)
         {
-            using TChar = std::decay_t<decltype(string[0])>; // TODO or TString::value_type
+            using TChar = std::decay_t<decltype(string[0])>;// TODO or TString::value_type
 
             static_assert(std::same_as<decltype(charToTrim), TChar>);
 
@@ -58,7 +61,7 @@
                 {
                     if (string[0] == charToTrim)
                     {
-                        return (TString)(const TChar*)"";
+                        return (TString) (const TChar*) "";
                     }
                     else
                     {
@@ -85,9 +88,6 @@
                 return string;
             }
         }
-
-        REDEFINITION_FOR_CSTRING(CapitalizeFirstLetter)
-        REDEFINITION_FOR_CSTRING(Truncate)
         REDEFINITION_FOR_CSTRING(TrimSingle)
 
         #undef REDEFINITION_FOR_CSTRING

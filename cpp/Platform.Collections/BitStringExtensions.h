@@ -5,6 +5,7 @@
     {
         for (int i = 0; i < string.size(); i++)
         {
+            // FIXME use NextBool() from Platform.Random
             bool value = rand() % 2;
             string.set(i, value);
         }

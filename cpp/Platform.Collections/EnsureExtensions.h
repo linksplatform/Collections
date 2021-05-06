@@ -2,7 +2,8 @@
 {
     namespace EnsureExtensions
     {
-        template <typename T> static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName, std::string message)
+        template<typename T>
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName, std::string message)
         {
             if (argument.IsNullOrEmpty())
             {
@@ -10,12 +11,14 @@
             }
         }
 
-        template <typename T> static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName)
+        template<typename T>
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName)
         {
             ArgumentNotEmpty(root, argument, argumentName, {});
         }
 
-        template <typename T> static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument)
+        template<typename T>
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument)
         {
             ArgumentNotEmpty(root, argument, {}, {});
         }
@@ -40,46 +43,37 @@
 
         // DEBUG REGION
 
-        template <typename T> static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName, std::string message)
+        template<typename T>
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName, std::string message)
         {
-            #ifdef DEBUG
-                ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, argumentName, message);
-            #endif
+            ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, argumentName, message);
         }
 
-        template <typename T> static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName)
+        template<typename T>
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName)
         {
-            #ifdef DEBUG
-                ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, argumentName, {});
-            #endif
+            ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, argumentName, {});
         }
 
-        template <typename T> static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument)
+        template<typename T>
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument)
         {
-            #ifdef DEBUG
-                ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, {}, {});
-            #endif
+            ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, {}, {});
         }
 
         static void ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, std::string argument, std::string argumentName, std::string message)
         {
-            #ifdef DEBUG
-                ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::Ensure::Always, argument, argumentName, message);
-            #endif
+            ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::Ensure::Always, argument, argumentName, message);
         }
 
         static void ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, std::string argument, std::string argumentName)
         {
-            #ifdef DEBUG
-                ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::Ensure::Always, argument, argumentName, {});
-            #endif
+            ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::Ensure::Always, argument, argumentName, {});
         }
 
         static void ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, std::string argument)
         {
-            #ifdef DEBUG
-                ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::Ensure::Always, argument, {}, {});
-            #endif
+            ArgumentNotEmptyAndNotWhiteSpace(Platform::Exceptions::Ensure::Always, argument, {}, {});
         }
-    };
-}
+    };// namespace EnsureExtensions
+}// namespace Platform::Collections

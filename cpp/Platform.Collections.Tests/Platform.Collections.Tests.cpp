@@ -3,18 +3,9 @@
 
 namespace Platform::Collections::Tests
 {
-    class ArrayTests : public ::testing::Test
-    {
-    protected:
-        void SetUp() override
-        {
-        }
-    };
-
-    TEST_F(ArrayTests, GetElementTest)
+    TEST(ArrayTests, GetElementTest)
     {
         {
-            // If someone doesn't know 0 == int{} (or default(int))
             auto nullArray = std::array<int, 0>{};
             ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault<int>(nullArray, 1));
             int element;
@@ -40,7 +31,6 @@ namespace Platform::Collections::Tests
         void SetUp() override
         {
         }
-
 
     private:
         template<std::size_t Size1, std::size_t Size2, std::size_t Size3, std::size_t Size4>
@@ -85,17 +75,8 @@ namespace Platform::Collections::Tests
         }
     }
 
-
-    class ChangeSegmentTests : public ::testing::Test
-    {
-    protected:
-        void SetUp() override
-        {
-        }
-    };
-
-    // Делаем тесты, как будто сами его написали и хвастаемся, что работает
-    TEST_F(ChangeSegmentTests, GetHashCodeEqualsTest)
+    // Делаем тесты, как будто сами его написали и хвастаемся, что работает))
+    TEST(ChangeSegmentTests, GetHashCodeEqualsTest)
     {
         const std::string testString = "test test";
         auto testArray = std::vector(testString.begin(), testString.end());
@@ -104,7 +85,7 @@ namespace Platform::Collections::Tests
         ASSERT_EQ(firstHashCode, secondHashCode);
     }
 
-    TEST_F(ChangeSegmentTests, EqualsTest)
+    TEST(ChangeSegmentTests, EqualsTest)
     {
         const std::string testString = "test test";
         auto testArray = std::vector(testString.begin(), testString.end());
@@ -113,15 +94,7 @@ namespace Platform::Collections::Tests
         ASSERT_TRUE(std::equal_to<std::span<char>>{}(first, second));
     }
 
-    class ListsTests : public ::testing::Test
-    {
-    protected:
-        void SetUp() override
-        {
-        }
-    };
-
-    TEST_F(ListsTests, GetElementTest)
+    TEST(ListsTests, GetElementTest)
     {
         {
             auto nullList = std::vector<int>{};
@@ -147,22 +120,14 @@ namespace Platform::Collections::Tests
         }
     }
 
-    class StringTests : public ::testing::Test
-    {
-        protected:
-            void SetUp() override
-            {
-            }
-    };
-
-    TEST_F(StringTests, CapitalizeFirstLetterTest)
+    TEST(StringTests, CapitalizeFirstLetterTest)
     {
         ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter("hello"));
         ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter("Hello"));
         ASSERT_EQ("  Hello", StringExtensions::CapitalizeFirstLetter("  hello"));
     }
 
-    TEST_F(StringTests, TrimSingleTest)
+    TEST(StringTests, TrimSingleTest)
     {
         ASSERT_EQ("", StringExtensions::TrimSingle("'", '\''));
         ASSERT_EQ("", StringExtensions::TrimSingle("''", '\''));

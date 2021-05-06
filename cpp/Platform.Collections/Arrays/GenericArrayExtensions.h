@@ -45,22 +45,10 @@
             }
         }
 
-        template<typename T>
-        static auto Clone(Platform::Collections::System::Array<T> auto& array)
-        {
-            return array;
-        }
-
-        // TODO Тут я слегка сменил обычный стиль 'Array auto& array' на этот, чтобы был доступен конструктор 'TArray'
         template<typename T, Platform::Collections::System::Array<T> TArray>
-        requires requires(int size)
-        {
-            TArray(size);
-        } &&// проверка на наличие конструктора
-                requires(T item)
-        {
-            T{};
-        }// есть default конструктор
+        requires
+            requires(int size) {TArray(size);} &&
+            requires(T item) {T{};}
         static auto ShiftRight(TArray& array, std::int64_t shift)
         {
             if (shift < 0)
@@ -69,7 +57,7 @@
             }
             if (shift == 0)
             {
-                return GenericArrayExtensions::Clone<T>(array);
+                return array;
             }
             else
             {
