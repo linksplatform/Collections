@@ -2,56 +2,57 @@
 {
     namespace IListExtensions
     {
-        template<std::default_initializable T>
-        static T GetElementOrDefault(Platform::Collections::System::IList<T> auto& list, std::integral auto index)
+        template<System::IList TList>
+        requires std::default_initializable<std::ranges::range_value_t<TList>>
+        static auto GetElementOrDefault(const TList& array, std::integral auto index)
         {
-            return list.size() > index ? list[index] : 0;
+            using TItem = std::ranges::range_value_t<TList>;
+            return std::ranges::size(array) > index ? array[index] : TItem{};
         }
 
-        template<typename T>
-        static bool TryGetElement(Platform::Collections::System::IList<T> auto& list, std::int32_t index, T& element)
+        static bool TryGetElement(const System::Array auto& array, std::integral auto index, auto& element)
         {
-            if (list.size() > index)
+            if (std::ranges::size(array) > index)
             {
-                element = list[index];
+                element = array[index];
                 return true;
             }
             else
             {
-                element = T{};
+                element = 0;
                 return false;
             }
         }
 
-        template<typename T>
-        static bool AddAndReturnTrue(Platform::Collections::System::IList<T> auto& list, T element)
+        static auto Clone(System::IList auto& list)
+        {
+            return list;
+        }
+
+        static bool AddAndReturnTrue(System::IList auto& list, auto element)
         {
             list.push_back(element);
             return true;
         }
 
-        template<typename T>
-        static bool AddFirstAndReturnTrue(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::IList<T> auto elements)
+        static bool AddFirstAndReturnTrue(System::IList auto& list, const System::Array auto& elements)
         {
-            AddFirst<T>(list, elements);
+            AddFirst(list, elements);
             return true;
         }
 
-        template<typename T>
-        static void AddFirst(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::BaseArray<T> auto elements)
+        static void AddFirst(System::IList auto& list, const System::Array auto& elements)
         {
             list.push_back(elements[0]);
         }
 
-        template<typename T>
-        static bool AddAllAndReturnTrue(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::Array<T> auto elements)
+        static bool AddAllAndReturnTrue(System::IList auto& list, const System::Array auto& elements)
         {
-            AddAll<T>(list, elements);
+            AddAll(list, elements);
             return true;
         }
 
-        template<typename T>
-        static void AddAll(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::Array<T> auto elements)
+        static void AddAll(System::IList auto& list, const System::Array auto& elements)
         {
             for (auto i = 0; i < elements.size(); i++)
             {
@@ -59,21 +60,18 @@
             }
         }
 
-        template<typename T>
-        static bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::Array<T> auto elements)
+        static bool AddSkipFirstAndReturnTrue(System::IList auto& list, const System::Array auto& elements)
         {
-            AddSkipFirst<T>(elements);
+            AddSkipFirst(elements);
             return true;
         }
 
-        template<typename T>
-        static void AddSkipFirst(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::Array<T> auto elements)
+        static void AddSkipFirst(System::IList auto& list, const System::Array auto& elements)
         {
-            AddSkipFirst<T>(list, elements, 1);
+            AddSkipFirst(list, elements, 1);
         }
 
-        template<typename T>
-        static void AddSkipFirst(Platform::Collections::System::IList<T> auto& list, Platform::Collections::System::Array<T> auto elements, std::int32_t skip)
+        static void AddSkipFirst(System::IList auto& list, const System::Array auto& elements, std::int32_t skip)
         {
             for (auto i = skip; i < elements.size(); i++)
             {
@@ -81,52 +79,9 @@
             }
         }
 
-        // TODO разве в C# 'int' может быть 'null' (всё-таки может)
-        template<typename T>
-        static auto GetCountOrZero(Platform::Collections::System::IList<T> auto list)
-        {
-            return list.size();
-        }
-
-        template<typename T, Platform::Collections::System::IList<T> TList>
-        requires Platform::Collections::System::IEquatable<T>
-        static bool ContentEqualTo(TList left, TList right)
-        {
-            for (auto i = left.size() - 1; i >= 0; --i)
-            {
-                if (!(left[i] == right[i]))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        template<typename T, Platform::Collections::System::IList<T> TList>
-        static bool EqualTo(TList left, TList right)
-        {
-            if constexpr (Platform::Collections::System::IEquatable<TList>)
-            {
-                return left == right;
-            }
-            return EqualTo<T>(left, right, ContentEqualTo);
-        }
-
-        template<typename T, Platform::Collections::System::IList<T> TList>
-        static bool EqualTo(TList left, TList right, std::function<bool(TList, TList)> contentEqualityComparer)
-        {
-            auto leftCount = left.size();
-            auto rightCount = right.size();
-            if (leftCount == 0 && rightCount == 0)
-            {
-                return true;
-            }
-            if (leftCount == 0 || rightCount == 0 || leftCount != rightCount)
-            {
-                return false;
-            }
-            return contentEqualityComparer(left, right);
-        }
+        /*
+         * Use Platform.Equality(or std::ranges::equal) instead of EqualTo and other
+         */
 
         /* TODO А что с этим то делать :(
         static T ToArray[]<T>(IList<T> &list, Func<T, bool> predicate)
@@ -155,10 +110,6 @@
         }
         */
 
-
-        // TODO метод 'ForEach' удалён за ненадобностью
-        // TODO метод 'CompareTo' удалён за ненадобностью
-
         /*
         static T SkipFirst[]<T>(IList<T> &list) { return list.SkipFirst(1); }
     
@@ -177,16 +128,14 @@
         }
         */
 
-        template<typename T>
-        static auto ShiftRight(Platform::Collections::System::IList<T> auto list)
+        static auto ShiftRight(const System::IList auto& list)
         {
-            return Platform::Collections::Arrays::GenericArrayExtensions::ShiftRight<T>(list);
+            return Arrays::GenericArrayExtensions::ShiftRight(list);
         }
 
-        template<typename T>
-        static auto ShiftRight(Platform::Collections::System::IList<T> auto list, std::int32_t shift)
+        static auto ShiftRight(const System::IList auto& list, std::int32_t shift)
         {
-            return Platform::Collections::Arrays::GenericArrayExtensions::ShiftRight<T>(list, shift);
+            return Arrays::GenericArrayExtensions::ShiftRight(list, shift);
         }
     };// namespace IListExtensions
 }// namespace Platform::Collections::Lists

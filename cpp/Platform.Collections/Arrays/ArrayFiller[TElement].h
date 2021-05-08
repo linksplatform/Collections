@@ -10,13 +10,13 @@
         std::int64_t _position = 0;
 
     public:
-        ArrayFiller(Platform::Collections::System::Array<TElement> auto& array, std::int64_t offset)
+        ArrayFiller(Platform::Collections::System::Array auto& array, std::int64_t offset)
         {
-            _array = std::span<TElement>(array.begin(), array.size());
+            _array = std::span<TElement>(std::ranges::begin(array), std::ranges::size(array));
             _position = offset;
         }
 
-        ArrayFiller(Platform::Collections::System::Array<TElement> auto& array)
+        ArrayFiller(Platform::Collections::System::Array auto& array)
             : ArrayFiller(array, 0)
         {
         }
@@ -31,17 +31,17 @@
             return GenericArrayExtensions::AddAndReturnConstant<TElement>(_array, _position, element, true);
         }
 
-        bool AddFirstAndReturnTrue(const Platform::Collections::System::BaseArray<TElement> auto& elements)
+        bool AddFirstAndReturnTrue(const Platform::Collections::System::Array auto& elements)
         {
             return GenericArrayExtensions::AddFirstAndReturnConstant<TElement>(_array, _position, elements, true);
         }
 
-        bool AddAllAndReturnTrue(const Platform::Collections::System::Array<TElement> auto& elements)
+        bool AddAllAndReturnTrue(const Platform::Collections::System::Array auto& elements)
         {
             return GenericArrayExtensions::AddAllAndReturnConstant<TElement>(_array, _position, elements, true);
         }
 
-        bool AddSkipFirstAndReturnTrue(const Platform::Collections::System::Array<TElement> auto& elements)
+        bool AddSkipFirstAndReturnTrue(const Platform::Collections::System::Array auto& elements)
         {
             return GenericArrayExtensions::AddSkipFirstAndReturnConstant<TElement>(_array, _position, elements, true);
         }

@@ -3,64 +3,53 @@
 
 namespace Platform::Collections::Tests
 {
+    TEST(ConceptsTest, Arrays)
+    {
+        using vector = std::vector<int>;
+        using array = std::array<int, 0>;
+
+        ASSERT_TRUE(System::Array<vector>);
+        ASSERT_TRUE(System::Array<array>);
+
+        ASSERT_TRUE((System::Array<vector, int>));
+        ASSERT_TRUE((System::Array<array, int>));
+    }
+
+    TEST(ConceptsTest, Lists)
+    {
+        using vector = std::vector<int>;
+        using array = std::array<int, 0>;
+
+        ASSERT_TRUE(System::IList<vector>);
+        ASSERT_FALSE(System::IList<array>);
+
+        ASSERT_TRUE((System::IList<vector, int>));
+    }
+
+
     TEST(ArrayTests, GetElementTest)
     {
         {
             auto nullArray = std::array<int, 0>{};
-            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault<int>(nullArray, 1));
+            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault(nullArray, 1));
             int element;
-            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement<int>(nullArray, 1, element));
+            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement(nullArray, 1, element));
             ASSERT_EQ(0, element);
         }
 
         {
             auto array = std::array{1, 2, 3};
-            ASSERT_EQ(3, Arrays::GenericArrayExtensions::GetElementOrDefault<int>(array, 2));
+            ASSERT_EQ(3, Arrays::GenericArrayExtensions::GetElementOrDefault(array, 2));
             int element;
-            ASSERT_TRUE(Arrays::GenericArrayExtensions::TryGetElement<int>(array, 2, element));
+            ASSERT_TRUE(Arrays::GenericArrayExtensions::TryGetElement(array, 2, element));
             ASSERT_EQ(3, element);
-            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault<int>(array, 10));
-            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement<int>(array, 10, element));
+            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault(array, 10));
+            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement(array, 10, element));
             ASSERT_EQ(0, element);
         }
     }
 
-    class BitStringTests : public ::testing::Test
-    {
-    protected:
-        void SetUp() override
-        {
-        }
-
-    private:
-        template<std::size_t Size1, std::size_t Size2, std::size_t Size3, std::size_t Size4>
-        static void TestToOperationsWithSameMeaning(std::function<void(
-                                                            std::bitset<Size1>&,
-                                                            std::bitset<Size2>&,
-                                                            std::bitset<Size3>&,
-                                                            std::bitset<Size4>&)>
-                                                            test)
-        {
-            constexpr std::int32_t n = 5654;
-            auto x = std::bitset<n>();
-            auto y = std::bitset<n>();
-            while (std::equal_to<std::bitset<n>>{}(x, y))
-            {
-                BitStringExtensions::SetRandomBits(x);
-                BitStringExtensions::SetRandomBits(y);
-            }
-            auto w = std::bitset(x);
-            auto v = std::bitset(y);
-            ASSERT_FALSE(std::equal_to<std::bitset<n>>{}(x, w));
-            ASSERT_FALSE(std::equal_to<std::bitset<n>>{}(v, w));
-            ASSERT_TRUE(std::equal_to<std::bitset<n>>{}(x, w));
-            ASSERT_TRUE(std::equal_to<std::bitset<n>>{}(y, v));
-            test(x, y, w, v);
-            ASSERT_TRUE(std::equal_to<std::bitset<n>>{}(x, w));
-        }
-    };
-
-    TEST_F(BitStringTests, BitGetSetTest)
+    TEST(BitStringTests, BitGetSetTest)
     {
         constexpr int n = 250;
         auto bitArray = std::array<bool, n>();
@@ -99,23 +88,23 @@ namespace Platform::Collections::Tests
         {
             auto nullList = std::vector<int>{};
             int element;
-            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault<int>(nullList, 1));
-            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement<int>(nullList, 1, element));
+            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault(nullList, 1));
+            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement(nullList, 1, element));
             ASSERT_EQ(0, element);
             // Lists and Arrays are Backward Compatible
-            ASSERT_EQ(0, Lists::IListExtensions::GetElementOrDefault<int>(nullList, 1));
-            ASSERT_FALSE(Lists::IListExtensions::TryGetElement<int>(nullList, 1, element));
+            ASSERT_EQ(0, Lists::IListExtensions::GetElementOrDefault(nullList, 1));
+            ASSERT_FALSE(Lists::IListExtensions::TryGetElement(nullList, 1, element));
             ASSERT_EQ(0, element);
         }
 
         {
-            auto array = std::vector{1, 2, 3};
-            ASSERT_EQ(3, Lists::IListExtensions::GetElementOrDefault<int>(array, 2));
+            auto array = std::vector<int>{1, 2, 3};
+            ASSERT_EQ(3, Lists::IListExtensions::GetElementOrDefault(array, 2));
             int element;
-            ASSERT_TRUE(Lists::IListExtensions::TryGetElement<int>(array, 2, element));
+            ASSERT_TRUE(Lists::IListExtensions::TryGetElement(array, 2, element));
             ASSERT_EQ(3, element);
-            ASSERT_EQ(0, Lists::IListExtensions::GetElementOrDefault<int>(array, 10));
-            ASSERT_FALSE(Lists::IListExtensions::TryGetElement<int>(array, 10, element));
+            ASSERT_EQ(0, Lists::IListExtensions::GetElementOrDefault(array, 10));
+            ASSERT_FALSE(Lists::IListExtensions::TryGetElement(array, 10, element));
             ASSERT_EQ(0, element);
         }
     }

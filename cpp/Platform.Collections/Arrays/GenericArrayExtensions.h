@@ -2,23 +2,17 @@
 {
     namespace GenericArrayExtensions
     {
-        template<std::default_initializable T>
-        static T GetElementOrDefault(Platform::Collections::System::Array<T> auto& array, std::int32_t index)
+        template<System::Array TArray>
+        requires std::default_initializable<std::ranges::range_value_t<TArray>>
+        static auto GetElementOrDefault(const TArray& array, std::integral auto index)
         {
-            return array.size() > index ? array[index] : T{};
+            using TItem = std::ranges::range_value_t<TArray>;
+            return std::ranges::size(array) > index ? array[index] : TItem{};
         }
 
-        template<std::default_initializable T>
-        static T GetElementOrDefault(Platform::Collections::System::Array<T> auto& array, std::int64_t index)
+        static bool TryGetElement(const System::Array auto& array, std::integral auto index, auto& element)
         {
-            return array.size() > index ? array[index] : T{};
-        }
-
-
-        template<typename T>
-        static bool TryGetElement(Platform::Collections::System::Array<T> auto& array, std::int32_t index, T& element)
-        {
-            if (array.size() > index)
+            if (std::ranges::size(array) > index)
             {
                 element = array[index];
                 return true;
@@ -30,26 +24,30 @@
             }
         }
 
-        template<typename T>
-        static bool TryGetElement(Platform::Collections::System::Array<T> auto& array, std::int64_t index, T& element)
+        static auto inline Clone(System::Array auto& list)
         {
-            if (array.size() > index)
+            using TArray = decltype(list);
+            using TItem = std::ranges::range_value_t<TArray>;
+
+            constexpr auto not_copyable =
+                std::same_as<TArray, std::span<TItem>> ||
+                std::is_array_v<TArray>;
+
+            if constexpr (not_copyable)
             {
-                element = array[index];
-                return true;
+                auto copy = list;
+                return std::ranges::copy(list, std::ranges::begin(copy));
             }
-            else
-            {
-                element = T{};
-                return false;
-            }
+
+            return list;
         }
 
-        template<typename T, Platform::Collections::System::Array<T> TArray>
+        template<typename T, System::Array TArray>
         requires
-            requires(int size) {TArray(size);} &&
-            requires(T item) {T{};}
-        static auto ShiftRight(TArray& array, std::int64_t shift)
+            requires(int size){TArray(size);}
+            &&
+            std::default_initializable<T>
+        static auto ShiftRight(const TArray& array, std::integral auto shift)
         {
             if (shift < 0)
             {
@@ -61,80 +59,69 @@
             }
             else
             {
-                auto restrictions = TArray(array.size() + shift);
-                std::ranges::copy(array, restrictions.begin() + shift);
+                auto restrictions = TArray(std::ranges::size(array) + shift);
+                std::ranges::copy(array, std::ranges::begin(array) + shift);
                 return restrictions;
             }
         }
 
-        template<typename T>
-        static auto ShiftRight(Platform::Collections::System::Array<T> auto& array)
+        static auto ShiftRight(const auto& array)
         {
-            return ShiftRight<T>(array, 1LL);
+            return ShiftRight(array, 1);
         }
 
-        template<typename T>
-        static void Add(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, T element)
+        static void Add(System::Array auto& array, std::integral auto& position, auto element)
         {
             array[position++] = element;
         }
 
-        template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, TElement element, TReturnConstant returnConstant)
+        static auto AddAndReturnConstant(System::Array auto& array, std::integral auto& position, auto element, auto returnConstant)
         {
-            Add<TElement>(array, position, element);
+            Add(array, position, element);
             return returnConstant;
         }
 
-        template<typename T>
-        static void AddFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::BaseArray<T> auto elements)
+        static void AddFirst(System::Array auto& array, std::integral auto& position, System::Array auto elements)
         {
             array[position++] = elements[0];
         }
 
-        template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, Platform::Collections::System::BaseArray<TElement> auto elements, TReturnConstant returnConstant)
+        static auto AddFirstAndReturnConstant(System::Array auto& array, std::integral auto& position, System::Array auto elements, auto returnConstant)
         {
-            AddFirst<TElement>(array, position, elements);
+            AddFirst(array, position, elements);
             return returnConstant;
         }
 
-        template<typename T>
-        static void AddAll(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements)
+        static void AddAll(System::Array auto& array, std::integral auto& position, System::Array auto elements)
         {
             for (auto i = 0; i < elements.size(); i++)
             {
-                Add<T>(array, position, elements[i]);
+                Add(array, position, elements[i]);
             }
         }
 
-        template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, Platform::Collections::System::Array<TElement> auto elements, TReturnConstant returnConstant)
+        static auto AddAllAndReturnConstant(System::Array auto& array, std::integral auto& position, System::Array auto elements, auto returnConstant)
         {
-            AddAll<TElement>(array, position, elements);
+            AddAll(array, position, elements);
             return returnConstant;
         }
 
-
-        template<typename T>
-        static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements, std::int32_t skip)
+        static void AddSkipFirst(System::Array auto& array, std::integral auto& position, System::Array auto elements, std::integral auto skip)
         {
             for (auto i = skip; i < elements.size(); i++)
             {
-                Add<T>(array, position, elements[i]);
+                Add(array, position, elements[i]);
             }
         }
 
-        template<typename T>
-        static void AddSkipFirst(Platform::Collections::System::BaseArray<T> auto& array, std::integral auto& position, Platform::Collections::System::Array<T> auto elements)
+        static void AddSkipFirst(System::Array auto& array, std::integral auto& position, const System::Array auto& elements)
         {
-            AddSkipFirst<T>(array, position, elements, 1);
+            AddSkipFirst(array, position, elements, 1);
         }
 
-        template<typename TElement, typename TReturnConstant>
-        static TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::BaseArray<TElement> auto& array, std::integral auto& position, Platform::Collections::System::Array<TElement> auto elements, TReturnConstant returnConstant)
+        static auto AddSkipFirstAndReturnConstant(System::Array auto& array, std::integral auto& position, const System::Array auto& elements, auto returnConstant)
         {
-            AddSkipFirst<TElement>(array, position, elements);
+            AddSkipFirst(array, position, elements);
             return returnConstant;
         }
     };// namespace GenericArrayExtensions

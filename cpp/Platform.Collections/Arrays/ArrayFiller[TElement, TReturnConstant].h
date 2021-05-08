@@ -11,35 +11,35 @@
         TReturnConstant _returnConstant;
 
     public:
-        ArrayFiller(Platform::Collections::System::Array<TElement> auto& array, std::int64_t offset, TReturnConstant returnConstant)
+        ArrayFiller(Platform::Collections::System::Array auto& array, std::int64_t offset, TReturnConstant returnConstant)
             : ArrayFiller<TElement>(array, offset)
         {
             _returnConstant = returnConstant;
         }
 
-        ArrayFiller(Platform::Collections::System::Array<TElement> auto& array, TReturnConstant returnConstant)
+        ArrayFiller(Platform::Collections::System::Array auto& array, TReturnConstant returnConstant)
             : ArrayFiller(array, 0, returnConstant)
         {
         }
 
         TReturnConstant AddAndReturnConstant(TElement element)
         {
-            return GenericArrayExtensions::AddAndReturnConstant<TElement>(base::_array, base::_position, element, _returnConstant);
+            return GenericArrayExtensions::AddAndReturnConstant(base::_array, base::_position, element, _returnConstant);
         }
 
-        TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::Array<TElement> auto& elements)
+        TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddFirstAndReturnConstant<TElement>(base::_array, base::_position, elements, _returnConstant);
+            return GenericArrayExtensions::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
 
-        TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::Array<TElement> auto& elements)
+        TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddAllAndReturnConstant<TElement>(base::_array, base::_position, elements, _returnConstant);
+            return GenericArrayExtensions::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
 
-        TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::Array<TElement> auto& elements)
+        TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddSkipFirstAndReturnConstant<TElement>(base::_array, base::_position, elements, _returnConstant);
+            return GenericArrayExtensions::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
     };
 }// namespace Platform::Collections::Arrays

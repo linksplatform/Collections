@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class DuplicateSegmentsWalkerBase;
-    template <typename T, Platform::Collections::System::Array<T> TArray, typename TSegment> requires std::derived_from<TSegment, std::span<T>>
+    template <typename T, Platform::Collections::System::Array TArray, typename TSegment> requires std::derived_from<TSegment, std::span<T>>
     class DuplicateSegmentsWalkerBase<T, TArray, TSegment> : public AllSegmentsWalkerBase<T, TArray, TSegment>
     {
         using base = AllSegmentsWalkerBase<T, TSegment, TArray>; // TODO у меня просто код тогда в экран не поместится
