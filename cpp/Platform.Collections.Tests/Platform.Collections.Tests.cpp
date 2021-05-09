@@ -26,25 +26,24 @@ namespace Platform::Collections::Tests
         ASSERT_TRUE((System::IList<vector, int>));
     }
 
-
     TEST(ArrayTests, GetElementTest)
     {
         {
             auto nullArray = std::array<int, 0>{};
-            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault(nullArray, 1));
+            ASSERT_EQ(0, Arrays::GetElementOrDefault(nullArray, 1));
             int element;
-            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement(nullArray, 1, element));
+            ASSERT_FALSE(Arrays::TryGetElement(nullArray, 1, element));
             ASSERT_EQ(0, element);
         }
 
         {
             auto array = std::array{1, 2, 3};
-            ASSERT_EQ(3, Arrays::GenericArrayExtensions::GetElementOrDefault(array, 2));
+            ASSERT_EQ(3, Arrays::GetElementOrDefault(array, 2));
             int element;
-            ASSERT_TRUE(Arrays::GenericArrayExtensions::TryGetElement(array, 2, element));
+            ASSERT_TRUE(Arrays::TryGetElement(array, 2, element));
             ASSERT_EQ(3, element);
-            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault(array, 10));
-            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement(array, 10, element));
+            ASSERT_EQ(0, Arrays::GetElementOrDefault(array, 10));
+            ASSERT_FALSE(Arrays::TryGetElement(array, 10, element));
             ASSERT_EQ(0, element);
         }
     }
@@ -88,23 +87,23 @@ namespace Platform::Collections::Tests
         {
             auto nullList = std::vector<int>{};
             int element;
-            ASSERT_EQ(0, Arrays::GenericArrayExtensions::GetElementOrDefault(nullList, 1));
-            ASSERT_FALSE(Arrays::GenericArrayExtensions::TryGetElement(nullList, 1, element));
+            ASSERT_EQ(0, Arrays::GetElementOrDefault(nullList, 1));
+            ASSERT_FALSE(Arrays::TryGetElement(nullList, 1, element));
             ASSERT_EQ(0, element);
             // Lists and Arrays are Backward Compatible
-            ASSERT_EQ(0, Lists::IListExtensions::GetElementOrDefault(nullList, 1));
-            ASSERT_FALSE(Lists::IListExtensions::TryGetElement(nullList, 1, element));
+            ASSERT_EQ(0, Lists::GetElementOrDefault(nullList, 1));
+            ASSERT_FALSE(Lists::TryGetElement(nullList, 1, element));
             ASSERT_EQ(0, element);
         }
 
         {
             auto array = std::vector<int>{1, 2, 3};
-            ASSERT_EQ(3, Lists::IListExtensions::GetElementOrDefault(array, 2));
+            ASSERT_EQ(3, Lists::GetElementOrDefault(array, 2));
             int element;
-            ASSERT_TRUE(Lists::IListExtensions::TryGetElement(array, 2, element));
+            ASSERT_TRUE(Lists::TryGetElement(array, 2, element));
             ASSERT_EQ(3, element);
-            ASSERT_EQ(0, Lists::IListExtensions::GetElementOrDefault(array, 10));
-            ASSERT_FALSE(Lists::IListExtensions::TryGetElement(array, 10, element));
+            ASSERT_EQ(0, Lists::GetElementOrDefault(array, 10));
+            ASSERT_FALSE(Lists::TryGetElement(array, 10, element));
             ASSERT_EQ(0, element);
         }
     }

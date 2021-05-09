@@ -12,38 +12,44 @@
     public:
         ArrayFiller(Platform::Collections::System::Array auto& array, std::int64_t offset)
         {
-            _array = std::span<TElement>(std::ranges::begin(array), std::ranges::size(array));
+            _array = std::span<TElement>(array);
             _position = offset;
         }
 
+    public:
         ArrayFiller(Platform::Collections::System::Array auto& array)
             : ArrayFiller(array, 0)
         {
         }
 
+    public:
         void Add(TElement element)
         {
             _array[_position++] = element;
         }
 
+    public:
         bool AddAndReturnTrue(TElement element)
         {
-            return GenericArrayExtensions::AddAndReturnConstant<TElement>(_array, _position, element, true);
+            return Arrays::AddAndReturnConstant(_array, _position, element, true);
         }
 
+    public:
         bool AddFirstAndReturnTrue(const Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddFirstAndReturnConstant<TElement>(_array, _position, elements, true);
+            return Arrays::AddFirstAndReturnConstant(_array, _position, elements, true);
         }
 
+    public:
         bool AddAllAndReturnTrue(const Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddAllAndReturnConstant<TElement>(_array, _position, elements, true);
+            return Arrays::AddAllAndReturnConstant(_array, _position, elements, true);
         }
 
+    public:
         bool AddSkipFirstAndReturnTrue(const Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddSkipFirstAndReturnConstant<TElement>(_array, _position, elements, true);
+            return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true);
         }
     };
 }// namespace Platform::Collections::Arrays

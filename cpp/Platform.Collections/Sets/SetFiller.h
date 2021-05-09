@@ -27,45 +27,45 @@
 
         bool AddAndReturnTrue(TElement element)
         {
-            return ISetExtensions::AddAndReturnTrue(_set, element);
+            return Sets::AddAndReturnTrue(_set, element);
         }
 
         bool AddFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto& elements)
         {
-            return ISetExtensions::AddFirstAndReturnTrue(_set, elements);
+            return Sets::AddFirstAndReturnTrue(_set, elements);
         }
 
         bool AddAllAndReturnTrue(Platform::Collections::System::IList<TElement> auto& elements)
         {
-            return ISetExtensions::AddAllAndReturnTrue(_set, elements);
+            return Sets::AddAllAndReturnTrue(_set, elements);
         }
 
         bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto& elements)
         {
-            return ISetExtensions::AddSkipFirstAndReturnTrue(_set, elements);
+            return Sets::AddSkipFirstAndReturnTrue(_set, elements);
         }
 
         TReturnConstant AddAndReturnConstant(TElement element)
         {
-            _set.Add(element);
+            _set.insert(element);
             return _returnConstant;
         }
 
         TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto& elements)
         {
-            _set.AddFirst(elements);
+            Sets::AddFirst(_set, elements);
             return _returnConstant;
         }
 
         TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::IList<TElement> auto& elements)
         {
-            _set.AddAll(elements);
+            Sets::AddAll(_set, elements);
             return _returnConstant;
         }
 
         TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto& elements)
         {
-            _set.AddSkipFirst(elements);
+            Sets::AddSkipFirst(_set, elements);
             return _returnConstant;
         }
     };

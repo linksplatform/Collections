@@ -17,29 +17,34 @@
             _returnConstant = returnConstant;
         }
 
+    public:
         ArrayFiller(Platform::Collections::System::Array auto& array, TReturnConstant returnConstant)
             : ArrayFiller(array, 0, returnConstant)
         {
         }
 
+    public:
         TReturnConstant AddAndReturnConstant(TElement element)
         {
-            return GenericArrayExtensions::AddAndReturnConstant(base::_array, base::_position, element, _returnConstant);
+            return Arrays::AddAndReturnConstant(base::_array, base::_position, element, _returnConstant);
         }
 
+    public:
         TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
+            return Arrays::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
 
+    public:
         TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
+            return Arrays::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
 
+    public:
         TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::Array auto& elements)
         {
-            return GenericArrayExtensions::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
+            return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
     };
 }// namespace Platform::Collections::Arrays

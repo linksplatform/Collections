@@ -1,67 +1,86 @@
 ﻿namespace Platform::Collections::Lists
 {
-    template <typename ...> class ListFiller;
-    template <typename TElement, typename TReturnConstant, Platform::Collections::System::IList<TElement> TList> requires std::default_initializable<TReturnConstant>
+    template<typename...>
+    class ListFiller;
+    template<typename TElement, Platform::Collections::System::IList<TElement> TList, typename TReturnConstant>
+    requires std::default_initializable<TReturnConstant>
     class ListFiller<TElement, TReturnConstant, TList>
     {
-        // TODO ничего, кроме ссылки на сам список, не позволит адекватно делать 'push_back' (возможно ради сходства придётся стиль 'ArrayFiller' слегка изменить)
-        protected: TList& _list;
-        protected: TReturnConstant _returnConstant;
+    protected:
+        TList& _list;
 
-        public: ListFiller(TList& list, TReturnConstant returnConstant) : _list(list) // такой вот конструктор может инициализировать константы и ссылки
+    protected:
+        TReturnConstant _returnConstant;
+
+    public:
+        ListFiller(TList& list, TReturnConstant returnConstant)
+            : _list(list)
         {
             _returnConstant = returnConstant;
         }
 
-        public: ListFiller(TList& list) : ListFiller(list, TElement{}) {}
+    public:
+        ListFiller(TList& list)
+            : ListFiller(list, TElement{})
+        {
+        }
 
-        public: void Add(TElement element)
+    public:
+        void Add(TElement element)
         {
             _list.push_back(element);
         }
 
-        public: bool AddAndReturnTrue(TElement element)
+    public:
+        bool AddAndReturnTrue(TElement element)
         {
-            return IListExtensions::AddAndReturnTrue<TElement>(_list, element);
+            return Lists::AddAndReturnTrue(_list, element);
         }
 
-        public: bool AddFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
+    public:
+        bool AddFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
         {
-            return IListExtensions::AddFirstAndReturnTrue<TElement>(_list, elements);
+            return Lists::AddFirstAndReturnTrue(_list, elements);
         }
 
-        public: bool AddAllAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
+    public:
+        bool AddAllAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
         {
-            return IListExtensions::AddAllAndReturnTrue<TElement>(_list, elements);
+            return Lists::AddAllAndReturnTrue(_list, elements);
         }
 
-        public: bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
+    public:
+        bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
         {
-            return IListExtensions::AddSkipFirstAndReturnTrue<TElement>(_list, elements);
+            return Lists::AddSkipFirstAndReturnTrue(_list, elements);
         }
-        
-        public: TReturnConstant AddAndReturnConstant(TElement element)
+
+    public:
+        TReturnConstant AddAndReturnConstant(TElement element)
         {
             _list.push_back(element);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
+    public:
+        TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
         {
-           IListExtensions::AddFirst<TElement>(_list, elements);
+            Lists::AddFirst(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
+    public:
+        TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
         {
-            IListExtensions::AddAll<TElement>(_list, elements);
+            Lists::AddAll(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
+    public:
+        TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
         {
-            IListExtensions::AddSkipFirst<TElement>(_list, elements);
+            Lists::AddSkipFirst(_list, elements);
             return _returnConstant;
         }
     };
-}
+}// namespace Platform::Collections::Lists

@@ -15,7 +15,7 @@ namespace Platform::Collections::System  // TODO пока что так
     concept IEnumerable = std::ranges::range<_Type>;
 
     template<typename _Type, typename _Item = __nil>
-    concept Array = requires()
+    concept Array = IEnumerable<_Type> && requires()
     {
         requires
         requires()
@@ -31,22 +31,41 @@ namespace Platform::Collections::System  // TODO пока что так
         };
     };
 
-    template<typename _Type, typename _Item>
-    concept ISet = requires(_Type object, _Item item)
+    template<typename _Type, typename _Item = __nil>
+    concept ISet = IEnumerable<_Type> && requires(
+            _Type object, _Item item,
+            std::ranges::range_value_t<_Type> generic_item
+    )
     {
-        {object.clear()};
-        {object.find(item)} -> std::bidirectional_iterator;
-        {object.contains(item)} -> std::same_as<bool>;
-        {object.insert(item)};
-        {object.erase(item)};
-        {object.empty()} -> std::same_as<bool>;
+        requires
+            requires()
+            {
+                {object.clear()};
+                {object.find(item)} -> std::same_as<std::ranges::iterator_t<_Type>>;
+                {object.insert(item)};
+                {object.erase(item)};
+                {object.contains(item)} -> std::same_as<bool>;
+                {object.empty()} -> std::same_as<bool>;
 
-        {object.begin()} -> std::bidirectional_iterator;
-        {object.end()} -> std::bidirectional_iterator;
+                requires std::ranges::bidirectional_range<_Type>;
+            }
+            ||
+            requires()
+            {
+                requires std::same_as<_Item, __nil>;
+                {object.clear()};
+                {object.find(generic_item)} -> std::same_as<std::ranges::iterator_t<_Type>>;
+                {object.insert(generic_item)};
+                {object.erase(generic_item)};
+                {object.contains(generic_item)} -> std::same_as<bool>;
+                {object.empty()} -> std::same_as<bool>;
+
+                requires std::ranges::bidirectional_range<_Type>;
+            };
     };
 
     template<typename _Type, typename _Key = __nil, typename _Item = __nil>
-    concept IDictionary = requires(
+    concept IDictionary = IEnumerable<_Type> && requires(
         _Type object, _Key key, _Item item,
         decltype(std::declval<std::ranges::iterator_t<_Type>>().first) generic_key,
         decltype(std::declval<std::ranges::iterator_t<_Type>>().second) generic_item
