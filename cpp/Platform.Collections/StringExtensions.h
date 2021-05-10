@@ -2,33 +2,28 @@
 {
     namespace StringExtensions
     {
-        template<typename _Type>
-        concept char_string = requires(_Type object, int index)
+        namespace
         {
-            requires std::is_fundamental_v<std::remove_pointer_t<std::decay_t<_Type>>>;
-            requires std::same_as < _Type, const std::remove_pointer_t<std::decay_t<_Type>>
-            * > ;
-            std::basic_string<std::decay_t<decltype(object[index])>>(object);
-        };
+            template<typename TChar>
+            concept __is_char =
+                std::same_as<TChar, char> ||
+                std::same_as<TChar, wchar_t> ||
+                std::same_as<TChar, char8_t> ||
+                std::same_as<TChar, char16_t> ||
+                std::same_as<TChar, char32_t>;
+        }
 
         template<typename _Type>
-        concept basic_string = requires(_Type object, int index)
+        concept basic_string = requires()
         {
-            requires !(char_string<_Type>);
-            requires std::same_as<_Type, std::basic_string<std::decay_t<decltype(object[index])>>>;
+            requires System::Array<_Type>;
+            requires __is_char<typename System::Common::Array<_Type>::TItem>;
+            requires std::same_as<_Type, std::basic_string<typename System::Common::Array<_Type>::TItem>>;
         };
 
-    #define REDEFINITION_FOR_CSTRING(FName)                                                          \
-    template<typename... TArgs>                                                                      \
-    static auto inline FName(char_string auto string, TArgs... args)                                 \
-    {                                                                                                \
-        using TString = std::basic_string<std::remove_pointer_t<std::decay_t<decltype(string[0])>>>; \
-        return FName(TString(string), args...);                                                      \
-    }
-
-        static auto CapitalizeFirstLetter(basic_string auto string)
+        template<basic_string TString>
+        static auto CapitalizeFirstLetter(TString string)
         {
-            // TODO бонусная альтернативная реализация от Voider'а
             for (auto& it : string)
             {
                 if (std::isalpha(it))
@@ -39,21 +34,17 @@
             }
             return string;
         }
-        REDEFINITION_FOR_CSTRING(CapitalizeFirstLetter)
 
         template<basic_string TString>
         static auto Truncate(const TString& string, std::int32_t maxLength)
         {
             return string.empty() ? TString{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
         }
-        REDEFINITION_FOR_CSTRING(Truncate)
 
         template<basic_string TString>
-        static auto TrimSingle(const TString& string, auto charToTrim)
+        static auto TrimSingle(const TString& string, typename System::Common::Array<TString>::TItem charToTrim)
         {
-            using TChar = std::decay_t<decltype(string[0])>;// TODO or TString::value_type
-
-            static_assert(std::same_as<decltype(charToTrim), TChar>);
+            using TChar = typename System::Common::Array<TString>::TItem;
 
             if (!string.empty())
             {
@@ -88,8 +79,5 @@
                 return string;
             }
         }
-        REDEFINITION_FOR_CSTRING(TrimSingle)
-
-        #undef REDEFINITION_FOR_CSTRING
     };// namespace StringExtensions
 }// namespace Platform::Collections

@@ -1,2 +1,2 @@
-﻿// Далее будет использоваться std::span
+﻿// Далее будет использоваться std::bitset
 // Next, std::bitset will be used

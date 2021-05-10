@@ -11,8 +11,26 @@ namespace Platform::Collections::System  // TODO пока что так
         {left == right} -> std::same_as<bool>;
     };
 
+    namespace Common
+    {
+        template<typename _Type>
+        struct IEnumerable
+        {
+            using TItem = std::ranges::range_value_t<_Type>;
+        };
+    }
+
     template<typename _Type>
     concept IEnumerable = std::ranges::range<_Type>;
+
+    namespace Common
+    {
+        template<typename _Type>
+        struct Array
+        {
+            using TItem = typename IEnumerable<_Type>::TItem;
+        };
+    }
 
     template<typename _Type, typename _Item = __nil>
     concept Array = IEnumerable<_Type> && requires()
@@ -31,10 +49,19 @@ namespace Platform::Collections::System  // TODO пока что так
         };
     };
 
+    namespace Common
+    {
+        template<typename _Type>
+        struct Set
+        {
+            using TItem = typename IEnumerable<_Type>::TItem;
+        };
+    }
+
     template<typename _Type, typename _Item = __nil>
     concept ISet = IEnumerable<_Type> && requires(
             _Type object, _Item item,
-            std::ranges::range_value_t<_Type> generic_item
+            typename Common::Set<_Type>::TItem generic_item
     )
     {
         requires
@@ -64,11 +91,22 @@ namespace Platform::Collections::System  // TODO пока что так
             };
     };
 
+    namespace Common
+    {
+        template<typename _Type>
+        struct Dictionary
+        {
+            using _ = typename IEnumerable<_Type>::TItem;// TODO rename
+            using TKey = decltype(std::declval<_>().first);
+            using TItem = decltype(std::declval<_>().second);
+        };
+    }
+
     template<typename _Type, typename _Key = __nil, typename _Item = __nil>
     concept IDictionary = IEnumerable<_Type> && requires(
         _Type object, _Key key, _Item item,
-        decltype(std::declval<std::ranges::iterator_t<_Type>>().first) generic_key,
-        decltype(std::declval<std::ranges::iterator_t<_Type>>().second) generic_item
+        typename Common::Dictionary<_Type>::TKey generic_key,
+        typename Common::Dictionary<_Type>::TItem generic_item
     )
     {
         requires

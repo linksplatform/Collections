@@ -1,21 +1,22 @@
-﻿namespace Platform::Collections::Tests
-{
-    TEST_CLASS(StringTests)
-    {
-        public: TEST_METHOD(CapitalizeFirstLetterTest)
-        {
-            Assert::AreEqual("Hello", "hello".CapitalizeFirstLetter());
-            Assert::AreEqual("Hello", "Hello".CapitalizeFirstLetter());
-            Assert::AreEqual("  Hello", "  hello".CapitalizeFirstLetter());
-        }
+﻿#include <gtest/gtest.h>
 
-        public: TEST_METHOD(TrimSingleTest)
-        {
-            Assert::AreEqual("", "'".TrimSingle('\''));
-            Assert::AreEqual("", "''".TrimSingle('\''));
-            Assert::AreEqual("hello", "'hello'".TrimSingle('\''));
-            Assert::AreEqual("hello", "hello'".TrimSingle('\''));
-            Assert::AreEqual("hello", "'hello".TrimSingle('\''));
-        }
-    };
-}
+namespace Platform::Collections::Tests
+{
+    TEST(StringTests, CapitalizeFirstLetterTest)
+    {
+        using namespace std::string_literals;
+        ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter("hello"s));
+        ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter("Hello"s));
+        ASSERT_EQ("  Hello", StringExtensions::CapitalizeFirstLetter("  hello"s));
+    }
+
+    TEST(StringTests, TrimSingleTest)
+    {
+        using namespace std::string_literals;
+        ASSERT_EQ("", StringExtensions::TrimSingle("'"s, '\''));
+        ASSERT_EQ("", StringExtensions::TrimSingle("''"s, '\''));
+        ASSERT_EQ("hello", StringExtensions::TrimSingle("'hello'"s, '\''));
+        ASSERT_EQ("hello", StringExtensions::TrimSingle("hello'"s, '\''));
+        ASSERT_EQ("hello", StringExtensions::TrimSingle("'hello"s, '\''));
+    }
+}// namespace Platform::Collections::Tests

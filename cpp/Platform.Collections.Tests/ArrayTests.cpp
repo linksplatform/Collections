@@ -1,20 +1,26 @@
-﻿namespace Platform::Collections::Tests
+﻿#include <gtest/gtest.h>
+
+namespace Platform::Collections::Tests
 {
-    TEST_CLASS(ArrayTests)
+    TEST(ArrayTests, GetElementTest)
     {
-        public: TEST_METHOD(GetElementTest)
         {
-            auto nullArray = (std::int32_t[]){};
-            Assert::AreEqual(0, nullArray.GetElementOrDefault(1));
-            Assert::IsFalse(nullArray.TryGetElement(1, out std::int32_t element));
-            Assert::AreEqual(0, element);
-            auto array = std::int32_t[] { 1, 2, 3 };
-            Assert::AreEqual(3, array.GetElementOrDefault(2));
-            Assert::IsTrue(array.TryGetElement(2, out element));
-            Assert::AreEqual(3, element);
-            Assert::AreEqual(0, array.GetElementOrDefault(10));
-            Assert::IsFalse(array.TryGetElement(10, out element));
-            Assert::AreEqual(0, element);
+            auto nullArray = std::array<int, 0>{};
+            ASSERT_EQ(0, Arrays::GetElementOrDefault(nullArray, 1));
+            int element;
+            ASSERT_FALSE(Arrays::TryGetElement(nullArray, 1, element));
+            ASSERT_EQ(0, element);
         }
-    };
-}
+
+        {
+            auto array = std::array{1, 2, 3};
+            ASSERT_EQ(3, Arrays::GetElementOrDefault(array, 2));
+            int element;
+            ASSERT_TRUE(Arrays::TryGetElement(array, 2, element));
+            ASSERT_EQ(3, element);
+            ASSERT_EQ(0, Arrays::GetElementOrDefault(array, 10));
+            ASSERT_FALSE(Arrays::TryGetElement(array, 10, element));
+            ASSERT_EQ(0, element);
+        }
+    }
+}// namespace Platform::Collections::Tests

@@ -1,23 +1,22 @@
-﻿namespace Platform::Collections::Tests
-{
-    TEST_CLASS(CharsSegmentTests)
-    {
-        public: TEST_METHOD(GetHashCodeEqualsTest)
-        {
-            inline static std::string testString = "test test";
-            auto testArray = testString.ToCharArray();
-            auto firstHashCode = CharSegment(testArray, 0, 4).GetHashCode();
-            auto secondHashCode = CharSegment(testArray, 5, 4).GetHashCode();
-            Assert::AreEqual(firstHashCode, secondHashCode);
-        }
+﻿#include <gtest/gtest.h>
 
-        public: TEST_METHOD(EqualsTest)
-        {
-            inline static std::string testString = "test test";
-            auto testArray = testString.ToCharArray();
-            auto first = CharSegment(testArray, 0, 4);
-            auto second = CharSegment(testArray, 5, 4);
-            Assert::IsTrue(first.Equals(second));
-        }
-    };
+namespace Platform::Collections::Tests
+{
+    TEST(ChangeSegmentTests, GetHashCodeEqualsTest)
+{
+    const std::string testString = "test test";
+    auto testArray = std::vector(testString.begin(), testString.end());
+    auto firstHashCode = Platform::Hashing::Hash(std::span(testArray.begin(), 4));
+    auto secondHashCode = Platform::Hashing::Hash(std::span(testArray.begin() + 5, 4));
+    ASSERT_EQ(firstHashCode, secondHashCode);
+}
+
+TEST(ChangeSegmentTests, EqualsTest)
+{
+const std::string testString = "test test";
+auto testArray = std::vector(testString.begin(), testString.end());
+auto first = std::span(testArray.begin(), 4);
+auto second = std::span(testArray.begin() + 5, 4);
+ASSERT_TRUE(std::equal_to<std::span<char>>{}(first, second));
+}
 }

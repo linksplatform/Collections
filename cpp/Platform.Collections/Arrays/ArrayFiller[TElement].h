@@ -2,22 +2,23 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<typename TElement>
-    class ArrayFiller<TElement>
+    template<System::Array TArray>
+    class ArrayFiller<TArray>
     {
+        using TElement = std::ranges::range_value_t<TArray>;
+
     protected:
-        std::span<TElement> _array;
+        TArray& _array;
         std::int64_t _position = 0;
 
     public:
-        ArrayFiller(Platform::Collections::System::Array auto& array, std::int64_t offset)
+        ArrayFiller(TArray& array, std::int64_t offset)
+            : _array(array), _position(offset)
         {
-            _array = std::span<TElement>(array);
-            _position = offset;
         }
 
     public:
-        ArrayFiller(Platform::Collections::System::Array auto& array)
+        ArrayFiller(TArray& array)
             : ArrayFiller(array, 0)
         {
         }
@@ -35,21 +36,28 @@
         }
 
     public:
-        bool AddFirstAndReturnTrue(const Platform::Collections::System::Array auto& elements)
+        bool AddFirstAndReturnTrue(const System::Array<TElement> auto& elements)
         {
             return Arrays::AddFirstAndReturnConstant(_array, _position, elements, true);
         }
 
     public:
-        bool AddAllAndReturnTrue(const Platform::Collections::System::Array auto& elements)
+        bool AddAllAndReturnTrue(const System::Array<TElement> auto& elements)
         {
             return Arrays::AddAllAndReturnConstant(_array, _position, elements, true);
         }
 
     public:
-        bool AddSkipFirstAndReturnTrue(const Platform::Collections::System::Array auto& elements)
+        bool AddSkipFirstAndReturnTrue(const System::Array<TElement> auto& elements)
         {
             return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true);
         }
     };
+
+    template<System::Array TArray>
+    ArrayFiller(TArray) -> ArrayFiller<TArray>;
+
+    template<System::Array TArray>
+    ArrayFiller(TArray, std::integral auto) -> ArrayFiller<TArray>;
+
 }// namespace Platform::Collections::Arrays

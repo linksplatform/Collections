@@ -25,44 +25,44 @@
 
     // TODO
     //  тут бы тоже в идеале
-    //  requires std::convertible_to<ISet::Item, IList::Item>
-    static bool AddFirstAndReturnTrue(System::ISet auto& set, System::IList auto& elements)
+    //  requires std::convertible_to<ISet<TSet>::Item, Array<TSet>::Item>
+    static bool AddFirstAndReturnTrue(System::ISet auto& set, System::Array auto& elements)
     {
         AddFirst(set, elements);
         return true;
     }
 
-    static void AddFirst(System::ISet auto& set, System::IList auto& elements)
+    static void AddFirst(System::ISet auto& set, System::Array auto& elements)
     {
         set.insert(elements[0]);
     }
 
-    static bool AddAllAndReturnTrue(System::ISet auto& set, System::IList auto& elements)
+    static bool AddAllAndReturnTrue(System::ISet auto& set, System::Array auto& elements)
     {
         AddAll(set, elements);
         return true;
     }
 
-    static void AddAll(System::ISet auto& set, System::IList auto& elements)
+    static void AddAll(System::ISet auto& set, System::Array auto& elements)
     {
-        for (auto i = 0; i < elements.Count(); i++)
+        for (auto element : elements)
         {
-            set.insert(elements[i]);
+            set.insert(element);
         }
     }
 
-    static bool AddSkipFirstAndReturnTrue(System::ISet auto& set, System::IList auto& elements)
+    static bool AddSkipFirstAndReturnTrue(System::ISet auto& set, System::Array auto& elements)
     {
         AddSkipFirst(set, elements);
         return true;
     }
 
-    static void AddSkipFirst(System::ISet auto& set, System::IList auto& elements)
+    static void AddSkipFirst(System::ISet auto& set, System::Array auto& elements)
     {
         AddSkipFirst(set, elements, 1);
     }
 
-    static void AddSkipFirst(System::ISet auto& set, System::IList auto& elements, std::int32_t skip)
+    static void AddSkipFirst(System::ISet auto& set, System::Array auto& elements, std::int32_t skip)
     {
         for (auto i = skip; i < elements.size(); i++)
         {

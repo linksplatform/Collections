@@ -12,16 +12,16 @@
         private: bool _resetDictionaryOnEachWalk = 0;
         protected: TDictionary* Dictionary;
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary& dictionary, std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk)
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary dictionary, std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk)
             : base(minimumStringSegmentLength), Dictionary(dictionary)
         {
             _resetDictionaryOnEachWalk = resetDictionaryOnEachWalk;
         }
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary& dictionary, std::int32_t minimumStringSegmentLength)
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary dictionary, std::int32_t minimumStringSegmentLength)
             : DictionaryBasedDuplicateSegmentsWalkerBase(dictionary, minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
-        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary& dictionary)
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase(TDictionary dictionary)
             : DictionaryBasedDuplicateSegmentsWalkerBase(dictionary, base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
         protected: DictionaryBasedDuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk)
@@ -33,7 +33,7 @@
         protected: DictionaryBasedDuplicateSegmentsWalkerBase()
             : DictionaryBasedDuplicateSegmentsWalkerBase(base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
-        public: void WalkAll(TArray& elements) override
+        public: void WalkAll(TArray elements) override
         {
             if constexpr(decltype(*this)::_resetDictionaryOnEachWalk && requires(TDictionary dict, int capacity) {dict(capacity);})
             {

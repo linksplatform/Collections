@@ -2,10 +2,11 @@
 {
     template<typename...>
     class ListFiller;
-    template<typename TElement, Platform::Collections::System::IList<TElement> TList, typename TReturnConstant>
-    requires std::default_initializable<TReturnConstant>
-    class ListFiller<TElement, TReturnConstant, TList>
+    template<System::IList TList, typename TReturnConstant>
+    class ListFiller<TList, TReturnConstant>
     {
+        using TElement = std::ranges::range_value_t<TList>;
+
     protected:
         TList& _list;
 
@@ -21,7 +22,7 @@
 
     public:
         ListFiller(TList& list)
-            : ListFiller(list, TElement{})
+            : ListFiller(list, TReturnConstant{})
         {
         }
 
@@ -38,19 +39,19 @@
         }
 
     public:
-        bool AddFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
+        bool AddFirstAndReturnTrue(const System::Array<TElement> auto& elements)
         {
             return Lists::AddFirstAndReturnTrue(_list, elements);
         }
 
     public:
-        bool AddAllAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
+        bool AddAllAndReturnTrue(const System::Array<TElement> auto& elements)
         {
             return Lists::AddAllAndReturnTrue(_list, elements);
         }
 
     public:
-        bool AddSkipFirstAndReturnTrue(Platform::Collections::System::IList<TElement> auto elements)
+        bool AddSkipFirstAndReturnTrue(const System::Array<TElement> auto& elements)
         {
             return Lists::AddSkipFirstAndReturnTrue(_list, elements);
         }
@@ -63,24 +64,28 @@
         }
 
     public:
-        TReturnConstant AddFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
+        TReturnConstant AddFirstAndReturnConstant(const System::Array<TElement> auto& elements)
         {
             Lists::AddFirst(_list, elements);
             return _returnConstant;
         }
 
     public:
-        TReturnConstant AddAllAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
+        TReturnConstant AddAllAndReturnConstant(const System::Array<TElement> auto& elements)
         {
             Lists::AddAll(_list, elements);
             return _returnConstant;
         }
 
     public:
-        TReturnConstant AddSkipFirstAndReturnConstant(Platform::Collections::System::IList<TElement> auto elements)
+        TReturnConstant AddSkipFirstAndReturnConstant(const System::Array<TElement> auto& elements)
         {
             Lists::AddSkipFirst(_list, elements);
             return _returnConstant;
         }
     };
+
+    template<typename TList, typename TReturnConstant>
+    ListFiller(TList, TReturnConstant) -> ListFiller<TList, TReturnConstant>;
+    
 }// namespace Platform::Collections::Lists

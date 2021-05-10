@@ -40,7 +40,7 @@
 
         public: auto& AddChild(TKey key, const Node<TValue, Tail...>& node = Node<TValue, Tail...>())
         {
-            IDictionaryExtensions::Add(_childNodes, key, node);
+            Dictionaries::Add(_childNodes, key, node);
             return _childNodes[key];
         }
     };
@@ -71,7 +71,7 @@
 
         public: auto& AddChild(TKey key, Node<TValue, Repeat<TKey>> node)
         {
-            IDictionaryExtensions::Add(_childNodes, key, new Node<TValue, Repeat<TKey>>(node));
+            Dictionaries::Add(_childNodes, key, new Node<TValue, Repeat<TKey>>(node));
             return *_childNodes[key];
         }
 

@@ -11,7 +11,7 @@
 
         protected: AllSegmentsWalkerBase() : AllSegmentsWalkerBase(DefaultMinimumStringSegmentLength) { }
 
-        public: virtual void WalkAll(TArray& elements)
+        public: virtual void WalkAll(TArray elements)
         {
             for (std::int32_t offset = 0, maxOffset = elements.size() - _minimumStringSegmentLength; offset <= maxOffset; offset++)
             {
@@ -22,7 +22,7 @@
             }
         }
 
-        protected: virtual TSegment CreateSegment(TArray& elements, std::int32_t offset, std::int32_t length) = 0;
+        protected: virtual TSegment CreateSegment(TArray elements, std::int32_t offset, std::int32_t length) = 0;
 
         protected: virtual void Iteration(TSegment segment) = 0;
 

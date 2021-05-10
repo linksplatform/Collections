@@ -1,20 +1,30 @@
-﻿namespace Platform::Collections::Tests
+﻿#include <gtest/gtest.h>
+
+namespace Platform::Collections::Tests
 {
-    TEST_CLASS(ListTests)
+    TEST(ListsTests, GetElementTest)
     {
-        public: TEST_METHOD(GetElementTest)
         {
-            auto nullList = (IList<std::int32_t>){};
-            Assert::AreEqual(0, nullList.GetElementOrDefault(1));
-            Assert::IsFalse(nullList.TryGetElement(1, out std::int32_t element));
-            Assert::AreEqual(0, element);
-            auto list = List<std::int32_t>() { 1, 2, 3 };
-            Assert::AreEqual(3, list.GetElementOrDefault(2));
-            Assert::IsTrue(list.TryGetElement(2, out element));
-            Assert::AreEqual(3, element);
-            Assert::AreEqual(0, list.GetElementOrDefault(10));
-            Assert::IsFalse(list.TryGetElement(10, out element));
-            Assert::AreEqual(0, element);
+            auto nullList = std::vector<int>{};
+            int element;
+            ASSERT_EQ(0, Arrays::GetElementOrDefault(nullList, 1));
+            ASSERT_FALSE(Arrays::TryGetElement(nullList, 1, element));
+            ASSERT_EQ(0, element);
+            // Lists and Arrays are Backward Compatible
+            ASSERT_EQ(0, Lists::GetElementOrDefault(nullList, 1));
+            ASSERT_FALSE(Lists::TryGetElement(nullList, 1, element));
+            ASSERT_EQ(0, element);
         }
-    };
-}
+
+        {
+            auto array = std::vector<int>{1, 2, 3};
+            ASSERT_EQ(3, Lists::GetElementOrDefault(array, 2));
+            int element;
+            ASSERT_TRUE(Lists::TryGetElement(array, 2, element));
+            ASSERT_EQ(3, element);
+            ASSERT_EQ(0, Lists::GetElementOrDefault(array, 10));
+            ASSERT_FALSE(Lists::TryGetElement(array, 10, element));
+            ASSERT_EQ(0, element);
+        }
+    }
+}// namespace Platform::Collections::Tests

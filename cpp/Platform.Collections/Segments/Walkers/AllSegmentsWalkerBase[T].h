@@ -1,18 +1,19 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class AllSegmentsWalkerBase;
-    template <typename T, Platform::Collections::System::Array TArray>
+    template <typename T, System::Array<T> TArray>
     class AllSegmentsWalkerBase<T, TArray> : public AllSegmentsWalkerBase<T, TArray, std::span<T>>
     {
         using base = AllSegmentsWalkerBase<T, TArray, std::span<T>>;
+        using TSegment = std::span<T>;
 
         protected: AllSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength) {}
 
         protected: AllSegmentsWalkerBase() : base() { }
 
-        protected: auto CreateSegment(TArray& elements, std::int32_t offset, std::int32_t length) override
+        protected: TSegment CreateSegment(TArray& elements, std::int32_t offset, std::int32_t length)
         {
-            return std::span<T>(elements.begin() + offset, length);
+            return std::span<T>(std::ranges::begin(elements) + offset, length);
         }
     };
 }
