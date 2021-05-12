@@ -1,3 +1,7 @@
 [submodule "CSharpToCppTranslator"]
 	path = CSharpToCppTranslator
 	url = https://github.com/linksplatform/CSharpToCppTranslator
+
+[submodule "Settings"]
+	path = Settings
+	url = https://github.com/linksplatform/Settings

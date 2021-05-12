@@ -27,4 +27,4 @@
         value = TValue{};
         return false;
     }
-}// namespace Platform::Collections
+}// namespace Platform::Collections::Dictionaries

@@ -4,11 +4,7 @@
     {
         template<typename TChar>
         concept __is_char =
-            std::same_as<TChar, char> ||
-            std::same_as<TChar, wchar_t> ||
-            std::same_as<TChar, char8_t> ||
-            std::same_as<TChar, char16_t> ||
-            std::same_as<TChar, char32_t>;
+            std::same_as<TChar, char> || std::same_as<TChar, wchar_t> || std::same_as<TChar, char8_t> || std::same_as<TChar, char16_t> || std::same_as<TChar, char32_t>;
 
         template<typename _Type>
         concept basic_string = requires()

@@ -2,25 +2,25 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<System::Array TArray, typename TReturnConstant>
-    class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
+    template<typename TElement, System::Array TArray, typename TReturnConstant>
+    class ArrayFiller<TElement, TArray, TReturnConstant> : public ArrayFiller<TElement, TArray>
     {
-        using TElement = std::ranges::range_value_t<TArray>;
+        //using TElement = std::ranges::range_value_t<TArray>;
         using base = ArrayFiller<TArray>;
 
     protected:
         TReturnConstant _returnConstant;
 
     public:
-        ArrayFiller(TArray& array, std::int64_t offset, TReturnConstant returnConstant)
-            : ArrayFiller<TArray>(array, offset)
+        ArrayFiller(TArray& array, std::int64_t offset, TReturnConstant returnConstant) :
+            ArrayFiller<TArray>(array, offset)
         {
             _returnConstant = returnConstant;
         }
 
     public:
-        ArrayFiller(TArray& array, TReturnConstant returnConstant)
-            : ArrayFiller(array, 0, returnConstant)
+        ArrayFiller(TArray& array, TReturnConstant returnConstant) :
+            ArrayFiller(array, 0, returnConstant)
         {
         }
 
@@ -49,11 +49,25 @@
         }
     };
 
-    template<System::Array TArray, typename TReturnConstant>
-    requires (!std::integral<TReturnConstant>)
-    ArrayFiller(TArray, TReturnConstant) -> ArrayFiller<TArray, TReturnConstant>;
+    namespace Generators
+    {
+        template<typename TReturnConstant>
+        static auto ArrayFiller(System::Array auto& array, std::int64_t offset, TReturnConstant constant)
+        {
+            using TArray = decltype(array);
+            using TElement = typename System::Common::Array<TArray>::TItem;
 
-    template<System::Array TArray, typename TReturnConstant>
-    ArrayFiller(TArray, std::integral auto, TReturnConstant) -> ArrayFiller<TArray, TReturnConstant>;
+            return Platform::Collections::Arrays::ArrayFiller<TElement, TArray, TReturnConstant>(array, offset, constant);
+        }
+
+        template<typename TReturnConstant>
+        static auto ArrayFiller(System::Array auto& array, TReturnConstant constant)
+        {
+            using TArray = decltype(array);
+            using TElement = typename System::Common::Array<TArray>::TItem;
+
+            return Platform::Collections::Arrays::ArrayFiller<TElement, TArray, TReturnConstant>(array, 0, constant);
+        }
+    }// namespace Generators
 
 }// namespace Platform::Collections::Arrays

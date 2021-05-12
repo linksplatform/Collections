@@ -79,8 +79,4 @@
 
 #include "Trees/Node.h"
 
-
-
-
-
-#endif //PLATFORM_COLLECTIONS
+#endif//PLATFORM_COLLECTIONS

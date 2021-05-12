@@ -2,24 +2,24 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<System::Array TArray>
-    class ArrayFiller<TArray>
+    template<typename TElement, System::Array TArray>
+    class ArrayFiller<TElement, TArray>
     {
-        using TElement = std::ranges::range_value_t<TArray>;
+        //using TElement = std::ranges::range_value_t<TArray>;
 
     protected:
         TArray& _array;
         std::int64_t _position = 0;
 
     public:
-        ArrayFiller(TArray& array, std::int64_t offset)
-            : _array(array), _position(offset)
+        ArrayFiller(TArray& array, std::int64_t offset) :
+            _array(array), _position(offset)
         {
         }
 
     public:
-        ArrayFiller(TArray& array)
-            : ArrayFiller(array, 0)
+        explicit ArrayFiller(TArray& array) :
+            ArrayFiller(array, 0)
         {
         }
 
@@ -54,10 +54,16 @@
         }
     };
 
-    template<System::Array TArray>
-    ArrayFiller(TArray) -> ArrayFiller<TArray>;
 
-    template<System::Array TArray>
-    ArrayFiller(TArray, std::integral auto) -> ArrayFiller<TArray>;
+    namespace Generators
+    {
+        static auto ArrayFiller(System::Array auto& array, std::int64_t offset = 0)
+        {
+            using TArray = decltype(array);
+            using TElement = typename System::Common::Array<TArray>::TItem;
+
+            return Platform::Collections::Arrays::ArrayFiller<TElement, TArray>(array, offset);
+        }
+    }
 
 }// namespace Platform::Collections::Arrays
