@@ -4,18 +4,17 @@ namespace Platform::Collections::Tests
 {
     TEST(StringTests, CapitalizeFirstLetterTest)
     {
-        auto type = System::Common::IEnumerable<decltype("3")>::TItem{};
-        ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter("hello"));
-        ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter("Hello"));
-        ASSERT_EQ("  Hello", StringExtensions::CapitalizeFirstLetter("  hello"));
+        ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter(std::string{"hello"}));
+        ASSERT_EQ("Hello", StringExtensions::CapitalizeFirstLetter(std::string{"Hello"}));
+        ASSERT_EQ("  Hello", StringExtensions::CapitalizeFirstLetter(std::string{"  hello"}));
     }
 
     TEST(StringTests, TrimSingleTest)
     {
-        ASSERT_EQ("", StringExtensions::TrimSingle("'", '\''));
-        ASSERT_EQ("", StringExtensions::TrimSingle("''", '\''));
-        ASSERT_EQ("hello", StringExtensions::TrimSingle("'hello'", '\''));
-        ASSERT_EQ("hello", StringExtensions::TrimSingle("hello'", '\''));
-        ASSERT_EQ("hello", StringExtensions::TrimSingle("'hello", '\''));
+        ASSERT_EQ("", StringExtensions::TrimSingle(std::string{"'"}, '\''));
+        ASSERT_EQ("", StringExtensions::TrimSingle(std::string{"''"}, '\''));
+        ASSERT_EQ("hello", StringExtensions::TrimSingle(std::string{"'hello'"}, '\''));
+        ASSERT_EQ("hello", StringExtensions::TrimSingle(std::string{"hello'"}, '\''));
+        ASSERT_EQ("hello", StringExtensions::TrimSingle(std::string{"'hello"}, '\''));
     }
 }// namespace Platform::Collections::Tests
