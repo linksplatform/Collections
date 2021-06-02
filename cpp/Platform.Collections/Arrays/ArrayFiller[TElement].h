@@ -2,10 +2,10 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<typename TElement, System::Array TArray>
-    class ArrayFiller<TElement, TArray>
+    template<System::Array TArray>
+    class ArrayFiller<TArray>
     {
-        //using TElement = std::ranges::range_value_t<TArray>;
+        using TElement = typename System::Common::Array<TArray>::TItem;
 
     protected:
         TArray& _array;
@@ -53,17 +53,4 @@
             return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true);
         }
     };
-
-
-    namespace Generators
-    {
-        static auto ArrayFiller(System::Array auto& array, std::int64_t offset = 0)
-        {
-            using TArray = decltype(array);
-            using TElement = typename System::Common::Array<TArray>::TItem;
-
-            return Platform::Collections::Arrays::ArrayFiller<TElement, TArray>(array, offset);
-        }
-    }
-
 }// namespace Platform::Collections::Arrays

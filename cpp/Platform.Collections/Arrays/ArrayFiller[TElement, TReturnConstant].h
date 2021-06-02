@@ -2,10 +2,10 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<typename TElement, System::Array TArray, typename TReturnConstant>
-    class ArrayFiller<TElement, TArray, TReturnConstant> : public ArrayFiller<TElement, TArray>
+    template<System::Array TArray, typename TReturnConstant>
+    class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
     {
-        //using TElement = std::ranges::range_value_t<TArray>;
+        using TElement = typename System::Common::Array<TArray>::TItem;
         using base = ArrayFiller<TArray>;
 
     protected:
@@ -48,26 +48,4 @@
             return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
     };
-
-    namespace Generators
-    {
-        template<typename TReturnConstant>
-        static auto ArrayFiller(System::Array auto& array, std::int64_t offset, TReturnConstant constant)
-        {
-            using TArray = decltype(array);
-            using TElement = typename System::Common::Array<TArray>::TItem;
-
-            return Platform::Collections::Arrays::ArrayFiller<TElement, TArray, TReturnConstant>(array, offset, constant);
-        }
-
-        template<typename TReturnConstant>
-        static auto ArrayFiller(System::Array auto& array, TReturnConstant constant)
-        {
-            using TArray = decltype(array);
-            using TElement = typename System::Common::Array<TArray>::TItem;
-
-            return Platform::Collections::Arrays::ArrayFiller<TElement, TArray, TReturnConstant>(array, 0, constant);
-        }
-    }// namespace Generators
-
 }// namespace Platform::Collections::Arrays

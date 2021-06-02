@@ -13,18 +13,4 @@
 
         dictionary.insert({key, value});
     }
-
-    template<System::IDictionary TDictionary,
-             typename TKey = typename System::Common::Dictionary<TDictionary>::TKey,
-             typename TValue = typename System::Common::Dictionary<TDictionary>::TValue>
-    bool TryGetValue(const TDictionary& dictionary, TKey key, TValue value)
-    {
-        if (dictionary.contains(key))
-        {
-            value = dictionary[key];
-            return true;
-        }
-        value = TValue{};
-        return false;
-    }
 }// namespace Platform::Collections::Dictionaries

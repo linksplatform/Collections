@@ -6,13 +6,13 @@ namespace Platform::Collections::Tests
     {
         {
             std::array array{0, 0, 0, 0, 0, 0};
-            auto filler1 = Arrays::ArrayFiller(array);
+            auto filler1 = Arrays::ArrayFiller<decltype(array)>(array);
 
             filler1.Add(1);
             filler1.Add(2);
             filler1.Add(3);
 
-            auto filler2 = Arrays::ArrayFiller(array, 3);
+            auto filler2 = Arrays::ArrayFiller<decltype(array)>(array, 3);
 
             filler2.Add(3);
             filler2.Add(2);
@@ -24,13 +24,13 @@ namespace Platform::Collections::Tests
         {
             std::array array{0, 0, 0, 0, 0, 0};
 
-            auto filler1 = Arrays::ArrayFiller(array, "accepted");
+            auto filler1 = Arrays::ArrayFiller<decltype(array), std::string>(array, "accepted");
 
             ASSERT_EQ(filler1.AddAndReturnConstant(1), "accepted");
             ASSERT_EQ(filler1.AddAndReturnConstant(2), "accepted");
             ASSERT_EQ(filler1.AddAndReturnConstant(3), "accepted");
 
-            auto filler2 = Arrays::ArrayFiller(array, 3, "lol");
+            auto filler2 = Arrays::ArrayFiller<decltype(array), std::string>(array, 3, "lol");
 
             ASSERT_EQ(filler2.AddAndReturnConstant(3), "lol");
             ASSERT_EQ(filler2.AddAndReturnConstant(2), "lol");

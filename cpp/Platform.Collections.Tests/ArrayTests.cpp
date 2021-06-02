@@ -1,4 +1,5 @@
 ﻿#include <gtest/gtest.h>
+#include <Platform.Collections.h>
 
 namespace Platform::Collections::Tests
 {
