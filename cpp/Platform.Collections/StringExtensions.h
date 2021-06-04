@@ -2,19 +2,10 @@
 {
     namespace StringExtensions
     {
-        template<typename TChar>
-        concept __is_char =
-            std::same_as<TChar, char> ||
-            std::same_as<TChar, wchar_t> ||
-            std::same_as<TChar, char8_t> ||
-            std::same_as<TChar, char16_t> ||
-            std::same_as<TChar, char32_t>;
-
+        // basic string is a collection with random acess iterator (is System::Array)
         template<typename _Type>
         concept basic_string = requires()
         {
-            requires System::Array<_Type>;
-            requires __is_char<typename System::Common::Array<_Type>::TItem>;
             requires std::same_as<_Type, std::basic_string<typename System::Common::Array<_Type>::TItem>>;
         };
 

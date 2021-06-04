@@ -8,6 +8,7 @@
         return std::ranges::size(array) > index ? array[index] : TItem{};
     }
 
+    // TODO: Might use `typename System::Common::Array<decltype(array)>::TItem&` instead auto&
     static bool TryGetElement(const System::Array auto& array, std::integral auto index, auto& element)
     {
         if (std::ranges::size(array) > index)
@@ -34,6 +35,10 @@
         }
         else
         {
+            // TODO: Снова вернулся к этому
+            //  глянул на реализацию шарпа. Подумал, что можно было бы возвращать System::Array auto замест auto
+            //  типо интерфейсный стиль. Хотя тогда по-хорошему можно будет делать только std::ranges:: штуки по типу size, begin и тд
+            //  ну и типа вектор возвращать. По тому как нынешняя реализация требует конструктор, который бы выделил памяти кусок
             auto restrictions = TArray(std::ranges::size(array) + shift);
             std::ranges::copy(array, std::ranges::begin(array) + shift);
             return restrictions;

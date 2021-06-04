@@ -105,7 +105,11 @@
 
     /*
     static T SkipFirst[]<T>(IList<T> &list) { return list.SkipFirst(1); }
-    
+
+    // TODO: Fix translator
+    //  static T[] Foo same as:
+        // template<typename T>
+        // static T* SkipFirst()
     static T SkipFirst[]<T>(IList<T> &list, std::int32_t skip)
     {
         if (list.IsNullOrEmpty() || list.Count() <= skip)
