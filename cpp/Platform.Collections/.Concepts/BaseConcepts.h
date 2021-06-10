@@ -5,166 +5,167 @@ namespace Platform::Collections::System  // TODO пока что так
         struct __nil{};
     }
 
-    template<typename _Type>
-    concept IEquatable = requires(_Type left, _Type right)
+    template<typename Self>
+    concept IEquatable = requires(Self left, Self right)
     {
         {left == right} -> std::same_as<bool>;
     };
 
     namespace Common
     {
-        template<typename _Type>
+        template<typename Self>
         struct IEnumerable
         {
-            using TItem = std::ranges::range_value_t<_Type>;
+            using TItem = std::ranges::range_value_t<Self>;
         };
     }
 
-    template<typename _Type>
-    concept IEnumerable = std::ranges::range<_Type>;
+    template<typename Self>
+    concept IEnumerable = std::ranges::range<Self>;
 
     namespace Common
     {
-        template<typename _Type>
+        template<typename Self>
         struct Array
         {
-            using TItem = typename IEnumerable<_Type>::TItem;
+            using TItem = typename IEnumerable<Self>::TItem;
         };
     }
 
-    template<typename _Type, typename _Item = __nil>
-    concept Array = IEnumerable<_Type> && requires()
+    template<typename Self, typename Item = __nil>
+    concept Array = IEnumerable<Self> && requires
     {
         requires
-        requires()
+        requires
         {
-            requires std::same_as<std::ranges::range_value_t<_Type>, _Item>;
-            requires std::ranges::random_access_range<_Type>;
+            requires std::same_as<std::ranges::range_value_t<Self>, Item>;
+            requires std::ranges::random_access_range<Self>;
         }
         ||
-        requires()
+        requires
         {
-            requires std::same_as<_Item, __nil>;
-            requires std::ranges::random_access_range<_Type>;
+            requires std::same_as<Item, __nil>;
+            requires std::ranges::random_access_range<Self>;
         };
     };
 
     namespace Common
     {
-        template<typename _Type>
+        template<typename Self>
         struct Set
         {
-            using TItem = typename IEnumerable<_Type>::TItem;
+            using TItem = typename IEnumerable<Self>::TItem;
         };
     }
 
-    template<typename _Type, typename _Item = __nil>
-    concept ISet = IEnumerable<_Type> && requires(
-            _Type object, _Item item,
-            typename Common::Set<_Type>::TItem generic_item
+    template<typename Self, typename Item = __nil>
+    concept ISet = IEnumerable<Self> && requires(
+            Self self, Item item,
+            typename Common::Set<Self>::TItem generic_item
     )
     {
         requires
-            requires()
+            requires
             {
-                {object.clear()};
-                {object.find(item)} -> std::same_as<std::ranges::iterator_t<_Type>>;
-                {object.insert(item)};
-                {object.erase(item)};
-                {object.contains(item)} -> std::same_as<bool>;
-                {object.empty()} -> std::same_as<bool>;
+                {self.clear()};
+                {self.find(item)} -> std::same_as<std::ranges::iterator_t<Self>>;
+                {self.insert(item)};
+                {self.erase(item)};
+                {self.contains(item)} -> std::same_as<bool>;
+                {self.empty()} -> std::same_as<bool>;
 
-                requires std::ranges::bidirectional_range<_Type>;
+                requires std::ranges::bidirectional_range<Self>;
             }
             ||
-            requires()
+            requires
             {
-                requires std::same_as<_Item, __nil>;
-                {object.clear()};
-                {object.find(generic_item)} -> std::same_as<std::ranges::iterator_t<_Type>>;
-                {object.insert(generic_item)};
-                {object.erase(generic_item)};
-                {object.contains(generic_item)} -> std::same_as<bool>;
-                {object.empty()} -> std::same_as<bool>;
+                requires std::same_as<Item, __nil>;
+                {self.clear()};
+                {self.find(generic_item)} -> std::same_as<std::ranges::iterator_t<Self>>;
+                {self.insert(generic_item)};
+                {self.erase(generic_item)};
+                {self.contains(generic_item)} -> std::same_as<bool>;
+                {self.empty()} -> std::same_as<bool>;
 
-                requires std::ranges::bidirectional_range<_Type>;
+                requires std::ranges::bidirectional_range<Self>;
             };
     };
 
     namespace Common
     {
-        template<typename _Type>
+        template<typename Self>
         struct Dictionary
         {
-            using _ = typename IEnumerable<_Type>::TItem;// TODO rename
+            using _ = typename IEnumerable<Self>::TItem;// TODO rename
             using TKey = decltype(std::declval<_>().first);
             using TItem = decltype(std::declval<_>().second);
         };
     }
 
-    template<typename _Type, typename _Key = __nil, typename _Item = __nil>
-    concept IDictionary = IEnumerable<_Type> && requires(
-        _Type object, _Key key, _Item item,
-        typename Common::Dictionary<_Type>::TKey generic_key,
-        typename Common::Dictionary<_Type>::TItem generic_item
+    template<typename Self, typename Key = __nil, typename Item = __nil>
+    concept IDictionary = IEnumerable<Self> && requires(
+        Self self, Key key, Item item,
+        typename Common::Dictionary<Self>::TKey generic_key,
+        typename Common::Dictionary<Self>::TItem generic_item
     )
     {
         requires
-            requires()
+            requires
             {
-                {object.clear()};
-                {object.find(key)} -> std::forward_iterator;
-                {object.contains(key)} -> std::same_as<bool>;
-                {object.insert({key, item})};
-                {object.empty()} -> std::same_as<bool>;
+                {self.clear()};
+                {self.find(key)} -> std::forward_iterator;
+                {self.contains(key)} -> std::same_as<bool>;
+                {self.insert({key, item})};
+                {self.empty()} -> std::same_as<bool>;
             }
             ||
-            requires()
+            requires
             {
-                requires std::same_as<_Item, __nil>;
-                {object.clear()};
-                {object.find(key)} -> std::forward_iterator;
-                {object.contains(key)} -> std::same_as<bool>;
-                {object.insert({key, generic_item})};
-                {object.empty()} -> std::same_as<bool>;
+                requires std::same_as<Item, __nil>;
+                {self.clear()};
+                {self.find(key)} -> std::forward_iterator;
+                {self.contains(key)} -> std::same_as<bool>;
+                {self.insert({key, generic_item})};
+                {self.empty()} -> std::same_as<bool>;
             }
             ||
-            requires()
+            requires
             {
-                requires std::same_as<_Key, __nil>;
-                {object.clear()};
-                {object.find(generic_key)} -> std::forward_iterator;
-                {object.contains(generic_key)} -> std::same_as<bool>;
-                {object.insert({generic_key, generic_item})};
-                {object.empty()} -> std::same_as<bool>;
+                requires std::same_as<Key, __nil>;
+                {self.clear()};
+                {self.find(generic_key)} -> std::forward_iterator;
+                {self.contains(generic_key)} -> std::same_as<bool>;
+                {self.insert({generic_key, generic_item})};
+                {self.empty()} -> std::same_as<bool>;
             };
     };
 
 
 
 
-    template<typename _Type, typename _Item = __nil>
-    concept IList = Array<_Type> && requires(
-        _Type object,
-        _Item item, int index,
-        std::ranges::range_value_t<_Type> generic_item,
-        std::ranges::iterator_t<const _Type> const_iterator
+    template<typename Self, typename Item = __nil>
+    concept IList = Array<Self> && requires
+    (
+        Self self,
+        Item item, int index,
+        std::ranges::range_value_t<Self> generic_item,
+        std::ranges::iterator_t<const Self> const_iterator
     )
     {
         requires
-            requires()
+            requires
             {
-                {object.push_back(item)};
-                {object.insert(const_iterator, item)};
-                {object.erase(const_iterator)};
+                {self.push_back(item)};
+                {self.insert(const_iterator, item)};
+                {self.erase(const_iterator)};
             }
             ||
-            requires()
+            requires
             {
-                requires std::same_as<_Item, __nil>;
-                {object.push_back(generic_item)};
-                {object.insert(const_iterator, generic_item)};
-                {object.erase(const_iterator)};
+                requires std::same_as<Item, __nil>;
+                {self.push_back(generic_item)};
+                {self.insert(const_iterator, generic_item)};
+                {self.erase(const_iterator)};
             };
     };
 }
