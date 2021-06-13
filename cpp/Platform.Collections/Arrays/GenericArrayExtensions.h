@@ -4,7 +4,7 @@
     requires std::default_initializable<TItem>
     static auto GetElementOrDefault(const TArray& array, std::integral auto index)
     {
-        return std::ranges::size(array) > index ? array[index] : TItem{};
+        return std::ranges::size(array) > index ? std::ranges::begin(array)[index] : TItem{};
     }
 
     template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
@@ -13,7 +13,7 @@
     {
         if (std::ranges::size(array) > index)
         {
-            element = array[index];
+            element = std::ranges::begin(array)[index];
             return true;
         }
         else
@@ -53,7 +53,7 @@
     template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
     static void Add(TArray& array, std::integral auto& position, const TItem& element)
     {
-        array[position++] = element;
+        std::ranges::begin(array)[position++] = element;
     }
 
     template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
