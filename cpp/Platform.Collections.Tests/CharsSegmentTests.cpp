@@ -3,13 +3,13 @@
 namespace Platform::Collections::Tests
 {
     TEST(ChangeSegmentTests, GetHashCodeEqualsTest)
-{
-    const std::string testString = "test test";
-    auto testArray = std::vector(testString.begin(), testString.end());
-    auto firstHashCode = Platform::Hashing::Hash(std::span(testArray.begin(), 4));
-    auto secondHashCode = Platform::Hashing::Hash(std::span(testArray.begin() + 5, 4));
-    ASSERT_EQ(firstHashCode, secondHashCode);
-}
+    {
+        const std::string testString = "test test";
+        auto testArray = std::vector(testString.begin(), testString.end());
+        auto firstHashCode = Platform::Hashing::Hash(std::span(testArray.begin(), 4));
+        auto secondHashCode = Platform::Hashing::Hash(std::span(testArray.begin() + 5, 4));
+        ASSERT_EQ(firstHashCode, secondHashCode);
+    }
 
     TEST(ChangeSegmentTests, EqualsTest)
     {

@@ -1,15 +1,15 @@
 ﻿namespace Platform::Collections::Arrays
 {
-    template<System::IArray TArray>
-    requires std::default_initializable<std::ranges::range_value_t<TArray>>
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    requires std::default_initializable<TItem>
     static auto GetElementOrDefault(const TArray& array, std::integral auto index)
     {
-        using TItem = std::ranges::range_value_t<TArray>;
         return std::ranges::size(array) > index ? array[index] : TItem{};
     }
 
-    // TODO: Might use `typename System::Common::IArray<decltype(array)>::TItem&` instead auto&
-    static bool TryGetElement(const System::IArray auto& array, std::integral auto index, auto& element)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    requires std::default_initializable<TItem>
+    static bool TryGetElement(const TItem& array, std::integral auto index, TItem& element)
     {
         if (std::ranges::size(array) > index)
         {
@@ -18,7 +18,7 @@
         }
         else
         {
-            element = 0;
+            element = TItem{};
             return false;
         }
     }
@@ -50,58 +50,66 @@
         return ShiftRight(array, 1);
     }
 
-    static void Add(System::IArray auto& array, std::integral auto& position, auto element)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static void Add(TArray& array, std::integral auto& position, const TItem& element)
     {
         array[position++] = element;
     }
 
-    static auto AddAndReturnConstant(System::IArray auto& array, std::integral auto& position, auto element, auto returnConstant)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static decltype(auto) AddAndReturnConstant(TArray& array, std::integral auto& position, const TItem& element, const auto& returnConstant)
     {
         Add(array, position, element);
         return returnConstant;
     }
 
-    static void AddFirst(System::IArray auto& array, std::integral auto& position, System::IArray auto elements)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static void AddFirst(TArray& array, std::integral auto& position, const System::IArray<TItem> auto& elements)
     {
         array[position++] = elements[0];
     }
 
-    static auto AddFirstAndReturnConstant(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, auto returnConstant)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static decltype(auto) AddFirstAndReturnConstant(TArray& array, std::integral auto& position, const System::IArray<TItem> auto& elements, const auto& returnConstant)
     {
         AddFirst(array, position, elements);
         return returnConstant;
     }
 
-    static void AddAll(System::IArray auto& array, std::integral auto& position, System::IArray auto elements)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static void AddAll(TArray& array, std::integral auto& position, const System::IArray<TItem> auto& elements)
     {
-        for (auto i = 0; i < elements.size(); i++)
+        for (const auto& element : elements)
         {
-            Add(array, position, elements[i]);
+            Add(array, position, element);
         }
     }
 
-    static auto AddAllAndReturnConstant(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, auto returnConstant)
+    static decltype(auto) AddAllAndReturnConstant(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, auto returnConstant)
     {
         AddAll(array, position, elements);
         return returnConstant;
     }
 
-    static void AddSkipFirst(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, std::integral auto skip)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static void AddSkipFirst(TArray& array, std::integral auto& position, System::IArray<TItem> auto elements, std::integral auto skip)
     {
-        for (auto i = skip; i < elements.size(); i++)
+        for (const auto& element : elements | std::views::drop(skip))
         {
-            Add(array, position, elements[i]);
+            Add(array, position, element);
         }
     }
 
-    static void AddSkipFirst(System::IArray auto& array, std::integral auto& position, const System::IArray auto& elements)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static void AddSkipFirst(TArray& array, std::integral auto& position, const System::IArray<TItem> auto& elements)
     {
         AddSkipFirst(array, position, elements, 1);
     }
 
-    static auto AddSkipFirstAndReturnConstant(System::IArray auto& array, std::integral auto& position, const System::IArray auto& elements, auto returnConstant)
+    template<System::IArray TArray, typename TItem = typename System::Array<TArray>::Item>
+    static decltype(auto) AddSkipFirstAndReturnConstant(TArray& array, std::integral auto& position, const System::IArray<TItem> auto& elements, const auto& constant)
     {
-        AddSkipFirst(array, position, elements);
-        return returnConstant;
+        AddSkipFirst(array, position, elements, 1);
+        return constant;
     }
 }// namespace Platform::Collections::Arrays
