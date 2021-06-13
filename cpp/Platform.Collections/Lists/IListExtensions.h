@@ -8,7 +8,7 @@
         return std::ranges::size(array) > index ? array[index] : TItem{};
     }
 
-    static bool TryGetElement(const System::Array auto& array, std::integral auto index, auto& element)
+    static bool TryGetElement(const System::IArray auto& array, std::integral auto index, auto& element)
     {
         if (std::ranges::size(array) > index)
         {
@@ -28,24 +28,24 @@
         return true;
     }
 
-    static bool AddFirstAndReturnTrue(System::IList auto& list, const System::Array auto& elements)
+    static bool AddFirstAndReturnTrue(System::IList auto& list, const System::IArray auto& elements)
     {
         AddFirst(list, elements);
         return true;
     }
 
-    static void AddFirst(System::IList auto& list, const System::Array auto& elements)
+    static void AddFirst(System::IList auto& list, const System::IArray auto& elements)
     {
         list.push_back(elements[0]);
     }
 
-    static bool AddAllAndReturnTrue(System::IList auto& list, const System::Array auto& elements)
+    static bool AddAllAndReturnTrue(System::IList auto& list, const System::IArray auto& elements)
     {
         AddAll(list, elements);
         return true;
     }
 
-    static void AddAll(System::IList auto& list, const System::Array auto& elements)
+    static void AddAll(System::IList auto& list, const System::IArray auto& elements)
     {
         for (auto i = 0; i < elements.size(); i++)
         {
@@ -53,18 +53,18 @@
         }
     }
 
-    static bool AddSkipFirstAndReturnTrue(System::IList auto& list, const System::Array auto& elements)
+    static bool AddSkipFirstAndReturnTrue(System::IList auto& list, const System::IArray auto& elements)
     {
         AddSkipFirst(elements);
         return true;
     }
 
-    static void AddSkipFirst(System::IList auto& list, const System::Array auto& elements)
+    static void AddSkipFirst(System::IList auto& list, const System::IArray auto& elements)
     {
         AddSkipFirst(list, elements, 1);
     }
 
-    static void AddSkipFirst(System::IList auto& list, const System::Array auto& elements, std::int32_t skip)
+    static void AddSkipFirst(System::IList auto& list, const System::IArray auto& elements, std::int32_t skip)
     {
         for (auto i = skip; i < elements.size(); i++)
         {
@@ -114,7 +114,7 @@
     {
         if (list.IsNullOrEmpty() || list.Count() <= skip)
         {
-            return Array.Empty<T>();
+            return IArray.Empty<T>();
         }
         auto result = T[list.Count() - skip];
         for (std::int32_t r = skip, w = 0; r < list.Count(); r++, w++)

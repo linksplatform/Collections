@@ -2,10 +2,10 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<System::Array TArray>
+    template<System::IArray TArray>
     class ArrayFiller<TArray>
     {
-        using TElement = typename System::Common::Array<TArray>::TItem;
+        using TElement = typename System::Array<TArray>::Item;
 
     protected:
         TArray& _array;
@@ -36,19 +36,19 @@
         }
 
     public:
-        bool AddFirstAndReturnTrue(const System::Array<TElement> auto& elements)
+        bool AddFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
         {
             return Arrays::AddFirstAndReturnConstant(_array, _position, elements, true);
         }
 
     public:
-        bool AddAllAndReturnTrue(const System::Array<TElement> auto& elements)
+        bool AddAllAndReturnTrue(const System::IArray<TElement> auto& elements)
         {
             return Arrays::AddAllAndReturnConstant(_array, _position, elements, true);
         }
 
     public:
-        bool AddSkipFirstAndReturnTrue(const System::Array<TElement> auto& elements)
+        bool AddSkipFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
         {
             return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true);
         }

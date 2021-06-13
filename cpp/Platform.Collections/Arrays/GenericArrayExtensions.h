@@ -1,6 +1,6 @@
 ﻿namespace Platform::Collections::Arrays
 {
-    template<System::Array TArray>
+    template<System::IArray TArray>
     requires std::default_initializable<std::ranges::range_value_t<TArray>>
     static auto GetElementOrDefault(const TArray& array, std::integral auto index)
     {
@@ -8,8 +8,8 @@
         return std::ranges::size(array) > index ? array[index] : TItem{};
     }
 
-    // TODO: Might use `typename System::Common::Array<decltype(array)>::TItem&` instead auto&
-    static bool TryGetElement(const System::Array auto& array, std::integral auto index, auto& element)
+    // TODO: Might use `typename System::Common::IArray<decltype(array)>::TItem&` instead auto&
+    static bool TryGetElement(const System::IArray auto& array, std::integral auto index, auto& element)
     {
         if (std::ranges::size(array) > index)
         {
@@ -23,7 +23,7 @@
         }
     }
 
-    static auto ShiftRight(const System::Array auto& array, std::integral auto shift)
+    static auto ShiftRight(const System::IArray auto& array, std::integral auto shift)
     {
         if (shift < 0)
         {
@@ -36,7 +36,7 @@
         else
         {
             // TODO: Снова вернулся к этому
-            //  глянул на реализацию шарпа. Подумал, что можно было бы возвращать System::Array auto замест auto
+            //  глянул на реализацию шарпа. Подумал, что можно было бы возвращать System::IArray auto замест auto
             //  типо интерфейсный стиль. Хотя тогда по-хорошему можно будет делать только std::ranges:: штуки по типу size, begin и тд
             //  ну и типа вектор возвращать. По тому как нынешняя реализация требует конструктор, который бы выделил памяти кусок
             auto restrictions = TArray(std::ranges::size(array) + shift);
@@ -45,34 +45,34 @@
         }
     }
 
-    static auto ShiftRight(const System::Array auto& array)
+    static auto ShiftRight(const System::IArray auto& array)
     {
         return ShiftRight(array, 1);
     }
 
-    static void Add(System::Array auto& array, std::integral auto& position, auto element)
+    static void Add(System::IArray auto& array, std::integral auto& position, auto element)
     {
         array[position++] = element;
     }
 
-    static auto AddAndReturnConstant(System::Array auto& array, std::integral auto& position, auto element, auto returnConstant)
+    static auto AddAndReturnConstant(System::IArray auto& array, std::integral auto& position, auto element, auto returnConstant)
     {
         Add(array, position, element);
         return returnConstant;
     }
 
-    static void AddFirst(System::Array auto& array, std::integral auto& position, System::Array auto elements)
+    static void AddFirst(System::IArray auto& array, std::integral auto& position, System::IArray auto elements)
     {
         array[position++] = elements[0];
     }
 
-    static auto AddFirstAndReturnConstant(System::Array auto& array, std::integral auto& position, System::Array auto elements, auto returnConstant)
+    static auto AddFirstAndReturnConstant(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, auto returnConstant)
     {
         AddFirst(array, position, elements);
         return returnConstant;
     }
 
-    static void AddAll(System::Array auto& array, std::integral auto& position, System::Array auto elements)
+    static void AddAll(System::IArray auto& array, std::integral auto& position, System::IArray auto elements)
     {
         for (auto i = 0; i < elements.size(); i++)
         {
@@ -80,13 +80,13 @@
         }
     }
 
-    static auto AddAllAndReturnConstant(System::Array auto& array, std::integral auto& position, System::Array auto elements, auto returnConstant)
+    static auto AddAllAndReturnConstant(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, auto returnConstant)
     {
         AddAll(array, position, elements);
         return returnConstant;
     }
 
-    static void AddSkipFirst(System::Array auto& array, std::integral auto& position, System::Array auto elements, std::integral auto skip)
+    static void AddSkipFirst(System::IArray auto& array, std::integral auto& position, System::IArray auto elements, std::integral auto skip)
     {
         for (auto i = skip; i < elements.size(); i++)
         {
@@ -94,12 +94,12 @@
         }
     }
 
-    static void AddSkipFirst(System::Array auto& array, std::integral auto& position, const System::Array auto& elements)
+    static void AddSkipFirst(System::IArray auto& array, std::integral auto& position, const System::IArray auto& elements)
     {
         AddSkipFirst(array, position, elements, 1);
     }
 
-    static auto AddSkipFirstAndReturnConstant(System::Array auto& array, std::integral auto& position, const System::Array auto& elements, auto returnConstant)
+    static auto AddSkipFirstAndReturnConstant(System::IArray auto& array, std::integral auto& position, const System::IArray auto& elements, auto returnConstant)
     {
         AddSkipFirst(array, position, elements);
         return returnConstant;

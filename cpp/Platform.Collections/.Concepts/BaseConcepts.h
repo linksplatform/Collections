@@ -1,72 +1,59 @@
 namespace Platform::Collections::System  // TODO пока что так
 {
-    namespace
-    {
-        struct __nil{};
-    }
-
-    template<typename Self>
-    concept IEquatable = requires(Self left, Self right)
-    {
-        {left == right} -> std::same_as<bool>;
-    };
-
-    namespace Common
-    {
-        template<typename Self>
-        struct IEnumerable
-        {
-            using TItem = std::ranges::range_value_t<Self>;
-        };
-    }
-
     template<typename Self>
     concept IEnumerable = std::ranges::range<Self>;
 
-    namespace Common
+    template<IEnumerable Self>
+    struct Enumerable
     {
-        template<typename Self>
-        struct Array
-        {
-            using TItem = typename IEnumerable<Self>::TItem;
-        };
-    }
-
-    template<typename Self, typename Item = __nil>
-    concept Array = IEnumerable<Self> && requires
-    {
-        requires
-        requires
-        {
-            requires std::same_as<std::ranges::range_value_t<Self>, Item>;
-            requires std::ranges::random_access_range<Self>;
-        }
-        ||
-        requires
-        {
-            requires std::same_as<Item, __nil>;
-            requires std::ranges::random_access_range<Self>;
-        };
+        using Item = std::ranges::range_value_t<Self>;
     };
 
-    namespace Common
+    template<typename Self, typename... Item>
+    concept IArray =
+        IEnumerable<Self> &&
+        sizeof...(Item) <= 1 &&
+    requires(std::tuple<Item...> items)
     {
-        template<typename Self>
-        struct Set
-        {
-            using TItem = typename IEnumerable<Self>::TItem;
-        };
-    }
+        requires
+            requires
+            {
+                requires sizeof...(Item) == 1;
 
-    template<typename Self, typename Item = __nil>
-    concept ISet = IEnumerable<Self> && requires(
-            Self self, Item item,
-            typename Common::Set<Self>::TItem generic_item
+                requires std::same_as<std::ranges::range_value_t<Self>, decltype(std::get<0>(items))>;
+                requires std::ranges::random_access_range<Self>;
+            }
+            ||
+            requires
+            {
+                requires sizeof...(Item) == 0;
+
+                requires std::ranges::random_access_range<Self>;
+            };
+    };
+
+    template<IArray Self>
+    struct Array : Enumerable<Self> {};
+
+    template<typename Self, typename... Item>
+    concept ISet =
+        IEnumerable<Self> &&
+        sizeof...(Item) <= 1 &&
+    requires
+    (
+        Self self,
+        std::tuple<Item...> items,
+
+        decltype(std::get<0>(items)) item,
+
+        typename Enumerable<Self>::Item generic_item
     )
     {
         requires
             requires
             {
+                requires sizeof...(Item) == 1;
+
                 {self.clear()};
                 {self.find(item)} -> std::same_as<std::ranges::iterator_t<Self>>;
                 {self.insert(item)};
@@ -79,7 +66,8 @@ namespace Platform::Collections::System  // TODO пока что так
             ||
             requires
             {
-                requires std::same_as<Item, __nil>;
+                requires sizeof...(Item) == 0;
+
                 {self.clear()};
                 {self.find(generic_item)} -> std::same_as<std::ranges::iterator_t<Self>>;
                 {self.insert(generic_item)};
@@ -91,70 +79,95 @@ namespace Platform::Collections::System  // TODO пока что так
             };
     };
 
-    namespace Common
-    {
-        template<typename Self>
-        struct Dictionary
-        {
-            using _ = typename IEnumerable<Self>::TItem;// TODO rename
-            using TKey = decltype(std::declval<_>().first);
-            using TItem = decltype(std::declval<_>().second);
-        };
-    }
+    template<ISet Self>
+    struct Set : Enumerable<Self> {};
 
-    template<typename Self, typename Key = __nil, typename Item = __nil>
-    concept IDictionary = IEnumerable<Self> && requires(
-        Self self, Key key, Item item,
-        typename Common::Dictionary<Self>::TKey generic_key,
-        typename Common::Dictionary<Self>::TItem generic_item
+
+    template<typename Self, typename... Args>
+    concept IDictionary =
+        IEnumerable<Self> &&
+        sizeof...(Args) <= 1 &&
+    requires
+    (
+        Self self,
+        std::tuple<Args...> args,
+
+        decltype(std::get<0>(args)) key,
+        decltype(std::get<1>(args)) value,
+
+        decltype(std::declval<Enumerable<Self>::Item>().first) generic_key,
+        decltype(std::declval<Enumerable<Self>::Item>().second) generic_value
     )
     {
         requires
             requires
             {
+                requires sizeof...(Args) == 2;
+
                 {self.clear()};
                 {self.find(key)} -> std::forward_iterator;
                 {self.contains(key)} -> std::same_as<bool>;
-                {self.insert({key, item})};
+                {self.insert({key, value})};
                 {self.empty()} -> std::same_as<bool>;
             }
             ||
             requires
             {
-                requires std::same_as<Item, __nil>;
+                requires sizeof...(Args) == 1;
+
                 {self.clear()};
                 {self.find(key)} -> std::forward_iterator;
                 {self.contains(key)} -> std::same_as<bool>;
-                {self.insert({key, generic_item})};
+                {self.insert({key, generic_value})};
                 {self.empty()} -> std::same_as<bool>;
             }
             ||
             requires
             {
-                requires std::same_as<Key, __nil>;
+                requires sizeof...(Args) == 0;
+
                 {self.clear()};
                 {self.find(generic_key)} -> std::forward_iterator;
                 {self.contains(generic_key)} -> std::same_as<bool>;
-                {self.insert({generic_key, generic_item})};
+                {self.insert({generic_key, generic_value})};
                 {self.empty()} -> std::same_as<bool>;
             };
     };
 
+    template<IDictionary Self>
+    struct Dictionary : Enumerable<Self>
+    {
+    private:
+        using base = Enumerable<Self>;
+
+    public:
+        using Key = decltype(std::declval<base::Item>().first);
+        using Value = decltype(std::declval<base::Item>().second);
+    };
 
 
-
-    template<typename Self, typename Item = __nil>
-    concept IList = Array<Self> && requires
+    template<typename Self, typename... Item>
+    concept IList =
+        IArray<Self> &&
+        sizeof...(Item) <= 1 &&
+    requires
     (
         Self self,
-        Item item, int index,
+        std::tuple<Item...> items,
+
+        std::size_t index,
+        decltype(std::get<0>(items)) item,
+
         std::ranges::range_value_t<Self> generic_item,
+
         std::ranges::iterator_t<const Self> const_iterator
     )
     {
         requires
             requires
             {
+                requires sizeof...(Item) == 1;
+
                 {self.push_back(item)};
                 {self.insert(const_iterator, item)};
                 {self.erase(const_iterator)};
@@ -162,10 +175,14 @@ namespace Platform::Collections::System  // TODO пока что так
             ||
             requires
             {
-                requires std::same_as<Item, __nil>;
+                requires sizeof...(Item) == 0;
+
                 {self.push_back(generic_item)};
                 {self.insert(const_iterator, generic_item)};
                 {self.erase(const_iterator)};
             };
     };
+
+    template<IList Self>
+    struct List : Enumerable<Self> {};
 }

@@ -39,19 +39,19 @@
         }
 
     public:
-        bool AddFirstAndReturnTrue(const System::Array<TElement> auto& elements)
+        bool AddFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
         {
             return Lists::AddFirstAndReturnTrue(_list, elements);
         }
 
     public:
-        bool AddAllAndReturnTrue(const System::Array<TElement> auto& elements)
+        bool AddAllAndReturnTrue(const System::IArray<TElement> auto& elements)
         {
             return Lists::AddAllAndReturnTrue(_list, elements);
         }
 
     public:
-        bool AddSkipFirstAndReturnTrue(const System::Array<TElement> auto& elements)
+        bool AddSkipFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
         {
             return Lists::AddSkipFirstAndReturnTrue(_list, elements);
         }
@@ -64,21 +64,21 @@
         }
 
     public:
-        TReturnConstant AddFirstAndReturnConstant(const System::Array<TElement> auto& elements)
+        TReturnConstant AddFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
         {
             Lists::AddFirst(_list, elements);
             return _returnConstant;
         }
 
     public:
-        TReturnConstant AddAllAndReturnConstant(const System::Array<TElement> auto& elements)
+        TReturnConstant AddAllAndReturnConstant(const System::IArray<TElement> auto& elements)
         {
             Lists::AddAll(_list, elements);
             return _returnConstant;
         }
 
     public:
-        TReturnConstant AddSkipFirstAndReturnConstant(const System::Array<TElement> auto& elements)
+        TReturnConstant AddSkipFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
         {
             Lists::AddSkipFirst(_list, elements);
             return _returnConstant;

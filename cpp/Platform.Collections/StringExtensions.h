@@ -2,14 +2,14 @@
 {
     namespace StringExtensions
     {
-        // basic string is a collection with random acess iterator (is System::Array)
-        template<typename _Type>
-        concept basic_string = requires()
+        // basic string is a collection with random acess iterator (is System::IArray)
+        template<typename Self>
+        concept basic_string = requires
         {
-            requires std::same_as<_Type, std::basic_string<typename System::Common::Array<_Type>::TItem>>;
+            requires std::same_as<Self, std::basic_string<typename System::Array<Self>::Item>>;
         };
 
-        template<basic_string TString, typename TChar = typename System::Common::Array<TString>::TItem>
+        template<basic_string TString, typename TChar = typename System::Array<TString>::Item>
         static auto CapitalizeFirstLetter(TString string)
         {
             for (auto& it : string)
@@ -23,13 +23,13 @@
             return string;
         }
 
-        template<basic_string TString, typename TChar = typename System::Common::Array<TString>::TItem>
+        template<basic_string TString, typename TChar = typename System::Array<TString>::Item>
         static auto Truncate(const TString& string, std::int32_t maxLength)
         {
             return string.empty() ? TString{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
         }
 
-        template<basic_string TString, typename TChar = typename System::Common::Array<TString>::TItem>
+        template<basic_string TString, typename TChar = typename System::Array<TString>::Item>
         static auto TrimSingle(const TString& string, TChar charToTrim)
         {
             if (!string.empty())
