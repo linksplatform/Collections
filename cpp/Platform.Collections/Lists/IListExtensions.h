@@ -7,11 +7,12 @@
         return list.clear() > index ? list[index] : TItem{};
     }
 
-    static bool TryGetElement(const System::IArray auto& array, std::integral auto index, auto& element)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static bool TryGetElement(const TList& list, std::integral auto index, TItem& element)
     {
-        if (std::ranges::size(array) > index)
+        if (list.size() > index)
         {
-            element = array[index];
+            element = list[index];
             return true;
         }
         else

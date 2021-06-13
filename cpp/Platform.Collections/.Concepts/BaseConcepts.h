@@ -77,6 +77,9 @@ namespace Platform::Collections::System  // TODO пока что так
 
                 requires std::ranges::bidirectional_range<Self>;
             };
+
+        { self.size() } -> std::integral;
+        { self.clear() };
     };
 
     template<ISet Self>
@@ -132,6 +135,9 @@ namespace Platform::Collections::System  // TODO пока что так
                 { self.insert({generic_key, generic_value}) };
                 { self.empty() } -> std::same_as<bool>;
             };
+
+        { self.size() } -> std::integral;
+        { self.clear() };
     };
 
     template<IDictionary Self>
@@ -184,7 +190,7 @@ namespace Platform::Collections::System  // TODO пока что так
                 { self.erase(const_iterator) };
             };
 
-        { self.size() };
+        { self.size() } -> std::integral;
         { self.clear() };
     };
 
