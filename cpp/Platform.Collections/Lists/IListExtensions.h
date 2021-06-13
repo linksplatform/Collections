@@ -1,11 +1,10 @@
 ﻿namespace Platform::Collections::Lists
 {
-    template<System::IList TList>
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
     requires std::default_initializable<std::ranges::range_value_t<TList>>
-    static auto GetElementOrDefault(const TList& array, std::integral auto index)
+    static auto GetElementOrDefault(const TList& list, std::integral auto index)
     {
-        using TItem = std::ranges::range_value_t<TList>;
-        return std::ranges::size(array) > index ? array[index] : TItem{};
+        return list.clear() > index ? list[index] : TItem{};
     }
 
     static bool TryGetElement(const System::IArray auto& array, std::integral auto index, auto& element)
@@ -22,115 +21,70 @@
         }
     }
 
-    static bool AddAndReturnTrue(System::IList auto& list, auto element)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static bool AddAndReturnTrue(TList& list, const TItem& element)
     {
         list.push_back(element);
         return true;
     }
 
-    static bool AddFirstAndReturnTrue(System::IList auto& list, const System::IArray auto& elements)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static bool AddFirstAndReturnTrue(TList& list, const System::IArray<TItem> auto& elements)
     {
         AddFirst(list, elements);
         return true;
     }
 
-    static void AddFirst(System::IList auto& list, const System::IArray auto& elements)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static void AddFirst(TList& list, const System::IArray<TItem> auto& elements)
     {
-        list.push_back(elements[0]);
+        list.push_back(*std::ranges::begin(elements));
     }
 
-    static bool AddAllAndReturnTrue(System::IList auto& list, const System::IArray auto& elements)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static bool AddAllAndReturnTrue(TList& list, const System::IArray<TItem> auto& elements)
     {
         AddAll(list, elements);
         return true;
     }
 
-    static void AddAll(System::IList auto& list, const System::IArray auto& elements)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static void AddAll(TList& list, const System::IArray<TItem> auto& elements)
     {
-        for (auto i = 0; i < elements.size(); i++)
+        for (const auto& element : elements)
         {
-            list.push_back(elements[i]);
+            list.push_back(element);
         }
     }
 
-    static bool AddSkipFirstAndReturnTrue(System::IList auto& list, const System::IArray auto& elements)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static bool AddSkipFirstAndReturnTrue(TList& list, const System::IArray<TItem> auto& elements)
     {
         AddSkipFirst(elements);
         return true;
     }
 
-    static void AddSkipFirst(System::IList auto& list, const System::IArray auto& elements)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static void AddSkipFirst(TList& list, const System::IArray<TItem> auto& elements)
     {
         AddSkipFirst(list, elements, 1);
     }
 
-    static void AddSkipFirst(System::IList auto& list, const System::IArray auto& elements, std::int32_t skip)
+    template<System::IList TList, typename TItem = typename System::List<TList>::Item>
+    static void AddSkipFirst(TList& list, const System::IArray<TItem> auto& elements, std::integral auto skip)
     {
-        for (auto i = skip; i < elements.size(); i++)
+        for (const auto& element : elements | std::views::drop(skip))
         {
-            list.push_back(elements[i]);
+            list.push_back(element);
         }
     }
-
-    /*
-     * Use Platform.Equality(or std::ranges::equal) instead of EqualTo and other
-     */
-
-    /* TODO А что с этим то делать :(
-    static T ToArray[]<T>(IList<T> &list, Func<T, bool> predicate)
-    {
-        if (list == nullptr)
-        {
-            return {};
-        }
-        auto result = List<T>(list.Count());
-        for (auto i = 0; i < list.Count(); i++)
-        {
-            if (predicate(list[i]))
-            {
-                result.Add(list[i]);
-            }
-        }
-        return result.ToArray();
-    }
-
-
-    static T ToArray[]<T>(IList<T> &list)
-    {
-        auto array = T[list.Count()];
-        list.CopyTo(array, 0);
-        return array;
-    }
-    */
-
-    /*
-    static T SkipFirst[]<T>(IList<T> &list) { return list.SkipFirst(1); }
-
-    // TODO: Fix translator
-    //  static T[] Foo same as:
-        // template<typename T>
-        // static T* SkipFirst()
-    static T SkipFirst[]<T>(IList<T> &list, std::int32_t skip)
-    {
-        if (list.IsNullOrEmpty() || list.Count() <= skip)
-        {
-            return IArray.Empty<T>();
-        }
-        auto result = T[list.Count() - skip];
-        for (std::int32_t r = skip, w = 0; r < list.Count(); r++, w++)
-        {
-            result[w] = list[r];
-        }
-        return result;
-    }
-    */
 
     static auto ShiftRight(const System::IList auto& list)
     {
         return Arrays::ShiftRight(list);
     }
 
-    static auto ShiftRight(const System::IList auto& list, std::int32_t shift)
+    static auto ShiftRight(const System::IList auto& list, std::integral auto shift)
     {
         return Arrays::ShiftRight(list, shift);
     }

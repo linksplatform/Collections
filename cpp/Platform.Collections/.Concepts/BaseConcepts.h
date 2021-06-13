@@ -54,12 +54,12 @@ namespace Platform::Collections::System  // TODO пока что так
             {
                 requires sizeof...(Item) == 1;
 
-                {self.clear()};
-                {self.find(item)} -> std::same_as<std::ranges::iterator_t<Self>>;
-                {self.insert(item)};
-                {self.erase(item)};
-                {self.contains(item)} -> std::same_as<bool>;
-                {self.empty()} -> std::same_as<bool>;
+                { self.clear() };
+                { self.find(item) } -> std::same_as<std::ranges::iterator_t<Self>>;
+                { self.insert(item) };
+                { self.erase(item) };
+                { self.contains(item) } -> std::same_as<bool>;
+                { self.empty() } -> std::same_as<bool>;
 
                 requires std::ranges::bidirectional_range<Self>;
             }
@@ -68,12 +68,12 @@ namespace Platform::Collections::System  // TODO пока что так
             {
                 requires sizeof...(Item) == 0;
 
-                {self.clear()};
-                {self.find(generic_item)} -> std::same_as<std::ranges::iterator_t<Self>>;
-                {self.insert(generic_item)};
-                {self.erase(generic_item)};
-                {self.contains(generic_item)} -> std::same_as<bool>;
-                {self.empty()} -> std::same_as<bool>;
+                { self.clear() };
+                { self.find(generic_item) } -> std::same_as<std::ranges::iterator_t<Self>>;
+                { self.insert(generic_item) };
+                { self.erase(generic_item) };
+                { self.contains(generic_item) } -> std::same_as<bool>;
+                { self.empty() } -> std::same_as<bool>;
 
                 requires std::ranges::bidirectional_range<Self>;
             };
@@ -104,33 +104,33 @@ namespace Platform::Collections::System  // TODO пока что так
             {
                 requires sizeof...(Args) == 2;
 
-                {self.clear()};
-                {self.find(key)} -> std::forward_iterator;
-                {self.contains(key)} -> std::same_as<bool>;
-                {self.insert({key, value})};
-                {self.empty()} -> std::same_as<bool>;
+                { self.clear() };
+                { self.find(key) } -> std::forward_iterator;
+                { self.contains(key) } -> std::same_as<bool>;
+                { self.insert({key, value}) };
+                { self.empty() } -> std::same_as<bool>;
             }
             ||
             requires
             {
                 requires sizeof...(Args) == 1;
 
-                {self.clear()};
-                {self.find(key)} -> std::forward_iterator;
-                {self.contains(key)} -> std::same_as<bool>;
-                {self.insert({key, generic_value})};
-                {self.empty()} -> std::same_as<bool>;
+                { self.clear() };
+                { self.find(key) } -> std::forward_iterator;
+                { self.contains(key) } -> std::same_as<bool>;
+                { self.insert({key, generic_value}) };
+                { self.empty() } -> std::same_as<bool>;
             }
             ||
             requires
             {
                 requires sizeof...(Args) == 0;
 
-                {self.clear()};
-                {self.find(generic_key)} -> std::forward_iterator;
-                {self.contains(generic_key)} -> std::same_as<bool>;
-                {self.insert({generic_key, generic_value})};
-                {self.empty()} -> std::same_as<bool>;
+                { self.clear() };
+                { self.find(generic_key) } -> std::forward_iterator;
+                { self.contains(generic_key) } -> std::same_as<bool>;
+                { self.insert({generic_key, generic_value}) };
+                { self.empty() } -> std::same_as<bool>;
             };
     };
 
@@ -168,19 +168,24 @@ namespace Platform::Collections::System  // TODO пока что так
             {
                 requires sizeof...(Item) == 1;
 
-                {self.push_back(item)};
-                {self.insert(const_iterator, item)};
-                {self.erase(const_iterator)};
+                { self[index] } -> std::same_as<decltype(item)&>;
+                { self.push_back(item) };
+                { self.insert(const_iterator, item) };
+                { self.erase(const_iterator) };
             }
             ||
             requires
             {
                 requires sizeof...(Item) == 0;
 
-                {self.push_back(generic_item)};
-                {self.insert(const_iterator, generic_item)};
-                {self.erase(const_iterator)};
+                { self[index] } -> std::same_as<decltype(generic_item)&>;
+                { self.push_back(generic_item) };
+                { self.insert(const_iterator, generic_item) };
+                { self.erase(const_iterator) };
             };
+
+        { self.size() };
+        { self.clear() };
     };
 
     template<IList Self>
