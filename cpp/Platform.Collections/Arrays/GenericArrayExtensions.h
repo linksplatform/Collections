@@ -64,7 +64,7 @@
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static void AddFirst(TArray& array, std::integral auto& position, const Interfaces::IArray<TItem> auto& elements)
     {
-        array[position++] = elements[0];
+        std::ranges::begin(array)[position++] = std::ranges::begin(elements)[0];
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
