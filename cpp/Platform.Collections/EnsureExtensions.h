@@ -3,7 +3,7 @@
     namespace EnsureExtensions
     {
         template<typename T>
-        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName, std::string message)
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::Interfaces::ICollection auto& argument, std::string argumentName, std::string message)
         {
             if (argument.IsNullOrEmpty())
             {
@@ -12,13 +12,13 @@
         }
 
         template<typename T>
-        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName)
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::Interfaces::ICollection auto& argument, std::string argumentName)
         {
             ArgumentNotEmpty(root, argument, argumentName, {});
         }
 
         template<typename T>
-        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::System::ICollection auto& argument)
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureAlwaysExtensionRoot root, Platform::Collections::Interfaces::ICollection auto& argument)
         {
             ArgumentNotEmpty(root, argument, {}, {});
         }
@@ -44,19 +44,19 @@
         // DEBUG REGION
 
         template<typename T>
-        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName, std::string message)
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::Interfaces::ICollection auto& argument, std::string argumentName, std::string message)
         {
             ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, argumentName, message);
         }
 
         template<typename T>
-        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument, std::string argumentName)
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::Interfaces::ICollection auto& argument, std::string argumentName)
         {
             ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, argumentName, {});
         }
 
         template<typename T>
-        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::System::ICollection auto& argument)
+        static void ArgumentNotEmpty(Platform::Exceptions::ExtensionRoots::EnsureOnDebugExtensionRoot root, Platform::Collections::Interfaces::ICollection auto& argument)
         {
             ArgumentNotEmpty(Platform::Exceptions::Ensure::Always, argument, {}, {});
         }

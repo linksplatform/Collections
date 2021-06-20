@@ -1,13 +1,13 @@
 ﻿namespace Platform::Collections
 {
-    // basic string is a collection with random_access_iterator (is System::IArray)
+    // basic string is a collection with random_access_iterator (is Interfaces::IArray)
     template<typename Self>
     concept basic_string = requires
     {
-        requires std::same_as<Self, std::basic_string<typename System::Array<Self>::Item>>;
+        requires std::same_as<Self, std::basic_string<typename Interfaces::Array<Self>::Item>>;
     };
 
-    template<basic_string TString, typename TChar = typename System::Array<TString>::Item>
+    template<basic_string TString, typename TChar = typename Interfaces::Array<TString>::Item>
     static auto CapitalizeFirstLetter(TString string)
     {
         for (auto& it : string)
@@ -21,13 +21,13 @@
         return string;
     }
 
-    template<basic_string TString, typename TChar = typename System::Array<TString>::Item>
+    template<basic_string TString, typename TChar = typename Interfaces::Array<TString>::Item>
     static auto Truncate(const TString& string, std::int32_t maxLength)
     {
         return string.empty() ? TString{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
     }
 
-    template<basic_string TString, typename TChar = typename System::Array<TString>::Item>
+    template<basic_string TString, typename TChar = typename Interfaces::Array<TString>::Item>
     static auto TrimSingle(const TString& string, TChar charToTrim)
     {
         if (!string.empty())

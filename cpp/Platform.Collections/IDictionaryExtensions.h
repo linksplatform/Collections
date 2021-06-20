@@ -1,8 +1,8 @@
 ﻿namespace Platform::Collections::Dictionaries
 {
-    template<System::IDictionary TDictionary,
-             typename TKey = typename System::Dictionary<TDictionary>::Key,
-             typename TValue = typename System::Dictionary<TDictionary>::Value>
+    template<Interfaces::IDictionary TDictionary,
+             typename TKey = typename Interfaces::Dictionary<TDictionary>::Key,
+             typename TValue = typename Interfaces::Dictionary<TDictionary>::Value>
     void Add(TDictionary& dictionary, TKey key, TValue value)
     {
         if (dictionary.contains(key))

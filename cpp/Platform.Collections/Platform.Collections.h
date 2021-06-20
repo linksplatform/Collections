@@ -28,8 +28,7 @@
 
 #include <Platform.Hashing.h>
 #include <Platform.Equality.h>
-
-#include ".Concepts/BaseConcepts.h"
+#include <Platform.Interfaces.h>
 
 #include "Arrays/GenericArrayExtensions.h"
 #include "Arrays/ArrayFiller[TElement].h"

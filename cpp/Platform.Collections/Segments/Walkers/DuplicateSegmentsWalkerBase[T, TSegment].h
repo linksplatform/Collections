@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class DuplicateSegmentsWalkerBase;
-    template <typename T, System::IArray TArray, typename TSegment>
+    template <typename T, Interfaces::IArray TArray, typename TSegment>
     requires std::derived_from<TSegment, std::span<T>>
     class DuplicateSegmentsWalkerBase<T, TArray, TSegment> : public AllSegmentsWalkerBase<T, TArray, TSegment>
     {

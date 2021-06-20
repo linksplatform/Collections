@@ -1,20 +1,17 @@
 cmake_minimum_required(VERSION 3.17)
-set(CMAKE_LOCAL_PROJECT_NAME Platform.Collections)
-project(${CMAKE_LOCAL_PROJECT_NAME})
 
-add_subdirectory(${CMAKE_LOCAL_PROJECT_NAME})
+project(Platform.Collections)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+set(CONAN_DISABLE_CHECK_COMPILER TRUE)
+conan_basic_setup(TARGETS)
 
-get_directory_property(IS_SUBPROJECT PARENT_DIRECTORY)
+add_subdirectory(${CMAKE_PROJECT_NAME})
+target_link_libraries(${CMAKE_PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.interfaces)
 
-macro(INCLUDE_TESTS TESTS_NAME)
-    add_subdirectory(${TESTS_NAME}.Tests)
-    target_link_libraries(${TESTS_NAME}.Tests PUBLIC ${TESTS_NAME}.Library)
-endmacro()
+# FUTURE
+    # target_link_libraries(${CURRENT_PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.equality) # may be Platform.Equality
+    # target_link_libraries(${CURRENT_PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.hashing) # may be Platform.Hashing
+# FUTURE
 
-if(DEFINED LINKS_PLATFORM_TESTS)
-    if(${LINKS_PLATFORM_TESTS})
-        INCLUDE_TESTS(${CMAKE_LOCAL_PROJECT_NAME})
-    endif()
-elseif(NOT IS_SUBPROJECT)
-    INCLUDE_TESTS(${CMAKE_LOCAL_PROJECT_NAME})
-endif()
+add_subdirectory(${CMAKE_PROJECT_NAME}.Tests)
+target_link_libraries(${CMAKE_PROJECT_NAME}.Tests PUBLIC ${CMAKE_PROJECT_NAME}.Library)

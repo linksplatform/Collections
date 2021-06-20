@@ -2,7 +2,7 @@
 {
     template<typename...>
     class ListFiller;
-    template<System::IList TList, typename TReturnConstant>
+    template<Interfaces::IList TList, typename TReturnConstant>
     class ListFiller<TList, TReturnConstant>
     {
         using TElement = std::ranges::range_value_t<TList>;
@@ -39,19 +39,19 @@
         }
 
     public:
-        bool AddFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
+        bool AddFirstAndReturnTrue(const Interfaces::IArray<TElement> auto& elements)
         {
             return Lists::AddFirstAndReturnTrue(_list, elements);
         }
 
     public:
-        bool AddAllAndReturnTrue(const System::IArray<TElement> auto& elements)
+        bool AddAllAndReturnTrue(const Interfaces::IArray<TElement> auto& elements)
         {
             return Lists::AddAllAndReturnTrue(_list, elements);
         }
 
     public:
-        bool AddSkipFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
+        bool AddSkipFirstAndReturnTrue(const Interfaces::IArray<TElement> auto& elements)
         {
             return Lists::AddSkipFirstAndReturnTrue(_list, elements);
         }
@@ -64,21 +64,21 @@
         }
 
     public:
-        TReturnConstant AddFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             Lists::AddFirst(_list, elements);
             return _returnConstant;
         }
 
     public:
-        TReturnConstant AddAllAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddAllAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             Lists::AddAll(_list, elements);
             return _returnConstant;
         }
 
     public:
-        TReturnConstant AddSkipFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddSkipFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             Lists::AddSkipFirst(_list, elements);
             return _returnConstant;

@@ -2,7 +2,7 @@
 {
     template<typename...>
     class SetFiller;
-    template<System::ISet TSet, typename TReturnConstant>
+    template<Interfaces::ISet TSet, typename TReturnConstant>
     class SetFiller<TSet, TReturnConstant>
     {
         using TElement = std::ranges::range_value_t<TSet>;
@@ -33,17 +33,17 @@
             return Sets::AddAndReturnTrue(_set, element);
         }
 
-        bool AddFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
+        bool AddFirstAndReturnTrue(const Interfaces::IArray<TElement> auto& elements)
         {
             return Sets::AddFirstAndReturnTrue(_set, elements);
         }
 
-        bool AddAllAndReturnTrue(const System::IArray<TElement> auto& elements)
+        bool AddAllAndReturnTrue(const Interfaces::IArray<TElement> auto& elements)
         {
             return Sets::AddAllAndReturnTrue(_set, elements);
         }
 
-        bool AddSkipFirstAndReturnTrue(const System::IArray<TElement> auto& elements)
+        bool AddSkipFirstAndReturnTrue(const Interfaces::IArray<TElement> auto& elements)
         {
             return Sets::AddSkipFirstAndReturnTrue(_set, elements);
         }
@@ -54,19 +54,19 @@
             return _returnConstant;
         }
 
-        TReturnConstant AddFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             Sets::AddFirst(_set, elements);
             return _returnConstant;
         }
 
-        TReturnConstant AddAllAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddAllAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             Sets::AddAll(_set, elements);
             return _returnConstant;
         }
 
-        TReturnConstant AddSkipFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddSkipFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             Sets::AddSkipFirst(_set, elements);
             return _returnConstant;

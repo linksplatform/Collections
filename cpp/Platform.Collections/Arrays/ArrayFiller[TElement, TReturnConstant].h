@@ -2,10 +2,10 @@
 {
     template<typename...>
     class ArrayFiller;
-    template<System::IArray TArray, typename TReturnConstant>
+    template<Interfaces::IArray TArray, typename TReturnConstant>
     class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
     {
-        using TElement = typename System::Array<TArray>::Item;
+        using TElement = typename Interfaces::Array<TArray>::Item;
         using base = ArrayFiller<TArray>;
 
     protected:
@@ -31,19 +31,19 @@
         }
 
     public:
-        TReturnConstant AddFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             return Arrays::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
 
     public:
-        TReturnConstant AddAllAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddAllAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             return Arrays::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
 
     public:
-        TReturnConstant AddSkipFirstAndReturnConstant(const System::IArray<TElement> auto& elements)
+        TReturnConstant AddSkipFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
         {
             return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
