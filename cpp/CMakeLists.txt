@@ -19,5 +19,3 @@ set_target_properties(${PROJECT_NAME}.Tests PROPERTIES CXX_STANDARD 20)
 
 target_link_libraries(${PROJECT_NAME}.Tests PUBLIC CONAN_PKG::gtest)
 target_link_libraries(${PROJECT_NAME}.Tests PUBLIC ${PROJECT_NAME}.Library)
-
-
