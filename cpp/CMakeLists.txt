@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.17)
 
 project(Platform.Collections)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-set(CONAN_DISABLE_CHECK_COMPILER TRUE)
 conan_basic_setup(TARGETS)
 
 add_library(${PROJECT_NAME}.Library INTERFACE)
