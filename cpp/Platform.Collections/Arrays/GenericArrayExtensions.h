@@ -11,7 +11,7 @@
     requires std::default_initializable<TItem>
     static bool TryGetElement(const TArray& array, std::integral auto index, TItem& element) noexcept
     {
-        if (std::ranges::size(array) > index && index >= 0)
+        if (index >= 0 && std::ranges::size(array) > index)
         {
             element = std::ranges::begin(array)[index];
             return true;
@@ -23,7 +23,7 @@
         }
     }
 
-    static auto ShiftRight(const Interfaces::IArray auto& array, std::integral auto shift)
+    static Interfaces::IArray auto ShiftRight(const Interfaces::IArray auto& array, std::integral auto shift)
     {
         if (shift < 0)
         {
