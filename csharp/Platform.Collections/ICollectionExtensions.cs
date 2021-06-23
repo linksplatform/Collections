@@ -16,6 +16,10 @@ namespace Platform.Collections
         /// <para>Checking collection for empty.</para>
         /// <para>Проверяет коллекцию на пустоту.</para>
         /// </summary>
+        /// <typeparam name="T">
+        /// <para>
+        /// <para>
+        /// </typeparam>
         /// <param name="collection">
         /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
         /// <para>Метода принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
@@ -39,8 +43,6 @@ namespace Platform.Collections
         /// <para></para>
         /// <para></para>
         /// </returns>
-
-        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AllEqualToDefault<T>(this ICollection<T> collection)
         {
