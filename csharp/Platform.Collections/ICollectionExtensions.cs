@@ -17,8 +17,8 @@ namespace Platform.Collections
         /// <para>Проверяет коллекцию на пустоту.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para></para>
-        /// <para></para>
+        /// <para>Collection item data type.</para>
+        /// <para>Тип данных элемента коллекций.</para>
         /// </typeparam>
         /// <param name="collection">
         /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
@@ -36,8 +36,8 @@ namespace Platform.Collections
         /// <para></para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>
-        /// <para>
+        /// <para>Collection item data type</para>
+        /// <para>Тип данных элемента коллекций</para>
         /// </typeparam>
         /// <param>
         /// <para></para>
