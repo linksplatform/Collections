@@ -38,6 +38,7 @@ namespace Platform.Collections
         /// <para></para>
         /// <para></para>
         /// </returns>
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AllEqualToDefault<T>(this ICollection<T> collection)
         {
