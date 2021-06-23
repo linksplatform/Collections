@@ -17,7 +17,7 @@ namespace Platform.Collections
         /// <para>Проверяет коллекцию на пустоту.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Collection item data type.</para>
+        /// <para>Collection element data type.</para>
         /// <para>Тип данных элемента коллекций.</para>
         /// </typeparam>
         /// <param name="collection">
@@ -36,7 +36,7 @@ namespace Platform.Collections
         /// <para></para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Collection item data type</para>
+        /// <para>Collection element data type</para>
         /// <para>Тип данных элемента коллекций</para>
         /// </typeparam>
         /// <param>
