@@ -9,8 +9,8 @@ namespace Platform.Collections
     public static class ICollectionExtensions
     {
         /// <summary>
-        /// <para>Checking ICollection<T> for empty.</para>
-        /// <para>Проверяет ICollection<T> на пустоту.</para>
+        /// <para>Checking collection for empty.</para>
+        /// <para>Проверяет коллекцию на пустоту.</para>
         /// </summary>
         /// <param>
         /// <para>Method takes an elements collection of ICollection<T> type.</para>
