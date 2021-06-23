@@ -25,7 +25,7 @@ namespace Platform.Collections
         /// <para>Метода принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
         /// </param>
         /// <returns>
-        /// <para>Returns a <see cref="bool"/> type variable equal to False if the collection is empty else returns true.</para>
+        /// <para>Returns a <see cref="bool"/> type variable equal to false if the collection is empty else returns true.</para>
         /// <para>Возвращает переменную типа <see cref="bool"/> равной false если коллекция пустая иначе возвращает true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
