@@ -26,7 +26,18 @@ namespace Platform.Collections
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
-
+        /// <summary>
+        /// <para></para>
+        /// <para></para>
+        /// </summary>
+        /// <param>
+        /// <para></para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para></para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AllEqualToDefault<T>(this ICollection<T> collection)
         {
