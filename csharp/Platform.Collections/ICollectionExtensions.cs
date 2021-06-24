@@ -22,7 +22,7 @@ namespace Platform.Collections
         /// </typeparam>
         /// <param name="collection">
         /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
-        /// <para>Метода принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
+        /// <para>Метод принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
         /// </param>
         /// <returns>
         /// <para>Returns a <see cref="bool"/> type variable equal to false if the collection is empty else returns true.</para>
@@ -32,20 +32,20 @@ namespace Platform.Collections
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
         
         /// <summary>
-        /// <para></para>
-        /// <para></para>
+        /// <para>Checks if all elements of the collection are standard values of type.</para>
+        /// <para>Проверяет являются ли все элементы коллекции значениями по умолчанию типа.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Collection element data type</para>
-        /// <para>Тип данных элемента коллекций</para>
+        /// <para>Collection elements data type.</para>
+        /// <para>Тип данных элементов коллекций.</para>
         /// </typeparam>
         /// <param>
-        /// <para></para>
-        /// <para></para>
+        /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
+        /// <para>Метод принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
         /// </param>
         /// <returns>
-        /// <para></para>
-        /// <para></para>
+        /// <para>Returns a variable of type <see cref="bool"/> equal to true if all elements in the collection are default values else returns false.</para>
+        /// <para>Возвращает переменную типа <see cref="bool"/> равной true если все элементы коллекции являются значениями по умолчанию иначе возвращает false.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AllEqualToDefault<T>(this ICollection<T> collection)
