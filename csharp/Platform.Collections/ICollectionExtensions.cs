@@ -37,7 +37,7 @@ namespace Platform.Collections
         /// </summary>
         /// <typeparam name="T">
         /// <para>The elements collection data type.</para>
-        /// <para>Тип данных элементов коллекций.</para>
+        /// <para>Тип данных элементов коллекциb.</para>
         /// </typeparam>
         /// <param name="collection">
         /// <para>The collection to check.</para>
