@@ -17,23 +17,23 @@ namespace Platform.Collections
         /// <para>Проверяет коллекцию на пустоту.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Collection element data type.</para>
+        /// <para>Collection elements data type.</para>
         /// <para>Тип данных элемента коллекций.</para>
         /// </typeparam>
         /// <param name="collection">
-        /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
-        /// <para>Метод принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
+        /// <para>Takes an elements collection of <see cref="ICollection<T>"/> type.</para>
+        /// <para>Принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
         /// </param>
         /// <returns>
-        /// <para>Returns a <see cref="bool"/> type variable equal to false if the collection is empty else returns true.</para>
-        /// <para>Возвращает переменную типа <see cref="bool"/> равной false если коллекция пустая иначе возвращает true.</para>
+        /// <para>The <see cref="bool"/> type variable equal to false if the collection is empty else returns true.</para>
+        /// <para>Переменная типа <see cref="bool"/> равна false, если коллекция пуста, иначе возвращает true.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
         
         /// <summary>
-        /// <para>Checks if all elements of the collection are standard values of type.</para>
-        /// <para>Проверяет являются ли все элементы коллекции значениями по умолчанию типа.</para>
+        /// <para>Checks if all elements of the collection <see cref="default"/>.</para>
+        /// <para>Проверяет являются ли все элементы коллекции <see cref="default"/>.</para>
         /// </summary>
         /// <typeparam name="T">
         /// <para>Collection elements data type.</para>
