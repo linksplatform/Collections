@@ -17,8 +17,8 @@ namespace Platform.Collections
         /// <para>Проверяет коллекцию на пустоту.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Collection elements data type.</para>
-        /// <para>Тип данных элемента коллекций.</para>
+        /// <para>The elements collection data type.</para>
+        /// <para>Тип данных сбора элементов.</para>
         /// </typeparam>
         /// <param name="collection">
         /// <para>Takes an elements collection of <see cref="ICollection<T>"/> type.</para>
