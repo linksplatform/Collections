@@ -21,8 +21,8 @@ namespace Platform.Collections
         /// <para>Тип данных элементов коллекции.</para>
         /// </typeparam>
         /// <param name="collection">
-        /// <para>Takes an elements collection of <see cref="ICollection<T>"/> type.</para>
-        /// <para>Принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
+        /// <para>The collection to check.</para>
+        /// <para>Коллекция для проверки.</para>
         /// </param>
         /// <returns>
         /// <para>The <see cref="bool"/> type variable equal to false if the collection is empty else returns true.</para>
@@ -40,8 +40,8 @@ namespace Platform.Collections
         /// <para>Тип данных элементов коллекций.</para>
         /// </typeparam>
         /// <param>
-        /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
-        /// <para>Метод принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
+        /// <para>The collection to check.</para>
+        /// <para>Коллекция для проверки.</para>
         /// </param>
         /// <returns>
         /// <para>Returns a variable of type <see cref="bool"/> equal to true if all elements in the collection are default values else returns false.</para>
