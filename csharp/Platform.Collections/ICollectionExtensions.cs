@@ -32,11 +32,11 @@ namespace Platform.Collections
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
         
         /// <summary>
-        /// <para>Checks if all elements of the collection <see cref="default"/>.</para>
-        /// <para>Проверяет являются ли все элементы коллекции <see cref="default"/>.</para>
+        /// <para>Checks if all elements of the collection.<see cref="default"/>.</para>
+        /// <para>Проверяет являются ли все элементы коллекции.<see cref="default"/>.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>The elements collection data type</para>
+        /// <para>The elements collection data type.</para>
         /// <para>Тип данных элементов коллекций.</para>
         /// </typeparam>
         /// <param name="collection">
