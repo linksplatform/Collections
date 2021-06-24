@@ -36,7 +36,7 @@ namespace Platform.Collections
         /// <para>Проверяет являются ли все элементы коллекции <see cref="default"/>.</para>
         /// </summary>
         /// <typeparam name="T">
-        /// <para>Collection elements data type.</para>
+        /// <para>The elements collection data type</para>
         /// <para>Тип данных элементов коллекций.</para>
         /// </typeparam>
         /// <param name="collection">
