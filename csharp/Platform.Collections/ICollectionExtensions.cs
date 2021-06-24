@@ -39,7 +39,7 @@ namespace Platform.Collections
         /// <para>Collection elements data type.</para>
         /// <para>Тип данных элементов коллекций.</para>
         /// </typeparam>
-        /// <param>
+        /// <param name="collection">
         /// <para>The collection to check.</para>
         /// <para>Коллекция для проверки.</para>
         /// </param>
