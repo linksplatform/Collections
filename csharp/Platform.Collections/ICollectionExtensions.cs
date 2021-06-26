@@ -6,8 +6,24 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections
 {
+    /// <summary>
+    /// <para>Presents a set of methods for working with collections.</para>
+    /// <para>Представляет набор методов для работы с коллекциями.</para>
+    /// </summary>
     public static class ICollectionExtensions
     {
+        /// <summary>
+        /// <para>Checking collection for empty.</para>
+        /// <para>Проверяет коллекцию на пустоту.</para>
+        /// </summary>
+        /// <param name="collection">
+        /// <para>Method takes an elements collection of <see cref="ICollection<T>"/> type.</para>
+        /// <para>Метода принимает колекцию элементов <see cref="ICollection<T>"/> типа.</para>
+        /// </param>
+        /// <returns>
+        /// <para>Returns a <see cref="bool"/> type variable equal to False if the collection is empty else returns true.</para>
+        /// <para>Возвращает переменную типа <see cref="bool"/> равной false если коллекция пустая иначе возвращает true.</para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
 
