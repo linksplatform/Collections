@@ -24,10 +24,7 @@
 #include <thread>
 #include <any>
 
-//#include <Platform.Exceptions.h>
-
-#include <Platform.Hashing.h>
-#include <Platform.Equality.h>
+#include <Platform.Exceptions.h>
 #include <Platform.Interfaces.h>
 
 #include "Arrays/GenericArrayExtensions.h"
@@ -71,7 +68,7 @@
 #include "BitStringExtensions.h"
 #include "StringExtensions.h"
 
-//#include "EnsureExtensions.h"
+#include "EnsureExtensions.h"
 
 #include "ICollectionExtensions.h"
 #include "IDictionaryExtensions.h"
