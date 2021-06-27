@@ -8,8 +8,7 @@
         using TElement = typename Interfaces::Array<TArray>::Item;
         using base = ArrayFiller<TArray>;
 
-    protected:
-        TReturnConstant _returnConstant;
+        protected: TReturnConstant _returnConstant;
 
     public:
         ArrayFiller(TArray& array, std::int64_t offset, TReturnConstant returnConstant) :
