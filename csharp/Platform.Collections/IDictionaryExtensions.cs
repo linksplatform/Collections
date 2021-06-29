@@ -8,10 +8,14 @@ namespace Platform.Collections
 {
     /// <summary>
     /// <para>Represents a set of extension methods <see cref="IDictionary{TKey, TValue}"/> array.</para>
-    /// <para>Представляет набор методов расширения <see cref="IDictionary{TKey, TValue}"/>.</para>
+    /// <para>Представляет набор методов расширения <see cref="IDictionary{TKey, TValue}"/>.</para> 
+    /// </summary>  
     public static class IDictionaryExtensions
     {
-        /// <summary>  
+        /// <summary>    
+        /// <para>We get the default value.</para> 
+        /// <para>Получаем дефолтное значение.</para> 
+        /// </summary>  
         /// <typeparam name="dictionary"> 
         /// <para>Dictionary that is a key pair:meaning.</para> 
         /// <para>Словарь который пара ключ:значение</para> 
@@ -31,7 +35,10 @@ namespace Platform.Collections
             return value;
         }
 
-        /// <summary>  
+        /// <summary>    
+        /// <para>Adding a value.</para> 
+        /// <para>Добавляем значение.</para> 
+        /// </summary>   
         /// <typeparam name="dictionary"> 
         /// <para>Dictionary that is a key pair:meaning.</para> 
         /// <para>Словарь который пара ключ:значение</para> 
