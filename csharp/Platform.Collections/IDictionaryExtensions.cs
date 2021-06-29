@@ -9,7 +9,6 @@ namespace Platform.Collections
     /// <summary>
     /// <para>Represents a set of extension methods <see cref="IDictionary{TKey, TValue}"/> array.</para>
     /// <para>Представляет набор методов расширения <see cref="IDictionary{TKey, TValue}"/>.</para>
-    /// </summary>
     public static class IDictionaryExtensions
     {
         /// <summary>  
@@ -25,7 +24,6 @@ namespace Platform.Collections
         /// <para>The value of the active dictionary.</para> 
         /// <para>Значение активного словаря.</para> 
         /// </returns>        
-        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TValue GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
         {
@@ -50,7 +48,6 @@ namespace Platform.Collections
         /// <para>Value that is not in the dictionary.</para> 
         /// <para>Значение, которого нет в dictionary.</para> 
         /// </returns>        
-        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TKey, TValue> valueFactory)
         {
