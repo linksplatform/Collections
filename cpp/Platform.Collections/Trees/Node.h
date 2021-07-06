@@ -19,7 +19,7 @@
     template<typename TValue, typename...>
     class Node
     {
-        public: std::optional<TValue> Value;
+        public: TValue Value;
 
         public: Node() = default;
 
@@ -28,25 +28,21 @@
             Value = value;
         }
     };
-/*
+
     template<typename TValue, NotHelperType TKey, typename ... Tail>
     class Node<TValue, TKey, Tail...>
     {
         using Child = Node<TValue, Tail...>;
-        using Dictionary = std::unordered_map<TKey, Child>;
 
-        private: Dictionary* const _childNodes = new Dictionary();
+        private: std::unordered_map<TKey, Child*> _childNodes;
+        public: auto ChildNodes() -> auto& { return _childNodes; }
 
-        public: Node() = default;
-
-        public: auto& ChildNodes() { return *_childNodes; }
-
-        public: auto& operator[](TKey key)
+        public: auto operator[](const TKey& key) -> Child&
         {
-            if(!_childNodes->contains(key))
+            if(!_childNodes.contains(key))
                 return AddChild(key);
 
-            return ChildNodes()[key];
+            return *_childNodes[key];
         }
 
         public: auto& AddChild(TKey key, const Node& node = Node{})
@@ -60,7 +56,7 @@
             auto* node = this;
             for (const auto& key : keys)
             {
-                Dictionary& dictionary = node->ChildNodes();
+                auto&& dictionary = node->ChildNodes();
 
                 if(!dictionary.contains(key))
                     return nullptr;
@@ -70,7 +66,7 @@
             return node;
         }
     };
-*/
+
     template<typename TValue, typename TKey>
     class Node<TValue, Repeat<TKey>>
     {

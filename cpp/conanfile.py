@@ -1,4 +1,4 @@
-from conans import ConanFile, CMake, tools
+from conans import ConanFile, CMake
 
 
 class PlatformCollectionsConan(ConanFile):
@@ -7,8 +7,8 @@ class PlatformCollectionsConan(ConanFile):
 
     def requirements(self):
         self.requires("gtest/cci.20210126")
-        self.requires("platform.interfaces/0.1.2")
-        self.requires("platform.exceptions/0.0.16")
+        self.requires("platform.interfaces/0.1.3")
+        self.requires("platform.exceptions/0.1.0")
 
     def build(self):
         cmake = CMake(self)
