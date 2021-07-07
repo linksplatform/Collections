@@ -33,21 +33,17 @@
 
         namespace OnDebug
         {
-            static void ArgumentNotEmpty(Interfaces::IEnumerable auto&& argument, const std::string& argumentName = {}, const std::string& message = {})
+            static void ArgumentNotEmpty(auto&&... args)
             {
             #ifndef NDEBUG
-                Always::ArgumentNotEmpty(std::forward<decltype(argument)>(argument),
-                                         std::forward<decltype(argumentName)>(argumentName),
-                                         std::forward<decltype(message)>(message));
+                Always::ArgumentNotEmpty(std::forward<decltype(args)>(args)...);
             #endif
             }
 
-            static void ArgumentNotEmptyAndNotWhiteSpace(const std::string& argument, const std::string& argumentName = {}, const std::string& message = {})
+            static void ArgumentNotEmptyAndNotWhiteSpace(auto&&... args)
             {
             #ifndef NDEBUG
-                Always::ArgumentNotEmptyAndNotWhiteSpace(std::forward<decltype(argument)>(argument),
-                                                         std::forward<decltype(argumentName)>(argumentName),
-                                                         std::forward<decltype(message)>(message));
+                Always::ArgumentNotEmptyAndNotWhiteSpace(std::forward<decltype(args)>(args)...);
             #endif
             }
         }

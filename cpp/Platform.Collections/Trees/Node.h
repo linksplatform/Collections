@@ -89,6 +89,16 @@
             return GetChild(keys) != nullptr;
         }
 
+        public: auto SetChild(const std::vector<TKey>& keys) -> Child&
+        {
+            return SetChildValue(TValue{}, keys);
+        }
+
+        public: auto SetChild(TKey key) -> Child&
+        {
+            SetChildValue(TValue{}, key);
+        }
+
         public: auto SetChildValue(const TValue& value, const std::vector<TKey>& keys) -> Child&
         {
             auto node = this;
@@ -105,16 +115,6 @@
             auto& child = (*this)[key];
             child.Value = value;
             return child;
-        }
-
-        public: auto SetChild(const std::vector<TKey>& keys) -> Child&
-        {
-            return SetChildValue(TValue{}, keys);
-        }
-
-        public: auto SetChild(TKey key) -> Child&
-        {
-            SetChildValue(TValue{}, key);
         }
     };
 }
