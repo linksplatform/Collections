@@ -16,8 +16,8 @@
     template<typename TValue, typename...>
     class Node;
 
-    template<typename TValue, typename...>
-    class Node
+    template<typename TValue>
+    class Node<TValue>
     {
         public: TValue Value;
 
@@ -26,44 +26,6 @@
         public: Node(TValue value)
         {
             Value = value;
-        }
-    };
-
-    template<typename TValue, NotHelperType TKey, typename ... Tail>
-    class Node<TValue, TKey, Tail...>
-    {
-        using Child = Node<TValue, Tail...>;
-
-        private: std::unordered_map<TKey, Child*> _childNodes;
-        public: auto ChildNodes() -> auto& { return _childNodes; }
-
-        public: auto operator[](const TKey& key) -> Child&
-        {
-            if(!_childNodes.contains(key))
-                return AddChild(key);
-
-            return *_childNodes[key];
-        }
-
-        public: auto& AddChild(TKey key, const Node& node = Node{})
-        {
-            Dictionaries::Add(ChildNodes(), key, node);
-            return ChildNodes()[key];
-        }
-
-        auto* GetChild(const Interfaces::IEnumerable auto& keys)
-        {
-            auto* node = this;
-            for (const auto& key : keys)
-            {
-                auto&& dictionary = node->ChildNodes();
-
-                if(!dictionary.contains(key))
-                    return nullptr;
-
-                node = dictionary[key];
-            }
-            return node;
         }
     };
 

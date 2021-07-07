@@ -1,16 +1,13 @@
 ﻿namespace Platform::Collections::Dictionaries
 {
-    template<Interfaces::IDictionary TDictionary,
-             typename TKey = typename Interfaces::Dictionary<TDictionary>::Key,
-             typename TValue = typename Interfaces::Dictionary<TDictionary>::Value>
-    void Add(TDictionary& dictionary, TKey key, TValue value)
+    template<Interfaces::IDictionary TDictionary>
+    void Add(TDictionary& dictionary, auto&& key, auto&& value)
     {
-        if (dictionary.contains(key))
+        if (dictionary.contains(std::forward<decltype(key)>(key)))
         {
-            // FIXME
-            throw std::logic_error("/*Тут текст исключения, пародирующий C#*/");
+            throw std::logic_error("Unknown exception");
         }
 
-        dictionary.insert({key, value});
+        dictionary.insert({std::forward<decltype(key)>(key), std::forward<decltype(value)>(value)});
     }
 }// namespace Platform::Collections::Dictionaries
