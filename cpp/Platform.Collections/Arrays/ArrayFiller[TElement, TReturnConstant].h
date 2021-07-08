@@ -10,31 +10,30 @@
 
         protected: TReturnConstant _returnConstant;
 
-        public: ArrayFiller(TArray& array, std::int64_t offset, TReturnConstant returnConstant) :
-            ArrayFiller<TArray>(array, offset)
-        {
-            _returnConstant = returnConstant;
-        }
-
-        public: ArrayFiller(TArray& array, TReturnConstant returnConstant) :
-            ArrayFiller(array, 0, returnConstant)
+        public: ArrayFiller(TArray& array, std::int64_t offset, auto&& returnConstant) :
+            ArrayFiller<TArray>(array, offset), _returnConstant(std::forward<decltype(returnConstant)>(returnConstant))
         {
         }
 
-        public: TReturnConstant AddAndReturnConstant(TElement element)
+        public: ArrayFiller(TArray& array, auto&& returnConstant) :
+            ArrayFiller(array, 0, std::forward<decltype(returnConstant)>(returnConstant))
         {
-            return Arrays::AddAndReturnConstant(base::_array, base::_position, element, _returnConstant);
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
+        public: TReturnConstant AddAndReturnConstant(auto&& element)
+        {
+            return Arrays::AddAndReturnConstant(base::_array, base::_position, std::forward<decltype(element)>(element), _returnConstant);
+        }
+
+        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
         {
             return Arrays::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
-        public: TReturnConstant AddAllAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
+        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
         {
             return Arrays::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }
-        public: TReturnConstant AddSkipFirstAndReturnConstant(const Interfaces::IArray<TElement> auto& elements)
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
         {
             return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant);
         }

@@ -1,34 +1,27 @@
 ﻿namespace Platform::Collections
 {
-    // basic string is a collection with random_access_iterator (is Interfaces::IArray)
-    template<typename Self>
-    concept basic_string = requires
-    {
-        requires std::same_as<Self, std::basic_string<typename Interfaces::Array<Self>::Item>>;
-    };
-
-    template<basic_string TString, typename TChar = typename Interfaces::Array<TString>::Item>
-    static auto CapitalizeFirstLetter(TString string)
+    template<typename TChar>
+    static auto&& CapitalizeFirstLetter(std::basic_string<TChar> string)
     {
         for (auto& it : string)
         {
             if (std::isalpha(it))
             {
                 it = std::toupper(it);
-                return string;
+                return std::move(string);
             }
         }
-        return string;
+        return std::move(string);
     }
 
-    template<basic_string TString, typename TChar = typename Interfaces::Array<TString>::Item>
-    static auto Truncate(const TString& string, std::int32_t maxLength)
+    template<typename TChar>
+    static auto&& Truncate(std::basic_string<TChar> string, std::int32_t maxLength)
     {
-        return string.empty() ? TString{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
+        return string.empty() ? std::basic_string<TChar>{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
     }
 
-    template<basic_string TString, typename TChar = typename Interfaces::Array<TString>::Item>
-    static auto TrimSingle(const TString& string, TChar charToTrim)
+    template<typename TChar>
+    static auto&& TrimSingle(std::basic_string<TChar> string, TChar charToTrim)
     {
         if (!string.empty())
         {
@@ -40,7 +33,7 @@
                 }
                 else
                 {
-                    return string;
+                    return std::move(string);
                 }
             }
             else
@@ -60,7 +53,7 @@
         }
         else
         {
-            return string;
+            return std::move(string);
         }
     }
 }// namespace Platform::Collections

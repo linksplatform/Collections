@@ -4,17 +4,21 @@ namespace Platform::Collections::Tests
 {
     TEST(StringTests, CapitalizeFirstLetterTest)
     {
-        ASSERT_EQ("Hello", CapitalizeFirstLetter(std::string{"hello"}));
-        ASSERT_EQ("Hello", CapitalizeFirstLetter(std::string{"Hello"}));
-        ASSERT_EQ("  Hello", CapitalizeFirstLetter(std::string{"  hello"}));
+        using namespace std::string_literals;
+
+        ASSERT_EQ("Hello", CapitalizeFirstLetter("hello"s));
+        ASSERT_EQ("Hello", CapitalizeFirstLetter("Hello"s));
+        ASSERT_EQ("  Hello", CapitalizeFirstLetter("  hello"s));
     }
 
     TEST(StringTests, TrimSingleTest)
     {
-        ASSERT_EQ("", TrimSingle(std::string{"'"}, '\''));
-        ASSERT_EQ("", TrimSingle(std::string{"''"}, '\''));
-        ASSERT_EQ("hello", TrimSingle(std::string{"'hello'"}, '\''));
-        ASSERT_EQ("hello", TrimSingle(std::string{"hello'"}, '\''));
-        ASSERT_EQ("hello", TrimSingle(std::string{"'hello"}, '\''));
+        using namespace std::string_literals;
+
+        ASSERT_EQ("", TrimSingle("'"s, '\''));
+        ASSERT_EQ("", TrimSingle("''"s, '\''));
+        ASSERT_EQ("hello", TrimSingle("'hello'"s, '\''));
+        ASSERT_EQ("hello", TrimSingle("hello'"s, '\''));
+        ASSERT_EQ("hello", TrimSingle("'hello"s, '\''));
     }
 }// namespace Platform::Collections::Tests
