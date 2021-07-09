@@ -47,10 +47,7 @@
         return true;
     }
 
-    static void AddSkipFirst(Interfaces::ISet auto& set, Interfaces::IArray auto&& elements)
-    {
-        AddSkipFirst(set, elements, 1);
-    }
+    static void AddSkipFirst(Interfaces::ISet auto& set, Interfaces::IArray auto&& elements) { AddSkipFirst(set, elements, 1); }
 
     static void AddSkipFirst(Interfaces::ISet auto& set, Interfaces::IArray auto&& elements, std::integral auto skip)
     {
@@ -60,8 +57,5 @@
         }
     }
 
-    static bool DoNotContains(const Interfaces::ISet auto& set, auto&& element)
-    {
-        return !set.contains(element);
-    }
+    static bool DoNotContains(const Interfaces::ISet auto& set, auto&& element) { return not set.contains(element); }
 }

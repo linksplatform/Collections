@@ -43,16 +43,10 @@
         }
     }
 
-    static auto ShiftRight(const Interfaces::IArray auto& array)
-    {
-        return ShiftRight(array, 1);
-    }
+    static auto ShiftRight(const Interfaces::IArray auto& array) { return ShiftRight(array, 1); }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static void Add(TArray& array, std::integral auto& position, const TItem& element)
-    {
-        std::ranges::begin(array)[position++] = element;
-    }
+    static void Add(TArray& array, std::integral auto& position, const TItem& element) { array[position++] = element; }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static auto&& AddAndReturnConstant(TArray& array, std::integral auto& position, const TItem& element, const auto& returnConstant)
@@ -62,10 +56,7 @@
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static void AddFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements)
-    {
-        array[position++] = elements[0];
-    }
+    static void AddFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements) { array[position++] = elements[0]; }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static auto&& AddFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, const auto& returnConstant)
@@ -83,14 +74,14 @@
         }
     }
 
-    static auto&& AddAllAndReturnConstant(Interfaces::IArray auto& array, std::integral auto& position, Interfaces::IArray auto elements, auto returnConstant)
+    static auto&& AddAllAndReturnConstant(Interfaces::IArray auto& array, std::integral auto& position, Interfaces::IArray auto&& elements, auto returnConstant)
     {
         AddAll(array, position, elements);
         return returnConstant;
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto elements, std::integral auto skip)
+    static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, std::integral auto skip)
     {
         for (auto&& element : elements | std::views::drop(skip))
         {
@@ -99,10 +90,7 @@
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements)
-    {
-        AddSkipFirst(array, position, elements, 1);
-    }
+    static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements) { AddSkipFirst(array, position, elements, 1); }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static auto&& AddSkipFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, auto&& constant)

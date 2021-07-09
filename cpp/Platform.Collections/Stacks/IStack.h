@@ -1,14 +1,14 @@
 ﻿namespace Platform::Collections::Stacks
 {
-    template <typename T, typename TElement> concept IStack = requires(T t, TElement item)
+    template<typename Self, typename TElement>
+    concept IStack = requires(Self self, TElement item)
     {
-        { t.empty() } -> std::same_as<bool>;
+        { self.empty() } -> std::same_as<bool>;
 
-        t.push(item);
+        { self.push(item) };
 
-        //{t.pop()} -> std::same_as<TElement>;
-        t.pop();
+        { self.pop() };
 
-        { t.top() } -> std::same_as<TElement&>;
+        { self.top() } -> std::same_as<TElement&>;
     };
 }

@@ -53,15 +53,9 @@
             return *_childNodes[key];
         }
 
-        public: auto AddChild(const TKey& key, const TValue& value = {}) -> Child&
+        public: auto ContainsChild(const std::vector<TKey>& keys) -> bool
         {
-            return AddChild(key, Child(value));
-        }
-
-        public: auto AddChild(TKey key, const Child& child) -> Child&
-        {
-            Dictionaries::Add(_childNodes, key, new Child{child});
-            return *_childNodes[key];
+            return GetChild(keys) != nullptr;
         }
 
         public: auto GetChild(const std::vector<TKey>& keys) -> Child*
@@ -84,9 +78,15 @@
             return (child == nullptr) ? nullptr : &child->Value;
         }
 
-        public: auto ContainsChild(const std::vector<TKey>& keys) -> bool
+        public: auto AddChild(const TKey& key, const TValue& value = {}) -> Child&
         {
-            return GetChild(keys) != nullptr;
+            return AddChild(key, Child(value));
+        }
+
+        public: auto AddChild(TKey key, const Child& child) -> Child&
+        {
+            Dictionaries::Add(_childNodes, key, new Child{child});
+            return *_childNodes[key];
         }
 
         public: auto SetChild(const std::vector<TKey>& keys) -> Child&

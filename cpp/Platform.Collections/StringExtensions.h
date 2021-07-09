@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections
 {
     template<typename TChar>
-    static auto&& CapitalizeFirstLetter(std::basic_string<TChar> string)
+    static auto CapitalizeFirstLetter(std::basic_string<TChar> string)
     {
         for (auto& it : string)
         {
@@ -15,13 +15,13 @@
     }
 
     template<typename TChar>
-    static auto&& Truncate(std::basic_string<TChar> string, std::int32_t maxLength)
+    static auto Truncate(std::basic_string<TChar> string, std::int32_t maxLength)
     {
-        return string.empty() ? std::basic_string<TChar>{} : string.substr(0, std::min(string.size(), (size_t) maxLength));
+        return string.empty() ? std::basic_string<TChar>{} : std::move(string.substr(0, std::min(string.size(), (size_t) maxLength)));
     }
 
     template<typename TChar>
-    static auto&& TrimSingle(std::basic_string<TChar> string, TChar charToTrim)
+    static auto TrimSingle(std::basic_string<TChar> string, TChar charToTrim)
     {
         if (!string.empty())
         {
@@ -48,7 +48,7 @@
                 {
                     right--;
                 }
-                return string.substr(left, right - left + 1);
+                return std::move(string.substr(left, right - left + 1));
             }
         }
         else

@@ -31,49 +31,49 @@
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static bool AddFirstAndReturnTrue(TList& list, const Interfaces::IArray<TItem> auto& elements)
+    static bool AddFirstAndReturnTrue(TList& list, Interfaces::IArray<TItem> auto&& elements)
     {
         AddFirst(list, elements);
         return true;
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static void AddFirst(TList& list, const Interfaces::IArray<TItem> auto& elements)
+    static void AddFirst(TList& list, Interfaces::IArray<TItem> auto&& elements)
     {
         list.push_back(*std::ranges::begin(elements));
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static bool AddAllAndReturnTrue(TList& list, const Interfaces::IArray<TItem> auto& elements)
+    static bool AddAllAndReturnTrue(TList& list, Interfaces::IArray<TItem> auto&& elements)
     {
         AddAll(list, elements);
         return true;
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static void AddAll(TList& list, const Interfaces::IArray<TItem> auto& elements)
+    static void AddAll(TList& list, Interfaces::IArray<TItem> auto&& elements)
     {
-        for (const auto& element : elements)
+        for (auto&& element : elements)
         {
             list.push_back(element);
         }
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static bool AddSkipFirstAndReturnTrue(TList& list, const Interfaces::IArray<TItem> auto& elements)
+    static bool AddSkipFirstAndReturnTrue(TList& list, Interfaces::IArray<TItem> auto&& elements)
     {
         AddSkipFirst(elements);
         return true;
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static void AddSkipFirst(TList& list, const Interfaces::IArray<TItem> auto& elements)
+    static void AddSkipFirst(TList& list, Interfaces::IArray<TItem> auto&& elements)
     {
         AddSkipFirst(list, elements, 1);
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
-    static void AddSkipFirst(TList& list, const Interfaces::IArray<TItem> auto& elements, std::integral auto skip)
+    static void AddSkipFirst(TList& list, Interfaces::IArray<TItem> auto&& elements, std::integral auto skip)
     {
         for (const auto& element : elements | std::views::drop(skip))
         {
@@ -81,13 +81,7 @@
         }
     }
 
-    static auto ShiftRight(const Interfaces::IList auto& list)
-    {
-        return Arrays::ShiftRight(list);
-    }
+    static auto ShiftRight(Interfaces::IList auto&& list) { return Arrays::ShiftRight(list); }
 
-    static auto ShiftRight(const Interfaces::IList auto& list, std::integral auto shift)
-    {
-        return Arrays::ShiftRight(list, shift);
-    }
+    static auto ShiftRight(Interfaces::IList auto&& list, std::integral auto shift) { return Arrays::ShiftRight(list, shift); }
 }// namespace Platform::Collections::Lists

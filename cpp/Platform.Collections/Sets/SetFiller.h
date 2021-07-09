@@ -20,53 +20,62 @@
         {
         }
 
-        public:  void Add(TElement element)
+        public: void Add(TElement element) { _set.insert(element); }
+
+        public: bool AddAndReturnTrue(TElement element) { return Sets::AddAndReturnTrue(_set, element); }
+
+        public:  bool AddFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Sets::AddFirstAndReturnTrue(_set, elements); }
+
+        public:  bool AddAllAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Sets::AddAllAndReturnTrue(_set, elements); }
+
+        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Sets::AddSkipFirstAndReturnTrue(_set, elements); }
+
+        public: TReturnConstant AddAndReturnConstant(TElement element) &
         {
             _set.insert(element);
+            return std::move(_returnConstant);
         }
 
-        public:  bool AddAndReturnTrue(TElement element)
-        {
-            return Sets::AddAndReturnTrue(_set, element);
-        }
-
-        public:  bool AddFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements)
-        {
-            return Sets::AddFirstAndReturnTrue(_set, elements);
-        }
-
-        public:  bool AddAllAndReturnTrue(Interfaces::IArray<TElement> auto&& elements)
-        {
-            return Sets::AddAllAndReturnTrue(_set, elements);
-        }
-
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements)
-        {
-            return Sets::AddSkipFirstAndReturnTrue(_set, elements);
-        }
-
-        public: TReturnConstant AddAndReturnConstant(TElement element)
+        public: TReturnConstant&& AddAndReturnConstant(TElement element) &&
         {
             _set.insert(element);
-            return _returnConstant;
+            return std::move(_returnConstant);
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
+        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
         {
             Sets::AddFirst(_set, elements);
-            return _returnConstant;
+            return std::move(_returnConstant);
         }
 
-        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
+        public: TReturnConstant&& AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
+        {
+            Sets::AddFirst(_set, elements);
+            return std::move(_returnConstant);
+        }
+
+        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
         {
             Sets::AddAll(_set, elements);
-            return _returnConstant;
+            return std::move(_returnConstant);
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
+        public: TReturnConstant&& AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
+        {
+            Sets::AddAll(_set, elements);
+            return std::move(_returnConstant);
+        }
+
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
         {
             Sets::AddSkipFirst(_set, elements);
-            return _returnConstant;
+            return std::move(_returnConstant);
+        }
+
+        public: TReturnConstant&& AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
+        {
+            Sets::AddSkipFirst(_set, elements);
+            return std::move(_returnConstant);
         }
     };
 
