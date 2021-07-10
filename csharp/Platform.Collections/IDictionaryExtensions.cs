@@ -23,16 +23,14 @@ namespace Platform.Collections
         /// <paramref name="dictionary"/> или значение по умолчанию, если оно не существует.
         /// </para> 
         /// </summary>   
-        /// <typeparam name="dictionary"> 
+        /// <paramref name="dictionary"> 
         /// <para>  
         /// <see cref="IDictionary<TKey, TValue>"/> from which to find the value associated with the <paramref name="key"/>.
         /// </para> 
-        /// <see cref="IDictionary<TKey, TValue>"/> из которого нужно найти значение, связанное с <paramref name="key"/>.
-        /// </typeparam>   
-        /// <typeparam name="key"> 
+        /// <see cref="IDictionary<TKey, TValue>"/> из которого нужно найти значение, связанное с <paramref name="key"/>.  
+        /// <paramref name="key"> 
         /// <para>The key.</para> 
-        /// <para>Ключ.</para> 
-        /// </typeparam>  
+        /// <para>Ключ.</para>  
         /// <returns> 
         /// <para> 
         /// The value associated with the   
@@ -57,7 +55,7 @@ namespace Platform.Collections
         /// <para>Получает значение, связанное с <paramref name="key"  
         /// <paramref name="dictionary"/> или добавляет его, если он не существует.</para> 
         /// </summary>   
-        /// <typeparam name="dictionary"> 
+        /// <paramref name="dictionary"> 
         /// <para>  
         /// An <see cref="IDictionary<TKey, TValue>"/> to find the value associated with the  
         /// <paramref name="key"/> or to which to add a key-value pair if the  
@@ -66,16 +64,13 @@ namespace Platform.Collections
         /// <para>  
         /// Экземпляр <see cref="IDictionary<TKey, TValue>"/> из которого нужно найти значение ключа 
         /// <paramref name="key"/>, или добавить его, если ключ не существует.
-        /// </para> 
-        /// </typeparam>   
+        /// </para>   
         /// <paramref name="key"> 
         /// <para>A key of the element to add.</para> 
-        /// <para>Ключ добавляемого элемента.</para> 
-        /// </typeparam>  
+        /// <para>Ключ добавляемого элемента.</para>  
         /// <paramref name="valueFactory">  
         /// <para>The function that gets the key and returns a value for it.</para> 
         /// <para>Функция, которая получает ключ и возвращает значение для него.</para> 
-        /// </typeparam>  
         /// <returns> 
         /// <para>The value associated with the 
         /// <paramref name="key"/> in the  
