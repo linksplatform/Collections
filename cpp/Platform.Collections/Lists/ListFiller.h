@@ -11,15 +11,9 @@
 
         protected: TReturnConstant _returnConstant;
 
-        public: ListFiller(TList& list, auto&& returnConstant)
-            : _list(list), _returnConstant(std::forward<decltype(returnConstant)>(returnConstant))
-        {
-        }
+        public: ListFiller(TList& list, auto&& returnConstant) : _list(list), _returnConstant(std::forward<decltype(returnConstant)>(returnConstant)) { }
 
-        public: explicit ListFiller(TList& list)
-            : ListFiller(list, {})
-        {
-        }
+        public: explicit ListFiller(TList& list) : ListFiller(list, {}) { }
 
         public: void Add(TElement element) { _list.push_back(element); }
 
@@ -37,40 +31,22 @@
             return _returnConstant;
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
+        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
         {
             Lists::AddFirst(_list, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
-        public: TReturnConstant&& AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
-        {
-            Lists::AddFirst(_list, elements);
-            return std::move(_returnConstant);
-        }
-
-        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
+        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
         {
             Lists::AddAll(_list, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
-        public: TReturnConstant&& AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
-        {
-            Lists::AddAll(_list, elements);
-            return std::move(_returnConstant);
-        }
-
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements)
         {
             Lists::AddSkipFirst(_list, elements);
-            return std::move(_returnConstant);
-        }
-
-        public: TReturnConstant&& AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
-        {
-            Lists::AddSkipFirst(_list, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
     };
 

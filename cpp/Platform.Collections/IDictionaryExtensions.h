@@ -7,8 +7,8 @@
         {
             throw std::logic_error("Unknown exception");
         }
-
-        dictionary.insert({std::forward<decltype(key)>(key), std::forward<decltype(value)>(value)});
+        using Item = typename Interfaces::Dictionary<TDictionary>::Item;
+        dictionary.insert(Item{std::forward<decltype(key)>(key), std::forward<decltype(value)>(value)});
     }
 
     template<Interfaces::IDictionary TDictionary>
@@ -17,7 +17,7 @@
         if (!dictionary.contains(key))
         {
             auto& value = dictionary[key];
-            value = std::forward<decltype(valueFactory(key))>(valueFactory(key));
+            value = valueFactory(key);
             return value;
         }
         return dictionary[key];

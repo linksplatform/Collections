@@ -23,7 +23,7 @@
         }
     }
 
-    static Interfaces::IArray auto ShiftRight(const Interfaces::IArray auto& array, std::integral auto shift)
+    static Interfaces::IArray auto ShiftRight(Interfaces::IArray auto&& array, std::integral auto shift)
     {
         if (shift < 0)
         {
@@ -36,7 +36,6 @@
         else
         {
             using Item = typename Interfaces::Enumerable<decltype(array)>::Item;
-            // TODO в оригинале возвращает IList, значит и мы так поступим
             auto restrictions = std::vector<Item>(std::ranges::size(array) + shift);
             std::ranges::copy(array, std::ranges::begin(restrictions) + shift);
             return restrictions;
@@ -49,7 +48,7 @@
     static void Add(TArray& array, std::integral auto& position, const TItem& element) { array[position++] = element; }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static auto&& AddAndReturnConstant(TArray& array, std::integral auto& position, const TItem& element, const auto& returnConstant)
+    static auto AddAndReturnConstant(TArray& array, std::integral auto& position, const TItem& element, auto returnConstant)
     {
         Add(array, position, element);
         return returnConstant;
@@ -59,7 +58,7 @@
     static void AddFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements) { array[position++] = elements[0]; }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static auto&& AddFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, const auto& returnConstant)
+    static auto AddFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, auto returnConstant)
     {
         AddFirst(array, position, elements);
         return returnConstant;
@@ -74,10 +73,17 @@
         }
     }
 
-    static auto&& AddAllAndReturnConstant(Interfaces::IArray auto& array, std::integral auto& position, Interfaces::IArray auto&& elements, auto returnConstant)
+    static auto AddAllAndReturnConstant(Interfaces::IArray auto& array, std::integral auto& position, Interfaces::IArray auto&& elements, auto returnConstant)
     {
         AddAll(array, position, elements);
         return returnConstant;
+    }
+
+    template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
+    static auto AddSkipFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, auto constant)
+    {
+        AddSkipFirst(array, position, elements, 1);
+        return constant
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
@@ -91,11 +97,4 @@
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements) { AddSkipFirst(array, position, elements, 1); }
-
-    template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static auto&& AddSkipFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, auto&& constant)
-    {
-        AddSkipFirst(array, position, elements, 1);
-        return std::forward<decltype(constant)>(constant);
-    }
 }// namespace Platform::Collections::Arrays

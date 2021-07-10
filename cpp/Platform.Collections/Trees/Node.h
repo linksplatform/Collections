@@ -19,14 +19,13 @@
     template<typename TValue>
     class Node<TValue>
     {
+        static_assert(std::default_initializable<TValue>);
+
         public: TValue Value;
 
         public: Node() = default;
 
-        public: Node(TValue value)
-        {
-            Value = value;
-        }
+        public: explicit Node(TValue value = {}) : Value(std::move(value)) { }
     };
 
     template<typename TValue, typename TKey>
@@ -40,10 +39,7 @@
         private: std::unordered_map<TKey, Child*> _childNodes;
         public: auto ChildNodes() -> auto& { return _childNodes; }
 
-        public: Node(const TValue& value = {})
-        {
-            Value = value;
-        }
+        public: explicit Node(TValue value = {}) : Value(std::move(value)) { }
 
         public: auto operator[](const TKey& key) -> Child&
         {
@@ -53,10 +49,7 @@
             return *_childNodes[key];
         }
 
-        public: auto ContainsChild(const std::vector<TKey>& keys) -> bool
-        {
-            return GetChild(keys) != nullptr;
-        }
+        public: auto ContainsChild(const std::vector<TKey>& keys) -> bool { return GetChild(keys) != nullptr; }
 
         public: auto GetChild(const std::vector<TKey>& keys) -> Child*
         {
@@ -78,10 +71,7 @@
             return (child == nullptr) ? nullptr : &child->Value;
         }
 
-        public: auto AddChild(const TKey& key, const TValue& value = {}) -> Child&
-        {
-            return AddChild(key, Child(value));
-        }
+        public: auto AddChild(const TKey& key, const TValue& value = {}) -> Child& { return AddChild(key, Child(value)); }
 
         public: auto AddChild(TKey key, const Child& child) -> Child&
         {
@@ -89,15 +79,9 @@
             return *_childNodes[key];
         }
 
-        public: auto SetChild(const std::vector<TKey>& keys) -> Child&
-        {
-            return SetChildValue(TValue{}, keys);
-        }
+        public: auto SetChild(const std::vector<TKey>& keys) -> Child& { return SetChildValue(TValue{}, keys); }
 
-        public: auto SetChild(TKey key) -> Child&
-        {
-            SetChildValue(TValue{}, key);
-        }
+        public: auto SetChild(TKey key) -> Child& { SetChildValue(TValue{}, key); }
 
         public: auto SetChildValue(const TValue& value, const std::vector<TKey>& keys) -> Child&
         {

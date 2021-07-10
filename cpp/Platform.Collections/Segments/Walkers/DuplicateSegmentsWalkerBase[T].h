@@ -4,7 +4,7 @@
     template <typename T, Interfaces::IArray TArray>
     class DuplicateSegmentsWalkerBase<T, TArray> : public DuplicateSegmentsWalkerBase<T, TArray, std::span<T>>
     {
-        using base = AllSegmentsWalkerBase<T, TArray, std::span<T>>;
+        using base = DuplicateSegmentsWalkerBase<T, TArray, std::span<T>>;
 
         protected: DuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength) { }
 

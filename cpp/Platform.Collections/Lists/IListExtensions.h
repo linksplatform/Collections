@@ -75,7 +75,7 @@
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
     static void AddSkipFirst(TList& list, Interfaces::IArray<TItem> auto&& elements, std::integral auto skip)
     {
-        for (const auto& element : elements | std::views::drop(skip))
+        for (auto&& element : elements | std::views::drop(skip))
         {
             list.push_back(element);
         }

@@ -7,7 +7,7 @@
     {
         private: std::int32_t _minimumStringSegmentLength = 0;
 
-        protected: AllSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) { _minimumStringSegmentLength = minimumStringSegmentLength; }
+        protected: explicit AllSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) { _minimumStringSegmentLength = minimumStringSegmentLength; }
 
         protected: AllSegmentsWalkerBase() : AllSegmentsWalkerBase(DefaultMinimumStringSegmentLength) { }
 
@@ -26,6 +26,6 @@
 
         protected: virtual void Iteration(TSegment segment) = 0;
 
-        public: virtual ~AllSegmentsWalkerBase() {}
+        public: virtual ~AllSegmentsWalkerBase() = default;
     };
 }

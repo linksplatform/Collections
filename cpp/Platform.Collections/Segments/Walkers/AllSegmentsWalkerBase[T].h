@@ -7,13 +7,13 @@
         using base = AllSegmentsWalkerBase<T, TArray, std::span<T>>;
         using TSegment = std::span<T>;
 
-        protected: AllSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength) {}
+        protected: explicit AllSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength) {}
 
         protected: AllSegmentsWalkerBase() : base() { }
 
         protected: TSegment CreateSegment(TArray& elements, std::int32_t offset, std::int32_t length)
         {
-            return std::span<T>(std::ranges::begin(elements) + offset, length);
+            return std::span(std::ranges::begin(elements) + offset, length);
         }
     };
 }

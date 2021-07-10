@@ -1,4 +1,4 @@
-﻿namespace Platform::Collections::Always
+﻿namespace Platform::Collections::Ensure::Always
 {
     template<typename T>
     void ArgumentNotEmpty(Interfaces::IEnumerable auto&& argument, const std::string& argumentName = {}, const std::string& message = {})
@@ -27,7 +27,7 @@
     }
 }// namespace Platform::Collections::Always
 
-namespace Platform::Collections::Always
+namespace Platform::Collections::Ensure::Always
 {
     static void ArgumentNotEmpty(auto&&... args)
     {

@@ -5,20 +5,20 @@
     requires std::derived_from<TSegment, std::span<T>>
     class DuplicateSegmentsWalkerBase<T, TArray, TSegment> : public AllSegmentsWalkerBase<T, TArray, TSegment>
     {
-        using base = AllSegmentsWalkerBase<T, TSegment, TArray>; // TODO у меня просто код тогда в экран не поместится
+        using base = AllSegmentsWalkerBase<T, TSegment, TArray>;
 
         protected: DuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : base(minimumStringSegmentLength) { }
 
-        protected: DuplicateSegmentsWalkerBase()/* : base()*/ { }
+        protected: DuplicateSegmentsWalkerBase() : base() { }
 
-        protected: void Iteration(TSegment segment)
+        protected: void Iteration(TSegment segment) override
         {
-            auto frequency = GetSegmentFrequency(segment);
+            auto frequency = this->GetSegmentFrequency(segment);
             if (frequency == 1)
             {
-                OnDublicateFound(segment);
+                this->OnDublicateFound(segment);
             }
-            SetSegmentFrequency(segment, frequency + 1);
+            this->SetSegmentFrequency(segment, frequency + 1);
         }
 
         protected: virtual void OnDublicateFound(TSegment segment) = 0;

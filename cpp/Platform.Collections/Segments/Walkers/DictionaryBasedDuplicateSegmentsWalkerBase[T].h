@@ -1,8 +1,8 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
     template <typename ...> class DictionaryBasedDuplicateSegmentsWalkerBase;
-    template <typename T, Interfaces::IArray TArray, typename TDictionary>
-    requires Interfaces::IDictionary<TDictionary, std::span<int>*, int>
+    template <typename T, Interfaces::IArray<T> TArray, typename TDictionary>
+    requires Interfaces::IDictionary<TDictionary, int, std::span<T>>
     class DictionaryBasedDuplicateSegmentsWalkerBase<T, TArray, TDictionary> : public DuplicateSegmentsWalkerBase<T, TArray, std::span<T>>
     {
         using base = DuplicateSegmentsWalkerBase<T, TArray, std::span<T>>;
