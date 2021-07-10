@@ -18,8 +18,9 @@ namespace Platform.Collections
         /// <paramref name="key"/> in <paramref name="dictionary"/> 
         /// </para>  
         /// <para> 
-        /// Возвращает значение связанное с переданными параметрами  
-        /// <paramref name="key"/> в <paramref name="dictionary"/> 
+        /// Возвращает значение связанное с  
+        /// <paramref name="key"/> в  
+        /// <paramref name="dictionary"/> или значение по умолчанию, если оно не существует.
         /// </para> 
         /// </summary>   
         /// <typeparam name="dictionary"> 
@@ -50,8 +51,11 @@ namespace Platform.Collections
         }
 
         /// <summary>    
-        /// <para>Gets the value associated with the key in the dictionary or adds it if it does not exist.</para> 
-        /// <para>Получает значение, связанное с ключом в словаре, или добавляет его, если он не существует.</para> 
+        /// <para>Gets the value associated with the  
+        /// <paramref name="key" in the  
+        /// <paramref name="dictionary"/> in the dictionary or adds it if it does not exist.</para> 
+        /// <para>Получает значение, связанное с <paramref name="key"  
+        /// <paramref name="dictionary"/> или добавляет его, если он не существует.</para> 
         /// </summary>   
         /// <typeparam name="dictionary"> 
         /// <para>  
@@ -64,12 +68,11 @@ namespace Platform.Collections
         /// <paramref name="key"/>, или добавить его, если ключ не существует.
         /// </para> 
         /// </typeparam>   
-        /// <typeparam name="key"> 
-        /// <para>The key of the element to add.</para> 
+        /// <paramref name="key"> 
+        /// <para>A key of the element to add.</para> 
         /// <para>Ключ добавляемого элемента.</para> 
         /// </typeparam>  
-        ///  
-        /// <typeparam name="valueFactory">  
+        /// <paramref name="valueFactory">  
         /// <para>The function that gets the key and returns a value for it.</para> 
         /// <para>Функция, которая получает ключ и возвращает значение для него.</para> 
         /// </typeparam>  
