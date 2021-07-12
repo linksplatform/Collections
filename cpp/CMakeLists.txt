@@ -11,7 +11,7 @@ target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.inte
 target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.equality)
 target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.hashing)
 
-if((DEFINED LINKS_PLATFORM_TESTS) AND ${LINKS_PLATFORM_TESTS})
+if((DEFINED LINKS_PLATFORM_TESTS) AND (${LINKS_PLATFORM_TESTS}))
     add_executable(${PROJECT_NAME}.Tests ${PROJECT_NAME}.Tests/AllTests.cpp)
     set_target_properties(${PROJECT_NAME}.Tests PROPERTIES CXX_STANDARD 20)
     target_link_libraries(${PROJECT_NAME}.Tests PUBLIC CONAN_PKG::gtest)

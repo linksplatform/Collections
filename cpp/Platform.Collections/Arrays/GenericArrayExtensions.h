@@ -42,7 +42,7 @@
         }
     }
 
-    static auto ShiftRight(const Interfaces::IArray auto& array) { return ShiftRight(array, 1); }
+    static auto ShiftRight(Interfaces::IArray auto&& array) { return ShiftRight(array, 1); }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static void Add(TArray& array, std::integral auto& position, const TItem& element) { array[position++] = element; }
@@ -67,7 +67,7 @@
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static void AddAll(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements)
     {
-        for (const auto& element : elements)
+        for (auto&& element : elements)
         {
             Add(array, position, element);
         }
