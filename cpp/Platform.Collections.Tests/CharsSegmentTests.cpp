@@ -4,7 +4,6 @@ namespace Platform::Collections::Tests
 {
     TEST(ChangeSegmentTests, GetHashCodeEqualsTest)
     {
-        auto x = new int;
         const std::string testString = "test test";
         auto testArray = std::vector(testString.begin(), testString.end());
         auto firstHashCode = Platform::Hashing::Hash(std::span(testArray.begin(), 4));
