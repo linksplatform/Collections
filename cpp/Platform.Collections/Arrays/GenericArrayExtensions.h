@@ -83,7 +83,7 @@
     static auto AddSkipFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, auto constant)
     {
         AddSkipFirst(array, position, elements, 1);
-        return constant
+        return constant;
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
