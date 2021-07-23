@@ -1,6 +1,6 @@
 #include <Platform.Collections.h>
 
-std::u16string a = u"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+std::u16string a = u"aaaaaaaaaa";
 
 std::u16string real_text =  uR"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
 Обозначение пустоты, какое оно? Темнота ли это? Там где отсутствие света, отсутствие фотонов (носителей света)? Или это то, что полностью отражает свет? Пустой белый лист бумаги? Там где есть место для нового начала? Разве пустота это не характеристика пространства? Пространство это то, что можно чем-то наполнить?
@@ -45,7 +45,7 @@ using namespace Platform::Collections::Segments::Walkers;
 
 struct IterationsCounter : public AllSegmentsWalkerBase<IterationsCounter, char16_t>
 {
-    std::uint64_t IterationsCount = 0;
+    std::size_t IterationsCount = 0;
 
     void Iteration(std::span<char16_t> segment) { IterationsCount++; };
 };
@@ -118,9 +118,10 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
         std::printf("Unique string segments: %d. Total duplicates: %d.\n", dictionary.size(), _totalDuplicates);
     }
 
-    void OnDuplicateFound(auto&&)
+    void OnDuplicateFound(auto&& segment)
     {
-        // std::cout << _totalDuplicates << ": " << span_as_string(segment) << std::endl;
+        auto string = span_as_string(segment);
+        std::cout << _totalDuplicates << ": " << std::string(string.begin(), string.end()) << std::endl;
         _totalDuplicates++;
     }
 };
@@ -130,12 +131,12 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
 TEST(Walkers, Sandbox)
 {
-    auto text = real_text;
+    auto text = a;
 
     auto iterationsCounter = IterationsCounter{};
     iterationsCounter.WalkAll(text);
     auto result = iterationsCounter.IterationsCount;
-    std::printf("TextLength: %d. Iterations: %d.\n", text.size(), result);
+    std::printf("TextLength: %lld. Iterations: %lld.\n", text.size(), result);
 
     auto start = std::chrono::system_clock::now();
 

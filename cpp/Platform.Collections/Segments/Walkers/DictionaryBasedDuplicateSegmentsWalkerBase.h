@@ -5,7 +5,7 @@
         typename Self,
         typename T,
         std::derived_from<std::span<T>> TSegment = std::span<T>,
-        template<typename, typename> typename TDictionary = std::unordered_map,
+        template<typename, typename, typename...> typename TDictionary = std::unordered_map,
         typename Dictionary = TDictionary<TSegment, std::size_t>>
 
     requires

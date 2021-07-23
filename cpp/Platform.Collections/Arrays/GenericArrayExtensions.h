@@ -2,9 +2,9 @@
 {
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     requires std::default_initializable<TItem>
-    static auto&& GetElementOrDefault(TArray&& array, std::integral auto index) noexcept
+    static auto GetElementOrDefault(TArray&& array, std::signed_integral auto index) noexcept
     {
-        return (std::ranges::size(array) > index && index >= 0) ? array[index] : TItem{};
+        return (std::ranges::size(array) > index) ? array[index] : TItem{};
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
