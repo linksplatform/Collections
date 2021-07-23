@@ -30,16 +30,17 @@
 namespace Platform::Collections::Ensure::Always
 {
     static void ArgumentNotEmpty(auto&&... args)
-    {
-    #ifndef NDEBUG
-        Always::ArgumentNotEmpty(std::forward<decltype(args)>(args)...);
+    #ifdef NDEBUG
+        noexcept {}
+    #else
+        { Always::ArgumentNotEmpty(std::forward<decltype(args)>(args)...); }
     #endif
-    }
 
     static void ArgumentNotEmptyAndNotWhiteSpace(auto&&... args)
-    {
-    #ifndef NDEBUG
-        Always::ArgumentNotEmptyAndNotWhiteSpace(std::forward<decltype(args)>(args)...);
+    #ifdef NDEBUG
+        noexcept {}
+    #else
+        { Always::ArgumentNotEmptyAndNotWhiteSpace(std::forward<decltype(args)>(args)...); }
     #endif
-    }
+
 }// namespace Platform::Collections::Always

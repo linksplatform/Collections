@@ -30,7 +30,7 @@
 
         public: void Iteration(const TSegment& segment) { base::self().Iteration(segment); }
 
-        public: TSegment CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
+        public: auto CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
             requires std::same_as<TSegment, std::span<T>>
         {
             return std::span<T>(std::ranges::begin(elements) + offset, length);
