@@ -54,6 +54,11 @@ namespace Platform.Collections.Tests
             {
                 var walker = new Walker4();
                 walker.WalkAll(text);
+                
+                foreach (var (key, value) in walker.PublicDictionary)
+                {
+                    Console.WriteLine($"{key} {value}");
+                }
             }
 
 
@@ -81,7 +86,7 @@ namespace Platform.Collections.Tests
     {
         public Dictionary<string, long> _cache;
         private string _currentKey;
-        private int _totalCount = 0;
+        private int _totalDuplicates;
 
         public override void WalkAll(IList<char> elements)
         {
@@ -89,12 +94,12 @@ namespace Platform.Collections.Tests
 
             base.WalkAll(elements);
             
-            Console.WriteLine($"Unique string segments: {_cache.Count}. TotalCount: {_totalCount}");
+            Console.WriteLine($"Unique string segments: {_cache.Count}. Total duplicates: {_totalDuplicates}");
         }
 
         protected override void OnDublicateFound(CharSegment segment)
         {
-            _totalCount++;
+            _totalDuplicates++;
         }
 
         protected override long GetSegmentFrequency(CharSegment segment) => _cache.GetOrDefault(_currentKey);
@@ -111,6 +116,14 @@ namespace Platform.Collections.Tests
     
     public class Walker4 : DictionaryBasedDuplicateSegmentsWalkerBase<char, CharSegment>
     {
+        public IDictionary<CharSegment, long> PublicDictionary
+        {
+            get
+            {
+                return Dictionary;
+            }
+        }
+
         public Walker4()
             : base(DefaultMinimumStringSegmentLength, resetDictionaryOnEachWalk: true)
         {
@@ -123,12 +136,6 @@ namespace Platform.Collections.Tests
             _totalDuplicates = 0;
 
             base.WalkAll(elements);
-
-            foreach (var (item, value) in Dictionary)
-            {
-                Console.WriteLine($"{item} {value}");
-            }
-            
             Console.WriteLine($"Unique string segments: {Dictionary.Count}. Total duplicates: {_totalDuplicates}.");
         }
 
