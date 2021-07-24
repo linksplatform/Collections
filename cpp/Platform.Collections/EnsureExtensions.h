@@ -29,6 +29,13 @@
 
 namespace Platform::Collections::Ensure::Always
 {
+#ifdef NDEBUG
+    #define NDEBUG_CONSTEVAL consteval
+#else
+    #define NDEBUG_CONSTEVAL
+#endif
+
+    NDEBUG_CONSTEVAL
     static void ArgumentNotEmpty(auto&&... args)
     #ifdef NDEBUG
         noexcept {}
@@ -36,6 +43,7 @@ namespace Platform::Collections::Ensure::Always
         { Always::ArgumentNotEmpty(std::forward<decltype(args)>(args)...); }
     #endif
 
+    NDEBUG_CONSTEVAL
     static void ArgumentNotEmptyAndNotWhiteSpace(auto&&... args)
     #ifdef NDEBUG
         noexcept {}
@@ -43,4 +51,5 @@ namespace Platform::Collections::Ensure::Always
         { Always::ArgumentNotEmptyAndNotWhiteSpace(std::forward<decltype(args)>(args)...); }
     #endif
 
+#undef NDEBUG_CONSTEVAL
 }// namespace Platform::Collections::Always
