@@ -10,7 +10,7 @@ namespace Platform.Collections.Tests
 {
     public class AllRepeatingSubstringsInString
     {
-        private static ITestOutputHelper cout;
+        private readonly ITestOutputHelper cout;
 
         private static readonly string _exampleText =
     @"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
@@ -44,42 +44,39 @@ namespace Platform.Collections.Tests
 
         private static readonly string _exampleLoremIpsumText = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-        public AllRepeatingSubstringsInString(ITestOutputHelper _cout)
+        public AllRepeatingSubstringsInString(ITestOutputHelper cout)
         {
-            cout = _cout;
+            this.cout = cout;
         }
 
         [Fact]
-        public static void ConsoleTests()
+        public void ConsoleTests()
         {
             const string text = "aaaaaaaaaa";
 
             var iterationsCounter = new IterationsCounter();
             iterationsCounter.WalkAll(text);
             var result = iterationsCounter.IterationsCount;
-            if (cout != null)
+            cout.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
+
             {
-                cout.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
-
+                var walker = new Walker4();
+                walker.WalkAll(text);
+                
+                foreach (var (key, value) in walker.PublicDictionary)
                 {
-                    var walker = new Walker4();
-                    walker.WalkAll(text);
-
-                    foreach (var (key, value) in walker.PublicDictionary)
-                    {
-                        cout.WriteLine($"{key} {value}");
-                    }
+                    cout.WriteLine($"{key} {value}");
                 }
+            }
 
 
+            {
+                var walker = new Walker2();
+                walker.WalkAll(text);
+    
+                foreach (var (key, value) in walker._cache)
                 {
-                    var walker = new Walker2();
-                    walker.WalkAll(text);
-
-                    foreach (var (key, value) in walker._cache)
-                    {
-                        cout.WriteLine($"{key} {value}");
-                    }
+                    cout.WriteLine($"{key} {value}");
                 }
             }
         }
