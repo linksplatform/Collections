@@ -57,26 +57,29 @@ namespace Platform.Collections.Tests
             var iterationsCounter = new IterationsCounter();
             iterationsCounter.WalkAll(text);
             var result = iterationsCounter.IterationsCount;
-            cout.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
-
+            if (cout != null)
             {
-                var walker = new Walker4();
-                walker.WalkAll(text);
-                
-                foreach (var (key, value) in walker.PublicDictionary)
+                cout.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
+
                 {
-                    cout.WriteLine($"{key} {value}");
+                    var walker = new Walker4();
+                    walker.WalkAll(text);
+
+                    foreach (var (key, value) in walker.PublicDictionary)
+                    {
+                        cout.WriteLine($"{key} {value}");
+                    }
                 }
-            }
 
 
-            {
-                var walker = new Walker2();
-                walker.WalkAll(text);
-    
-                foreach (var (key, value) in walker._cache)
                 {
-                    cout.WriteLine($"{key} {value}");
+                    var walker = new Walker2();
+                    walker.WalkAll(text);
+
+                    foreach (var (key, value) in walker._cache)
+                    {
+                        cout.WriteLine($"{key} {value}");
+                    }
                 }
             }
         }
