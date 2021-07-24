@@ -437,7 +437,7 @@ namespace Platform.Collections.Lists
         {
             if (list.IsNullOrEmpty() || list.Count <= skip)
             {
-                return Array.Empty<T>();
+                return IArray.Empty<T>();
             }
             var result = new T[list.Count - skip];
             for (int r = skip, w = 0; r < list.Count; r++, w++)
@@ -454,7 +454,7 @@ namespace Platform.Collections.Lists
         /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
         /// <param name="list"><para>The list to copy from.</para><para>Список для копирования.</para></param>
         /// <returns>
-        /// <para>Array with a shift of elements by one position.</para>
+        /// <para>IArray with a shift of elements by one position.</para>
         /// <para>Массив со сдвигом элементов на одну позицию.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
