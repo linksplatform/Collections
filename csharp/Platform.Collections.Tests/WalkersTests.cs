@@ -10,8 +10,6 @@ namespace Platform.Collections.Tests
 {
     public class AllRepeatingSubstringsInString
     {
-        private readonly ITestOutputHelper cout;
-
         private static readonly string _exampleText =
     @"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
 Обозначение пустоты, какое оно? Темнота ли это? Там где отсутствие света, отсутствие фотонов (носителей света)? Или это то, что полностью отражает свет? Пустой белый лист бумаги? Там где есть место для нового начала? Разве пустота это не характеристика пространства? Пространство это то, что можно чем-то наполнить?
@@ -43,12 +41,7 @@ namespace Platform.Collections.Tests
 
 
         private static readonly string _exampleLoremIpsumText = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-        public AllRepeatingSubstringsInString(ITestOutputHelper cout)
-        {
-            this.cout = cout;
-        }
-
+        
         [Fact]
         public void ConsoleTests()
         {
@@ -57,7 +50,8 @@ namespace Platform.Collections.Tests
             var iterationsCounter = new IterationsCounter();
             iterationsCounter.WalkAll(text);
             var result = iterationsCounter.IterationsCount;
-            cout.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
+            Console.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
+            Console.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
 
             {
                 var walker = new Walker4();
@@ -65,7 +59,7 @@ namespace Platform.Collections.Tests
                 
                 foreach (var (key, value) in walker.PublicDictionary)
                 {
-                    cout.WriteLine($"{key} {value}");
+                    Console.WriteLine($"{key} {value}");
                 }
             }
 
@@ -76,7 +70,7 @@ namespace Platform.Collections.Tests
     
                 foreach (var (key, value) in walker._cache)
                 {
-                    cout.WriteLine($"{key} {value}");
+                    Console.WriteLine($"{key} {value}");
                 }
             }
         }
