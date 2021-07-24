@@ -121,7 +121,7 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
     void OnDuplicateFound(auto&& segment)
     {
         auto string = span_as_string(segment);
-        std::cout << _totalDuplicates << ": " << std::string(string.begin(), string.end()) << std::endl;
+        //std::cout << _totalDuplicates << ": " << std::string(string.begin(), string.end()) << std::endl;
         _totalDuplicates++;
     }
 };
@@ -140,11 +140,19 @@ TEST(Walkers, Sandbox)
 
     auto start = std::chrono::system_clock::now();
 
-    // auto walker2 = Walker2{};
-    // walker2.WalkAll(text);
+    auto walker2 = Walker2{};
+    walker2.WalkAll(text);
+
+    for (auto [item, count] : walker2._cache) {
+        std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
+    }
 
     auto walker4 = Walker4{};
     walker4.WalkAll(text);
+
+    for (auto [item, count] : walker4.dictionary) {
+        std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
+    }
 
     auto end = std::chrono::system_clock::now();
 

@@ -23,25 +23,31 @@
         public: static constexpr bool DefaultResetDictionaryOnEachWalk = false;
 
         private: bool _resetDictionaryOnEachWalk = false;
-        protected: Dictionary dictionary{};
+        public: Dictionary dictionary{};
 
-        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(Dictionary dictionary, std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk) : base(minimumStringSegmentLength), dictionary(std::move(dictionary)), _resetDictionaryOnEachWalk(resetDictionaryOnEachWalk) { }
+        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(Dictionary dictionary, std::size_t minimumStringSegmentLength = base::DefaultMinimumStringSegmentLength, bool resetDictionaryOnEachWalk = DefaultResetDictionaryOnEachWalk) : base(minimumStringSegmentLength), dictionary(std::move(dictionary)), _resetDictionaryOnEachWalk(resetDictionaryOnEachWalk) { }
 
-        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(Dictionary dictionary, std::int32_t minimumStringSegmentLength) : DictionaryBasedDuplicateSegmentsWalkerBase(std::move(dictionary), minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
+        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(std::size_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk = DefaultResetDictionaryOnEachWalk) : DictionaryBasedDuplicateSegmentsWalkerBase(Dictionary{}, minimumStringSegmentLength, resetDictionaryOnEachWalk) { }
 
-        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(Dictionary dictionary) : DictionaryBasedDuplicateSegmentsWalkerBase(std::move(dictionary), base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
-
-        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength, bool resetDictionaryOnEachWalk) : DictionaryBasedDuplicateSegmentsWalkerBase(Dictionary{}, minimumStringSegmentLength, resetDictionaryOnEachWalk) { }
-
-        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase(std::int32_t minimumStringSegmentLength) : DictionaryBasedDuplicateSegmentsWalkerBase(minimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
-
-        protected: explicit DictionaryBasedDuplicateSegmentsWalkerBase() : DictionaryBasedDuplicateSegmentsWalkerBase(base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
+        protected: DictionaryBasedDuplicateSegmentsWalkerBase() : DictionaryBasedDuplicateSegmentsWalkerBase(base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
         public: void WalkAll(Interfaces::IArray<T> auto&& elements)
         {
             // Not use capacity-style if want use std::map
-            auto capacity = std::ceil(std::pow(std::ranges::size(elements), 2) / 2);
-            dictionary = Dictionary(capacity);
+            if (_resetDictionaryOnEachWalk)
+            {
+                if constexpr (requires { Dictionary(std::size_t{}); })
+                {
+                    std::unordered_map<int, int>(1);
+                    auto capacity = std::ceil(std::pow(std::ranges::size(elements), 2) / 2);
+                    dictionary = Dictionary(capacity);
+                }
+                else
+                {
+                   dictionary.clear();
+                }
+            }
+
             base::WalkAll(elements);
         }
 
