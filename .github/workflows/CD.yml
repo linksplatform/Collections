@@ -61,7 +61,7 @@ jobs:
         cmake .. -DLINKS_PLATFORM_TESTS=TRUE
         make -j 2
         cd bin
-        binaries=./*.o
+        binaries=./*
         for bin in $binaries
         do
            ./$bin
