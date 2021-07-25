@@ -24,6 +24,9 @@ jobs:
       with:
         version: "11.0"
 
+    - name: Use Clang
+      run: export CXX=clang
+
     - name: Conan install
       run: pip install conan
 
