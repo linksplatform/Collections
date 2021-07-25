@@ -18,7 +18,22 @@ jobs:
     - uses: actions/checkout@v1
       with:
         submodules: true
-    - name: Test
+
+    - name: Conan install
+      run: pip install conan
+
+    - name: Conan setup
+      run: |
+        git clone https://github.com/linksplatform/conan-center-index
+        cd conan-center-index
+        git checkout only-development
+        ls
+        cd ..
+
+    - name: Test C++
+      run: echo lol
+
+    - name: Test CSharp
       run: dotnet test -c Release -f net5
     - name: Generate PDF with CSharp code
       if: github.event_name == 'push'
