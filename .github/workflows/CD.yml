@@ -61,8 +61,11 @@ jobs:
         cmake .. -DLINKS_PLATFORM_TESTS=TRUE
         make -j 2
         cd bin
-        echo $REPOSITORY_NAME
-        ls
+        binaries=./*.o
+        for bin in $binaries
+        do
+           ./$bin
+        done
 
     - name: Test CSharp
       run: dotnet test -c Release -f net5
