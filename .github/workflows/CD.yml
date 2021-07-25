@@ -19,8 +19,10 @@ jobs:
       with:
         submodules: true
 
-    - name: Install clang 11
-      run: apt install clang-11
+    - name: Install Clang 11
+      uses: KyleMayes/install-llvm-action@v1
+      with:
+        version: "11.0"
 
     - name: Conan install
       run: pip install conan
