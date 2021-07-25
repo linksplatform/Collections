@@ -33,7 +33,7 @@ jobs:
         conan profile update settings.compiler=clang linksplatform
         conan profile update settings.compiler.version=11 linksplatform
         conan profile update settings.compiler.libcxx=libstdc++11 linksplatform
-        conan prifile show linksplatform
+        conan profile show linksplatform
 
     - name: Conan install packages
       run: |
