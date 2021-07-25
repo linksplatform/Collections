@@ -50,7 +50,7 @@ jobs:
         conan create platform.hashing/all platform.hashing/0.1.0@ -pr=linksplatform
         conan create platform.equality/all platform.equality/0.0.1@ -pr=linksplatform
 
-    - name: Test C++
+    - name: Test C++ and scan-build
       run: |
         export CC=clang
         export CXX=clang++
@@ -59,6 +59,7 @@ jobs:
         mkdir $REPOSITORY_NAME && cd $REPOSITORY_NAME
         conan install .. -if=. -pr=linksplatform --build=missing
         cmake .. -DLINKS_PLATFORM_TESTS=TRUE
+        scan-build make -j 2
         make -j 2
         cd bin
         binaries=./*
