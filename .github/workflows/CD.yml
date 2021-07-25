@@ -58,7 +58,8 @@ jobs:
         cd cpp
         mkdir $REPOSITORY_NAME && cd $REPOSITORY_NAME
         conan install .. -if=. -pr=linksplatform --build=missing
-        cmake .. -DLINKS_PLATFORM_TESTS=TRUE --build
+        cmake .. -DLINKS_PLATFORM_TESTS=TRUE
+        make -j 2
         cd bin
         echo $REPOSITORY_NAME
         ls
