@@ -26,6 +26,8 @@
 
 #include <Platform.Exceptions.h>
 #include <Platform.Interfaces.h>
+#include <Platform.Hashing.h>
+#include <Platform.Equality.h>
 
 #include "Arrays/GenericArrayExtensions.h"
 #include "Arrays/ArrayFiller[TElement].h"
