@@ -51,7 +51,13 @@ jobs:
         conan create platform.equality/all platform.equality/0.0.1@ -pr=linksplatform
 
     - name: Test C++
-      run: echo lol
+      run: |
+        export REPOSITORY_NAME=$(basename ${{ github.repository }})
+        mkdir $REPOSITORY_NAME && cd $REPOSITORY_NAME
+        conan install .. -if=. -pr=linkplatform
+        cmake .. -DLINKS_PLATFORM_TESTS=TRUE -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ --build
+        cd bin
+        ls
 
     - name: Test CSharp
       run: dotnet test -c Release -f net5
