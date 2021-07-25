@@ -23,6 +23,9 @@ jobs:
       run: pip install conan
 
     - name: Conan setup
+      run: conan profile update settings.compiler.libcxx=libstdc++11 default
+
+    - name: Conan install packages
       run: |
         git clone https://github.com/linksplatform/conan-center-index
         cd conan-center-index
