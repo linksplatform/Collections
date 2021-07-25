@@ -52,11 +52,13 @@ jobs:
 
     - name: Test C++
       run: |
+        export CC=clang
+        export CXX=clang++
         export REPOSITORY_NAME=$(basename ${{ github.repository }})
         cd cpp
         mkdir $REPOSITORY_NAME && cd $REPOSITORY_NAME
         conan install .. -if=. -pr=linksplatform --build=missing
-        cmake .. -DLINKS_PLATFORM_TESTS=TRUE -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ --build
+        cmake .. -DLINKS_PLATFORM_TESTS=TRUE --build
         cd bin
         echo $REPOSITORY_NAME
         ls
