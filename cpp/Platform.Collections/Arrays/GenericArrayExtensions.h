@@ -2,7 +2,7 @@
 {
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     requires std::default_initializable<TItem>
-    static auto&& GetElementOrDefault(TArray&& array, std::integral auto index) noexcept
+    static auto GetElementOrDefault(TArray&& array, std::integral auto index) noexcept
     {
         return (std::ranges::size(array) > index && index >= 0) ? array[index] : TItem{};
     }
@@ -83,7 +83,7 @@
     static auto AddSkipFirstAndReturnConstant(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, auto constant)
     {
         AddSkipFirst(array, position, elements, 1);
-        return constant
+        return constant;
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
