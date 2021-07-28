@@ -77,7 +77,7 @@ struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
 
         base::WalkAll(elements);
 
-        std::printf("Unique string segments: %d. Total duplicates: %d.\n", _cache.size(), _totalDuplicates);
+        std::printf("Unique string segments: %lu. Total duplicates: %lu.\n", _cache.size(), _totalDuplicates);
     }
 
     void OnDuplicateFound(auto&&) { _totalDuplicates++; }
@@ -103,7 +103,7 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
     {
     }
 
-    int _totalDuplicates{};
+    std::size_t _totalDuplicates{};
 
     // Automatically '
     //
@@ -118,7 +118,7 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
         base::WalkAll(elements);
 
-        std::printf("Unique string segments: %d. Total duplicates: %d.\n", dictionary.size(), _totalDuplicates);
+        std::printf("Unique string segments: %lu. Total duplicates: %lu.\n", dictionary.size(), _totalDuplicates);
     }
 
     void OnDuplicateFound(auto&& segment)
