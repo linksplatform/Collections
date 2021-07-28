@@ -45,6 +45,9 @@ using namespace Platform::Collections::Segments::Walkers;
 
 struct IterationsCounter : public AllSegmentsWalkerBase<IterationsCounter, char16_t>
 {
+    using base = AllSegmentsWalkerBase<IterationsCounter, char16_t>;
+    using base::base;
+
     std::size_t IterationsCount = 0;
 
     void Iteration(std::span<char16_t> segment) { IterationsCount++; };
@@ -136,7 +139,7 @@ TEST(Walkers, Sandbox)
     auto iterationsCounter = IterationsCounter{};
     iterationsCounter.WalkAll(text);
     auto result = iterationsCounter.IterationsCount;
-    std::printf("TextLength: %lld. Iterations: %lld.\n", text.size(), result);
+    std::printf("TextLength: %lu. Iterations: %lu.\n", text.size(), result);
 
     auto start = std::chrono::system_clock::now();
 
