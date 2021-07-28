@@ -7,12 +7,13 @@
         using ctype = std::ctype<wchar_t>;
         auto& facet = std::use_facet<ctype>(std::locale());
 
-        auto subrange = string | std::views::drop_while([&facet](auto c)
+        std::size_t count = 0;
+        for (auto c : string)
         {
-            return facet.is(ctype::space, c);
-        });
+            count += static_cast<bool>(facet.is(ctype::space, c));
+        };
 
-        return std::ranges::size(subrange) == 0;
+        return count == string.size();
     }
 
     template<typename TChar>
