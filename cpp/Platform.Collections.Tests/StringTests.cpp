@@ -4,7 +4,7 @@
     {
         using namespace std::string_literals;
 
-        std::locale::global(std::locale("en_US.UTF-8"));
+        std::locale::global(std::locale(""));
         ASSERT_EQ(u"Привет"s, CapitalizeFirstLetter(u"привет"s));
         ASSERT_EQ("Hello", CapitalizeFirstLetter("hello"s));
         ASSERT_EQ("Hello", CapitalizeFirstLetter("Hello"s));
