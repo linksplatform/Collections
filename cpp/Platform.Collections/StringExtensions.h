@@ -1,13 +1,31 @@
 ﻿namespace Platform::Collections
 {
+    // Maybe internal
+    template<typename TChar>
+    static auto IsWhiteSpace(const std::basic_string<TChar>& string)
+    {
+        using ctype = std::ctype<wchar_t>;
+        auto& facet = std::use_facet<ctype>(std::locale());
+
+        auto subrange = string | std::views::drop_while([&facet](auto c)
+        {
+            return facet.is(ctype::space, c);
+        });
+
+        return std::ranges::size(subrange) == 0;
+    }
+
     template<typename TChar>
     static auto CapitalizeFirstLetter(std::basic_string<TChar> string)
     {
-        for (auto& it : string)
+        using ctype = std::ctype<wchar_t>;
+        auto& facet = std::use_facet<ctype>(std::locale());
+
+        for (auto& symbol : string)
         {
-            if (std::isalpha(it))
+            if (facet.is(ctype::alpha, symbol))
             {
-                it = std::toupper(it);
+                symbol = facet.toupper(symbol);
                 return string;
             }
         }
@@ -17,7 +35,7 @@
     template<typename TChar>
     static auto Truncate(std::basic_string<TChar> string, std::size_t maxLength)
     {
-        return (string.empty()) ? std::basic_string<TChar>{} : string.substr(0, std::min(string.size(), maxLength));
+        return (string.empty()) ? std::basic_string<TChar>{} : string.substr(0, maxLength);
     }
 
     template<typename TChar>

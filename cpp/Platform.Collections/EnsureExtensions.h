@@ -1,6 +1,5 @@
 ﻿namespace Platform::Collections::Ensure::Always
 {
-    template<typename T>
     void ArgumentNotEmpty(Interfaces::IEnumerable auto&& argument, const std::string& argumentName = {}, const std::string& message = {})
     {
         if (std::ranges::empty(argument))
@@ -16,11 +15,7 @@
             throw std::invalid_argument(std::string("Invalid ").append(argumentName).append(" argument: ").append(message).append(1, '.'));
         }
 
-        std::size_t count = 0;
-        std::ranges::for_each(argument, [&count](auto&& item) { count += std::isspace(item); });
-        auto is_whitespace = argument.size() == count;
-
-        if (is_whitespace)
+        if (IsWhiteSpace(argument))
         {
             throw std::invalid_argument(std::string("Invalid ").append(argumentName).append(" argument: ").append(message).append(1, '.'));
         }

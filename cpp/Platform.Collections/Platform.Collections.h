@@ -10,6 +10,7 @@
 #include <cmath>
 #include <span>
 #include <iostream>
+#include <numeric>
 
 #include <Platform.Exceptions.h>
 #include <Platform.Interfaces.h>
