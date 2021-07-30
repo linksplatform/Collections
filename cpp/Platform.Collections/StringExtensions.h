@@ -34,13 +34,10 @@
     }
 
     template<typename TChar>
-    static auto Truncate(std::basic_string<TChar> string, std::size_t maxLength)
-    {
-        return (string.empty()) ? std::basic_string<TChar>{} : string.substr(0, maxLength);
-    }
+    static auto Truncate(std::basic_string<TChar> string, std::size_t maxLength) { return string.substr(0, maxLength); }
 
     template<typename TChar>
-    static auto TrimSingle(const std::basic_string<TChar>& string, TChar charToTrim)
+    static auto TrimSingle(std::basic_string<TChar> string, TChar charToTrim) -> std::basic_string<TChar>
     {
         if (string.empty())
         {
@@ -51,7 +48,7 @@
         {
             if (string[0] == charToTrim)
             {
-                return std::basic_string<TChar>{};
+                return {};
             }
             else
             {
