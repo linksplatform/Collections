@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ddbcbaaa204a47d7b388ca679791e3fb)](https://app.codacy.com/gh/linksplatform/Collections?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Collections&utm_campaign=Badge_Grade_Settings)
 [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Collections)](https://www.nuget.org/packages/Platform.Collections)
 [![Actions Status](https://github.com/linksplatform/Collections/workflows/CD/badge.svg)](https://github.com/linksplatform/Collections/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/735d9162bbdf4c36a8d14f48c2cd7e90)](https://app.codacy.com/app/drakonard/Collections?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Collections&utm_campaign=Badge_Grade_Dashboard)
