@@ -1,7 +1,4 @@
-﻿#include <gtest/gtest.h>
-#include <Platform.Collections.h>
-
-namespace Platform::Collections::Tests
+﻿namespace Platform::Collections::Tests
 {
     TEST(ArrayTests, GetElementTest)
     {

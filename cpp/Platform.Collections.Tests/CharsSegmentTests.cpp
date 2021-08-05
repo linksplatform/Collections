@@ -1,6 +1,4 @@
-﻿#include <gtest/gtest.h>
-
-namespace Platform::Collections::Tests
+﻿namespace Platform::Collections::Tests
 {
     TEST(ChangeSegmentTests, GetHashCodeEqualsTest)
     {

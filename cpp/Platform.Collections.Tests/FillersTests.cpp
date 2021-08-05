@@ -1,5 +1,3 @@
-#include <gtest/gtest.h>
-
 namespace Platform::Collections::Tests
 {
     TEST(FillersTests, Arrays)

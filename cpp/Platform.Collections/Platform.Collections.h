@@ -1,31 +1,21 @@
 #pragma once
 
-#ifndef PLATFORM_COLLECTIONS
-#define PLATFORM_COLLECTIONS
-
 #include <type_traits>
-#include <concepts>
 #include <vector>
-#include <variant>
 #include <string>
 #include <array>
 #include <bitset>
-#include <queue>
-#include <map>
-#include <map>
 #include <set>
-#include <memory>
-#include <ranges>
 #include <algorithm>
 #include <cmath>
 #include <span>
 #include <iostream>
-#include <functional>
-#include <thread>
-#include <any>
+#include <numeric>
 
 #include <Platform.Exceptions.h>
 #include <Platform.Interfaces.h>
+#include <Platform.Equality.h>
+#include <Platform.Hashing.h>
 
 #include "Arrays/GenericArrayExtensions.h"
 #include "Arrays/ArrayFiller[TElement].h"
@@ -44,14 +34,11 @@
 #include "Lists/IListExtensions.h"
 #include "Lists/ListFiller.h"
 
+#include "Segments/Walkers/Polymorph.h"
 #include "Segments/Walkers/AllSegmentsWalkerBase.h"
-#include "Segments/Walkers/AllSegmentsWalkerBase[T, TSegment].h"
-#include "Segments/Walkers/AllSegmentsWalkerBase[T].h"
-#include "Segments/Walkers/AllSegmentsWalkerExtensions.h"
-#include "Segments/Walkers/DuplicateSegmentsWalkerBase[T, TSegment].h"
-#include "Segments/Walkers/DuplicateSegmentsWalkerBase[T].h"
-#include "Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].h"
-#include "Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].h"
+#include "Segments/Walkers/DuplicateSegmentsWalkerBase.h"
+#include "Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase.h"
+
 #include "Segments/Segment.h"
 #include "Segments/CharSegment.h"
 
@@ -74,5 +61,3 @@
 #include "IDictionaryExtensions.h"
 
 #include "Trees/Node.h"
-
-#endif//PLATFORM_COLLECTIONS
