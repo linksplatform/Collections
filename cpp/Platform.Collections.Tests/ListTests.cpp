@@ -25,4 +25,4 @@
             ASSERT_EQ(0, element);
         }
     }
-}// namespace Platform::Collections::Tests
+}

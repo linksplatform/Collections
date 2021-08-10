@@ -84,4 +84,4 @@
     static auto ShiftRight(Interfaces::IList auto&& list) { return Arrays::ShiftRight(list); }
 
     static auto ShiftRight(Interfaces::IList auto&& list, std::integral auto shift) { return Arrays::ShiftRight(list, shift); }
-}// namespace Platform::Collections::Lists
+}

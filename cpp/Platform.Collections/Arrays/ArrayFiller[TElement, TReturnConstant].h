@@ -22,4 +22,4 @@
 
         public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
     };
-}// namespace Platform::Collections::Arrays
+}

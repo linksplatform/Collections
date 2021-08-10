@@ -21,4 +21,4 @@
         ASSERT_EQ("hello", TrimSingle("hello'"s, '\''));
         ASSERT_EQ("hello", TrimSingle("'hello"s, '\''));
     }
-}// namespace Platform::Collections::Tests
+}

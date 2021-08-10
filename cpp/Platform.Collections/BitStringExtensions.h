@@ -10,4 +10,4 @@
             string.set(i, value);
         }
     }
-}// namespace BitStringExtensions
+}

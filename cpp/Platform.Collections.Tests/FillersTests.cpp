@@ -63,4 +63,4 @@ namespace Platform::Collections::Tests
             ASSERT_EQ(set, (std::set{1, 2, 3, 4}));
         }
     }
-}// namespace Platform::Collections::Tests
+}

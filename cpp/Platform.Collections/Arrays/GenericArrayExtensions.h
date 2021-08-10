@@ -97,4 +97,4 @@
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements) { AddSkipFirst(array, position, elements, 1); }
-}// namespace Platform::Collections::Arrays
+}

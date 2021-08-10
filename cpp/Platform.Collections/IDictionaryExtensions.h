@@ -22,4 +22,4 @@
         }
         return dictionary[key];
     }
-}// namespace Platform::Collections::Dictionaries
+}

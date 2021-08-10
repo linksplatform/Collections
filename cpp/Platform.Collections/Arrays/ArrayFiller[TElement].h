@@ -24,4 +24,4 @@
 
         public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true); }
     };
-}// namespace Platform::Collections::Arrays
+}

@@ -53,4 +53,4 @@
     template<typename TList, typename TReturnConstant>
     ListFiller(TList, TReturnConstant) -> ListFiller<TList, TReturnConstant>;
     
-}// namespace Platform::Collections::Lists
+}

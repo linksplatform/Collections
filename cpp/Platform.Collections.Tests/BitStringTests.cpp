@@ -14,4 +14,4 @@
             ASSERT_EQ(value, bitString[i]);
         }
     }
-}// namespace Platform::Collections::Tests
+}

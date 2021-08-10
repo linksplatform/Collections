@@ -68,4 +68,4 @@
         }
         return string.substr(left, right - left + 1);
     }
-}// namespace Platform::Collections
+}

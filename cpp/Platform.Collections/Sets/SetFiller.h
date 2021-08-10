@@ -76,4 +76,4 @@
     template<typename TSet, typename TReturnConstant>
     SetFiller(TSet, TReturnConstant) -> SetFiller<TSet, TReturnConstant>;
 
-}// namespace Platform::Collections::Sets
+}

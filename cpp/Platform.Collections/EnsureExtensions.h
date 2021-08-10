@@ -20,7 +20,7 @@
             throw std::invalid_argument(std::string("Invalid ").append(argumentName).append(" argument: ").append(message).append(1, '.'));
         }
     }
-}// namespace Platform::Collections::Always
+}
 
 namespace Platform::Collections::Ensure::Always
 {
@@ -47,4 +47,4 @@ namespace Platform::Collections::Ensure::Always
     #endif
 
 #undef NDEBUG_CONSTEVAL
-}// namespace Platform::Collections::Always
+}
