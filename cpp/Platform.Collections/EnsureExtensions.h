@@ -10,11 +10,6 @@
 
     void ArgumentNotEmptyAndNotWhiteSpace(const std::string& argument, const std::string& argumentName, const std::string& message)
     {
-        if (argument.empty())
-        {
-            throw std::invalid_argument(std::string("Invalid ").append(argumentName).append(" argument: ").append(message).append(1, '.'));
-        }
-
         if (IsWhiteSpace(argument))
         {
             throw std::invalid_argument(std::string("Invalid ").append(argumentName).append(" argument: ").append(message).append(1, '.'));
@@ -22,7 +17,7 @@
     }
 }
 
-namespace Platform::Collections::Ensure::Always
+namespace Platform::Collections::Ensure::OnDebug
 {
 #ifdef NDEBUG
     #define NDEBUG_CONSTEVAL consteval

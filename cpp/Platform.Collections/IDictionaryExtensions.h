@@ -14,12 +14,12 @@
     template<Interfaces::IDictionary TDictionary>
     auto& GetOrAdd(TDictionary& dictionary, auto&& key, auto&& valueFactory)
     {
-        if (!dictionary.contains(key))
+        auto contains = dictionary.contains(key);
+        auto& value = dictionary[key];
+        if (!contains)
         {
-            auto& value = dictionary[key];
             value = valueFactory(key);
-            return value;
         }
-        return dictionary[key];
+        return value;
     }
 }

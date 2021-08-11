@@ -1,19 +1,33 @@
 ﻿namespace Platform::Collections
 {
+    namespace Internal
+    {
+        template<typename TChar>
+        static auto IsMasks(const std::basic_string<TChar>& string)
+        {
+            using ctype = std::ctype<wchar_t>;
+            using mask_type = std::ctype_base::mask;
+
+            auto& facet = std::use_facet<ctype>(std::locale());
+            std::vector<mask_type> masks(string.size());
+
+            facet.is(
+                static_cast<const wchar_t*>(&*string.begin()),
+                static_cast<const wchar_t*>(&*string.begin() + string.size()),
+                &*masks.begin()
+            );
+        }
+    }
+
     // Maybe internal
     template<typename TChar>
     static auto IsWhiteSpace(const std::basic_string<TChar>& string)
     {
         using ctype = std::ctype<wchar_t>;
-        auto& facet = std::use_facet<ctype>(std::locale());
+        using mask_type = std::ctype_base::mask;
 
-        std::size_t count = 0;
-        for (auto c : string)
-        {
-            count += static_cast<bool>(facet.is(ctype::space, c));
-        };
-
-        return count == string.size();
+        auto masks = Internal::IsMasks(string);
+        return std::ranges::all_of(masks, [](mask_type mask) { return mask & ctype::space; });
     }
 
     template<typename TChar>
