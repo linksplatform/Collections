@@ -2,6 +2,7 @@
 #include <Platform.Collections.h>
 
 #include "ArrayTests.cpp"
+#include "BestWalkersSandbox.cpp"
 #include "BitStringTests.cpp"
 #include "CharsSegmentTests.cpp"
 #include "ListTests.cpp"

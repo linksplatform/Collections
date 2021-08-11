@@ -30,14 +30,6 @@ std::u16string real_text =  uR"([english version](https://github.com/Konard/Link
 ...
 [![анимация](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/intro-animation-500.gif ""анимация"")](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/intro-animation-500.gif)";
 
-
-auto span_as_string(auto&& span)
-{
-    std::u16string result;
-    std::ranges::for_each(span, [&](auto&& item) { result += item; });
-    return result;
-}
-
 std::u16string exampleLoremIpsumText = u"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 using namespace Platform;
@@ -56,7 +48,7 @@ struct IterationsCounter : public AllSegmentsWalkerBase<IterationsCounter, char1
 template<typename Self>
 struct ConsolePrintedDuplicateWalkerBase : DuplicateSegmentsWalkerBase<Self, char16_t>
 {
-    void OnDuplicateFound(auto segment) {/* std::cout << span_as_string(segment) << "\n"; */}
+    void OnDuplicateFound(auto segment) { std::cout << span_as_string(segment) << "\n"; }
 
     std::span<char16_t> CreateSegment(Interfaces::IArray<char16_t> auto&& elements, int offset, int length) { return std::span<char16_t>(std::ranges::begin(elements) + offset, length); }
 };

@@ -38,7 +38,6 @@
             {
                 if constexpr (requires { Dictionary(std::size_t{}); })
                 {
-                    std::unordered_map<int, int>(1);
                     auto capacity = std::ceil(std::pow(std::ranges::size(elements), 2) / 2);
                     dictionary = Dictionary(capacity);
                 }
@@ -51,8 +50,8 @@
             base::WalkAll(elements);
         }
 
-        public: std::size_t GetSegmentFrequency(TSegment segment) { return dictionary[segment]; }
+        public: std::size_t GetSegmentFrequency(const TSegment& segment) { return dictionary[segment]; }
 
-        public: void SetSegmentFrequency(TSegment segment, std::int64_t frequency) { dictionary[segment] = frequency; }
+        public: void SetSegmentFrequency(const TSegment& segment, std::int64_t frequency) { dictionary[segment] = frequency; }
     };
 }

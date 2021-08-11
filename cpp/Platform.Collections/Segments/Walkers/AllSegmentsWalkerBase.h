@@ -28,12 +28,23 @@
             }
         }
 
-        public: TSegment CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length) { return base::self().CreateSegment(elements, offset, length); }
+        public: TSegment CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
+        {
+            if constexpr (requires { this->template CreateSegment<base::default_marker>(elements, offset, length); }) {
+                return base::self().CreateSegment<base::default_marker>(elements, offset, length);
+            } else {
+                return base::self().CreateSegment(elements, offset, length);
+            }
+        }
 
         public: void Iteration(const TSegment& segment) { base::self().Iteration(segment); }
 
-        public: auto CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
-            requires std::same_as<TSegment, std::span<T>>
+        template<typename marker = typename base::default_marker>
+        auto CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
+            requires
+                std::same_as<marker, typename base::default_marker>
+                &&
+                std::same_as<TSegment, std::span<T>>
         {
             return std::span<T>(std::ranges::begin(elements) + offset, length);
         }
