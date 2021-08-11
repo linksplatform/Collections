@@ -27,49 +27,49 @@
         public: TReturnConstant AddAndReturnConstant(TElement element) &
         {
             _set.insert(element);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant&& AddAndReturnConstant(TElement element) &&
         {
             _set.insert(element);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
         {
             Sets::AddFirst(_set, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant&& AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
         {
             Sets::AddFirst(_set, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
         {
             Sets::AddAll(_set, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant&& AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
         {
             Sets::AddAll(_set, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
         {
             Sets::AddSkipFirst(_set, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
 
         public: TReturnConstant&& AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
         {
             Sets::AddSkipFirst(_set, elements);
-            return std::move(_returnConstant);
+            return _returnConstant;
         }
     };
 
