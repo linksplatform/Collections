@@ -12,10 +12,12 @@
             std::vector<mask_type> masks(string.size());
 
             facet.is(
-                static_cast<wchar_t*>(&*string.begin()),
-                static_cast<wchar_t*>(&*string.begin() + string.size()),
+                reinterpret_cast<const wchar_t*>(&*string.begin()),
+                reinterpret_cast<const wchar_t*>(&*string.begin() + string.size()),
                 &*masks.begin()
             );
+
+            return masks;
         }
     }
 
