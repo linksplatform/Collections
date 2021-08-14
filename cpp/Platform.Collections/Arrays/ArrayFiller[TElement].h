@@ -3,8 +3,6 @@
     template<typename...> class ArrayFiller;
     template<Interfaces::IArray TArray> class ArrayFiller<TArray>
     {
-        using TElement = typename Interfaces::Array<TArray>::Item;
-
         protected: TArray& _array;
         protected: std::int64_t _position = 0;
 
@@ -16,10 +14,10 @@
 
         public: bool AddAndReturnTrue(auto&& element) { return Arrays::AddAndReturnConstant(_array, _position, std::forward<decltype(element)>(element), true); }
 
-        public: bool AddFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Arrays::AddFirstAndReturnConstant(_array, _position, elements, true); }
+        public: bool AddFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Arrays::AddFirstAndReturnConstant(_array, _position, elements, true); }
 
-        public: bool AddAllAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Arrays::AddAllAndReturnConstant(_array, _position, elements, true); }
+        public: bool AddAllAndReturnTrue(Interfaces::IArray auto&& elements) { return Arrays::AddAllAndReturnConstant(_array, _position, elements, true); }
 
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true); }
+        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true); }
     };
 }

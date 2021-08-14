@@ -3,14 +3,13 @@
     template<typename...> class ArrayFiller;
     template<Interfaces::IArray TArray, typename TReturnConstant> class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
     {
-        using TElement = typename Interfaces::Array<TArray>::Item;
         using base = ArrayFiller<TArray>;
 
         protected: TReturnConstant _returnConstant;
 
-        public: ArrayFiller(TArray& array, std::int64_t offset, auto&& returnConstant) : ArrayFiller<TArray>(array, offset), _returnConstant(std::forward<decltype(returnConstant)>(returnConstant)) { }
+        public: ArrayFiller(TArray& array, std::int64_t offset, TReturnConstant returnConstant) : ArrayFiller<TArray>(array, offset), _returnConstant(returnConstant) { }
 
-        public: ArrayFiller(TArray& array, auto&& returnConstant) : ArrayFiller(array, 0, std::forward<decltype(returnConstant)>(returnConstant)) { }
+        public: ArrayFiller(TArray& array, TReturnConstant returnConstant) : ArrayFiller(array, 0, returnConstant) { }
 
         public: TReturnConstant AddAndReturnConstant(auto&& element){ return Arrays::AddAndReturnConstant(base::_array, base::_position, std::forward<decltype(element)>(element), _returnConstant); }
 

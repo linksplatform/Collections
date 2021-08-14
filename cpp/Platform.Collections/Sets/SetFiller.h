@@ -3,8 +3,6 @@
     template<typename...> class SetFiller;
     template<Interfaces::ISet TSet, typename TReturnConstant> class SetFiller<TSet, TReturnConstant>
     {
-        using TElement = std::ranges::range_value_t<TSet>;
-
         protected: TSet& _set;
         protected: TReturnConstant _returnConstant{};
 
@@ -12,59 +10,35 @@
 
         public: explicit SetFiller(TSet& set) : SetFiller(set, {}) { }
 
-        public: void Add(TElement element) { _set.insert(element); }
+        public: void Add(auto&& element) { _set.insert(std::forward<decltype(element)>(element)); }
 
-        public: bool AddAndReturnTrue(TElement element) { return Sets::AddAndReturnTrue(_set, element); }
+        public: bool AddAndReturnTrue(auto&& element) { return Sets::AddAndReturnTrue(_set, std::forward<decltype(element)>(element)); }
 
-        public: bool AddFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Sets::AddFirstAndReturnTrue(_set, elements); }
+        public: bool AddFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Sets::AddFirstAndReturnTrue(_set, elements); }
 
-        public: bool AddAllAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Sets::AddAllAndReturnTrue(_set, elements); }
+        public: bool AddAllAndReturnTrue(Interfaces::IArray auto&& elements) { return Sets::AddAllAndReturnTrue(_set, elements); }
 
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray<TElement> auto&& elements) { return Sets::AddSkipFirstAndReturnTrue(_set, elements); }
+        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Sets::AddSkipFirstAndReturnTrue(_set, elements); }
 
-        public: TReturnConstant AddAndReturnConstant(TElement element) &
+        public: TReturnConstant AddAndReturnConstant(auto&& element)
         {
-            _set.insert(element);
+            Add(element);
             return _returnConstant;
         }
 
-        public: TReturnConstant&& AddAndReturnConstant(TElement element) &&
-        {
-            _set.insert(element);
-            return _returnConstant;
-        }
-
-        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
+        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray auto&& elements)
         {
             Sets::AddFirst(_set, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant&& AddFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
-        {
-            Sets::AddFirst(_set, elements);
-            return _returnConstant;
-        }
-
-        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
+        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray auto&& elements)
         {
             Sets::AddAll(_set, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant&& AddAllAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
-        {
-            Sets::AddAll(_set, elements);
-            return _returnConstant;
-        }
-
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &
-        {
-            Sets::AddSkipFirst(_set, elements);
-            return _returnConstant;
-        }
-
-        public: TReturnConstant&& AddSkipFirstAndReturnConstant(Interfaces::IArray<TElement> auto&& elements) &&
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray auto&& elements)
         {
             Sets::AddSkipFirst(_set, elements);
             return _returnConstant;
