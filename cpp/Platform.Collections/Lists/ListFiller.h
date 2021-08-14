@@ -1,9 +1,7 @@
 ﻿namespace Platform::Collections::Lists
 {
-    template<typename...>
-    class ListFiller;
-    template<Interfaces::IList TList, typename TReturnConstant>
-    class ListFiller<TList, TReturnConstant>
+    template<typename...> class ListFiller;
+    template<Interfaces::IList TList, typename TReturnConstant> class ListFiller<TList, TReturnConstant>
     {
         using TElement = std::ranges::range_value_t<TList>;
 

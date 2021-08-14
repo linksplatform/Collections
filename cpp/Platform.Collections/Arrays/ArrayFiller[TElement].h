@@ -1,9 +1,7 @@
 ﻿namespace Platform::Collections::Arrays
 {
-    template<typename...>
-    class ArrayFiller;
-    template<Interfaces::IArray TArray>
-    class ArrayFiller<TArray>
+    template<typename...> class ArrayFiller;
+    template<Interfaces::IArray TArray> class ArrayFiller<TArray>
     {
         using TElement = typename Interfaces::Array<TArray>::Item;
 

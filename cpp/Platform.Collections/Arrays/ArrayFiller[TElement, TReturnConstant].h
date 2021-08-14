@@ -1,9 +1,7 @@
 ﻿namespace Platform::Collections::Arrays
 {
-    template<typename...>
-    class ArrayFiller;
-    template<Interfaces::IArray TArray, typename TReturnConstant>
-    class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
+    template<typename...> class ArrayFiller;
+    template<Interfaces::IArray TArray, typename TReturnConstant> class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
     {
         using TElement = typename Interfaces::Array<TArray>::Item;
         using base = ArrayFiller<TArray>;

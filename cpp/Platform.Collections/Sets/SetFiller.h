@@ -1,9 +1,7 @@
 ﻿namespace Platform::Collections::Sets
 {
-    template<typename...>
-    class SetFiller;
-    template<Interfaces::ISet TSet, typename TReturnConstant>
-    class SetFiller<TSet, TReturnConstant>
+    template<typename...> class SetFiller;
+    template<Interfaces::ISet TSet, typename TReturnConstant> class SetFiller<TSet, TReturnConstant>
     {
         using TElement = std::ranges::range_value_t<TSet>;
 
