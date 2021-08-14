@@ -1,5 +1,8 @@
 #include <Platform.Collections.h>
 
+using namespace Platform::Interfaces;
+using namespace Platform::Collections::Segments::Walkers;
+
 std::u16string a = u"aaaaaaaaaa";
 
 std::u16string real_text =  uR"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
@@ -40,9 +43,6 @@ auto span_as_string(auto&& span)
 
 std::u16string exampleLoremIpsumText = u"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-using namespace Platform;
-using namespace Platform::Collections::Segments::Walkers;
-
 struct IterationsCounter : public AllSegmentsWalkerBase<IterationsCounter, char16_t>
 {
     using base = AllSegmentsWalkerBase<IterationsCounter, char16_t>;
@@ -58,7 +58,7 @@ struct ConsolePrintedDuplicateWalkerBase : DuplicateSegmentsWalkerBase<Self, cha
 {
     void OnDuplicateFound(auto segment) {/* std::cout << span_as_string(segment) << "\n"; */}
 
-    std::span<char16_t> CreateSegment(Interfaces::IArray<char16_t> auto&& elements, int offset, int length) { return std::span<char16_t>(std::ranges::begin(elements) + offset, length); }
+    std::span<char16_t> CreateSegment(IArray<char16_t> auto&& elements, int offset, int length) { return std::span<char16_t>(std::ranges::begin(elements) + offset, length); }
 };
 
 struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
@@ -71,7 +71,7 @@ struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
 
     Walker2() = default;
 
-    void WalkAll(Interfaces::IArray<char16_t> auto&& elements)
+    void WalkAll(IArray<char16_t> auto&& elements)
     {
         _cache.clear();
 
@@ -107,12 +107,12 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
     // Automatically '
     //
-    // auto CreateSegment(Interfaces::IList auto&& elements, std::int32_t offset, std::int32_t length)
+    // auto CreateSegment(IList auto&& elements, std::int32_t offset, std::int32_t length)
     // {
     //     return std::span<char16_t>(std::ranges::begin(elements) + offset, length);
     // }
 
-    void WalkAll(Interfaces::IArray<char16_t> auto&& elements)
+    void WalkAll(IArray<char16_t> auto&& elements)
     {
         _totalDuplicates = 0;
 
