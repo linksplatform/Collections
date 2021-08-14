@@ -1,5 +1,16 @@
 ﻿namespace Platform::Collections::Tests
 {
+    TEST(StringTests, IsWhiteSpace)
+    {
+        using namespace std::string_literals;
+
+        std::locale::global(std::locale(""));
+        ASSERT_TRUE(IsWhiteSpace(""s));
+        ASSERT_TRUE(IsWhiteSpace(" "s));
+        ASSERT_TRUE(IsWhiteSpace("\n\v\f\r"s));
+        ASSERT_TRUE(IsWhiteSpace(u"\u2003"s));
+    }
+
     TEST(StringTests, CapitalizeFirstLetterTest)
     {
         using namespace std::string_literals;
