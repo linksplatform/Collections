@@ -8,7 +8,6 @@
         ASSERT_TRUE(IsWhiteSpace(""s));
         ASSERT_TRUE(IsWhiteSpace(" "s));
         ASSERT_TRUE(IsWhiteSpace("\n\v\f\r"s));
-        ASSERT_TRUE(IsWhiteSpace(u"\u2003"s));
     }
 
     TEST(StringTests, CapitalizeFirstLetterTest)

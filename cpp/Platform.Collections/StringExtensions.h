@@ -1,15 +1,5 @@
 ﻿namespace Platform::Collections
 {
-    // Maybe internal
-    template<typename TChar>
-    static auto IsWhiteSpace(const std::basic_string<TChar>& string)
-    {
-        using ctype = std::ctype<wchar_t>;
-        auto& facet = std::use_facet<ctype>(std::locale());
-
-        return std::ranges::all_of(string, [&facet](auto c){ return facet.is(ctype::space, c); });
-    }
-
     template<typename TChar>
     static auto CapitalizeFirstLetter(std::basic_string<TChar> string)
     {
@@ -61,5 +51,14 @@
             right--;
         }
         return string.substr(left, right - left + 1);
+    }
+
+    template<typename TChar>
+    static auto IsWhiteSpace(const std::basic_string<TChar>& string)
+    {
+        using ctype = std::ctype<wchar_t>;
+        auto& facet = std::use_facet<ctype>(std::locale());
+
+        return std::ranges::all_of(string, [&facet](auto c){ return facet.is(ctype::space, c); });
     }
 }
