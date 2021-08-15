@@ -174,7 +174,7 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
 TEST(Walkers, Sandbox)
 {
-    auto text = exampleLoremIpsumText;
+    auto text = real_text;
 
     auto iterationsCounter = IterationsCounter{};
     iterationsCounter.WalkAll(text);
