@@ -82,13 +82,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).Add
   nameWithType: ArrayFiller<TElement>.Add
   nameWithType.vb: ArrayFiller(Of TElement).Add
-- uid: Platform.Collections.Arrays.ArrayFiller`1.AddAllAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Arrays.ArrayFiller`1.AddAllAndReturnTrue(IList{`0})
   name: AddAllAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Arrays.ArrayFiller-1.html#Platform_Collections_Arrays_ArrayFiller_1_AddAllAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Arrays.ArrayFiller`1.AddAllAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Arrays.ArrayFiller-1.html#Platform_Collections_Arrays_ArrayFiller_1_AddAllAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Arrays.ArrayFiller`1.AddAllAndReturnTrue(IList{`0})
   name.vb: AddAllAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Arrays.ArrayFiller<TElement>.AddAllAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddAllAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Arrays.ArrayFiller<TElement>.AddAllAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddAllAndReturnTrue(IList(Of TElement))
   nameWithType: ArrayFiller<TElement>.AddAllAndReturnTrue(IList<TElement>)
   nameWithType.vb: ArrayFiller(Of TElement).AddAllAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Arrays.ArrayFiller`1.AddAllAndReturnTrue*
@@ -117,13 +117,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddAndReturnTrue
   nameWithType: ArrayFiller<TElement>.AddAndReturnTrue
   nameWithType.vb: ArrayFiller(Of TElement).AddAndReturnTrue
-- uid: Platform.Collections.Arrays.ArrayFiller`1.AddFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Arrays.ArrayFiller`1.AddFirstAndReturnTrue(IList{`0})
   name: AddFirstAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Arrays.ArrayFiller-1.html#Platform_Collections_Arrays_ArrayFiller_1_AddFirstAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Arrays.ArrayFiller`1.AddFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Arrays.ArrayFiller-1.html#Platform_Collections_Arrays_ArrayFiller_1_AddFirstAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Arrays.ArrayFiller`1.AddFirstAndReturnTrue(IList{`0})
   name.vb: AddFirstAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Arrays.ArrayFiller<TElement>.AddFirstAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddFirstAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Arrays.ArrayFiller<TElement>.AddFirstAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddFirstAndReturnTrue(IList(Of TElement))
   nameWithType: ArrayFiller<TElement>.AddFirstAndReturnTrue(IList<TElement>)
   nameWithType.vb: ArrayFiller(Of TElement).AddFirstAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Arrays.ArrayFiller`1.AddFirstAndReturnTrue*
@@ -135,13 +135,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddFirstAndReturnTrue
   nameWithType: ArrayFiller<TElement>.AddFirstAndReturnTrue
   nameWithType.vb: ArrayFiller(Of TElement).AddFirstAndReturnTrue
-- uid: Platform.Collections.Arrays.ArrayFiller`1.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Arrays.ArrayFiller`1.AddSkipFirstAndReturnTrue(IList{`0})
   name: AddSkipFirstAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Arrays.ArrayFiller-1.html#Platform_Collections_Arrays_ArrayFiller_1_AddSkipFirstAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Arrays.ArrayFiller`1.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Arrays.ArrayFiller-1.html#Platform_Collections_Arrays_ArrayFiller_1_AddSkipFirstAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Arrays.ArrayFiller`1.AddSkipFirstAndReturnTrue(IList{`0})
   name.vb: AddSkipFirstAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Arrays.ArrayFiller<TElement>.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddSkipFirstAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Arrays.ArrayFiller<TElement>.AddSkipFirstAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement).AddSkipFirstAndReturnTrue(IList(Of TElement))
   nameWithType: ArrayFiller<TElement>.AddSkipFirstAndReturnTrue(IList<TElement>)
   nameWithType.vb: ArrayFiller(Of TElement).AddSkipFirstAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Arrays.ArrayFiller`1.AddSkipFirstAndReturnTrue*
@@ -197,13 +197,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant)._returnConstant
   nameWithType: ArrayFiller<TElement, TReturnConstant>._returnConstant
   nameWithType.vb: ArrayFiller(Of TElement, TReturnConstant)._returnConstant
-- uid: Platform.Collections.Arrays.ArrayFiller`2.AddAllAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Arrays.ArrayFiller`2.AddAllAndReturnConstant(IList{`0})
   name: AddAllAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Arrays.ArrayFiller-2.html#Platform_Collections_Arrays_ArrayFiller_2_AddAllAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Arrays.ArrayFiller`2.AddAllAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Arrays.ArrayFiller-2.html#Platform_Collections_Arrays_ArrayFiller_2_AddAllAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Arrays.ArrayFiller`2.AddAllAndReturnConstant(IList{`0})
   name.vb: AddAllAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Arrays.ArrayFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Arrays.ArrayFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(IList(Of TElement))
   nameWithType: ArrayFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(IList<TElement>)
   nameWithType.vb: ArrayFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Arrays.ArrayFiller`2.AddAllAndReturnConstant*
@@ -232,13 +232,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddAndReturnConstant
   nameWithType: ArrayFiller<TElement, TReturnConstant>.AddAndReturnConstant
   nameWithType.vb: ArrayFiller(Of TElement, TReturnConstant).AddAndReturnConstant
-- uid: Platform.Collections.Arrays.ArrayFiller`2.AddFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Arrays.ArrayFiller`2.AddFirstAndReturnConstant(IList{`0})
   name: AddFirstAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Arrays.ArrayFiller-2.html#Platform_Collections_Arrays_ArrayFiller_2_AddFirstAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Arrays.ArrayFiller`2.AddFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Arrays.ArrayFiller-2.html#Platform_Collections_Arrays_ArrayFiller_2_AddFirstAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Arrays.ArrayFiller`2.AddFirstAndReturnConstant(IList{`0})
   name.vb: AddFirstAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Arrays.ArrayFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Arrays.ArrayFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(IList(Of TElement))
   nameWithType: ArrayFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)
   nameWithType.vb: ArrayFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Arrays.ArrayFiller`2.AddFirstAndReturnConstant*
@@ -250,13 +250,13 @@ references:
   fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant
   nameWithType: ArrayFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant
   nameWithType.vb: ArrayFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant
-- uid: Platform.Collections.Arrays.ArrayFiller`2.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Arrays.ArrayFiller`2.AddSkipFirstAndReturnConstant(IList{`0})
   name: AddSkipFirstAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Arrays.ArrayFiller-2.html#Platform_Collections_Arrays_ArrayFiller_2_AddSkipFirstAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Arrays.ArrayFiller`2.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Arrays.ArrayFiller-2.html#Platform_Collections_Arrays_ArrayFiller_2_AddSkipFirstAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Arrays.ArrayFiller`2.AddSkipFirstAndReturnConstant(IList{`0})
   name.vb: AddSkipFirstAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Arrays.ArrayFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Arrays.ArrayFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Arrays.ArrayFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(IList(Of TElement))
   nameWithType: ArrayFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(IList<TElement>)
   nameWithType.vb: ArrayFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Arrays.ArrayFiller`2.AddSkipFirstAndReturnConstant*
@@ -559,13 +559,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddAll
   nameWithType: GenericArrayExtensions.AddAll
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddAll``1(``0[],System.Int64@,System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddAll``1(``0[],System.Int64@,IList{``0})
   name: AddAll<T>(T[], ref Int64, IList<T>)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddAll__1___0___System_Int64__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddAll``1(``0[],System.Int64@,System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddAll__1___0___System_Int64__IList___0__
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddAll``1(``0[],System.Int64@,IList{``0})
   name.vb: AddAll(Of T)(T(), ByRef Int64, IList(Of T))
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddAll<T>(T[], ref System.Int64, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddAll(Of T)(T(), ByRef System.Int64, System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddAll<T>(T[], ref System.Int64, IList<T>)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddAll(Of T)(T(), ByRef System.Int64, IList(Of T))
   nameWithType: GenericArrayExtensions.AddAll<T>(T[], ref Int64, IList<T>)
   nameWithType.vb: GenericArrayExtensions.AddAll(Of T)(T(), ByRef Int64, IList(Of T))
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant*
@@ -575,13 +575,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant
   nameWithType: GenericArrayExtensions.AddAllAndReturnConstant
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant``2(``0[],System.Int64@,System.Collections.Generic.IList{``0},``1)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant``2(``0[],System.Int64@,IList{``0},``1)
   name: AddAllAndReturnConstant<TElement, TReturnConstant>(TElement[], ref Int64, IList<TElement>, TReturnConstant)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddAllAndReturnConstant__2___0___System_Int64__System_Collections_Generic_IList___0____1_
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant``2(``0[],System.Int64@,System.Collections.Generic.IList{``0},``1)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddAllAndReturnConstant__2___0___System_Int64__IList___0____1_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant``2(``0[],System.Int64@,IList{``0},``1)
   name.vb: AddAllAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef Int64, IList(Of TElement), TReturnConstant)
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant<TElement, TReturnConstant>(TElement[], ref System.Int64, System.Collections.Generic.IList<TElement>, TReturnConstant)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef System.Int64, System.Collections.Generic.IList(Of TElement), TReturnConstant)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant<TElement, TReturnConstant>(TElement[], ref System.Int64, IList<TElement>, TReturnConstant)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddAllAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef System.Int64, IList(Of TElement), TReturnConstant)
   nameWithType: GenericArrayExtensions.AddAllAndReturnConstant<TElement, TReturnConstant>(TElement[], ref Int64, IList<TElement>, TReturnConstant)
   nameWithType.vb: GenericArrayExtensions.AddAllAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef Int64, IList(Of TElement), TReturnConstant)
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.AddAndReturnConstant*
@@ -607,13 +607,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst
   nameWithType: GenericArrayExtensions.AddFirst
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst``1(``0[],System.Int64@,System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst``1(``0[],System.Int64@,IList{``0})
   name: AddFirst<T>(T[], ref Int64, IList<T>)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddFirst__1___0___System_Int64__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddFirst``1(``0[],System.Int64@,System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddFirst__1___0___System_Int64__IList___0__
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddFirst``1(``0[],System.Int64@,IList{``0})
   name.vb: AddFirst(Of T)(T(), ByRef Int64, IList(Of T))
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst<T>(T[], ref System.Int64, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst(Of T)(T(), ByRef System.Int64, System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst<T>(T[], ref System.Int64, IList<T>)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddFirst(Of T)(T(), ByRef System.Int64, IList(Of T))
   nameWithType: GenericArrayExtensions.AddFirst<T>(T[], ref Int64, IList<T>)
   nameWithType.vb: GenericArrayExtensions.AddFirst(Of T)(T(), ByRef Int64, IList(Of T))
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant*
@@ -623,13 +623,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant
   nameWithType: GenericArrayExtensions.AddFirstAndReturnConstant
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant``2(``0[],System.Int64@,System.Collections.Generic.IList{``0},``1)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant``2(``0[],System.Int64@,IList{``0},``1)
   name: AddFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref Int64, IList<TElement>, TReturnConstant)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddFirstAndReturnConstant__2___0___System_Int64__System_Collections_Generic_IList___0____1_
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant``2(``0[],System.Int64@,System.Collections.Generic.IList{``0},``1)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddFirstAndReturnConstant__2___0___System_Int64__IList___0____1_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant``2(``0[],System.Int64@,IList{``0},``1)
   name.vb: AddFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef Int64, IList(Of TElement), TReturnConstant)
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref System.Int64, System.Collections.Generic.IList<TElement>, TReturnConstant)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef System.Int64, System.Collections.Generic.IList(Of TElement), TReturnConstant)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref System.Int64, IList<TElement>, TReturnConstant)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef System.Int64, IList(Of TElement), TReturnConstant)
   nameWithType: GenericArrayExtensions.AddFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref Int64, IList<TElement>, TReturnConstant)
   nameWithType.vb: GenericArrayExtensions.AddFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef Int64, IList(Of TElement), TReturnConstant)
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst*
@@ -639,22 +639,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst
   nameWithType: GenericArrayExtensions.AddSkipFirst
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,IList{``0})
   name: AddSkipFirst<T>(T[], ref Int64, IList<T>)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddSkipFirst__1___0___System_Int64__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddSkipFirst__1___0___System_Int64__IList___0__
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,IList{``0})
   name.vb: AddSkipFirst(Of T)(T(), ByRef Int64, IList(Of T))
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst<T>(T[], ref System.Int64, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst(Of T)(T(), ByRef System.Int64, System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst<T>(T[], ref System.Int64, IList<T>)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst(Of T)(T(), ByRef System.Int64, IList(Of T))
   nameWithType: GenericArrayExtensions.AddSkipFirst<T>(T[], ref Int64, IList<T>)
   nameWithType.vb: GenericArrayExtensions.AddSkipFirst(Of T)(T(), ByRef Int64, IList(Of T))
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,System.Collections.Generic.IList{``0},System.Int32)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,IList{``0},System.Int32)
   name: AddSkipFirst<T>(T[], ref Int64, IList<T>, Int32)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddSkipFirst__1___0___System_Int64__System_Collections_Generic_IList___0__System_Int32_
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,System.Collections.Generic.IList{``0},System.Int32)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddSkipFirst__1___0___System_Int64__IList___0__System_Int32_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst``1(``0[],System.Int64@,IList{``0},System.Int32)
   name.vb: AddSkipFirst(Of T)(T(), ByRef Int64, IList(Of T), Int32)
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst<T>(T[], ref System.Int64, System.Collections.Generic.IList<T>, System.Int32)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst(Of T)(T(), ByRef System.Int64, System.Collections.Generic.IList(Of T), System.Int32)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst<T>(T[], ref System.Int64, IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirst(Of T)(T(), ByRef System.Int64, IList(Of T), System.Int32)
   nameWithType: GenericArrayExtensions.AddSkipFirst<T>(T[], ref Int64, IList<T>, Int32)
   nameWithType.vb: GenericArrayExtensions.AddSkipFirst(Of T)(T(), ByRef Int64, IList(Of T), Int32)
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant*
@@ -664,13 +664,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant
   nameWithType: GenericArrayExtensions.AddSkipFirstAndReturnConstant
-- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant``2(``0[],System.Int64@,System.Collections.Generic.IList{``0},``1)
+- uid: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant``2(``0[],System.Int64@,IList{``0},``1)
   name: AddSkipFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref Int64, IList<TElement>, TReturnConstant)
-  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddSkipFirstAndReturnConstant__2___0___System_Int64__System_Collections_Generic_IList___0____1_
-  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant``2(``0[],System.Int64@,System.Collections.Generic.IList{``0},``1)
+  href: api/Platform.Collections.Arrays.GenericArrayExtensions.html#Platform_Collections_Arrays_GenericArrayExtensions_AddSkipFirstAndReturnConstant__2___0___System_Int64__IList___0____1_
+  commentId: M:Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant``2(``0[],System.Int64@,IList{``0},``1)
   name.vb: AddSkipFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef Int64, IList(Of TElement), TReturnConstant)
-  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref System.Int64, System.Collections.Generic.IList<TElement>, TReturnConstant)
-  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef System.Int64, System.Collections.Generic.IList(Of TElement), TReturnConstant)
+  fullName: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref System.Int64, IList<TElement>, TReturnConstant)
+  fullName.vb: Platform.Collections.Arrays.GenericArrayExtensions.AddSkipFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef System.Int64, IList(Of TElement), TReturnConstant)
   nameWithType: GenericArrayExtensions.AddSkipFirstAndReturnConstant<TElement, TReturnConstant>(TElement[], ref Int64, IList<TElement>, TReturnConstant)
   nameWithType.vb: GenericArrayExtensions.AddSkipFirstAndReturnConstant(Of TElement, TReturnConstant)(TElement(), ByRef Int64, IList(Of TElement), TReturnConstant)
 - uid: Platform.Collections.Arrays.GenericArrayExtensions.Clone*
@@ -1457,13 +1457,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll
   nameWithType: ConcurrentQueueExtensions.DequeueAll
-- uid: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll``1(System.Collections.Concurrent.ConcurrentQueue{``0})
+- uid: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll``1(ConcurrentQueue{``0})
   name: DequeueAll<T>(ConcurrentQueue<T>)
-  href: api/Platform.Collections.Concurrent.ConcurrentQueueExtensions.html#Platform_Collections_Concurrent_ConcurrentQueueExtensions_DequeueAll__1_System_Collections_Concurrent_ConcurrentQueue___0__
-  commentId: M:Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll``1(System.Collections.Concurrent.ConcurrentQueue{``0})
+  href: api/Platform.Collections.Concurrent.ConcurrentQueueExtensions.html#Platform_Collections_Concurrent_ConcurrentQueueExtensions_DequeueAll__1_ConcurrentQueue___0__
+  commentId: M:Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll``1(ConcurrentQueue{``0})
   name.vb: DequeueAll(Of T)(ConcurrentQueue(Of T))
-  fullName: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll<T>(System.Collections.Concurrent.ConcurrentQueue<T>)
-  fullName.vb: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll(Of T)(System.Collections.Concurrent.ConcurrentQueue(Of T))
+  fullName: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll<T>(ConcurrentQueue<T>)
+  fullName.vb: Platform.Collections.Concurrent.ConcurrentQueueExtensions.DequeueAll(Of T)(ConcurrentQueue(Of T))
   nameWithType: ConcurrentQueueExtensions.DequeueAll<T>(ConcurrentQueue<T>)
   nameWithType.vb: ConcurrentQueueExtensions.DequeueAll(Of T)(ConcurrentQueue(Of T))
 - uid: Platform.Collections.Concurrent.ConcurrentStackExtensions
@@ -1479,13 +1479,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault
   nameWithType: ConcurrentStackExtensions.PeekOrDefault
-- uid: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault``1(System.Collections.Concurrent.ConcurrentStack{``0})
+- uid: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault``1(ConcurrentStack{``0})
   name: PeekOrDefault<T>(ConcurrentStack<T>)
-  href: api/Platform.Collections.Concurrent.ConcurrentStackExtensions.html#Platform_Collections_Concurrent_ConcurrentStackExtensions_PeekOrDefault__1_System_Collections_Concurrent_ConcurrentStack___0__
-  commentId: M:Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault``1(System.Collections.Concurrent.ConcurrentStack{``0})
+  href: api/Platform.Collections.Concurrent.ConcurrentStackExtensions.html#Platform_Collections_Concurrent_ConcurrentStackExtensions_PeekOrDefault__1_ConcurrentStack___0__
+  commentId: M:Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault``1(ConcurrentStack{``0})
   name.vb: PeekOrDefault(Of T)(ConcurrentStack(Of T))
-  fullName: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault<T>(System.Collections.Concurrent.ConcurrentStack<T>)
-  fullName.vb: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault(Of T)(System.Collections.Concurrent.ConcurrentStack(Of T))
+  fullName: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault<T>(ConcurrentStack<T>)
+  fullName.vb: Platform.Collections.Concurrent.ConcurrentStackExtensions.PeekOrDefault(Of T)(ConcurrentStack(Of T))
   nameWithType: ConcurrentStackExtensions.PeekOrDefault<T>(ConcurrentStack<T>)
   nameWithType.vb: ConcurrentStackExtensions.PeekOrDefault(Of T)(ConcurrentStack(Of T))
 - uid: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault*
@@ -1495,13 +1495,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault
   nameWithType: ConcurrentStackExtensions.PopOrDefault
-- uid: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault``1(System.Collections.Concurrent.ConcurrentStack{``0})
+- uid: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault``1(ConcurrentStack{``0})
   name: PopOrDefault<T>(ConcurrentStack<T>)
-  href: api/Platform.Collections.Concurrent.ConcurrentStackExtensions.html#Platform_Collections_Concurrent_ConcurrentStackExtensions_PopOrDefault__1_System_Collections_Concurrent_ConcurrentStack___0__
-  commentId: M:Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault``1(System.Collections.Concurrent.ConcurrentStack{``0})
+  href: api/Platform.Collections.Concurrent.ConcurrentStackExtensions.html#Platform_Collections_Concurrent_ConcurrentStackExtensions_PopOrDefault__1_ConcurrentStack___0__
+  commentId: M:Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault``1(ConcurrentStack{``0})
   name.vb: PopOrDefault(Of T)(ConcurrentStack(Of T))
-  fullName: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault<T>(System.Collections.Concurrent.ConcurrentStack<T>)
-  fullName.vb: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault(Of T)(System.Collections.Concurrent.ConcurrentStack(Of T))
+  fullName: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault<T>(ConcurrentStack<T>)
+  fullName.vb: Platform.Collections.Concurrent.ConcurrentStackExtensions.PopOrDefault(Of T)(ConcurrentStack(Of T))
   nameWithType: ConcurrentStackExtensions.PopOrDefault<T>(ConcurrentStack<T>)
   nameWithType.vb: ConcurrentStackExtensions.PopOrDefault(Of T)(ConcurrentStack(Of T))
 - uid: Platform.Collections.EnsureExtensions
@@ -1517,58 +1517,58 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty
   nameWithType: EnsureExtensions.ArgumentNotEmpty
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0})
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,ICollection{``0})
   name: ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0})
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_ICollection___0__
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,ICollection{``0})
   name.vb: ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T))
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T))
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T))
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T))
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,ICollection{``0},System.String)
   name: ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_ICollection___0__System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,ICollection{``0},System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,ICollection{``0},System.String,System.String)
   name: ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_System_Collections_Generic_ICollection___0__System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureAlwaysExtensionRoot_ICollection___0__System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureAlwaysExtensionRoot,ICollection{``0},System.String,System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String, String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection<T>, System.String, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String, System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, System.String, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureAlwaysExtensionRoot, ICollection<T>, String, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureAlwaysExtensionRoot, ICollection(Of T), String, String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0})
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,ICollection{``0})
   name: ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0})
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_ICollection___0__
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,ICollection{``0})
   name.vb: ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T))
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T))
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T))
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T))
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,ICollection{``0},System.String)
   name: ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_ICollection___0__System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,ICollection{``0},System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String)
-- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+- uid: Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,ICollection{``0},System.String,System.String)
   name: ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String, String)
-  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_System_Collections_Generic_ICollection___0__System_String_System_String_
-  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,System.Collections.Generic.ICollection{``0},System.String,System.String)
+  href: api/Platform.Collections.EnsureExtensions.html#Platform_Collections_EnsureExtensions_ArgumentNotEmpty__1_EnsureOnDebugExtensionRoot_ICollection___0__System_String_System_String_
+  commentId: M:Platform.Collections.EnsureExtensions.ArgumentNotEmpty``1(EnsureOnDebugExtensionRoot,ICollection{``0},System.String,System.String)
   name.vb: ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String, String)
-  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection<T>, System.String, System.String)
-  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, System.Collections.Generic.ICollection(Of T), System.String, System.String)
+  fullName: Platform.Collections.EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, System.String, System.String)
+  fullName.vb: Platform.Collections.EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), System.String, System.String)
   nameWithType: EnsureExtensions.ArgumentNotEmpty<T>(EnsureOnDebugExtensionRoot, ICollection<T>, String, String)
   nameWithType.vb: EnsureExtensions.ArgumentNotEmpty(Of T)(EnsureOnDebugExtensionRoot, ICollection(Of T), String, String)
 - uid: Platform.Collections.EnsureExtensions.ArgumentNotEmptyAndNotWhiteSpace(EnsureAlwaysExtensionRoot,System.String)
@@ -1627,13 +1627,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.ICollectionExtensions.AllEqualToDefault
   nameWithType: ICollectionExtensions.AllEqualToDefault
-- uid: Platform.Collections.ICollectionExtensions.AllEqualToDefault``1(System.Collections.Generic.ICollection{``0})
+- uid: Platform.Collections.ICollectionExtensions.AllEqualToDefault``1(ICollection{``0})
   name: AllEqualToDefault<T>(ICollection<T>)
-  href: api/Platform.Collections.ICollectionExtensions.html#Platform_Collections_ICollectionExtensions_AllEqualToDefault__1_System_Collections_Generic_ICollection___0__
-  commentId: M:Platform.Collections.ICollectionExtensions.AllEqualToDefault``1(System.Collections.Generic.ICollection{``0})
+  href: api/Platform.Collections.ICollectionExtensions.html#Platform_Collections_ICollectionExtensions_AllEqualToDefault__1_ICollection___0__
+  commentId: M:Platform.Collections.ICollectionExtensions.AllEqualToDefault``1(ICollection{``0})
   name.vb: AllEqualToDefault(Of T)(ICollection(Of T))
-  fullName: Platform.Collections.ICollectionExtensions.AllEqualToDefault<T>(System.Collections.Generic.ICollection<T>)
-  fullName.vb: Platform.Collections.ICollectionExtensions.AllEqualToDefault(Of T)(System.Collections.Generic.ICollection(Of T))
+  fullName: Platform.Collections.ICollectionExtensions.AllEqualToDefault<T>(ICollection<T>)
+  fullName.vb: Platform.Collections.ICollectionExtensions.AllEqualToDefault(Of T)(ICollection(Of T))
   nameWithType: ICollectionExtensions.AllEqualToDefault<T>(ICollection<T>)
   nameWithType.vb: ICollectionExtensions.AllEqualToDefault(Of T)(ICollection(Of T))
 - uid: Platform.Collections.ICollectionExtensions.IsNullOrEmpty*
@@ -1643,13 +1643,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.ICollectionExtensions.IsNullOrEmpty
   nameWithType: ICollectionExtensions.IsNullOrEmpty
-- uid: Platform.Collections.ICollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})
+- uid: Platform.Collections.ICollectionExtensions.IsNullOrEmpty``1(ICollection{``0})
   name: IsNullOrEmpty<T>(ICollection<T>)
-  href: api/Platform.Collections.ICollectionExtensions.html#Platform_Collections_ICollectionExtensions_IsNullOrEmpty__1_System_Collections_Generic_ICollection___0__
-  commentId: M:Platform.Collections.ICollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})
+  href: api/Platform.Collections.ICollectionExtensions.html#Platform_Collections_ICollectionExtensions_IsNullOrEmpty__1_ICollection___0__
+  commentId: M:Platform.Collections.ICollectionExtensions.IsNullOrEmpty``1(ICollection{``0})
   name.vb: IsNullOrEmpty(Of T)(ICollection(Of T))
-  fullName: Platform.Collections.ICollectionExtensions.IsNullOrEmpty<T>(System.Collections.Generic.ICollection<T>)
-  fullName.vb: Platform.Collections.ICollectionExtensions.IsNullOrEmpty(Of T)(System.Collections.Generic.ICollection(Of T))
+  fullName: Platform.Collections.ICollectionExtensions.IsNullOrEmpty<T>(ICollection<T>)
+  fullName.vb: Platform.Collections.ICollectionExtensions.IsNullOrEmpty(Of T)(ICollection(Of T))
   nameWithType: ICollectionExtensions.IsNullOrEmpty<T>(ICollection<T>)
   nameWithType.vb: ICollectionExtensions.IsNullOrEmpty(Of T)(ICollection(Of T))
 - uid: Platform.Collections.IDictionaryExtensions
@@ -1665,13 +1665,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.IDictionaryExtensions.GetOrAdd
   nameWithType: IDictionaryExtensions.GetOrAdd
-- uid: Platform.Collections.IDictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``0,``1})
+- uid: Platform.Collections.IDictionaryExtensions.GetOrAdd``2(IDictionary{``0,``1},``0,Func{``0,``1})
   name: GetOrAdd<TKey, TValue>(IDictionary<TKey, TValue>, TKey, Func<TKey, TValue>)
-  href: api/Platform.Collections.IDictionaryExtensions.html#Platform_Collections_IDictionaryExtensions_GetOrAdd__2_System_Collections_Generic_IDictionary___0___1____0_System_Func___0___1__
-  commentId: M:Platform.Collections.IDictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``0,``1})
+  href: api/Platform.Collections.IDictionaryExtensions.html#Platform_Collections_IDictionaryExtensions_GetOrAdd__2_IDictionary___0___1____0_Func___0___1__
+  commentId: M:Platform.Collections.IDictionaryExtensions.GetOrAdd``2(IDictionary{``0,``1},``0,Func{``0,``1})
   name.vb: GetOrAdd(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, Func(Of TKey, TValue))
-  fullName: Platform.Collections.IDictionaryExtensions.GetOrAdd<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey, System.Func<TKey, TValue>)
-  fullName.vb: Platform.Collections.IDictionaryExtensions.GetOrAdd(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey, System.Func(Of TKey, TValue))
+  fullName: Platform.Collections.IDictionaryExtensions.GetOrAdd<TKey, TValue>(IDictionary<TKey, TValue>, TKey, Func<TKey, TValue>)
+  fullName.vb: Platform.Collections.IDictionaryExtensions.GetOrAdd(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, Func(Of TKey, TValue))
   nameWithType: IDictionaryExtensions.GetOrAdd<TKey, TValue>(IDictionary<TKey, TValue>, TKey, Func<TKey, TValue>)
   nameWithType.vb: IDictionaryExtensions.GetOrAdd(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey, Func(Of TKey, TValue))
 - uid: Platform.Collections.IDictionaryExtensions.GetOrDefault*
@@ -1681,13 +1681,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.IDictionaryExtensions.GetOrDefault
   nameWithType: IDictionaryExtensions.GetOrDefault
-- uid: Platform.Collections.IDictionaryExtensions.GetOrDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0)
+- uid: Platform.Collections.IDictionaryExtensions.GetOrDefault``2(IDictionary{``0,``1},``0)
   name: GetOrDefault<TKey, TValue>(IDictionary<TKey, TValue>, TKey)
-  href: api/Platform.Collections.IDictionaryExtensions.html#Platform_Collections_IDictionaryExtensions_GetOrDefault__2_System_Collections_Generic_IDictionary___0___1____0_
-  commentId: M:Platform.Collections.IDictionaryExtensions.GetOrDefault``2(System.Collections.Generic.IDictionary{``0,``1},``0)
+  href: api/Platform.Collections.IDictionaryExtensions.html#Platform_Collections_IDictionaryExtensions_GetOrDefault__2_IDictionary___0___1____0_
+  commentId: M:Platform.Collections.IDictionaryExtensions.GetOrDefault``2(IDictionary{``0,``1},``0)
   name.vb: GetOrDefault(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey)
-  fullName: Platform.Collections.IDictionaryExtensions.GetOrDefault<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey)
-  fullName.vb: Platform.Collections.IDictionaryExtensions.GetOrDefault(Of TKey, TValue)(System.Collections.Generic.IDictionary(Of TKey, TValue), TKey)
+  fullName: Platform.Collections.IDictionaryExtensions.GetOrDefault<TKey, TValue>(IDictionary<TKey, TValue>, TKey)
+  fullName.vb: Platform.Collections.IDictionaryExtensions.GetOrDefault(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey)
   nameWithType: IDictionaryExtensions.GetOrDefault<TKey, TValue>(IDictionary<TKey, TValue>, TKey)
   nameWithType.vb: IDictionaryExtensions.GetOrDefault(Of TKey, TValue)(IDictionary(Of TKey, TValue), TKey)
 - uid: Platform.Collections.Lists
@@ -1702,13 +1702,13 @@ references:
   commentId: T:Platform.Collections.Lists.CharIListExtensions
   fullName: Platform.Collections.Lists.CharIListExtensions
   nameWithType: CharIListExtensions
-- uid: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(System.Collections.Generic.IList{System.Char},System.Collections.Generic.IList{System.Char})
+- uid: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(IList{System.Char},IList{System.Char})
   name: ContentEqualTo(IList<Char>, IList<Char>)
-  href: api/Platform.Collections.Lists.CharIListExtensions.html#Platform_Collections_Lists_CharIListExtensions_ContentEqualTo_System_Collections_Generic_IList_System_Char__System_Collections_Generic_IList_System_Char__
-  commentId: M:Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(System.Collections.Generic.IList{System.Char},System.Collections.Generic.IList{System.Char})
+  href: api/Platform.Collections.Lists.CharIListExtensions.html#Platform_Collections_Lists_CharIListExtensions_ContentEqualTo_IList_System_Char__IList_System_Char__
+  commentId: M:Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(IList{System.Char},IList{System.Char})
   name.vb: ContentEqualTo(IList(Of Char), IList(Of Char))
-  fullName: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(System.Collections.Generic.IList<System.Char>, System.Collections.Generic.IList<System.Char>)
-  fullName.vb: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(System.Collections.Generic.IList(Of System.Char), System.Collections.Generic.IList(Of System.Char))
+  fullName: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(IList<System.Char>, IList<System.Char>)
+  fullName.vb: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo(IList(Of System.Char), IList(Of System.Char))
   nameWithType: CharIListExtensions.ContentEqualTo(IList<Char>, IList<Char>)
   nameWithType.vb: CharIListExtensions.ContentEqualTo(IList(Of Char), IList(Of Char))
 - uid: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo*
@@ -1718,13 +1718,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.CharIListExtensions.ContentEqualTo
   nameWithType: CharIListExtensions.ContentEqualTo
-- uid: Platform.Collections.Lists.CharIListExtensions.EqualTo(System.Collections.Generic.IList{System.Char},System.Collections.Generic.IList{System.Char})
+- uid: Platform.Collections.Lists.CharIListExtensions.EqualTo(IList{System.Char},IList{System.Char})
   name: EqualTo(IList<Char>, IList<Char>)
-  href: api/Platform.Collections.Lists.CharIListExtensions.html#Platform_Collections_Lists_CharIListExtensions_EqualTo_System_Collections_Generic_IList_System_Char__System_Collections_Generic_IList_System_Char__
-  commentId: M:Platform.Collections.Lists.CharIListExtensions.EqualTo(System.Collections.Generic.IList{System.Char},System.Collections.Generic.IList{System.Char})
+  href: api/Platform.Collections.Lists.CharIListExtensions.html#Platform_Collections_Lists_CharIListExtensions_EqualTo_IList_System_Char__IList_System_Char__
+  commentId: M:Platform.Collections.Lists.CharIListExtensions.EqualTo(IList{System.Char},IList{System.Char})
   name.vb: EqualTo(IList(Of Char), IList(Of Char))
-  fullName: Platform.Collections.Lists.CharIListExtensions.EqualTo(System.Collections.Generic.IList<System.Char>, System.Collections.Generic.IList<System.Char>)
-  fullName.vb: Platform.Collections.Lists.CharIListExtensions.EqualTo(System.Collections.Generic.IList(Of System.Char), System.Collections.Generic.IList(Of System.Char))
+  fullName: Platform.Collections.Lists.CharIListExtensions.EqualTo(IList<System.Char>, IList<System.Char>)
+  fullName.vb: Platform.Collections.Lists.CharIListExtensions.EqualTo(IList(Of System.Char), IList(Of System.Char))
   nameWithType: CharIListExtensions.EqualTo(IList<Char>, IList<Char>)
   nameWithType.vb: CharIListExtensions.EqualTo(IList(Of Char), IList(Of Char))
 - uid: Platform.Collections.Lists.CharIListExtensions.EqualTo*
@@ -1734,13 +1734,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.CharIListExtensions.EqualTo
   nameWithType: CharIListExtensions.EqualTo
-- uid: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(System.Collections.Generic.IList{System.Char})
+- uid: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(IList{System.Char})
   name: GenerateHashCode(IList<Char>)
-  href: api/Platform.Collections.Lists.CharIListExtensions.html#Platform_Collections_Lists_CharIListExtensions_GenerateHashCode_System_Collections_Generic_IList_System_Char__
-  commentId: M:Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(System.Collections.Generic.IList{System.Char})
+  href: api/Platform.Collections.Lists.CharIListExtensions.html#Platform_Collections_Lists_CharIListExtensions_GenerateHashCode_IList_System_Char__
+  commentId: M:Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(IList{System.Char})
   name.vb: GenerateHashCode(IList(Of Char))
-  fullName: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(System.Collections.Generic.IList<System.Char>)
-  fullName.vb: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(System.Collections.Generic.IList(Of System.Char))
+  fullName: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(IList<System.Char>)
+  fullName.vb: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode(IList(Of System.Char))
   nameWithType: CharIListExtensions.GenerateHashCode(IList<Char>)
   nameWithType.vb: CharIListExtensions.GenerateHashCode(IList(Of Char))
 - uid: Platform.Collections.Lists.CharIListExtensions.GenerateHashCode*
@@ -1759,13 +1759,13 @@ references:
   fullName.vb: Platform.Collections.Lists.IListComparer(Of T)
   nameWithType: IListComparer<T>
   nameWithType.vb: IListComparer(Of T)
-- uid: Platform.Collections.Lists.IListComparer`1.Compare(System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.IListComparer`1.Compare(IList{`0},IList{`0})
   name: Compare(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListComparer-1.html#Platform_Collections_Lists_IListComparer_1_Compare_System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.IListComparer`1.Compare(System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.IListComparer-1.html#Platform_Collections_Lists_IListComparer_1_Compare_IList__0__IList__0__
+  commentId: M:Platform.Collections.Lists.IListComparer`1.Compare(IList{`0},IList{`0})
   name.vb: Compare(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListComparer<T>.Compare(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListComparer(Of T).Compare(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListComparer<T>.Compare(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListComparer(Of T).Compare(IList(Of T), IList(Of T))
   nameWithType: IListComparer<T>.Compare(IList<T>, IList<T>)
   nameWithType.vb: IListComparer(Of T).Compare(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListComparer`1.Compare*
@@ -1786,13 +1786,13 @@ references:
   fullName.vb: Platform.Collections.Lists.IListEqualityComparer(Of T)
   nameWithType: IListEqualityComparer<T>
   nameWithType.vb: IListEqualityComparer(Of T)
-- uid: Platform.Collections.Lists.IListEqualityComparer`1.Equals(System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.IListEqualityComparer`1.Equals(IList{`0},IList{`0})
   name: Equals(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListEqualityComparer-1.html#Platform_Collections_Lists_IListEqualityComparer_1_Equals_System_Collections_Generic_IList__0__System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.IListEqualityComparer`1.Equals(System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.IListEqualityComparer-1.html#Platform_Collections_Lists_IListEqualityComparer_1_Equals_IList__0__IList__0__
+  commentId: M:Platform.Collections.Lists.IListEqualityComparer`1.Equals(IList{`0},IList{`0})
   name.vb: Equals(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListEqualityComparer<T>.Equals(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListEqualityComparer(Of T).Equals(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListEqualityComparer<T>.Equals(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListEqualityComparer(Of T).Equals(IList(Of T), IList(Of T))
   nameWithType: IListEqualityComparer<T>.Equals(IList<T>, IList<T>)
   nameWithType.vb: IListEqualityComparer(Of T).Equals(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListEqualityComparer`1.Equals*
@@ -1804,13 +1804,13 @@ references:
   fullName.vb: Platform.Collections.Lists.IListEqualityComparer(Of T).Equals
   nameWithType: IListEqualityComparer<T>.Equals
   nameWithType.vb: IListEqualityComparer(Of T).Equals
-- uid: Platform.Collections.Lists.IListEqualityComparer`1.GetHashCode(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.IListEqualityComparer`1.GetHashCode(IList{`0})
   name: GetHashCode(IList<T>)
-  href: api/Platform.Collections.Lists.IListEqualityComparer-1.html#Platform_Collections_Lists_IListEqualityComparer_1_GetHashCode_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.IListEqualityComparer`1.GetHashCode(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.IListEqualityComparer-1.html#Platform_Collections_Lists_IListEqualityComparer_1_GetHashCode_IList__0__
+  commentId: M:Platform.Collections.Lists.IListEqualityComparer`1.GetHashCode(IList{`0})
   name.vb: GetHashCode(IList(Of T))
-  fullName: Platform.Collections.Lists.IListEqualityComparer<T>.GetHashCode(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListEqualityComparer(Of T).GetHashCode(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListEqualityComparer<T>.GetHashCode(IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListEqualityComparer(Of T).GetHashCode(IList(Of T))
   nameWithType: IListEqualityComparer<T>.GetHashCode(IList<T>)
   nameWithType.vb: IListEqualityComparer(Of T).GetHashCode(IList(Of T))
 - uid: Platform.Collections.Lists.IListEqualityComparer`1.GetHashCode*
@@ -1835,13 +1835,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddAll
   nameWithType: IListExtensions.AddAll
-- uid: Platform.Collections.Lists.IListExtensions.AddAll``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.AddAll``1(IList{``0},IList{``0})
   name: AddAll<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddAll__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddAll``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddAll__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddAll``1(IList{``0},IList{``0})
   name.vb: AddAll(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.AddAll<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddAll(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.AddAll<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddAll(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.AddAll<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.AddAll(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue*
@@ -1851,13 +1851,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue
   nameWithType: IListExtensions.AddAllAndReturnTrue
-- uid: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue``1(IList{``0},IList{``0})
   name: AddAllAndReturnTrue<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddAllAndReturnTrue__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddAllAndReturnTrue__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue``1(IList{``0},IList{``0})
   name.vb: AddAllAndReturnTrue(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddAllAndReturnTrue(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.AddAllAndReturnTrue<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.AddAllAndReturnTrue(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue*
@@ -1867,13 +1867,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue
   nameWithType: IListExtensions.AddAndReturnTrue
-- uid: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue``1(System.Collections.Generic.IList{``0},``0)
+- uid: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue``1(IList{``0},``0)
   name: AddAndReturnTrue<T>(IList<T>, T)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddAndReturnTrue__1_System_Collections_Generic_IList___0____0_
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddAndReturnTrue``1(System.Collections.Generic.IList{``0},``0)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddAndReturnTrue__1_IList___0____0_
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddAndReturnTrue``1(IList{``0},``0)
   name.vb: AddAndReturnTrue(Of T)(IList(Of T), T)
-  fullName: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue<T>(System.Collections.Generic.IList<T>, T)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue(Of T)(System.Collections.Generic.IList(Of T), T)
+  fullName: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue<T>(IList<T>, T)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddAndReturnTrue(Of T)(IList(Of T), T)
   nameWithType: IListExtensions.AddAndReturnTrue<T>(IList<T>, T)
   nameWithType.vb: IListExtensions.AddAndReturnTrue(Of T)(IList(Of T), T)
 - uid: Platform.Collections.Lists.IListExtensions.AddFirst*
@@ -1883,13 +1883,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddFirst
   nameWithType: IListExtensions.AddFirst
-- uid: Platform.Collections.Lists.IListExtensions.AddFirst``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.AddFirst``1(IList{``0},IList{``0})
   name: AddFirst<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddFirst__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddFirst``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddFirst__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddFirst``1(IList{``0},IList{``0})
   name.vb: AddFirst(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.AddFirst<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddFirst(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.AddFirst<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddFirst(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.AddFirst<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.AddFirst(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue*
@@ -1899,13 +1899,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue
   nameWithType: IListExtensions.AddFirstAndReturnTrue
-- uid: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue``1(IList{``0},IList{``0})
   name: AddFirstAndReturnTrue<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddFirstAndReturnTrue__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddFirstAndReturnTrue__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue``1(IList{``0},IList{``0})
   name.vb: AddFirstAndReturnTrue(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddFirstAndReturnTrue(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.AddFirstAndReturnTrue<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.AddFirstAndReturnTrue(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.AddSkipFirst*
@@ -1915,22 +1915,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirst
   nameWithType: IListExtensions.AddSkipFirst
-- uid: Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(IList{``0},IList{``0})
   name: AddSkipFirst<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddSkipFirst__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddSkipFirst__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(IList{``0},IList{``0})
   name.vb: AddSkipFirst(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirst<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddSkipFirst(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirst<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddSkipFirst(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.AddSkipFirst<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.AddSkipFirst(Of T)(IList(Of T), IList(Of T))
-- uid: Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Int32)
+- uid: Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(IList{``0},IList{``0},System.Int32)
   name: AddSkipFirst<T>(IList<T>, IList<T>, Int32)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddSkipFirst__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Int32_
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Int32)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddSkipFirst__1_IList___0__IList___0__System_Int32_
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddSkipFirst``1(IList{``0},IList{``0},System.Int32)
   name.vb: AddSkipFirst(Of T)(IList(Of T), IList(Of T), Int32)
-  fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirst<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>, System.Int32)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddSkipFirst(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T), System.Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirst<T>(IList<T>, IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddSkipFirst(Of T)(IList(Of T), IList(Of T), System.Int32)
   nameWithType: IListExtensions.AddSkipFirst<T>(IList<T>, IList<T>, Int32)
   nameWithType.vb: IListExtensions.AddSkipFirst(Of T)(IList(Of T), IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue*
@@ -1940,13 +1940,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue
   nameWithType: IListExtensions.AddSkipFirstAndReturnTrue
-- uid: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue``1(IList{``0},IList{``0})
   name: AddSkipFirstAndReturnTrue<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddSkipFirstAndReturnTrue__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_AddSkipFirstAndReturnTrue__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue``1(IList{``0},IList{``0})
   name.vb: AddSkipFirstAndReturnTrue(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.AddSkipFirstAndReturnTrue(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.AddSkipFirstAndReturnTrue<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.AddSkipFirstAndReturnTrue(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.CompareTo*
@@ -1956,13 +1956,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.CompareTo
   nameWithType: IListExtensions.CompareTo
-- uid: Platform.Collections.Lists.IListExtensions.CompareTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.CompareTo``1(IList{``0},IList{``0})
   name: CompareTo<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_CompareTo__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.CompareTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_CompareTo__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.CompareTo``1(IList{``0},IList{``0})
   name.vb: CompareTo(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.CompareTo<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.CompareTo(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.CompareTo<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.CompareTo(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.CompareTo<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.CompareTo(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.ContentEqualTo*
@@ -1972,13 +1972,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.ContentEqualTo
   nameWithType: IListExtensions.ContentEqualTo
-- uid: Platform.Collections.Lists.IListExtensions.ContentEqualTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.ContentEqualTo``1(IList{``0},IList{``0})
   name: ContentEqualTo<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ContentEqualTo__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.ContentEqualTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ContentEqualTo__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.ContentEqualTo``1(IList{``0},IList{``0})
   name.vb: ContentEqualTo(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.ContentEqualTo<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ContentEqualTo(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.ContentEqualTo<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ContentEqualTo(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.ContentEqualTo<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.ContentEqualTo(Of T)(IList(Of T), IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.EqualTo*
@@ -1988,22 +1988,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.EqualTo
   nameWithType: IListExtensions.EqualTo
-- uid: Platform.Collections.Lists.IListExtensions.EqualTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.EqualTo``1(IList{``0},IList{``0})
   name: EqualTo<T>(IList<T>, IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_EqualTo__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.EqualTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_EqualTo__1_IList___0__IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.EqualTo``1(IList{``0},IList{``0})
   name.vb: EqualTo(Of T)(IList(Of T), IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.EqualTo<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.EqualTo(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.EqualTo<T>(IList<T>, IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.EqualTo(Of T)(IList(Of T), IList(Of T))
   nameWithType: IListExtensions.EqualTo<T>(IList<T>, IList<T>)
   nameWithType.vb: IListExtensions.EqualTo(Of T)(IList(Of T), IList(Of T))
-- uid: Platform.Collections.Lists.IListExtensions.EqualTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Func{System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Boolean})
+- uid: Platform.Collections.Lists.IListExtensions.EqualTo``1(IList{``0},IList{``0},Func{IList{``0},IList{``0},System.Boolean})
   name: EqualTo<T>(IList<T>, IList<T>, Func<IList<T>, IList<T>, Boolean>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_EqualTo__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Func_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Boolean__
-  commentId: M:Platform.Collections.Lists.IListExtensions.EqualTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Func{System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Boolean})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_EqualTo__1_IList___0__IList___0__Func_IList___0__IList___0__System_Boolean__
+  commentId: M:Platform.Collections.Lists.IListExtensions.EqualTo``1(IList{``0},IList{``0},Func{IList{``0},IList{``0},System.Boolean})
   name.vb: EqualTo(Of T)(IList(Of T), IList(Of T), Func(Of IList(Of T), IList(Of T), Boolean))
-  fullName: Platform.Collections.Lists.IListExtensions.EqualTo<T>(System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>, System.Func<System.Collections.Generic.IList<T>, System.Collections.Generic.IList<T>, System.Boolean>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.EqualTo(Of T)(System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T), System.Func(Of System.Collections.Generic.IList(Of T), System.Collections.Generic.IList(Of T), System.Boolean))
+  fullName: Platform.Collections.Lists.IListExtensions.EqualTo<T>(IList<T>, IList<T>, Func<IList<T>, IList<T>, System.Boolean>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.EqualTo(Of T)(IList(Of T), IList(Of T), Func(Of IList(Of T), IList(Of T), System.Boolean))
   nameWithType: IListExtensions.EqualTo<T>(IList<T>, IList<T>, Func<IList<T>, IList<T>, Boolean>)
   nameWithType.vb: IListExtensions.EqualTo(Of T)(IList(Of T), IList(Of T), Func(Of IList(Of T), IList(Of T), Boolean))
 - uid: Platform.Collections.Lists.IListExtensions.ForEach*
@@ -2013,13 +2013,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.ForEach
   nameWithType: IListExtensions.ForEach
-- uid: Platform.Collections.Lists.IListExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})
+- uid: Platform.Collections.Lists.IListExtensions.ForEach``1(IList{``0},Action{``0})
   name: ForEach<T>(IList<T>, Action<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ForEach__1_System_Collections_Generic_IList___0__System_Action___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ForEach__1_IList___0__Action___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.ForEach``1(IList{``0},Action{``0})
   name.vb: ForEach(Of T)(IList(Of T), Action(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.ForEach<T>(System.Collections.Generic.IList<T>, System.Action<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ForEach(Of T)(System.Collections.Generic.IList(Of T), System.Action(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.ForEach<T>(IList<T>, Action<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ForEach(Of T)(IList(Of T), Action(Of T))
   nameWithType: IListExtensions.ForEach<T>(IList<T>, Action<T>)
   nameWithType.vb: IListExtensions.ForEach(Of T)(IList(Of T), Action(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.GenerateHashCode*
@@ -2029,13 +2029,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.GenerateHashCode
   nameWithType: IListExtensions.GenerateHashCode
-- uid: Platform.Collections.Lists.IListExtensions.GenerateHashCode``1(System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.GenerateHashCode``1(IList{``0})
   name: GenerateHashCode<T>(IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GenerateHashCode__1_System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.GenerateHashCode``1(System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GenerateHashCode__1_IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.GenerateHashCode``1(IList{``0})
   name.vb: GenerateHashCode(Of T)(IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.GenerateHashCode<T>(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.GenerateHashCode(Of T)(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.GenerateHashCode<T>(IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.GenerateHashCode(Of T)(IList(Of T))
   nameWithType: IListExtensions.GenerateHashCode<T>(IList<T>)
   nameWithType.vb: IListExtensions.GenerateHashCode(Of T)(IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.GetCountOrZero*
@@ -2045,13 +2045,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.GetCountOrZero
   nameWithType: IListExtensions.GetCountOrZero
-- uid: Platform.Collections.Lists.IListExtensions.GetCountOrZero``1(System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.GetCountOrZero``1(IList{``0})
   name: GetCountOrZero<T>(IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GetCountOrZero__1_System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.GetCountOrZero``1(System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GetCountOrZero__1_IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.GetCountOrZero``1(IList{``0})
   name.vb: GetCountOrZero(Of T)(IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.GetCountOrZero<T>(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.GetCountOrZero(Of T)(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.GetCountOrZero<T>(IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.GetCountOrZero(Of T)(IList(Of T))
   nameWithType: IListExtensions.GetCountOrZero<T>(IList<T>)
   nameWithType.vb: IListExtensions.GetCountOrZero(Of T)(IList(Of T))
 - uid: Platform.Collections.Lists.IListExtensions.GetElementOrDefault*
@@ -2061,13 +2061,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.GetElementOrDefault
   nameWithType: IListExtensions.GetElementOrDefault
-- uid: Platform.Collections.Lists.IListExtensions.GetElementOrDefault``1(System.Collections.Generic.IList{``0},System.Int32)
+- uid: Platform.Collections.Lists.IListExtensions.GetElementOrDefault``1(IList{``0},System.Int32)
   name: GetElementOrDefault<T>(IList<T>, Int32)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GetElementOrDefault__1_System_Collections_Generic_IList___0__System_Int32_
-  commentId: M:Platform.Collections.Lists.IListExtensions.GetElementOrDefault``1(System.Collections.Generic.IList{``0},System.Int32)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_GetElementOrDefault__1_IList___0__System_Int32_
+  commentId: M:Platform.Collections.Lists.IListExtensions.GetElementOrDefault``1(IList{``0},System.Int32)
   name.vb: GetElementOrDefault(Of T)(IList(Of T), Int32)
-  fullName: Platform.Collections.Lists.IListExtensions.GetElementOrDefault<T>(System.Collections.Generic.IList<T>, System.Int32)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.GetElementOrDefault(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.GetElementOrDefault<T>(IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.GetElementOrDefault(Of T)(IList(Of T), System.Int32)
   nameWithType: IListExtensions.GetElementOrDefault<T>(IList<T>, Int32)
   nameWithType.vb: IListExtensions.GetElementOrDefault(Of T)(IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.ShiftRight*
@@ -2077,22 +2077,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.ShiftRight
   nameWithType: IListExtensions.ShiftRight
-- uid: Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.ShiftRight``1(IList{``0})
   name: ShiftRight<T>(IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight__1_System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight__1_IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.ShiftRight``1(IList{``0})
   name.vb: ShiftRight(Of T)(IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<T>(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of T)(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<T>(IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of T)(IList(Of T))
   nameWithType: IListExtensions.ShiftRight<T>(IList<T>)
   nameWithType.vb: IListExtensions.ShiftRight(Of T)(IList(Of T))
-- uid: Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0},System.Int32)
+- uid: Platform.Collections.Lists.IListExtensions.ShiftRight``1(IList{``0},System.Int32)
   name: ShiftRight<T>(IList<T>, Int32)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight__1_System_Collections_Generic_IList___0__System_Int32_
-  commentId: M:Platform.Collections.Lists.IListExtensions.ShiftRight``1(System.Collections.Generic.IList{``0},System.Int32)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ShiftRight__1_IList___0__System_Int32_
+  commentId: M:Platform.Collections.Lists.IListExtensions.ShiftRight``1(IList{``0},System.Int32)
   name.vb: ShiftRight(Of T)(IList(Of T), Int32)
-  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<T>(System.Collections.Generic.IList<T>, System.Int32)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.ShiftRight<T>(IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ShiftRight(Of T)(IList(Of T), System.Int32)
   nameWithType: IListExtensions.ShiftRight<T>(IList<T>, Int32)
   nameWithType.vb: IListExtensions.ShiftRight(Of T)(IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.SkipFirst*
@@ -2102,22 +2102,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.SkipFirst
   nameWithType: IListExtensions.SkipFirst
-- uid: Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.SkipFirst``1(IList{``0})
   name: SkipFirst<T>(IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst__1_System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst__1_IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.SkipFirst``1(IList{``0})
   name.vb: SkipFirst(Of T)(IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<T>(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of T)(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<T>(IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of T)(IList(Of T))
   nameWithType: IListExtensions.SkipFirst<T>(IList<T>)
   nameWithType.vb: IListExtensions.SkipFirst(Of T)(IList(Of T))
-- uid: Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0},System.Int32)
+- uid: Platform.Collections.Lists.IListExtensions.SkipFirst``1(IList{``0},System.Int32)
   name: SkipFirst<T>(IList<T>, Int32)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst__1_System_Collections_Generic_IList___0__System_Int32_
-  commentId: M:Platform.Collections.Lists.IListExtensions.SkipFirst``1(System.Collections.Generic.IList{``0},System.Int32)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_SkipFirst__1_IList___0__System_Int32_
+  commentId: M:Platform.Collections.Lists.IListExtensions.SkipFirst``1(IList{``0},System.Int32)
   name.vb: SkipFirst(Of T)(IList(Of T), Int32)
-  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<T>(System.Collections.Generic.IList<T>, System.Int32)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
+  fullName: Platform.Collections.Lists.IListExtensions.SkipFirst<T>(IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.SkipFirst(Of T)(IList(Of T), System.Int32)
   nameWithType: IListExtensions.SkipFirst<T>(IList<T>, Int32)
   nameWithType.vb: IListExtensions.SkipFirst(Of T)(IList(Of T), Int32)
 - uid: Platform.Collections.Lists.IListExtensions.ToArray*
@@ -2127,22 +2127,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.ToArray
   nameWithType: IListExtensions.ToArray
-- uid: Platform.Collections.Lists.IListExtensions.ToArray``1(System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Lists.IListExtensions.ToArray``1(IList{``0})
   name: ToArray<T>(IList<T>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ToArray__1_System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.ToArray``1(System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ToArray__1_IList___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.ToArray``1(IList{``0})
   name.vb: ToArray(Of T)(IList(Of T))
-  fullName: Platform.Collections.Lists.IListExtensions.ToArray<T>(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ToArray(Of T)(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Lists.IListExtensions.ToArray<T>(IList<T>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ToArray(Of T)(IList(Of T))
   nameWithType: IListExtensions.ToArray<T>(IList<T>)
   nameWithType.vb: IListExtensions.ToArray(Of T)(IList(Of T))
-- uid: Platform.Collections.Lists.IListExtensions.ToArray``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+- uid: Platform.Collections.Lists.IListExtensions.ToArray``1(IList{``0},Func{``0,System.Boolean})
   name: ToArray<T>(IList<T>, Func<T, Boolean>)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ToArray__1_System_Collections_Generic_IList___0__System_Func___0_System_Boolean__
-  commentId: M:Platform.Collections.Lists.IListExtensions.ToArray``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_ToArray__1_IList___0__Func___0_System_Boolean__
+  commentId: M:Platform.Collections.Lists.IListExtensions.ToArray``1(IList{``0},Func{``0,System.Boolean})
   name.vb: ToArray(Of T)(IList(Of T), Func(Of T, Boolean))
-  fullName: Platform.Collections.Lists.IListExtensions.ToArray<T>(System.Collections.Generic.IList<T>, System.Func<T, System.Boolean>)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.ToArray(Of T)(System.Collections.Generic.IList(Of T), System.Func(Of T, System.Boolean))
+  fullName: Platform.Collections.Lists.IListExtensions.ToArray<T>(IList<T>, Func<T, System.Boolean>)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.ToArray(Of T)(IList(Of T), Func(Of T, System.Boolean))
   nameWithType: IListExtensions.ToArray<T>(IList<T>, Func<T, Boolean>)
   nameWithType.vb: IListExtensions.ToArray(Of T)(IList(Of T), Func(Of T, Boolean))
 - uid: Platform.Collections.Lists.IListExtensions.TryGetElement*
@@ -2152,13 +2152,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Lists.IListExtensions.TryGetElement
   nameWithType: IListExtensions.TryGetElement
-- uid: Platform.Collections.Lists.IListExtensions.TryGetElement``1(System.Collections.Generic.IList{``0},System.Int32,``0@)
+- uid: Platform.Collections.Lists.IListExtensions.TryGetElement``1(IList{``0},System.Int32,``0@)
   name: TryGetElement<T>(IList<T>, Int32, out T)
-  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_TryGetElement__1_System_Collections_Generic_IList___0__System_Int32___0__
-  commentId: M:Platform.Collections.Lists.IListExtensions.TryGetElement``1(System.Collections.Generic.IList{``0},System.Int32,``0@)
+  href: api/Platform.Collections.Lists.IListExtensions.html#Platform_Collections_Lists_IListExtensions_TryGetElement__1_IList___0__System_Int32___0__
+  commentId: M:Platform.Collections.Lists.IListExtensions.TryGetElement``1(IList{``0},System.Int32,``0@)
   name.vb: TryGetElement(Of T)(IList(Of T), Int32, ByRef T)
-  fullName: Platform.Collections.Lists.IListExtensions.TryGetElement<T>(System.Collections.Generic.IList<T>, System.Int32, out T)
-  fullName.vb: Platform.Collections.Lists.IListExtensions.TryGetElement(Of T)(System.Collections.Generic.IList(Of T), System.Int32, ByRef T)
+  fullName: Platform.Collections.Lists.IListExtensions.TryGetElement<T>(IList<T>, System.Int32, out T)
+  fullName.vb: Platform.Collections.Lists.IListExtensions.TryGetElement(Of T)(IList(Of T), System.Int32, ByRef T)
   nameWithType: IListExtensions.TryGetElement<T>(IList<T>, Int32, out T)
   nameWithType.vb: IListExtensions.TryGetElement(Of T)(IList(Of T), Int32, ByRef T)
 - uid: Platform.Collections.Lists.ListFiller`2
@@ -2170,22 +2170,22 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant)
   nameWithType: ListFiller<TElement, TReturnConstant>
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant)
-- uid: Platform.Collections.Lists.ListFiller`2.#ctor(System.Collections.Generic.List{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.#ctor(List{`0})
   name: ListFiller(List<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2__ctor_System_Collections_Generic_List__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.#ctor(System.Collections.Generic.List{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2__ctor_List__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.#ctor(List{`0})
   name.vb: ListFiller(List(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.ListFiller(System.Collections.Generic.List<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).ListFiller(System.Collections.Generic.List(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.ListFiller(List<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).ListFiller(List(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.ListFiller(List<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).ListFiller(List(Of TElement))
-- uid: Platform.Collections.Lists.ListFiller`2.#ctor(System.Collections.Generic.List{`0},`1)
+- uid: Platform.Collections.Lists.ListFiller`2.#ctor(List{`0},`1)
   name: ListFiller(List<TElement>, TReturnConstant)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2__ctor_System_Collections_Generic_List__0___1_
-  commentId: M:Platform.Collections.Lists.ListFiller`2.#ctor(System.Collections.Generic.List{`0},`1)
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2__ctor_List__0___1_
+  commentId: M:Platform.Collections.Lists.ListFiller`2.#ctor(List{`0},`1)
   name.vb: ListFiller(List(Of TElement), TReturnConstant)
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.ListFiller(System.Collections.Generic.List<TElement>, TReturnConstant)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).ListFiller(System.Collections.Generic.List(Of TElement), TReturnConstant)
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.ListFiller(List<TElement>, TReturnConstant)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).ListFiller(List(Of TElement), TReturnConstant)
   nameWithType: ListFiller<TElement, TReturnConstant>.ListFiller(List<TElement>, TReturnConstant)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).ListFiller(List(Of TElement), TReturnConstant)
 - uid: Platform.Collections.Lists.ListFiller`2.#ctor*
@@ -2230,13 +2230,13 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).Add
   nameWithType: ListFiller<TElement, TReturnConstant>.Add
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).Add
-- uid: Platform.Collections.Lists.ListFiller`2.AddAllAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.AddAllAndReturnConstant(IList{`0})
   name: AddAllAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddAllAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.AddAllAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddAllAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.AddAllAndReturnConstant(IList{`0})
   name.vb: AddAllAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(IList(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(IList<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Lists.ListFiller`2.AddAllAndReturnConstant*
@@ -2248,13 +2248,13 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant
   nameWithType: ListFiller<TElement, TReturnConstant>.AddAllAndReturnConstant
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant
-- uid: Platform.Collections.Lists.ListFiller`2.AddAllAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.AddAllAndReturnTrue(IList{`0})
   name: AddAllAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddAllAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.AddAllAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddAllAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.AddAllAndReturnTrue(IList{`0})
   name.vb: AddAllAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddAllAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddAllAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddAllAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddAllAndReturnTrue(IList(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.AddAllAndReturnTrue(IList<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddAllAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Lists.ListFiller`2.AddAllAndReturnTrue*
@@ -2300,13 +2300,13 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddAndReturnTrue
   nameWithType: ListFiller<TElement, TReturnConstant>.AddAndReturnTrue
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddAndReturnTrue
-- uid: Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnConstant(IList{`0})
   name: AddFirstAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddFirstAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddFirstAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnConstant(IList{`0})
   name.vb: AddFirstAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(IList(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnConstant*
@@ -2318,13 +2318,13 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant
   nameWithType: ListFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant
-- uid: Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnTrue(IList{`0})
   name: AddFirstAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddFirstAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddFirstAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnTrue(IList{`0})
   name.vb: AddFirstAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue(IList(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue(IList<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Lists.ListFiller`2.AddFirstAndReturnTrue*
@@ -2336,13 +2336,13 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue
   nameWithType: ListFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue
-- uid: Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnConstant(IList{`0})
   name: AddSkipFirstAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddSkipFirstAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddSkipFirstAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnConstant(IList{`0})
   name.vb: AddSkipFirstAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(IList(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(IList<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnConstant*
@@ -2354,13 +2354,13 @@ references:
   fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant
   nameWithType: ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant
-- uid: Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnTrue(IList{`0})
   name: AddSkipFirstAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddSkipFirstAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Lists.ListFiller-2.html#Platform_Collections_Lists_ListFiller_2_AddSkipFirstAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnTrue(IList{`0})
   name.vb: AddSkipFirstAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Lists.ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Lists.ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnTrue(IList(Of TElement))
   nameWithType: ListFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnTrue(IList<TElement>)
   nameWithType.vb: ListFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Lists.ListFiller`2.AddSkipFirstAndReturnTrue*
@@ -2384,13 +2384,13 @@ references:
   commentId: T:Platform.Collections.Segments.CharSegment
   fullName: Platform.Collections.Segments.CharSegment
   nameWithType: CharSegment
-- uid: Platform.Collections.Segments.CharSegment.#ctor(System.Collections.Generic.IList{System.Char},System.Int32,System.Int32)
+- uid: Platform.Collections.Segments.CharSegment.#ctor(IList{System.Char},System.Int32,System.Int32)
   name: CharSegment(IList<Char>, Int32, Int32)
-  href: api/Platform.Collections.Segments.CharSegment.html#Platform_Collections_Segments_CharSegment__ctor_System_Collections_Generic_IList_System_Char__System_Int32_System_Int32_
-  commentId: M:Platform.Collections.Segments.CharSegment.#ctor(System.Collections.Generic.IList{System.Char},System.Int32,System.Int32)
+  href: api/Platform.Collections.Segments.CharSegment.html#Platform_Collections_Segments_CharSegment__ctor_IList_System_Char__System_Int32_System_Int32_
+  commentId: M:Platform.Collections.Segments.CharSegment.#ctor(IList{System.Char},System.Int32,System.Int32)
   name.vb: CharSegment(IList(Of Char), Int32, Int32)
-  fullName: Platform.Collections.Segments.CharSegment.CharSegment(System.Collections.Generic.IList<System.Char>, System.Int32, System.Int32)
-  fullName.vb: Platform.Collections.Segments.CharSegment.CharSegment(System.Collections.Generic.IList(Of System.Char), System.Int32, System.Int32)
+  fullName: Platform.Collections.Segments.CharSegment.CharSegment(IList<System.Char>, System.Int32, System.Int32)
+  fullName.vb: Platform.Collections.Segments.CharSegment.CharSegment(IList(Of System.Char), System.Int32, System.Int32)
   nameWithType: CharSegment.CharSegment(IList<Char>, Int32, Int32)
   nameWithType.vb: CharSegment.CharSegment(IList(Of Char), Int32, Int32)
 - uid: Platform.Collections.Segments.CharSegment.#ctor*
@@ -2476,13 +2476,13 @@ references:
   fullName.vb: Platform.Collections.Segments.Segment(Of T)
   nameWithType: Segment<T>
   nameWithType.vb: Segment(Of T)
-- uid: Platform.Collections.Segments.Segment`1.#ctor(System.Collections.Generic.IList{`0},System.Int32,System.Int32)
+- uid: Platform.Collections.Segments.Segment`1.#ctor(IList{`0},System.Int32,System.Int32)
   name: Segment(IList<T>, Int32, Int32)
-  href: api/Platform.Collections.Segments.Segment-1.html#Platform_Collections_Segments_Segment_1__ctor_System_Collections_Generic_IList__0__System_Int32_System_Int32_
-  commentId: M:Platform.Collections.Segments.Segment`1.#ctor(System.Collections.Generic.IList{`0},System.Int32,System.Int32)
+  href: api/Platform.Collections.Segments.Segment-1.html#Platform_Collections_Segments_Segment_1__ctor_IList__0__System_Int32_System_Int32_
+  commentId: M:Platform.Collections.Segments.Segment`1.#ctor(IList{`0},System.Int32,System.Int32)
   name.vb: Segment(IList(Of T), Int32, Int32)
-  fullName: Platform.Collections.Segments.Segment<T>.Segment(System.Collections.Generic.IList<T>, System.Int32, System.Int32)
-  fullName.vb: Platform.Collections.Segments.Segment(Of T).Segment(System.Collections.Generic.IList(Of T), System.Int32, System.Int32)
+  fullName: Platform.Collections.Segments.Segment<T>.Segment(IList<T>, System.Int32, System.Int32)
+  fullName.vb: Platform.Collections.Segments.Segment(Of T).Segment(IList(Of T), System.Int32, System.Int32)
   nameWithType: Segment<T>.Segment(IList<T>, Int32, Int32)
   nameWithType.vb: Segment(Of T).Segment(IList(Of T), Int32, Int32)
 - uid: Platform.Collections.Segments.Segment`1.#ctor*
@@ -2794,25 +2794,6 @@ references:
   fullName.vb: Platform.Collections.Segments.Segment(Of T).RemoveAt
   nameWithType: Segment<T>.RemoveAt
   nameWithType.vb: Segment(Of T).RemoveAt
-- uid: Platform.Collections.Segments.Segment`1.System#Collections#IEnumerable#GetEnumerator
-  name: IEnumerable.GetEnumerator()
-  href: api/Platform.Collections.Segments.Segment-1.html#Platform_Collections_Segments_Segment_1_System_Collections_IEnumerable_GetEnumerator
-  commentId: M:Platform.Collections.Segments.Segment`1.System#Collections#IEnumerable#GetEnumerator
-  name.vb: System.Collections.IEnumerable.GetEnumerator()
-  fullName: Platform.Collections.Segments.Segment<T>.System.Collections.IEnumerable.GetEnumerator()
-  fullName.vb: Platform.Collections.Segments.Segment(Of T).System.Collections.IEnumerable.GetEnumerator()
-  nameWithType: Segment<T>.IEnumerable.GetEnumerator()
-  nameWithType.vb: Segment(Of T).System.Collections.IEnumerable.GetEnumerator()
-- uid: Platform.Collections.Segments.Segment`1.System#Collections#IEnumerable#GetEnumerator*
-  name: IEnumerable.GetEnumerator
-  href: api/Platform.Collections.Segments.Segment-1.html#Platform_Collections_Segments_Segment_1_System_Collections_IEnumerable_GetEnumerator_
-  commentId: Overload:Platform.Collections.Segments.Segment`1.System#Collections#IEnumerable#GetEnumerator
-  isSpec: "True"
-  name.vb: System.Collections.IEnumerable.GetEnumerator
-  fullName: Platform.Collections.Segments.Segment<T>.System.Collections.IEnumerable.GetEnumerator
-  fullName.vb: Platform.Collections.Segments.Segment(Of T).System.Collections.IEnumerable.GetEnumerator
-  nameWithType: Segment<T>.IEnumerable.GetEnumerator
-  nameWithType.vb: Segment(Of T).System.Collections.IEnumerable.GetEnumerator
 - uid: Platform.Collections.Segments.Walkers
   name: Platform.Collections.Segments.Walkers
   href: api/Platform.Collections.Segments.Walkers.html
@@ -2840,13 +2821,13 @@ references:
   fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T)
   nameWithType: AllSegmentsWalkerBase<T>
   nameWithType.vb: AllSegmentsWalkerBase(Of T)
-- uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`1.CreateSegment(System.Collections.Generic.IList{`0},System.Int32,System.Int32)
+- uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`1.CreateSegment(IList{`0},System.Int32,System.Int32)
   name: CreateSegment(IList<T>, Int32, Int32)
-  href: api/Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_AllSegmentsWalkerBase_1_CreateSegment_System_Collections_Generic_IList__0__System_Int32_System_Int32_
-  commentId: M:Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`1.CreateSegment(System.Collections.Generic.IList{`0},System.Int32,System.Int32)
+  href: api/Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_AllSegmentsWalkerBase_1_CreateSegment_IList__0__System_Int32_System_Int32_
+  commentId: M:Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`1.CreateSegment(IList{`0},System.Int32,System.Int32)
   name.vb: CreateSegment(IList(Of T), Int32, Int32)
-  fullName: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase<T>.CreateSegment(System.Collections.Generic.IList<T>, System.Int32, System.Int32)
-  fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T).CreateSegment(System.Collections.Generic.IList(Of T), System.Int32, System.Int32)
+  fullName: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase<T>.CreateSegment(IList<T>, System.Int32, System.Int32)
+  fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T).CreateSegment(IList(Of T), System.Int32, System.Int32)
   nameWithType: AllSegmentsWalkerBase<T>.CreateSegment(IList<T>, Int32, Int32)
   nameWithType.vb: AllSegmentsWalkerBase(Of T).CreateSegment(IList(Of T), Int32, Int32)
 - uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`1.CreateSegment*
@@ -2892,13 +2873,13 @@ references:
   fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T, TSegment).AllSegmentsWalkerBase
   nameWithType: AllSegmentsWalkerBase<T, TSegment>.AllSegmentsWalkerBase
   nameWithType.vb: AllSegmentsWalkerBase(Of T, TSegment).AllSegmentsWalkerBase
-- uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.CreateSegment(System.Collections.Generic.IList{`0},System.Int32,System.Int32)
+- uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.CreateSegment(IList{`0},System.Int32,System.Int32)
   name: CreateSegment(IList<T>, Int32, Int32)
-  href: api/Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_AllSegmentsWalkerBase_2_CreateSegment_System_Collections_Generic_IList__0__System_Int32_System_Int32_
-  commentId: M:Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.CreateSegment(System.Collections.Generic.IList{`0},System.Int32,System.Int32)
+  href: api/Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_AllSegmentsWalkerBase_2_CreateSegment_IList__0__System_Int32_System_Int32_
+  commentId: M:Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.CreateSegment(IList{`0},System.Int32,System.Int32)
   name.vb: CreateSegment(IList(Of T), Int32, Int32)
-  fullName: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase<T, TSegment>.CreateSegment(System.Collections.Generic.IList<T>, System.Int32, System.Int32)
-  fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T, TSegment).CreateSegment(System.Collections.Generic.IList(Of T), System.Int32, System.Int32)
+  fullName: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase<T, TSegment>.CreateSegment(IList<T>, System.Int32, System.Int32)
+  fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T, TSegment).CreateSegment(IList(Of T), System.Int32, System.Int32)
   nameWithType: AllSegmentsWalkerBase<T, TSegment>.CreateSegment(IList<T>, Int32, Int32)
   nameWithType.vb: AllSegmentsWalkerBase(Of T, TSegment).CreateSegment(IList(Of T), Int32, Int32)
 - uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.CreateSegment*
@@ -2927,13 +2908,13 @@ references:
   fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T, TSegment).Iteration
   nameWithType: AllSegmentsWalkerBase<T, TSegment>.Iteration
   nameWithType.vb: AllSegmentsWalkerBase(Of T, TSegment).Iteration
-- uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.WalkAll(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.WalkAll(IList{`0})
   name: WalkAll(IList<T>)
-  href: api/Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_AllSegmentsWalkerBase_2_WalkAll_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.WalkAll(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_AllSegmentsWalkerBase_2_WalkAll_IList__0__
+  commentId: M:Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.WalkAll(IList{`0})
   name.vb: WalkAll(IList(Of T))
-  fullName: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase<T, TSegment>.WalkAll(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T, TSegment).WalkAll(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase<T, TSegment>.WalkAll(IList<T>)
+  fullName.vb: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase(Of T, TSegment).WalkAll(IList(Of T))
   nameWithType: AllSegmentsWalkerBase<T, TSegment>.WalkAll(IList<T>)
   nameWithType.vb: AllSegmentsWalkerBase(Of T, TSegment).WalkAll(IList(Of T))
 - uid: Platform.Collections.Segments.Walkers.AllSegmentsWalkerBase`2.WalkAll*
@@ -2993,31 +2974,31 @@ references:
   fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase()
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase()
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase()
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Collections.Generic.IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64})
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64})
   name: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, Int64>)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_1__ctor_System_Collections_Generic_IDictionary_Platform_Collections_Segments_Segment__0__System_Int64__
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Collections.Generic.IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64})
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_1__ctor_IDictionary_Platform_Collections_Segments_Segment__0__System_Int64__
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64})
   name.vb: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Segment(Of T), Int64))
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary<Platform.Collections.Segments.Segment<T>, System.Int64>)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary(Of Platform.Collections.Segments.Segment(Of T), System.Int64))
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Platform.Collections.Segments.Segment<T>, System.Int64>)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Platform.Collections.Segments.Segment(Of T), System.Int64))
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, Int64>)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Segment(Of T), Int64))
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Collections.Generic.IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32)
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32)
   name: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, Int64>, Int32)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_1__ctor_System_Collections_Generic_IDictionary_Platform_Collections_Segments_Segment__0__System_Int64__System_Int32_
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Collections.Generic.IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32)
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_1__ctor_IDictionary_Platform_Collections_Segments_Segment__0__System_Int64__System_Int32_
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32)
   name.vb: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Segment(Of T), Int64), Int32)
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary<Platform.Collections.Segments.Segment<T>, System.Int64>, System.Int32)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary(Of Platform.Collections.Segments.Segment(Of T), System.Int64), System.Int32)
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Platform.Collections.Segments.Segment<T>, System.Int64>, System.Int32)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Platform.Collections.Segments.Segment(Of T), System.Int64), System.Int32)
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, Int64>, Int32)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Segment(Of T), Int64), Int32)
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Collections.Generic.IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32,System.Boolean)
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32,System.Boolean)
   name: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, Int64>, Int32, Boolean)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_1__ctor_System_Collections_Generic_IDictionary_Platform_Collections_Segments_Segment__0__System_Int64__System_Int32_System_Boolean_
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Collections.Generic.IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32,System.Boolean)
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-1.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_1__ctor_IDictionary_Platform_Collections_Segments_Segment__0__System_Int64__System_Int32_System_Boolean_
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(IDictionary{Platform.Collections.Segments.Segment{`0},System.Int64},System.Int32,System.Boolean)
   name.vb: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Segment(Of T), Int64), Int32, Boolean)
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary<Platform.Collections.Segments.Segment<T>, System.Int64>, System.Int32, System.Boolean)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary(Of Platform.Collections.Segments.Segment(Of T), System.Int64), System.Int32, System.Boolean)
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Platform.Collections.Segments.Segment<T>, System.Int64>, System.Int32, System.Boolean)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Platform.Collections.Segments.Segment(Of T), System.Int64), System.Int32, System.Boolean)
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<Segment<T>, Int64>, Int32, Boolean)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of Segment(Of T), Int64), Int32, Boolean)
 - uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`1.#ctor(System.Int32)
@@ -3062,31 +3043,31 @@ references:
   fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase()
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase()
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase()
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Collections.Generic.IDictionary{`1,System.Int64})
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(IDictionary{`1,System.Int64})
   name: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, Int64>)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2__ctor_System_Collections_Generic_IDictionary__1_System_Int64__
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Collections.Generic.IDictionary{`1,System.Int64})
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2__ctor_IDictionary__1_System_Int64__
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(IDictionary{`1,System.Int64})
   name.vb: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, Int64))
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary<TSegment, System.Int64>)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary(Of TSegment, System.Int64))
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, System.Int64>)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, System.Int64))
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, Int64>)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, Int64))
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Collections.Generic.IDictionary{`1,System.Int64},System.Int32)
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(IDictionary{`1,System.Int64},System.Int32)
   name: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, Int64>, Int32)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2__ctor_System_Collections_Generic_IDictionary__1_System_Int64__System_Int32_
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Collections.Generic.IDictionary{`1,System.Int64},System.Int32)
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2__ctor_IDictionary__1_System_Int64__System_Int32_
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(IDictionary{`1,System.Int64},System.Int32)
   name.vb: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, Int64), Int32)
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary<TSegment, System.Int64>, System.Int32)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary(Of TSegment, System.Int64), System.Int32)
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, System.Int64>, System.Int32)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, System.Int64), System.Int32)
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, Int64>, Int32)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, Int64), Int32)
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Collections.Generic.IDictionary{`1,System.Int64},System.Int32,System.Boolean)
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(IDictionary{`1,System.Int64},System.Int32,System.Boolean)
   name: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, Int64>, Int32, Boolean)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2__ctor_System_Collections_Generic_IDictionary__1_System_Int64__System_Int32_System_Boolean_
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Collections.Generic.IDictionary{`1,System.Int64},System.Int32,System.Boolean)
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2__ctor_IDictionary__1_System_Int64__System_Int32_System_Boolean_
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(IDictionary{`1,System.Int64},System.Int32,System.Boolean)
   name.vb: DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, Int64), Int32, Boolean)
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary<TSegment, System.Int64>, System.Int32, System.Boolean)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(System.Collections.Generic.IDictionary(Of TSegment, System.Int64), System.Int32, System.Boolean)
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, System.Int64>, System.Int32, System.Boolean)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, System.Int64), System.Int32, System.Boolean)
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, Int64>, Int32, Boolean)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary(Of TSegment, Int64), Int32, Boolean)
 - uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.#ctor(System.Int32)
@@ -3164,13 +3145,13 @@ references:
   fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).SetSegmentFrequency
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.SetSegmentFrequency
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).SetSegmentFrequency
-- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.WalkAll(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.WalkAll(IList{`0})
   name: WalkAll(IList<T>)
-  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2_WalkAll_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.WalkAll(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase-2.html#Platform_Collections_Segments_Walkers_DictionaryBasedDuplicateSegmentsWalkerBase_2_WalkAll_IList__0__
+  commentId: M:Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.WalkAll(IList{`0})
   name.vb: WalkAll(IList(Of T))
-  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.WalkAll(System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).WalkAll(System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.WalkAll(IList<T>)
+  fullName.vb: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).WalkAll(IList(Of T))
   nameWithType: DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.WalkAll(IList<T>)
   nameWithType.vb: DictionaryBasedDuplicateSegmentsWalkerBase(Of T, TSegment).WalkAll(IList(Of T))
 - uid: Platform.Collections.Segments.Walkers.DictionaryBasedDuplicateSegmentsWalkerBase`2.WalkAll*
@@ -3312,13 +3293,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddAll
   nameWithType: ISetExtensions.AddAll
-- uid: Platform.Collections.Sets.ISetExtensions.AddAll``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Sets.ISetExtensions.AddAll``1(ISet{``0},IList{``0})
   name: AddAll<T>(ISet<T>, IList<T>)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAll__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAll``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAll__1_ISet___0__IList___0__
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAll``1(ISet{``0},IList{``0})
   name.vb: AddAll(Of T)(ISet(Of T), IList(Of T))
-  fullName: Platform.Collections.Sets.ISetExtensions.AddAll<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAll(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Sets.ISetExtensions.AddAll<T>(ISet<T>, IList<T>)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAll(Of T)(ISet(Of T), IList(Of T))
   nameWithType: ISetExtensions.AddAll<T>(ISet<T>, IList<T>)
   nameWithType.vb: ISetExtensions.AddAll(Of T)(ISet(Of T), IList(Of T))
 - uid: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue*
@@ -3328,13 +3309,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue
   nameWithType: ISetExtensions.AddAllAndReturnTrue
-- uid: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue``1(ISet{``0},IList{``0})
   name: AddAllAndReturnTrue<T>(ISet<T>, IList<T>)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAllAndReturnTrue__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAllAndReturnTrue__1_ISet___0__IList___0__
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue``1(ISet{``0},IList{``0})
   name.vb: AddAllAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
-  fullName: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue<T>(ISet<T>, IList<T>)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAllAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
   nameWithType: ISetExtensions.AddAllAndReturnTrue<T>(ISet<T>, IList<T>)
   nameWithType.vb: ISetExtensions.AddAllAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
 - uid: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue*
@@ -3344,13 +3325,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue
   nameWithType: ISetExtensions.AddAndReturnTrue
-- uid: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue``1(System.Collections.Generic.ISet{``0},``0)
+- uid: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue``1(ISet{``0},``0)
   name: AddAndReturnTrue<T>(ISet<T>, T)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAndReturnTrue__1_System_Collections_Generic_ISet___0____0_
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue``1(System.Collections.Generic.ISet{``0},``0)
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAndReturnTrue__1_ISet___0____0_
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue``1(ISet{``0},``0)
   name.vb: AddAndReturnTrue(Of T)(ISet(Of T), T)
-  fullName: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue<T>(System.Collections.Generic.ISet<T>, T)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue(Of T)(System.Collections.Generic.ISet(Of T), T)
+  fullName: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue<T>(ISet<T>, T)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAndReturnTrue(Of T)(ISet(Of T), T)
   nameWithType: ISetExtensions.AddAndReturnTrue<T>(ISet<T>, T)
   nameWithType.vb: ISetExtensions.AddAndReturnTrue(Of T)(ISet(Of T), T)
 - uid: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid*
@@ -3360,13 +3341,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid
   nameWithType: ISetExtensions.AddAndReturnVoid
-- uid: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid``1(System.Collections.Generic.ISet{``0},``0)
+- uid: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid``1(ISet{``0},``0)
   name: AddAndReturnVoid<T>(ISet<T>, T)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAndReturnVoid__1_System_Collections_Generic_ISet___0____0_
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid``1(System.Collections.Generic.ISet{``0},``0)
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddAndReturnVoid__1_ISet___0____0_
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid``1(ISet{``0},``0)
   name.vb: AddAndReturnVoid(Of T)(ISet(Of T), T)
-  fullName: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid<T>(System.Collections.Generic.ISet<T>, T)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid(Of T)(System.Collections.Generic.ISet(Of T), T)
+  fullName: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid<T>(ISet<T>, T)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddAndReturnVoid(Of T)(ISet(Of T), T)
   nameWithType: ISetExtensions.AddAndReturnVoid<T>(ISet<T>, T)
   nameWithType.vb: ISetExtensions.AddAndReturnVoid(Of T)(ISet(Of T), T)
 - uid: Platform.Collections.Sets.ISetExtensions.AddFirst*
@@ -3376,13 +3357,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddFirst
   nameWithType: ISetExtensions.AddFirst
-- uid: Platform.Collections.Sets.ISetExtensions.AddFirst``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Sets.ISetExtensions.AddFirst``1(ISet{``0},IList{``0})
   name: AddFirst<T>(ISet<T>, IList<T>)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddFirst__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddFirst``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddFirst__1_ISet___0__IList___0__
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddFirst``1(ISet{``0},IList{``0})
   name.vb: AddFirst(Of T)(ISet(Of T), IList(Of T))
-  fullName: Platform.Collections.Sets.ISetExtensions.AddFirst<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddFirst(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Sets.ISetExtensions.AddFirst<T>(ISet<T>, IList<T>)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddFirst(Of T)(ISet(Of T), IList(Of T))
   nameWithType: ISetExtensions.AddFirst<T>(ISet<T>, IList<T>)
   nameWithType.vb: ISetExtensions.AddFirst(Of T)(ISet(Of T), IList(Of T))
 - uid: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue*
@@ -3392,13 +3373,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue
   nameWithType: ISetExtensions.AddFirstAndReturnTrue
-- uid: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue``1(ISet{``0},IList{``0})
   name: AddFirstAndReturnTrue<T>(ISet<T>, IList<T>)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddFirstAndReturnTrue__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddFirstAndReturnTrue__1_ISet___0__IList___0__
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue``1(ISet{``0},IList{``0})
   name.vb: AddFirstAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
-  fullName: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue<T>(ISet<T>, IList<T>)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddFirstAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
   nameWithType: ISetExtensions.AddFirstAndReturnTrue<T>(ISet<T>, IList<T>)
   nameWithType.vb: ISetExtensions.AddFirstAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
 - uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirst*
@@ -3408,22 +3389,22 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirst
   nameWithType: ISetExtensions.AddSkipFirst
-- uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(ISet{``0},IList{``0})
   name: AddSkipFirst<T>(ISet<T>, IList<T>)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddSkipFirst__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddSkipFirst__1_ISet___0__IList___0__
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(ISet{``0},IList{``0})
   name.vb: AddSkipFirst(Of T)(ISet(Of T), IList(Of T))
-  fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirst<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddSkipFirst(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirst<T>(ISet<T>, IList<T>)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddSkipFirst(Of T)(ISet(Of T), IList(Of T))
   nameWithType: ISetExtensions.AddSkipFirst<T>(ISet<T>, IList<T>)
   nameWithType.vb: ISetExtensions.AddSkipFirst(Of T)(ISet(Of T), IList(Of T))
-- uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0},System.Int32)
+- uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(ISet{``0},IList{``0},System.Int32)
   name: AddSkipFirst<T>(ISet<T>, IList<T>, Int32)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddSkipFirst__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__System_Int32_
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0},System.Int32)
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddSkipFirst__1_ISet___0__IList___0__System_Int32_
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddSkipFirst``1(ISet{``0},IList{``0},System.Int32)
   name.vb: AddSkipFirst(Of T)(ISet(Of T), IList(Of T), Int32)
-  fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirst<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>, System.Int32)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddSkipFirst(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T), System.Int32)
+  fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirst<T>(ISet<T>, IList<T>, System.Int32)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddSkipFirst(Of T)(ISet(Of T), IList(Of T), System.Int32)
   nameWithType: ISetExtensions.AddSkipFirst<T>(ISet<T>, IList<T>, Int32)
   nameWithType.vb: ISetExtensions.AddSkipFirst(Of T)(ISet(Of T), IList(Of T), Int32)
 - uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue*
@@ -3433,13 +3414,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue
   nameWithType: ISetExtensions.AddSkipFirstAndReturnTrue
-- uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+- uid: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue``1(ISet{``0},IList{``0})
   name: AddSkipFirstAndReturnTrue<T>(ISet<T>, IList<T>)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddSkipFirstAndReturnTrue__1_System_Collections_Generic_ISet___0__System_Collections_Generic_IList___0__
-  commentId: M:Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IList{``0})
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_AddSkipFirstAndReturnTrue__1_ISet___0__IList___0__
+  commentId: M:Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue``1(ISet{``0},IList{``0})
   name.vb: AddSkipFirstAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
-  fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue<T>(System.Collections.Generic.ISet<T>, System.Collections.Generic.IList<T>)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue(Of T)(System.Collections.Generic.ISet(Of T), System.Collections.Generic.IList(Of T))
+  fullName: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue<T>(ISet<T>, IList<T>)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.AddSkipFirstAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
   nameWithType: ISetExtensions.AddSkipFirstAndReturnTrue<T>(ISet<T>, IList<T>)
   nameWithType.vb: ISetExtensions.AddSkipFirstAndReturnTrue(Of T)(ISet(Of T), IList(Of T))
 - uid: Platform.Collections.Sets.ISetExtensions.DoNotContains*
@@ -3449,13 +3430,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.DoNotContains
   nameWithType: ISetExtensions.DoNotContains
-- uid: Platform.Collections.Sets.ISetExtensions.DoNotContains``1(System.Collections.Generic.ISet{``0},``0)
+- uid: Platform.Collections.Sets.ISetExtensions.DoNotContains``1(ISet{``0},``0)
   name: DoNotContains<T>(ISet<T>, T)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_DoNotContains__1_System_Collections_Generic_ISet___0____0_
-  commentId: M:Platform.Collections.Sets.ISetExtensions.DoNotContains``1(System.Collections.Generic.ISet{``0},``0)
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_DoNotContains__1_ISet___0____0_
+  commentId: M:Platform.Collections.Sets.ISetExtensions.DoNotContains``1(ISet{``0},``0)
   name.vb: DoNotContains(Of T)(ISet(Of T), T)
-  fullName: Platform.Collections.Sets.ISetExtensions.DoNotContains<T>(System.Collections.Generic.ISet<T>, T)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.DoNotContains(Of T)(System.Collections.Generic.ISet(Of T), T)
+  fullName: Platform.Collections.Sets.ISetExtensions.DoNotContains<T>(ISet<T>, T)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.DoNotContains(Of T)(ISet(Of T), T)
   nameWithType: ISetExtensions.DoNotContains<T>(ISet<T>, T)
   nameWithType.vb: ISetExtensions.DoNotContains(Of T)(ISet(Of T), T)
 - uid: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid*
@@ -3465,13 +3446,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid
   nameWithType: ISetExtensions.RemoveAndReturnVoid
-- uid: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid``1(System.Collections.Generic.ISet{``0},``0)
+- uid: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid``1(ISet{``0},``0)
   name: RemoveAndReturnVoid<T>(ISet<T>, T)
-  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_RemoveAndReturnVoid__1_System_Collections_Generic_ISet___0____0_
-  commentId: M:Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid``1(System.Collections.Generic.ISet{``0},``0)
+  href: api/Platform.Collections.Sets.ISetExtensions.html#Platform_Collections_Sets_ISetExtensions_RemoveAndReturnVoid__1_ISet___0____0_
+  commentId: M:Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid``1(ISet{``0},``0)
   name.vb: RemoveAndReturnVoid(Of T)(ISet(Of T), T)
-  fullName: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid<T>(System.Collections.Generic.ISet<T>, T)
-  fullName.vb: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid(Of T)(System.Collections.Generic.ISet(Of T), T)
+  fullName: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid<T>(ISet<T>, T)
+  fullName.vb: Platform.Collections.Sets.ISetExtensions.RemoveAndReturnVoid(Of T)(ISet(Of T), T)
   nameWithType: ISetExtensions.RemoveAndReturnVoid<T>(ISet<T>, T)
   nameWithType.vb: ISetExtensions.RemoveAndReturnVoid(Of T)(ISet(Of T), T)
 - uid: Platform.Collections.Sets.SetFiller`2
@@ -3483,22 +3464,22 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant)
   nameWithType: SetFiller<TElement, TReturnConstant>
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant)
-- uid: Platform.Collections.Sets.SetFiller`2.#ctor(System.Collections.Generic.ISet{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.#ctor(ISet{`0})
   name: SetFiller(ISet<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2__ctor_System_Collections_Generic_ISet__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.#ctor(System.Collections.Generic.ISet{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2__ctor_ISet__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.#ctor(ISet{`0})
   name.vb: SetFiller(ISet(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.SetFiller(System.Collections.Generic.ISet<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).SetFiller(System.Collections.Generic.ISet(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.SetFiller(ISet<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).SetFiller(ISet(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.SetFiller(ISet<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).SetFiller(ISet(Of TElement))
-- uid: Platform.Collections.Sets.SetFiller`2.#ctor(System.Collections.Generic.ISet{`0},`1)
+- uid: Platform.Collections.Sets.SetFiller`2.#ctor(ISet{`0},`1)
   name: SetFiller(ISet<TElement>, TReturnConstant)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2__ctor_System_Collections_Generic_ISet__0___1_
-  commentId: M:Platform.Collections.Sets.SetFiller`2.#ctor(System.Collections.Generic.ISet{`0},`1)
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2__ctor_ISet__0___1_
+  commentId: M:Platform.Collections.Sets.SetFiller`2.#ctor(ISet{`0},`1)
   name.vb: SetFiller(ISet(Of TElement), TReturnConstant)
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.SetFiller(System.Collections.Generic.ISet<TElement>, TReturnConstant)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).SetFiller(System.Collections.Generic.ISet(Of TElement), TReturnConstant)
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.SetFiller(ISet<TElement>, TReturnConstant)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).SetFiller(ISet(Of TElement), TReturnConstant)
   nameWithType: SetFiller<TElement, TReturnConstant>.SetFiller(ISet<TElement>, TReturnConstant)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).SetFiller(ISet(Of TElement), TReturnConstant)
 - uid: Platform.Collections.Sets.SetFiller`2.#ctor*
@@ -3543,13 +3524,13 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).Add
   nameWithType: SetFiller<TElement, TReturnConstant>.Add
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).Add
-- uid: Platform.Collections.Sets.SetFiller`2.AddAllAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.AddAllAndReturnConstant(IList{`0})
   name: AddAllAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddAllAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.AddAllAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddAllAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.AddAllAndReturnConstant(IList{`0})
   name.vb: AddAllAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(IList(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.AddAllAndReturnConstant(IList<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Sets.SetFiller`2.AddAllAndReturnConstant*
@@ -3561,13 +3542,13 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant
   nameWithType: SetFiller<TElement, TReturnConstant>.AddAllAndReturnConstant
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddAllAndReturnConstant
-- uid: Platform.Collections.Sets.SetFiller`2.AddAllAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.AddAllAndReturnTrue(IList{`0})
   name: AddAllAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddAllAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.AddAllAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddAllAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.AddAllAndReturnTrue(IList{`0})
   name.vb: AddAllAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddAllAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddAllAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddAllAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddAllAndReturnTrue(IList(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.AddAllAndReturnTrue(IList<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddAllAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Sets.SetFiller`2.AddAllAndReturnTrue*
@@ -3613,13 +3594,13 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddAndReturnTrue
   nameWithType: SetFiller<TElement, TReturnConstant>.AddAndReturnTrue
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddAndReturnTrue
-- uid: Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnConstant(IList{`0})
   name: AddFirstAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddFirstAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddFirstAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnConstant(IList{`0})
   name.vb: AddFirstAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(IList(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnConstant*
@@ -3631,13 +3612,13 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant
   nameWithType: SetFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnConstant
-- uid: Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnTrue(IList{`0})
   name: AddFirstAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddFirstAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddFirstAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnTrue(IList{`0})
   name.vb: AddFirstAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue(IList(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue(IList<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Sets.SetFiller`2.AddFirstAndReturnTrue*
@@ -3649,13 +3630,13 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue
   nameWithType: SetFiller<TElement, TReturnConstant>.AddFirstAndReturnTrue
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddFirstAndReturnTrue
-- uid: Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnConstant(IList{`0})
   name: AddSkipFirstAndReturnConstant(IList<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddSkipFirstAndReturnConstant_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddSkipFirstAndReturnConstant_IList__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnConstant(IList{`0})
   name.vb: AddSkipFirstAndReturnConstant(IList(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(IList<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(IList(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant(IList<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant(IList(Of TElement))
 - uid: Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnConstant*
@@ -3667,13 +3648,13 @@ references:
   fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant
   nameWithType: SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnConstant
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnConstant
-- uid: Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+- uid: Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnTrue(IList{`0})
   name: AddSkipFirstAndReturnTrue(IList<TElement>)
-  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddSkipFirstAndReturnTrue_System_Collections_Generic_IList__0__
-  commentId: M:Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList{`0})
+  href: api/Platform.Collections.Sets.SetFiller-2.html#Platform_Collections_Sets_SetFiller_2_AddSkipFirstAndReturnTrue_IList__0__
+  commentId: M:Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnTrue(IList{`0})
   name.vb: AddSkipFirstAndReturnTrue(IList(Of TElement))
-  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnTrue(System.Collections.Generic.IList<TElement>)
-  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnTrue(System.Collections.Generic.IList(Of TElement))
+  fullName: Platform.Collections.Sets.SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnTrue(IList<TElement>)
+  fullName.vb: Platform.Collections.Sets.SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnTrue(IList(Of TElement))
   nameWithType: SetFiller<TElement, TReturnConstant>.AddSkipFirstAndReturnTrue(IList<TElement>)
   nameWithType.vb: SetFiller(Of TElement, TReturnConstant).AddSkipFirstAndReturnTrue(IList(Of TElement))
 - uid: Platform.Collections.Sets.SetFiller`2.AddSkipFirstAndReturnTrue*
@@ -3870,13 +3851,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Stacks.StackExtensions.PeekOrDefault
   nameWithType: StackExtensions.PeekOrDefault
-- uid: Platform.Collections.Stacks.StackExtensions.PeekOrDefault``1(System.Collections.Generic.Stack{``0})
+- uid: Platform.Collections.Stacks.StackExtensions.PeekOrDefault``1(Stack{``0})
   name: PeekOrDefault<T>(Stack<T>)
-  href: api/Platform.Collections.Stacks.StackExtensions.html#Platform_Collections_Stacks_StackExtensions_PeekOrDefault__1_System_Collections_Generic_Stack___0__
-  commentId: M:Platform.Collections.Stacks.StackExtensions.PeekOrDefault``1(System.Collections.Generic.Stack{``0})
+  href: api/Platform.Collections.Stacks.StackExtensions.html#Platform_Collections_Stacks_StackExtensions_PeekOrDefault__1_Stack___0__
+  commentId: M:Platform.Collections.Stacks.StackExtensions.PeekOrDefault``1(Stack{``0})
   name.vb: PeekOrDefault(Of T)(Stack(Of T))
-  fullName: Platform.Collections.Stacks.StackExtensions.PeekOrDefault<T>(System.Collections.Generic.Stack<T>)
-  fullName.vb: Platform.Collections.Stacks.StackExtensions.PeekOrDefault(Of T)(System.Collections.Generic.Stack(Of T))
+  fullName: Platform.Collections.Stacks.StackExtensions.PeekOrDefault<T>(Stack<T>)
+  fullName.vb: Platform.Collections.Stacks.StackExtensions.PeekOrDefault(Of T)(Stack(Of T))
   nameWithType: StackExtensions.PeekOrDefault<T>(Stack<T>)
   nameWithType.vb: StackExtensions.PeekOrDefault(Of T)(Stack(Of T))
 - uid: Platform.Collections.Stacks.StackExtensions.PopOrDefault*
@@ -3886,13 +3867,13 @@ references:
   isSpec: "True"
   fullName: Platform.Collections.Stacks.StackExtensions.PopOrDefault
   nameWithType: StackExtensions.PopOrDefault
-- uid: Platform.Collections.Stacks.StackExtensions.PopOrDefault``1(System.Collections.Generic.Stack{``0})
+- uid: Platform.Collections.Stacks.StackExtensions.PopOrDefault``1(Stack{``0})
   name: PopOrDefault<T>(Stack<T>)
-  href: api/Platform.Collections.Stacks.StackExtensions.html#Platform_Collections_Stacks_StackExtensions_PopOrDefault__1_System_Collections_Generic_Stack___0__
-  commentId: M:Platform.Collections.Stacks.StackExtensions.PopOrDefault``1(System.Collections.Generic.Stack{``0})
+  href: api/Platform.Collections.Stacks.StackExtensions.html#Platform_Collections_Stacks_StackExtensions_PopOrDefault__1_Stack___0__
+  commentId: M:Platform.Collections.Stacks.StackExtensions.PopOrDefault``1(Stack{``0})
   name.vb: PopOrDefault(Of T)(Stack(Of T))
-  fullName: Platform.Collections.Stacks.StackExtensions.PopOrDefault<T>(System.Collections.Generic.Stack<T>)
-  fullName.vb: Platform.Collections.Stacks.StackExtensions.PopOrDefault(Of T)(System.Collections.Generic.Stack(Of T))
+  fullName: Platform.Collections.Stacks.StackExtensions.PopOrDefault<T>(Stack<T>)
+  fullName.vb: Platform.Collections.Stacks.StackExtensions.PopOrDefault(Of T)(Stack(Of T))
   nameWithType: StackExtensions.PopOrDefault<T>(Stack<T>)
   nameWithType.vb: StackExtensions.PopOrDefault(Of T)(Stack(Of T))
 - uid: Platform.Collections.StringExtensions
