@@ -11,6 +11,10 @@ namespace Platform.Collections.Tests
 {
     public class AllRepeatingSubstringsInString
     {
+        private static readonly string elfen_lied = @"Nacht im Dorf der Wächter rief: Elfe! Ein ganz kleines Elfchen im Walde schlief wohl um die Elfe! Und meint, es rief ihm aus dem Tal bei seinem Namen die Nachtigall, oder Silpelit hätt' ihm gerufen.
+Reibt sich der Elf' die Augen aus, begibt sich vor sein Schneckenhaus und ist als wie ein trunken Mann, sein Schläflein war nicht voll getan, und humpelt also tippe tapp durch’s Haselholz in’s Tal hinab, schlupft an der Mauer hin so dicht, da sitzt der Glühwurm Licht an Licht.
+Was sind das helle Fensterlein? Da drin wird eine Hochzeit sein: die Kleinen sitzen bei’m Mahle, und treiben’s in dem Saale. Da guck' ich wohl ein wenig 'nein!"
+Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
         private static readonly string _exampleText =
     @"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
 Обозначение пустоты, какое оно? Темнота ли это? Там где отсутствие света, отсутствие фотонов (носителей света)? Или это то, что полностью отражает свет? Пустой белый лист бумаги? Там где есть место для нового начала? Разве пустота это не характеристика пространства? Пространство это то, что можно чем-то наполнить?
@@ -46,7 +50,7 @@ namespace Platform.Collections.Tests
         [Fact]
         public void ConsoleTests()
         {
-            string text = _exampleText;
+            string text = elfen_lied;
 
             var iterationsCounter = new IterationsCounter();
             iterationsCounter.WalkAll(text);
