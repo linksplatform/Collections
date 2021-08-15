@@ -46,7 +46,7 @@ namespace Platform.Collections.Tests
         [Fact]
         public void ConsoleTests()
         {
-            const string text = _exampleLoremIpsumText;
+            string text = _exampleLoremIpsumText;
 
             var iterationsCounter = new IterationsCounter();
             iterationsCounter.WalkAll(text);
