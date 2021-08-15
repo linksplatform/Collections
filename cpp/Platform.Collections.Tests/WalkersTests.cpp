@@ -1,9 +1,10 @@
 #include <Platform.Collections.h>
 
 using namespace Platform::Interfaces;
+using namespace Platform::Collections::Trees;
 using namespace Platform::Collections::Segments::Walkers;
 
-std::u16string a = u"aaaaaaaaaa";
+std::u16string a = u"abacabacalolkekek";
 
 std::u16string real_text =  uR"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
 Обозначение пустоты, какое оно? Темнота ли это? Там где отсутствие света, отсутствие фотонов (носителей света)? Или это то, что полностью отражает свет? Пустой белый лист бумаги? Там где есть место для нового начала? Разве пустота это не характеристика пространства? Пространство это то, что можно чем-то наполнить?
@@ -59,6 +60,45 @@ struct ConsolePrintedDuplicateWalkerBase : DuplicateSegmentsWalkerBase<Self, cha
     void OnDuplicateFound(auto segment) {/* std::cout << span_as_string(segment) << "\n"; */}
 
     std::span<char16_t> CreateSegment(IArray<char16_t> auto&& elements, int offset, int length) { return std::span<char16_t>(std::ranges::begin(elements) + offset, length); }
+};
+
+
+struct Walker1 : public ConsolePrintedDuplicateWalkerBase<Walker1>
+{
+    using base = ConsolePrintedDuplicateWalkerBase<Walker1>;
+
+    Node<std::size_t, Repeat<char16_t>> _rootNode;
+    Node<std::size_t, Repeat<char16_t>>* _currentNode = &_rootNode;
+
+    Walker1() = default;
+
+    void WalkAll(IList<char16_t> auto&& elements)
+    {
+        _rootNode.ChildNodes().clear();
+
+        base::WalkAll(elements);
+    }
+
+    auto GetSegmentFrequency(auto&& segment)
+    {
+        for (auto&& c : segment)
+        {
+            auto element = c;
+
+            _currentNode = &(*_currentNode)[element];
+        }
+
+        return _currentNode->Value;
+    }
+
+    void SetSegmentFrequency(auto&& segment, long frequency) { _currentNode->Value = frequency; };
+
+    void Iteration(auto&& segment)
+    {
+        _currentNode = &_rootNode;
+
+        base::Iteration(segment);
+    }
 };
 
 struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
@@ -134,30 +174,50 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
 TEST(Walkers, Sandbox)
 {
-    auto text = a;
+    auto text = exampleLoremIpsumText;
 
     auto iterationsCounter = IterationsCounter{};
     iterationsCounter.WalkAll(text);
     auto result = iterationsCounter.IterationsCount;
     std::printf("TextLength: %lu. Iterations: %lu.\n", text.size(), result);
 
-    auto start = std::chrono::system_clock::now();
+    {
+        auto start = std::chrono::system_clock::now();
 
-    auto walker2 = Walker2{};
-    walker2.WalkAll(text);
+        auto walker2 = Walker2{};
+        walker2.WalkAll(text);
 
-    for (auto [item, count] : walker2._cache) {
-        std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
+        //for (auto [item, count] : walker2._cache) {
+        //    std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
+        //}
+
+        auto end = std::chrono::system_clock::now();
+        std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
     }
 
-    auto walker4 = Walker4{};
-    walker4.WalkAll(text);
+    {
+        auto start = std::chrono::system_clock::now();
 
-    for (auto [item, count] : walker4.dictionary) {
-        std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
+        auto walker4 = Walker4{};
+        walker4.WalkAll(text);
+
+        //for (auto [item, count] : walker4.dictionary) {
+        //    std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
+        //}
+        auto end = std::chrono::system_clock::now();
+        std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
     }
 
-    auto end = std::chrono::system_clock::now();
 
-    std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
+    {
+        auto start = std::chrono::system_clock::now();
+
+        auto walker1 = Walker1{};
+        walker1.WalkAll(text);
+
+        //Platform::Collections::Tests::DFS_print(walker1._rootNode, [](char16_t c) { return char(c); });
+
+        auto end = std::chrono::system_clock::now();
+        std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
+    }
 }

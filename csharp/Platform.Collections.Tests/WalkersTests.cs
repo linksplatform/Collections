@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Platform.Collections.Segments;
 using Platform.Collections.Segments.Walkers;
+using Platform.Collections.Trees;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -54,24 +55,42 @@ namespace Platform.Collections.Tests
             Console.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
 
             {
+                var start = DateTime.Now;
                 var walker = new Walker4();
                 walker.WalkAll(text);
                 
-                foreach (var (key, value) in walker.PublicDictionary)
-                {
-                    Console.WriteLine($"{key} {value}");
-                }
+                //foreach (var (key, value) in walker.PublicDictionary)
+                //{
+                //    Console.WriteLine($"{key} {value}");
+                //}
+                
+                var end = DateTime.Now;
+                Console.WriteLine($"{(end - start).Milliseconds}ms");
             }
 
 
             {
+                var start = DateTime.Now;
                 var walker = new Walker2();
                 walker.WalkAll(text);
     
-                foreach (var (key, value) in walker._cache)
-                {
-                    Console.WriteLine($"{key} {value}");
-                }
+                //foreach (var (key, value) in walker._cache)
+                //{
+                //    Console.WriteLine($"{key} {value}");
+                //}
+                
+                var end = DateTime.Now;
+                Console.WriteLine($"{(end - start).Milliseconds}ms");
+            }
+
+            {
+                var start = DateTime.Now;
+                
+                var walker = new Walker1();
+                walker.WalkAll(text);
+                
+                var end = DateTime.Now;
+                Console.WriteLine($"{(end - start).Milliseconds}ms");
             }
         }
     }
@@ -81,6 +100,52 @@ namespace Platform.Collections.Tests
         //protected override void OnDublicateFound(CharSegment segment) => Console.WriteLine(segment);
 
         protected override CharSegment CreateSegment(IList<char> elements, int offset, int length) => new CharSegment(elements, offset, length);
+    }
+    
+    public class Walker1 : ConsolePrintedDublicateWalkerBase
+    {
+        private Node _rootNode;
+        private Node _currentNode;
+
+        public override void WalkAll(IList<char> elements)
+        {
+            _rootNode = new Node();
+
+            base.WalkAll(elements);
+        }
+
+        protected override void OnDublicateFound(CharSegment segment)
+        {
+            
+        }
+
+        protected override long GetSegmentFrequency(CharSegment segment)
+        {
+            for (int i = 0; i < segment.Length; i++)
+            {
+                var element = segment[i];
+
+                _currentNode = _currentNode[element];
+            }
+
+            if (_currentNode.Value is int)
+            {
+                return (int)_currentNode.Value;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        protected override void SetSegmentFrequency(CharSegment segment, long frequency) => _currentNode.Value = frequency;
+
+        protected override void Iteration(CharSegment segment)
+        {
+            _currentNode = _rootNode;
+
+            base.Iteration(segment);
+        }
     }
     
     // Too much memory, but fast

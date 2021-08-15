@@ -14,12 +14,12 @@ namespace Platform::Collections::Tests
         node2[123][321]["fsdf"];
     }
 
-    template<typename TValue, typename... Args>
-    void DFS_print(const Trees::Node<TValue, Args...>& root, std::string modifier = "")
+    template<typename ViewKey = std::identity, typename ViewValue = std::identity>
+    void DFS_print(const auto& root, ViewKey view_key = {}, ViewValue view_value = {}, std::string modifier = "")
     {
         for (auto&& [key, child] : root.ChildNodes()) {
-            std::cout << modifier << key << ": " << child.Value << std::endl;
-            DFS_print(child, modifier + "  ");
+            std::cout << modifier << view_key(key) << ": " << view_value(child.Value) << std::endl;
+            DFS_print(child, view_key, view_value, modifier + "  ");
         }
     }
 
