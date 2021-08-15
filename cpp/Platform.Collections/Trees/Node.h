@@ -121,7 +121,6 @@
     {
         using base = Internal::NodeBase<TValue, TKey, Node<TValue, Repeat<TKey>>>;
         using base::base;
-
     };
 
     template<typename TValue, NotHelperType TKey, typename... Tail>
@@ -132,7 +131,7 @@
         using base::base;
 
         auto& AddChild(const TKey& key, const TValue& value = {}) requires Internal::ValueNode<Child> { return base::AddChild(key, Child{value}); };
-        auto& GetChildValue(auto&&... args) requires Internal::ValueNode<Child> { return base::SetChildValue(std::forward<decltype(args)>(args)...); };
+        auto GetChildValue(auto&&... args) requires Internal::ValueNode<Child> { return base::SetChildValue(std::forward<decltype(args)>(args)...); };
         auto& SetChildValue(auto&&... args) requires Internal::ValueNode<Child> { return base::SetChildValue(std::forward<decltype(args)>(args)...); };
     };
 }
