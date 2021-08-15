@@ -1,4 +1,4 @@
-﻿namespace Platform::Collections::Trees
+namespace Platform::Collections::Trees
 {
     struct HelperTypeTag
     {
@@ -39,7 +39,7 @@
         template<typename TValue, typename TKey, typename Child>
         class NodeBase
         {
-            using dict_type = std::unordered_map<TKey, Child>;
+            using dict_type = std::map<TKey, Child>;
             private: std::unique_ptr<dict_type> _childNodes = std::make_unique<dict_type>();
             public: auto ChildNodes() const -> auto&& { return *_childNodes; }
 
