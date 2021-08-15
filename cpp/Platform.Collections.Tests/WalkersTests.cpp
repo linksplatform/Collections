@@ -6,6 +6,11 @@ using namespace Platform::Collections::Segments::Walkers;
 
 std::u16string a = u"abacabacalolkekek";
 
+std::u16string elfen_lied = uR"(Nacht im Dorf der Wächter rief: Elfe! Ein ganz kleines Elfchen im Walde schlief wohl um die Elfe! Und meint, es rief ihm aus dem Tal bei seinem Namen die Nachtigall, oder Silpelit hätt' ihm gerufen.
+Reibt sich der Elf' die Augen aus, begibt sich vor sein Schneckenhaus und ist als wie ein trunken Mann, sein Schläflein war nicht voll getan, und humpelt also tippe tapp durch’s Haselholz in’s Tal hinab, schlupft an der Mauer hin so dicht, da sitzt der Glühwurm Licht an Licht.
+Was sind das helle Fensterlein? Da drin wird eine Hochzeit sein: die Kleinen sitzen bei’m Mahle, und treiben’s in dem Saale. Da guck' ich wohl ein wenig 'nein!"
+Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!)";
+
 std::u16string real_text =  uR"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
 Обозначение пустоты, какое оно? Темнота ли это? Там где отсутствие света, отсутствие фотонов (носителей света)? Или это то, что полностью отражает свет? Пустой белый лист бумаги? Там где есть место для нового начала? Разве пустота это не характеристика пространства? Пространство это то, что можно чем-то наполнить?
 [![чёрное пространство, белое пространство](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/1.png ""чёрное пространство, белое пространство"")](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/1.png)
@@ -174,7 +179,7 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
 TEST(Walkers, Sandbox)
 {
-    auto text = real_text;
+    auto text = elfen_lied;
 
     auto iterationsCounter = IterationsCounter{};
     iterationsCounter.WalkAll(text);
