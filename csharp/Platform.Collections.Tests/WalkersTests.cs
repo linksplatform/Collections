@@ -116,6 +116,8 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             _rootNode = new Node();
 
             base.WalkAll(elements);
+
+            Console.WriteLine(_rootNode.Value);
         }
 
         protected override void OnDublicateFound(CharSegment segment)
