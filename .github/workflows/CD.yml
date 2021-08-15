@@ -53,7 +53,7 @@ jobs:
           export REPOSITORY_NAME=$(basename ${{ github.repository }})
           cd cpp && mkdir $REPOSITORY_NAME && cd $REPOSITORY_NAME
           conan install .. -if=. -pr=linksplatform --build=missing
-          cmake ..
+          cmake .. $cmake_flags
           scan-build make -j 2
           make -j 2
           cd bin
