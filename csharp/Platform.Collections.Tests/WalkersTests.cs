@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Platform.Collections.Segments;
 using Platform.Collections.Segments.Walkers;
 using Platform.Collections.Trees;
@@ -56,45 +57,49 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             iterationsCounter.WalkAll(text);
             var result = iterationsCounter.IterationsCount;
             Console.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
-            Console.WriteLine($"TextLength: {text.Length}. Iterations: {result}.");
 
             {
-                var start = DateTime.Now;
+                var start = new Stopwatch();
+                start.Start();
+
                 var walker = new Walker4();
                 walker.WalkAll(text);
-                
+
                 //foreach (var (key, value) in walker.PublicDictionary)
                 //{
                 //    Console.WriteLine($"{key} {value}");
                 //}
-                
-                var end = DateTime.Now;
-                Console.WriteLine($"{(end - start).Milliseconds}ms");
+
+                start.Stop();
+                Console.WriteLine($"{start.ElapsedMilliseconds}ms");
             }
 
 
             {
-                var start = DateTime.Now;
+                var start = new Stopwatch();
+                start.Start();
+
                 var walker = new Walker2();
                 walker.WalkAll(text);
-    
+
                 //foreach (var (key, value) in walker._cache)
                 //{
                 //    Console.WriteLine($"{key} {value}");
                 //}
-                
-                var end = DateTime.Now;
-                Console.WriteLine($"{(end - start).Milliseconds}ms");
+
+                start.Stop();
+                Console.WriteLine($"{start.ElapsedMilliseconds}ms");
             }
 
             {
-                var start = DateTime.Now;
-                
+                var start = new Stopwatch();
+                start.Start();
+
                 var walker = new Walker1();
                 walker.WalkAll(text);
-                
-                var end = DateTime.Now;
-                Console.WriteLine($"{(end - start).Milliseconds}ms");
+
+                start.Stop();
+                Console.WriteLine($"{start.ElapsedMilliseconds}ms");
             }
         }
     }
