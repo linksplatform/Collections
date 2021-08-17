@@ -187,7 +187,7 @@ TEST(Walkers, Sandbox)
     std::printf("TextLength: %lu. Iterations: %lu.\n", text.size(), result);
 
     {
-        auto start = std::chrono::system_clock::now();
+        auto start = std::chrono::steady_clock::now();
 
         auto walker2 = Walker2{};
         walker2.WalkAll(text);
@@ -196,12 +196,12 @@ TEST(Walkers, Sandbox)
         //    std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
         //}
 
-        auto end = std::chrono::system_clock::now();
+        auto end = std::chrono::steady_clock::now();
         std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
     }
 
     {
-        auto start = std::chrono::system_clock::now();
+        auto start = std::chrono::steady_clock::now();
 
         auto walker4 = Walker4{};
         walker4.WalkAll(text);
@@ -209,20 +209,20 @@ TEST(Walkers, Sandbox)
         //for (auto [item, count] : walker4.dictionary) {
         //    std::cout << std::string(item.begin(), item.end()) << " " << count << std::endl;
         //}
-        auto end = std::chrono::system_clock::now();
+        auto end = std::chrono::steady_clock::now();
         std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
     }
 
 
     {
-        auto start = std::chrono::system_clock::now();
+        auto start = std::chrono::steady_clock::now();
 
         auto walker1 = Walker1{};
         walker1.WalkAll(text);
 
         //Platform::Collections::Tests::DFS_print(walker1._rootNode, [](char16_t c) { return char(c); });
 
-        auto end = std::chrono::system_clock::now();
+        auto end = std::chrono::steady_clock::now();
         std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start)).count() << "ms\n";
     }
 }
