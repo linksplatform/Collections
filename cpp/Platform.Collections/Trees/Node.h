@@ -48,12 +48,12 @@ namespace Platform::Collections::Trees
             public: NodeBase(const NodeBase& other)
                 : _childNodes(std::make_unique<dict_type>(other.ChildNodes())) { }
 
-            public: auto operator[](const TKey& key) -> Child&
+            public: auto operator[](TKey key) -> Child&
             {
                 if(!ChildNodes().contains(key))
                     return AddChild(key);
 
-                return ChildNodes()[key];
+                return ChildNodes()[std::move(key)];
             }
 
             public: auto ContainsChild(std::ranges::range auto&& keys) const -> bool
@@ -103,8 +103,8 @@ namespace Platform::Collections::Trees
 
             public: auto AddChild(TKey key, Child child) -> Child&
             {
-                Dictionaries::Add(ChildNodes(), std::move(key), std::move(child));
-                return ChildNodes()[key];
+                Dictionaries::Add(ChildNodes(), key, std::move(child));
+                return ChildNodes()[std::move(key)];
             }
 
             public: auto SetChild(auto&&... keys) -> Child& { return SetChildValue({}, std::forward<decltype(keys)>(keys)...); }
