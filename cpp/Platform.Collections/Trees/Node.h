@@ -39,7 +39,7 @@ namespace Platform::Collections::Trees
         template<typename TValue, typename TKey, typename Child>
         class NodeBase
         {
-            using dict_type = std::map<TKey, Child>;
+            using dict_type = std::unordered_map<TKey, Child>;
             private: std::unique_ptr<dict_type> _childNodes = std::make_unique<dict_type>();
             public: auto ChildNodes() const -> auto&& { return *_childNodes; }
 
@@ -56,31 +56,45 @@ namespace Platform::Collections::Trees
                 return ChildNodes()[key];
             }
 
-            public: auto ContainsChild(std::ranges::range auto&& keys) const -> bool { return GetChild(std::forward<decltype(keys)>(keys)).has_value(); }
-
-            public: auto GetChild(std::ranges::range auto&& keys) const -> auto
+            public: auto ContainsChild(std::ranges::range auto&& keys) const -> bool
             {
                 auto* node = this;
-                using optional_type = decltype(std::optional{std::ref(*node)});
                 for (auto&& key : keys)
                 {
-                    if (node->ChildNodes().contains(key))
+                    auto iter = node->ChildNodes().find(key);
+                    if (iter != node->ChildNodes().end())
                     {
-                        node = &node->ChildNodes().at(key);
+                        node = &*iter;
                     }
                     else
                     {
-                        return optional_type{std::nullopt};
+                        return false;
                     }
                 }
-                return std::optional{std::ref(*node)};
+                return true;
+            }
+
+            public: auto GetChild(std::ranges::range auto&& keys) const -> Child&
+            {
+                auto* node = this;
+                for (auto&& key : keys)
+                {
+                    auto iter = node->ChildNodes().find(key);
+                    if (iter != node->ChildNodes().end())
+                    {
+                        node = &*iter;
+                    }
+                    else
+                    {
+                        throw std::logic_error{"unknown error"};
+                    }
+                }
+                return *node;
             }
 
             public: auto GetChildValue(std::ranges::range auto&& keys) const -> auto
             {
-                auto child = GetChild(std::forward<decltype(keys)>(keys));
-                using optional_type = decltype(std::optional{std::ref(child.value().get().Value)});
-                return (child.has_value()) ? std::optional{std::ref(child.value().get().Value)} : optional_type{std::nullopt};
+                return GetChild(std::forward<decltype(keys)>(keys)).Value;
             }
 
             public: auto AddChild(const TKey& key, const TValue& value) -> Child& { return AddChild(key, Child{value}); }
@@ -89,7 +103,7 @@ namespace Platform::Collections::Trees
 
             public: auto AddChild(TKey key, Child child) -> Child&
             {
-                Dictionaries::Add(ChildNodes(), key, std::move(child));
+                Dictionaries::Add(ChildNodes(), std::move(key), std::move(child));
                 return ChildNodes()[key];
             }
 
@@ -105,25 +119,14 @@ namespace Platform::Collections::Trees
                 node->Value = value;
                 return *node;
             }
-        };
 
-        template<typename TNode, std::size_t depth>
-        consteval auto ChildHasValueHelper()
-        {
-            if constexpr (depth == 0) {
-                return ValueNode<TNode>;
-            } else {
-                return requires(TNode node) {
-                    requires ChildHasValueHelper<decltype(node.ChildNodes().at(0)), depth - 1>();
-                };
+            public: auto SetChildValue(TValue value, TKey key) -> Child&
+            {
+                auto& child = (*this)[std::move(key)];
+                child.Value = std::move(value);
+                return child;
             }
-        }
-
-        template<typename TNode, std::size_t depth>
-        consteval auto ChildHasValue()
-        {
-            return ChildHasValueHelper<TNode, depth>();
-        }
+        };
     }
 
     template<typename TValue, typename TKey>
@@ -151,40 +154,50 @@ namespace Platform::Collections::Trees
 
         auto& AddChild(const TKey& key, const TValue& value) requires ValueNode<Child> { return base::AddChild(key, value); };
 
-        auto& GetChild(auto&&... keys) const
+        auto&& GetChild(auto... keys) const
         {
-            std::tuple tuple_keys = { std::forward<decltype(keys)>(keys)... };
-            return _GetChild(std::move(tuple_keys), *this);
+            return _GetChild(std::tie(keys...), *this);
         }
 
-        public: auto GetChildValue(auto&&... keys) requires (Internal::ChildHasValue<Node, sizeof...(keys)>())
+        public: auto&& GetChildValue(auto&&... keys) const
         {
-            return GetChild(std::forward<decltype(keys)>(keys)..., *this).Value;
+            return GetChild(std::forward<decltype(keys)>(keys)...).Value;
         };
 
-        auto& SetChildValue(auto&& value, auto&&... keys) requires (Internal::ChildHasValue<Node, sizeof...(keys)>())
+        auto& SetChildValue(auto&& value, auto&&... keys)
         {
-            auto& child = GetChild(std::forward<decltype(keys)>(keys)..., *this);
+            auto& child = GetChild(std::forward<decltype(keys)>(keys)...);
             child.Value = value;
             return child;
         }
 
-        auto& SetChildValue(auto&&... keys) requires (Internal::ChildHasValue<Node, sizeof...(keys)>())
+        auto& SetChildValue(auto&&... keys)
         {
             SetChildValue(TValue{}, std::forward<decltype(keys)>(keys)...);
         }
 
     private:
         template<std::size_t depth = 0>
-        auto& _GetChild(auto tuple_keys, auto& root) const
+        auto&& _GetChild(auto tuple_keys, auto&& root) const
         {
-            if constexpr (std::tuple_size_v<decltype(tuple_keys)> - 2 == depth)
+            using tuple_type = decltype(tuple_keys);
+            constexpr auto tuple_size = std::tuple_size_v<tuple_type>;
+            auto&& child_nodes = root.ChildNodes();
+            auto&& child_key = std::get<depth>(tuple_keys);
+
+            auto iter = child_nodes.find(child_key);
+            if (iter == child_nodes.end())
             {
-                return root.ChildNodes().at(std::get<depth>(tuple_keys));
+                throw std::logic_error{"unknown error"};
+            }
+            auto&& [key, child] = *iter;
+            if constexpr (tuple_size - 1 == depth)
+            {
+                return child;
             }
             else
             {
-                return _GetChild<depth + 1>(std::move(tuple_keys), root.ChildNodes().at(std::get<depth>(tuple_keys)));
+                return _GetChild<depth + 1>(tuple_keys, child);
             }
         }
     };
