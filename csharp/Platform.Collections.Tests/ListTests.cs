@@ -1,12 +1,24 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Xunit;
 using Platform.Collections.Lists;
 
 
 namespace Platform.Collections.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the list tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public class ListTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that get element test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public void GetElementTest()
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
@@ -6,8 +6,28 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections
 {
+    /// <summary>
+    /// <para>
+    /// Represents the string extensions.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class StringExtensions
     {
+        /// <summary>
+        /// <para>
+        /// Capitalizes the first letter using the specified string.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="@string">
+        /// <para>The string.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The string.</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string CapitalizeFirstLetter(this string @string)
         {
@@ -32,9 +52,45 @@ namespace Platform.Collections
             return @string;
         }
 
+        /// <summary>
+        /// <para>
+        /// Truncates the string.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="@string">
+        /// <para>The string.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maxLength">
+        /// <para>The max length.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The string</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string Truncate(this string @string, int maxLength) => string.IsNullOrEmpty(@string) ? @string : @string.Substring(0, Math.Min(@string.Length, maxLength));
 
+        /// <summary>
+        /// <para>
+        /// Trims the single using the specified string.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="@string">
+        /// <para>The string.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="charToTrim">
+        /// <para>The char to trim.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The string</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string TrimSingle(this string @string, char charToTrim)
         {

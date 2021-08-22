@@ -1,11 +1,29 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Lists
 {
+    /// <summary>
+    /// <para>
+    /// Represents the list filler.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public class ListFiller<TElement, TReturnConstant>
     {
+        /// <summary>
+        /// <para>
+        /// The list.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         protected readonly List<TElement> _list;
+        /// <summary>
+        /// <para>
+        /// The return constant.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         protected readonly TReturnConstant _returnConstant;
 
         /// <summary>
@@ -21,6 +39,16 @@ namespace Platform.Collections.Lists
             _returnConstant = returnConstant;
         }
 
+        /// <summary>
+        /// <para>
+        /// Initializes a new <see cref="ListFiller"/> instance.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="list">
+        /// <para>A list.</para>
+        /// <para></para>
+        /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ListFiller(List<TElement> list) : this(list, default) { }
 

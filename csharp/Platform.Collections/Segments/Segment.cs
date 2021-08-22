@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -79,11 +79,31 @@ namespace Platform.Collections.Segments
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual bool Equals(Segment<T> other) => this.EqualTo(other);
 
+        /// <summary>
+        /// <para>
+        /// Determines whether this instance equals.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="obj">
+        /// <para>The obj.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bool</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(object obj) => obj is Segment<T> other ? Equals(other) : false;
 
         #region IList
 
+        /// <summary>
+        /// <para>
+        /// The value.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         public T this[int i]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

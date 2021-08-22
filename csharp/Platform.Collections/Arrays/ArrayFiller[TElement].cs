@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
@@ -10,7 +10,19 @@ namespace Platform.Collections.Arrays
     /// <typeparam name="TElement"><para>The elements' type.</para><para>Тип элементов массива.</para></typeparam>
     public class ArrayFiller<TElement>
     {
+        /// <summary>
+        /// <para>
+        /// The array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         protected readonly TElement[] _array;
+        /// <summary>
+        /// <para>
+        /// The position.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         protected long _position;
 
         /// <summary>

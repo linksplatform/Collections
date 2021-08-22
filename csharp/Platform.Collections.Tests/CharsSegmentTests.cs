@@ -1,10 +1,22 @@
-﻿using Xunit;
+using Xunit;
 using Platform.Collections.Segments;
 
 namespace Platform.Collections.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the chars segment tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class CharsSegmentTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that get hash code equals test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void GetHashCodeEqualsTest()
         {
@@ -15,6 +27,12 @@ namespace Platform.Collections.Tests
             Assert.Equal(firstHashCode, secondHashCode);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that equals test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void EqualsTest()
         {

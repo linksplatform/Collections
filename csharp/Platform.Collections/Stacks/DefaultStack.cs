@@ -5,8 +5,22 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Stacks
 {
+    /// <summary>
+    /// <para>
+    /// Represents the default stack.
+    /// </para>
+    /// <para></para>
+    /// </summary>
+    /// <seealso cref="Stack{TElement}"/>
+    /// <seealso cref="IStack{TElement}"/>
     public class DefaultStack<TElement> : Stack<TElement>, IStack<TElement>
     {
+        /// <summary>
+        /// <para>
+        /// Gets the is empty value.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         public bool IsEmpty
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

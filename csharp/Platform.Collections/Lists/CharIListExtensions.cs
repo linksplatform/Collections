@@ -1,8 +1,14 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Lists
 {
+    /// <summary>
+    /// <para>
+    /// Represents the char list extensions.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class CharIListExtensions
     {
         /// <summary>

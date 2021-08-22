@@ -1,8 +1,15 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Lists
 {
+    /// <summary>
+    /// <para>
+    /// Represents the list comparer.
+    /// </para>
+    /// <para></para>
+    /// </summary>
+    /// <seealso cref="IComparer{IList{T}}"/>
     public class IListComparer<T> : IComparer<IList<T>>
     {
         /// <summary>

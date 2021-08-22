@@ -1,9 +1,21 @@
-﻿using Xunit;
+using Xunit;
 
 namespace Platform.Collections.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the string tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class StringTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that capitalize first letter test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void CapitalizeFirstLetterTest()
         {
@@ -12,6 +24,12 @@ namespace Platform.Collections.Tests
             Assert.Equal("  Hello", "  hello".CapitalizeFirstLetter());
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that trim single test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void TrimSingleTest()
         {
