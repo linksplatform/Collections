@@ -133,7 +133,7 @@ struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
 
     void Iteration(auto&& segment)
     {
-        _currentKey = span_as_string(segment);
+        _currentKey = segment;
 
         base::Iteration(segment);
     }

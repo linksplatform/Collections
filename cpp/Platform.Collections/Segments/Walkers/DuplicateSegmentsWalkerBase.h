@@ -13,7 +13,7 @@
 
         protected: DuplicateSegmentsWalkerBase() : base() { }
 
-        public: void Iteration(TSegment segment)
+        public: void Iteration(auto&& segment)
         {
             auto frequency = GetSegmentFrequency(segment);
             if (frequency == 1)
@@ -23,10 +23,10 @@
             this->SetSegmentFrequency(segment, frequency + 1);
         }
 
-        public: void OnDuplicateFound(TSegment segment) { base::self().OnDuplicateFound(segment); }
+        public: void OnDuplicateFound(auto&& segment) { base::self().OnDuplicateFound(segment); }
 
-        public: std::size_t GetSegmentFrequency(TSegment segment) { return base::self().GetSegmentFrequency(segment); }
+        public: std::size_t GetSegmentFrequency(auto&& segment) { return base::self().GetSegmentFrequency(segment); }
 
-        public: void SetSegmentFrequency(TSegment segment, std::int64_t frequency) { base::self().SetSegmentFrequency(segment, frequency); }
+        public: void SetSegmentFrequency(auto&& segment, std::int64_t frequency) { base::self().SetSegmentFrequency(segment, frequency); }
     };
 }

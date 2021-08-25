@@ -51,8 +51,8 @@
             base::WalkAll(elements);
         }
 
-        public: std::size_t GetSegmentFrequency(TSegment segment) { return dictionary[segment]; }
+        public: std::size_t GetSegmentFrequency(auto&& segment) { return dictionary[segment]; }
 
-        public: void SetSegmentFrequency(TSegment segment, std::int64_t frequency) { dictionary[segment] = frequency; }
+        public: void SetSegmentFrequency(auto&& segment, std::int64_t frequency) { dictionary[segment] = frequency; }
     };
 }
