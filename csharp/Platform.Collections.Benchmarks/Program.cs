@@ -1,7 +1,13 @@
-﻿using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Running;
 
 namespace Platform.Collections.Benchmarks
 {
+    /// <summary>
+    /// <para>
+    /// Represents the program.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     static class Program
     {
         /// <summary>

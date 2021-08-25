@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Platform.Disposables;
@@ -17,11 +17,35 @@ namespace Platform.Collections.Arrays
     public class ArrayPool<T>
     {
         // May be use Default class for that later.
+        /// <summary>
+        /// <para>
+        /// The thread instance.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [ThreadStatic]
         private static ArrayPool<T> _threadInstance;
+        /// <summary>
+        /// <para>
+        /// Gets the thread instance value.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
 
+        /// <summary>
+        /// <para>
+        /// The max arrays per size.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly int _maxArraysPerSize;
+        /// <summary>
+        /// <para>
+        /// The default sizes amount.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
         /// <summary>

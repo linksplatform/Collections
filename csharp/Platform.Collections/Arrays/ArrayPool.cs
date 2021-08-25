@@ -8,7 +8,19 @@ namespace Platform.Collections.Arrays
     /// </summary>
     public static class ArrayPool
     {
+        /// <summary>
+        /// <para>
+        /// The default sizes amount.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         public static readonly int DefaultSizesAmount = 512;
+        /// <summary>
+        /// <para>
+        /// The default max arrays per size.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         public static readonly int DefaultMaxArraysPerSize = 32;
 
         /// <summary>

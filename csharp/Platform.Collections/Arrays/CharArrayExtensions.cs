@@ -2,6 +2,12 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
 {
+    /// <summary>
+    /// <para>
+    /// Represents the char array extensions.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static unsafe class CharArrayExtensions
     { 
         /// <summary>
@@ -67,6 +73,28 @@ namespace Platform.Collections.Arrays
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// Determines whether check arrays main part for equality.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="left">
+        /// <para>The left.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="right">
+        /// <para>The right.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="length">
+        /// <para>The length.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bool</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static bool CheckArraysMainPartForEquality(ref char* left, ref char* right, ref int length)
         {
@@ -87,6 +115,24 @@ namespace Platform.Collections.Arrays
             return true;
         }
 
+        /// <summary>
+        /// <para>
+        /// Checks the arrays remainder for equality using the specified left.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="left">
+        /// <para>The left.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="right">
+        /// <para>The right.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="length">
+        /// <para>The length.</para>
+        /// <para></para>
+        /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void CheckArraysRemainderForEquality(ref char* left, ref char* right, ref int length)
         {

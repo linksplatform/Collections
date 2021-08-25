@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Arrays
@@ -11,6 +11,12 @@ namespace Platform.Collections.Arrays
     /// <typeparam name="TReturnConstant"><para>The return constant's type.</para><para>Тип возвращаемой константы.</para></typeparam>
     public class ArrayFiller<TElement, TReturnConstant> : ArrayFiller<TElement>
     {
+        /// <summary>
+        /// <para>
+        /// The return constant.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         protected readonly TReturnConstant _returnConstant;
 
         /// <summary>

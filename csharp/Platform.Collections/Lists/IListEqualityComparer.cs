@@ -1,8 +1,15 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Platform.Collections.Lists
 {
+    /// <summary>
+    /// <para>
+    /// Represents the list equality comparer.
+    /// </para>
+    /// <para></para>
+    /// </summary>
+    /// <seealso cref="IEqualityComparer{IList{T}}"/>
     public class IListEqualityComparer<T> : IEqualityComparer<IList<T>>
     {
         /// <summary>
