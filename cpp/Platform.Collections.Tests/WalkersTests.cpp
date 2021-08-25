@@ -133,11 +133,13 @@ struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
 
     void Iteration(auto&& segment)
     {
-        _currentKey = segment;
+        _currentKey = std::u16string(std::ranges::begin(segment), std::ranges::end(segment));
 
         base::Iteration(segment);
     }
 };
+
+
 
 struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char16_t>
 {
