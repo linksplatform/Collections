@@ -6,13 +6,19 @@ namespace Platform.Collections.Segments.Walkers
     /// <para>
     /// Represents the all segments walker base.
     /// </para>
+    /// <para>
+    /// Представляет Все базовые сегменты ходьбы
+    /// </para>
     /// <para></para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
     {
         /// <summary>
         /// <para>
-        /// The default minimum string segment length.
+        /// Default value for the field _minimumStringSegmentLength object of the same class. Assigned when the constructor is called.
+        /// </para>
+        /// <para>
+        /// Дефолтное значение для поля _minimumStringSegmentLength объекта этого же класса. Присваивается при вызове конструктора.
         /// </para>
         /// <para></para>
         /// </summary>
