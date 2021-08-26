@@ -4,10 +4,10 @@ namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
     /// <para>
-    /// Represents the all segments walker base.
+    /// All Segment sWalker Base or Class with WalkAll method to walk through all segments in the dictionary. 
     /// </para>
     /// <para>
-    /// Представляет Все базовые сегменты ходьбы
+    /// Базовый проходчик всех сегментов или Класс с методом WalkAll для прохода по всем сегментам в словаре.
     /// </para>
     /// <para></para>
     /// </summary>
@@ -18,7 +18,7 @@ namespace Platform.Collections.Segments.Walkers
         /// Default value for the field _minimumStringSegmentLength object of the same class. Assigned when the constructor is called.
         /// </para>
         /// <para>
-        /// Дефолтное значение для поля _minimumStringSegmentLength объекта этого же класса. Присваивается при вызове конструктора.
+        /// Дефолтное значение для поля _minimumStringSegmentLength этого же класса, используемого в методе  WalkAll. Присваивается при вызове конструктора.
         /// </para>
         /// <para></para>
         /// </summary>
