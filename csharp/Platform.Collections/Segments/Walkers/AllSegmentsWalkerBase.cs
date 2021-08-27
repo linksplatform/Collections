@@ -3,13 +3,8 @@
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>
-    /// All Segment sWalker Base or Class with WalkAll method to walk through all segments in the dictionary. 
-    /// </para>
-    /// <para>
-    /// Базовый проходчик всех сегментов или Класс с методом WalkAll для прохода по всем сегментам в словаре.
-    /// </para>
-    /// <para></para>
+    /// <para>All Segment sWalker Base or Class with WalkAll method to walk through all segments in the dictionary.</para>
+    /// <para>Базовый проходчик всех сегментов или Класс с методом WalkAll для прохода по всем сегментам в словаре.</para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
     {
