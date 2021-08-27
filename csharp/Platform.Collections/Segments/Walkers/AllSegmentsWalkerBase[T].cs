@@ -6,22 +6,19 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>All Segment sWalker Base or Class with WalkAll method to walk through all segments in the dictionary.</para>
-    /// <para>Базовый проходчик всех сегментов или Класс с методом WalkAll для прохода по всем сегментам в словаре.</para>
+    /// <para>Provides the base class from which the classes that represent all segments walker are derived. This is an abstract class.</para>
+    /// <para>Предоставляет базовый класс, от которого наследуются классы, реализующие AllSegmentsWalkerBase. Это абстрактный класс.</para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
     public abstract class AllSegmentsWalkerBase<T> : AllSegmentsWalkerBase<T, Segment<T>>
     {
-         /// <summary>
-        /// <para>Calls the segment constructor, initializes 3 fields on the segment instance</para>
-        /// <para>Вызывает конструктор сегмента, инициализирует 3 поля у экземпляра сегмента.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the <paramref name="base"/> list of the segment, Offset relative to the list<paramref name="offset"/> and The segment's length <paramref name="length" />.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя исходный список сегмента, <paramref name="base"/> Смещение относительно списка<paramref name="offset"/> и его длинну. <paramref name="length"/> </para>
         /// </summary>
-        /// <param name="elements"> <para>The original list in which the elements of this segment are located.</para> <para>Исходный список в котором находятся элементы этого сегмента.</para> </param>
-        /// <param name="offset"> <para>Offset relative to the list.</para> <para>Смещение относительно списка.</para> </param>
-        /// <param name="length"> <para>Segment length.</para> <para>Длина сегмента.</para> </param>
-        /// <returns>
-        /// <para>An instance of the Segment class.</para> <para>Экземпляр класса Segment<T>.</para>
-        /// </returns>
+        /// <param name="base"><para>The reference to the original list containing the elements of this segment.</para><para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>
+        /// <param name="offset"><para>The offset relative to the <paramref name="base"/> list from which the segment starts.</para><para>Смещение относительно списка <paramref name="base"/>, с которого начинается сегмент.</para></param>
+        /// <param name="length"><para>The segment's length.</para><para>Длина сегмента.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override Segment<T> CreateSegment(IList<T> elements, int offset, int length) => new Segment<T>(elements, offset, length);
     }

@@ -3,18 +3,14 @@
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>All Segment sWalker Base or Class with WalkAll method to walk through all segments in the dictionary.</para>
-    /// <para>Базовый проходчик всех сегментов или Класс с методом WalkAll для прохода по всем сегментам в словаре.</para>
+    /// <para>Provides the base class from which the classes that represent all segments walker are derived. This is an abstract class.</para>
+    /// <para>Предоставляет базовый класс, от которого наследуются классы, реализующие AllSegmentsWalkerBase. Это абстрактный класс.</para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
     {
         /// <summary>
-        /// <para>
-        /// Default value for the field _minimumStringSegmentLength object of the same class. Assigned when the constructor is called.
-        /// </para>
-        /// <para>
-        /// Дефолтное значение для поля _minimumStringSegmentLength этого же класса, используемого в методе  WalkAll. Присваивается при вызове конструктора.
-        /// </para>
+        /// <para>Gets default minimum string segment length.</para> 
+        /// <para>Возвращает дефолтную минимальную длинну строки мегмента.</para> 
         /// <para></para>
         /// </summary>
         public static readonly int DefaultMinimumStringSegmentLength = 2;
