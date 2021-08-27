@@ -6,35 +6,21 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>
-    /// Represents the all segments walker base.
-    /// </para>
-    /// <para></para>
+    /// <para>All Segment sWalker Base or Class with WalkAll method to walk through all segments in the dictionary.</para>
+    /// <para>Базовый проходчик всех сегментов или Класс с методом WalkAll для прохода по всем сегментам в словаре.</para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
     public abstract class AllSegmentsWalkerBase<T> : AllSegmentsWalkerBase<T, Segment<T>>
     {
-        /// <summary>
-        /// <para>
-        /// Creates the segment using the specified elements.
-        /// </para>
-        /// <para></para>
+         /// <summary>
+        /// <para>Calls the segment constructor, initializes 3 fields on the segment instance</para>
+        /// <para>Вызывает конструктор сегмента, инициализирует 3 поля у экземпляра сегмента.</para>
         /// </summary>
-        /// <param name="elements">
-        /// <para>The elements.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="offset">
-        /// <para>The offset.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="length">
-        /// <para>The length.</para>
-        /// <para></para>
-        /// </param>
+        /// <param name="elements"> <para>The original list in which the elements of this segment are located.</para> <para>Исходный список в котором находятся элементы этого сегмента.</para> </param>
+        /// <param name="offset"> <para>Offset relative to the list.</para> <para>Смещение относительно списка.</para> </param>
+        /// <param name="length"> <para>Segment length.</para> <para>Длина сегмента.</para> </param>
         /// <returns>
-        /// <para>A segment of t</para>
-        /// <para></para>
+        /// <para>An instance of the Segment class.</para> <para>Экземпляр класса Segment<T>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override Segment<T> CreateSegment(IList<T> elements, int offset, int length) => new Segment<T>(elements, offset, length);
