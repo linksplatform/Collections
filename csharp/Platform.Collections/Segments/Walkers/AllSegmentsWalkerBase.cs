@@ -3,8 +3,8 @@
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>Provides the base class from which the classes that represent all segments walker are derived. This is an abstract class.</para>
-    /// <para>Базовый абстрактный класс для всех сегментов.</para>
+    /// <para>Represents the base abstract class for walkers on all elements.</para>
+    /// <para>Представляет базовый абстрактный класс для проходчиков по всем элементам.</para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
     {
