@@ -21,16 +21,16 @@ namespace Platform.Collections.Segments.Walkers
         /// <para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para>
         /// </param>
         /// <param name="offset">
-        /// <para>The offset relative to the <paramref name="elements"/> list from which the segment starts.</para>
+        /// <para>An offset relative to the <paramref name="elements"/> list from which the segment starts.</para>
         /// <para>Смещение относительно списка <paramref name="elements"/>, с которого начинается сегмент.</para>
         /// </param>
         /// <param name="length">
-        /// <para>The segment's length.</para>
+        /// <para>A segment's length.</para>
         /// <para>Длина сегмента.</para>
         /// </param>
         /// <returns>
-        /// <para>instance of the <see cref="Segment"/> class<T></para>
-        /// <para>экземпляр класса <see cref="Segment"/></para>
+        /// <para>An instance of the <see cref="Segment{T}"/>class.</para>
+        /// <para>Экземпляр класса <see cref="Segment{T}"/>.</para>
         ///</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override Segment<T> CreateSegment(IList<T> elements, int offset, int length) => new Segment<T>(elements, offset, length);
