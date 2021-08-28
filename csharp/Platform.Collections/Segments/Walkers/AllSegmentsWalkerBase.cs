@@ -9,7 +9,7 @@ namespace Platform.Collections.Segments.Walkers
     public abstract class AllSegmentsWalkerBase
     {
         /// <summary>
-        /// <para>Gets default minimum string segment length.</para> 
+        /// <para>>Gets a default minimum length of string segment.</para> 
         /// <para>Возвращает минимально допустимую длину сегмента.</para> 
         /// </summary>
         public static readonly int DefaultMinimumStringSegmentLength = 2;

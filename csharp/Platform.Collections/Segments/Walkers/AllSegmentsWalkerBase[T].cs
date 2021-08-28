@@ -16,15 +16,21 @@ namespace Platform.Collections.Segments.Walkers
         /// <para>Initializes a new instance of the <see cref="Segment"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/></para>
         /// </summary>
-        /// <param name="elements"><para>A reference to the original list containing the elements of this segment.</para>
-        /// <para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>
-        /// <param name="offset"><para>The offset relative to the <paramref name="elements"/> list from which the segment starts.</para>
-        /// <para>Смещение относительно списка <paramref name="elements"/>, с которого начинается сегмент.</para></param>
-        /// <param name="length"><para>The segment's length.</para>
-        /// <para>Длина сегмента.</para></param>
+        /// <param name="elements">
+        /// <para>A reference to the original list containing the elements of this segment.</para>
+        /// <para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para>
+        /// </param>
+        /// <param name="offset">
+        /// <para>The offset relative to the <paramref name="elements"/> list from which the segment starts.</para>
+        /// <para>Смещение относительно списка <paramref name="elements"/>, с которого начинается сегмент.</para>
+        /// </param>
+        /// <param name="length">
+        /// <para>The segment's length.</para>
+        /// <para>Длина сегмента.</para>
+        /// </param>
         /// <returns>
-        /// <para>Gets instance of the <see cref="Segment"/> class<T></para>
-        /// <para>Возвращает экземпляр класса <see cref="Segment"/></para>
+        /// <para>instance of the <see cref="Segment"/> class<T></para>
+        /// <para>экземпляр класса <see cref="Segment"/></para>
         ///</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override Segment<T> CreateSegment(IList<T> elements, int offset, int length) => new Segment<T>(elements, offset, length);
