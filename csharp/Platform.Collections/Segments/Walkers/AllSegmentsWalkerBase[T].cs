@@ -17,8 +17,8 @@ namespace Platform.Collections.Segments.Walkers
         /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/></para>
         /// </summary>
         /// <param name="elements">
-        /// <para>A reference to the original list containing the elements of this segment.</para>
-        /// <para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para>
+        /// <para>Original list containing the elements of this segment.</para>
+        /// <para>Исходный список в котором находятся элементы этого сегмента.</para>
         /// </param>
         /// <param name="offset">
         /// <para>An offset relative to the <paramref name="elements"/> list from which the segment starts.</para>
