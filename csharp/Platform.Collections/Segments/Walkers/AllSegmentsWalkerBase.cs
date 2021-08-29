@@ -4,7 +4,7 @@ namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
     /// <para>Represents the base abstract class for walkers on all elements.</para>
-    /// <para>Представляет базовый абстрактный класс для проходчиков по всем элементам.</para>
+    /// <para>Представляет базовый класс для проходчиков по всем элементам.</para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
     {
