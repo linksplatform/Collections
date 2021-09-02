@@ -18,7 +18,7 @@ namespace Platform.Collections.Segments.Walkers
         /// </summary>
         /// <param name="elements">
         /// <para>List of elements.</para>
-        /// <para>Список  элементов.</para>
+        /// <para>Список элементов.</para>
         /// </param>
         /// <param name="offset">
         /// <para>An offset relative to the start of the <paramref name="elements"/> from which the segment starts.</para>
