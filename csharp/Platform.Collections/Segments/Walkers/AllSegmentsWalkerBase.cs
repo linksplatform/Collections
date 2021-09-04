@@ -3,7 +3,7 @@
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>Represents the base class for sinkers for all possible segments of the sequence.</para>
+    /// <para>Represents a base class for walkers through all possible segments of a sequence.</para>
     /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
