@@ -9,7 +9,7 @@ namespace Platform.Collections.Segments.Walkers
     public abstract class AllSegmentsWalkerBase
     {
         /// <summary>
-        /// <para>Read-only field that represents the minimum length of the default sequence segment.</para> 
+        /// <para>A read-only field that represents the minimum length of the default sequence segment.</para> 
         /// <para>Поле только для чтения, которое представляет минимальную длину сегмента последовательности по умолчанию.</para> 
         /// </summary>
         public static readonly int DefaultMinimumStringSegmentLength = 2;
