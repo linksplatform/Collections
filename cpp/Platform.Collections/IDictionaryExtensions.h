@@ -1,14 +1,13 @@
 ﻿namespace Platform::Collections::Dictionaries
 {
     //template<Interfaces::IDictionary TDictionary>
-    void Add(/*TDictionary&*/auto& dictionary, auto&& key, auto&& value)
+    void Add(/*TDictionary&*/auto& dictionary, auto key, auto value)
     {
         if (dictionary.contains(key))
         {
             throw std::logic_error("Unknown exception");
         }
-        //using Item = typename Interfaces::Dictionary<TDictionary>::Item;
-        dictionary.insert({std::forward<decltype(key)>(key), std::forward<decltype(value)>(value)});
+        dictionary.insert({std::move(key), std::move(value)});
     }
 
     template<Interfaces::IDictionary TDictionary>
