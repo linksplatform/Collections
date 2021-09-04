@@ -4,6 +4,7 @@ platform.interfaces/0.1.2
 platform.exceptions/0.2.0
 platform.equality/0.0.1
 platform.hashing/0.2.0
+platform.random/0.1.0
 
 [generators]
 cmake

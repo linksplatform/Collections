@@ -16,6 +16,7 @@
 #include <Platform.Interfaces.h>
 #include <Platform.Equality.h>
 #include <Platform.Hashing.h>
+#include <Platform.Random.h>
 
 #include "Arrays/GenericArrayExtensions.h"
 #include "Arrays/ArrayFiller[TElement].h"
