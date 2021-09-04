@@ -6,8 +6,8 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>Represents the base abstract class for walkers on all elements.</para>
-    /// <para>Представляет базовый абстрактный класс для проходчиков по всем элементам.</para>
+    /// <para>Represents the base class for sinkers for all possible segments of the sequence.</para>
+    /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
     public abstract class AllSegmentsWalkerBase<T> : AllSegmentsWalkerBase<T, Segment<T>>

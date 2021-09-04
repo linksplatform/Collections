@@ -3,16 +3,15 @@
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>Represents the base abstract class for walkers on all elements.</para>
+    /// <para>Represents the base class for sinkers for all possible segments of the sequence.</para>
     /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
     /// </summary>
     public abstract class AllSegmentsWalkerBase
     {
         /// <summary>
-        /// <para>A read-only field that represents the default minimum sequence segment length.</para> 
+        /// <para>Read-only field that represents the minimum length of the default sequence segment.</para> 
         /// <para>Поле только для чтения, которое представляет минимальную длину сегмента последовательности по умолчанию.</para> 
         /// </summary>
         public static readonly int DefaultMinimumStringSegmentLength = 2;
     }
 }
-    
