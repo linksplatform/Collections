@@ -17,8 +17,8 @@ namespace Platform.Collections.Segments.Walkers
     public abstract class AllSegmentsWalkerBase<T> : AllSegmentsWalkerBase<T, Segment<T>>
     {
         /// <summary>
-        /// <para>Create a new instance of the <see cref="Segment"/> class based on <paramref name="elements"/> sequence.</para>
-        /// <para>Создаёт новый экземпляр класса <see cref="Segment"/> на основе последовательности <paramref name="elements"/>.</para>
+        /// <para>Create a new instance of the <see cref="Segment{T}"/> class based on <paramref name="elements"/> sequence.</para>
+        /// <para>Создаёт новый экземпляр класса <see cref="Segment{T}"/> на основе последовательности <paramref name="elements"/>.</para>
         /// </summary>
         /// <param name="elements">
         /// <para>A list of elements.</para>
