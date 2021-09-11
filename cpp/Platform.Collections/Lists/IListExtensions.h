@@ -11,7 +11,7 @@
     requires std::default_initializable<TItem>
     static bool TryGetElement(const TList& list, std::integral auto index, TItem& element) noexcept
     {
-        if (list.size() > index && index >= 0)
+        if (index >= 0 && list.size() > index)
         {
             element = list[index];
             return true;
