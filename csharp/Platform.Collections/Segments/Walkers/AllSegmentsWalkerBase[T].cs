@@ -10,6 +10,10 @@ namespace Platform.Collections.Segments.Walkers
     /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
+    /// <typeparam name="T">
+    /// <para>The sequence's element type.</para>
+    /// <para>Тип элемента последовательности.</para>
+    /// </typeparam>
     public abstract class AllSegmentsWalkerBase<T> : AllSegmentsWalkerBase<T, Segment<T>>
     {
         /// <summary>
@@ -30,7 +34,7 @@ namespace Platform.Collections.Segments.Walkers
         /// </param>
         /// <returns>
         /// <para>An instance of the <see cref="Segment{T}"/> class.</para>
-        /// <para>Экземпляр класса <see cref="Segment{T}"/> .</para>
+        /// <para>Экземпляр класса <see cref="Segment{T}"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override Segment<T> CreateSegment(IList<T> elements, int offset, int length) => new Segment<T>(elements, offset, length);
