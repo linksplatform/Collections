@@ -23,10 +23,10 @@
             this->SetSegmentFrequency(segment, frequency + 1);
         }
 
-        public: void OnDuplicateFound(auto&& segment) { base::self().OnDuplicateFound(segment); }
+        public: void OnDuplicateFound(auto&& segment) { this->self().OnDuplicateFound(segment); }
 
-        public: std::size_t GetSegmentFrequency(auto&& segment) { return base::self().GetSegmentFrequency(segment); }
+        public: std::size_t GetSegmentFrequency(auto&& segment) { return this->self().GetSegmentFrequency(segment); }
 
-        public: void SetSegmentFrequency(auto&& segment, std::int64_t frequency) { base::self().SetSegmentFrequency(segment, frequency); }
+        public: void SetSegmentFrequency(auto&& segment, std::int64_t frequency) { this->self().SetSegmentFrequency(segment, frequency); }
     };
 }

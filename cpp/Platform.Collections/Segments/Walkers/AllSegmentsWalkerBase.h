@@ -28,9 +28,9 @@
             }
         }
 
-        public: TSegment CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length) { return base::self().CreateSegment(elements, offset, length); }
+        public: TSegment CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length) { return this->self().CreateSegment(elements, offset, length); }
 
-        public: void Iteration(auto&& segment) { base::self().Iteration(segment); }
+        public: void Iteration(auto&& segment) { this->self().Iteration(segment); }
 
         public: auto CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
             requires std::same_as<TSegment, std::span<T>>
