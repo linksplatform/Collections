@@ -2,18 +2,18 @@
 {
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
         requires std::default_initializable<TItem>
-    static auto GetElementOrDefault(const TList& list, std::integral auto index) noexcept
+    static auto GetElementOrDefault(const TList& list, std::size_t index) noexcept
     {
-        return (index >= 0 && list.size() > index) ? list[index] : TItem{};
+        return (list.size() > index) ? list[index] : TItem{};
     }
 
     template<Interfaces::IList TList, typename TItem = typename Interfaces::List<TList>::Item>
         requires std::default_initializable<TItem>
-    static bool TryGetElement(TList&& list, std::integral auto index, TItem& element) noexcept
+    static bool TryGetElement(TList&& list, std::size_t index, TItem& element) noexcept
     {
-        if (index >= 0 && list.size() > index)
+        if (list.size() > index)
         {
-            element = list[index]; // TODO: move if list is moved
+            element = list[index];
             return true;
         }
         else
@@ -74,7 +74,7 @@
     }
 
     template<Interfaces::IList TList>
-    static void AddSkipFirst(TList& list, Interfaces::IArray auto&& elements, std::integral auto skip)
+    static void AddSkipFirst(TList& list, Interfaces::IArray auto&& elements, std::size_t skip)
     {
         for (auto&& element : elements | std::views::drop(skip))
         {

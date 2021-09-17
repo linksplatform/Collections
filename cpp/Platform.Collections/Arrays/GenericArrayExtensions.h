@@ -2,16 +2,16 @@
 {
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     requires std::default_initializable<TItem>
-    static auto GetElementOrDefault(TArray&& array, std::integral auto index) noexcept
+    static auto GetElementOrDefault(TArray&& array, std::size_t index) noexcept
     {
-        return (std::ranges::size(array) > index && index >= 0) ? array[index] : TItem{};
+        return (std::ranges::size(array) > index) ? array[index] : TItem{};
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
     requires std::default_initializable<TItem>
-    static bool TryGetElement(TArray&& array, std::integral auto index, TItem& element) noexcept
+    static bool TryGetElement(TArray&& array, std::size_t index, TItem& element) noexcept
     {
-        if (index >= 0 && std::ranges::size(array) > index)
+        if (std::ranges::size(array) > index)
         {
             element = array[index];
             return true;
@@ -25,7 +25,7 @@
 
     static auto ShiftRight(Interfaces::IArray auto&& array) { return ShiftRight(array, 1); }
 
-    static Interfaces::IArray auto ShiftRight(Interfaces::IArray auto&& array, std::integral auto shift)
+    static Interfaces::IArray auto ShiftRight(Interfaces::IArray auto&& array, std::size_t shift)
     {
         if (shift < 0)
         {
@@ -87,7 +87,7 @@
     }
 
     template<Interfaces::IArray TArray, typename TItem = typename Interfaces::Array<TArray>::Item>
-    static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, std::integral auto skip)
+    static void AddSkipFirst(TArray& array, std::integral auto& position, Interfaces::IArray<TItem> auto&& elements, std::size_t skip)
     {
         for (auto&& element : elements | std::views::drop(skip))
         {

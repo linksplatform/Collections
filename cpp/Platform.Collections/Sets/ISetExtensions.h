@@ -49,7 +49,7 @@
 
     static void AddSkipFirst(Interfaces::ISet auto& set, Interfaces::IArray auto&& elements) { AddSkipFirst(set, elements, 1); }
 
-    static void AddSkipFirst(Interfaces::ISet auto& set, Interfaces::IArray auto&& elements, std::integral auto skip)
+    static void AddSkipFirst(Interfaces::ISet auto& set, Interfaces::IArray auto&& elements, std::size_t skip)
     {
         for (auto&& element : elements | std::views::drop(skip))
         {

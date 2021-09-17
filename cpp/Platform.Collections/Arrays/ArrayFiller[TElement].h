@@ -12,7 +12,7 @@
 
         public: void Add(auto&& element) { _array[_position++] = std::forward<decltype(element)>(element); }
 
-        public: bool AddAndReturnTrue(auto&& element) { return Arrays::AddAndReturnConstant(_array, _position, std::forward<decltype(element)>(element), true); }
+        public: bool AddAndReturnTrue(auto&& element) { return Arrays::AddAndReturnConstant(_array, _position, element, true); }
 
         public: bool AddFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Arrays::AddFirstAndReturnConstant(_array, _position, elements, true); }
 
