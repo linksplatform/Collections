@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
-    /// <para>Represents the base class for sinkers for all possible segments of the sequence.</para>
+    /// <para>Represents the base class for walkers through all possible segments of a sequence.</para>
     /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
