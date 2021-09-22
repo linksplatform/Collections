@@ -4,8 +4,10 @@ namespace Platform.Collections.Segments.Walkers
 {
     /// <summary>
     /// <para>Represents the base class for walkers through all possible segments of a sequence.</para>
-    /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
+    /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para> 
     /// </summary>
+    /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
+    /// <seealso cref="AllSegmentsWalkerBase{T}"/>
     public abstract class AllSegmentsWalkerBase
     {
         /// <summary>

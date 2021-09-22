@@ -12,6 +12,7 @@ namespace Platform.Collections.Segments.Walkers
     /// <para></para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase"/>
+    /// <seealso cref="AllSegmentsWalkerBase{T}"/>
     public abstract class AllSegmentsWalkerBase<T, TSegment> : AllSegmentsWalkerBase
         where TSegment : Segment<T>
     {

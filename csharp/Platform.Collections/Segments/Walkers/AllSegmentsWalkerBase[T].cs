@@ -10,6 +10,7 @@ namespace Platform.Collections.Segments.Walkers
     /// <para>Представляет базовый класс для проходчиков по всем возможным сегментам последовательности.</para>
     /// </summary>
     /// <seealso cref="AllSegmentsWalkerBase{T, Segment{T}}"/>
+    /// <seealso cref="AllSegmentsWalkerBase"/>
     /// <typeparam name="T">
     /// <para>The sequence's element type.</para>
     /// <para>Тип элемента последовательности.</para>
