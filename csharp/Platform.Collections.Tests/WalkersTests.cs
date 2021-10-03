@@ -18,22 +18,10 @@ namespace Platform.Collections.Tests
     /// </summary>
     public class AllRepeatingSubstringsInString
     {
-        /// <summary>
-        /// <para>
-        /// The elfen lied.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private static readonly string elfen_lied = @"Nacht im Dorf der Wächter rief: Elfe! Ein ganz kleines Elfchen im Walde schlief wohl um die Elfe! Und meint, es rief ihm aus dem Tal bei seinem Namen die Nachtigall, oder Silpelit hätt' ihm gerufen.
 Reibt sich der Elf' die Augen aus, begibt sich vor sein Schneckenhaus und ist als wie ein trunken Mann, sein Schläflein war nicht voll getan, und humpelt also tippe tapp durch’s Haselholz in’s Tal hinab, schlupft an der Mauer hin so dicht, da sitzt der Glühwurm Licht an Licht.
 Was sind das helle Fensterlein? Da drin wird eine Hochzeit sein: die Kleinen sitzen bei’m Mahle, und treiben’s in dem Saale. Da guck' ich wohl ein wenig 'nein!""
 Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
-        /// <summary>
-        /// <para>
-        /// The example text.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private static readonly string _exampleText =
     @"([english version](https://github.com/Konard/LinksPlatform/wiki/About-the-beginning))
 Обозначение пустоты, какое оно? Темнота ли это? Там где отсутствие света, отсутствие фотонов (носителей света)? Или это то, что полностью отражает свет? Пустой белый лист бумаги? Там где есть место для нового начала? Разве пустота это не характеристика пространства? Пространство это то, что можно чем-то наполнить?
@@ -64,12 +52,6 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
 [![анимация](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/intro-animation-500.gif ""анимация"")](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/intro-animation-500.gif)";
 
 
-        /// <summary>
-        /// <para>
-        /// The exam тple text.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private static readonly string _examТpleText = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         
         /// <summary>
@@ -179,19 +161,7 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
     /// <seealso cref="ConsolePrintedDublicateWalkerBase"/>
     public class Walker1 : ConsolePrintedDublicateWalkerBase
     {
-        /// <summary>
-        /// <para>
-        /// The root node.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private Node _rootNode;
-        /// <summary>
-        /// <para>
-        /// The current node.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private Node _currentNode;
 
         /// <summary>
@@ -312,19 +282,7 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
         /// <para></para>
         /// </summary>
         public Dictionary<string, long> _cache;
-        /// <summary>
-        /// <para>
-        /// The current key.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private string _currentKey;
-        /// <summary>
-        /// <para>
-        /// The total duplicates.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private int _totalDuplicates;
 
         /// <summary>
@@ -445,12 +403,6 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
         {
         }
 
-        /// <summary>
-        /// <para>
-        /// The total duplicates.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private int _totalDuplicates;
 
         /// <summary>

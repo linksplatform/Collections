@@ -25,8 +25,7 @@ namespace Platform.Collections.Arrays
         /// </summary>
         protected long _position;
 
-        /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array as the array to fill and the offset from which to start filling.</para>
+        private using the specified array as the array to fill and the offset from which to start filling.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив в качестве заполняемого и смещение с которого начнётся заполнение.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>
@@ -38,8 +37,7 @@ namespace Platform.Collections.Arrays
             _position = offset;
         }
 
-        /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array. Filling will start from the beginning of the array.</para>
+        private using the specified array. Filling will start from the beginning of the array.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayFiller"/>, используя указанный массив. Заполнение начнётся с начала массива.</para>
         /// </summary>
         /// <param name="array"><para>The array to fill.</para><para>Массив для заполнения.</para></param>

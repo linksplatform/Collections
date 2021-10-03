@@ -33,31 +33,17 @@ namespace Platform.Collections.Arrays
         /// </summary>
         internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
 
-        /// <summary>
-        /// <para>
-        /// The max arrays per size.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private readonly int _maxArraysPerSize;
-        /// <summary>
-        /// <para>
-        /// The default sizes amount.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
-        /// <summary>
-        /// <para>Initializes a new instance of the ArrayPool class using the specified maximum number of arrays per size.</para>
+        private using the specified maximum number of arrays per size.</para>
         /// <para>Инициализирует новый экземпляр класса ArrayPool, используя указанное максимальное количество массивов на каждый размер.</para>
         /// </summary>
         /// <param name="maxArraysPerSize"><para>The maximum number of arrays in the pool per size.</para><para>Максимальное количество массивов в пуле на каждый размер.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
 
-        /// <summary>
-        /// <para>Initializes a new instance of the ArrayPool class using the default maximum number of arrays per size.</para>
+        private using the default maximum number of arrays per size.</para>
         /// <para>Инициализирует новый экземпляр класса ArrayPool, используя максимальное количество массивов на каждый размер по умолчанию.</para>
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
