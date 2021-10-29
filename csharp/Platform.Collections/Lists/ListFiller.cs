@@ -26,7 +26,8 @@ namespace Platform.Collections.Lists
         /// </summary>
         protected readonly TReturnConstant _returnConstant;
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the ListFiller class.</para>
         /// <para>Инициализирует новый экземпляр класса ListFiller.</para>
         /// </summary>
         /// <param name="list"><para>The list to be filled.</para><para>Список который будет заполняться.</para></param>

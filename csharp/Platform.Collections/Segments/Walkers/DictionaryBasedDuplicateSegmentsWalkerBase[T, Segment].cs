@@ -24,6 +24,12 @@ namespace Platform.Collections.Segments.Walkers
         /// </summary>
         public static readonly bool DefaultResetDictionaryOnEachWalk;
 
+        /// <summary>
+        /// <para>
+        /// The reset dictionary on each walk.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly bool _resetDictionaryOnEachWalk;
         /// <summary>
         /// <para>

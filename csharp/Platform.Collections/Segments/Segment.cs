@@ -44,7 +44,8 @@ namespace Platform.Collections.Segments
             get;
         }
 
-        private, using the <paramref name="base"/> list, <paramref name="offset"/> of the segment and its <paramref name="length" />.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the <paramref name="base"/> list, <paramref name="offset"/> of the segment and its <paramref name="length" />.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя список <paramref name="base"/>, <paramref name="offset"/> сегмента и его <paramref name="length"/>.</para>
         /// </summary>
         /// <param name="base"><para>The reference to the original list containing the elements of this segment.</para><para>Ссылка на исходный список в котором находятся элементы этого сегмента.</para></param>

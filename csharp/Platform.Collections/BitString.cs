@@ -21,10 +21,40 @@ namespace Platform.Collections
     /// </remarks>
     public class BitString : IEquatable<BitString>
     {
+        /// <summary>
+        /// <para>
+        /// The bits set in 16 bits.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private static readonly byte[][] _bitsSetIn16Bits;
+        /// <summary>
+        /// <para>
+        /// The array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long[] _array;
+        /// <summary>
+        /// <para>
+        /// The length.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long _length;
+        /// <summary>
+        /// <para>
+        /// The min positive word.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long _minPositiveWord;
+        /// <summary>
+        /// <para>
+        /// The max positive word.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long _maxPositiveWord;
 
         /// <summary>
