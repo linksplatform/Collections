@@ -1,7 +1,10 @@
-[![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Collections)](https://www.nuget.org/packages/Platform.Collections)
 [![Actions Status](https://github.com/linksplatform/Collections/workflows/CD/badge.svg)](https://github.com/linksplatform/Collections/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ddbcbaaa204a47d7b388ca679791e3fb)](https://app.codacy.com/gh/linksplatform/Collections?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Collections&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/collections/badge)](https://www.codefactor.io/repository/github/linksplatform/collections)
+
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Collections.TemplateLibrary)](https://www.nuget.org/packages/Platform.Collections.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.collections.svg)](https://conan.io/center/platform.collections) | __C++__  |
+|-|-|
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Collections)](https://www.nuget.org/packages/Platform.Collections) | C# |
 
 # [Collections](https://github.com/linksplatform/Collections)
 
