@@ -237,6 +237,6 @@
   "README.html": {
     "href": "README.html",
     "title": "Collections | LinksPlatform's Platform.Collections Library",
-    "keywords": "Collections LinksPlatform's Platform.Collections Class Library. Namespace: Platform.Collections Forked from: Konard/LinksPlatform/Platform/Platform.Helpers/Collections NuGet package: Platform.Collections Documentation PDF file with code for e-readers. Depend on System.Numerics.Vectors Platform.Interfaces Platform.Disposables Platform.Ranges Platform.Random Dependent libraries Platform.Threading Platform.Reflection Platform.Communication.Protocol.Lino"
+    "keywords": "C++ C# Collections LinksPlatform's Platform.Collections Class Library. Namespace: Platform.Collections Forked from: Konard/LinksPlatform/Platform/Platform.Helpers/Collections NuGet package: Platform.Collections Documentation PDF file with code for e-readers. Depend on System.Numerics.Vectors Platform.Interfaces Platform.Disposables Platform.Ranges Platform.Random Dependent libraries Platform.Threading Platform.Reflection Platform.Communication.Protocol.Lino"
   }
 }
