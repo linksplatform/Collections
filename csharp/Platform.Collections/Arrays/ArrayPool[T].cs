@@ -32,7 +32,20 @@ namespace Platform.Collections.Arrays
         /// <para></para>
         /// </summary>
         internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
+
+        /// <summary>
+        /// <para>
+        /// The max arrays per size.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly int _maxArraysPerSize;
+        /// <summary>
+        /// <para>
+        /// The default sizes amount.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
         /// <summary>

@@ -20,7 +20,19 @@ namespace Platform.Collections.Benchmarks
         /// </summary>
         [Params(1000, 10000, 100000, 1000000, 10000000, 100000000)]
         public int N { get; set; }
+        /// <summary>
+        /// <para>
+        /// The left.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private BitString _left;
+        /// <summary>
+        /// <para>
+        /// The right.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private BitString _right;
 
         /// <summary>

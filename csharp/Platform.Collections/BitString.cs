@@ -21,10 +21,40 @@ namespace Platform.Collections
     /// </remarks>
     public class BitString : IEquatable<BitString>
     {
+        /// <summary>
+        /// <para>
+        /// The bits set in 16 bits.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private static readonly byte[][] _bitsSetIn16Bits;
+        /// <summary>
+        /// <para>
+        /// The array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long[] _array;
+        /// <summary>
+        /// <para>
+        /// The length.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long _length;
+        /// <summary>
+        /// <para>
+        /// The min positive word.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long _minPositiveWord;
+        /// <summary>
+        /// <para>
+        /// The max positive word.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private long _maxPositiveWord;
 
         /// <summary>
@@ -891,7 +921,18 @@ namespace Platform.Collections
                 array[i] ^= otherArray[i];
             }
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Refreshes the borders by word using the specified word index.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="wordIndex">
+        /// <para>The word index.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RefreshBordersByWord(long wordIndex)
         {
             if (_array[wordIndex] == 0)
@@ -1519,7 +1560,26 @@ namespace Platform.Collections
             }
             return true;
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Ensures the bit string has the same size using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="argumentName">
+        /// <para>The argument name.</para>
+        /// <para></para>
+        /// </param>
+        /// <exception cref="ArgumentException">
+        /// <para>Bit string must be the same size. </para>
+        /// <para></para>
+        /// </exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void EnsureBitStringHasTheSameSize(BitString other, string argumentName)
         {
             Ensure.Always.ArgumentNotNull(other, argumentName);
@@ -1528,63 +1588,266 @@ namespace Platform.Collections
                 throw new ArgumentException("Bit string must be the same size.", argumentName);
             }
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Marks the borders as all bits reset.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MarkBordersAsAllBitsReset() => SetBorders(_array.LongLength - 1, 0);
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Marks the borders as all bits set.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MarkBordersAsAllBitsSet() => SetBorders(0, _array.LongLength - 1);
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the borders using the specified from.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="from">
+        /// <para>The from.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="to">
+        /// <para>The to.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void GetBorders(out long from, out long to)
         {
             from = _minPositiveWord;
             to = _maxPositiveWord;
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the borders using the specified from.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="from">
+        /// <para>The from.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="to">
+        /// <para>The to.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void GetBorders(out ulong from, out ulong to)
         {
             from = (ulong)_minPositiveWord;
             to = (ulong)_maxPositiveWord;
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Sets the borders using the specified from.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="from">
+        /// <para>The from.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="to">
+        /// <para>The to.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void SetBorders(long from, long to)
         {
             _minPositiveWord = from;
             _maxPositiveWord = to;
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the valid index range.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A range of long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private Range<long> GetValidIndexRange() => (0, _length - 1);
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the valid length range.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A range of long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Range<long> GetValidLengthRange() => (0, long.MaxValue);
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Appends the all set bit indices using the specified result.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="result">
+        /// <para>The result.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="wordIndex">
+        /// <para>The word index.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="wordValue">
+        /// <para>The word value.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetBitIndices(List<ulong> result, ulong wordIndex, long wordValue)
         {
             GetBits(wordValue, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
             AppendAllSetIndices(result, wordIndex, bits00to15, bits16to31, bits32to47, bits48to63);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Appends the all set bit indices using the specified result.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="result">
+        /// <para>The result.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="wordIndex">
+        /// <para>The word index.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="wordValue">
+        /// <para>The word value.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetBitIndices(List<long> result, long wordIndex, long wordValue)
         {
             GetBits(wordValue, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
             AppendAllSetBitIndices(result, wordIndex, bits00to15, bits16to31, bits32to47, bits48to63);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Counts the set bits for word using the specified word.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="word">
+        /// <para>The word.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long CountSetBitsForWord(long word)
         {
             GetBits(word, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
             return bits00to15.LongLength + bits16to31.LongLength + bits32to47.LongLength + bits48to63.LongLength;
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the first set bit for word using the specified word index.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="wordIndex">
+        /// <para>The word index.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="wordValue">
+        /// <para>The word value.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long GetFirstSetBitForWord(long wordIndex, long wordValue)
         {
             GetBits(wordValue, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
             return GetFirstSetBit(wordIndex, bits00to15, bits16to31, bits32to47, bits48to63);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the last set bit for word using the specified word index.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="wordIndex">
+        /// <para>The word index.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="wordValue">
+        /// <para>The word value.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long GetLastSetBitForWord(long wordIndex, long wordValue)
         {
             GetBits(wordValue, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63);
             return GetLastSetBit(wordIndex, bits00to15, bits16to31, bits32to47, bits48to63);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Appends the all set bit indices using the specified result.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="result">
+        /// <para>The result.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="i">
+        /// <para>The .</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits00to15">
+        /// <para>The bits 00to 15.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits16to31">
+        /// <para>The bits 16to 31.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits32to47">
+        /// <para>The bits 32to 47.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits48to63">
+        /// <para>The bits 48to 63.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetBitIndices(List<long> result, long i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             for (var j = 0; j < bits00to15.Length; j++)
@@ -1604,7 +1867,38 @@ namespace Platform.Collections
                 result.Add(bits48to63[j] + 48 + (i * 64));
             }
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Appends the all set indices using the specified result.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="result">
+        /// <para>The result.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="i">
+        /// <para>The .</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits00to15">
+        /// <para>The bits 00to 15.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits16to31">
+        /// <para>The bits 16to 31.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits32to47">
+        /// <para>The bits 32to 47.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits48to63">
+        /// <para>The bits 48to 63.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void AppendAllSetIndices(List<ulong> result, ulong i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             for (var j = 0; j < bits00to15.Length; j++)
@@ -1624,7 +1918,38 @@ namespace Platform.Collections
                 result.Add(bits48to63[j] + 48UL + (i * 64));
             }
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the first set bit using the specified i.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="i">
+        /// <para>The .</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits00to15">
+        /// <para>The bits 00to 15.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits16to31">
+        /// <para>The bits 16to 31.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits32to47">
+        /// <para>The bits 32to 47.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits48to63">
+        /// <para>The bits 48to 63.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long GetFirstSetBit(long i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             if (bits00to15.Length > 0)
@@ -1641,7 +1966,38 @@ namespace Platform.Collections
             }
             return bits48to63[0] + 48 + (i * 64);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the last set bit using the specified i.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="i">
+        /// <para>The .</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits00to15">
+        /// <para>The bits 00to 15.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits16to31">
+        /// <para>The bits 16to 31.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits32to47">
+        /// <para>The bits 32to 47.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits48to63">
+        /// <para>The bits 48to 63.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The long</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static long GetLastSetBit(long i, byte[] bits00to15, byte[] bits16to31, byte[] bits32to47, byte[] bits48to63)
         {
             if (bits48to63.Length > 0)
@@ -1658,7 +2014,34 @@ namespace Platform.Collections
             }
             return bits00to15[bits00to15.Length - 1] + (i * 64);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Gets the bits using the specified word.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="word">
+        /// <para>The word.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits00to15">
+        /// <para>The bits 00to 15.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits16to31">
+        /// <para>The bits 16to 31.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits32to47">
+        /// <para>The bits 32to 47.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="bits48to63">
+        /// <para>The bits 48to 63.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void GetBits(long word, out byte[] bits00to15, out byte[] bits16to31, out byte[] bits32to47, out byte[] bits48to63)
         {
             bits00to15 = _bitsSetIn16Bits[word & 0xffffu];

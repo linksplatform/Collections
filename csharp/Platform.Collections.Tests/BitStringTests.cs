@@ -226,6 +226,17 @@ namespace Platform.Collections.Tests
                 w.Xor(v);
             });
         }
+
+        /// <summary>
+        /// <para>
+        /// Tests the to operations with same meaning using the specified test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="test">
+        /// <para>The test.</para>
+        /// <para></para>
+        /// </param>
         private static void TestToOperationsWithSameMeaning(Action<BitString, BitString, BitString, BitString> test)
         {
             const int n = 5654;
