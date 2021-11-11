@@ -14,12 +14,6 @@ namespace Platform.Collections.Trees
     /// </summary>
     public class Node
     {
-        /// <summary>
-        /// <para>
-        /// The child nodes.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private Dictionary<object, Node> _childNodes;
 
         /// <summary>
