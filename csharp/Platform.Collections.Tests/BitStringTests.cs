@@ -5,20 +5,8 @@ using Platform.Random;
 
 namespace Platform.Collections.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the bit string tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public static class BitStringTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that bit get set test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitGetSetTest()
         {
@@ -35,12 +23,6 @@ namespace Platform.Collections.Tests
             }
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit vector not test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitVectorNotTest()
         {
@@ -51,12 +33,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel not test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelNotTest()
         {
@@ -67,12 +43,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel vector not test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelVectorNotTest()
         {
@@ -83,12 +53,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit vector and test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitVectorAndTest()
         {
@@ -99,12 +63,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel and test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelAndTest()
         {
@@ -115,12 +73,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel vector and test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelVectorAndTest()
         {
@@ -131,12 +83,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit vector or test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitVectorOrTest()
         {
@@ -147,12 +93,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel or test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelOrTest()
         {
@@ -163,12 +103,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel vector or test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelVectorOrTest()
         {
@@ -179,12 +113,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit vector xor test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitVectorXorTest()
         {
@@ -195,12 +123,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel xor test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelXorTest()
         {
@@ -211,12 +133,6 @@ namespace Platform.Collections.Tests
             });
         }
 
-        /// <summary>
-        /// <para>
-        /// Tests that bit parallel vector xor test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public static void BitParallelVectorXorTest()
         {

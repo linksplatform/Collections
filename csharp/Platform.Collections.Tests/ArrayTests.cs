@@ -3,20 +3,8 @@ using Platform.Collections.Arrays;
 
 namespace Platform.Collections.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the array tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public class ArrayTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that get element test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public void GetElementTest()
         {

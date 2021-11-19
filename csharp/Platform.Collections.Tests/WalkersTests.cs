@@ -10,12 +10,6 @@ using Xunit.Abstractions;
 
 namespace Platform.Collections.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the all repeating substrings in string.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public class AllRepeatingSubstringsInString
     {
         private static readonly string elfen_lied = @"Nacht im Dorf der Wächter rief: Elfe! Ein ganz kleines Elfchen im Walde schlief wohl um die Elfe! Und meint, es rief ihm aus dem Tal bei seinem Namen die Nachtigall, oder Silpelit hätt' ihm gerufen.
@@ -52,12 +46,6 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
 [![анимация](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/intro-animation-500.gif ""анимация"")](https://raw.githubusercontent.com/Konard/LinksPlatform/master/doc/Intro/intro-animation-500.gif)";
         private static readonly string _examТpleText = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         
-        /// <summary>
-        /// <para>
-        /// Tests that console tests.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public void ConsoleTests()
         {
@@ -114,64 +102,18 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
         }
     }
 
-    /// <summary>
-    /// <para>
-    /// Represents the console printed dublicate walker base.
-    /// </para>
-    /// <para></para>
-    /// </summary>
-    /// <seealso cref="DuplicateSegmentsWalkerBase{char, CharSegment}"/>
     public abstract class ConsolePrintedDublicateWalkerBase : DuplicateSegmentsWalkerBase<char, CharSegment>
     {
         //protected override void OnDublicateFound(CharSegment segment) => Console.WriteLine(segment);
 
-        /// <summary>
-        /// <para>
-        /// Creates the segment using the specified elements.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="elements">
-        /// <para>The elements.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="offset">
-        /// <para>The offset.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="length">
-        /// <para>The length.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The char segment</para>
-        /// <para></para>
-        /// </returns>
         protected override CharSegment CreateSegment(IList<char> elements, int offset, int length) => new CharSegment(elements, offset, length);
     }
     
-    /// <summary>
-    /// <para>
-    /// Represents the walker.
-    /// </para>
-    /// <para></para>
-    /// </summary>
-    /// <seealso cref="ConsolePrintedDublicateWalkerBase"/>
     public class Walker1 : ConsolePrintedDublicateWalkerBase
     {
         private Node _rootNode;
         private Node _currentNode;
 
-        /// <summary>
-        /// <para>
-        /// Walks the all using the specified elements.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="elements">
-        /// <para>The elements.</para>
-        /// <para></para>
-        /// </param>
         public override void WalkAll(IList<char> elements)
         {
             _rootNode = new Node();
@@ -181,35 +123,11 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             Console.WriteLine(_rootNode.Value);
         }
 
-        /// <summary>
-        /// <para>
-        /// Ons the dublicate found using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
         protected override void OnDublicateFound(CharSegment segment)
         {
             
         }
 
-        /// <summary>
-        /// <para>
-        /// Gets the segment frequency using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The long</para>
-        /// <para></para>
-        /// </returns>
         protected override long GetSegmentFrequency(CharSegment segment)
         {
             for (int i = 0; i < segment.Length; i++)
@@ -229,32 +147,8 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             }
         }
 
-        /// <summary>
-        /// <para>
-        /// Sets the segment frequency using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="frequency">
-        /// <para>The frequency.</para>
-        /// <para></para>
-        /// </param>
         protected override void SetSegmentFrequency(CharSegment segment, long frequency) => _currentNode.Value = frequency;
 
-        /// <summary>
-        /// <para>
-        /// Iterations the segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
         protected override void Iteration(CharSegment segment)
         {
             _currentNode = _rootNode;
@@ -264,35 +158,12 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
     }
     
     // Too much memory, but fast
-    /// <summary>
-    /// <para>
-    /// Represents the walker.
-    /// </para>
-    /// <para></para>
-    /// </summary>
-    /// <seealso cref="ConsolePrintedDublicateWalkerBase"/>
     public class Walker2 : ConsolePrintedDublicateWalkerBase
     {
-        /// <summary>
-        /// <para>
-        /// The cache.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         public Dictionary<string, long> _cache;
         private string _currentKey;
         private int _totalDuplicates;
 
-        /// <summary>
-        /// <para>
-        /// Walks the all using the specified elements.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="elements">
-        /// <para>The elements.</para>
-        /// <para></para>
-        /// </param>
         public override void WalkAll(IList<char> elements)
         {
             _cache = new Dictionary<string, long>();
@@ -302,63 +173,15 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             Console.WriteLine($"Unique string segments: {_cache.Count}. Total duplicates: {_totalDuplicates}");
         }
 
-        /// <summary>
-        /// <para>
-        /// Ons the dublicate found using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
         protected override void OnDublicateFound(CharSegment segment)
         {
             _totalDuplicates++;
         }
 
-        /// <summary>
-        /// <para>
-        /// Gets the segment frequency using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The long</para>
-        /// <para></para>
-        /// </returns>
         protected override long GetSegmentFrequency(CharSegment segment) => _cache.GetOrDefault(_currentKey);
 
-        /// <summary>
-        /// <para>
-        /// Sets the segment frequency using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="frequency">
-        /// <para>The frequency.</para>
-        /// <para></para>
-        /// </param>
         protected override void SetSegmentFrequency(CharSegment segment, long frequency) => _cache[_currentKey] = frequency;
 
-        /// <summary>
-        /// <para>
-        /// Iterations the segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
         protected override void Iteration(CharSegment segment)
         {
             _currentKey = segment;
@@ -367,21 +190,8 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
         }
     }
     
-    /// <summary>
-    /// <para>
-    /// Represents the walker.
-    /// </para>
-    /// <para></para>
-    /// </summary>
-    /// <seealso cref="DictionaryBasedDuplicateSegmentsWalkerBase{char, CharSegment}"/>
     public class Walker4 : DictionaryBasedDuplicateSegmentsWalkerBase<char, CharSegment>
     {
-        /// <summary>
-        /// <para>
-        /// Gets the public dictionary value.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         public IDictionary<CharSegment, long> PublicDictionary
         {
             get
@@ -390,28 +200,12 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             }
         }
 
-        /// <summary>
-        /// <para>
-        /// Initializes a new <see cref="Walker4"/> instance.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         public Walker4()
             : base(DefaultMinimumStringSegmentLength, resetDictionaryOnEachWalk: true)
         {
         }
         private int _totalDuplicates;
 
-        /// <summary>
-        /// <para>
-        /// Walks the all using the specified elements.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="elements">
-        /// <para>The elements.</para>
-        /// <para></para>
-        /// </param>
         public override void WalkAll(IList<char> elements)
         {
             _totalDuplicates = 0;
@@ -420,73 +214,18 @@ Pfui, stößt den Kopf an harten Stein! Elfe, gelt, du hast genug? Gukuk!";
             Console.WriteLine($"Unique string segments: {Dictionary.Count}. Total duplicates: {_totalDuplicates}.");
         }
 
-        /// <summary>
-        /// <para>
-        /// Creates the segment using the specified elements.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="elements">
-        /// <para>The elements.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="offset">
-        /// <para>The offset.</para>
-        /// <para></para>
-        /// </param>
-        /// <param name="length">
-        /// <para>The length.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The char segment</para>
-        /// <para></para>
-        /// </returns>
         protected override CharSegment CreateSegment(IList<char> elements, int offset, int length) => new CharSegment(elements, offset, length);
 
-        /// <summary>
-        /// <para>
-        /// Ons the dublicate found using the specified segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
         protected override void OnDublicateFound(CharSegment segment)
         {
             _totalDuplicates++; 
         }
     }
 
-    /// <summary>
-    /// <para>
-    /// Represents the iterations counter.
-    /// </para>
-    /// <para></para>
-    /// </summary>
-    /// <seealso cref="AllSegmentsWalkerBase{char}"/>
     public class IterationsCounter : AllSegmentsWalkerBase<char>
     {
-        /// <summary>
-        /// <para>
-        /// The iterations count.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         public long IterationsCount;
 
-        /// <summary>
-        /// <para>
-        /// Iterations the segment.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <param name="segment">
-        /// <para>The segment.</para>
-        /// <para></para>
-        /// </param>
         protected override void Iteration(Segment<char> segment) => IterationsCount++;
     }
 }
