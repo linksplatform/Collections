@@ -4,7 +4,6 @@
         typename Self,
         typename T,
         std::derived_from<std::span<T>> TSegment = std::span<T>>
-
     class DuplicateSegmentsWalkerBase : public AllSegmentsWalkerBase<Self, T, TSegment>
     {
         using base = AllSegmentsWalkerBase<Self, T, TSegment>;
@@ -23,10 +22,10 @@
             this->SetSegmentFrequency(segment, frequency + 1);
         }
 
-        public: void OnDuplicateFound(auto&& segment) { this->self().OnDuplicateFound(segment); }
+        public: void OnDuplicateFound(auto&& segment) { this->object().OnDuplicateFound(segment); }
 
-        public: std::size_t GetSegmentFrequency(auto&& segment) { return this->self().GetSegmentFrequency(segment); }
+        public: std::size_t GetSegmentFrequency(auto&& segment) { return this->object().GetSegmentFrequency(segment); }
 
-        public: void SetSegmentFrequency(auto&& segment, std::int64_t frequency) { this->self().SetSegmentFrequency(segment, frequency); }
+        public: void SetSegmentFrequency(auto&& segment, std::int64_t frequency) { this->object().SetSegmentFrequency(segment, frequency); }
     };
 }

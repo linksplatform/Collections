@@ -1,24 +1,20 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
-
     template<
         typename Self,
         typename T,
         std::derived_from<std::span<T>> TSegment = std::span<T>,
         template<typename, typename, typename...> typename TDictionary = std::unordered_map,
         typename Dictionary = TDictionary<TSegment, std::size_t>>
-
     requires
         requires { std::hash<TSegment>{}; }
          and
         requires { std::equal_to<TSegment>{}; }
-        // and
-        //Interfaces::CDictionary<Dictionary, TSegment, std::size_t>
-
+         and
+        Interfaces::CDictionary<Dictionary, TSegment, std::size_t>
     class DictionaryBasedDuplicateSegmentsWalkerBase : public DuplicateSegmentsWalkerBase<Self, T, TSegment>
     {
         using base = DuplicateSegmentsWalkerBase<Self, T, TSegment>;
-       // public: using Dictionary = TDictionary<TSegment, std::size_t>;
 
         public: static constexpr bool DefaultResetDictionaryOnEachWalk = false;
 

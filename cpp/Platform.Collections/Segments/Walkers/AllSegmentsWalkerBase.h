@@ -5,10 +5,8 @@
         typename T,
         std::derived_from<std::span<T>> TSegment = std::span<T>>
 
-    class AllSegmentsWalkerBase : public Polymorph<Self>
+    class AllSegmentsWalkerBase : public Interfaces::Polymorph<Self>
     {
-        using base = Polymorph<Self>;
-
         public: static constexpr std::size_t DefaultMinimumStringSegmentLength = 2;
 
         private: std::size_t _minimumStringSegmentLength = 0;
@@ -28,9 +26,9 @@
             }
         }
 
-        public: TSegment CreateSegment(Interfaces::CList auto&& elements, std::size_t offset, std::size_t length) { return this->self().CreateSegment(elements, offset, length); }
+        public: TSegment CreateSegment(Interfaces::CList auto&& elements, std::size_t offset, std::size_t length) { return this->object().CreateSegment(elements, offset, length); }
 
-        public: void Iteration(auto&& segment) { this->self().Iteration(segment); }
+        public: void Iteration(auto&& segment) { this->object().Iteration(segment); }
 
         public: auto CreateSegment(Interfaces::CList auto&& elements, std::size_t offset, std::size_t length)
             requires std::same_as<TSegment, std::span<T>>
