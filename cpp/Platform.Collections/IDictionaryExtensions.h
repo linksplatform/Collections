@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections::Dictionaries
 {
-    //template<Interfaces::CDictionary TDictionary>
-    void Add(/*TDictionary&*/auto& dictionary, auto key, auto value)
+    template<Interfaces::CDictionary TDictionary>
+    void Add(TDictionary& dictionary, auto key, auto value)
     {
         if (dictionary.contains(key))
         {
