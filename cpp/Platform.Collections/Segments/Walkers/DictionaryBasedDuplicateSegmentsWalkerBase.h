@@ -34,7 +34,6 @@
             {
                 if constexpr (requires { Dictionary(std::size_t{}); })
                 {
-                    std::unordered_map<int, int>(1);
                     auto capacity = std::ceil(std::pow(std::ranges::size(elements), 2) / 2);
                     dictionary = Dictionary(capacity);
                 }
