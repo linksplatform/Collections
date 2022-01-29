@@ -64,7 +64,7 @@ struct ConsolePrintedDuplicateWalkerBase : DuplicateSegmentsWalkerBase<Self, cha
 {
     void OnDuplicateFound(auto segment) {/* std::cout << span_as_string(segment) << "\n"; */}
 
-    std::span<char16_t> CreateSegment(IArray<char16_t> auto&& elements, int offset, int length) { return std::span<char16_t>(std::ranges::begin(elements) + offset, length); }
+    std::span<char16_t> CreateSegment(CArray<char16_t> auto&& elements, int offset, int length) { return std::span<char16_t>(std::ranges::begin(elements) + offset, length); }
 };
 
 
@@ -77,7 +77,7 @@ struct Walker1 : public ConsolePrintedDuplicateWalkerBase<Walker1>
 
     Walker1() = default;
 
-    void WalkAll(IList<char16_t> auto&& elements)
+    void WalkAll(CList<char16_t> auto&& elements)
     {
         _rootNode.ChildNodes().clear();
 
@@ -116,7 +116,7 @@ struct Walker2 : ConsolePrintedDuplicateWalkerBase<Walker2>
 
     Walker2() = default;
 
-    void WalkAll(IArray<char16_t> auto&& elements)
+    void WalkAll(CArray<char16_t> auto&& elements)
     {
         _cache.clear();
 
@@ -154,12 +154,12 @@ struct Walker4 : public DictionaryBasedDuplicateSegmentsWalkerBase<Walker4, char
 
     // Automatically '
     //
-    // auto CreateSegment(IList auto&& elements, std::int32_t offset, std::int32_t length)
+    // auto CreateSegment(CList auto&& elements, std::int32_t offset, std::int32_t length)
     // {
     //     return std::span<char16_t>(std::ranges::begin(elements) + offset, length);
     // }
 
-    void WalkAll(IArray<char16_t> auto&& elements)
+    void WalkAll(CArray<char16_t> auto&& elements)
     {
         _totalDuplicates = 0;
 

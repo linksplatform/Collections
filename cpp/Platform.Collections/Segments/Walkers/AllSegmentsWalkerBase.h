@@ -17,7 +17,7 @@
 
         public: explicit AllSegmentsWalkerBase() : _minimumStringSegmentLength(DefaultMinimumStringSegmentLength) { }
 
-        public: void WalkAll(Interfaces::IList auto&& elements)
+        public: void WalkAll(Interfaces::CList auto&& elements)
         {
             for (std::size_t offset = 0, maxOffset = std::ranges::size(elements) - _minimumStringSegmentLength; offset <= maxOffset; offset++)
             {
@@ -28,11 +28,11 @@
             }
         }
 
-        public: TSegment CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length) { return this->self().CreateSegment(elements, offset, length); }
+        public: TSegment CreateSegment(Interfaces::CList auto&& elements, std::size_t offset, std::size_t length) { return this->self().CreateSegment(elements, offset, length); }
 
         public: void Iteration(auto&& segment) { this->self().Iteration(segment); }
 
-        public: auto CreateSegment(Interfaces::IList auto&& elements, std::size_t offset, std::size_t length)
+        public: auto CreateSegment(Interfaces::CList auto&& elements, std::size_t offset, std::size_t length)
             requires std::same_as<TSegment, std::span<T>>
         {
             return std::span<T>(std::ranges::begin(elements) + offset, length);

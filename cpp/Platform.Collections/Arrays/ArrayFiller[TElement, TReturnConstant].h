@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections::Arrays
 {
     template<typename...> class ArrayFiller;
-    template<Interfaces::IArray TArray, typename TReturnConstant> class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
+    template<Interfaces::CArray TArray, typename TReturnConstant> class ArrayFiller<TArray, TReturnConstant> : public ArrayFiller<TArray>
     {
         using base = ArrayFiller<TArray>;
 
@@ -13,10 +13,10 @@
 
         public: TReturnConstant AddAndReturnConstant(auto&& element){ return Arrays::AddAndReturnConstant(base::_array, base::_position, std::forward<decltype(element)>(element), _returnConstant); }
 
-        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray auto&& elements) { return Arrays::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
+        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::CArray auto&& elements) { return Arrays::AddFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
 
-        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray auto&& elements) { return Arrays::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
+        public: TReturnConstant AddAllAndReturnConstant(Interfaces::CArray auto&& elements) { return Arrays::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::CArray auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
     };
 }

@@ -1,6 +1,6 @@
 ﻿namespace Platform::Collections::Dictionaries
 {
-    //template<Interfaces::IDictionary TDictionary>
+    //template<Interfaces::CDictionary TDictionary>
     void Add(/*TDictionary&*/auto& dictionary, auto key, auto value)
     {
         if (dictionary.contains(key))
@@ -10,7 +10,7 @@
         dictionary.insert({std::move(key), std::move(value)});
     }
 
-    template<Interfaces::IDictionary TDictionary>
+    template<Interfaces::CDictionary TDictionary>
     auto& GetOrAdd(TDictionary& dictionary, auto&& key, auto&& valueFactory)
     {
         auto contains = dictionary.contains(key);

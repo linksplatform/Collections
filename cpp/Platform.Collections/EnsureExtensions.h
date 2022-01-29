@@ -1,6 +1,6 @@
 ﻿namespace Platform::Collections::Ensure::Always
 {
-    void ArgumentNotEmpty(Interfaces::IEnumerable auto&& argument, const std::string& argumentName = {}, const std::string& message = {})
+    void ArgumentNotEmpty(Interfaces::CEnumerable auto&& argument, const std::string& argumentName = {}, const std::string& message = {})
     {
         if (std::ranges::empty(argument))
         {

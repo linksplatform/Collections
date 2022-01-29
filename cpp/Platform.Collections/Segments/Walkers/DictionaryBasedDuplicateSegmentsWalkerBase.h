@@ -13,7 +13,7 @@
          and
         requires { std::equal_to<TSegment>{}; }
         // and
-        //Interfaces::IDictionary<Dictionary, TSegment, std::size_t>
+        //Interfaces::CDictionary<Dictionary, TSegment, std::size_t>
 
     class DictionaryBasedDuplicateSegmentsWalkerBase : public DuplicateSegmentsWalkerBase<Self, T, TSegment>
     {
@@ -31,7 +31,7 @@
 
         protected: DictionaryBasedDuplicateSegmentsWalkerBase() : DictionaryBasedDuplicateSegmentsWalkerBase(base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
-        public: void WalkAll(Interfaces::IArray<T> auto&& elements)
+        public: void WalkAll(Interfaces::CArray<T> auto&& elements)
         {
             // Not use capacity-style if want use std::map
             if (_resetDictionaryOnEachWalk)

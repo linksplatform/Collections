@@ -1,7 +1,7 @@
 ﻿namespace Platform::Collections::Lists
 {
     template<typename...> class ListFiller;
-    template<Interfaces::IList TList, typename TReturnConstant> class ListFiller<TList, TReturnConstant>
+    template<Interfaces::CList TList, typename TReturnConstant> class ListFiller<TList, TReturnConstant>
     {
         protected: TList& _list;
 
@@ -15,11 +15,11 @@
 
         public: bool AddAndReturnTrue(auto&& element) { return Lists::AddAndReturnTrue(_list, std::forward<decltype(element)>(element)); }
 
-        public: bool AddFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Lists::AddFirstAndReturnTrue(_list, elements); }
+        public: bool AddFirstAndReturnTrue(Interfaces::CArray auto&& elements) { return Lists::AddFirstAndReturnTrue(_list, elements); }
 
-        public: bool AddAllAndReturnTrue(Interfaces::IArray auto&& elements){ return Lists::AddAllAndReturnTrue(_list, elements); }
+        public: bool AddAllAndReturnTrue(Interfaces::CArray auto&& elements){ return Lists::AddAllAndReturnTrue(_list, elements); }
 
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::IArray auto&& elements) { return Lists::AddSkipFirstAndReturnTrue(_list, elements); }
+        public: bool AddSkipFirstAndReturnTrue(Interfaces::CArray auto&& elements) { return Lists::AddSkipFirstAndReturnTrue(_list, elements); }
 
         public: TReturnConstant AddAndReturnConstant(auto&& element)
         {
@@ -27,19 +27,19 @@
             return _returnConstant;
         }
 
-        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::IArray auto&& elements)
+        public: TReturnConstant AddFirstAndReturnConstant(Interfaces::CArray auto&& elements)
         {
             Lists::AddFirst(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddAllAndReturnConstant(Interfaces::IArray auto&& elements)
+        public: TReturnConstant AddAllAndReturnConstant(Interfaces::CArray auto&& elements)
         {
             Lists::AddAll(_list, elements);
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::IArray auto&& elements)
+        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::CArray auto&& elements)
         {
             Lists::AddSkipFirst(_list, elements);
             return _returnConstant;
