@@ -21,7 +21,7 @@ conan create platform.ranges/all platform.ranges/0.1.3@ -pr=linksplatform
 conan create platform.random/all platform.random/0.1.0@ -pr=linksplatform
 cd ../..
 ls
-
+cd Collections
 cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DLINKS_PLATFORM_TESTS=ON"
 cmake_build_dir="build"
 cd cpp && mkdir -p $cmake_build_dir && cd $cmake_build_dir
