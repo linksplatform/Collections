@@ -5,3 +5,7 @@
 [submodule "Settings"]
 	path = Settings
 	url = https://github.com/linksplatform/Settings
+
+[submodule "conan-center-index"]
+	path = conan-center-index
+	url = https://github.com/linksplatform/conan-center-index
