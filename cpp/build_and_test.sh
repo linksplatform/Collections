@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 pip install conan
 
 conan profile new linksplatform --detect
@@ -30,3 +32,5 @@ for binary in $binaries
 do
    ./$binary
 done
+
+cd cpp
