@@ -1,3 +1,6 @@
+[![Gitpod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/linksplatform/Collections)
+
+
 [![Actions Status](https://github.com/linksplatform/Collections/workflows/CD/badge.svg)](https://github.com/linksplatform/Collections/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ddbcbaaa204a47d7b388ca679791e3fb)](https://app.codacy.com/gh/linksplatform/Collections?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Collections&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/collections/badge)](https://www.codefactor.io/repository/github/linksplatform/collections)
