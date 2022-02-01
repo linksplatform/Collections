@@ -1,0 +1,7 @@
+    1  ./cpp/build_and_test_gitpod.sh
+    2  chmod +x ./cpp/build_and_test_gitpod.sh
+    3  ./cpp/build_and_test_gitpod.sh
+    4  g++10
+    5  g++-10
+    6  sudo apt install g++-10
+    7  history > history.txt
