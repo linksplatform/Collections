@@ -1,3 +1,0 @@
-/workspace/Collections/cpp/build/CMakeFiles/Platform.Collections.Tests.dir
-/workspace/Collections/cpp/build/CMakeFiles/edit_cache.dir
-/workspace/Collections/cpp/build/CMakeFiles/rebuild_cache.dir
