@@ -9,3 +9,4 @@
 #include "NodeTests.cpp"
 #include "StringTests.cpp"
 #include "WalkersTests.cpp"
+#include "StackTests.cpp"

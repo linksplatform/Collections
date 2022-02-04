@@ -11,6 +11,8 @@
 #include <span>
 #include <iostream>
 #include <numeric>
+#include <stack>./cpp/build_and_test_gitpod.sh
+
 
 #include <Platform.Exceptions.h>
 #include <Platform.Interfaces.h>
@@ -47,6 +49,7 @@
 
 #include "Stacks/DefaultStack.h"
 #include "Stacks/IStack.h"
+#include "Stacks/CStack.h"
 #include "Stacks/IStackExtensions.h"
 #include "Stacks/IStackFactory.h"
 #include "Stacks/StackExtensions.h"
