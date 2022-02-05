@@ -1,16 +1,15 @@
 namespace Platform::Collections::Tests {
-  struct EmptyStack : public Stacks::IStack<int> {
-    bool empty() const {}
+struct EmptyStack : public Stacks::IStack<int> {
+  bool empty() const {}
 
-    void push(int item) {}
+  void push(int item) {}
 
-    void pop() {}
+  void pop() {}
 
-    int &top() {}
+  int &top() {}
 
-    const int &top() const {}
-   
-  };
+  const int &top() const {}
+};
 TEST(StackTests, Concept) {
   Stacks::CStack<int> auto stack = std::stack<int>{};
   stack.push(1);
@@ -18,9 +17,8 @@ TEST(StackTests, Concept) {
   stack.pop();
   ASSERT_TRUE(stack.empty());
 }
-TEST(StackTests, Interface) {
-}
+TEST(StackTests, Interface) {}
 TEST(StackTests, ConceptInterface) {
-Stacks::CStack<int> auto stack = EmptyStack{};
+  Stacks::CStack<int> auto stack = EmptyStack{};
 }
 } // namespace Platform::Collections::Tests
