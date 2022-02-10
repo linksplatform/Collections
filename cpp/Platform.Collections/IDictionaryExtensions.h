@@ -3,10 +3,7 @@
     template<Interfaces::CDictionary TDictionary>
     void Add(TDictionary& dictionary, auto key, auto value)
     {
-        if (dictionary.contains(key))
-        {
-            throw std::logic_error("Unknown exception");
-        }
+        Expects(!dictionary.contains(key));
         dictionary.insert({std::move(key), std::move(value)});
     }
 

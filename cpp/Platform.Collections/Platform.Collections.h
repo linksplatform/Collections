@@ -1,5 +1,7 @@
 #pragma once
 
+#include <gsl/gsl>
+
 #include <type_traits>
 #include <vector>
 #include <string>
