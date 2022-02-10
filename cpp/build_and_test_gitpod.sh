@@ -2,6 +2,8 @@
 
 cd ..
 
+sudo apt install -y g++-10
+
 pip install conan
 
 conan profile new linksplatform --detect
