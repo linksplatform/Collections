@@ -18,7 +18,5 @@ TEST(StackTests, Concept) {
   ASSERT_TRUE(stack.empty());
 }
 TEST(StackTests, Interface) {}
-TEST(StackTests, ConceptInterface) {
-  Stacks::CStack<int> auto stack = EmptyStack{};
-}
+TEST(StackTests, ConceptInterface) {}
 } // namespace Platform::Collections::Tests
