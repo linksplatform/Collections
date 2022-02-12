@@ -12,8 +12,6 @@ namespace Platform::Collections::Stacks
 
         virtual void pop() = 0;
 
-        virtual TElement& top() = 0;
-
         virtual const TElement& top() const = 0;
 
         virtual ~IStack() = default;
