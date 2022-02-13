@@ -3,12 +3,12 @@
 namespace Platform::Collections::Stacks
 {
     template<typename TSelf, typename TElement>
-    concept CStack =
-        requires(TSelf & self, TElement item)
+    concept CStack = requires(TSelf& self, TElement item)
     {
         { self.push(item) };
-    } &&
-        requires(const TSelf& self, TElement item)
+    } 
+    &&
+    requires(const TSelf& self, TElement item)
     {
         { self.empty() } -> std::same_as<bool>;
 
