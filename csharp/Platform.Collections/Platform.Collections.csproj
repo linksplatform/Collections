@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>konard;tynkute</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.3.0</VersionPrefix>
+    <VersionPrefix>0.3.1</VersionPrefix>
     <Authors>konard;tynkute</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1;net5</TargetFrameworks>
     <AssemblyName>Platform.Collections</AssemblyName>
@@ -25,12 +25,8 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>.NET 5 support is added.
-Platform.Interfaces dependency updated from 0.3.0 to 0.4.0.
-Platform.Disposables dependency updated from 0.2.0 to 0.3.0.
-Platform.Ranges dependency updated from 0.2.0 to 0.3.0.
-Platform.Random dependency updated from 0.1.0 to 0.2.0.
-Comments are added to some types.</PackageReleaseNotes>
+    <PackageReleaseNotes>Microsoft.NETFramework.ReferenceAssemblies dependency is updated from 1.0.0 to 1.0.2.
+Platform.Interfaces dependency is updated from 0.4.0 to 0.4.1.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -44,7 +40,7 @@ Comments are added to some types.</PackageReleaseNotes>
 
   <ItemGroup>
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-    <PackageReference Include="Platform.Interfaces" Version="0.4.0" />
+    <PackageReference Include="Platform.Interfaces" Version="0.4.1" />
     <PackageReference Include="Platform.Disposables" Version="0.3.0" />
     <PackageReference Include="Platform.Ranges" Version="0.3.0" />
     <PackageReference Include="Platform.Random" Version="0.2.0" />
