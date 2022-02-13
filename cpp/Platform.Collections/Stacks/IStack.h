@@ -1,14 +1,19 @@
-﻿namespace Platform::Collections::Stacks
+namespace Platform::Collections::Stacks
 {
-    template<typename Self, typename TElement>
-    concept IStack = requires(Self self, TElement item)
+    template <typename ...>
+    struct IStack;
+
+    template<typename TElement>
+    struct IStack<TElement>
     {
-        { self.empty() } -> std::same_as<bool>;
+        virtual bool empty() const = 0;
 
-        { self.push(item) };
+        virtual void push(TElement item) = 0;
 
-        { self.pop() };
+        virtual void pop() = 0;
 
-        { self.top() } -> std::same_as<TElement&>;
+        virtual const TElement& top() const = 0;
+
+        virtual ~IStack() = default;
     };
 }

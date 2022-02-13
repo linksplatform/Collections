@@ -14,6 +14,7 @@
 #include <iostream>
 #include <numeric>
 
+
 #include <Platform.Exceptions.h>
 #include <Platform.Interfaces.h>
 #include <Platform.Equality.h>
@@ -49,6 +50,7 @@
 
 #include "Stacks/DefaultStack.h"
 #include "Stacks/IStack.h"
+#include "Stacks/CStack.h"
 #include "Stacks/IStackExtensions.h"
 #include "Stacks/IStackFactory.h"
 #include "Stacks/StackExtensions.h"
