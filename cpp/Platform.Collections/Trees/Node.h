@@ -145,7 +145,7 @@ namespace Platform::Collections::Trees
         Node(const Node& other) : base(other), leaf_base(other) {}
     };
 
-    template<typename TValue, NotHelperType TKey, typename... Tail>
+    template<typename TValue, NotNodeTag TKey, typename... Tail>
     class Node<TValue, TKey, Tail...> : public Internal::NodeBase<TValue, TKey, Node<TValue, Tail...>>
     {
         using Child = Node<TValue, Tail...>;
