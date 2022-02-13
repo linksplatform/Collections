@@ -11,7 +11,7 @@ namespace Platform::Collections::Trees
     };
 
     template<typename T>
-    concept NotHelperType = not std::derived_from<T, NodeTag>;
+    concept NotNodeTag = not std::derived_from<T, NodeTag>;
 
     template<typename Self>
     concept ValueNode = requires(Self self)
