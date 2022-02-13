@@ -8,8 +8,6 @@ namespace Platform::Collections::Stacks
         { self.push(item) };
 
         { self.pop() };
-
-        { self.top() } -> std::same_as<TElement&>;
     } 
     &&
     requires(const TSelf& self, TElement item)
