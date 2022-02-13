@@ -24,6 +24,12 @@ namespace Platform::Collections::Tests
         ASSERT_TRUE(stack.empty());
     }
 
-    TEST(StackTests, Interface) {}
-    TEST(StackTests, ConceptInterface) {}
+    TEST(StackTests, Interface) 
+    {
+        std::unique_ptr<Stack::IStack<int>> stack = std::make_unique<EmptyStack>();
+    }
+    TEST(StackTests, ConceptInterface) 
+    {
+        Stacks::CStack<int> auto stack  = EmptyStack{};
+    }
 }
