@@ -19,8 +19,6 @@ namespace Platform::Collections::Tests
 
         void pop() {}
 
-        int &top() {}
-
         const int &top() const {}
     };
 
