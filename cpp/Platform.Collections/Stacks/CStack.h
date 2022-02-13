@@ -6,14 +6,16 @@ namespace Platform::Collections::Stacks
     concept CStack = requires(TSelf& self, TElement item)
     {
         { self.push(item) };
+
+        { self.pop() };
+
+        { self.top() } -> std::same_as<TElement&>;
     } 
     &&
     requires(const TSelf& self, TElement item)
     {
         { self.empty() } -> std::same_as<bool>;
 
-        { self.pop() };
-
-        { self.top() } -> std::same_as<TElement&>;
+        { self.top() } -> std::same_as<const TElement&>;
     };
 }
