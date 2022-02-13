@@ -1,17 +1,17 @@
 namespace Platform::Collections::Trees
 {
-    struct HelperTypeTag
+    struct NodeTag
     {
     };
 
     template<typename T>
-    struct Repeat : public HelperTypeTag
+    struct Repeat : public NodeTag
     {
         using type = T;
     };
 
     template<typename T>
-    concept NotHelperType = not std::derived_from<T, HelperTypeTag>;
+    concept NotHelperType = not std::derived_from<T, NodeTag>;
 
     template<typename Self>
     concept ValueNode = requires(Self self)
