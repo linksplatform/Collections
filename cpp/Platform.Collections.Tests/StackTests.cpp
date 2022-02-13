@@ -28,6 +28,7 @@ namespace Platform::Collections::Tests
     {
         std::unique_ptr<Stack::IStack<int>> stack = std::make_unique<EmptyStack>();
     }
+    
     TEST(StackTests, ConceptInterface) 
     {
         Stacks::CStack<int> auto stack  = EmptyStack{};
