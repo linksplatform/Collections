@@ -16,6 +16,7 @@ target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.inte
 target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.equality)
 target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.hashing)
 target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.random)
+target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::ms-gsl)
 target_compile_options(${PROJECT_NAME}.Library INTERFACE ${LINKS_PLATFORM_EXTRA_FLAGS})
 
 if(${LINKS_PLATFORM_TESTS})

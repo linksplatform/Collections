@@ -1,24 +1,20 @@
 ﻿namespace Platform::Collections::Segments::Walkers
 {
-
     template<
         typename Self,
         typename T,
         std::derived_from<std::span<T>> TSegment = std::span<T>,
         template<typename, typename, typename...> typename TDictionary = std::unordered_map,
         typename Dictionary = TDictionary<TSegment, std::size_t>>
-
     requires
         requires { std::hash<TSegment>{}; }
          and
         requires { std::equal_to<TSegment>{}; }
-        // and
-        //Interfaces::IDictionary<Dictionary, TSegment, std::size_t>
-
+         and
+        Interfaces::CDictionary<Dictionary, TSegment, std::size_t>
     class DictionaryBasedDuplicateSegmentsWalkerBase : public DuplicateSegmentsWalkerBase<Self, T, TSegment>
     {
         using base = DuplicateSegmentsWalkerBase<Self, T, TSegment>;
-       // public: using Dictionary = TDictionary<TSegment, std::size_t>;
 
         public: static constexpr bool DefaultResetDictionaryOnEachWalk = false;
 
@@ -31,14 +27,13 @@
 
         protected: DictionaryBasedDuplicateSegmentsWalkerBase() : DictionaryBasedDuplicateSegmentsWalkerBase(base::DefaultMinimumStringSegmentLength, DefaultResetDictionaryOnEachWalk) { }
 
-        public: void WalkAll(Interfaces::IArray<T> auto&& elements)
+        public: void WalkAll(Interfaces::CArray<T> auto&& elements)
         {
             // Not use capacity-style if want use std::map
             if (_resetDictionaryOnEachWalk)
             {
                 if constexpr (requires { Dictionary(std::size_t{}); })
                 {
-                    std::unordered_map<int, int>(1);
                     auto capacity = std::ceil(std::pow(std::ranges::size(elements), 2) / 2);
                     dictionary = Dictionary(capacity);
                 }

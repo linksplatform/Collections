@@ -1,5 +1,7 @@
 #pragma once
 
+#include <gsl/gsl>
+
 #include <type_traits>
 #include <vector>
 #include <string>
@@ -35,7 +37,6 @@
 #include "Lists/IListExtensions.h"
 #include "Lists/ListFiller.h"
 
-#include "Segments/Walkers/Polymorph.h"
 #include "Segments/Walkers/AllSegmentsWalkerBase.h"
 #include "Segments/Walkers/DuplicateSegmentsWalkerBase.h"
 #include "Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase.h"
