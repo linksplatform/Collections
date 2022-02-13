@@ -11,7 +11,6 @@
 #include <span>
 #include <iostream>
 #include <numeric>
-#include <stack>./cpp/build_and_test_gitpod.sh
 
 
 #include <Platform.Exceptions.h>
