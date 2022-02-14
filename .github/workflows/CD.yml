@@ -34,7 +34,7 @@ jobs:
         with:
           submodules: true
       - name: Test CSharp
-        run: dotnet test -c Release -f net6
+        run: dotnet test -c Release -f net5
 
   deploy:
     needs: [testCpp, testCSharp]
