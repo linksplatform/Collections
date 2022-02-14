@@ -1,0 +1,4 @@
+# ninja log v5
+3	6789	1639811555695798484	CMakeFiles/Platform.Collections.Tests.dir/Platform.Collections.Tests/AllTests.cpp.o	e7d75bcd1229ea2a
+6789	6981	1639811555891802386	bin/Platform.Collections.Tests	fbcf25e0aae98795
+0	7	0	clean	60257d5d886fd64c
