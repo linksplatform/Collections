@@ -49,8 +49,5 @@ Platform.Interfaces dependency is updated from 0.4.1 to 0.4.2.</PackageReleaseNo
   <Target Name="CSharpToCppTranslation" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'net5' AND !('$(SolutionDir)'=='' OR '$(SolutionDir)'=='*Undefined*')">
     <Exec Command="..\..\CSharpToCppTranslator\bin\$(Configuration)\net5\CSharpToCppTranslator.exe $(ProjectDir) $(SolutionDir)cpp\$(ProjectName)\"></Exec>
   </Target>
-  <Target Name="CSharpToCppTranslation" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Unix' AND $(TargetFramework) == 'net5' AND !('$(SolutionDir)'=='' OR '$(SolutionDir)'=='*Undefined*')">
-    <Exec Command="../../CSharpToCppTranslator/bin/$(Configuration)/net5/CSharpToCppTranslator $(ProjectDir) $(SolutionDir)cpp/$(ProjectName)/"></Exec>
-  </Target>
 
 </Project>
