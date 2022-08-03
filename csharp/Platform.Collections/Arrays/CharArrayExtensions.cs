@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Security;
 
 namespace Platform.Collections.Arrays
 {
@@ -77,11 +78,11 @@ namespace Platform.Collections.Arrays
         {
             while (length >= 10)
             {
-                if ((*(int*)left != *(int*)right)
-                 || (*(int*)(left + 2) != *(int*)(right + 2))
-                 || (*(int*)(left + 4) != *(int*)(right + 4))
-                 || (*(int*)(left + 6) != *(int*)(right + 6))
-                 || (*(int*)(left + 8) != *(int*)(right + 8)))
+                if (*(int*)left != *(int*)right
+                 || *(int*)(left + 2) != *(int*)(right + 2)
+                 || *(int*)(left + 4) != *(int*)(right + 4)
+                 || *(int*)(left + 6) != *(int*)(right + 6)
+                 || *(int*)(left + 8) != *(int*)(right + 8))
                 {
                     return false;
                 }
@@ -98,7 +99,7 @@ namespace Platform.Collections.Arrays
             // always zero terminated and that the terminating zero is not included
             // in the length. For odd string sizes, the last compare will include
             // the zero terminator.
-            while (length > 0)
+            while (length >= 2)
             {
                 if (*(int*)left != *(int*)right)
                 {
@@ -108,6 +109,14 @@ namespace Platform.Collections.Arrays
                 right += 2;
                 length -= 2;
             }
+
+            // lenght is 1 or 0
+            if (length != 0 && *left != *right)
+            {
+                return;
+            }
+
+            length = 0;
         }
     }
 }
