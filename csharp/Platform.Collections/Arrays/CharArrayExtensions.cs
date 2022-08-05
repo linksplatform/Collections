@@ -112,10 +112,8 @@ namespace Platform.Collections.Arrays
             // lenght is 1 or 0
             if (length != 0 && *left != *right)
             {
-                return;
+                length = 0;
             }
-
-            length = 0;
         }
     }
 }
