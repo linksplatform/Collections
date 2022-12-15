@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>konard;tynkute</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.3.2</VersionPrefix>
+    <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>konard;tynkute</Authors>
     <TargetFramework>net7</TargetFramework>
     <AssemblyName>Platform.Collections</AssemblyName>
@@ -13,7 +13,7 @@
     <PackageTags>LinksPlatform;Collections;Extensions;Arrays;Concurrent;Lists;Segments;SegmentWalkers;Sets;Stacks;Trees</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Collections</PackageProjectUrl>
-    <PackageLicenseExpression>Unlicensed</PackageLicenseExpression>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/linksplatform/Collections</RepositoryUrl>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -24,14 +24,13 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Dotnet 6 support is added.
-Platform.Interfaces dependency is updated from 0.4.1 to 0.4.2.</PackageReleaseNotes>
+    <PackageReleaseNotes>Target frameworks are changed to net7.
+Platform.Interfaces dependency is updated from 0.4.2 to 0.5.0.
+Platform.Random dependency is updated from 0.2.0 to 0.3.0.
+Platform.Disposables dependency is updated from 0.3.0 to 0.4.0.
+Platform.Ranges dependency is updated from 0.3.0 to 0.5.0.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="All" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
@@ -39,14 +38,10 @@ Platform.Interfaces dependency is updated from 0.4.1 to 0.4.2.</PackageReleaseNo
 
   <ItemGroup>
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-    <PackageReference Include="Platform.Interfaces" Version="0.4.2" />
-    <PackageReference Include="Platform.Disposables" Version="0.3.0" />
-    <PackageReference Include="Platform.Ranges" Version="0.3.0" />
-    <PackageReference Include="Platform.Random" Version="0.2.0" />
+    <PackageReference Include="Platform.Interfaces" Version="0.5.0" />
+    <PackageReference Include="Platform.Disposables" Version="0.4.0" />
+    <PackageReference Include="Platform.Ranges" Version="0.5.0" />
+    <PackageReference Include="Platform.Random" Version="0.3.0" />
   </ItemGroup>
-
-  <Target Name="CSharpToCppTranslation" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT' AND $(TargetFramework) == 'net5' AND !('$(SolutionDir)'=='' OR '$(SolutionDir)'=='*Undefined*')">
-    <Exec Command="..\..\CSharpToCppTranslator\bin\$(Configuration)\net5\CSharpToCppTranslator.exe $(ProjectDir) $(SolutionDir)cpp\$(ProjectName)\"></Exec>
-  </Target>
 
 </Project>
