@@ -95,7 +95,6 @@ namespace Platform.Collections.Arrays
         private static void CheckArraysRemainderForEquality(ref char* left, ref char* right, ref int length)
         {
             // It is not guaranteed that the array is zero terminated
-            // (string in csharp also is not zero terminated )
             // This code mindlessly "touches" memory
             while (length >= 2)
             {
