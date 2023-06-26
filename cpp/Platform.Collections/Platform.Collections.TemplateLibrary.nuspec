@@ -5,7 +5,7 @@
     <title>LinksPlatform's Platform.Collections Template Library</title>
     <summary>LinksPlatform's Platform.Collections is a Template Library what contains abstract class templates for collections.</summary>
     <description>LinksPlatform's Platform.Collections is a Template Library what contains set of C++ abstract class templates for collections. Use Platform.Collections.h file to include the library.</description>
-    <releaseNotes>Test version.</releaseNotes>
+    <releaseNotes>Updated build files to conan 2.0</releaseNotes>
     <version>0.2.0</version>
     <authors>konard, flakeed, uselessgoddess</authors>
     <owners>konard, flakeed, uselessgoddess</owners>
