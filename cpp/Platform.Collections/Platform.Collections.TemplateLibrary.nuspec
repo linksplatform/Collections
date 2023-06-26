@@ -13,7 +13,7 @@
     <projectUrl>https://linksplatform.github.io/Collections</projectUrl>
     <repository type="git" url="https://github.com/linksplatform/Collections" />
     <icon>images/icon.png</icon>
-    <tags>C++ Collections</tags>
+    <tags>C++ Collections Concepts</tags>
     <license type="expression">Unlicense</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <dependencies>
