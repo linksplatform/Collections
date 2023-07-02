@@ -13,6 +13,8 @@
 #include <span>
 #include <iostream>
 #include <numeric>
+#include <map>
+#include <memory>
 
 
 #include <Platform.Exceptions.h>
