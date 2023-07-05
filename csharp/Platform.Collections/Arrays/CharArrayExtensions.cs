@@ -77,11 +77,11 @@ namespace Platform.Collections.Arrays
         {
             while (length >= 10)
             {
-                if ((*(int*)left != *(int*)right)
-                 || (*(int*)(left + 2) != *(int*)(right + 2))
-                 || (*(int*)(left + 4) != *(int*)(right + 4))
-                 || (*(int*)(left + 6) != *(int*)(right + 6))
-                 || (*(int*)(left + 8) != *(int*)(right + 8)))
+                if (*(int*)left != *(int*)right
+                 || *(int*)(left + 2) != *(int*)(right + 2)
+                 || *(int*)(left + 4) != *(int*)(right + 4)
+                 || *(int*)(left + 6) != *(int*)(right + 6)
+                 || *(int*)(left + 8) != *(int*)(right + 8))
                 {
                     return false;
                 }
@@ -94,11 +94,9 @@ namespace Platform.Collections.Arrays
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void CheckArraysRemainderForEquality(ref char* left, ref char* right, ref int length)
         {
-            // This depends on the fact that the String objects are
-            // always zero terminated and that the terminating zero is not included
-            // in the length. For odd string sizes, the last compare will include
-            // the zero terminator.
-            while (length > 0)
+            // It is not guaranteed that the array is zero terminated
+            // This code mindlessly "touches" memory
+            while (length >= 2)
             {
                 if (*(int*)left != *(int*)right)
                 {
@@ -107,6 +105,12 @@ namespace Platform.Collections.Arrays
                 left += 2;
                 right += 2;
                 length -= 2;
+            }
+
+            // lenght is 1 or 0
+            if (length != 0 && *left == *right)
+            {
+                length = 0;
             }
         }
     }
