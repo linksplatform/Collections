@@ -6,7 +6,7 @@
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
     <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>konard;tynkute</Authors>
-    <TargetFramework>net7</TargetFramework>
+    <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Collections</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PackageId>Platform.Collections</PackageId>
@@ -24,11 +24,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Target frameworks are changed to net7.
-Platform.Interfaces dependency is updated from 0.4.2 to 0.5.0.
-Platform.Random dependency is updated from 0.2.0 to 0.3.0.
-Platform.Disposables dependency is updated from 0.3.0 to 0.4.0.
-Platform.Ranges dependency is updated from 0.3.0 to 0.5.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Target frameworks are changed to net8.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
