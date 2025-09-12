@@ -40,6 +40,8 @@
 #include "Stacks/IStack.h"
 #include "Stacks/CStack.h"
 
+#include "StackVector.h"
+
 #include "BitStringExtensions.h"
 #include "StringExtensions.h"
 

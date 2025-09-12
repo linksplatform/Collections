@@ -7,6 +7,7 @@
 #include "FillersTests.cpp"
 #include "ListTests.cpp"
 #include "NodeTests.cpp"
+#include "StackVectorTests.cpp"
 #include "StringTests.cpp"
 #include "WalkersTests.cpp"
 #include "StackTests.cpp"
