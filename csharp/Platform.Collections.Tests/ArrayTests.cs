@@ -20,5 +20,29 @@ namespace Platform.Collections.Tests
             Assert.False(array.TryGetElement(10, out element));
             Assert.Equal(0, element);
         }
+
+        [Fact]
+        public void GetElementWithNegativeIndexTest()
+        {
+            var array = new int[] { 1, 2, 3 };
+            
+            // Test GetElementOrDefault with negative index
+            Assert.Equal(0, array.GetElementOrDefault(-1));
+            Assert.Equal(0, array.GetElementOrDefault(-10));
+            
+            // Test TryGetElement with negative index
+            Assert.False(array.TryGetElement(-1, out int element));
+            Assert.Equal(0, element);
+            Assert.False(array.TryGetElement(-10, out element));
+            Assert.Equal(0, element);
+            
+            // Test long versions
+            Assert.Equal(0, array.GetElementOrDefault(-1L));
+            Assert.Equal(0, array.GetElementOrDefault(-10L));
+            Assert.False(array.TryGetElement(-1L, out element));
+            Assert.Equal(0, element);
+            Assert.False(array.TryGetElement(-10L, out element));
+            Assert.Equal(0, element);
+        }
     }
 }
