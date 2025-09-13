@@ -22,6 +22,20 @@ namespace Platform.Collections
     public class BitString : IEquatable<BitString>
     {
         private static readonly byte[][] _bitsSetIn16Bits;
+        
+        /// <summary>
+        /// Minimum array length in words (64-bit) for Vector operations to be beneficial.
+        /// Based on performance analysis: 128 bits / 64 = 2 words minimum.
+        /// </summary>
+        private const int VectorMinThreshold = 2;
+        
+        /// <summary>
+        /// Maximum array length in words (64-bit) for Vector operations to be beneficial.
+        /// Based on performance analysis: ~500,000 bits / 64 = ~7812 words maximum.
+        /// Beyond this size, cache effects make regular operations faster.
+        /// </summary>
+        private const int VectorMaxThreshold = 7812;
+        
         private long[] _array;
         private long _length;
         private long _minPositiveWord;
@@ -261,15 +275,11 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorNot()
         {
-            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
+            if (!ShouldUseVectorOperations())
             {
                 return Not();
             }
             var step = Vector<long>.Count;
-            if (_array.Length < step)
-            {
-                return Not();
-            }
             VectorNotLoop(_array, step, 0, _array.Length);
             MarkBordersAsAllBitsSet();
             TryShrinkBorders();
@@ -294,7 +304,7 @@ namespace Platform.Collections
             {
                 return VectorNot();
             }
-            if (!Vector.IsHardwareAccelerated)
+            if (!ShouldUseVectorOperations())
             {
                 return ParallelNot();
             }
@@ -431,15 +441,11 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorAnd(BitString other)
         {
-            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
+            if (!ShouldUseVectorOperations())
             {
                 return And(other);
             }
             var step = Vector<long>.Count;
-            if (_array.Length < step)
-            {
-                return And(other);
-            }
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out int from, out int to);
             VectorAndLoop(_array, other._array, step, from, to + 1);
@@ -470,7 +476,7 @@ namespace Platform.Collections
             {
                 return VectorAnd(other);
             }
-            if (!Vector.IsHardwareAccelerated)
+            if (!ShouldUseVectorOperations())
             {
                 return ParallelAnd(other);
             }
@@ -612,15 +618,11 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorOr(BitString other)
         {
-            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
+            if (!ShouldUseVectorOperations())
             {
                 return Or(other);
             }
             var step = Vector<long>.Count;
-            if (_array.Length < step)
-            {
-                return Or(other);
-            }
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out int from, out int to);
             VectorOrLoop(_array, other._array, step, from, to + 1);
@@ -651,7 +653,7 @@ namespace Platform.Collections
             {
                 return VectorOr(other);
             }
-            if (!Vector.IsHardwareAccelerated)
+            if (!ShouldUseVectorOperations())
             {
                 return ParallelOr(other);
             }
@@ -793,15 +795,11 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public BitString VectorXor(BitString other)
         {
-            if (!Vector.IsHardwareAccelerated || _array.LongLength >= int.MaxValue)
+            if (!ShouldUseVectorOperations())
             {
                 return Xor(other);
             }
             var step = Vector<long>.Count;
-            if (_array.Length < step)
-            {
-                return Xor(other);
-            }
             EnsureBitStringHasTheSameSize(other, nameof(other));
             GetCommonOuterBorders(this, other, out int from, out int to);
             VectorXorLoop(_array, other._array, step, from, to + 1);
@@ -832,7 +830,7 @@ namespace Platform.Collections
             {
                 return VectorXor(other);
             }
-            if (!Vector.IsHardwareAccelerated)
+            if (!ShouldUseVectorOperations())
             {
                 return ParallelXor(other);
             }
@@ -891,6 +889,27 @@ namespace Platform.Collections
                 array[i] ^= otherArray[i];
             }
         }
+        
+        /// <summary>
+        /// <para>
+        /// Determines whether Vector operations should be used based on hardware acceleration availability
+        /// and optimal size thresholds determined through performance analysis.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>True if Vector operations are likely to be faster than regular operations, false otherwise.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private bool ShouldUseVectorOperations()
+        {
+            return Vector.IsHardwareAccelerated && 
+                   _array.LongLength < int.MaxValue &&
+                   _array.Length >= VectorMinThreshold &&
+                   _array.Length <= VectorMaxThreshold;
+        }
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RefreshBordersByWord(long wordIndex)
         {
