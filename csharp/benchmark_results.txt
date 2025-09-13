@@ -1,0 +1,1816 @@
+/home/hive/.nuget/packages/microsoft.build.tasks.git/1.1.1/build/Microsoft.Build.Tasks.Git.targets(25,5): warning : Could not find file '/tmp/gh-issue-solver-1757806447183/conan-center-index/.git'. The source code won't be available via Source Link. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/home/hive/.nuget/packages/microsoft.build.tasks.git/1.1.1/build/Microsoft.Build.Tasks.Git.targets(25,5): warning : Could not find file '/tmp/gh-issue-solver-1757806447183/Settings/.git'. The source code won't be available via Source Link. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(20,80): warning CS1570: XML comment has badly formed XML -- 'Missing closing quotation mark for string literal.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(20,80): warning CS1570: XML comment has badly formed XML -- 'Expected '>' or '/>' to close tag 'see'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(20,94): warning CS1570: XML comment has badly formed XML -- 'End tag 'para' does not match the start tag 'T'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(21,77): warning CS1570: XML comment has badly formed XML -- 'Missing closing quotation mark for string literal.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(21,77): warning CS1570: XML comment has badly formed XML -- 'Expected '>' or '/>' to close tag 'see'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(21,91): warning CS1570: XML comment has badly formed XML -- 'End tag 'para' does not match the start tag 'T'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(22,15): warning CS1570: XML comment has badly formed XML -- 'End tag 'param' does not match the start tag 'para'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(27,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'para'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/ICollectionExtensions.cs(27,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'param'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListEqualityComparer.cs(12,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'IEqualityComparer{IList{T}}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListEqualityComparer.cs(12,42): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/CharSegment.cs(17,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'Segment{char}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/CharSegment.cs(17,32): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/AllSegmentsWalkerBase[T].cs(14,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'AllSegmentsWalkerBase{T, Segment{T}}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/AllSegmentsWalkerBase[T].cs(14,49): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(14,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase{T, Segment{T}}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(14,70): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DuplicateSegmentsWalkerBase[T].cs(11,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'DuplicateSegmentsWalkerBase{T, Segment{T}}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DuplicateSegmentsWalkerBase[T].cs(11,55): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Stacks/IStackFactory.cs(13,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'IFactory{IStack{TElement}}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Stacks/IStackFactory.cs(13,33): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(74,224): warning CS1570: XML comment has badly formed XML -- 'End tag 'param' does not match the start tag 'para'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(79,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'param'.' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListComparer.cs(12,24): warning CS1584: XML comment has syntactically incorrect cref attribute 'IComparer{IList{T}}' [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListComparer.cs(12,34): warning CS1658: Type parameter declaration must be an identifier not a type. See also error CS0081. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/BitString.cs(1476,30): warning CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/BitString.cs(1493,21): warning CS8767: Nullability of reference types in type of parameter 'other' of 'bool BitString.Equals(BitString other)' doesn't match implicitly implemented member 'bool IEquatable<BitString>.Equals(BitString? other)' (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListComparer.cs(67,20): warning CS8767: Nullability of reference types in type of parameter 'left' of 'int IListComparer<T>.Compare(IList<T> left, IList<T> right)' doesn't match implicitly implemented member 'int IComparer<IList<T>>.Compare(IList<T>? x, IList<T>? y)' (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListComparer.cs(67,20): warning CS8767: Nullability of reference types in type of parameter 'right' of 'int IListComparer<T>.Compare(IList<T> left, IList<T> right)' doesn't match implicitly implemented member 'int IComparer<IList<T>>.Compare(IList<T>? x, IList<T>? y)' (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListEqualityComparer.cs(26,21): warning CS8767: Nullability of reference types in type of parameter 'left' of 'bool IListEqualityComparer<T>.Equals(IList<T> left, IList<T> right)' doesn't match implicitly implemented member 'bool IEqualityComparer<IList<T>>.Equals(IList<T>? x, IList<T>? y)' (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListEqualityComparer.cs(26,21): warning CS8767: Nullability of reference types in type of parameter 'right' of 'bool IListEqualityComparer<T>.Equals(IList<T> left, IList<T> right)' doesn't match implicitly implemented member 'bool IEqualityComparer<IList<T>>.Equals(IList<T>? x, IList<T>? y)' (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(97,30): warning CS8765: Nullability of type of parameter 'obj' doesn't match overridden member (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(80,29): warning CS8767: Nullability of reference types in type of parameter 'other' of 'bool Segment<T>.Equals(Segment<T> other)' doesn't match implicitly implemented member 'bool IEquatable<Segment<T>>.Equals(Segment<T>? other)' (possibly because of nullability attributes). [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/GenericArrayExtensions.cs(22,78): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/GenericArrayExtensions.cs(33,79): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(70,16): warning CS8618: Non-nullable field '_childNodes' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/GenericArrayExtensions.cs(54,27): warning CS8601: Possible null reference assignment. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/GenericArrayExtensions.cs(78,27): warning CS8601: Possible null reference assignment. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(79,30): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(121,28): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(142,62): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(159,68): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(222,69): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(239,59): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Trees/Node.cs(292,50): warning CS8600: Converting null literal or possible null value to non-nullable type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Stacks/StackExtensions.cs(35,65): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Stacks/StackExtensions.cs(56,66): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Stacks/IStackExtensions.cs(57,66): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Stacks/IStackExtensions.cs(78,67): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Sets/SetFiller.cs(63,58): warning CS8604: Possible null reference argument for parameter 'returnConstant' in 'SetFiller<TElement, TReturnConstant>.SetFiller(ISet<TElement> set, TReturnConstant returnConstant)'. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayPool[T].cs(27,37): warning CS8618: Non-nullable field '_threadInstance' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/ListFiller.cs(53,61): warning CS8604: Possible null reference argument for parameter 'returnConstant' in 'ListFiller<TElement, TReturnConstant>.ListFiller(List<TElement> list, TReturnConstant returnConstant)'. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/IDictionaryExtensions.cs(46,45): warning CS8600: Converting null literal or possible null value to non-nullable type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/IDictionaryExtensions.cs(47,20): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/IDictionaryExtensions.cs(83,50): warning CS8600: Converting null literal or possible null value to non-nullable type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(106,133): warning CS8604: Possible null reference argument for parameter 'dictionary' in 'DictionaryBasedDuplicateSegmentsWalkerBase<T, TSegment>.DictionaryBasedDuplicateSegmentsWalkerBase(IDictionary<TSegment, long> dictionary, int minimumStringSegmentLength, bool resetDictionaryOnEachWalk)'. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(85,181): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(106,146): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(106,152): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(162,202): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(179,167): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(179,173): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(237,190): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(258,155): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(258,161): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(304,211): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(321,176): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/EnsureExtensions.cs(321,182): warning CS8625: Cannot convert null literal to non-nullable reference type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Concurrent/ConcurrentStackExtensions.cs(35,92): warning CS8600: Converting null literal or possible null value to non-nullable type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Concurrent/ConcurrentStackExtensions.cs(35,75): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Concurrent/ConcurrentStackExtensions.cs(56,94): warning CS8600: Converting null literal or possible null value to non-nullable type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Concurrent/ConcurrentStackExtensions.cs(56,76): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Concurrent/ConcurrentQueueExtensions.cs(38,41): warning CS8600: Converting null literal or possible null value to non-nullable type. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListExtensions.cs(27,82): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListExtensions.cs(51,27): warning CS8601: Possible null reference assignment. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListExtensions.cs(281,24): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListExtensions.cs(347,70): warning CS8602: Dereference of a possibly null reference. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/BitString.cs(1861,46): warning CS8603: Possible null reference return. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(7,147): warning CS1723: XML comment has cref attribute 'TReturnConstant' that refers to a type parameter [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(8,161): warning CS1723: XML comment has cref attribute 'TReturnConstant' that refers to a type parameter [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(23,64): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(24,68): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(33,64): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(34,68): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(57,26): warning CS1572: XML comment has a param tag for 'element', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement, TReturnConstant].cs(63,74): warning CS1573: Parameter 'elements' has no matching param tag in the XML comment for 'ArrayFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement].cs(29,64): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement].cs(30,68): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement].cs(42,64): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayFiller[TElement].cs(43,68): warning CS1574: XML comment has cref attribute 'ArrayFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayString.cs(19,42): warning CS1574: XML comment has cref attribute 'ArrayString' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayString.cs(32,42): warning CS1574: XML comment has cref attribute 'ArrayString' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Arrays/ArrayString.cs(45,42): warning CS1574: XML comment has cref attribute 'ArrayString' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/BitStringExtensions.cs(22,26): warning CS1572: XML comment has a param tag for '@string', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/BitStringExtensions.cs(27,57): warning CS1573: Parameter 'string' has no matching param tag in the XML comment for 'BitStringExtensions.SetRandomBits(BitString)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/IListComparer.cs(19,30): warning CS1711: XML comment has a typeparam tag for 'T', but there is no type parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/ListFiller.cs(44,42): warning CS1574: XML comment has cref attribute 'ListFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/ListFiller.cs(131,26): warning CS1572: XML comment has a param tag for 'element', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Lists/ListFiller.cs(137,74): warning CS1573: Parameter 'elements' has no matching param tag in the XML comment for 'ListFiller<TElement, TReturnConstant>.AddFirstAndReturnConstant(IList<TElement>)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/CharSegment.cs(26,26): warning CS1572: XML comment has a param tag for '@base', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/CharSegment.cs(39,40): warning CS1573: Parameter 'base' has no matching param tag in the XML comment for 'CharSegment.CharSegment(IList<char>, int, int)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(48,64): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(49,68): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(63,64): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(64,69): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(116,75): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(117,73): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(120,70): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(121,62): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(130,66): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(131,76): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(134,60): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(135,68): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(138,34): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(139,36): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(148,77): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(149,71): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(151,77): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(151,133): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(172,53): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(173,50): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(176,80): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(176,138): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(178,34): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(179,30): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(185,42): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(186,46): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(190,34): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(191,30): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(197,50): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(198,50): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(200,75): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(200,133): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(202,34): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(203,30): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(209,57): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(210,54): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(213,34): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(214,30): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(220,53): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(221,54): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(223,76): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(223,143): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(225,82): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(226,89): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(232,57): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(233,48): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(235,126): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(235,242): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(247,88): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(248,78): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(250,78): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(250,148): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(253,34): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(254,30): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(260,73): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(261,89): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(264,131): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(265,125): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(277,73): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(278,89): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Segment.cs(282,125): warning CS1574: XML comment has cref attribute 'Segment' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/AllSegmentsWalkerExtensions.cs(25,26): warning CS1572: XML comment has a param tag for '@string', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/AllSegmentsWalkerExtensions.cs(30,84): warning CS1573: Parameter 'string' has no matching param tag in the XML comment for 'AllSegmentsWalkerExtensions.WalkAll(AllSegmentsWalkerBase<char>, string)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/AllSegmentsWalkerExtensions.cs(46,26): warning CS1572: XML comment has a param tag for '@string', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/AllSegmentsWalkerExtensions.cs(51,104): warning CS1573: Parameter 'string' has no matching param tag in the XML comment for 'AllSegmentsWalkerExtensions.WalkAll<TSegment>(AllSegmentsWalkerBase<char, TSegment>, string)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(37,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(63,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(80,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(93,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(110,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T, Segment].cs(123,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(19,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(40,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(57,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(70,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(87,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DictionaryBasedDuplicateSegmentsWalkerBase[T].cs(100,42): warning CS1574: XML comment has cref attribute 'DictionaryBasedDuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DuplicateSegmentsWalkerBase[T, TSegment].cs(19,42): warning CS1574: XML comment has cref attribute 'DuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Segments/Walkers/DuplicateSegmentsWalkerBase[T, TSegment].cs(32,42): warning CS1574: XML comment has cref attribute 'DuplicateSegmentsWalkerBase' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Sets/SetFiller.cs(33,42): warning CS1574: XML comment has cref attribute 'SetFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Sets/SetFiller.cs(54,42): warning CS1574: XML comment has cref attribute 'SetFiller' that could not be resolved [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/StringExtensions.cs(23,26): warning CS1572: XML comment has a param tag for '@string', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/StringExtensions.cs(32,64): warning CS1573: Parameter 'string' has no matching param tag in the XML comment for 'StringExtensions.CapitalizeFirstLetter(string)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/StringExtensions.cs(61,26): warning CS1572: XML comment has a param tag for '@string', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/StringExtensions.cs(74,51): warning CS1573: Parameter 'string' has no matching param tag in the XML comment for 'StringExtensions.Truncate(string, int)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/StringExtensions.cs(82,26): warning CS1572: XML comment has a param tag for '@string', but there is no parameter by that name [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/StringExtensions.cs(95,53): warning CS1573: Parameter 'string' has no matching param tag in the XML comment for 'StringExtensions.TrimSingle(string, char)' (but other parameters do) [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections/Platform.Collections.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/BitStringBenchmarks.cs(11,27): warning CS8618: Non-nullable field '_left' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/Platform.Collections.Benchmarks.csproj]
+/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/BitStringBenchmarks.cs(12,27): warning CS8618: Non-nullable field '_right' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/Platform.Collections.Benchmarks.csproj]
+// Validating benchmarks:
+Assembly Platform.Collections.Benchmarks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null is located in temp. If you are running benchmarks from xUnit you need to disable shadow copy. It's not supported by design.
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 96 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa
+// command took 10.22s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa
+// command took 31.2s and exited with 0
+// ***** Done, took 00:00:43 (43.41 sec)   *****
+// Found 96 benchmarks:
+//   BitStringBenchmarks.Not: DefaultJob [N=1000]
+//   BitStringBenchmarks.VectorNot: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelNot: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=1000]
+//   BitStringBenchmarks.And: DefaultJob [N=1000]
+//   BitStringBenchmarks.VectorAnd: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelAnd: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelVectorAnd: DefaultJob [N=1000]
+//   BitStringBenchmarks.Or: DefaultJob [N=1000]
+//   BitStringBenchmarks.VectorOr: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelOr: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelVectorOr: DefaultJob [N=1000]
+//   BitStringBenchmarks.Xor: DefaultJob [N=1000]
+//   BitStringBenchmarks.VectorXor: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelXor: DefaultJob [N=1000]
+//   BitStringBenchmarks.ParallelVectorXor: DefaultJob [N=1000]
+//   BitStringBenchmarks.Not: DefaultJob [N=10000]
+//   BitStringBenchmarks.VectorNot: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelNot: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=10000]
+//   BitStringBenchmarks.And: DefaultJob [N=10000]
+//   BitStringBenchmarks.VectorAnd: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelAnd: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelVectorAnd: DefaultJob [N=10000]
+//   BitStringBenchmarks.Or: DefaultJob [N=10000]
+//   BitStringBenchmarks.VectorOr: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelOr: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelVectorOr: DefaultJob [N=10000]
+//   BitStringBenchmarks.Xor: DefaultJob [N=10000]
+//   BitStringBenchmarks.VectorXor: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelXor: DefaultJob [N=10000]
+//   BitStringBenchmarks.ParallelVectorXor: DefaultJob [N=10000]
+//   BitStringBenchmarks.Not: DefaultJob [N=100000]
+//   BitStringBenchmarks.VectorNot: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelNot: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=100000]
+//   BitStringBenchmarks.And: DefaultJob [N=100000]
+//   BitStringBenchmarks.VectorAnd: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelAnd: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelVectorAnd: DefaultJob [N=100000]
+//   BitStringBenchmarks.Or: DefaultJob [N=100000]
+//   BitStringBenchmarks.VectorOr: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelOr: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelVectorOr: DefaultJob [N=100000]
+//   BitStringBenchmarks.Xor: DefaultJob [N=100000]
+//   BitStringBenchmarks.VectorXor: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelXor: DefaultJob [N=100000]
+//   BitStringBenchmarks.ParallelVectorXor: DefaultJob [N=100000]
+//   BitStringBenchmarks.Not: DefaultJob [N=1000000]
+//   BitStringBenchmarks.VectorNot: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelNot: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=1000000]
+//   BitStringBenchmarks.And: DefaultJob [N=1000000]
+//   BitStringBenchmarks.VectorAnd: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelAnd: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelVectorAnd: DefaultJob [N=1000000]
+//   BitStringBenchmarks.Or: DefaultJob [N=1000000]
+//   BitStringBenchmarks.VectorOr: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelOr: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelVectorOr: DefaultJob [N=1000000]
+//   BitStringBenchmarks.Xor: DefaultJob [N=1000000]
+//   BitStringBenchmarks.VectorXor: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelXor: DefaultJob [N=1000000]
+//   BitStringBenchmarks.ParallelVectorXor: DefaultJob [N=1000000]
+//   BitStringBenchmarks.Not: DefaultJob [N=10000000]
+//   BitStringBenchmarks.VectorNot: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelNot: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=10000000]
+//   BitStringBenchmarks.And: DefaultJob [N=10000000]
+//   BitStringBenchmarks.VectorAnd: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelAnd: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelVectorAnd: DefaultJob [N=10000000]
+//   BitStringBenchmarks.Or: DefaultJob [N=10000000]
+//   BitStringBenchmarks.VectorOr: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelOr: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelVectorOr: DefaultJob [N=10000000]
+//   BitStringBenchmarks.Xor: DefaultJob [N=10000000]
+//   BitStringBenchmarks.VectorXor: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelXor: DefaultJob [N=10000000]
+//   BitStringBenchmarks.ParallelVectorXor: DefaultJob [N=10000000]
+//   BitStringBenchmarks.Not: DefaultJob [N=100000000]
+//   BitStringBenchmarks.VectorNot: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelNot: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=100000000]
+//   BitStringBenchmarks.And: DefaultJob [N=100000000]
+//   BitStringBenchmarks.VectorAnd: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelAnd: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelVectorAnd: DefaultJob [N=100000000]
+//   BitStringBenchmarks.Or: DefaultJob [N=100000000]
+//   BitStringBenchmarks.VectorOr: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelOr: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelVectorOr: DefaultJob [N=100000000]
+//   BitStringBenchmarks.Xor: DefaultJob [N=100000000]
+//   BitStringBenchmarks.VectorXor: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelXor: DefaultJob [N=100000000]
+//   BitStringBenchmarks.ParallelVectorXor: DefaultJob [N=100000000]
+
+// **************************
+// Benchmark: BitStringBenchmarks.Not: DefaultJob [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "084c1a13-3098-44f7-8b35-9c086b2b3caa.dll" --benchmarkName "Platform.Collections.Benchmarks.BitStringBenchmarks.Not(N: 1000)" --job "Default" --benchmarkId 0 in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.19 (8.0.1925.36514), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 838067.00 ns, 838.0670 us/op
+WorkloadJitting  1: 1 op, 1737292.00 ns, 1.7373 ms/op
+
+OverheadJitting  2: 16 op, 1349225.00 ns, 84.3266 us/op
+WorkloadJitting  2: 16 op, 1032471.00 ns, 64.5294 us/op
+
+WorkloadPilot    1: 16 op, 35690.00 ns, 2.2306 us/op
+WorkloadPilot    2: 32 op, 52116.00 ns, 1.6286 us/op
+WorkloadPilot    3: 64 op, 135170.00 ns, 2.1120 us/op
+WorkloadPilot    4: 128 op, 229931.00 ns, 1.7963 us/op
+WorkloadPilot    5: 256 op, 408744.00 ns, 1.5967 us/op
+WorkloadPilot    6: 512 op, 986943.00 ns, 1.9276 us/op
+WorkloadPilot    7: 1024 op, 1794874.00 ns, 1.7528 us/op
+WorkloadPilot    8: 2048 op, 3425019.00 ns, 1.6724 us/op
+WorkloadPilot    9: 4096 op, 6064743.00 ns, 1.4807 us/op
+WorkloadPilot   10: 8192 op, 9373078.00 ns, 1.1442 us/op
+WorkloadPilot   11: 16384 op, 15698788.00 ns, 958.1780 ns/op
+WorkloadPilot   12: 32768 op, 40337515.00 ns, 1.2310 us/op
+WorkloadPilot   13: 65536 op, 75191515.00 ns, 1.1473 us/op
+WorkloadPilot   14: 131072 op, 95209024.00 ns, 726.3872 ns/op
+WorkloadPilot   15: 262144 op, 82479499.00 ns, 314.6343 ns/op
+WorkloadPilot   16: 524288 op, 141026144.00 ns, 268.9860 ns/op
+WorkloadPilot   17: 1048576 op, 405139993.00 ns, 386.3716 ns/op
+WorkloadPilot   18: 2097152 op, 1032878943.00 ns, 492.5151 ns/op
+
+OverheadWarmup   1: 2097152 op, 21946218.00 ns, 10.4648 ns/op
+OverheadWarmup   2: 2097152 op, 11314300.00 ns, 5.3951 ns/op
+OverheadWarmup   3: 2097152 op, 12894280.00 ns, 6.1485 ns/op
+OverheadWarmup   4: 2097152 op, 12992568.00 ns, 6.1953 ns/op
+OverheadWarmup   5: 2097152 op, 12176792.00 ns, 5.8063 ns/op
+OverheadWarmup   6: 2097152 op, 13370190.00 ns, 6.3754 ns/op
+OverheadWarmup   7: 2097152 op, 12500213.00 ns, 5.9606 ns/op
+
+OverheadActual   1: 2097152 op, 17024537.00 ns, 8.1179 ns/op
+OverheadActual   2: 2097152 op, 19342529.00 ns, 9.2232 ns/op
+OverheadActual   3: 2097152 op, 22508346.00 ns, 10.7328 ns/op
+OverheadActual   4: 2097152 op, 15675046.00 ns, 7.4744 ns/op
+OverheadActual   5: 2097152 op, 14395606.00 ns, 6.8644 ns/op
+OverheadActual   6: 2097152 op, 20957932.00 ns, 9.9935 ns/op
+OverheadActual   7: 2097152 op, 15768770.00 ns, 7.5191 ns/op
+OverheadActual   8: 2097152 op, 15199877.00 ns, 7.2479 ns/op
+OverheadActual   9: 2097152 op, 16993808.00 ns, 8.1033 ns/op
+OverheadActual  10: 2097152 op, 11763871.00 ns, 5.6095 ns/op
+OverheadActual  11: 2097152 op, 7858207.00 ns, 3.7471 ns/op
+OverheadActual  12: 2097152 op, 7578651.00 ns, 3.6138 ns/op
+OverheadActual  13: 2097152 op, 8061263.00 ns, 3.8439 ns/op
+OverheadActual  14: 2097152 op, 7864456.00 ns, 3.7501 ns/op
+OverheadActual  15: 2097152 op, 7539398.00 ns, 3.5951 ns/op
+OverheadActual  16: 2097152 op, 15412066.00 ns, 7.3490 ns/op
+OverheadActual  17: 2097152 op, 14591993.00 ns, 6.9580 ns/op
+OverheadActual  18: 2097152 op, 11135334.00 ns, 5.3097 ns/op
+OverheadActual  19: 2097152 op, 8570802.00 ns, 4.0869 ns/op
+OverheadActual  20: 2097152 op, 9042095.00 ns, 4.3116 ns/op
+
+WorkloadWarmup   1: 2097152 op, 506353118.00 ns, 241.4480 ns/op
+WorkloadWarmup   2: 2097152 op, 736737774.00 ns, 351.3039 ns/op
+WorkloadWarmup   3: 2097152 op, 649644039.00 ns, 309.7744 ns/op
+WorkloadWarmup   4: 2097152 op, 486865651.00 ns, 232.1556 ns/op
+WorkloadWarmup   5: 2097152 op, 505445198.00 ns, 241.0151 ns/op
+WorkloadWarmup   6: 2097152 op, 438676512.00 ns, 209.1773 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 2097152 op, 479565266.00 ns, 228.6745 ns/op
+WorkloadActual   2: 2097152 op, 480383169.00 ns, 229.0645 ns/op
+WorkloadActual   3: 2097152 op, 491945501.00 ns, 234.5779 ns/op
+WorkloadActual   4: 2097152 op, 692445126.00 ns, 330.1836 ns/op
+WorkloadActual   5: 2097152 op, 696336164.00 ns, 332.0390 ns/op
+WorkloadActual   6: 2097152 op, 422172338.00 ns, 201.3075 ns/op
+WorkloadActual   7: 2097152 op, 429467011.00 ns, 204.7858 ns/op
+WorkloadActual   8: 2097152 op, 431663156.00 ns, 205.8330 ns/op
+WorkloadActual   9: 2097152 op, 460862884.00 ns, 219.7565 ns/op
+WorkloadActual  10: 2097152 op, 449736012.00 ns, 214.4508 ns/op
+WorkloadActual  11: 2097152 op, 478590482.00 ns, 228.2097 ns/op
+WorkloadActual  12: 2097152 op, 473842733.00 ns, 225.9458 ns/op
+WorkloadActual  13: 2097152 op, 496643911.00 ns, 236.8183 ns/op
+WorkloadActual  14: 2097152 op, 444570320.00 ns, 211.9876 ns/op
+WorkloadActual  15: 2097152 op, 537145368.00 ns, 256.1309 ns/op
+WorkloadActual  16: 2097152 op, 536880614.00 ns, 256.0046 ns/op
+WorkloadActual  17: 2097152 op, 456465198.00 ns, 217.6596 ns/op
+WorkloadActual  18: 2097152 op, 439062890.00 ns, 209.3615 ns/op
+WorkloadActual  19: 2097152 op, 437769308.00 ns, 208.7447 ns/op
+WorkloadActual  20: 2097152 op, 457819863.00 ns, 218.3055 ns/op
+WorkloadActual  21: 2097152 op, 459856222.00 ns, 219.2765 ns/op
+WorkloadActual  22: 2097152 op, 419191174.00 ns, 199.8859 ns/op
+WorkloadActual  23: 2097152 op, 424966529.00 ns, 202.6398 ns/op
+WorkloadActual  24: 2097152 op, 434772138.00 ns, 207.3155 ns/op
+WorkloadActual  25: 2097152 op, 474888254.00 ns, 226.4444 ns/op
+WorkloadActual  26: 2097152 op, 454527936.00 ns, 216.7358 ns/op
+WorkloadActual  27: 2097152 op, 539815324.00 ns, 257.4040 ns/op
+WorkloadActual  28: 2097152 op, 502019518.00 ns, 239.3816 ns/op
+WorkloadActual  29: 2097152 op, 744183902.00 ns, 354.8545 ns/op
+WorkloadActual  30: 2097152 op, 482670917.00 ns, 230.1554 ns/op
+WorkloadActual  31: 2097152 op, 537291207.00 ns, 256.2004 ns/op
+WorkloadActual  32: 2097152 op, 588537946.00 ns, 280.6368 ns/op
+WorkloadActual  33: 2097152 op, 845411675.00 ns, 403.1237 ns/op
+WorkloadActual  34: 2097152 op, 761470782.00 ns, 363.0976 ns/op
+WorkloadActual  35: 2097152 op, 790370566.00 ns, 376.8781 ns/op
+WorkloadActual  36: 2097152 op, 659179084.00 ns, 314.3211 ns/op
+WorkloadActual  37: 2097152 op, 763186667.00 ns, 363.9158 ns/op
+WorkloadActual  38: 2097152 op, 829887928.00 ns, 395.7214 ns/op
+WorkloadActual  39: 2097152 op, 498470207.00 ns, 237.6891 ns/op
+WorkloadActual  40: 2097152 op, 1263843788.00 ns, 602.6477 ns/op
+WorkloadActual  41: 2097152 op, 976448916.00 ns, 465.6071 ns/op
+WorkloadActual  42: 2097152 op, 992116438.00 ns, 473.0780 ns/op
+WorkloadActual  43: 2097152 op, 520405192.00 ns, 248.1485 ns/op
+WorkloadActual  44: 2097152 op, 859806522.00 ns, 409.9877 ns/op
+WorkloadActual  45: 2097152 op, 1001796008.00 ns, 477.6936 ns/op
+WorkloadActual  46: 2097152 op, 1037984333.00 ns, 494.9495 ns/op
+WorkloadActual  47: 2097152 op, 938468855.00 ns, 447.4968 ns/op
+WorkloadActual  48: 2097152 op, 916610442.00 ns, 437.0739 ns/op
+WorkloadActual  49: 2097152 op, 1194207151.00 ns, 569.4423 ns/op
+WorkloadActual  50: 2097152 op, 1204563218.00 ns, 574.3805 ns/op
+WorkloadActual  51: 2097152 op, 1315156246.00 ns, 627.1154 ns/op
+WorkloadActual  52: 2097152 op, 1179267887.00 ns, 562.3187 ns/op
+WorkloadActual  53: 2097152 op, 981474006.00 ns, 468.0033 ns/op
+WorkloadActual  54: 2097152 op, 968545364.00 ns, 461.8384 ns/op
+WorkloadActual  55: 2097152 op, 1020873035.00 ns, 486.7902 ns/op
+WorkloadActual  56: 2097152 op, 979276522.00 ns, 466.9554 ns/op
+WorkloadActual  57: 2097152 op, 1182528331.00 ns, 563.8734 ns/op
+WorkloadActual  58: 2097152 op, 913271065.00 ns, 435.4816 ns/op
+WorkloadActual  59: 2097152 op, 1744411587.00 ns, 831.8003 ns/op
+WorkloadActual  60: 2097152 op, 488767235.00 ns, 233.0624 ns/op
+WorkloadActual  61: 2097152 op, 421047502.00 ns, 200.7711 ns/op
+WorkloadActual  62: 2097152 op, 393285412.00 ns, 187.5331 ns/op
+WorkloadActual  63: 2097152 op, 408670894.00 ns, 194.8695 ns/op
+WorkloadActual  64: 2097152 op, 506199519.00 ns, 241.3747 ns/op
+WorkloadActual  65: 2097152 op, 740193908.00 ns, 352.9520 ns/op
+WorkloadActual  66: 2097152 op, 673581922.00 ns, 321.1889 ns/op
+WorkloadActual  67: 2097152 op, 568645044.00 ns, 271.1511 ns/op
+WorkloadActual  68: 2097152 op, 502899041.00 ns, 239.8009 ns/op
+WorkloadActual  69: 2097152 op, 914189731.00 ns, 435.9196 ns/op
+WorkloadActual  70: 2097152 op, 816181802.00 ns, 389.1858 ns/op
+WorkloadActual  71: 2097152 op, 769697677.00 ns, 367.0205 ns/op
+WorkloadActual  72: 2097152 op, 470120929.00 ns, 224.1711 ns/op
+WorkloadActual  73: 2097152 op, 440491542.00 ns, 210.0427 ns/op
+WorkloadActual  74: 2097152 op, 411117757.00 ns, 196.0362 ns/op
+WorkloadActual  75: 2097152 op, 441133923.00 ns, 210.3490 ns/op
+WorkloadActual  76: 2097152 op, 433488490.00 ns, 206.7034 ns/op
+WorkloadActual  77: 2097152 op, 419453509.00 ns, 200.0110 ns/op
+WorkloadActual  78: 2097152 op, 403203181.00 ns, 192.2623 ns/op
+WorkloadActual  79: 2097152 op, 461418888.00 ns, 220.0217 ns/op
+WorkloadActual  80: 2097152 op, 648407173.00 ns, 309.1846 ns/op
+WorkloadActual  81: 2097152 op, 569561454.00 ns, 271.5881 ns/op
+WorkloadActual  82: 2097152 op, 456887479.00 ns, 217.8609 ns/op
+WorkloadActual  83: 2097152 op, 378622027.00 ns, 180.5411 ns/op
+WorkloadActual  84: 2097152 op, 399294292.00 ns, 190.3984 ns/op
+WorkloadActual  85: 2097152 op, 512321269.00 ns, 244.2938 ns/op
+WorkloadActual  86: 2097152 op, 476988741.00 ns, 227.4460 ns/op
+WorkloadActual  87: 2097152 op, 630964797.00 ns, 300.8675 ns/op
+WorkloadActual  88: 2097152 op, 505595903.00 ns, 241.0869 ns/op
+WorkloadActual  89: 2097152 op, 701489034.00 ns, 334.4960 ns/op
+WorkloadActual  90: 2097152 op, 619921756.00 ns, 295.6017 ns/op
+WorkloadActual  91: 2097152 op, 622888095.00 ns, 297.0162 ns/op
+WorkloadActual  92: 2097152 op, 687436180.00 ns, 327.7951 ns/op
+WorkloadActual  93: 2097152 op, 554379821.00 ns, 264.3489 ns/op
+WorkloadActual  94: 2097152 op, 554443303.00 ns, 264.3792 ns/op
+WorkloadActual  95: 2097152 op, 494918925.00 ns, 235.9957 ns/op
+WorkloadActual  96: 2097152 op, 434776317.00 ns, 207.3175 ns/op
+WorkloadActual  97: 2097152 op, 412383980.00 ns, 196.6400 ns/op
+WorkloadActual  98: 2097152 op, 404892104.00 ns, 193.0676 ns/op
+WorkloadActual  99: 2097152 op, 428311829.00 ns, 204.2350 ns/op
+WorkloadActual  100: 2097152 op, 397436668.00 ns, 189.5126 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 2097152 op, 465071466.50 ns, 221.7634 ns/op
+WorkloadResult   2: 2097152 op, 465889369.50 ns, 222.1534 ns/op
+WorkloadResult   3: 2097152 op, 477451701.50 ns, 227.6667 ns/op
+WorkloadResult   4: 2097152 op, 677951326.50 ns, 323.2724 ns/op
+WorkloadResult   5: 2097152 op, 681842364.50 ns, 325.1278 ns/op
+WorkloadResult   6: 2097152 op, 407678538.50 ns, 194.3963 ns/op
+WorkloadResult   7: 2097152 op, 414973211.50 ns, 197.8746 ns/op
+WorkloadResult   8: 2097152 op, 417169356.50 ns, 198.9219 ns/op
+WorkloadResult   9: 2097152 op, 446369084.50 ns, 212.8454 ns/op
+WorkloadResult  10: 2097152 op, 435242212.50 ns, 207.5397 ns/op
+WorkloadResult  11: 2097152 op, 464096682.50 ns, 221.2985 ns/op
+WorkloadResult  12: 2097152 op, 459348933.50 ns, 219.0346 ns/op
+WorkloadResult  13: 2097152 op, 482150111.50 ns, 229.9071 ns/op
+WorkloadResult  14: 2097152 op, 430076520.50 ns, 205.0765 ns/op
+WorkloadResult  15: 2097152 op, 522651568.50 ns, 249.2197 ns/op
+WorkloadResult  16: 2097152 op, 522386814.50 ns, 249.0934 ns/op
+WorkloadResult  17: 2097152 op, 441971398.50 ns, 210.7484 ns/op
+WorkloadResult  18: 2097152 op, 424569090.50 ns, 202.4503 ns/op
+WorkloadResult  19: 2097152 op, 423275508.50 ns, 201.8335 ns/op
+WorkloadResult  20: 2097152 op, 443326063.50 ns, 211.3943 ns/op
+WorkloadResult  21: 2097152 op, 445362422.50 ns, 212.3654 ns/op
+WorkloadResult  22: 2097152 op, 404697374.50 ns, 192.9747 ns/op
+WorkloadResult  23: 2097152 op, 410472729.50 ns, 195.7286 ns/op
+WorkloadResult  24: 2097152 op, 420278338.50 ns, 200.4043 ns/op
+WorkloadResult  25: 2097152 op, 460394454.50 ns, 219.5332 ns/op
+WorkloadResult  26: 2097152 op, 440034136.50 ns, 209.8246 ns/op
+WorkloadResult  27: 2097152 op, 525321524.50 ns, 250.4928 ns/op
+WorkloadResult  28: 2097152 op, 487525718.50 ns, 232.4704 ns/op
+WorkloadResult  29: 2097152 op, 729690102.50 ns, 347.9434 ns/op
+WorkloadResult  30: 2097152 op, 468177117.50 ns, 223.2442 ns/op
+WorkloadResult  31: 2097152 op, 522797407.50 ns, 249.2892 ns/op
+WorkloadResult  32: 2097152 op, 574044146.50 ns, 273.7256 ns/op
+WorkloadResult  33: 2097152 op, 830917875.50 ns, 396.2125 ns/op
+WorkloadResult  34: 2097152 op, 746976982.50 ns, 356.1864 ns/op
+WorkloadResult  35: 2097152 op, 775876766.50 ns, 369.9669 ns/op
+WorkloadResult  36: 2097152 op, 644685284.50 ns, 307.4099 ns/op
+WorkloadResult  37: 2097152 op, 748692867.50 ns, 357.0046 ns/op
+WorkloadResult  38: 2097152 op, 815394128.50 ns, 388.8102 ns/op
+WorkloadResult  39: 2097152 op, 483976407.50 ns, 230.7779 ns/op
+WorkloadResult  40: 2097152 op, 961955116.50 ns, 458.6959 ns/op
+WorkloadResult  41: 2097152 op, 977622638.50 ns, 466.1668 ns/op
+WorkloadResult  42: 2097152 op, 505911392.50 ns, 241.2374 ns/op
+WorkloadResult  43: 2097152 op, 845312722.50 ns, 403.0765 ns/op
+WorkloadResult  44: 2097152 op, 987302208.50 ns, 470.7824 ns/op
+WorkloadResult  45: 2097152 op, 1023490533.50 ns, 488.0383 ns/op
+WorkloadResult  46: 2097152 op, 923975055.50 ns, 440.5856 ns/op
+WorkloadResult  47: 2097152 op, 902116642.50 ns, 430.1627 ns/op
+WorkloadResult  48: 2097152 op, 1179713351.50 ns, 562.5312 ns/op
+WorkloadResult  49: 2097152 op, 1190069418.50 ns, 567.4693 ns/op
+WorkloadResult  50: 2097152 op, 1164774087.50 ns, 555.4076 ns/op
+WorkloadResult  51: 2097152 op, 966980206.50 ns, 461.0921 ns/op
+WorkloadResult  52: 2097152 op, 954051564.50 ns, 454.9272 ns/op
+WorkloadResult  53: 2097152 op, 1006379235.50 ns, 479.8790 ns/op
+WorkloadResult  54: 2097152 op, 964782722.50 ns, 460.0443 ns/op
+WorkloadResult  55: 2097152 op, 1168034531.50 ns, 556.9623 ns/op
+WorkloadResult  56: 2097152 op, 898777265.50 ns, 428.5704 ns/op
+WorkloadResult  57: 2097152 op, 474273435.50 ns, 226.1512 ns/op
+WorkloadResult  58: 2097152 op, 406553702.50 ns, 193.8599 ns/op
+WorkloadResult  59: 2097152 op, 378791612.50 ns, 180.6219 ns/op
+WorkloadResult  60: 2097152 op, 394177094.50 ns, 187.9583 ns/op
+WorkloadResult  61: 2097152 op, 491705719.50 ns, 234.4636 ns/op
+WorkloadResult  62: 2097152 op, 725700108.50 ns, 346.0408 ns/op
+WorkloadResult  63: 2097152 op, 659088122.50 ns, 314.2777 ns/op
+WorkloadResult  64: 2097152 op, 554151244.50 ns, 264.2399 ns/op
+WorkloadResult  65: 2097152 op, 488405241.50 ns, 232.8898 ns/op
+WorkloadResult  66: 2097152 op, 899695931.50 ns, 429.0085 ns/op
+WorkloadResult  67: 2097152 op, 801688002.50 ns, 382.2746 ns/op
+WorkloadResult  68: 2097152 op, 755203877.50 ns, 360.1093 ns/op
+WorkloadResult  69: 2097152 op, 455627129.50 ns, 217.2599 ns/op
+WorkloadResult  70: 2097152 op, 425997742.50 ns, 203.1316 ns/op
+WorkloadResult  71: 2097152 op, 396623957.50 ns, 189.1250 ns/op
+WorkloadResult  72: 2097152 op, 426640123.50 ns, 203.4379 ns/op
+WorkloadResult  73: 2097152 op, 418994690.50 ns, 199.7922 ns/op
+WorkloadResult  74: 2097152 op, 404959709.50 ns, 193.0998 ns/op
+WorkloadResult  75: 2097152 op, 388709381.50 ns, 185.3511 ns/op
+WorkloadResult  76: 2097152 op, 446925088.50 ns, 213.1105 ns/op
+WorkloadResult  77: 2097152 op, 633913373.50 ns, 302.2735 ns/op
+WorkloadResult  78: 2097152 op, 555067654.50 ns, 264.6769 ns/op
+WorkloadResult  79: 2097152 op, 442393679.50 ns, 210.9497 ns/op
+WorkloadResult  80: 2097152 op, 364128227.50 ns, 173.6299 ns/op
+WorkloadResult  81: 2097152 op, 384800492.50 ns, 183.4872 ns/op
+WorkloadResult  82: 2097152 op, 497827469.50 ns, 237.3826 ns/op
+WorkloadResult  83: 2097152 op, 462494941.50 ns, 220.5348 ns/op
+WorkloadResult  84: 2097152 op, 616470997.50 ns, 293.9563 ns/op
+WorkloadResult  85: 2097152 op, 491102103.50 ns, 234.1757 ns/op
+WorkloadResult  86: 2097152 op, 686995234.50 ns, 327.5849 ns/op
+WorkloadResult  87: 2097152 op, 605427956.50 ns, 288.6905 ns/op
+WorkloadResult  88: 2097152 op, 608394295.50 ns, 290.1050 ns/op
+WorkloadResult  89: 2097152 op, 672942380.50 ns, 320.8839 ns/op
+WorkloadResult  90: 2097152 op, 539886021.50 ns, 257.4377 ns/op
+WorkloadResult  91: 2097152 op, 539949503.50 ns, 257.4680 ns/op
+WorkloadResult  92: 2097152 op, 480425125.50 ns, 229.0846 ns/op
+WorkloadResult  93: 2097152 op, 420282517.50 ns, 200.4063 ns/op
+WorkloadResult  94: 2097152 op, 397890180.50 ns, 189.7288 ns/op
+WorkloadResult  95: 2097152 op, 390398304.50 ns, 186.1564 ns/op
+WorkloadResult  96: 2097152 op, 413818029.50 ns, 197.3238 ns/op
+WorkloadResult  97: 2097152 op, 382942868.50 ns, 182.6014 ns/op
+GC:  68 0 0 570426016 2097152
+Threading:  0 0 2097152
+
+// AfterAll
+// Benchmark Process 1092134 has exited with code 0.
+
+Mean = 285.323 ns, StdErr = 10.713 ns (3.75%), N = 97, StdDev = 105.512 ns
+Min = 173.630 ns, Q1 = 205.076 ns, Median = 234.176 ns, Q3 = 347.943 ns, Max = 567.469 ns
+IQR = 142.867 ns, LowerFence = -9.224 ns, UpperFence = 562.244 ns
+ConfidenceInterval = [248.955 ns; 321.692 ns] (CI 99.9%), Margin = 36.369 ns (12.75% of Mean)
+Skewness = 1.1, Kurtosis = 3.07, MValue = 2.29
+
+// **************************
+// Benchmark: BitStringBenchmarks.VectorNot: DefaultJob [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "084c1a13-3098-44f7-8b35-9c086b2b3caa.dll" --benchmarkName "Platform.Collections.Benchmarks.BitStringBenchmarks.VectorNot(N: 1000)" --job "Default" --benchmarkId 1 in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.19 (8.0.1925.36514), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 856703.00 ns, 856.7030 us/op
+WorkloadJitting  1: 1 op, 7237662.00 ns, 7.2377 ms/op
+
+OverheadJitting  2: 16 op, 2521049.00 ns, 157.5656 us/op
+WorkloadJitting  2: 16 op, 2464865.00 ns, 154.0541 us/op
+
+WorkloadPilot    1: 16 op, 35722.00 ns, 2.2326 us/op
+WorkloadPilot    2: 32 op, 48468.00 ns, 1.5146 us/op
+WorkloadPilot    3: 64 op, 143590.00 ns, 2.2436 us/op
+WorkloadPilot    4: 128 op, 236478.00 ns, 1.8475 us/op
+WorkloadPilot    5: 256 op, 643537.00 ns, 2.5138 us/op
+WorkloadPilot    6: 512 op, 1396853.00 ns, 2.7282 us/op
+WorkloadPilot    7: 1024 op, 2069658.00 ns, 2.0212 us/op
+WorkloadPilot    8: 2048 op, 7888483.00 ns, 3.8518 us/op
+WorkloadPilot    9: 4096 op, 12476454.00 ns, 3.0460 us/op
+WorkloadPilot   10: 8192 op, 19320169.00 ns, 2.3584 us/op
+WorkloadPilot   11: 16384 op, 46806917.00 ns, 2.8569 us/op
+WorkloadPilot   12: 32768 op, 39413011.00 ns, 1.2028 us/op
+WorkloadPilot   13: 65536 op, 51639645.00 ns, 787.9585 ns/op
+WorkloadPilot   14: 131072 op, 115452862.00 ns, 880.8354 ns/op
+WorkloadPilot   15: 262144 op, 188230483.00 ns, 718.0423 ns/op
+WorkloadPilot   16: 524288 op, 420240156.00 ns, 801.5445 ns/op
+WorkloadPilot   17: 1048576 op, 644014642.00 ns, 614.1802 ns/op
+
+OverheadWarmup   1: 1048576 op, 15845268.00 ns, 15.1112 ns/op
+OverheadWarmup   2: 1048576 op, 4547222.00 ns, 4.3366 ns/op
+OverheadWarmup   3: 1048576 op, 4524797.00 ns, 4.3152 ns/op
+OverheadWarmup   4: 1048576 op, 4235992.00 ns, 4.0398 ns/op
+OverheadWarmup   5: 1048576 op, 4234608.00 ns, 4.0384 ns/op
+OverheadWarmup   6: 1048576 op, 5051287.00 ns, 4.8173 ns/op
+OverheadWarmup   7: 1048576 op, 4672565.00 ns, 4.4561 ns/op
+OverheadWarmup   8: 1048576 op, 5038825.00 ns, 4.8054 ns/op
+OverheadWarmup   9: 1048576 op, 4805422.00 ns, 4.5828 ns/op
+
+OverheadActual   1: 1048576 op, 6815783.00 ns, 6.5000 ns/op
+OverheadActual   2: 1048576 op, 3948634.00 ns, 3.7657 ns/op
+OverheadActual   3: 1048576 op, 4399281.00 ns, 4.1955 ns/op
+OverheadActual   4: 1048576 op, 11960852.00 ns, 11.4068 ns/op
+OverheadActual   5: 1048576 op, 9612499.00 ns, 9.1672 ns/op
+OverheadActual   6: 1048576 op, 8669528.00 ns, 8.2679 ns/op
+OverheadActual   7: 1048576 op, 9829517.00 ns, 9.3742 ns/op
+OverheadActual   8: 1048576 op, 7541865.00 ns, 7.1925 ns/op
+OverheadActual   9: 1048576 op, 9150633.00 ns, 8.7267 ns/op
+OverheadActual  10: 1048576 op, 15690594.00 ns, 14.9637 ns/op
+OverheadActual  11: 1048576 op, 10216496.00 ns, 9.7432 ns/op
+OverheadActual  12: 1048576 op, 5321427.00 ns, 5.0749 ns/op
+OverheadActual  13: 1048576 op, 4642272.00 ns, 4.4272 ns/op
+OverheadActual  14: 1048576 op, 5420843.00 ns, 5.1697 ns/op
+OverheadActual  15: 1048576 op, 4763727.00 ns, 4.5430 ns/op
+OverheadActual  16: 1048576 op, 10656834.00 ns, 10.1631 ns/op
+OverheadActual  17: 1048576 op, 5624465.00 ns, 5.3639 ns/op
+OverheadActual  18: 1048576 op, 5060170.00 ns, 4.8258 ns/op
+OverheadActual  19: 1048576 op, 5111765.00 ns, 4.8750 ns/op
+OverheadActual  20: 1048576 op, 9117149.00 ns, 8.6948 ns/op
+
+WorkloadWarmup   1: 1048576 op, 267171494.00 ns, 254.7946 ns/op
+WorkloadWarmup   2: 1048576 op, 287512680.00 ns, 274.1935 ns/op
+WorkloadWarmup   3: 1048576 op, 499392224.00 ns, 476.2575 ns/op
+WorkloadWarmup   4: 1048576 op, 635687067.00 ns, 606.2384 ns/op
+WorkloadWarmup   5: 1048576 op, 508871656.00 ns, 485.2978 ns/op
+WorkloadWarmup   6: 1048576 op, 493739753.00 ns, 470.8669 ns/op
+WorkloadWarmup   7: 1048576 op, 542204454.00 ns, 517.0865 ns/op
+WorkloadWarmup   8: 1048576 op, 531597303.00 ns, 506.9707 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 1048576 op, 505959334.00 ns, 482.5204 ns/op
+WorkloadActual   2: 1048576 op, 480264685.00 ns, 458.0161 ns/op
+WorkloadActual   3: 1048576 op, 593140931.00 ns, 565.6633 ns/op
+WorkloadActual   4: 1048576 op, 664568081.00 ns, 633.7815 ns/op
+WorkloadActual   5: 1048576 op, 625796998.00 ns, 596.8065 ns/op
+WorkloadActual   6: 1048576 op, 784127172.00 ns, 747.8019 ns/op
+WorkloadActual   7: 1048576 op, 316341519.00 ns, 301.6868 ns/op
+WorkloadActual   8: 1048576 op, 221041474.00 ns, 210.8016 ns/op
+WorkloadActual   9: 1048576 op, 225723474.00 ns, 215.2667 ns/op
+WorkloadActual  10: 1048576 op, 268386908.00 ns, 255.9537 ns/op
+WorkloadActual  11: 1048576 op, 390551809.00 ns, 372.4592 ns/op
+WorkloadActual  12: 1048576 op, 207601791.00 ns, 197.9845 ns/op
+WorkloadActual  13: 1048576 op, 201810865.00 ns, 192.4618 ns/op
+WorkloadActual  14: 1048576 op, 209279048.00 ns, 199.5841 ns/op
+WorkloadActual  15: 1048576 op, 220973241.00 ns, 210.7365 ns/op
+WorkloadActual  16: 1048576 op, 214373073.00 ns, 204.4421 ns/op
+WorkloadActual  17: 1048576 op, 240478747.00 ns, 229.3384 ns/op
+WorkloadActual  18: 1048576 op, 267328057.00 ns, 254.9439 ns/op
+WorkloadActual  19: 1048576 op, 227874508.00 ns, 217.3181 ns/op
+WorkloadActual  20: 1048576 op, 230852328.00 ns, 220.1579 ns/op
+WorkloadActual  21: 1048576 op, 313611675.00 ns, 299.0834 ns/op
+WorkloadActual  22: 1048576 op, 238992912.00 ns, 227.9214 ns/op
+WorkloadActual  23: 1048576 op, 225240831.00 ns, 214.8064 ns/op
+WorkloadActual  24: 1048576 op, 225432660.00 ns, 214.9893 ns/op
+WorkloadActual  25: 1048576 op, 348956038.00 ns, 332.7904 ns/op
+WorkloadActual  26: 1048576 op, 469608615.00 ns, 447.8537 ns/op
+WorkloadActual  27: 1048576 op, 212203271.00 ns, 202.3728 ns/op
+WorkloadActual  28: 1048576 op, 209295275.00 ns, 199.5995 ns/op
+WorkloadActual  29: 1048576 op, 355536824.00 ns, 339.0663 ns/op
+WorkloadActual  30: 1048576 op, 259002226.00 ns, 247.0038 ns/op
+WorkloadActual  31: 1048576 op, 241202502.00 ns, 230.0286 ns/op
+WorkloadActual  32: 1048576 op, 289918236.00 ns, 276.4876 ns/op
+WorkloadActual  33: 1048576 op, 314468900.00 ns, 299.9009 ns/op
+WorkloadActual  34: 1048576 op, 251026992.00 ns, 239.3980 ns/op
+WorkloadActual  35: 1048576 op, 199522712.00 ns, 190.2797 ns/op
+WorkloadActual  36: 1048576 op, 222109321.00 ns, 211.8200 ns/op
+WorkloadActual  37: 1048576 op, 225476840.00 ns, 215.0315 ns/op
+WorkloadActual  38: 1048576 op, 214948927.00 ns, 204.9913 ns/op
+WorkloadActual  39: 1048576 op, 213543735.00 ns, 203.6512 ns/op
+WorkloadActual  40: 1048576 op, 251373534.00 ns, 239.7285 ns/op
+WorkloadActual  41: 1048576 op, 215175956.00 ns, 205.2078 ns/op
+WorkloadActual  42: 1048576 op, 228004582.00 ns, 217.4421 ns/op
+WorkloadActual  43: 1048576 op, 210955782.00 ns, 201.1831 ns/op
+WorkloadActual  44: 1048576 op, 204086312.00 ns, 194.6319 ns/op
+WorkloadActual  45: 1048576 op, 252260415.00 ns, 240.5743 ns/op
+WorkloadActual  46: 1048576 op, 223844100.00 ns, 213.4744 ns/op
+WorkloadActual  47: 1048576 op, 204599412.00 ns, 195.1212 ns/op
+WorkloadActual  48: 1048576 op, 224618367.00 ns, 214.2128 ns/op
+WorkloadActual  49: 1048576 op, 238856756.00 ns, 227.7916 ns/op
+WorkloadActual  50: 1048576 op, 439280800.00 ns, 418.9308 ns/op
+WorkloadActual  51: 1048576 op, 223431919.00 ns, 213.0813 ns/op
+WorkloadActual  52: 1048576 op, 215054181.00 ns, 205.0916 ns/op
+WorkloadActual  53: 1048576 op, 224822358.00 ns, 214.4073 ns/op
+WorkloadActual  54: 1048576 op, 233569354.00 ns, 222.7491 ns/op
+WorkloadActual  55: 1048576 op, 293498674.00 ns, 279.9021 ns/op
+WorkloadActual  56: 1048576 op, 254487902.00 ns, 242.6986 ns/op
+WorkloadActual  57: 1048576 op, 237827674.00 ns, 226.8101 ns/op
+WorkloadActual  58: 1048576 op, 212421335.00 ns, 202.5808 ns/op
+WorkloadActual  59: 1048576 op, 208057991.00 ns, 198.4196 ns/op
+WorkloadActual  60: 1048576 op, 228624242.00 ns, 218.0331 ns/op
+WorkloadActual  61: 1048576 op, 261766063.00 ns, 249.6396 ns/op
+WorkloadActual  62: 1048576 op, 245224467.00 ns, 233.8643 ns/op
+WorkloadActual  63: 1048576 op, 304293914.00 ns, 290.1973 ns/op
+WorkloadActual  64: 1048576 op, 319386323.00 ns, 304.5905 ns/op
+WorkloadActual  65: 1048576 op, 282475124.00 ns, 269.3893 ns/op
+WorkloadActual  66: 1048576 op, 447952158.00 ns, 427.2005 ns/op
+WorkloadActual  67: 1048576 op, 375141657.00 ns, 357.7630 ns/op
+WorkloadActual  68: 1048576 op, 345716010.00 ns, 329.7005 ns/op
+WorkloadActual  69: 1048576 op, 269756927.00 ns, 257.2603 ns/op
+WorkloadActual  70: 1048576 op, 198287412.00 ns, 189.1016 ns/op
+WorkloadActual  71: 1048576 op, 241350217.00 ns, 230.1695 ns/op
+WorkloadActual  72: 1048576 op, 212795494.00 ns, 202.9376 ns/op
+WorkloadActual  73: 1048576 op, 225911681.00 ns, 215.4462 ns/op
+WorkloadActual  74: 1048576 op, 246436662.00 ns, 235.0203 ns/op
+WorkloadActual  75: 1048576 op, 215457842.00 ns, 205.4766 ns/op
+WorkloadActual  76: 1048576 op, 244793827.00 ns, 233.4536 ns/op
+WorkloadActual  77: 1048576 op, 244454816.00 ns, 233.1303 ns/op
+WorkloadActual  78: 1048576 op, 260989219.00 ns, 248.8987 ns/op
+WorkloadActual  79: 1048576 op, 218263333.00 ns, 208.1521 ns/op
+WorkloadActual  80: 1048576 op, 200413029.00 ns, 191.1288 ns/op
+WorkloadActual  81: 1048576 op, 205024010.00 ns, 195.5261 ns/op
+WorkloadActual  82: 1048576 op, 226013920.00 ns, 215.5437 ns/op
+WorkloadActual  83: 1048576 op, 215085984.00 ns, 205.1220 ns/op
+WorkloadActual  84: 1048576 op, 367323393.00 ns, 350.3069 ns/op
+WorkloadActual  85: 1048576 op, 215753373.00 ns, 205.7585 ns/op
+WorkloadActual  86: 1048576 op, 214258314.00 ns, 204.3327 ns/op
+WorkloadActual  87: 1048576 op, 221251835.00 ns, 211.0022 ns/op
+WorkloadActual  88: 1048576 op, 254534917.00 ns, 242.7434 ns/op
+WorkloadActual  89: 1048576 op, 225542601.00 ns, 215.0942 ns/op
+WorkloadActual  90: 1048576 op, 226191174.00 ns, 215.7127 ns/op
+WorkloadActual  91: 1048576 op, 218530630.00 ns, 208.4070 ns/op
+WorkloadActual  92: 1048576 op, 225946527.00 ns, 215.4794 ns/op
+WorkloadActual  93: 1048576 op, 332279942.00 ns, 316.8868 ns/op
+WorkloadActual  94: 1048576 op, 325821526.00 ns, 310.7276 ns/op
+WorkloadActual  95: 1048576 op, 268866397.00 ns, 256.4110 ns/op
+WorkloadActual  96: 1048576 op, 361990208.00 ns, 345.2208 ns/op
+WorkloadActual  97: 1048576 op, 290507293.00 ns, 277.0493 ns/op
+WorkloadActual  98: 1048576 op, 263026380.00 ns, 250.8415 ns/op
+WorkloadActual  99: 1048576 op, 260446814.00 ns, 248.3814 ns/op
+WorkloadActual  100: 1048576 op, 274379026.00 ns, 261.6682 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 1048576 op, 309162695.00 ns, 294.8405 ns/op
+WorkloadResult   2: 1048576 op, 213862650.00 ns, 203.9553 ns/op
+WorkloadResult   3: 1048576 op, 218544650.00 ns, 208.4204 ns/op
+WorkloadResult   4: 1048576 op, 261208084.00 ns, 249.1074 ns/op
+WorkloadResult   5: 1048576 op, 383372985.00 ns, 365.6130 ns/op
+WorkloadResult   6: 1048576 op, 200422967.00 ns, 191.1382 ns/op
+WorkloadResult   7: 1048576 op, 194632041.00 ns, 185.6156 ns/op
+WorkloadResult   8: 1048576 op, 202100224.00 ns, 192.7378 ns/op
+WorkloadResult   9: 1048576 op, 213794417.00 ns, 203.8902 ns/op
+WorkloadResult  10: 1048576 op, 207194249.00 ns, 197.5958 ns/op
+WorkloadResult  11: 1048576 op, 233299923.00 ns, 222.4921 ns/op
+WorkloadResult  12: 1048576 op, 260149233.00 ns, 248.0976 ns/op
+WorkloadResult  13: 1048576 op, 220695684.00 ns, 210.4718 ns/op
+WorkloadResult  14: 1048576 op, 223673504.00 ns, 213.3117 ns/op
+WorkloadResult  15: 1048576 op, 306432851.00 ns, 292.2371 ns/op
+WorkloadResult  16: 1048576 op, 231814088.00 ns, 221.0751 ns/op
+WorkloadResult  17: 1048576 op, 218062007.00 ns, 207.9601 ns/op
+WorkloadResult  18: 1048576 op, 218253836.00 ns, 208.1431 ns/op
+WorkloadResult  19: 1048576 op, 341777214.00 ns, 325.9442 ns/op
+WorkloadResult  20: 1048576 op, 205024447.00 ns, 195.5265 ns/op
+WorkloadResult  21: 1048576 op, 202116451.00 ns, 192.7533 ns/op
+WorkloadResult  22: 1048576 op, 348358000.00 ns, 332.2201 ns/op
+WorkloadResult  23: 1048576 op, 251823402.00 ns, 240.1575 ns/op
+WorkloadResult  24: 1048576 op, 234023678.00 ns, 223.1824 ns/op
+WorkloadResult  25: 1048576 op, 282739412.00 ns, 269.6413 ns/op
+WorkloadResult  26: 1048576 op, 307290076.00 ns, 293.0547 ns/op
+WorkloadResult  27: 1048576 op, 243848168.00 ns, 232.5517 ns/op
+WorkloadResult  28: 1048576 op, 192343888.00 ns, 183.4334 ns/op
+WorkloadResult  29: 1048576 op, 214930497.00 ns, 204.9737 ns/op
+WorkloadResult  30: 1048576 op, 218298016.00 ns, 208.1852 ns/op
+WorkloadResult  31: 1048576 op, 207770103.00 ns, 198.1450 ns/op
+WorkloadResult  32: 1048576 op, 206364911.00 ns, 196.8049 ns/op
+WorkloadResult  33: 1048576 op, 244194710.00 ns, 232.8822 ns/op
+WorkloadResult  34: 1048576 op, 207997132.00 ns, 198.3615 ns/op
+WorkloadResult  35: 1048576 op, 220825758.00 ns, 210.5959 ns/op
+WorkloadResult  36: 1048576 op, 203776958.00 ns, 194.3369 ns/op
+WorkloadResult  37: 1048576 op, 196907488.00 ns, 187.7856 ns/op
+WorkloadResult  38: 1048576 op, 245081591.00 ns, 233.7280 ns/op
+WorkloadResult  39: 1048576 op, 216665276.00 ns, 206.6281 ns/op
+WorkloadResult  40: 1048576 op, 197420588.00 ns, 188.2749 ns/op
+WorkloadResult  41: 1048576 op, 217439543.00 ns, 207.3665 ns/op
+WorkloadResult  42: 1048576 op, 231677932.00 ns, 220.9453 ns/op
+WorkloadResult  43: 1048576 op, 216253095.00 ns, 206.2350 ns/op
+WorkloadResult  44: 1048576 op, 207875357.00 ns, 198.2454 ns/op
+WorkloadResult  45: 1048576 op, 217643534.00 ns, 207.5610 ns/op
+WorkloadResult  46: 1048576 op, 226390530.00 ns, 215.9028 ns/op
+WorkloadResult  47: 1048576 op, 286319850.00 ns, 273.0559 ns/op
+WorkloadResult  48: 1048576 op, 247309078.00 ns, 235.8523 ns/op
+WorkloadResult  49: 1048576 op, 230648850.00 ns, 219.9639 ns/op
+WorkloadResult  50: 1048576 op, 205242511.00 ns, 195.7345 ns/op
+WorkloadResult  51: 1048576 op, 200879167.00 ns, 191.5733 ns/op
+WorkloadResult  52: 1048576 op, 221445418.00 ns, 211.1868 ns/op
+WorkloadResult  53: 1048576 op, 254587239.00 ns, 242.7933 ns/op
+WorkloadResult  54: 1048576 op, 238045643.00 ns, 227.0180 ns/op
+WorkloadResult  55: 1048576 op, 297115090.00 ns, 283.3510 ns/op
+WorkloadResult  56: 1048576 op, 312207499.00 ns, 297.7443 ns/op
+WorkloadResult  57: 1048576 op, 275296300.00 ns, 262.5430 ns/op
+WorkloadResult  58: 1048576 op, 367962833.00 ns, 350.9167 ns/op
+WorkloadResult  59: 1048576 op, 338537186.00 ns, 322.8542 ns/op
+WorkloadResult  60: 1048576 op, 262578103.00 ns, 250.4140 ns/op
+WorkloadResult  61: 1048576 op, 191108588.00 ns, 182.2554 ns/op
+WorkloadResult  62: 1048576 op, 234171393.00 ns, 223.3232 ns/op
+WorkloadResult  63: 1048576 op, 205616670.00 ns, 196.0913 ns/op
+WorkloadResult  64: 1048576 op, 218732857.00 ns, 208.5999 ns/op
+WorkloadResult  65: 1048576 op, 239257838.00 ns, 228.1741 ns/op
+WorkloadResult  66: 1048576 op, 208279018.00 ns, 198.6304 ns/op
+WorkloadResult  67: 1048576 op, 237615003.00 ns, 226.6073 ns/op
+WorkloadResult  68: 1048576 op, 237275992.00 ns, 226.2840 ns/op
+WorkloadResult  69: 1048576 op, 253810395.00 ns, 242.0525 ns/op
+WorkloadResult  70: 1048576 op, 211084509.00 ns, 201.3059 ns/op
+WorkloadResult  71: 1048576 op, 193234205.00 ns, 184.2825 ns/op
+WorkloadResult  72: 1048576 op, 197845186.00 ns, 188.6799 ns/op
+WorkloadResult  73: 1048576 op, 218835096.00 ns, 208.6974 ns/op
+WorkloadResult  74: 1048576 op, 207907160.00 ns, 198.2757 ns/op
+WorkloadResult  75: 1048576 op, 360144569.00 ns, 343.4606 ns/op
+WorkloadResult  76: 1048576 op, 208574549.00 ns, 198.9122 ns/op
+WorkloadResult  77: 1048576 op, 207079490.00 ns, 197.4864 ns/op
+WorkloadResult  78: 1048576 op, 214073011.00 ns, 204.1559 ns/op
+WorkloadResult  79: 1048576 op, 247356093.00 ns, 235.8972 ns/op
+WorkloadResult  80: 1048576 op, 218363777.00 ns, 208.2479 ns/op
+WorkloadResult  81: 1048576 op, 219012350.00 ns, 208.8665 ns/op
+WorkloadResult  82: 1048576 op, 211351806.00 ns, 201.5608 ns/op
+WorkloadResult  83: 1048576 op, 218767703.00 ns, 208.6331 ns/op
+WorkloadResult  84: 1048576 op, 325101118.00 ns, 310.0406 ns/op
+WorkloadResult  85: 1048576 op, 318642702.00 ns, 303.8814 ns/op
+WorkloadResult  86: 1048576 op, 261687573.00 ns, 249.5647 ns/op
+WorkloadResult  87: 1048576 op, 354811384.00 ns, 338.3745 ns/op
+WorkloadResult  88: 1048576 op, 283328469.00 ns, 270.2031 ns/op
+WorkloadResult  89: 1048576 op, 255847556.00 ns, 243.9952 ns/op
+WorkloadResult  90: 1048576 op, 253267990.00 ns, 241.5352 ns/op
+WorkloadResult  91: 1048576 op, 267200202.00 ns, 254.8220 ns/op
+GC:  34 0 0 285213344 1048576
+Threading:  0 0 1048576
+
+// AfterAll
+// Benchmark Process 1092678 has exited with code 0.
+
+Mean = 230.989 ns, StdErr = 4.587 ns (1.99%), N = 91, StdDev = 43.759 ns
+Min = 182.255 ns, Q1 = 198.771 ns, Median = 211.187 ns, Q3 = 246.046 ns, Max = 365.613 ns
+IQR = 47.275 ns, LowerFence = 127.859 ns, UpperFence = 316.959 ns
+ConfidenceInterval = [215.384 ns; 246.595 ns] (CI 99.9%), Margin = 15.605 ns (6.76% of Mean)
+Skewness = 1.32, Kurtosis = 3.89, MValue = 2.97
+
+// **************************
+// Benchmark: BitStringBenchmarks.ParallelNot: DefaultJob [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "084c1a13-3098-44f7-8b35-9c086b2b3caa.dll" --benchmarkName "Platform.Collections.Benchmarks.BitStringBenchmarks.ParallelNot(N: 1000)" --job "Default" --benchmarkId 2 in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.19 (8.0.1925.36514), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 1343725.00 ns, 1.3437 ms/op
+WorkloadJitting  1: 1 op, 3167438.00 ns, 3.1674 ms/op
+
+OverheadJitting  2: 16 op, 1304538.00 ns, 81.5336 us/op
+WorkloadJitting  2: 16 op, 1000254.00 ns, 62.5159 us/op
+
+WorkloadPilot    1: 16 op, 33557.00 ns, 2.0973 us/op
+WorkloadPilot    2: 32 op, 69900.00 ns, 2.1844 us/op
+WorkloadPilot    3: 64 op, 131062.00 ns, 2.0478 us/op
+WorkloadPilot    4: 128 op, 201296.00 ns, 1.5726 us/op
+WorkloadPilot    5: 256 op, 331491.00 ns, 1.2949 us/op
+WorkloadPilot    6: 512 op, 754150.00 ns, 1.4729 us/op
+WorkloadPilot    7: 1024 op, 1017696.00 ns, 993.8438 ns/op
+WorkloadPilot    8: 2048 op, 2322892.00 ns, 1.1342 us/op
+WorkloadPilot    9: 4096 op, 5071644.00 ns, 1.2382 us/op
+WorkloadPilot   10: 8192 op, 16457388.00 ns, 2.0090 us/op
+WorkloadPilot   11: 16384 op, 14984303.00 ns, 914.5693 ns/op
+WorkloadPilot   12: 32768 op, 30068896.00 ns, 917.6299 ns/op
+WorkloadPilot   13: 65536 op, 50240208.00 ns, 766.6047 ns/op
+WorkloadPilot   14: 131072 op, 98337313.00 ns, 750.2542 ns/op
+WorkloadPilot   15: 262144 op, 135588499.00 ns, 517.2291 ns/op
+WorkloadPilot   16: 524288 op, 252376490.00 ns, 481.3700 ns/op
+WorkloadPilot   17: 1048576 op, 518114889.00 ns, 494.1129 ns/op
+
+OverheadWarmup   1: 1048576 op, 17378671.00 ns, 16.5736 ns/op
+OverheadWarmup   2: 1048576 op, 4118488.00 ns, 3.9277 ns/op
+OverheadWarmup   3: 1048576 op, 5812829.00 ns, 5.5435 ns/op
+OverheadWarmup   4: 1048576 op, 6952426.00 ns, 6.6304 ns/op
+OverheadWarmup   5: 1048576 op, 12550870.00 ns, 11.9694 ns/op
+OverheadWarmup   6: 1048576 op, 10382743.00 ns, 9.9018 ns/op
+OverheadWarmup   7: 1048576 op, 8239982.00 ns, 7.8583 ns/op
+OverheadWarmup   8: 1048576 op, 10375006.00 ns, 9.8944 ns/op
+OverheadWarmup   9: 1048576 op, 12318805.00 ns, 11.7481 ns/op
+OverheadWarmup  10: 1048576 op, 13379585.00 ns, 12.7598 ns/op
+
+OverheadActual   1: 1048576 op, 13304566.00 ns, 12.6882 ns/op
+OverheadActual   2: 1048576 op, 11429463.00 ns, 10.9000 ns/op
+OverheadActual   3: 1048576 op, 8250900.00 ns, 7.8687 ns/op
+OverheadActual   4: 1048576 op, 8213329.00 ns, 7.8328 ns/op
+OverheadActual   5: 1048576 op, 10070494.00 ns, 9.6040 ns/op
+OverheadActual   6: 1048576 op, 10688544.00 ns, 10.1934 ns/op
+OverheadActual   7: 1048576 op, 7875821.00 ns, 7.5110 ns/op
+OverheadActual   8: 1048576 op, 9572182.00 ns, 9.1287 ns/op
+OverheadActual   9: 1048576 op, 11898034.00 ns, 11.3468 ns/op
+OverheadActual  10: 1048576 op, 8192440.00 ns, 7.8129 ns/op
+OverheadActual  11: 1048576 op, 4038092.00 ns, 3.8510 ns/op
+OverheadActual  12: 1048576 op, 4080682.00 ns, 3.8916 ns/op
+OverheadActual  13: 1048576 op, 5051461.00 ns, 4.8174 ns/op
+OverheadActual  14: 1048576 op, 5427119.00 ns, 5.1757 ns/op
+OverheadActual  15: 1048576 op, 6246033.00 ns, 5.9567 ns/op
+OverheadActual  16: 1048576 op, 4915804.00 ns, 4.6881 ns/op
+OverheadActual  17: 1048576 op, 4847190.00 ns, 4.6226 ns/op
+OverheadActual  18: 1048576 op, 6264581.00 ns, 5.9744 ns/op
+OverheadActual  19: 1048576 op, 4764934.00 ns, 4.5442 ns/op
+OverheadActual  20: 1048576 op, 4703937.00 ns, 4.4860 ns/op
+
+WorkloadWarmup   1: 1048576 op, 497110087.00 ns, 474.0811 ns/op
+WorkloadWarmup   2: 1048576 op, 534460599.00 ns, 509.7013 ns/op
+WorkloadWarmup   3: 1048576 op, 463465651.00 ns, 441.9953 ns/op
+WorkloadWarmup   4: 1048576 op, 264338499.00 ns, 252.0928 ns/op
+WorkloadWarmup   5: 1048576 op, 199396601.00 ns, 190.1594 ns/op
+WorkloadWarmup   6: 1048576 op, 191657814.00 ns, 182.7791 ns/op
+WorkloadWarmup   7: 1048576 op, 237163192.00 ns, 226.1764 ns/op
+WorkloadWarmup   8: 1048576 op, 224550547.00 ns, 214.1481 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 1048576 op, 498327393.00 ns, 475.2420 ns/op
+WorkloadActual   2: 1048576 op, 243500321.00 ns, 232.2200 ns/op
+WorkloadActual   3: 1048576 op, 196804744.00 ns, 187.6876 ns/op
+WorkloadActual   4: 1048576 op, 221818201.00 ns, 211.5423 ns/op
+WorkloadActual   5: 1048576 op, 381358577.00 ns, 363.6919 ns/op
+WorkloadActual   6: 1048576 op, 192572560.00 ns, 183.6515 ns/op
+WorkloadActual   7: 1048576 op, 233828176.00 ns, 222.9959 ns/op
+WorkloadActual   8: 1048576 op, 195432872.00 ns, 186.3793 ns/op
+WorkloadActual   9: 1048576 op, 173062992.00 ns, 165.0457 ns/op
+WorkloadActual  10: 1048576 op, 243870980.00 ns, 232.5735 ns/op
+WorkloadActual  11: 1048576 op, 194288210.00 ns, 185.2877 ns/op
+WorkloadActual  12: 1048576 op, 222460603.00 ns, 212.1550 ns/op
+WorkloadActual  13: 1048576 op, 180561586.00 ns, 172.1969 ns/op
+WorkloadActual  14: 1048576 op, 197444389.00 ns, 188.2976 ns/op
+WorkloadActual  15: 1048576 op, 196234681.00 ns, 187.1440 ns/op
+WorkloadActual  16: 1048576 op, 194939164.00 ns, 185.9085 ns/op
+WorkloadActual  17: 1048576 op, 303388137.00 ns, 289.3335 ns/op
+WorkloadActual  18: 1048576 op, 179956958.00 ns, 171.6203 ns/op
+WorkloadActual  19: 1048576 op, 188410481.00 ns, 179.6822 ns/op
+WorkloadActual  20: 1048576 op, 201648518.00 ns, 192.3070 ns/op
+WorkloadActual  21: 1048576 op, 193486300.00 ns, 184.5229 ns/op
+WorkloadActual  22: 1048576 op, 200575015.00 ns, 191.2832 ns/op
+WorkloadActual  23: 1048576 op, 194987205.00 ns, 185.9543 ns/op
+WorkloadActual  24: 1048576 op, 205990454.00 ns, 196.4478 ns/op
+WorkloadActual  25: 1048576 op, 233662590.00 ns, 222.8380 ns/op
+WorkloadActual  26: 1048576 op, 356904481.00 ns, 340.3706 ns/op
+WorkloadActual  27: 1048576 op, 247940442.00 ns, 236.4544 ns/op
+WorkloadActual  28: 1048576 op, 219680485.00 ns, 209.5036 ns/op
+WorkloadActual  29: 1048576 op, 176899430.00 ns, 168.7044 ns/op
+WorkloadActual  30: 1048576 op, 218032861.00 ns, 207.9323 ns/op
+WorkloadActual  31: 1048576 op, 204592258.00 ns, 195.1144 ns/op
+WorkloadActual  32: 1048576 op, 241155827.00 ns, 229.9841 ns/op
+WorkloadActual  33: 1048576 op, 331550612.00 ns, 316.1913 ns/op
+WorkloadActual  34: 1048576 op, 252755913.00 ns, 241.0468 ns/op
+WorkloadActual  35: 1048576 op, 238227344.00 ns, 227.1913 ns/op
+WorkloadActual  36: 1048576 op, 214130782.00 ns, 204.2110 ns/op
+WorkloadActual  37: 1048576 op, 187861848.00 ns, 179.1590 ns/op
+WorkloadActual  38: 1048576 op, 181821306.00 ns, 173.3983 ns/op
+WorkloadActual  39: 1048576 op, 202906623.00 ns, 193.5068 ns/op
+WorkloadActual  40: 1048576 op, 217990125.00 ns, 207.8916 ns/op
+WorkloadActual  41: 1048576 op, 212331790.00 ns, 202.4954 ns/op
+WorkloadActual  42: 1048576 op, 194870392.00 ns, 185.8429 ns/op
+WorkloadActual  43: 1048576 op, 239534540.00 ns, 228.4379 ns/op
+WorkloadActual  44: 1048576 op, 212129167.00 ns, 202.3021 ns/op
+WorkloadActual  45: 1048576 op, 204529808.00 ns, 195.0548 ns/op
+WorkloadActual  46: 1048576 op, 338458878.00 ns, 322.7795 ns/op
+WorkloadActual  47: 1048576 op, 209402109.00 ns, 199.7014 ns/op
+WorkloadActual  48: 1048576 op, 210225582.00 ns, 200.4867 ns/op
+WorkloadActual  49: 1048576 op, 260957802.00 ns, 248.8688 ns/op
+WorkloadActual  50: 1048576 op, 230784238.00 ns, 220.0930 ns/op
+WorkloadActual  51: 1048576 op, 236766466.00 ns, 225.7981 ns/op
+WorkloadActual  52: 1048576 op, 209097960.00 ns, 199.4114 ns/op
+WorkloadActual  53: 1048576 op, 208153358.00 ns, 198.5105 ns/op
+WorkloadActual  54: 1048576 op, 186810297.00 ns, 178.1562 ns/op
+WorkloadActual  55: 1048576 op, 231270844.00 ns, 220.5571 ns/op
+WorkloadActual  56: 1048576 op, 261052446.00 ns, 248.9590 ns/op
+WorkloadActual  57: 1048576 op, 245521988.00 ns, 234.1480 ns/op
+WorkloadActual  58: 1048576 op, 195968821.00 ns, 186.8904 ns/op
+WorkloadActual  59: 1048576 op, 217661710.00 ns, 207.5784 ns/op
+WorkloadActual  60: 1048576 op, 205481603.00 ns, 195.9625 ns/op
+WorkloadActual  61: 1048576 op, 458951504.00 ns, 437.6903 ns/op
+WorkloadActual  62: 1048576 op, 205940801.00 ns, 196.4005 ns/op
+WorkloadActual  63: 1048576 op, 197954168.00 ns, 188.7838 ns/op
+WorkloadActual  64: 1048576 op, 197608267.00 ns, 188.4539 ns/op
+WorkloadActual  65: 1048576 op, 218583318.00 ns, 208.4573 ns/op
+WorkloadActual  66: 1048576 op, 200349484.00 ns, 191.0682 ns/op
+WorkloadActual  67: 1048576 op, 197339808.00 ns, 188.1979 ns/op
+WorkloadActual  68: 1048576 op, 177313976.00 ns, 169.0998 ns/op
+WorkloadActual  69: 1048576 op, 192206216.00 ns, 183.3021 ns/op
+WorkloadActual  70: 1048576 op, 192627653.00 ns, 183.7040 ns/op
+WorkloadActual  71: 1048576 op, 189236295.00 ns, 180.4698 ns/op
+WorkloadActual  72: 1048576 op, 195844439.00 ns, 186.7718 ns/op
+WorkloadActual  73: 1048576 op, 190197264.00 ns, 181.3862 ns/op
+WorkloadActual  74: 1048576 op, 183155879.00 ns, 174.6711 ns/op
+WorkloadActual  75: 1048576 op, 273990124.00 ns, 261.2973 ns/op
+WorkloadActual  76: 1048576 op, 240817336.00 ns, 229.6613 ns/op
+WorkloadActual  77: 1048576 op, 417561203.00 ns, 398.2174 ns/op
+WorkloadActual  78: 1048576 op, 192564193.00 ns, 183.6435 ns/op
+WorkloadActual  79: 1048576 op, 194708775.00 ns, 185.6888 ns/op
+WorkloadActual  80: 1048576 op, 200650347.00 ns, 191.3551 ns/op
+WorkloadActual  81: 1048576 op, 202231549.00 ns, 192.8630 ns/op
+WorkloadActual  82: 1048576 op, 179492786.00 ns, 171.1777 ns/op
+WorkloadActual  83: 1048576 op, 189758447.00 ns, 180.9678 ns/op
+WorkloadActual  84: 1048576 op, 186787237.00 ns, 178.1342 ns/op
+WorkloadActual  85: 1048576 op, 182374097.00 ns, 173.9255 ns/op
+WorkloadActual  86: 1048576 op, 183595707.00 ns, 175.0905 ns/op
+WorkloadActual  87: 1048576 op, 222800343.00 ns, 212.4790 ns/op
+WorkloadActual  88: 1048576 op, 252520232.00 ns, 240.8221 ns/op
+WorkloadActual  89: 1048576 op, 201780252.00 ns, 192.4326 ns/op
+WorkloadActual  90: 1048576 op, 208501222.00 ns, 198.8423 ns/op
+WorkloadActual  91: 1048576 op, 198095280.00 ns, 188.9184 ns/op
+WorkloadActual  92: 1048576 op, 199974322.00 ns, 190.7104 ns/op
+WorkloadActual  93: 1048576 op, 199724567.00 ns, 190.4722 ns/op
+WorkloadActual  94: 1048576 op, 665393039.00 ns, 634.5683 ns/op
+WorkloadActual  95: 1048576 op, 198797856.00 ns, 189.5884 ns/op
+WorkloadActual  96: 1048576 op, 178012711.00 ns, 169.7662 ns/op
+WorkloadActual  97: 1048576 op, 189977555.00 ns, 181.1767 ns/op
+WorkloadActual  98: 1048576 op, 236591401.00 ns, 225.6311 ns/op
+WorkloadActual  99: 1048576 op, 223381959.00 ns, 213.0336 ns/op
+WorkloadActual  100: 1048576 op, 232459552.00 ns, 221.6907 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 1048576 op, 236430120.00 ns, 225.4773 ns/op
+WorkloadResult   2: 1048576 op, 189734543.00 ns, 180.9450 ns/op
+WorkloadResult   3: 1048576 op, 214748000.00 ns, 204.7997 ns/op
+WorkloadResult   4: 1048576 op, 185502359.00 ns, 176.9088 ns/op
+WorkloadResult   5: 1048576 op, 226757975.00 ns, 216.2533 ns/op
+WorkloadResult   6: 1048576 op, 188362671.00 ns, 179.6366 ns/op
+WorkloadResult   7: 1048576 op, 165992791.00 ns, 158.3031 ns/op
+WorkloadResult   8: 1048576 op, 236800779.00 ns, 225.8308 ns/op
+WorkloadResult   9: 1048576 op, 187218009.00 ns, 178.5450 ns/op
+WorkloadResult  10: 1048576 op, 215390402.00 ns, 205.4123 ns/op
+WorkloadResult  11: 1048576 op, 173491385.00 ns, 165.4543 ns/op
+WorkloadResult  12: 1048576 op, 190374188.00 ns, 181.5550 ns/op
+WorkloadResult  13: 1048576 op, 189164480.00 ns, 180.4013 ns/op
+WorkloadResult  14: 1048576 op, 187868963.00 ns, 179.1658 ns/op
+WorkloadResult  15: 1048576 op, 172886757.00 ns, 164.8777 ns/op
+WorkloadResult  16: 1048576 op, 181340280.00 ns, 172.9396 ns/op
+WorkloadResult  17: 1048576 op, 194578317.00 ns, 185.5643 ns/op
+WorkloadResult  18: 1048576 op, 186416099.00 ns, 177.7802 ns/op
+WorkloadResult  19: 1048576 op, 193504814.00 ns, 184.5406 ns/op
+WorkloadResult  20: 1048576 op, 187917004.00 ns, 179.2116 ns/op
+WorkloadResult  21: 1048576 op, 198920253.00 ns, 189.7051 ns/op
+WorkloadResult  22: 1048576 op, 226592389.00 ns, 216.0953 ns/op
+WorkloadResult  23: 1048576 op, 240870241.00 ns, 229.7118 ns/op
+WorkloadResult  24: 1048576 op, 212610284.00 ns, 202.7610 ns/op
+WorkloadResult  25: 1048576 op, 169829229.00 ns, 161.9618 ns/op
+WorkloadResult  26: 1048576 op, 210962660.00 ns, 201.1897 ns/op
+WorkloadResult  27: 1048576 op, 197522057.00 ns, 188.3717 ns/op
+WorkloadResult  28: 1048576 op, 234085626.00 ns, 223.2414 ns/op
+WorkloadResult  29: 1048576 op, 245685712.00 ns, 234.3042 ns/op
+WorkloadResult  30: 1048576 op, 231157143.00 ns, 220.4486 ns/op
+WorkloadResult  31: 1048576 op, 207060581.00 ns, 197.4684 ns/op
+WorkloadResult  32: 1048576 op, 180791647.00 ns, 172.4164 ns/op
+WorkloadResult  33: 1048576 op, 174751105.00 ns, 166.6556 ns/op
+WorkloadResult  34: 1048576 op, 195836422.00 ns, 186.7642 ns/op
+WorkloadResult  35: 1048576 op, 210919924.00 ns, 201.1489 ns/op
+WorkloadResult  36: 1048576 op, 205261589.00 ns, 195.7527 ns/op
+WorkloadResult  37: 1048576 op, 187800191.00 ns, 179.1002 ns/op
+WorkloadResult  38: 1048576 op, 232464339.00 ns, 221.6953 ns/op
+WorkloadResult  39: 1048576 op, 205058966.00 ns, 195.5595 ns/op
+WorkloadResult  40: 1048576 op, 197459607.00 ns, 188.3122 ns/op
+WorkloadResult  41: 1048576 op, 202331908.00 ns, 192.9587 ns/op
+WorkloadResult  42: 1048576 op, 203155381.00 ns, 193.7441 ns/op
+WorkloadResult  43: 1048576 op, 253887601.00 ns, 242.1261 ns/op
+WorkloadResult  44: 1048576 op, 223714037.00 ns, 213.3503 ns/op
+WorkloadResult  45: 1048576 op, 229696265.00 ns, 219.0554 ns/op
+WorkloadResult  46: 1048576 op, 202027759.00 ns, 192.6687 ns/op
+WorkloadResult  47: 1048576 op, 201083157.00 ns, 191.7678 ns/op
+WorkloadResult  48: 1048576 op, 179740096.00 ns, 171.4135 ns/op
+WorkloadResult  49: 1048576 op, 224200643.00 ns, 213.8144 ns/op
+WorkloadResult  50: 1048576 op, 253982245.00 ns, 242.2163 ns/op
+WorkloadResult  51: 1048576 op, 238451787.00 ns, 227.4053 ns/op
+WorkloadResult  52: 1048576 op, 188898620.00 ns, 180.1478 ns/op
+WorkloadResult  53: 1048576 op, 210591509.00 ns, 200.8357 ns/op
+WorkloadResult  54: 1048576 op, 198411402.00 ns, 189.2199 ns/op
+WorkloadResult  55: 1048576 op, 198870600.00 ns, 189.6578 ns/op
+WorkloadResult  56: 1048576 op, 190883967.00 ns, 182.0411 ns/op
+WorkloadResult  57: 1048576 op, 190538066.00 ns, 181.7113 ns/op
+WorkloadResult  58: 1048576 op, 211513117.00 ns, 201.7146 ns/op
+WorkloadResult  59: 1048576 op, 193279283.00 ns, 184.3255 ns/op
+WorkloadResult  60: 1048576 op, 190269607.00 ns, 181.4552 ns/op
+WorkloadResult  61: 1048576 op, 170243775.00 ns, 162.3571 ns/op
+WorkloadResult  62: 1048576 op, 185136015.00 ns, 176.5595 ns/op
+WorkloadResult  63: 1048576 op, 185557452.00 ns, 176.9614 ns/op
+WorkloadResult  64: 1048576 op, 182166094.00 ns, 173.7271 ns/op
+WorkloadResult  65: 1048576 op, 188774238.00 ns, 180.0291 ns/op
+WorkloadResult  66: 1048576 op, 183127063.00 ns, 174.6436 ns/op
+WorkloadResult  67: 1048576 op, 176085678.00 ns, 167.9284 ns/op
+WorkloadResult  68: 1048576 op, 266919923.00 ns, 254.5547 ns/op
+WorkloadResult  69: 1048576 op, 233747135.00 ns, 222.9186 ns/op
+WorkloadResult  70: 1048576 op, 185493992.00 ns, 176.9009 ns/op
+WorkloadResult  71: 1048576 op, 187638574.00 ns, 178.9461 ns/op
+WorkloadResult  72: 1048576 op, 193580146.00 ns, 184.6124 ns/op
+WorkloadResult  73: 1048576 op, 195161348.00 ns, 186.1204 ns/op
+WorkloadResult  74: 1048576 op, 172422585.00 ns, 164.4350 ns/op
+WorkloadResult  75: 1048576 op, 182688246.00 ns, 174.2251 ns/op
+WorkloadResult  76: 1048576 op, 179717036.00 ns, 171.3915 ns/op
+WorkloadResult  77: 1048576 op, 175303896.00 ns, 167.1828 ns/op
+WorkloadResult  78: 1048576 op, 176525506.00 ns, 168.3478 ns/op
+WorkloadResult  79: 1048576 op, 215730142.00 ns, 205.7363 ns/op
+WorkloadResult  80: 1048576 op, 245450031.00 ns, 234.0794 ns/op
+WorkloadResult  81: 1048576 op, 194710051.00 ns, 185.6900 ns/op
+WorkloadResult  82: 1048576 op, 201431021.00 ns, 192.0996 ns/op
+WorkloadResult  83: 1048576 op, 191025079.00 ns, 182.1757 ns/op
+WorkloadResult  84: 1048576 op, 192904121.00 ns, 183.9677 ns/op
+WorkloadResult  85: 1048576 op, 192654366.00 ns, 183.7295 ns/op
+WorkloadResult  86: 1048576 op, 191727655.00 ns, 182.8457 ns/op
+WorkloadResult  87: 1048576 op, 170942510.00 ns, 163.0235 ns/op
+WorkloadResult  88: 1048576 op, 182907354.00 ns, 174.4340 ns/op
+WorkloadResult  89: 1048576 op, 229521200.00 ns, 218.8885 ns/op
+WorkloadResult  90: 1048576 op, 216311758.00 ns, 206.2910 ns/op
+WorkloadResult  91: 1048576 op, 225389351.00 ns, 214.9480 ns/op
+GC:  34 0 0 285213344 1048576
+Threading:  0 0 1048576
+
+// AfterAll
+// Benchmark Process 1092941 has exited with code 0.
+
+Mean = 192.062 ns, StdErr = 2.248 ns (1.17%), N = 91, StdDev = 21.441 ns
+Min = 158.303 ns, Q1 = 177.371 ns, Median = 185.564 ns, Q3 = 205.106 ns, Max = 254.555 ns
+IQR = 27.735 ns, LowerFence = 135.768 ns, UpperFence = 246.709 ns
+ConfidenceInterval = [184.416 ns; 199.708 ns] (CI 99.9%), Margin = 7.646 ns (3.98% of Mean)
+Skewness = 0.78, Kurtosis = 2.83, MValue = 2.31
+
+// **************************
+// Benchmark: BitStringBenchmarks.ParallelVectorNot: DefaultJob [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "084c1a13-3098-44f7-8b35-9c086b2b3caa.dll" --benchmarkName "Platform.Collections.Benchmarks.BitStringBenchmarks.ParallelVectorNot(N: 1000)" --job "Default" --benchmarkId 3 in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.19 (8.0.1925.36514), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 869449.00 ns, 869.4490 us/op
+WorkloadJitting  1: 1 op, 5518495.00 ns, 5.5185 ms/op
+
+OverheadJitting  2: 16 op, 1530076.00 ns, 95.6298 us/op
+WorkloadJitting  2: 16 op, 1146678.00 ns, 71.6674 us/op
+
+WorkloadPilot    1: 16 op, 37016.00 ns, 2.3135 us/op
+WorkloadPilot    2: 32 op, 97948.00 ns, 3.0609 us/op
+WorkloadPilot    3: 64 op, 193617.00 ns, 3.0253 us/op
+WorkloadPilot    4: 128 op, 199379.00 ns, 1.5576 us/op
+WorkloadPilot    5: 256 op, 355404.00 ns, 1.3883 us/op
+WorkloadPilot    6: 512 op, 785745.00 ns, 1.5347 us/op
+WorkloadPilot    7: 1024 op, 1223128.00 ns, 1.1945 us/op
+WorkloadPilot    8: 2048 op, 2606742.00 ns, 1.2728 us/op
+WorkloadPilot    9: 4096 op, 5865547.00 ns, 1.4320 us/op
+WorkloadPilot   10: 8192 op, 8393728.00 ns, 1.0246 us/op
+WorkloadPilot   11: 16384 op, 19335344.00 ns, 1.1801 us/op
+WorkloadPilot   12: 32768 op, 45336938.00 ns, 1.3836 us/op
+WorkloadPilot   13: 65536 op, 68400574.00 ns, 1.0437 us/op
+WorkloadPilot   14: 131072 op, 116195054.00 ns, 886.4979 ns/op
+WorkloadPilot   15: 262144 op, 159787008.00 ns, 609.5391 ns/op
+WorkloadPilot   16: 524288 op, 346295447.00 ns, 660.5061 ns/op
+WorkloadPilot   17: 1048576 op, 678366119.00 ns, 646.9403 ns/op
+
+OverheadWarmup   1: 1048576 op, 25380077.00 ns, 24.2043 ns/op
+OverheadWarmup   2: 1048576 op, 5376222.00 ns, 5.1272 ns/op
+OverheadWarmup   3: 1048576 op, 3875204.00 ns, 3.6957 ns/op
+OverheadWarmup   4: 1048576 op, 3835552.00 ns, 3.6579 ns/op
+OverheadWarmup   5: 1048576 op, 3731339.00 ns, 3.5585 ns/op
+OverheadWarmup   6: 1048576 op, 3747063.00 ns, 3.5735 ns/op
+OverheadWarmup   7: 1048576 op, 4395255.00 ns, 4.1916 ns/op
+OverheadWarmup   8: 1048576 op, 4488517.00 ns, 4.2806 ns/op
+OverheadWarmup   9: 1048576 op, 4607675.00 ns, 4.3942 ns/op
+OverheadWarmup  10: 1048576 op, 4534779.00 ns, 4.3247 ns/op
+
+OverheadActual   1: 1048576 op, 4663659.00 ns, 4.4476 ns/op
+OverheadActual   2: 1048576 op, 7883874.00 ns, 7.5186 ns/op
+OverheadActual   3: 1048576 op, 6093456.00 ns, 5.8112 ns/op
+OverheadActual   4: 1048576 op, 4892468.00 ns, 4.6658 ns/op
+OverheadActual   5: 1048576 op, 4755057.00 ns, 4.5348 ns/op
+OverheadActual   6: 1048576 op, 5085427.00 ns, 4.8498 ns/op
+OverheadActual   7: 1048576 op, 4184932.00 ns, 3.9911 ns/op
+OverheadActual   8: 1048576 op, 4355940.00 ns, 4.1541 ns/op
+OverheadActual   9: 1048576 op, 3964664.00 ns, 3.7810 ns/op
+OverheadActual  10: 1048576 op, 4627732.00 ns, 4.4133 ns/op
+OverheadActual  11: 1048576 op, 7399724.00 ns, 7.0569 ns/op
+OverheadActual  12: 1048576 op, 5143629.00 ns, 4.9053 ns/op
+OverheadActual  13: 1048576 op, 4441525.00 ns, 4.2358 ns/op
+OverheadActual  14: 1048576 op, 4743331.00 ns, 4.5236 ns/op
+OverheadActual  15: 1048576 op, 4122716.00 ns, 3.9317 ns/op
+OverheadActual  16: 1048576 op, 11805349.00 ns, 11.2585 ns/op
+OverheadActual  17: 1048576 op, 9503329.00 ns, 9.0631 ns/op
+OverheadActual  18: 1048576 op, 15754663.00 ns, 15.0248 ns/op
+OverheadActual  19: 1048576 op, 9735067.00 ns, 9.2841 ns/op
+OverheadActual  20: 1048576 op, 9762736.00 ns, 9.3105 ns/op
+
+WorkloadWarmup   1: 1048576 op, 441467536.00 ns, 421.0163 ns/op
+WorkloadWarmup   2: 1048576 op, 285995988.00 ns, 272.7470 ns/op
+WorkloadWarmup   3: 1048576 op, 239900528.00 ns, 228.7870 ns/op
+WorkloadWarmup   4: 1048576 op, 225618838.00 ns, 215.1669 ns/op
+WorkloadWarmup   5: 1048576 op, 295698921.00 ns, 282.0005 ns/op
+WorkloadWarmup   6: 1048576 op, 261560515.00 ns, 249.4435 ns/op
+WorkloadWarmup   7: 1048576 op, 238666232.00 ns, 227.6099 ns/op
+WorkloadWarmup   8: 1048576 op, 244727356.00 ns, 233.3902 ns/op
+WorkloadWarmup   9: 1048576 op, 260588027.00 ns, 248.5161 ns/op
+WorkloadWarmup  10: 1048576 op, 303918325.00 ns, 289.8391 ns/op
+WorkloadWarmup  11: 1048576 op, 269349239.00 ns, 256.8715 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 1048576 op, 246917316.00 ns, 235.4787 ns/op
+WorkloadActual   2: 1048576 op, 252737204.00 ns, 241.0290 ns/op
+WorkloadActual   3: 1048576 op, 230598095.00 ns, 219.9155 ns/op
+WorkloadActual   4: 1048576 op, 382106979.00 ns, 364.4056 ns/op
+WorkloadActual   5: 1048576 op, 564392920.00 ns, 538.2470 ns/op
+WorkloadActual   6: 1048576 op, 342053117.00 ns, 326.2073 ns/op
+WorkloadActual   7: 1048576 op, 262074108.00 ns, 249.9333 ns/op
+WorkloadActual   8: 1048576 op, 265590639.00 ns, 253.2870 ns/op
+WorkloadActual   9: 1048576 op, 280377948.00 ns, 267.3892 ns/op
+WorkloadActual  10: 1048576 op, 419317285.00 ns, 399.8921 ns/op
+WorkloadActual  11: 1048576 op, 368027343.00 ns, 350.9782 ns/op
+WorkloadActual  12: 1048576 op, 347066767.00 ns, 330.9887 ns/op
+WorkloadActual  13: 1048576 op, 363618528.00 ns, 346.7737 ns/op
+WorkloadActual  14: 1048576 op, 265552520.00 ns, 253.2506 ns/op
+WorkloadActual  15: 1048576 op, 261824680.00 ns, 249.6955 ns/op
+WorkloadActual  16: 1048576 op, 523238438.00 ns, 498.9991 ns/op
+WorkloadActual  17: 1048576 op, 281291372.00 ns, 268.2604 ns/op
+WorkloadActual  18: 1048576 op, 424361297.00 ns, 404.7025 ns/op
+WorkloadActual  19: 1048576 op, 250569084.00 ns, 238.9613 ns/op
+WorkloadActual  20: 1048576 op, 266293372.00 ns, 253.9571 ns/op
+WorkloadActual  21: 1048576 op, 242957649.00 ns, 231.7025 ns/op
+WorkloadActual  22: 1048576 op, 328830302.00 ns, 313.5970 ns/op
+WorkloadActual  23: 1048576 op, 266817954.00 ns, 254.4574 ns/op
+WorkloadActual  24: 1048576 op, 248589613.00 ns, 237.0735 ns/op
+WorkloadActual  25: 1048576 op, 251228935.00 ns, 239.5906 ns/op
+WorkloadActual  26: 1048576 op, 255129535.00 ns, 243.3105 ns/op
+WorkloadActual  27: 1048576 op, 295885084.00 ns, 282.1780 ns/op
+WorkloadActual  28: 1048576 op, 418905406.00 ns, 399.4993 ns/op
+WorkloadActual  29: 1048576 op, 232375351.00 ns, 221.6104 ns/op
+WorkloadActual  30: 1048576 op, 406992964.00 ns, 388.1387 ns/op
+WorkloadActual  31: 1048576 op, 235772688.00 ns, 224.8504 ns/op
+WorkloadActual  32: 1048576 op, 232810379.00 ns, 222.0253 ns/op
+WorkloadActual  33: 1048576 op, 293046389.00 ns, 279.4708 ns/op
+WorkloadActual  34: 1048576 op, 225251104.00 ns, 214.8162 ns/op
+WorkloadActual  35: 1048576 op, 385830229.00 ns, 367.9564 ns/op
+WorkloadActual  36: 1048576 op, 288655345.00 ns, 275.2832 ns/op
+WorkloadActual  37: 1048576 op, 268697823.00 ns, 256.2502 ns/op
+WorkloadActual  38: 1048576 op, 266155043.00 ns, 253.8252 ns/op
+WorkloadActual  39: 1048576 op, 240886134.00 ns, 229.7269 ns/op
+WorkloadActual  40: 1048576 op, 233455919.00 ns, 222.6409 ns/op
+WorkloadActual  41: 1048576 op, 253132204.00 ns, 241.4057 ns/op
+WorkloadActual  42: 1048576 op, 234508050.00 ns, 223.6443 ns/op
+WorkloadActual  43: 1048576 op, 281397587.00 ns, 268.3617 ns/op
+WorkloadActual  44: 1048576 op, 257610419.00 ns, 245.6764 ns/op
+WorkloadActual  45: 1048576 op, 278226589.00 ns, 265.3376 ns/op
+WorkloadActual  46: 1048576 op, 775192138.00 ns, 739.2808 ns/op
+WorkloadActual  47: 1048576 op, 341142696.00 ns, 325.3390 ns/op
+WorkloadActual  48: 1048576 op, 289039355.00 ns, 275.6494 ns/op
+WorkloadActual  49: 1048576 op, 265981778.00 ns, 253.6600 ns/op
+WorkloadActual  50: 1048576 op, 243511041.00 ns, 232.2302 ns/op
+WorkloadActual  51: 1048576 op, 251434883.00 ns, 239.7870 ns/op
+WorkloadActual  52: 1048576 op, 264421894.00 ns, 252.1724 ns/op
+WorkloadActual  53: 1048576 op, 234482370.00 ns, 223.6198 ns/op
+WorkloadActual  54: 1048576 op, 264264764.00 ns, 252.0225 ns/op
+WorkloadActual  55: 1048576 op, 302785779.00 ns, 288.7590 ns/op
+WorkloadActual  56: 1048576 op, 540413042.00 ns, 515.3780 ns/op
+WorkloadActual  57: 1048576 op, 301568178.00 ns, 287.5978 ns/op
+WorkloadActual  58: 1048576 op, 299445425.00 ns, 285.5734 ns/op
+WorkloadActual  59: 1048576 op, 270494720.00 ns, 257.9639 ns/op
+WorkloadActual  60: 1048576 op, 253960229.00 ns, 242.1953 ns/op
+WorkloadActual  61: 1048576 op, 267298139.00 ns, 254.9154 ns/op
+WorkloadActual  62: 1048576 op, 310591013.00 ns, 296.2027 ns/op
+WorkloadActual  63: 1048576 op, 473223369.00 ns, 451.3010 ns/op
+WorkloadActual  64: 1048576 op, 248633525.00 ns, 237.1154 ns/op
+WorkloadActual  65: 1048576 op, 245364708.00 ns, 233.9980 ns/op
+WorkloadActual  66: 1048576 op, 249342314.00 ns, 237.7914 ns/op
+WorkloadActual  67: 1048576 op, 238913674.00 ns, 227.8458 ns/op
+WorkloadActual  68: 1048576 op, 252688991.00 ns, 240.9830 ns/op
+WorkloadActual  69: 1048576 op, 257675025.00 ns, 245.7381 ns/op
+WorkloadActual  70: 1048576 op, 292624343.00 ns, 279.0683 ns/op
+WorkloadActual  71: 1048576 op, 257766888.00 ns, 245.8257 ns/op
+WorkloadActual  72: 1048576 op, 259041860.00 ns, 247.0416 ns/op
+WorkloadActual  73: 1048576 op, 258945229.00 ns, 246.9494 ns/op
+WorkloadActual  74: 1048576 op, 277475558.00 ns, 264.6213 ns/op
+WorkloadActual  75: 1048576 op, 282999337.00 ns, 269.8892 ns/op
+WorkloadActual  76: 1048576 op, 262725101.00 ns, 250.5542 ns/op
+WorkloadActual  77: 1048576 op, 257461100.00 ns, 245.5340 ns/op
+WorkloadActual  78: 1048576 op, 269612969.00 ns, 257.1230 ns/op
+WorkloadActual  79: 1048576 op, 310493565.00 ns, 296.1097 ns/op
+WorkloadActual  80: 1048576 op, 258474167.00 ns, 246.5002 ns/op
+WorkloadActual  81: 1048576 op, 260267314.00 ns, 248.2103 ns/op
+WorkloadActual  82: 1048576 op, 267328125.00 ns, 254.9440 ns/op
+WorkloadActual  83: 1048576 op, 279367566.00 ns, 266.4257 ns/op
+WorkloadActual  84: 1048576 op, 269167326.00 ns, 256.6980 ns/op
+WorkloadActual  85: 1048576 op, 274815543.00 ns, 262.0845 ns/op
+WorkloadActual  86: 1048576 op, 269083068.00 ns, 256.6176 ns/op
+WorkloadActual  87: 1048576 op, 272827961.00 ns, 260.1890 ns/op
+WorkloadActual  88: 1048576 op, 297666326.00 ns, 283.8767 ns/op
+WorkloadActual  89: 1048576 op, 278539273.00 ns, 265.6358 ns/op
+WorkloadActual  90: 1048576 op, 273102455.00 ns, 260.4508 ns/op
+WorkloadActual  91: 1048576 op, 271996983.00 ns, 259.3965 ns/op
+WorkloadActual  92: 1048576 op, 269741040.00 ns, 257.2451 ns/op
+WorkloadActual  93: 1048576 op, 271683242.00 ns, 259.0973 ns/op
+WorkloadActual  94: 1048576 op, 263750677.00 ns, 251.5322 ns/op
+WorkloadActual  95: 1048576 op, 297117025.00 ns, 283.3529 ns/op
+WorkloadActual  96: 1048576 op, 292125321.00 ns, 278.5924 ns/op
+WorkloadActual  97: 1048576 op, 297580013.00 ns, 283.7944 ns/op
+WorkloadActual  98: 1048576 op, 264519250.00 ns, 252.2652 ns/op
+WorkloadActual  99: 1048576 op, 288817806.00 ns, 275.4381 ns/op
+WorkloadActual  100: 1048576 op, 248669064.00 ns, 237.1493 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 1048576 op, 241928368.50 ns, 230.7209 ns/op
+WorkloadResult   2: 1048576 op, 247748256.50 ns, 236.2711 ns/op
+WorkloadResult   3: 1048576 op, 225609147.50 ns, 215.1576 ns/op
+WorkloadResult   4: 1048576 op, 337064169.50 ns, 321.4494 ns/op
+WorkloadResult   5: 1048576 op, 257085160.50 ns, 245.1755 ns/op
+WorkloadResult   6: 1048576 op, 260601691.50 ns, 248.5291 ns/op
+WorkloadResult   7: 1048576 op, 275389000.50 ns, 262.6314 ns/op
+WorkloadResult   8: 1048576 op, 342077819.50 ns, 326.2308 ns/op
+WorkloadResult   9: 1048576 op, 260563572.50 ns, 248.4928 ns/op
+WorkloadResult  10: 1048576 op, 256835732.50 ns, 244.9376 ns/op
+WorkloadResult  11: 1048576 op, 276302424.50 ns, 263.5025 ns/op
+WorkloadResult  12: 1048576 op, 245580136.50 ns, 234.2035 ns/op
+WorkloadResult  13: 1048576 op, 261304424.50 ns, 249.1993 ns/op
+WorkloadResult  14: 1048576 op, 237968701.50 ns, 226.9446 ns/op
+WorkloadResult  15: 1048576 op, 323841354.50 ns, 308.8392 ns/op
+WorkloadResult  16: 1048576 op, 261829006.50 ns, 249.6996 ns/op
+WorkloadResult  17: 1048576 op, 243600665.50 ns, 232.3157 ns/op
+WorkloadResult  18: 1048576 op, 246239987.50 ns, 234.8328 ns/op
+WorkloadResult  19: 1048576 op, 250140587.50 ns, 238.5527 ns/op
+WorkloadResult  20: 1048576 op, 290896136.50 ns, 277.4202 ns/op
+WorkloadResult  21: 1048576 op, 227386403.50 ns, 216.8526 ns/op
+WorkloadResult  22: 1048576 op, 230783740.50 ns, 220.0925 ns/op
+WorkloadResult  23: 1048576 op, 227821431.50 ns, 217.2674 ns/op
+WorkloadResult  24: 1048576 op, 288057441.50 ns, 274.7130 ns/op
+WorkloadResult  25: 1048576 op, 220262156.50 ns, 210.0584 ns/op
+WorkloadResult  26: 1048576 op, 283666397.50 ns, 270.5254 ns/op
+WorkloadResult  27: 1048576 op, 263708875.50 ns, 251.4924 ns/op
+WorkloadResult  28: 1048576 op, 261166095.50 ns, 249.0674 ns/op
+WorkloadResult  29: 1048576 op, 235897186.50 ns, 224.9691 ns/op
+WorkloadResult  30: 1048576 op, 228466971.50 ns, 217.8831 ns/op
+WorkloadResult  31: 1048576 op, 248143256.50 ns, 236.6479 ns/op
+WorkloadResult  32: 1048576 op, 229519102.50 ns, 218.8865 ns/op
+WorkloadResult  33: 1048576 op, 276408639.50 ns, 263.6038 ns/op
+WorkloadResult  34: 1048576 op, 252621471.50 ns, 240.9186 ns/op
+WorkloadResult  35: 1048576 op, 273237641.50 ns, 260.5797 ns/op
+WorkloadResult  36: 1048576 op, 336153748.50 ns, 320.5812 ns/op
+WorkloadResult  37: 1048576 op, 284050407.50 ns, 270.8916 ns/op
+WorkloadResult  38: 1048576 op, 260992830.50 ns, 248.9022 ns/op
+WorkloadResult  39: 1048576 op, 238522093.50 ns, 227.4724 ns/op
+WorkloadResult  40: 1048576 op, 246445935.50 ns, 235.0292 ns/op
+WorkloadResult  41: 1048576 op, 259432946.50 ns, 247.4145 ns/op
+WorkloadResult  42: 1048576 op, 229493422.50 ns, 218.8620 ns/op
+WorkloadResult  43: 1048576 op, 259275816.50 ns, 247.2647 ns/op
+WorkloadResult  44: 1048576 op, 297796831.50 ns, 284.0012 ns/op
+WorkloadResult  45: 1048576 op, 296579230.50 ns, 282.8400 ns/op
+WorkloadResult  46: 1048576 op, 294456477.50 ns, 280.8156 ns/op
+WorkloadResult  47: 1048576 op, 265505772.50 ns, 253.2060 ns/op
+WorkloadResult  48: 1048576 op, 248971281.50 ns, 237.4375 ns/op
+WorkloadResult  49: 1048576 op, 262309191.50 ns, 250.1575 ns/op
+WorkloadResult  50: 1048576 op, 305602065.50 ns, 291.4448 ns/op
+WorkloadResult  51: 1048576 op, 243644577.50 ns, 232.3576 ns/op
+WorkloadResult  52: 1048576 op, 240375760.50 ns, 229.2402 ns/op
+WorkloadResult  53: 1048576 op, 244353366.50 ns, 233.0335 ns/op
+WorkloadResult  54: 1048576 op, 233924726.50 ns, 223.0880 ns/op
+WorkloadResult  55: 1048576 op, 247700043.50 ns, 236.2252 ns/op
+WorkloadResult  56: 1048576 op, 252686077.50 ns, 240.9802 ns/op
+WorkloadResult  57: 1048576 op, 287635395.50 ns, 274.3105 ns/op
+WorkloadResult  58: 1048576 op, 252777940.50 ns, 241.0678 ns/op
+WorkloadResult  59: 1048576 op, 254052912.50 ns, 242.2837 ns/op
+WorkloadResult  60: 1048576 op, 253956281.50 ns, 242.1916 ns/op
+WorkloadResult  61: 1048576 op, 272486610.50 ns, 259.8635 ns/op
+WorkloadResult  62: 1048576 op, 278010389.50 ns, 265.1314 ns/op
+WorkloadResult  63: 1048576 op, 257736153.50 ns, 245.7964 ns/op
+WorkloadResult  64: 1048576 op, 252472152.50 ns, 240.7762 ns/op
+WorkloadResult  65: 1048576 op, 264624021.50 ns, 252.3651 ns/op
+WorkloadResult  66: 1048576 op, 305504617.50 ns, 291.3519 ns/op
+WorkloadResult  67: 1048576 op, 253485219.50 ns, 241.7423 ns/op
+WorkloadResult  68: 1048576 op, 255278366.50 ns, 243.4524 ns/op
+WorkloadResult  69: 1048576 op, 262339177.50 ns, 250.1861 ns/op
+WorkloadResult  70: 1048576 op, 274378618.50 ns, 261.6678 ns/op
+WorkloadResult  71: 1048576 op, 264178378.50 ns, 251.9401 ns/op
+WorkloadResult  72: 1048576 op, 269826595.50 ns, 257.3267 ns/op
+WorkloadResult  73: 1048576 op, 264094120.50 ns, 251.8598 ns/op
+WorkloadResult  74: 1048576 op, 267839013.50 ns, 255.4312 ns/op
+WorkloadResult  75: 1048576 op, 292677378.50 ns, 279.1189 ns/op
+WorkloadResult  76: 1048576 op, 273550325.50 ns, 260.8779 ns/op
+WorkloadResult  77: 1048576 op, 268113507.50 ns, 255.6930 ns/op
+WorkloadResult  78: 1048576 op, 267008035.50 ns, 254.6387 ns/op
+WorkloadResult  79: 1048576 op, 264752092.50 ns, 252.4873 ns/op
+WorkloadResult  80: 1048576 op, 266694294.50 ns, 254.3395 ns/op
+WorkloadResult  81: 1048576 op, 258761729.50 ns, 246.7744 ns/op
+WorkloadResult  82: 1048576 op, 292128077.50 ns, 278.5950 ns/op
+WorkloadResult  83: 1048576 op, 287136373.50 ns, 273.8346 ns/op
+WorkloadResult  84: 1048576 op, 292591065.50 ns, 279.0366 ns/op
+WorkloadResult  85: 1048576 op, 259530302.50 ns, 247.5074 ns/op
+WorkloadResult  86: 1048576 op, 283828858.50 ns, 270.6803 ns/op
+WorkloadResult  87: 1048576 op, 243680116.50 ns, 232.3915 ns/op
+GC:  38 0 0 318767776 1048576
+Threading:  0 0 1048576
+
+// AfterAll
+// Benchmark Process 1093059 has exited with code 0.
+
+Mean = 251.892 ns, StdErr = 2.555 ns (1.01%), N = 87, StdDev = 23.834 ns
+Min = 210.058 ns, Q1 = 236.248 ns, Median = 248.902 ns, Q3 = 263.067 ns, Max = 326.231 ns
+IQR = 26.819 ns, LowerFence = 196.020 ns, UpperFence = 303.295 ns
+ConfidenceInterval = [243.186 ns; 260.599 ns] (CI 99.9%), Margin = 8.707 ns (3.46% of Mean)
+Skewness = 0.92, Kurtosis = 4.05, MValue = 2.74
+
+// **************************
+// Benchmark: BitStringBenchmarks.And: DefaultJob [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "084c1a13-3098-44f7-8b35-9c086b2b3caa.dll" --benchmarkName "Platform.Collections.Benchmarks.BitStringBenchmarks.And(N: 1000)" --job "Default" --benchmarkId 4 in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.19 (8.0.1925.36514), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 793158.00 ns, 793.1580 us/op
+WorkloadJitting  1: 1 op, 2644522.00 ns, 2.6445 ms/op
+
+OverheadJitting  2: 16 op, 1546165.00 ns, 96.6353 us/op
+WorkloadJitting  2: 16 op, 1337440.00 ns, 83.5900 us/op
+
+WorkloadPilot    1: 16 op, 52473.00 ns, 3.2796 us/op
+WorkloadPilot    2: 32 op, 51098.00 ns, 1.5968 us/op
+WorkloadPilot    3: 64 op, 161080.00 ns, 2.5169 us/op
+WorkloadPilot    4: 128 op, 159633.00 ns, 1.2471 us/op
+WorkloadPilot    5: 256 op, 406167.00 ns, 1.5866 us/op
+WorkloadPilot    6: 512 op, 747557.00 ns, 1.4601 us/op
+WorkloadPilot    7: 1024 op, 1586851.00 ns, 1.5497 us/op
+WorkloadPilot    8: 2048 op, 2935173.00 ns, 1.4332 us/op
+WorkloadPilot    9: 4096 op, 4865381.00 ns, 1.1878 us/op
+WorkloadPilot   10: 8192 op, 9420913.00 ns, 1.1500 us/op
+WorkloadPilot   11: 16384 op, 19033152.00 ns, 1.1617 us/op
+WorkloadPilot   12: 32768 op, 31432951.00 ns, 959.2575 ns/op
+WorkloadPilot   13: 65536 op, 56659255.00 ns, 864.5516 ns/op
+WorkloadPilot   14: 131072 op, 112888239.00 ns, 861.2689 ns/op
+WorkloadPilot   15: 262144 op, 274827101.00 ns, 1.0484 us/op
+WorkloadPilot   16: 524288 op, 574956292.00 ns, 1.0966 us/op
+
+OverheadWarmup   1: 524288 op, 9798821.00 ns, 18.6898 ns/op
+OverheadWarmup   2: 524288 op, 3185660.00 ns, 6.0762 ns/op
+OverheadWarmup   3: 524288 op, 2735339.00 ns, 5.2172 ns/op
+OverheadWarmup   4: 524288 op, 2671911.00 ns, 5.0963 ns/op
+OverheadWarmup   5: 524288 op, 2641122.00 ns, 5.0375 ns/op
+OverheadWarmup   6: 524288 op, 3217050.00 ns, 6.1360 ns/op
+OverheadWarmup   7: 524288 op, 2681630.00 ns, 5.1148 ns/op
+OverheadWarmup   8: 524288 op, 2408820.00 ns, 4.5945 ns/op
+OverheadWarmup   9: 524288 op, 4613496.00 ns, 8.7995 ns/op
+OverheadWarmup  10: 524288 op, 6309678.00 ns, 12.0348 ns/op
+
+OverheadActual   1: 524288 op, 2884545.00 ns, 5.5018 ns/op
+OverheadActual   2: 524288 op, 2868514.00 ns, 5.4713 ns/op
+OverheadActual   3: 524288 op, 2857785.00 ns, 5.4508 ns/op
+OverheadActual   4: 524288 op, 2505853.00 ns, 4.7795 ns/op
+OverheadActual   5: 524288 op, 3019715.00 ns, 5.7596 ns/op
+OverheadActual   6: 524288 op, 2670028.00 ns, 5.0927 ns/op
+OverheadActual   7: 524288 op, 2495038.00 ns, 4.7589 ns/op
+OverheadActual   8: 524288 op, 2888061.00 ns, 5.5085 ns/op
+OverheadActual   9: 524288 op, 3327297.00 ns, 6.3463 ns/op
+OverheadActual  10: 524288 op, 3020580.00 ns, 5.7613 ns/op
+OverheadActual  11: 524288 op, 2510828.00 ns, 4.7890 ns/op
+OverheadActual  12: 524288 op, 2373998.00 ns, 4.5280 ns/op
+OverheadActual  13: 524288 op, 2755553.00 ns, 5.2558 ns/op
+OverheadActual  14: 524288 op, 2649009.00 ns, 5.0526 ns/op
+OverheadActual  15: 524288 op, 2767519.00 ns, 5.2786 ns/op
+OverheadActual  16: 524288 op, 2816010.00 ns, 5.3711 ns/op
+OverheadActual  17: 524288 op, 2446119.00 ns, 4.6656 ns/op
+OverheadActual  18: 524288 op, 2384683.00 ns, 4.5484 ns/op
+OverheadActual  19: 524288 op, 2559745.00 ns, 4.8823 ns/op
+OverheadActual  20: 524288 op, 2547946.00 ns, 4.8598 ns/op
+
+WorkloadWarmup   1: 524288 op, 235607452.00 ns, 449.3856 ns/op
+WorkloadWarmup   2: 524288 op, 225259597.00 ns, 429.6486 ns/op
+WorkloadWarmup   3: 524288 op, 267525315.00 ns, 510.2640 ns/op
+WorkloadWarmup   4: 524288 op, 231728891.00 ns, 441.9878 ns/op
+WorkloadWarmup   5: 524288 op, 203411761.00 ns, 387.9771 ns/op
+WorkloadWarmup   6: 524288 op, 211454650.00 ns, 403.3177 ns/op
+WorkloadWarmup   7: 524288 op, 245745349.00 ns, 468.7221 ns/op
+WorkloadWarmup   8: 524288 op, 217205514.00 ns, 414.2866 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 524288 op, 196038689.00 ns, 373.9141 ns/op
+WorkloadActual   2: 524288 op, 161359014.00 ns, 307.7679 ns/op
+WorkloadActual   3: 524288 op, 159252076.00 ns, 303.7492 ns/op
+WorkloadActual   4: 524288 op, 256119543.00 ns, 488.5093 ns/op
+WorkloadActual   5: 524288 op, 140726631.00 ns, 268.4147 ns/op
+WorkloadActual   6: 524288 op, 147588295.00 ns, 281.5023 ns/op
+WorkloadActual   7: 524288 op, 149057159.00 ns, 284.3040 ns/op
+WorkloadActual   8: 524288 op, 145542529.00 ns, 277.6003 ns/op
+WorkloadActual   9: 524288 op, 171265957.00 ns, 326.6639 ns/op
+WorkloadActual  10: 524288 op, 306824986.00 ns, 585.2222 ns/op
+WorkloadActual  11: 524288 op, 306690407.00 ns, 584.9655 ns/op
+WorkloadActual  12: 524288 op, 279662210.00 ns, 533.4133 ns/op
+WorkloadActual  13: 524288 op, 430891515.00 ns, 821.8603 ns/op
+WorkloadActual  14: 524288 op, 361345679.00 ns, 689.2122 ns/op
+WorkloadActual  15: 524288 op, 399461335.00 ns, 761.9120 ns/op
+WorkloadActual  16: 524288 op, 366728990.00 ns, 699.4800 ns/op
+WorkloadActual  17: 524288 op, 403558791.00 ns, 769.7273 ns/op
+WorkloadActual  18: 524288 op, 338300557.00 ns, 645.2571 ns/op
+WorkloadActual  19: 524288 op, 278476231.00 ns, 531.1513 ns/op
+WorkloadActual  20: 524288 op, 378446185.00 ns, 721.8288 ns/op
+WorkloadActual  21: 524288 op, 468793080.00 ns, 894.1518 ns/op
+WorkloadActual  22: 524288 op, 371722317.00 ns, 709.0041 ns/op
+WorkloadActual  23: 524288 op, 331700003.00 ns, 632.6675 ns/op
+WorkloadActual  24: 524288 op, 323413750.00 ns, 616.8628 ns/op
+WorkloadActual  25: 524288 op, 305849737.00 ns, 583.3621 ns/op
+WorkloadActual  26: 524288 op, 262521006.00 ns, 500.7191 ns/op
+WorkloadActual  27: 524288 op, 283670006.00 ns, 541.0576 ns/op
+WorkloadActual  28: 524288 op, 291316020.00 ns, 555.6412 ns/op
+WorkloadActual  29: 524288 op, 283233295.00 ns, 540.2246 ns/op
+WorkloadActual  30: 524288 op, 402325505.00 ns, 767.3750 ns/op
+WorkloadActual  31: 524288 op, 317486883.00 ns, 605.5582 ns/op
+WorkloadActual  32: 524288 op, 268148347.00 ns, 511.4524 ns/op
+WorkloadActual  33: 524288 op, 273351842.00 ns, 521.3773 ns/op
+WorkloadActual  34: 524288 op, 283557501.00 ns, 540.8430 ns/op
+WorkloadActual  35: 524288 op, 290542605.00 ns, 554.1660 ns/op
+WorkloadActual  36: 524288 op, 297065797.00 ns, 566.6080 ns/op
+WorkloadActual  37: 524288 op, 305223175.00 ns, 582.1670 ns/op
+WorkloadActual  38: 524288 op, 323080544.00 ns, 616.2272 ns/op
+WorkloadActual  39: 524288 op, 362809279.00 ns, 692.0038 ns/op
+WorkloadActual  40: 524288 op, 258682914.00 ns, 493.3985 ns/op
+WorkloadActual  41: 524288 op, 288453728.00 ns, 550.1818 ns/op
+WorkloadActual  42: 524288 op, 266366043.00 ns, 508.0529 ns/op
+WorkloadActual  43: 524288 op, 280334933.00 ns, 534.6965 ns/op
+WorkloadActual  44: 524288 op, 280129851.00 ns, 534.3053 ns/op
+WorkloadActual  45: 524288 op, 319278046.00 ns, 608.9745 ns/op
+WorkloadActual  46: 524288 op, 511261547.00 ns, 975.1540 ns/op
+WorkloadActual  47: 524288 op, 300731998.00 ns, 573.6008 ns/op
+WorkloadActual  48: 524288 op, 307575019.00 ns, 586.6528 ns/op
+WorkloadActual  49: 524288 op, 480419018.00 ns, 916.3266 ns/op
+WorkloadActual  50: 524288 op, 283317930.00 ns, 540.3861 ns/op
+WorkloadActual  51: 524288 op, 325042073.00 ns, 619.9686 ns/op
+WorkloadActual  52: 524288 op, 273558940.00 ns, 521.7723 ns/op
+WorkloadActual  53: 524288 op, 280222590.00 ns, 534.4822 ns/op
+WorkloadActual  54: 524288 op, 356597114.00 ns, 680.1550 ns/op
+WorkloadActual  55: 524288 op, 453995714.00 ns, 865.9281 ns/op
+WorkloadActual  56: 524288 op, 453376057.00 ns, 864.7462 ns/op
+WorkloadActual  57: 524288 op, 481575289.00 ns, 918.5320 ns/op
+WorkloadActual  58: 524288 op, 617782469.00 ns, 1.1783 us/op
+WorkloadActual  59: 524288 op, 637728996.00 ns, 1.2164 us/op
+WorkloadActual  60: 524288 op, 662905293.00 ns, 1.2644 us/op
+WorkloadActual  61: 524288 op, 644078134.00 ns, 1.2285 us/op
+WorkloadActual  62: 524288 op, 611910542.00 ns, 1.1671 us/op
+WorkloadActual  63: 524288 op, 634089366.00 ns, 1.2094 us/op
+WorkloadActual  64: 524288 op, 639103248.00 ns, 1.2190 us/op
+WorkloadActual  65: 524288 op, 499773934.00 ns, 953.2431 ns/op
+WorkloadActual  66: 524288 op, 570179623.00 ns, 1.0875 us/op
+WorkloadActual  67: 524288 op, 547626503.00 ns, 1.0445 us/op
+WorkloadActual  68: 524288 op, 461320839.00 ns, 879.8997 ns/op
+WorkloadActual  69: 524288 op, 421609696.00 ns, 804.1567 ns/op
+WorkloadActual  70: 524288 op, 435811972.00 ns, 831.2454 ns/op
+WorkloadActual  71: 524288 op, 489579423.00 ns, 933.7986 ns/op
+WorkloadActual  72: 524288 op, 603903441.00 ns, 1.1519 us/op
+WorkloadActual  73: 524288 op, 594171678.00 ns, 1.1333 us/op
+WorkloadActual  74: 524288 op, 690673298.00 ns, 1.3174 us/op
+WorkloadActual  75: 524288 op, 536432721.00 ns, 1.0232 us/op
+WorkloadActual  76: 524288 op, 588682438.00 ns, 1.1228 us/op
+WorkloadActual  77: 524288 op, 1036677531.00 ns, 1.9773 us/op
+WorkloadActual  78: 524288 op, 718925682.00 ns, 1.3712 us/op
+WorkloadActual  79: 524288 op, 525667893.00 ns, 1.0026 us/op
+WorkloadActual  80: 524288 op, 545776215.00 ns, 1.0410 us/op
+WorkloadActual  81: 524288 op, 641532138.00 ns, 1.2236 us/op
+WorkloadActual  82: 524288 op, 635660808.00 ns, 1.2124 us/op
+WorkloadActual  83: 524288 op, 759377910.00 ns, 1.4484 us/op
+WorkloadActual  84: 524288 op, 465502262.00 ns, 887.8751 ns/op
+WorkloadActual  85: 524288 op, 496891859.00 ns, 947.7460 ns/op
+WorkloadActual  86: 524288 op, 531306763.00 ns, 1.0134 us/op
+WorkloadActual  87: 524288 op, 499976729.00 ns, 953.6299 ns/op
+WorkloadActual  88: 524288 op, 360574728.00 ns, 687.7417 ns/op
+WorkloadActual  89: 524288 op, 253666142.00 ns, 483.8298 ns/op
+WorkloadActual  90: 524288 op, 262261304.00 ns, 500.2237 ns/op
+WorkloadActual  91: 524288 op, 270318805.00 ns, 515.5922 ns/op
+WorkloadActual  92: 524288 op, 123841424.00 ns, 236.2088 ns/op
+WorkloadActual  93: 524288 op, 238209251.00 ns, 454.3481 ns/op
+WorkloadActual  94: 524288 op, 275746456.00 ns, 525.9446 ns/op
+WorkloadActual  95: 524288 op, 229173310.00 ns, 437.1134 ns/op
+WorkloadActual  96: 524288 op, 145470417.00 ns, 277.4628 ns/op
+WorkloadActual  97: 524288 op, 122585338.00 ns, 233.8130 ns/op
+WorkloadActual  98: 524288 op, 133025548.00 ns, 253.7261 ns/op
+WorkloadActual  99: 524288 op, 188348234.00 ns, 359.2457 ns/op
+WorkloadActual  100: 524288 op, 212326395.00 ns, 404.9805 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 524288 op, 193325898.50 ns, 368.7399 ns/op
+WorkloadResult   2: 524288 op, 158646223.50 ns, 302.5937 ns/op
+WorkloadResult   3: 524288 op, 156539285.50 ns, 298.5750 ns/op
+WorkloadResult   4: 524288 op, 253406752.50 ns, 483.3350 ns/op
+WorkloadResult   5: 524288 op, 138013840.50 ns, 263.2405 ns/op
+WorkloadResult   6: 524288 op, 144875504.50 ns, 276.3281 ns/op
+WorkloadResult   7: 524288 op, 146344368.50 ns, 279.1297 ns/op
+WorkloadResult   8: 524288 op, 142829738.50 ns, 272.4261 ns/op
+WorkloadResult   9: 524288 op, 168553166.50 ns, 321.4897 ns/op
+WorkloadResult  10: 524288 op, 304112195.50 ns, 580.0480 ns/op
+WorkloadResult  11: 524288 op, 303977616.50 ns, 579.7913 ns/op
+WorkloadResult  12: 524288 op, 276949419.50 ns, 528.2391 ns/op
+WorkloadResult  13: 524288 op, 428178724.50 ns, 816.6861 ns/op
+WorkloadResult  14: 524288 op, 358632888.50 ns, 684.0379 ns/op
+WorkloadResult  15: 524288 op, 396748544.50 ns, 756.7378 ns/op
+WorkloadResult  16: 524288 op, 364016199.50 ns, 694.3058 ns/op
+WorkloadResult  17: 524288 op, 400846000.50 ns, 764.5531 ns/op
+WorkloadResult  18: 524288 op, 335587766.50 ns, 640.0829 ns/op
+WorkloadResult  19: 524288 op, 275763440.50 ns, 525.9770 ns/op
+WorkloadResult  20: 524288 op, 375733394.50 ns, 716.6546 ns/op
+WorkloadResult  21: 524288 op, 466080289.50 ns, 888.9776 ns/op
+WorkloadResult  22: 524288 op, 369009526.50 ns, 703.8298 ns/op
+WorkloadResult  23: 524288 op, 328987212.50 ns, 627.4933 ns/op
+WorkloadResult  24: 524288 op, 320700959.50 ns, 611.6885 ns/op
+WorkloadResult  25: 524288 op, 303136946.50 ns, 578.1878 ns/op
+WorkloadResult  26: 524288 op, 259808215.50 ns, 495.5448 ns/op
+WorkloadResult  27: 524288 op, 280957215.50 ns, 535.8834 ns/op
+WorkloadResult  28: 524288 op, 288603229.50 ns, 550.4670 ns/op
+WorkloadResult  29: 524288 op, 280520504.50 ns, 535.0504 ns/op
+WorkloadResult  30: 524288 op, 399612714.50 ns, 762.2008 ns/op
+WorkloadResult  31: 524288 op, 314774092.50 ns, 600.3839 ns/op
+WorkloadResult  32: 524288 op, 265435556.50 ns, 506.2781 ns/op
+WorkloadResult  33: 524288 op, 270639051.50 ns, 516.2030 ns/op
+WorkloadResult  34: 524288 op, 280844710.50 ns, 535.6688 ns/op
+WorkloadResult  35: 524288 op, 287829814.50 ns, 548.9918 ns/op
+WorkloadResult  36: 524288 op, 294353006.50 ns, 561.4338 ns/op
+WorkloadResult  37: 524288 op, 302510384.50 ns, 576.9928 ns/op
+WorkloadResult  38: 524288 op, 320367753.50 ns, 611.0530 ns/op
+WorkloadResult  39: 524288 op, 360096488.50 ns, 686.8295 ns/op
+WorkloadResult  40: 524288 op, 255970123.50 ns, 488.2243 ns/op
+WorkloadResult  41: 524288 op, 285740937.50 ns, 545.0076 ns/op
+WorkloadResult  42: 524288 op, 263653252.50 ns, 502.8787 ns/op
+WorkloadResult  43: 524288 op, 277622142.50 ns, 529.5222 ns/op
+WorkloadResult  44: 524288 op, 277417060.50 ns, 529.1311 ns/op
+WorkloadResult  45: 524288 op, 316565255.50 ns, 603.8003 ns/op
+WorkloadResult  46: 524288 op, 508548756.50 ns, 969.9798 ns/op
+WorkloadResult  47: 524288 op, 298019207.50 ns, 568.4265 ns/op
+WorkloadResult  48: 524288 op, 304862228.50 ns, 581.4786 ns/op
+WorkloadResult  49: 524288 op, 477706227.50 ns, 911.1523 ns/op
+WorkloadResult  50: 524288 op, 280605139.50 ns, 535.2118 ns/op
+WorkloadResult  51: 524288 op, 322329282.50 ns, 614.7943 ns/op
+WorkloadResult  52: 524288 op, 270846149.50 ns, 516.5980 ns/op
+WorkloadResult  53: 524288 op, 277509799.50 ns, 529.3079 ns/op
+WorkloadResult  54: 524288 op, 353884323.50 ns, 674.9808 ns/op
+WorkloadResult  55: 524288 op, 451282923.50 ns, 860.7539 ns/op
+WorkloadResult  56: 524288 op, 450663266.50 ns, 859.5720 ns/op
+WorkloadResult  57: 524288 op, 478862498.50 ns, 913.3577 ns/op
+WorkloadResult  58: 524288 op, 615069678.50 ns, 1.1732 us/op
+WorkloadResult  59: 524288 op, 635016205.50 ns, 1.2112 us/op
+WorkloadResult  60: 524288 op, 660192502.50 ns, 1.2592 us/op
+WorkloadResult  61: 524288 op, 641365343.50 ns, 1.2233 us/op
+WorkloadResult  62: 524288 op, 609197751.50 ns, 1.1620 us/op
+WorkloadResult  63: 524288 op, 631376575.50 ns, 1.2043 us/op
+WorkloadResult  64: 524288 op, 636390457.50 ns, 1.2138 us/op
+WorkloadResult  65: 524288 op, 497061143.50 ns, 948.0689 ns/op
+WorkloadResult  66: 524288 op, 567466832.50 ns, 1.0824 us/op
+WorkloadResult  67: 524288 op, 544913712.50 ns, 1.0393 us/op
+WorkloadResult  68: 524288 op, 458608048.50 ns, 874.7254 ns/op
+WorkloadResult  69: 524288 op, 418896905.50 ns, 798.9824 ns/op
+WorkloadResult  70: 524288 op, 433099181.50 ns, 826.0711 ns/op
+WorkloadResult  71: 524288 op, 486866632.50 ns, 928.6244 ns/op
+WorkloadResult  72: 524288 op, 601190650.50 ns, 1.1467 us/op
+WorkloadResult  73: 524288 op, 591458887.50 ns, 1.1281 us/op
+WorkloadResult  74: 524288 op, 687960507.50 ns, 1.3122 us/op
+WorkloadResult  75: 524288 op, 533719930.50 ns, 1.0180 us/op
+WorkloadResult  76: 524288 op, 585969647.50 ns, 1.1176 us/op
+WorkloadResult  77: 524288 op, 716212891.50 ns, 1.3661 us/op
+WorkloadResult  78: 524288 op, 522955102.50 ns, 997.4577 ns/op
+WorkloadResult  79: 524288 op, 543063424.50 ns, 1.0358 us/op
+WorkloadResult  80: 524288 op, 638819347.50 ns, 1.2185 us/op
+WorkloadResult  81: 524288 op, 632948017.50 ns, 1.2073 us/op
+WorkloadResult  82: 524288 op, 756665119.50 ns, 1.4432 us/op
+WorkloadResult  83: 524288 op, 462789471.50 ns, 882.7009 ns/op
+WorkloadResult  84: 524288 op, 494179068.50 ns, 942.5718 ns/op
+WorkloadResult  85: 524288 op, 528593972.50 ns, 1.0082 us/op
+WorkloadResult  86: 524288 op, 497263938.50 ns, 948.4557 ns/op
+WorkloadResult  87: 524288 op, 357861937.50 ns, 682.5675 ns/op
+WorkloadResult  88: 524288 op, 250953351.50 ns, 478.6555 ns/op
+WorkloadResult  89: 524288 op, 259548513.50 ns, 495.0495 ns/op
+WorkloadResult  90: 524288 op, 267606014.50 ns, 510.4180 ns/op
+WorkloadResult  91: 524288 op, 121128633.50 ns, 231.0345 ns/op
+WorkloadResult  92: 524288 op, 235496460.50 ns, 449.1739 ns/op
+WorkloadResult  93: 524288 op, 273033665.50 ns, 520.7704 ns/op
+WorkloadResult  94: 524288 op, 226460519.50 ns, 431.9392 ns/op
+WorkloadResult  95: 524288 op, 142757626.50 ns, 272.2886 ns/op
+WorkloadResult  96: 524288 op, 119872547.50 ns, 228.6387 ns/op
+WorkloadResult  97: 524288 op, 130312757.50 ns, 248.5519 ns/op
+WorkloadResult  98: 524288 op, 185635443.50 ns, 354.0715 ns/op
+WorkloadResult  99: 524288 op, 209613604.50 ns, 399.8062 ns/op
+GC:  21 0 0 180356416 524288
+Threading:  0 0 524288
+
+// AfterAll
+// Benchmark Process 1093181 has exited with code 0.
+
+Mean = 710.517 ns, StdErr = 30.293 ns (4.26%), N = 99, StdDev = 301.409 ns
+Min = 228.639 ns, Q1 = 516.401 ns, Median = 611.689 ns, Q3 = 935.598 ns, Max = 1,443.224 ns
+IQR = 419.198 ns, LowerFence = -112.396 ns, UpperFence = 1,564.394 ns
+ConfidenceInterval = [607.746 ns; 813.288 ns] (CI 99.9%), Margin = 102.771 ns (14.46% of Mean)
+Skewness = 0.47, Kurtosis = 2.26, MValue = 2.76
+
+// **************************
+// Benchmark: BitStringBenchmarks.VectorAnd: DefaultJob [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "084c1a13-3098-44f7-8b35-9c086b2b3caa.dll" --benchmarkName "Platform.Collections.Benchmarks.BitStringBenchmarks.VectorAnd(N: 1000)" --job "Default" --benchmarkId 5 in /tmp/gh-issue-solver-1757806447183/csharp/Platform.Collections.Benchmarks/bin/Release/net8/084c1a13-3098-44f7-8b35-9c086b2b3caa/bin/Release/net8.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 8.0.19 (8.0.1925.36514), X64 RyuJIT
+// GC=Concurrent Workstation
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 959398.00 ns, 959.3980 us/op
+WorkloadJitting  1: 1 op, 5505044.00 ns, 5.5050 ms/op
+
+OverheadJitting  2: 16 op, 965390.00 ns, 60.3369 us/op
+WorkloadJitting  2: 16 op, 1110622.00 ns, 69.4139 us/op
+
+WorkloadPilot    1: 16 op, 20458.00 ns, 1.2786 us/op
+WorkloadPilot    2: 32 op, 60336.00 ns, 1.8855 us/op
+WorkloadPilot    3: 64 op, 98004.00 ns, 1.5313 us/op
+WorkloadPilot    4: 128 op, 180652.00 ns, 1.4113 us/op
+WorkloadPilot    5: 256 op, 390206.00 ns, 1.5242 us/op
+WorkloadPilot    6: 512 op, 656924.00 ns, 1.2831 us/op
+WorkloadPilot    7: 1024 op, 1849515.00 ns, 1.8062 us/op
+WorkloadPilot    8: 2048 op, 2193403.00 ns, 1.0710 us/op
+WorkloadPilot    9: 4096 op, 4330882.00 ns, 1.0573 us/op
+WorkloadPilot   10: 8192 op, 10240783.00 ns, 1.2501 us/op
+WorkloadPilot   11: 16384 op, 33540536.00 ns, 2.0472 us/op
+WorkloadPilot   12: 32768 op, 32314879.00 ns, 986.1718 ns/op
+WorkloadPilot   13: 65536 op, 52825962.00 ns, 806.0602 ns/op
+WorkloadPilot   14: 131072 op, 123625960.00 ns, 943.1912 ns/op
+WorkloadPilot   15: 262144 op, 147792910.00 ns, 563.7852 ns/op
+WorkloadPilot   16: 524288 op, 273859776.00 ns, 522.3461 ns/op
+WorkloadPilot   17: 1048576 op, 587881764.00 ns, 560.6477 ns/op
+
+OverheadWarmup   1: 1048576 op, 11810712.00 ns, 11.2636 ns/op
+OverheadWarmup   2: 1048576 op, 4539987.00 ns, 4.3297 ns/op
+OverheadWarmup   3: 1048576 op, 4575789.00 ns, 4.3638 ns/op
+OverheadWarmup   4: 1048576 op, 5126454.00 ns, 4.8890 ns/op
+OverheadWarmup   5: 1048576 op, 4233725.00 ns, 4.0376 ns/op
+OverheadWarmup   6: 1048576 op, 6391733.00 ns, 6.0956 ns/op
+OverheadWarmup   7: 1048576 op, 4749328.00 ns, 4.5293 ns/op
+
+OverheadActual   1: 1048576 op, 4083362.00 ns, 3.8942 ns/op
+OverheadActual   2: 1048576 op, 5241427.00 ns, 4.9986 ns/op
+OverheadActual   3: 1048576 op, 4415344.00 ns, 4.2108 ns/op
+OverheadActual   4: 1048576 op, 4519307.00 ns, 4.3099 ns/op
+OverheadActual   5: 1048576 op, 4321241.00 ns, 4.1211 ns/op
+OverheadActual   6: 1048576 op, 5420468.00 ns, 5.1694 ns/op
+OverheadActual   7: 1048576 op, 4062487.00 ns, 3.8743 ns/op
+OverheadActual   8: 1048576 op, 4382014.00 ns, 4.1790 ns/op
+OverheadActual   9: 1048576 op, 4414184.00 ns, 4.2097 ns/op
+OverheadActual  10: 1048576 op, 4709317.00 ns, 4.4912 ns/op
+OverheadActual  11: 1048576 op, 6231599.00 ns, 5.9429 ns/op
+OverheadActual  12: 1048576 op, 4398925.00 ns, 4.1951 ns/op
+OverheadActual  13: 1048576 op, 4417021.00 ns, 4.2124 ns/op
+OverheadActual  14: 1048576 op, 3837368.00 ns, 3.6596 ns/op
+OverheadActual  15: 1048576 op, 4427429.00 ns, 4.2223 ns/op
+OverheadActual  16: 1048576 op, 6649579.00 ns, 6.3415 ns/op
+OverheadActual  17: 1048576 op, 5039887.00 ns, 4.8064 ns/op
+OverheadActual  18: 1048576 op, 4150406.00 ns, 3.9581 ns/op
+OverheadActual  19: 1048576 op, 4051654.00 ns, 3.8640 ns/op
+OverheadActual  20: 1048576 op, 4268826.00 ns, 4.0711 ns/op
+
+WorkloadWarmup   1: 1048576 op, 537928037.00 ns, 513.0082 ns/op
+WorkloadWarmup   2: 1048576 op, 772544105.00 ns, 736.7555 ns/op
+WorkloadWarmup   3: 1048576 op, 413701596.00 ns, 394.5366 ns/op
+WorkloadWarmup   4: 1048576 op, 281392456.00 ns, 268.3568 ns/op
+WorkloadWarmup   5: 1048576 op, 260918255.00 ns, 248.8310 ns/op
+WorkloadWarmup   6: 1048576 op, 249291515.00 ns, 237.7429 ns/op
+WorkloadWarmup   7: 1048576 op, 223039171.00 ns, 212.7067 ns/op
+WorkloadWarmup   8: 1048576 op, 309304456.00 ns, 294.9757 ns/op
+WorkloadWarmup   9: 1048576 op, 282288637.00 ns, 269.2114 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 1048576 op, 229579988.00 ns, 218.9445 ns/op
+WorkloadActual   2: 1048576 op, 215996861.00 ns, 205.9907 ns/op
+WorkloadActual   3: 1048576 op, 216124974.00 ns, 206.1128 ns/op
+WorkloadActual   4: 1048576 op, 228164615.00 ns, 217.5947 ns/op
+WorkloadActual   5: 1048576 op, 246295196.00 ns, 234.8854 ns/op
+WorkloadActual   6: 1048576 op, 243323298.00 ns, 232.0512 ns/op
+WorkloadActual   7: 1048576 op, 226441224.00 ns, 215.9512 ns/op
+WorkloadActual   8: 1048576 op, 254231433.00 ns, 242.4540 ns/op
+WorkloadActual   9: 1048576 op, 540728061.00 ns, 515.6785 ns/op
+WorkloadActual  10: 1048576 op, 217076426.00 ns, 207.0202 ns/op
+WorkloadActual  11: 1048576 op, 235691290.00 ns, 224.7727 ns/op
+WorkloadActual  12: 1048576 op, 513718014.00 ns, 489.9197 ns/op
