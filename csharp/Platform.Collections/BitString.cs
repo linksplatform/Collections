@@ -12,6 +12,12 @@ using Platform.Ranges;
 
 namespace Platform.Collections
 {
+    /// <summary>
+    /// <para>
+    /// Represents a high-performance bit string with support for vectorized and parallel operations.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     /// <remarks>
     /// А что если хранить карту значений, где каждый бит будет означать присутствует ли блок в 64 бит в массиве значений.
     /// 64 бита по 0 бит, будут означать отсутствие 64-х блоков по 64 бита. Т.е. упаковка 512 байт в 8 байт.
