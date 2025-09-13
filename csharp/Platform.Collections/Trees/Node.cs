@@ -262,7 +262,7 @@ namespace Platform.Collections.Trees
             var node = this;
             for (var i = 0; i < keys.Length; i++)
             {
-                node = SetChildValue(value, keys[i]);
+                node = node[keys[i]];
             }
             node.Value = value;
             return node;
