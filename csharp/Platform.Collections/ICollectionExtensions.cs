@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -27,29 +26,5 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection) => collection == null || collection.Count == 0;
 
-        /// <summary>
-        /// <para>
-        /// Determines whether all equal to default.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <typeparam name="T">
-        /// <para>The .</para>
-        /// <para></para>
-        /// </typeparam>
-        /// <param name="collection">
-        /// <para>The collection.</para>
-        /// <para></para>
-        /// </param>
-        /// <returns>
-        /// <para>The bool</para>
-        /// <para></para>
-        /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool AllEqualToDefault<T>(this ICollection<T> collection)
-        {
-            var equalityComparer = EqualityComparer<T>.Default;
-            return collection.All(item => equalityComparer.Equals(item, default));
-        }
     }
 }
