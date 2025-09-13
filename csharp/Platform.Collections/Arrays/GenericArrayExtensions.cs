@@ -193,6 +193,17 @@ namespace Platform.Collections.Arrays
         public static void AddFirst<T>(this T[] array, ref long position, IList<T> elements) => array[position++] = elements[0];
 
         /// <summary>
+        /// <para>Adds the last element from the passed collection to the array, at the specified position and increments position value by one.</para>
+        /// <para>Добавляет в массив последний элемент из переданной коллекции, на указанную позицию и увеличивает значение position на единицу.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>Array element type.</para><para>Тип элементов массива.</para></typeparam>
+        /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
+        /// <param name="position"><para>Reference to the position to which the element will be added.</para><para>Ссылка на позицию, в которую будет добавлен элемент.</para></param>
+        /// <param name="elements"><para>List, the last element of which will be added to the array.</para><para>Список, последний элемент которого будет добавлен в массив.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void AddLast<T>(this T[] array, ref long position, IList<T> elements) => array[position++] = elements[elements.Count - 1];
+
+        /// <summary>
         /// <para>Adds the first element from the passed collection to the array, at the specified position, increments position value by one and returns the value of the passed constant.</para>
         /// <para>Добавляет в массив первый элемент из переданной коллекции, на указанную позицию, увеличивает значение position на единицу и возвращает значение переданной константы.</para>
         /// </summary>
@@ -210,6 +221,27 @@ namespace Platform.Collections.Arrays
         public static TReturnConstant AddFirstAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
         {
             array.AddFirst(ref position, elements);
+            return returnConstant;
+        }
+
+        /// <summary>
+        /// <para>Adds the last element from the passed collection to the array, at the specified position, increments position value by one and returns the value of the passed constant.</para>
+        /// <para>Добавляет в массив последний элемент из переданной коллекции, на указанную позицию, увеличивает значение position на единицу и возвращает значение переданной константы.</para>
+        /// </summary>
+        /// <typeparam name="TElement"><para>The array element type.</para><para>Тип элемента массива.</para></typeparam>
+        /// <typeparam name="TReturnConstant"><para>Type of return constant.</para><para>Тип возвращаемой константы.</para></typeparam>
+        /// <param name="array"><para>The array to add the element to.</para><para>Массив в который необходимо добавить элемент.</para></param>
+        /// <param name="position"><para>Reference to the position to which the element will be added.</para><para>Ссылка на позицию, в которую будет добавлен элемент.</para></param>
+        /// <param name="elements"><para>List, the last element of which will be added to the array.</para><para>Список, последний элемент которого будет добавлен в массив.</para></param>
+        /// <param name="returnConstant"><para>The constant value that will be returned.</para><para>Значение константы, которое будет возвращено.</para></param>
+        /// <returns>
+        /// <para>The constant value passed as an argument.</para>
+        /// <para>Значение константы, переданное в качестве аргумента.</para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static TReturnConstant AddLastAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
+        {
+            array.AddLast(ref position, elements);
             return returnConstant;
         }
 

@@ -90,6 +90,24 @@ namespace Platform.Collections.Lists
         }
 
         /// <summary>
+        /// <para>Adds the value with last index from other list to this list.</para>
+        /// <para>Добавляет в этот список значение с последним индексом из другого списка.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
+        /// <param name="elements"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
+        /// <returns>
+        /// <para>True value in any case.</para>
+        /// <para>Значение true в любом случае.</para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool AddLastAndReturnTrue<T>(this IList<T> list, IList<T> elements)
+        {
+            list.AddLast(elements);
+            return true;
+        }
+
+        /// <summary>
         /// <para>Adds a value to the list at the first index.</para>
         /// <para>Добавляет значение в список по первому индексу.</para>
         /// </summary>
@@ -98,6 +116,16 @@ namespace Platform.Collections.Lists
         /// <param name="elements"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void AddFirst<T>(this IList<T> list, IList<T> elements) => list.Add(elements[0]);
+
+        /// <summary>
+        /// <para>Adds a value to the list at the last index.</para>
+        /// <para>Добавляет значение в список по последнему индексу.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>The list's item type.</para><para>Тип элементов списка.</para></typeparam>
+        /// <param name="list"><para>The list to add the value to.</para><para>Список в который нужно добавить значение.</para></param>
+        /// <param name="elements"><para>The item to add to the list.</para><para>Элемент который нужно добавить в список</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void AddLast<T>(this IList<T> list, IList<T> elements) => list.Add(elements[elements.Count - 1]);
 
         /// <summary>
         /// <para>Adds all elements from other list to this list and returns true.</para>
