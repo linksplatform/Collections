@@ -75,8 +75,13 @@ namespace Platform.Collections.Arrays
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Disposable<T[]> Resize(Disposable<T[]> source, long size)
         {
-            var destination = AllocateDisposable(size);
             T[] sourceArray = source;
+            if (!sourceArray.IsNullOrEmpty() && sourceArray.LongLength == size)
+            {
+                // If the size is the same, return the source without any allocation or copying
+                return source;
+            }
+            var destination = AllocateDisposable(size);
             if (!sourceArray.IsNullOrEmpty())
             {
                 T[] destinationArray = destination;
