@@ -145,9 +145,9 @@ namespace Platform.Collections.Lists
         /// <para>Значение true в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool AddSkipFirstAndReturnTrue<T>(this IList<T> list, IList<T> elements)
+        public static bool SkipAndAddAndReturnTrue<T>(this IList<T> list, IList<T> elements)
         {
-            list.AddSkipFirst(elements);
+            list.SkipAndAdd(elements);
             return true;
         }
 
@@ -159,7 +159,7 @@ namespace Platform.Collections.Lists
         /// <param name="list"><para>The list to add the values to.</para><para>Список в который нужно добавить значения.</para></param>
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements) => list.AddSkipFirst(elements, 1);
+        public static void SkipAndAdd<T>(this IList<T> list, IList<T> elements) => list.SkipAndAdd(elements, 1);
 
         /// <summary>
         /// <para>Adds values to the list skipping a specified number of first elements.</para>
@@ -170,7 +170,7 @@ namespace Platform.Collections.Lists
         /// <param name="elements"><para>List of values to add.</para><para>Список значений которые необходимо добавить.</para></param>
         /// <param name="skip"><para>Number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddSkipFirst<T>(this IList<T> list, IList<T> elements, int skip)
+        public static void SkipAndAdd<T>(this IList<T> list, IList<T> elements, int skip)
         {
             for (var i = skip; i < elements.Count; i++)
             {

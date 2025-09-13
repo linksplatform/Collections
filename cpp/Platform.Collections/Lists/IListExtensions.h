@@ -61,20 +61,20 @@
     }
 
     template<Interfaces::CList TList>
-    static bool AddSkipFirstAndReturnTrue(TList& list, Interfaces::CArray auto&& elements)
+    static bool SkipAndAddAndReturnTrue(TList& list, Interfaces::CArray auto&& elements)
     {
-        AddSkipFirst(std::forward<decltype(elements)>(elements));
+        SkipAndAdd(std::forward<decltype(elements)>(elements));
         return true;
     }
 
     template<Interfaces::CList TList>
-    static void AddSkipFirst(TList& list, Interfaces::CArray auto&& elements)
+    static void SkipAndAdd(TList& list, Interfaces::CArray auto&& elements)
     {
-        AddSkipFirst(list, std::forward<decltype(elements)>(elements), 1);
+        SkipAndAdd(list, std::forward<decltype(elements)>(elements), 1);
     }
 
     template<Interfaces::CList TList>
-    static void AddSkipFirst(TList& list, Interfaces::CArray auto&& elements, std::size_t skip)
+    static void SkipAndAdd(TList& list, Interfaces::CArray auto&& elements, std::size_t skip)
     {
         for (auto&& element : elements | std::views::drop(skip))
         {

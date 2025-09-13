@@ -18,6 +18,6 @@
 
         public: bool AddAllAndReturnTrue(Interfaces::CArray auto&& elements) { return Arrays::AddAllAndReturnConstant(_array, _position, elements, true); }
 
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::CArray auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(_array, _position, elements, true); }
+        public: bool SkipAndAddAndReturnTrue(Interfaces::CArray auto&& elements) { return Arrays::SkipAndAddAndReturnConstant(_array, _position, elements, true); }
     };
 }

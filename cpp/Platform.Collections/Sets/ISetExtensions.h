@@ -41,15 +41,15 @@
         }
     }
 
-    static bool AddSkipFirstAndReturnTrue(Interfaces::CSet auto& set, Interfaces::CArray auto&& elements)
+    static bool SkipAndAddAndReturnTrue(Interfaces::CSet auto& set, Interfaces::CArray auto&& elements)
     {
-        AddSkipFirst(set, elements);
+        SkipAndAdd(set, elements);
         return true;
     }
 
-    static void AddSkipFirst(Interfaces::CSet auto& set, Interfaces::CArray auto&& elements) { AddSkipFirst(set, elements, 1); }
+    static void SkipAndAdd(Interfaces::CSet auto& set, Interfaces::CArray auto&& elements) { SkipAndAdd(set, elements, 1); }
 
-    static void AddSkipFirst(Interfaces::CSet auto& set, Interfaces::CArray auto&& elements, std::size_t skip)
+    static void SkipAndAdd(Interfaces::CSet auto& set, Interfaces::CArray auto&& elements, std::size_t skip)
     {
         for (auto&& element : elements | std::views::drop(skip))
         {

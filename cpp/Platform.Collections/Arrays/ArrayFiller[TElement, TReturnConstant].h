@@ -17,6 +17,6 @@
 
         public: TReturnConstant AddAllAndReturnConstant(Interfaces::CArray auto&& elements) { return Arrays::AddAllAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::CArray auto&& elements) { return Arrays::AddSkipFirstAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
+        public: TReturnConstant SkipAndAddAndReturnConstant(Interfaces::CArray auto&& elements) { return Arrays::SkipAndAddAndReturnConstant(base::_array, base::_position, elements, _returnConstant); }
     };
 }

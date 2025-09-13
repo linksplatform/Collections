@@ -266,9 +266,9 @@ namespace Platform.Collections.Arrays
         /// <para>Значение константы, переданное в качестве аргумента.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TReturnConstant AddSkipFirstAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
+        public static TReturnConstant SkipAndAddAndReturnConstant<TElement, TReturnConstant>(this TElement[] array, ref long position, IList<TElement> elements, TReturnConstant returnConstant)
         {
-            array.AddSkipFirst(ref position, elements);
+            array.SkipAndAdd(ref position, elements);
             return returnConstant;
         }
         
@@ -281,7 +281,7 @@ namespace Platform.Collections.Arrays
         /// <param name="position"><para>Reference to the position from which to start adding elements.</para><para>Ссылка на позицию, с которой начинается добавление элементов.</para></param>
         /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param> 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddSkipFirst<T>(this T[] array, ref long position, IList<T> elements) => array.AddSkipFirst(ref position, elements, 1);
+        public static void SkipAndAdd<T>(this T[] array, ref long position, IList<T> elements) => array.SkipAndAdd(ref position, elements, 1);
         
         /// <summary>
         /// <para>Adding in array all but the first element, skipping a specified number of positions and increments position value by one.</para>
@@ -293,7 +293,7 @@ namespace Platform.Collections.Arrays
         /// <param name="elements"><para>List, whose elements will be added to the array.</para><para>Список, элементы которого будут добавленны в массив.</para></param>
         /// <param name="skip"><para>Number of elements to skip.</para><para>Количество пропускаемых элементов.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddSkipFirst<T>(this T[] array, ref long position, IList<T> elements, int skip)
+        public static void SkipAndAdd<T>(this T[] array, ref long position, IList<T> elements, int skip)
         {
             for (var i = skip; i < elements.Count; i++)
             {

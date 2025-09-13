@@ -84,6 +84,6 @@ namespace Platform.Collections.Arrays
         /// <para>Значение константы.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> elements) => _array.AddSkipFirstAndReturnConstant(ref _position, elements, _returnConstant);
+        public TReturnConstant SkipAndAddAndReturnConstant(IList<TElement> elements) => _array.SkipAndAddAndReturnConstant(ref _position, elements, _returnConstant);
     }
 }
