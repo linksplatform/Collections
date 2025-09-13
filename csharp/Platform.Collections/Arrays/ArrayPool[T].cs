@@ -24,14 +24,26 @@ namespace Platform.Collections.Arrays
         /// <para></para>
         /// </summary>
         [ThreadStatic]
-        private static ArrayPool<T> _threadInstance;
+        private static WeakReference<ArrayPool<T>> _threadInstance;
         /// <summary>
         /// <para>
         /// Gets the thread instance value.
         /// </para>
         /// <para></para>
         /// </summary>
-        internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
+        internal static ArrayPool<T> ThreadInstance
+        {
+            get
+            {
+                if (_threadInstance?.TryGetTarget(out var instance) == true)
+                {
+                    return instance;
+                }
+                var newInstance = new ArrayPool<T>();
+                _threadInstance = new WeakReference<ArrayPool<T>>(newInstance);
+                return newInstance;
+            }
+        }
         private readonly int _maxArraysPerSize;
         private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
 
