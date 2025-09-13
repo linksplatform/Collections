@@ -63,6 +63,18 @@ namespace Platform.Collections.Arrays
         public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements) => _array.AddFirstAndReturnConstant(ref _position, elements, _returnConstant);
 
         /// <summary>
+        /// <para>Adds the last element from the specified list to the filled array and returns the constant.</para>
+        /// <para>Добавляет последний элемент из указанного списка в заполняемый массив и возвращает константу.</para>
+        /// </summary>
+        /// <param name="elements"><para>The list from which the last item will be added.</para><para>Список из которого будет добавлен последний элемент.</para></param>
+        /// <returns>
+        /// <para>The constant's value.</para>
+        /// <para>Значение константы.</para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public TReturnConstant AddLastAndReturnConstant(IList<TElement> elements) => _array.AddLastAndReturnConstant(ref _position, elements, _returnConstant);
+
+        /// <summary>
         /// <para>Adds all elements from the specified list to the filled array and returns the constant.</para>
         /// <para>Добавляет все элементы из указанного списка в заполняемый массив и возвращает константу.</para>
         /// </summary>

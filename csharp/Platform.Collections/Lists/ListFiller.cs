@@ -85,6 +85,18 @@ namespace Platform.Collections.Lists
         public bool AddFirstAndReturnTrue(IList<TElement> elements) => _list.AddFirstAndReturnTrue(elements);
 
         /// <summary>
+        /// <para>Adds a value to the list at the last index and return true.</para>
+        /// <para>Добавляет значение в список по последнему индексу и возвращает true.</para>
+        /// </summary>
+        /// <param name="elements"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <returns>
+        /// <para>True value in any case.</para>
+        /// <para>Значение true в любом случае.</para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AddLastAndReturnTrue(IList<TElement> elements) => _list.AddLastAndReturnTrue(elements);
+
+        /// <summary>
         /// <para>Adds all elements from other list to this list and returns true.</para>
         /// <para>Добавляет все элементы из другого списка в этот список и возвращает true.</para>
         /// </summary>
@@ -137,6 +149,22 @@ namespace Platform.Collections.Lists
         public TReturnConstant AddFirstAndReturnConstant(IList<TElement> elements)
         {
             _list.AddFirst(elements);
+            return _returnConstant;
+        }
+
+        /// <summary>
+        /// <para>Adds a value to the list at the last index and return constant.</para>
+        /// <para>Добавляет значение в список по последнему индексу и возвращает константу.</para>
+        /// </summary>
+        /// <param name="elements"><para>Element to add.</para><para>Добавляемый элемент.</para></param>
+        /// <returns>
+        /// <para>Constant value in any case.</para>
+        /// <para>Значение константы в любом случае.</para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public TReturnConstant AddLastAndReturnConstant(IList<TElement> elements)
+        {
+            _list.AddLast(elements);
             return _returnConstant;
         }
 
