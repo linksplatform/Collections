@@ -110,6 +110,20 @@ namespace Platform.Collections.Segments
         /// </returns>
         public override bool Equals(object obj) => obj is Segment<char> charSegment ? Equals(charSegment) : false;
 
+        /// <summary>
+        /// <para>
+        /// Performs an implicit conversion from <see cref="CharSegment"/> to <see cref="string"/>.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="segment">
+        /// <para>The segment.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The result of the conversion.</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator string(CharSegment segment)
         {
