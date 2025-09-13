@@ -75,6 +75,27 @@ namespace Platform.Collections
 
         /// <summary>
         /// <para>
+        /// Determines whether the specified string equals another string ignoring case.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="@string">
+        /// <para>The string.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="other">
+        /// <para>The other string to compare with.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>True if the strings are equal ignoring case; otherwise, false.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool EqualsIgnoreCase(this string @string, string other) => string.Equals(@string, other, StringComparison.OrdinalIgnoreCase);
+
+        /// <summary>
+        /// <para>
         /// Trims the single using the specified string.
         /// </para>
         /// <para></para>
