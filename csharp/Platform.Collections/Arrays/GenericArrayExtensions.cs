@@ -19,7 +19,7 @@ namespace Platform.Collections.Arrays
         /// <param name="index"><para>Number type int to compare.</para><para>Число типа int для сравнения.</para></param>
         /// <returns><para>Array element or default value.</para><para>Элемент массива или же значение по умолчанию.</para></returns>        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T GetElementOrDefault<T>(this T[] array, int index) => array != null && array.Length > index ? array[index] : default;
+        public static T GetElementOrDefault<T>(this T[] array, int index) => array != null && index >= 0 && array.Length > index ? array[index] : default;
         
         /// <summary>
         /// <para>Сhecks whether the array exists, if so, checks the array length using the  index variable type long, and if the array length is greater than the index - return array[index], otherwise - default value.</para>
@@ -30,7 +30,7 @@ namespace Platform.Collections.Arrays
         /// <param name="index"><para>Number type long to compare.</para><para>Число типа long для сравнения.</para></param>
         /// <returns><para>Array element or default value.</para><para>Элемент массива или же значение по умолчанию.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T GetElementOrDefault<T>(this T[] array, long index) => array != null && array.LongLength > index ? array[index] : default;
+        public static T GetElementOrDefault<T>(this T[] array, long index) => array != null && index >= 0 && array.LongLength > index ? array[index] : default;
 
         /// <summary>
         /// <para>Checks whether the array exist, if so, checks the array length using the index varible type int, and if the array length is greater than the index, set the element variable to array[index] and return <see langword="true"/>.</para>
@@ -44,7 +44,7 @@ namespace Platform.Collections.Arrays
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, int index, out T element)
         {
-            if (array != null && array.Length > index)
+            if (array != null && index >= 0 && array.Length > index)
             {
                 element = array[index];
                 return true;
@@ -68,7 +68,7 @@ namespace Platform.Collections.Arrays
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool TryGetElement<T>(this T[] array, long index, out T element)
         {
-            if (array != null && array.LongLength > index)
+            if (array != null && index >= 0 && array.LongLength > index)
             {
                 element = array[index];
                 return true;
