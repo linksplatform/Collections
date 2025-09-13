@@ -425,7 +425,7 @@ namespace Platform.Collections.Lists
         /// <para>Если список пуст, возвращает пустой массив, иначе - массив с пропущенным первым элементом.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T[] SkipFirst<T>(this IList<T> list) => list.SkipFirst(1);
+        public static T[] Skip<T>(this IList<T> list) => list.Skip(1);
     
         /// <summary>
         /// <para>Skips the specified number of elements in the list and builds an array from the remaining elements.</para>
@@ -439,7 +439,7 @@ namespace Platform.Collections.Lists
         /// <para>Если список пуст, или количество пропускаемых элементов больше списка - возвращает пустой массив, иначе - массив с указанным количеством пропущенных элементов.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T[] SkipFirst<T>(this IList<T> list, int skip)
+        public static T[] Skip<T>(this IList<T> list, int skip)
         {
             if (list.IsNullOrEmpty() || list.Count <= skip)
             {
