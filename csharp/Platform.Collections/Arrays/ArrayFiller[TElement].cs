@@ -100,6 +100,6 @@ namespace Platform.Collections.Arrays
         /// <para>Значение <see langword="true"/>.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _array.AddSkipFirstAndReturnConstant(ref _position, elements, true);
+        public bool SkipAndAddAndReturnTrue(IList<TElement> elements) => _array.SkipAndAddAndReturnConstant(ref _position, elements, true);
     }
 }

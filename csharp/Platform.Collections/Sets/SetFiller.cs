@@ -141,7 +141,7 @@ namespace Platform.Collections.Sets
         /// <para></para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _set.AddSkipFirstAndReturnTrue(elements);
+        public bool SkipAndAddAndReturnTrue(IList<TElement> elements) => _set.SkipAndAddAndReturnTrue(elements);
 
         /// <summary>
         /// <para>
@@ -221,9 +221,9 @@ namespace Platform.Collections.Sets
         /// <para></para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> elements)
+        public TReturnConstant SkipAndAddAndReturnConstant(IList<TElement> elements)
         {
-            _set.AddSkipFirst(elements);
+            _set.SkipAndAdd(elements);
             return _returnConstant;
         }
     }

@@ -18,7 +18,7 @@
 
         public: bool AddAllAndReturnTrue(Interfaces::CArray auto&& elements) { return Sets::AddAllAndReturnTrue(_set, elements); }
 
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::CArray auto&& elements) { return Sets::AddSkipFirstAndReturnTrue(_set, elements); }
+        public: bool SkipAndAddAndReturnTrue(Interfaces::CArray auto&& elements) { return Sets::SkipAndAddAndReturnTrue(_set, elements); }
 
         public: TReturnConstant AddAndReturnConstant(auto&& element)
         {
@@ -38,9 +38,9 @@
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::CArray auto&& elements)
+        public: TReturnConstant SkipAndAddAndReturnConstant(Interfaces::CArray auto&& elements)
         {
-            Sets::AddSkipFirst(_set, elements);
+            Sets::SkipAndAdd(_set, elements);
             return _returnConstant;
         }
     };

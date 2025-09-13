@@ -106,7 +106,7 @@ namespace Platform.Collections.Lists
         /// <para>Значение true в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AddSkipFirstAndReturnTrue(IList<TElement> elements) => _list.AddSkipFirstAndReturnTrue(elements);
+        public bool SkipAndAddAndReturnTrue(IList<TElement> elements) => _list.SkipAndAddAndReturnTrue(elements);
         
         /// <summary>
         /// <para>Adds an item to the end of the list and return constant.</para>
@@ -166,9 +166,9 @@ namespace Platform.Collections.Lists
         /// <para>Значение константы в любом случае.</para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TReturnConstant AddSkipFirstAndReturnConstant(IList<TElement> elements)
+        public TReturnConstant SkipAndAddAndReturnConstant(IList<TElement> elements)
         {
-            _list.AddSkipFirst(elements);
+            _list.SkipAndAdd(elements);
             return _returnConstant;
         }
     }

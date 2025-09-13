@@ -213,9 +213,9 @@ namespace Platform.Collections.Sets
         /// <para></para>
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool AddSkipFirstAndReturnTrue<T>(this ISet<T> set, IList<T> elements)
+        public static bool SkipAndAddAndReturnTrue<T>(this ISet<T> set, IList<T> elements)
         {
-            set.AddSkipFirst(elements);
+            set.SkipAndAdd(elements);
             return true;
         }
 
@@ -238,7 +238,7 @@ namespace Platform.Collections.Sets
         /// <para></para>
         /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddSkipFirst<T>(this ISet<T> set, IList<T> elements) => set.AddSkipFirst(elements, 1);
+        public static void SkipAndAdd<T>(this ISet<T> set, IList<T> elements) => set.SkipAndAdd(elements, 1);
 
         /// <summary>
         /// <para>
@@ -263,7 +263,7 @@ namespace Platform.Collections.Sets
         /// <para></para>
         /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void AddSkipFirst<T>(this ISet<T> set, IList<T> elements, int skip)
+        public static void SkipAndAdd<T>(this ISet<T> set, IList<T> elements, int skip)
         {
             for (var i = skip; i < elements.Count; i++)
             {

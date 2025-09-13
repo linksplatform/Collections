@@ -19,7 +19,7 @@
 
         public: bool AddAllAndReturnTrue(Interfaces::CArray auto&& elements){ return Lists::AddAllAndReturnTrue(_list, elements); }
 
-        public: bool AddSkipFirstAndReturnTrue(Interfaces::CArray auto&& elements) { return Lists::AddSkipFirstAndReturnTrue(_list, elements); }
+        public: bool SkipAndAddAndReturnTrue(Interfaces::CArray auto&& elements) { return Lists::SkipAndAddAndReturnTrue(_list, elements); }
 
         public: TReturnConstant AddAndReturnConstant(auto&& element)
         {
@@ -39,9 +39,9 @@
             return _returnConstant;
         }
 
-        public: TReturnConstant AddSkipFirstAndReturnConstant(Interfaces::CArray auto&& elements)
+        public: TReturnConstant SkipAndAddAndReturnConstant(Interfaces::CArray auto&& elements)
         {
-            Lists::AddSkipFirst(_list, elements);
+            Lists::SkipAndAdd(_list, elements);
             return _returnConstant;
         }
     };
