@@ -17,14 +17,14 @@ namespace Platform.Collections.Lists
         /// </para>
         /// <para></para>
         /// </summary>
-        protected readonly List<TElement> _list;
+        public readonly List<TElement> _list;
         /// <summary>
         /// <para>
         /// The return constant.
         /// </para>
         /// <para></para>
         /// </summary>
-        protected readonly TReturnConstant _returnConstant;
+        public readonly TReturnConstant _returnConstant;
 
         /// <summary>
         /// <para>Initializes a new instance of the ListFiller class.</para>

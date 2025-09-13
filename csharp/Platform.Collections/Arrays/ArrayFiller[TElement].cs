@@ -16,7 +16,7 @@ namespace Platform.Collections.Arrays
         /// </para>
         /// <para></para>
         /// </summary>
-        protected readonly TElement[] _array;
+        public readonly TElement[] _array;
         /// <summary>
         /// <para>
         /// The position.

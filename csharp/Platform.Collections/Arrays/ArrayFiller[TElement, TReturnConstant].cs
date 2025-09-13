@@ -17,7 +17,7 @@ namespace Platform.Collections.Arrays
         /// </para>
         /// <para></para>
         /// </summary>
-        protected readonly TReturnConstant _returnConstant;
+        public readonly TReturnConstant _returnConstant;
 
         /// <summary>
         /// <para>Initializes a new instance of the <see cref="ArrayFiller"/> class using the specified array, the offset from which filling will start and the constant returned when elements are being filled.</para>

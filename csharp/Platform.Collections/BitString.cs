@@ -21,7 +21,7 @@ namespace Platform.Collections
     /// </remarks>
     public class BitString : IEquatable<BitString>
     {
-        private static readonly byte[][] _bitsSetIn16Bits;
+        public static readonly byte[][] _bitsSetIn16Bits;
         private long[] _array;
         private long _length;
         private long _minPositiveWord;

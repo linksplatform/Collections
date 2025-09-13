@@ -19,14 +19,14 @@ namespace Platform.Collections.Sets
         /// </para>
         /// <para></para>
         /// </summary>
-        protected readonly ISet<TElement> _set;
+        public readonly ISet<TElement> _set;
         /// <summary>
         /// <para>
         /// The return constant.
         /// </para>
         /// <para></para>
         /// </summary>
-        protected readonly TReturnConstant _returnConstant;
+        public readonly TReturnConstant _returnConstant;
 
         /// <summary>
         /// <para>

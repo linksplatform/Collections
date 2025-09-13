@@ -15,7 +15,7 @@ namespace Platform.Collections.Segments.Walkers
     public abstract class AllSegmentsWalkerBase<T, TSegment> : AllSegmentsWalkerBase
         where TSegment : Segment<T>
     {
-        private readonly int _minimumStringSegmentLength;
+        public readonly int _minimumStringSegmentLength;
 
         /// <summary>
         /// <para>
