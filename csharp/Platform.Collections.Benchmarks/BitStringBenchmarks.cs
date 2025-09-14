@@ -70,5 +70,29 @@ namespace Platform.Collections.Benchmarks
 
         [Benchmark]
         public BitString ParallelVectorXor() => new BitString(_left).ParallelVectorXor(_right);
+
+        [Benchmark]
+        public BitString IntrinsicsNot() => new BitString(_left).IntrinsicsNot();
+
+        [Benchmark]
+        public BitString ParallelIntrinsicsNot() => new BitString(_left).ParallelIntrinsicsNot();
+
+        [Benchmark]
+        public BitString IntrinsicsAnd() => new BitString(_left).IntrinsicsAnd(_right);
+
+        [Benchmark]
+        public BitString ParallelIntrinsicsAnd() => new BitString(_left).ParallelIntrinsicsAnd(_right);
+
+        [Benchmark]
+        public BitString IntrinsicsOr() => new BitString(_left).IntrinsicsOr(_right);
+
+        [Benchmark]
+        public BitString ParallelIntrinsicsOr() => new BitString(_left).ParallelIntrinsicsOr(_right);
+
+        [Benchmark]
+        public BitString IntrinsicsXor() => new BitString(_left).IntrinsicsXor(_right);
+
+        [Benchmark]
+        public BitString ParallelIntrinsicsXor() => new BitString(_left).ParallelIntrinsicsXor(_right);
     }
 }
