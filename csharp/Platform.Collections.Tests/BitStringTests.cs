@@ -142,6 +142,93 @@ namespace Platform.Collections.Tests
                 w.Xor(v);
             });
         }
+
+        [Fact]
+        public static void AutomaticBorderRefreshingPropertyTest()
+        {
+            var bitString = new BitString(100);
+            Assert.True(bitString.AutomaticBorderRefreshing);
+            
+            bitString.AutomaticBorderRefreshing = false;
+            Assert.False(bitString.AutomaticBorderRefreshing);
+            
+            bitString.AutomaticBorderRefreshing = true;
+            Assert.True(bitString.AutomaticBorderRefreshing);
+        }
+
+        [Fact]
+        public static void CreateWithAutomaticBorderRefreshingTest()
+        {
+            var automaticBitString = BitString.Create(100, true);
+            Assert.True(automaticBitString.AutomaticBorderRefreshing);
+            
+            var manualBitString = BitString.Create(100, false);
+            Assert.False(manualBitString.AutomaticBorderRefreshing);
+        }
+
+        [Fact]
+        public static void CreateWithDefaultValueAndAutomaticBorderRefreshingTest()
+        {
+            var automaticBitString = BitString.Create(100, false, true);
+            Assert.True(automaticBitString.AutomaticBorderRefreshing);
+            
+            var manualBitString = BitString.Create(100, true, false);
+            Assert.False(manualBitString.AutomaticBorderRefreshing);
+        }
+
+        [Fact]
+        public static void ManualBorderRefreshTest()
+        {
+            var bitString = BitString.Create(1000, false);
+            
+            // Set some bits
+            bitString.Set(100, true);
+            bitString.Set(500, true);
+            bitString.Set(900, true);
+            
+            // Manually refresh borders
+            bool updated = bitString.RefreshBorders();
+            Assert.True(updated);
+            
+            // Verify correct borders
+            Assert.Equal(100, bitString.GetFirstSetBitIndex());
+            Assert.Equal(900, bitString.GetLastSetBitIndex());
+        }
+
+        [Fact]
+        public static void AutomaticVsManualBorderBehaviorTest()
+        {
+            // Test with automatic border refreshing
+            var automaticBitString = new BitString(100);
+            automaticBitString.Set(50, true);
+            var automaticFirst = automaticBitString.GetFirstSetBitIndex();
+            var automaticLast = automaticBitString.GetLastSetBitIndex();
+            
+            // Test with manual border refreshing
+            var manualBitString = BitString.Create(100, false);
+            manualBitString.Set(50, true);
+            manualBitString.RefreshBorders();
+            var manualFirst = manualBitString.GetFirstSetBitIndex();
+            var manualLast = manualBitString.GetLastSetBitIndex();
+            
+            // Results should be the same
+            Assert.Equal(automaticFirst, manualFirst);
+            Assert.Equal(automaticLast, manualLast);
+            Assert.Equal(50, automaticFirst);
+            Assert.Equal(50, manualFirst);
+        }
+
+        [Fact]
+        public static void CopyConstructorPreservesAutomaticBorderRefreshingTest()
+        {
+            var originalAutomatic = new BitString(100);
+            var copyAutomatic = new BitString(originalAutomatic);
+            Assert.True(copyAutomatic.AutomaticBorderRefreshing);
+            
+            var originalManual = BitString.Create(100, false);
+            var copyManual = new BitString(originalManual);
+            Assert.False(copyManual.AutomaticBorderRefreshing);
+        }
         private static void TestToOperationsWithSameMeaning(Action<BitString, BitString, BitString, BitString> test)
         {
             const int n = 5654;

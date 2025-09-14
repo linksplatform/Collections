@@ -26,6 +26,7 @@ namespace Platform.Collections
         private long _length;
         private long _minPositiveWord;
         private long _maxPositiveWord;
+        private bool _automaticBorderRefreshing;
 
         /// <summary>
         /// <para>
@@ -91,6 +92,22 @@ namespace Platform.Collections
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// Gets or sets the automatic border refreshing value.
+        /// When enabled, borders (minimum and maximum non-zero words) are automatically updated on every bit change.
+        /// When disabled, borders need to be manually refreshed using RefreshBorders() method.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        public bool AutomaticBorderRefreshing
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => _automaticBorderRefreshing;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _automaticBorderRefreshing = value;
+        }
+
         #region Constructors
 
         /// <summary>
@@ -147,6 +164,7 @@ namespace Platform.Collections
             _array = new long[GetWordsCountFromIndex(_length)];
             _minPositiveWord = other._minPositiveWord;
             _maxPositiveWord = other._maxPositiveWord;
+            _automaticBorderRefreshing = other._automaticBorderRefreshing;
             Array.Copy(other._array, _array, _array.LongLength);
         }
 
@@ -166,6 +184,7 @@ namespace Platform.Collections
             Ensure.Always.ArgumentInRange(length, GetValidLengthRange(), nameof(length));
             _length = length;
             _array = new long[GetWordsCountFromIndex(_length)];
+            _automaticBorderRefreshing = true;
             MarkBordersAsAllBitsReset();
         }
 
@@ -193,7 +212,64 @@ namespace Platform.Collections
             }
         }
 
+
         #endregion
+
+        /// <summary>
+        /// <para>
+        /// Creates a new <see cref="BitString"/> instance with specified automatic border refreshing behavior.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="length">
+        /// <para>A length.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="automaticBorderRefreshing">
+        /// <para>Whether to automatically refresh borders on every bit change.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>A new BitString instance.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static BitString Create(long length, bool automaticBorderRefreshing)
+        {
+            var bitString = new BitString(length);
+            bitString._automaticBorderRefreshing = automaticBorderRefreshing;
+            return bitString;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Creates a new <see cref="BitString"/> instance with specified default value and automatic border refreshing behavior.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="length">
+        /// <para>A length.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="defaultValue">
+        /// <para>A default value.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="automaticBorderRefreshing">
+        /// <para>Whether to automatically refresh borders on every bit change.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>A new BitString instance.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static BitString Create(long length, bool defaultValue, bool automaticBorderRefreshing)
+        {
+            var bitString = new BitString(length, defaultValue);
+            bitString._automaticBorderRefreshing = automaticBorderRefreshing;
+            return bitString;
+        }
 
         /// <summary>
         /// <para>
@@ -894,26 +970,29 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RefreshBordersByWord(long wordIndex)
         {
-            if (_array[wordIndex] == 0)
+            if (_automaticBorderRefreshing)
             {
-                if (wordIndex == _minPositiveWord && wordIndex != _array.LongLength - 1)
+                if (_array[wordIndex] == 0)
                 {
-                    _minPositiveWord++;
+                    if (wordIndex == _minPositiveWord && wordIndex != _array.LongLength - 1)
+                    {
+                        _minPositiveWord++;
+                    }
+                    if (wordIndex == _maxPositiveWord && wordIndex != 0)
+                    {
+                        _maxPositiveWord--;
+                    }
                 }
-                if (wordIndex == _maxPositiveWord && wordIndex != 0)
+                else
                 {
-                    _maxPositiveWord--;
-                }
-            }
-            else
-            {
-                if (wordIndex < _minPositiveWord)
-                {
-                    _minPositiveWord = wordIndex;
-                }
-                if (wordIndex > _maxPositiveWord)
-                {
-                    _maxPositiveWord = wordIndex;
+                    if (wordIndex < _minPositiveWord)
+                    {
+                        _minPositiveWord = wordIndex;
+                    }
+                    if (wordIndex > _maxPositiveWord)
+                    {
+                        _maxPositiveWord = wordIndex;
+                    }
                 }
             }
         }
@@ -956,6 +1035,65 @@ namespace Platform.Collections
                 SetBorders(from, to);
             }
             return bordersUpdated;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Manually refreshes the borders (minimum and maximum non-zero words).
+        /// This method recalculates the accurate borders by scanning through the entire array.
+        /// Use this when AutomaticBorderRefreshing is disabled to update borders when needed.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The borders updated.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool RefreshBorders()
+        {
+            var oldMinPositiveWord = _minPositiveWord;
+            var oldMaxPositiveWord = _maxPositiveWord;
+            
+            // Scan the entire array to find actual borders
+            long minPositiveWord = _array.LongLength - 1;
+            long maxPositiveWord = 0;
+            bool foundAnySet = false;
+            
+            for (long i = 0; i < _array.LongLength; i++)
+            {
+                if (_array[i] != 0)
+                {
+                    if (!foundAnySet)
+                    {
+                        minPositiveWord = i;
+                        maxPositiveWord = i;
+                        foundAnySet = true;
+                    }
+                    else
+                    {
+                        if (i < minPositiveWord)
+                        {
+                            minPositiveWord = i;
+                        }
+                        if (i > maxPositiveWord)
+                        {
+                            maxPositiveWord = i;
+                        }
+                    }
+                }
+            }
+            
+            if (foundAnySet)
+            {
+                SetBorders(minPositiveWord, maxPositiveWord);
+            }
+            else
+            {
+                MarkBordersAsAllBitsReset();
+            }
+            
+            return _minPositiveWord != oldMinPositiveWord || _maxPositiveWord != oldMaxPositiveWord;
         }
 
         /// <summary>
