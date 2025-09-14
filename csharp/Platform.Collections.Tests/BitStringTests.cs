@@ -142,6 +142,86 @@ namespace Platform.Collections.Tests
                 w.Xor(v);
             });
         }
+
+        [Fact]
+        public static void BitIntrinsicsNotTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.IntrinsicsNot();
+                w.Not();
+            });
+        }
+
+        [Fact]
+        public static void BitParallelIntrinsicsNotTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.ParallelIntrinsicsNot();
+                w.Not();
+            });
+        }
+
+        [Fact]
+        public static void BitIntrinsicsAndTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.IntrinsicsAnd(y);
+                w.And(v);
+            });
+        }
+
+        [Fact]
+        public static void BitParallelIntrinsicsAndTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.ParallelIntrinsicsAnd(y);
+                w.And(v);
+            });
+        }
+
+        [Fact]
+        public static void BitIntrinsicsOrTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.IntrinsicsOr(y);
+                w.Or(v);
+            });
+        }
+
+        [Fact]
+        public static void BitParallelIntrinsicsOrTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.ParallelIntrinsicsOr(y);
+                w.Or(v);
+            });
+        }
+
+        [Fact]
+        public static void BitIntrinsicsXorTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.IntrinsicsXor(y);
+                w.Xor(v);
+            });
+        }
+
+        [Fact]
+        public static void BitParallelIntrinsicsXorTest()
+        {
+            TestToOperationsWithSameMeaning((x, y, w, v) =>
+            {
+                x.ParallelIntrinsicsXor(y);
+                w.Xor(v);
+            });
+        }
         private static void TestToOperationsWithSameMeaning(Action<BitString, BitString, BitString, BitString> test)
         {
             const int n = 5654;

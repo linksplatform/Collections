@@ -3,6 +3,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
 using System.Threading.Tasks;
 using Platform.Exceptions;
 using Platform.Ranges;
@@ -891,6 +893,683 @@ namespace Platform.Collections
                 array[i] ^= otherArray[i];
             }
         }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics the not.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString IntrinsicsNot()
+        {
+            if (Avx2.IsSupported && _array.LongLength >= int.MaxValue / 4)
+            {
+                return Not();
+            }
+            if (Avx2.IsSupported)
+            {
+                IntrinsicsNotLoopAvx2(_array, 0, _array.Length);
+            }
+            else if (Sse2.IsSupported)
+            {
+                IntrinsicsNotLoopSse2(_array, 0, _array.Length);
+            }
+            else
+            {
+                return Not();
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Parallels the intrinsics not.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString ParallelIntrinsicsNot()
+        {
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
+            {
+                return IntrinsicsNot();
+            }
+            if (!Avx2.IsSupported && !Sse2.IsSupported)
+            {
+                return ParallelNot();
+            }
+            var partitioner = Partitioner.Create(0, _array.Length, _array.Length / threads);
+            if (Avx2.IsSupported)
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsNotLoopAvx2(_array, range.Item1, range.Item2));
+            }
+            else
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsNotLoopSse2(_array, range.Item1, range.Item2));
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics the and using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString IntrinsicsAnd(BitString other)
+        {
+            if (!Avx2.IsSupported && !Sse2.IsSupported || _array.LongLength >= int.MaxValue)
+            {
+                return And(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            if (Avx2.IsSupported)
+            {
+                IntrinsicsAndLoopAvx2(_array, other._array, from, to + 1);
+            }
+            else
+            {
+                IntrinsicsAndLoopSse2(_array, other._array, from, to + 1);
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Parallels the intrinsics and using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString ParallelIntrinsicsAnd(BitString other)
+        {
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
+            {
+                return IntrinsicsAnd(other);
+            }
+            if (!Avx2.IsSupported && !Sse2.IsSupported)
+            {
+                return ParallelAnd(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            if (Avx2.IsSupported)
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsAndLoopAvx2(_array, other._array, range.Item1, range.Item2));
+            }
+            else
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsAndLoopSse2(_array, other._array, range.Item1, range.Item2));
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics the or using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString IntrinsicsOr(BitString other)
+        {
+            if (!Avx2.IsSupported && !Sse2.IsSupported || _array.LongLength >= int.MaxValue)
+            {
+                return Or(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            if (Avx2.IsSupported)
+            {
+                IntrinsicsOrLoopAvx2(_array, other._array, from, to + 1);
+            }
+            else
+            {
+                IntrinsicsOrLoopSse2(_array, other._array, from, to + 1);
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Parallels the intrinsics or using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString ParallelIntrinsicsOr(BitString other)
+        {
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
+            {
+                return IntrinsicsOr(other);
+            }
+            if (!Avx2.IsSupported && !Sse2.IsSupported)
+            {
+                return ParallelOr(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            if (Avx2.IsSupported)
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsOrLoopAvx2(_array, other._array, range.Item1, range.Item2));
+            }
+            else
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsOrLoopSse2(_array, other._array, range.Item1, range.Item2));
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics the xor using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString IntrinsicsXor(BitString other)
+        {
+            if (!Avx2.IsSupported && !Sse2.IsSupported || _array.LongLength >= int.MaxValue)
+            {
+                return Xor(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            if (Avx2.IsSupported)
+            {
+                IntrinsicsXorLoopAvx2(_array, other._array, from, to + 1);
+            }
+            else
+            {
+                IntrinsicsXorLoopSse2(_array, other._array, from, to + 1);
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Parallels the intrinsics xor using the specified other.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="other">
+        /// <para>The other.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bit string</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString ParallelIntrinsicsXor(BitString other)
+        {
+            var threads = Environment.ProcessorCount / 2;
+            if (threads <= 1)
+            {
+                return IntrinsicsXor(other);
+            }
+            if (!Avx2.IsSupported && !Sse2.IsSupported)
+            {
+                return ParallelXor(other);
+            }
+            EnsureBitStringHasTheSameSize(other, nameof(other));
+            GetCommonOuterBorders(this, other, out int from, out int to);
+            var partitioner = Partitioner.Create(from, to + 1, (to - from) / threads);
+            if (Avx2.IsSupported)
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsXorLoopAvx2(_array, other._array, range.Item1, range.Item2));
+            }
+            else
+            {
+                Parallel.ForEach(partitioner.GetDynamicPartitions(), new ParallelOptions { MaxDegreeOfParallelism = threads }, range => IntrinsicsXorLoopSse2(_array, other._array, range.Item1, range.Item2));
+            }
+            MarkBordersAsAllBitsSet();
+            TryShrinkBorders();
+            return this;
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics not loop using AVX2 for the specified array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsNotLoopAvx2(long[] array, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector256<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector = Avx.LoadVector256(ptr + i);
+                    var notVector = Avx2.Xor(vector, Vector256.Create(-1L));
+                    Avx.Store(ptr + i, notVector);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] = ~array[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics not loop using SSE2 for the specified array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsNotLoopSse2(long[] array, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector128<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector = Sse2.LoadVector128(ptr + i);
+                    var notVector = Sse2.Xor(vector, Vector128.Create(-1L));
+                    Sse2.Store(ptr + i, notVector);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] = ~array[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics and loop using AVX2 for the specified arrays.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="otherArray">
+        /// <para>The other array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsAndLoopAvx2(long[] array, long[] otherArray, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            fixed (long* otherPtr = &otherArray[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector256<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector1 = Avx.LoadVector256(ptr + i);
+                    var vector2 = Avx.LoadVector256(otherPtr + i);
+                    var result = Avx2.And(vector1, vector2);
+                    Avx.Store(ptr + i, result);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] &= otherArray[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics and loop using SSE2 for the specified arrays.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="otherArray">
+        /// <para>The other array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsAndLoopSse2(long[] array, long[] otherArray, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            fixed (long* otherPtr = &otherArray[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector128<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector1 = Sse2.LoadVector128(ptr + i);
+                    var vector2 = Sse2.LoadVector128(otherPtr + i);
+                    var result = Sse2.And(vector1, vector2);
+                    Sse2.Store(ptr + i, result);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] &= otherArray[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics or loop using AVX2 for the specified arrays.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="otherArray">
+        /// <para>The other array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsOrLoopAvx2(long[] array, long[] otherArray, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            fixed (long* otherPtr = &otherArray[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector256<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector1 = Avx.LoadVector256(ptr + i);
+                    var vector2 = Avx.LoadVector256(otherPtr + i);
+                    var result = Avx2.Or(vector1, vector2);
+                    Avx.Store(ptr + i, result);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] |= otherArray[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics or loop using SSE2 for the specified arrays.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="otherArray">
+        /// <para>The other array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsOrLoopSse2(long[] array, long[] otherArray, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            fixed (long* otherPtr = &otherArray[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector128<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector1 = Sse2.LoadVector128(ptr + i);
+                    var vector2 = Sse2.LoadVector128(otherPtr + i);
+                    var result = Sse2.Or(vector1, vector2);
+                    Sse2.Store(ptr + i, result);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] |= otherArray[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics xor loop using AVX2 for the specified arrays.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="otherArray">
+        /// <para>The other array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsXorLoopAvx2(long[] array, long[] otherArray, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            fixed (long* otherPtr = &otherArray[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector256<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector1 = Avx.LoadVector256(ptr + i);
+                    var vector2 = Avx.LoadVector256(otherPtr + i);
+                    var result = Avx2.Xor(vector1, vector2);
+                    Avx.Store(ptr + i, result);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] ^= otherArray[j];
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Intrinsics xor loop using SSE2 for the specified arrays.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>The array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="otherArray">
+        /// <para>The other array.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="start">
+        /// <para>The start.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="maximum">
+        /// <para>The maximum.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        static private unsafe void IntrinsicsXorLoopSse2(long[] array, long[] otherArray, int start, int maximum)
+        {
+            fixed (long* ptr = &array[start])
+            fixed (long* otherPtr = &otherArray[start])
+            {
+                var i = 0;
+                var count = maximum - start;
+                var vectorSize = Vector128<long>.Count;
+                var stop = count - (count % vectorSize);
+
+                for (; i < stop; i += vectorSize)
+                {
+                    var vector1 = Sse2.LoadVector128(ptr + i);
+                    var vector2 = Sse2.LoadVector128(otherPtr + i);
+                    var result = Sse2.Xor(vector1, vector2);
+                    Sse2.Store(ptr + i, result);
+                }
+
+                for (var j = start + i; j < maximum; j++)
+                {
+                    array[j] ^= otherArray[j];
+                }
+            }
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RefreshBordersByWord(long wordIndex)
         {
