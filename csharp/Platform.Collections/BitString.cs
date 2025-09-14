@@ -892,7 +892,7 @@ namespace Platform.Collections
             }
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void RefreshBordersByWord(long wordIndex)
+        internal void RefreshBordersByWord(long wordIndex)
         {
             if (_array[wordIndex] == 0)
             {
@@ -1533,7 +1533,7 @@ namespace Platform.Collections
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MarkBordersAsAllBitsSet() => SetBorders(0, _array.LongLength - 1);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void GetBorders(out long from, out long to)
+        internal void GetBorders(out long from, out long to)
         {
             from = _minPositiveWord;
             to = _maxPositiveWord;
@@ -1859,5 +1859,34 @@ namespace Platform.Collections
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString() => base.ToString();
+
+        /// <summary>
+        /// <para>
+        /// Creates a new BitStringChain for chaining multiple operations efficiently.
+        /// This allows multiple operations to be applied in a single memory pass,
+        /// reducing memory bandwidth usage and improving performance.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A new BitStringChain instance for method chaining.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitStringChain Chain() => new BitStringChain(this);
+
+        /// <summary>
+        /// <para>
+        /// Gets the internal array for internal operations. This method is used by BitStringChain.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>The internal long array.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal long[] GetInternalArray() => _array;
+
     }
 }

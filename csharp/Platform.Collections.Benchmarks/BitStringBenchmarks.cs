@@ -70,5 +70,55 @@ namespace Platform.Collections.Benchmarks
 
         [Benchmark]
         public BitString ParallelVectorXor() => new BitString(_left).ParallelVectorXor(_right);
+
+        [Benchmark]
+        public BitString ChainedOperationsSeparate()
+        {
+            // Traditional approach: multiple passes through memory
+            var result = new BitString(_left);
+            result.Not();
+            result.And(_right);
+            result.Xor(_left);
+            return result;
+        }
+
+        [Benchmark]
+        public BitString ChainedOperationsOptimized()
+        {
+            // Optimized approach: single pass through memory using chaining
+            return new BitString(_left)
+                .Chain()
+                .Not()
+                .And(_right)
+                .Xor(_left)
+                .Execute();
+        }
+
+        [Benchmark]
+        public BitString ComplexChainedOperationsSeparate()
+        {
+            // More complex operations with traditional approach
+            var result = new BitString(_left);
+            result.Not();
+            result.And(_right);
+            result.Not();
+            result.Or(_left);
+            result.Xor(_right);
+            return result;
+        }
+
+        [Benchmark]
+        public BitString ComplexChainedOperationsOptimized()
+        {
+            // More complex operations with chaining
+            return new BitString(_left)
+                .Chain()
+                .Not()
+                .And(_right)
+                .Not()
+                .Or(_left)
+                .Xor(_right)
+                .Execute();
+        }
     }
 }
