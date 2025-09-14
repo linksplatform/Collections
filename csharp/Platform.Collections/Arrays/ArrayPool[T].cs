@@ -33,7 +33,8 @@ namespace Platform.Collections.Arrays
         /// </summary>
         internal static ArrayPool<T> ThreadInstance => _threadInstance ?? (_threadInstance = new ArrayPool<T>());
         private readonly int _maxArraysPerSize;
-        private readonly Dictionary<long, Stack<T[]>> _pool = new Dictionary<long, Stack<T[]>>(ArrayPool.DefaultSizesAmount);
+        private readonly int _maxPoolSizes;
+        private readonly Dictionary<long, Stack<T[]>> _pool;
 
         /// <summary>
         /// <para>Initializes a new instance of the ArrayPool class using the specified maximum number of arrays per size.</para>
@@ -41,7 +42,21 @@ namespace Platform.Collections.Arrays
         /// </summary>
         /// <param name="maxArraysPerSize"><para>The maximum number of arrays in the pool per size.</para><para>Максимальное количество массивов в пуле на каждый размер.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ArrayPool(int maxArraysPerSize) => _maxArraysPerSize = maxArraysPerSize;
+        public ArrayPool(int maxArraysPerSize) : this(maxArraysPerSize, ArrayPool.DefaultSizesAmount) { }
+
+        /// <summary>
+        /// <para>Initializes a new instance of the ArrayPool class using the specified maximum number of arrays per size and maximum pool sizes.</para>
+        /// <para>Инициализирует новый экземпляр класса ArrayPool, используя указанное максимальное количество массивов на каждый размер и максимальное количество размеров пула.</para>
+        /// </summary>
+        /// <param name="maxArraysPerSize"><para>The maximum number of arrays in the pool per size.</para><para>Максимальное количество массивов в пуле на каждый размер.</para></param>
+        /// <param name="maxPoolSizes"><para>The maximum number of different sizes in the pool.</para><para>Максимальное количество разных размеров в пуле.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public ArrayPool(int maxArraysPerSize, int maxPoolSizes) 
+        {
+            _maxArraysPerSize = maxArraysPerSize;
+            _maxPoolSizes = maxPoolSizes;
+            _pool = new Dictionary<long, Stack<T[]>>(maxPoolSizes);
+        }
 
         /// <summary>
         /// <para>Initializes a new instance of the ArrayPool class using the default maximum number of arrays per size.</para>
@@ -94,6 +109,17 @@ namespace Platform.Collections.Arrays
         public virtual void Clear() => _pool.Clear();
 
         /// <summary>
+        /// <para>Clears the thread-static instance for the current thread to prevent memory leaks.</para>
+        /// <para>Очищает экземпляр ThreadStatic для текущего потока, чтобы предотвратить утечки памяти.</para>
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ClearThreadInstance()
+        {
+            _threadInstance?.Clear();
+            _threadInstance = null;
+        }
+
+        /// <summary>
         /// <para>Retrieves an array with the specified size from the pool.</para>
         /// <para>Извлекает из пула массив с указанным размером.</para>
         /// </summary>
@@ -117,11 +143,25 @@ namespace Platform.Collections.Arrays
             {
                 return;
             }
+            
+            // Check if we have too many different sizes, reject if pool is at capacity
+            if (!_pool.ContainsKey(array.LongLength) && _pool.Count >= _maxPoolSizes)
+            {
+                return;
+            }
+            
             var stack = _pool.GetOrAdd(array.LongLength, size => new Stack<T[]>(_maxArraysPerSize));
             if (stack.Count == _maxArraysPerSize) // Stack is full
             {
                 return;
             }
+            
+            // Clear array contents to prevent memory leaks from object references
+            if (!typeof(T).IsValueType)
+            {
+                Array.Clear(array, 0, array.Length);
+            }
+            
             stack.Push(array);
         }
     }

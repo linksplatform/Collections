@@ -44,5 +44,13 @@ namespace Platform.Collections.Arrays
         /// <param name="array"><para>The array to be freed into the pull.</para><para>Массив который нужно освобоить в пулл.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Free<T>(T[] array) => ArrayPool<T>.ThreadInstance.Free(array);
+
+        /// <summary>
+        /// <para>Clears the thread-static instance for the current thread to prevent memory leaks.</para>
+        /// <para>Очищает экземпляр ThreadStatic для текущего потока, чтобы предотвратить утечки памяти.</para>
+        /// </summary>
+        /// <typeparam name="T"><para>The array elements type.</para><para>Тип элементов массива.</para></typeparam>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ClearThreadInstance<T>() => ArrayPool<T>.ClearThreadInstance();
     }
 }
