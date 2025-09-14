@@ -17,6 +17,15 @@ namespace Platform.Collections.Segments
     public class Segment<T> : IEquatable<Segment<T>>, IList<T>
     {
         /// <summary>
+        /// <para>Gets an empty segment.</para>
+        /// <para>Возвращает пустой сегмент.</para>
+        /// </summary>
+        public static Segment<T> Empty
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new Segment<T>(new T[0], 0, 0);
+        }
+        /// <summary>
         /// <para>Gets the original list (this segment is a part of it).</para>
         /// <para>Возвращает исходный список (частью которого является этот сегмент).</para>
         /// </summary>
@@ -45,6 +54,17 @@ namespace Platform.Collections.Segments
         }
 
         /// <summary>
+        /// <para>Gets the original array when the base is an array. Compatible with ArraySegment semantics.</para>
+        /// <para>Возвращает исходный массив, когда основой является массив. Совместим с семантикой ArraySegment.</para>
+        /// </summary>
+        public T[] Array
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => Base as T[];
+        }
+
+
+        /// <summary>
         /// <para>Initializes a new instance of the <see cref="Segment"/> class, using the <paramref name="base"/> list, <paramref name="offset"/> of the segment and its <paramref name="length" />.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, используя список <paramref name="base"/>, <paramref name="offset"/> сегмента и его <paramref name="length"/>.</para>
         /// </summary>
@@ -57,6 +77,43 @@ namespace Platform.Collections.Segments
             Base = @base;
             Offset = offset;
             Length = length;
+        }
+
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="Segment"/> class that delimits the entire array. Compatible with ArraySegment constructor.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, который разграничивает весь массив. Совместим с конструктором ArraySegment.</para>
+        /// </summary>
+        /// <param name="array"><para>The array to wrap in the segment.</para><para>Массив для обертывания в сегмент.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Segment(T[] array)
+        {
+            Base = array ?? throw new ArgumentNullException(nameof(array));
+            Offset = 0;
+            Length = array.Length;
+        }
+
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="Segment"/> class that delimits a range of elements in an array. Compatible with ArraySegment constructor.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="Segment"/>, который разграничивает диапазон элементов в массиве. Совместим с конструктором ArraySegment.</para>
+        /// </summary>
+        /// <param name="array"><para>The array to wrap in the segment.</para><para>Массив для обертывания в сегмент.</para></param>
+        /// <param name="offset"><para>The zero-based index of the first element in the range delimited by the array segment.</para><para>Отсчитываемый от нуля индекс первого элемента в диапазоне, разделенном сегментом массива.</para></param>
+        /// <param name="count"><para>The number of elements in the range delimited by the array segment.</para><para>Количество элементов в диапазоне, разделенном сегментом массива.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Segment(T[] array, int offset, int count)
+        {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+            if (offset < 0)
+                throw new ArgumentOutOfRangeException(nameof(offset));
+            if (count < 0)
+                throw new ArgumentOutOfRangeException(nameof(count));
+            if (offset + count > array.Length)
+                throw new ArgumentException("Offset and count exceed array bounds.");
+            
+            Base = array;
+            Offset = offset;
+            Length = count;
         }
         
         /// <summary>
@@ -95,6 +152,50 @@ namespace Platform.Collections.Segments
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(object obj) => obj is Segment<T> other ? Equals(other) : false;
+
+        /// <summary>
+        /// <para>Forms a slice out of the current segment that begins at a specified index. Compatible with ArraySegment semantics.</para>
+        /// <para>Формирует срез из текущего сегмента, который начинается с указанного индекса. Совместим с семантикой ArraySegment.</para>
+        /// </summary>
+        /// <param name="index"><para>The index at which to begin the slice.</para><para>Индекс, с которого начинается срез.</para></param>
+        /// <returns><para>A segment that consists of all elements of the current segment from <paramref name="index"/> to the end.</para><para>Сегмент, который состоит из всех элементов текущего сегмента от <paramref name="index"/> до конца.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Segment<T> Slice(int index)
+        {
+            if (index < 0 || index > Length)
+                throw new ArgumentOutOfRangeException(nameof(index));
+            return new Segment<T>(Base, Offset + index, Length - index);
+        }
+
+        /// <summary>
+        /// <para>Forms a slice out of the current segment starting at a specified index for a specified length. Compatible with ArraySegment semantics.</para>
+        /// <para>Формирует срез из текущего сегмента, начиная с указанного индекса для указанной длины. Совместим с семантикой ArraySegment.</para>
+        /// </summary>
+        /// <param name="index"><para>The index at which to begin the slice.</para><para>Индекс, с которого начинается срез.</para></param>
+        /// <param name="count"><para>The desired length for the slice.</para><para>Желаемая длина среза.</para></param>
+        /// <returns><para>A segment that consists of <paramref name="count"/> elements from the current segment starting at <paramref name="index"/>.</para><para>Сегмент, который состоит из <paramref name="count"/> элементов текущего сегмента, начиная с <paramref name="index"/>.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Segment<T> Slice(int index, int count)
+        {
+            if (index < 0 || index > Length)
+                throw new ArgumentOutOfRangeException(nameof(index));
+            if (count < 0 || index + count > Length)
+                throw new ArgumentOutOfRangeException(nameof(count));
+            return new Segment<T>(Base, Offset + index, count);
+        }
+
+        /// <summary>
+        /// <para>Copies the contents of this segment into a new array. Compatible with ArraySegment semantics.</para>
+        /// <para>Копирует содержимое этого сегмента в новый массив. Совместим с семантикой ArraySegment.</para>
+        /// </summary>
+        /// <returns><para>An array containing copies of the elements of the current segment.</para><para>Массив, содержащий копии элементов текущего сегмента.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public T[] ToArray()
+        {
+            var result = new T[Length];
+            CopyTo(result, 0);
+            return result;
+        }
 
         #region IList
 
