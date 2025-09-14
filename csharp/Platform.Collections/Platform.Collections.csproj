@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Collections Class Library</Description>
     <Copyright>konard;tynkute</Copyright>
     <AssemblyTitle>Platform.Collections</AssemblyTitle>
-    <VersionPrefix>0.4.0</VersionPrefix>
+    <VersionPrefix>0.5.0</VersionPrefix>
     <Authors>konard;tynkute</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Collections</AssemblyName>
@@ -24,7 +24,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Update target framework from net7 to net8.</PackageReleaseNotes>
+    <PackageReleaseNotes>Improve hash function quality by replacing simple multiplicative algorithm with System.HashCode for better distribution and collision resistance.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

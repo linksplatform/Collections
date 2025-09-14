@@ -336,17 +336,18 @@ namespace Platform.Collections.Lists
         /// <para>Хэш-код списка.</para>
         /// </returns>
         /// <remarks>
-        /// Based on http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
+        /// Uses System.HashCode for optimal hash combining as recommended in modern .NET applications.
+        /// This provides better distribution and collision resistance compared to simple multiplicative hashing.
         /// </remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GenerateHashCode<T>(this IList<T> list)
         {
-            var hashAccumulator = 17;
+            var hash = new HashCode();
             for (var i = 0; i < list.Count; i++)
             {
-                hashAccumulator = unchecked((hashAccumulator * 23) + list[i].GetHashCode());
+                hash.Add(list[i]);
             }
-            return hashAccumulator;
+            return hash.ToHashCode();
         }
 
         /// <summary>
