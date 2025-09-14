@@ -59,34 +59,76 @@ namespace Platform.Collections
                     return;
                 }
                 Ensure.Always.ArgumentInRange(value, GetValidLengthRange(), nameof(Length));
-                // Currently we never shrink the array
+                
                 if (value > _length)
                 {
-                    var words = GetWordsCountFromIndex(value);
+                    // Expanding the bit string
+                    var newWords = GetWordsCountFromIndex(value);
                     var oldWords = GetWordsCountFromIndex(_length);
-                    if (words > _array.LongLength)
+                    
+                    if (newWords > _array.LongLength)
                     {
-                        var copy = new long[words];
+                        // Need to expand the array
+                        var copy = new long[newWords];
                         Array.Copy(_array, copy, _array.LongLength);
                         _array = copy;
                     }
-                    else
+                    
+                    // Clear any new words that were added
+                    if (newWords > oldWords)
                     {
-                        // What is going on here?
-                        Array.Clear(_array, (int)oldWords, (int)(words - oldWords));
+                        Array.Clear(_array, (int)oldWords, (int)(newWords - oldWords));
                     }
-                    // What is going on here?
-                    var mask = (int)(_length % 64);
-                    if (mask > 0)
+                    
+                    // Mask off any extra bits in the last word of the old length
+                    // This ensures that bits beyond the old length are cleared
+                    var oldBitsInLastWord = (int)(_length % 64);
+                    if (oldBitsInLastWord > 0 && oldWords > 0)
                     {
-                        _array[oldWords - 1] &= (1L << mask) - 1;
+                        var lastOldWordIndex = oldWords - 1;
+                        _array[lastOldWordIndex] &= (1L << oldBitsInLastWord) - 1;
                     }
                 }
                 else
                 {
-                    // Looks like minimum and maximum positive words are not updated
-                    throw new NotImplementedException();
+                    // Shrinking the bit string
+                    var newWords = GetWordsCountFromIndex(value);
+                    var oldWords = GetWordsCountFromIndex(_length);
+                    
+                    // Clear any words that are now beyond the new length
+                    if (newWords < oldWords)
+                    {
+                        Array.Clear(_array, (int)newWords, (int)(oldWords - newWords));
+                    }
+                    
+                    // Mask off any extra bits in the last word of the new length
+                    var newBitsInLastWord = (int)(value % 64);
+                    if (newBitsInLastWord > 0 && newWords > 0)
+                    {
+                        var lastNewWordIndex = newWords - 1;
+                        _array[lastNewWordIndex] &= (1L << newBitsInLastWord) - 1;
+                    }
+                    else if (value == 0)
+                    {
+                        // Special case: length is 0, clear everything
+                        if (_array.Length > 0)
+                        {
+                            Array.Clear(_array, 0, (int)Math.Min(_array.Length, oldWords));
+                        }
+                    }
+                    
+                    // Update the borders to reflect the new state
+                    if (value == 0)
+                    {
+                        MarkBordersAsAllBitsReset();
+                    }
+                    else
+                    {
+                        // Recalculate borders since we may have cleared some set bits
+                        TryShrinkBorders();
+                    }
                 }
+                
                 _length = value;
             }
         }
