@@ -193,6 +193,36 @@ namespace Platform.Collections
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// Initializes a new <see cref="BitString"/> instance.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="array">
+        /// <para>An array of integers to initialize the bit string with.</para>
+        /// <para></para>
+        /// </param>
+        /// <param name="length">
+        /// <para>A length.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public BitString(long[] array, long length)
+        {
+            Ensure.Always.ArgumentNotNull(array, nameof(array));
+            Ensure.Always.ArgumentInRange(length, GetValidLengthRange(), nameof(length));
+            var wordsCount = GetWordsCountFromIndex(length);
+            if (array.LongLength < wordsCount)
+            {
+                throw new ArgumentException($"Array must have at least {wordsCount} elements for length {length}.", nameof(array));
+            }
+            _length = length;
+            _array = new long[wordsCount];
+            Array.Copy(array, _array, wordsCount);
+            SetBordersFromArray();
+        }
+
         #endregion
 
         /// <summary>
@@ -1532,6 +1562,33 @@ namespace Platform.Collections
         private void MarkBordersAsAllBitsReset() => SetBorders(_array.LongLength - 1, 0);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MarkBordersAsAllBitsSet() => SetBorders(0, _array.LongLength - 1);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void SetBordersFromArray()
+        {
+            long minPositiveWord = _array.LongLength - 1;
+            long maxPositiveWord = 0;
+            var hasPositiveBits = false;
+            for (var i = 0L; i < _array.LongLength; i++)
+            {
+                if (_array[i] != 0)
+                {
+                    if (!hasPositiveBits)
+                    {
+                        minPositiveWord = i;
+                        hasPositiveBits = true;
+                    }
+                    maxPositiveWord = i;
+                }
+            }
+            if (!hasPositiveBits)
+            {
+                MarkBordersAsAllBitsReset();
+            }
+            else
+            {
+                SetBorders(minPositiveWord, maxPositiveWord);
+            }
+        }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void GetBorders(out long from, out long to)
         {

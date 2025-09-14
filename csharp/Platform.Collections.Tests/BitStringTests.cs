@@ -24,6 +24,40 @@ namespace Platform.Collections.Tests
         }
 
         [Fact]
+        public static void BitStringArrayConstructorTest()
+        {
+            const int n = 128;
+            var array = new long[] { unchecked((long)0x1234567890ABCDEF), unchecked((long)0xFEDCBA0987654321) };
+            var bitString = new BitString(array, n);
+            
+            var normalBitString = new BitString(n);
+            for (var i = 0L; i < BitString.GetWordsCountFromIndex(n); i++)
+            {
+                for (var j = 0; j < 64 && (i * 64 + j) < n; j++)
+                {
+                    var bitIndex = i * 64 + j;
+                    var expectedValue = (array[i] & (1L << j)) != 0;
+                    normalBitString.Set(bitIndex, expectedValue);
+                    Assert.Equal(expectedValue, bitString.Get(bitIndex));
+                }
+            }
+            
+            Assert.Equal(normalBitString.CountSetBits(), bitString.CountSetBits());
+        }
+
+        [Fact]
+        public static void CreateWithRandomBitsTest()
+        {
+            const int n = 1000;
+            var bitString1 = BitStringExtensions.CreateWithRandomBits(n);
+            var bitString2 = BitStringExtensions.CreateWithRandomBits(n);
+            
+            Assert.Equal(n, bitString1.Length);
+            Assert.Equal(n, bitString2.Length);
+            Assert.False(bitString1.Equals(bitString2));
+        }
+
+        [Fact]
         public static void BitVectorNotTest()
         {
             TestToOperationsWithSameMeaning((x, y, w, v) =>
