@@ -32,5 +32,31 @@ namespace Platform.Collections
                 @string.Set(i, value);
             }
         }
+
+        /// <summary>
+        /// <para>
+        /// Creates a new BitString with random bits using the efficient constructor.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="length">
+        /// <para>The length of the bit string.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>A new BitString with random bits.</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static BitString CreateWithRandomBits(long length)
+        {
+            var wordsCount = BitString.GetWordsCountFromIndex(length);
+            var randomArray = new long[wordsCount];
+            for (var i = 0L; i < wordsCount; i++)
+            {
+                randomArray[i] = RandomHelpers.Default.NextInt64();
+            }
+            return new BitString(randomArray, length);
+        }
     }
 }

@@ -24,6 +24,17 @@ namespace Platform.Collections.Benchmarks
         }
 
         [Benchmark]
+        public BitString CreateWithRandomBitsOld()
+        {
+            var bitString = new BitString(N);
+            bitString.SetRandomBits();
+            return bitString;
+        }
+
+        [Benchmark]
+        public BitString CreateWithRandomBitsNew() => BitStringExtensions.CreateWithRandomBits(N);
+
+        [Benchmark]
         public BitString Not() => new BitString(_left).Not();
 
         [Benchmark]
